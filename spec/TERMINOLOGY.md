@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part A aligned.
+Status: Phase 1 Part B aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, and SRC-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, and DRV-* requirements.
 
 ## Artifact
 
@@ -48,9 +48,63 @@ Lineage answers how recorded data reached a point. It does not explain why a mod
 
 ## Derivation
 
-An Assertion that one Artifact was produced wholly or partially from another Artifact.
+A qualified positive Assertion describing direct representation ancestry through one Transform.
 
-Derivation is distinct from Transform: Transform is an Activity; Derivation is an ancestry claim between Artifacts. A Transform's use and generation relations do not automatically imply exact Derivation.
+The Part B semantic form has exactly one target output Artifact or Region, exactly one generating Transform, and one or more contributing input Artifacts or Regions. A binary derived_from edge is only a one-input display shorthand.
+
+Derivation is distinct from Transform: Transform is an Activity; Derivation is an ancestry Assertion. A Transform's use and generation relations do not automatically imply Derivation.
+
+See DRV-001 through DRV-010.
+
+## Exact Derivation
+
+A positive direct Derivation whose claimed output scope has complete recorded origin accounting at its asserted granularity.
+
+Exact Derivation does not imply byte equality, reversibility, semantic equivalence, model causality, or external completeness.
+
+See DRV-008.
+
+## Partial Derivation
+
+A positive direct Derivation establishing some representation ancestry while leaving mapping or contributor coverage incomplete.
+
+Partial is positive ancestry; it is not uncertainty about whether any contribution occurred.
+
+See DRV-009.
+
+## Unknown Derivation
+
+A knowledge state in which contribution cannot be established.
+
+Unknown Derivation is not represented as a positive Derivation Assertion. The relevant Transform use remains recorded with a justified usage role and no fabricated derivation edge.
+
+See DRV-010.
+
+## Region
+
+A selector over a subrepresentation of one immutable Artifact.
+
+A Region is interpreted only together with its Artifact identity, representation basis, and selector/coordinate scheme.
+
+Concrete selector vocabularies remain unfrozen.
+
+See DRV-016 and DRV-017.
+
+## Transform-generated Region
+
+An output Region explicitly recorded as introduced by a Transform rather than attributed to upstream representation content.
+
+It is distinct from a derived Region and must not be silently attributed to source inputs.
+
+See DRV-020.
+
+## Recorded Ancestry Path
+
+A transitive graph path formed from direct Derivation Assertions.
+
+Recorded ancestry reachability is not itself a direct Derivation Assertion, and exact Region mappings compose only under the Part B precision rules.
+
+See DRV-023 through DRV-026.
 
 ## Causality
 
@@ -172,9 +226,31 @@ Examples may include ContextFragment, Instruction, ToolDefinition, StructuredCon
 
 ## Transform
 
-An Activity consuming zero or more Artifacts and producing zero or more Artifacts.
+An Activity that can use Artifacts, generate new Artifacts, and select or forward existing Artifacts.
+
+Generation creates a new Artifact representation. Selection/forwarding preserves an existing Artifact identity.
 
 Examples include extract, normalize, redact, filter, split, chunk, rerank, truncate, concat, template, serialize, and application-side tool-invocation preparation.
+
+See DRV-001 and DRV-013 through DRV-015.
+
+## Usage Role
+
+Producer-asserted qualification of how an Artifact was used by a Transform.
+
+Part B defines the conceptual roles data, control, mixed, and unknown.
+
+A Usage Role is not a positive Derivation Assertion. In particular, control use does not by itself make the input an ancestor of generated representation content.
+
+See DRV-011 and DRV-012.
+
+## Selection / Forwarding
+
+A Transform relation indicating that an already-existing Artifact was chosen or passed downstream without being generated as a new representation.
+
+Selection/forwarding preserves Artifact identity. A new wrapper, manifest, list, or aggregate receives its own Artifact identity.
+
+See DRV-013 through DRV-015.
 
 ## RequestSnapshot
 
