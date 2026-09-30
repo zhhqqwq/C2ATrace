@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Phase 0 Foundations
 
-Status: ACCEPTED WITH REVISIONS.
+Status: REVIEWED AND REVISED.
 
 Scope: Threat Model, Claim Matrix, Terminology, Core Artifact/Event Graph.
 
@@ -8,213 +8,247 @@ JSON Schema: NOT FROZEN.
 
 Implementation: NOT STARTED.
 
-## 1. Normative convention
+## 1. Normative discipline
 
-MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are normative. Every MUST / MUST NOT requirement is expected to map to a future conformance test.
+The keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are normative only inside a numbered normative requirement or when a definition explicitly cites such a requirement.
 
-## 2. Core object categories
+Phase 0 terminology is otherwise definitional, not an independent source of untracked normative behavior.
 
-C2ATrace uses three foundational categories:
+Every numbered MUST / MUST NOT requirement in Phase 0 has a planned conformance test identifier.
 
-- Artifact — immutable recorded data representation.
-- Activity — recorded process that uses and/or generates Artifacts.
-- Assertion — recorded claim about objects, relations, or properties.
+## 2. Semantic categories
 
-This separation prevents request data, execution activities, and external-state claims from being collapsed into one ambiguous event log.
+C2ATrace uses three primary runtime provenance categories:
 
-## 3. Accepted core graph
+- **Artifact** — an immutable recorded data representation.
+- **Activity** — a recorded process that uses and/or generates Artifacts.
+- **Assertion** — a recorded claim about an object, relation, or property.
+
+C2ATrace also uses structural/meta objects that are not runtime provenance nodes:
+
+- **Reference** — identifies or locates something outside the artifact identity model, for example SourceRef.
+- **Scope** — groups records logically, for example Run.
+- **Package** — carries records, for example Receipt.
+- **Integrity metadata** — authenticates or commits to a package/representation, for example IntegrityEnvelope.
+
+This distinction closes the object taxonomy without forcing SourceRef, Run, Receipt, or IntegrityEnvelope into Artifact / Activity / Assertion.
+
+## 3. Core object classification
+
+| Object | Classification | Notes |
+|---|---|---|
+| Run | Scope | Logical grouping; does not imply completeness |
+| SourceRef | Reference | Logical source identity / locator |
+| SourceObservation | Artifact | Producer-recorded observed representation |
+| ModelInputComponent | Artifact abstraction | Abstract superclass for application-visible model inputs |
+| ContextFragment | Artifact | ModelInputComponent subtype |
+| Transform | Activity | Data/process transformation |
+| Derivation | Assertion | Explicit artifact-to-artifact ancestry claim |
+| RequestBinding | Assertion | Qualified inclusion claim relative to a RequestSnapshot |
+| RequestSnapshot | Artifact | Request representation at one capture level |
+| ModelInvocation | Activity | Logical application-level model invocation |
+| ProviderAttempt | Activity | One discrete provider attempt |
+| ModelOutput | Artifact | Application-visible output representation |
+| OutputItem | Artifact abstraction | Item contained in ModelOutput |
+| ToolProposal | Artifact | OutputItem subtype |
+| ToolInvocation | Artifact | Effective tool invocation before execution |
+| ToolExecution | Activity | Actual execution attempt |
+| ToolResult | Artifact | Returned/result representation |
+| EffectObservation | Artifact | Recorded evidence about external state |
+| TrustAssertion | Assertion | Trust judgement and basis |
+| TaintAssertion | Assertion | Conservative taint judgement and basis |
+| Receipt | Package | Portable set of records |
+| IntegrityEnvelope | Integrity metadata | Commitments/signatures over defined representations |
+
+## 4. Corrected core graph
+
+Transform and Derivation are deliberately separate: Transform is an Activity; Derivation is an Assertion.
 
 ~~~text
 SourceRef
-    ↓ observed_as
+    ▲
+    │ observed_from (assertion)
+    │
 SourceObservation
-    ↓
-Transform / Derivation
-    ↓
-ModelInputComponent / ContextFragment
-    ↓ RequestBinding
+    │
+    │ used by
+    ▼
+Transform
+    │
+    │ generates
+    ▼
+ContextFragment / ModelInputComponent
+
+Optional explicit assertion:
+ContextFragment ── derived_from ──> SourceObservation
+
+ModelInputComponent
+    │
+    │ RequestBinding (recorded inclusion assertion)
+    ▼
 RequestSnapshot
-    ↓ used_request
-ProviderAttempt ── attempt_of ──> ModelInvocation
-    ↓ produces
-ModelOutput
-    ↓ contains
+
+ProviderAttempt ── uses_request ──> RequestSnapshot
+ProviderAttempt ── attempt_of ────> ModelInvocation
+ProviderAttempt ── produces ──────> ModelOutput
+ModelOutput ────── contains ──────> OutputItem / ToolProposal
+
 ToolProposal
-    ↓ application validation / enrichment / normalization
+    │
+    │ used by optional application preparation Transform
+    ▼
+Transform
+    │
+    │ generates
+    ▼
 ToolInvocation
-    ↓
-ToolExecution
-    ↓
-ToolResult
-    ↓ supports
-EffectObservation
+
+ToolExecution ── uses_invocation ──> ToolInvocation
+ToolExecution ── returns ──────────> ToolResult
+EffectObservation ── supported_by ─> ToolResult or other evidence Artifact
 ~~~
 
-Horizontal assertions include TrustAssertion, TaintAssertion, Derivation, and future integrity metadata.
+A Transform using an Artifact and generating another Artifact does not, by itself, establish Derivation between those Artifacts.
 
-## 4. Why the revisions are necessary
+## 5. Core relation semantics
 
-### RequestSnapshot is distinct from ProviderAttempt
+| Relation | Source | Target | Semantic class |
+|---|---|---|---|
+| observed_from | SourceObservation | SourceRef | Assertion |
+| uses | Activity | Artifact | Provenance relation |
+| generates | Activity | Artifact | Provenance relation |
+| derived_from | Artifact | Artifact | Derivation Assertion |
+| bound_into | ModelInputComponent | RequestSnapshot | RequestBinding Assertion |
+| uses_request | ProviderAttempt | RequestSnapshot | Provenance relation |
+| attempt_of | ProviderAttempt | ModelInvocation | Structural/provenance relation |
+| produces | ProviderAttempt | ModelOutput | Provenance relation |
+| contains | ModelOutput | OutputItem | Structural composition |
+| uses_invocation | ToolExecution | ToolInvocation | Provenance relation |
+| returns | ToolExecution | ToolResult | Provenance relation |
+| supported_by | EffectObservation | Artifact | Evidence Assertion |
 
-A request may exist at multiple capture levels and may differ across retries. Inclusion therefore binds to an immutable RequestSnapshot, not directly to a logical model call or provider attempt.
+Exact wire names remain unfrozen.
 
-### ToolInvocation is distinct from ToolProposal
-
-The application may validate, normalize, enrich, rewrite, or supplement proposed tool arguments. The effective invocation must therefore be separately identifiable.
-
-### ToolResult is distinct from ToolExecution
-
-Execution is an Activity; returned data is an Artifact. This distinction allows ToolResult to become future context while preserving provenance semantics.
-
-### EffectObservation is distinct from ToolResult
-
-A tool can report success or a remote identifier without independently proving the external state. EffectObservation records evidence and its basis without upgrading it to outcome truth.
-
-### Action is non-normative
-
-Action remains a human-facing umbrella term only. The protocol preserves proposal, invocation, execution, result, and effect as separate concepts.
-
-## 5. Core graph invariants
+## 6. Core graph invariants
 
 ### GRAPH-001 — Reference resolution
 
-All internal references MUST resolve within the receipt's resolution scope or through a future explicitly defined external-reference mechanism.
+Until an external-reference profile is defined, every normative internal reference in a conforming Receipt MUST resolve within that supplied Receipt.
 
-Planned test: graph-missing-reference-001.
+Planned test: `graph-missing-reference-001`.
 
 ### GRAPH-002 — Immutable Artifact identity
 
 The same Artifact ID MUST NOT denote different representations.
 
-Planned test: artifact-id-reuse-001.
+Planned test: `artifact-id-reuse-001`.
 
 ### GRAPH-003 — Derivation DAG
 
-The explicit Artifact derivation graph MUST be acyclic. Agent loops remain representable by creating new identities in each iteration.
+The explicit Artifact derivation graph MUST be acyclic.
 
-Planned test: derivation-cycle-001.
+Planned test: `derivation-cycle-001`.
 
 ### GRAPH-004 — Binding target
 
-A RequestBinding MUST target exactly one RequestSnapshot. A component MAY have multiple RequestBindings.
+A RequestBinding MUST target exactly one RequestSnapshot. A ModelInputComponent MAY participate in multiple RequestBindings.
 
-Planned test: binding-target-001.
+Planned test: `binding-target-001`.
 
 ### GRAPH-005 — Request is not attempt
 
-ProviderAttempt MUST NOT be used as a substitute for RequestSnapshot.
+A ProviderAttempt MUST NOT be used as a substitute for RequestSnapshot.
 
-Planned test: request-attempt-conflation-001.
+Planned test: `request-attempt-conflation-001`.
 
 ### GRAPH-006 — Output attempt identity
 
 Every recorded ModelOutput MUST identify the ProviderAttempt associated with its production.
 
-Planned test: orphan-model-output-001.
+Planned test: `orphan-model-output-001`.
 
 ### GRAPH-007 — Proposal is not execution
 
 ToolProposal presence MUST NOT imply ToolExecution presence.
 
-Planned test: proposal-only-001.
+Planned test: `proposal-only-001`.
 
 ### GRAPH-008 — Effective invocation
 
 Every ToolExecution MUST reference the effective ToolInvocation it attempted to execute.
 
-Planned test: execution-without-invocation-001.
+Planned test: `execution-without-invocation-001`.
 
 ### GRAPH-009 — No fake denied execution
 
 A ToolProposal rejected before execution begins MUST NOT create ToolExecution solely to represent denial.
 
-Planned test: denied-with-fake-execution-001.
+Planned test: `denied-with-fake-execution-001`.
 
 ### GRAPH-010 — Result remains an Artifact
 
-When execution-return data is preserved for provenance, it SHOULD be represented as ToolResult rather than embedded as ToolExecution identity.
+If execution-return data is retained as provenance-bearing data, it MUST have Artifact identity distinct from ToolExecution; ToolResult is the v0.1 core representation for this role.
 
-Planned test: tool-result-artifact-001.
+Planned test: `tool-result-artifact-001`.
 
 ### GRAPH-011 — Result is not effect truth
 
-ToolResult MUST NOT automatically establish external Effect truth.
+ToolResult MUST NOT, by itself, establish external Effect truth.
 
-Planned test: lying-tool-result-001.
+Planned test: `lying-tool-result-001`.
 
-### GRAPH-012 — Effect evidence
+### GRAPH-012 — Effect evidence basis
 
-EffectObservation MUST preserve an evidence basis or explicitly record basis as unknown.
+EffectObservation MUST reference an evidence basis or explicitly represent the basis as unknown.
 
-Planned test: effect-basis-001.
+Planned test: `effect-basis-001`.
 
-### GRAPH-013 — Explicit ordering wins
+### GRAPH-013 — Explicit ordering dominates timestamps
 
-Wall-clock timestamps MUST NOT override contradictory explicit provenance dependencies. A verifier SHOULD report timestamp inconsistency.
+A verifier MUST NOT use wall-clock timestamp ordering to override contradictory explicit provenance dependencies.
 
-Planned test: timestamp-conflict-001.
+Planned test: `timestamp-conflict-001`.
 
 ### GRAPH-014 — Missing edge is not negation
 
-The absence of a relation in the supplied graph MUST NOT automatically be interpreted as proof that the relation did not exist.
+The absence of a provenance relation in the supplied graph MUST NOT be reported as proof that the relation did not exist.
 
-Planned test: absence-not-negation-001.
+Planned test: `absence-not-negation-001`.
 
-## 6. Architecture review outcomes
+### GRAPH-015 — Core object classification is explicit
 
-The Phase 0 graph was tested conceptually against:
+Every normative v0.1 core object MUST have exactly one primary classification in the Phase 0 classification table, except an explicitly declared abstraction such as ModelInputComponent or OutputItem.
+
+Planned test: `core-type-classification-001`.
+
+### GRAPH-016 — Activity / Assertion separation
+
+Derivation and RequestBinding MUST NOT be encoded or interpreted as Activities; Transform MUST NOT be encoded or interpreted as a Derivation Assertion.
+
+Planned test: `activity-assertion-separation-001`.
+
+## 7. Architecture review outcomes
+
+The revised Phase 0 model has been checked against:
 
 - provider retries
-- differing retry request representations
-- multiple request capture levels
+- different request representations across retries
+- multiple capture levels
 - application-modified tool arguments
 - rejected tool proposals
-- tool results reused as future context
-- lying or incorrect tool servers
+- tool results reused as later context
+- incorrect or dishonest tool servers
 - malicious but correctly signing Producers
-- truncated receipt chains
+- truncated receipt sets/chains
 - concurrent agent execution
 - streaming output
 - hash-only privacy constraints
+- object taxonomy closure
+- Activity / Assertion category confusion
+- structural versus content-verified RequestBinding
+- claim-evidence composition
 
-All are either resolved by the core model or explicitly deferred without creating a false claim.
-
-## 7. Current normative core object set
-
-~~~text
-Run
-
-SourceRef
-SourceObservation
-
-ModelInputComponent
-ContextFragment
-
-Transform
-Derivation
-
-RequestBinding
-RequestSnapshot
-
-ModelInvocation
-ProviderAttempt
-ModelOutput
-OutputItem
-
-ToolProposal
-ToolInvocation
-ToolExecution
-ToolResult
-EffectObservation
-
-TrustAssertion
-TaintAssertion
-
-Receipt
-IntegrityEnvelope
-~~~
-
-Action is not a normative core object.
+The unresolved items below are explicitly deferred and do not authorize stronger claims.
 
 ## 8. Open questions before Schema freeze
 
@@ -234,16 +268,17 @@ The following MUST be resolved before JSON Schema is frozen:
 - OQ-012 Sanitization semantics and anti-laundering constraints.
 - OQ-013 External references and multi-receipt resolution.
 - OQ-014 Receipt scope declaration without implying completeness.
+- OQ-015 IntegrityEnvelope signing scope and detached/embedded representation.
 
 ## 9. Gate decision
 
-Threat Model: PASS.
+Threat Model: PASS AFTER SECOND REVIEW.
 
-Claim Matrix: PASS.
+Claim Matrix: PASS AFTER SECOND REVIEW.
 
-Terminology: PASS.
+Terminology: PASS AFTER SECOND REVIEW.
 
-Core Artifact/Event Graph: PASS WITH OPEN DESIGN ITEMS.
+Core Artifact/Event Graph: PASS AFTER SECOND REVIEW WITH OPEN DESIGN ITEMS.
 
 The next specification stage MUST focus on:
 
@@ -255,4 +290,4 @@ Transform / Derivation
 RequestSnapshot / RequestBinding
 ~~~
 
-No JSON Schema freeze or implementation work should begin until those semantics and their adversarial test cases are complete.
+No JSON Schema freeze or implementation work may begin until those semantics and their adversarial conformance cases are complete.
