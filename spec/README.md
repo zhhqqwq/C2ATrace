@@ -8,15 +8,16 @@ Status: pre-schema specification work.
 - PHASE-1-PART-A-SOURCE-SEMANTICS.md — accepted SourceRef / SourceObservation semantics after adversarial review.
 - PHASE-1-PART-B-TRANSFORM-DERIVATION.md — accepted Transform / Derivation semantics, Region lineage, and control-vs-content separation after adversarial review.
 - PHASE-1-PART-C-REQUEST-SEMANTICS.md — accepted RequestSnapshot / RequestBinding semantics, capture levels, request locations, digest semantics, and hash-only verification boundaries after adversarial review.
+- PHASE-1-PART-D-MODEL-OUTPUT-SEMANTICS.md — accepted ModelInvocation / ProviderAttempt / ModelOutput semantics, retry/failover, output identity, streaming boundaries, and completion/capture distinctions after adversarial review.
 - THREAT-MODEL.md — trust boundaries, adversary assumptions, and numbered normative threat requirements.
 - CLAIMS.md — composable evidence-basis model and numbered verifier-reporting requirements.
-- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Phase 1 Part C.
+- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Phase 1 Part D.
 
 ## Project gate
 
-JSON Schema remains unfrozen. Phase 1 Parts A, B, and C are complete.
+JSON Schema remains unfrozen. Phase 1 Parts A, B, C, and D are complete.
 
-The next semantic focus is ModelInvocation / ProviderAttempt / ModelOutput behavior, followed by tool/effect, trust/taint, privacy, integrity/receipt, adapter, and verifier contracts. These gates remain before Schema freeze.
+The next semantic focus is Part E: ToolProposal / ToolInvocation / ToolExecution / ToolResult / EffectObservation, followed by trust/taint, privacy, integrity/receipt, adapter, and verifier contracts. These gates remain before Schema freeze.
 
 ## Normative language discipline
 
