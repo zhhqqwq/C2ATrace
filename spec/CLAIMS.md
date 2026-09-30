@@ -127,8 +127,15 @@ Planned test: `claim-causality-001`.
 | Producer states request R was transmitted | E4 | Yes, as an assertion | Does not prove Provider receipt |
 | Provider received request R | External / unsupported by core | No | Requires external/provider evidence |
 | Provider internally supplied exactly R to the model | P1 unless future evidence profile exists | No | Core v0.1 does not establish |
-| ModelOutput references ProviderAttempt | E1 + E4 premise | Partial | Link is structural; capture occurrence is asserted |
-| ToolProposal is structurally contained in ModelOutput | E1; E2 if bytes supplied | Yes/conditional | Structure versus representation verification |
+| ProviderAttempt belongs to ModelInvocation | E1 + E4 premise | Partial | Grouping is structural/Producer-recorded, not inferred from equality |
+| ProviderAttempt terminal disposition is recorded | E4 | Yes, as an assertion | Application-observed lifecycle classification |
+| ModelOutput references ProviderAttempt | E1 + E4 premise | Partial | Ownership is structural; capture occurrence is asserted |
+| ModelInvocation accepts ModelOutput | E4 + E1 ownership check | Partial | Application selection; does not establish completeness |
+| ModelOutput capture_extent=complete | E4 | No external proof | Complete only relative to declared application-visible capture scope |
+| ModelOutput response_termination=complete | E4 | No external proof | Normal completion observed at application boundary |
+| Provider-reported model identifier | E4 | No | Does not establish provider-internal model identity |
+| OutputItem representation matches supplied content | E2 | Conditional | Representation equality only |
+| ToolProposal is structurally contained in ModelOutput | E1; E2 if representation supplied | Yes/conditional | Proposal is output occurrence, not execution |
 | ToolInvocation differs from ToolProposal | E2 | Conditional | Requires comparable representations |
 | Producer states ToolExecution occurred | E4 | Yes, as an assertion | Runtime occurrence not independently proven |
 | ToolResult artifact exists | E1 | Yes | Origin/return occurrence may still be E4 |
