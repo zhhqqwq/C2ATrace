@@ -40,11 +40,12 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0 has passed a second logical/architecture review with open design items. JSON Schema remains unfrozen and implementation has not started.
+Specification-first. Phase 0 is complete after second review. Phase 1 Part A (SourceRef / SourceObservation semantics) is complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
 
 See:
 
 - [Phase 0 Foundations](spec/PHASE-0-FOUNDATIONS.md)
+- [Phase 1 Part A — Source Semantics](spec/PHASE-1-PART-A-SOURCE-SEMANTICS.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -59,6 +60,8 @@ See:
 - Integrity is not truth.
 - Execution is not outcome.
 - Transform is not Derivation.
+- Locator equality is not source identity.
+- Content equality is not source identity.
 - Recorded inclusion is not causal responsibility.
 - Every numbered normative requirement maps to a planned conformance test.
 
@@ -68,4 +71,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-The next phase defines SourceRef / SourceObservation, Transform / Derivation, and RequestSnapshot / RequestBinding semantics before any JSON Schema freeze.
+The next phase is Phase 1 Part B: Transform / Derivation semantics. RequestSnapshot / RequestBinding semantics follow after Part B. JSON Schema freeze remains blocked until both have passed adversarial review.
