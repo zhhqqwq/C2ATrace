@@ -44,8 +44,8 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 | ContextFragment | Artifact | ModelInputComponent subtype |
 | Transform | Activity | Data/process transformation |
 | Derivation | Assertion | Explicit artifact-to-artifact ancestry claim |
-| RequestBinding | Assertion | Qualified inclusion claim relative to a RequestSnapshot |
-| RequestSnapshot | Artifact | Request representation at one capture level |
+| RequestBinding | Assertion | Occurrence-specific, capture-level-local inclusion claim relative to one RequestSnapshot |
+| RequestSnapshot | Artifact | Request representation at one capture level with one capture-scope owner |
 | ModelInvocation | Activity | Logical application-level model invocation |
 | ProviderAttempt | Activity | One discrete provider attempt |
 | ModelOutput | Artifact | Application-visible output representation |
@@ -125,7 +125,7 @@ A Transform using an Artifact and generating another Artifact does not, by itsel
 | derived_from | Artifact(s) | Artifact | Derivation Assertion; binary rendering is shorthand for the qualified Part B form |
 | selects_or_forwards | Transform | Artifact | Existing Artifact selected/forwarded without generation |
 | bound_into | ModelInputComponent | RequestSnapshot | RequestBinding Assertion |
-| uses_request | ProviderAttempt | RequestSnapshot | Provenance relation |
+| uses_request | ProviderAttempt | RequestSnapshot | Effective request-snapshot association at a declared capture level |
 | attempt_of | ProviderAttempt | ModelInvocation | Structural/provenance relation |
 | produces | ProviderAttempt | ModelOutput | Provenance relation |
 | contains | ModelOutput | OutputItem | Structural composition |
@@ -260,13 +260,13 @@ The unresolved items below are explicitly deferred and do not authorize stronger
 
 Project gate: all of the following are to be resolved before JSON Schema is frozen:
 
-- OQ-001 RequestBinding text-range coordinate system.
-- OQ-002 Binary/media partial binding.
+- OQ-001 RESOLVED by Phase 1 Part C: text RequestBinding ranges use Unicode scalar half-open intervals; byte-oriented ranges use byte half-open intervals.
+- OQ-002 RESOLVED at core semantic level by Phase 1 Part C: binary/media partial bindings use byte Regions when bytes are exposed; richer media selectors remain profile work.
 - OQ-003 RESOLVED by Phase 1 Part B: exact and partial are positive derivation precision states; unknown is not a positive Derivation Assertion.
 - OQ-004 RESOLVED at semantic level by Phase 1 Part B: split / concat / truncation use qualified Region lineage; concrete Region selector vocabularies remain open.
-- OQ-005 RequestSnapshot capture-level transition model.
-- OQ-006 Semantic digest versus byte digest.
-- OQ-007 Hash-only verification strength for RequestBinding.
+- OQ-005 RESOLVED by Phase 1 Part C: core levels are sdk_arguments, provider_payload, prepared_http_body, and unknown; transitions reuse Transform / Derivation and remain explicitly recorded.
+- OQ-006 RESOLVED at semantic level by Phase 1 Part C: semantic digest commits a profile-canonicalized structured representation; byte digest commits exact captured bytes; concrete algorithms remain later profile work.
+- OQ-007 RESOLVED by Phase 1 Part C: hash-only sublocations are not location-resolved or representation-verified without the target representation or a recognized inclusion proof.
 - OQ-008 ToolInvocation argument-level provenance.
 - OQ-009 ModelOutput multi-item / streaming profile.
 - OQ-010 TrustAssertion subjects and vocabulary.
@@ -296,7 +296,10 @@ Transform / Derivation
         ✓ Phase 1 Part B
 
 RequestSnapshot / RequestBinding
-        ← Phase 1 Part C
+        ✓ Phase 1 Part C
+
+ModelInvocation / ProviderAttempt / ModelOutput
+        ← next semantic focus
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked until those semantics and their adversarial conformance cases are complete.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-C are complete, but ModelOutput/tool, trust/taint, privacy, integrity, adapter, and verifier semantics still require specification gates.
