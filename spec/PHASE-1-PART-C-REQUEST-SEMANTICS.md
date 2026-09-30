@@ -317,21 +317,28 @@ If only part of a component is included, the source Region is identified.
 
 ### 6.4 RequestLocation
 
-A RequestLocation identifies the target scope within the RequestSnapshot.
+A RequestLocation identifies exactly one target scope within the RequestSnapshot.
 
-Conceptually it is either:
-
-~~~text
-path selector, when applicable
-+
-optional Region within the selected value
-~~~
-
-or, for a byte-oriented whole body:
+Part C defines four semantic location forms:
 
 ~~~text
-byte Region over the RequestSnapshot
+whole_snapshot
+
+structured_value:
+  path selector
+
+structured_text_region:
+  path selector
+  +
+  text Region within the selected string value
+
+byte_region:
+  byte Region over the byte-oriented RequestSnapshot
 ~~~
+
+These are semantic forms, not frozen JSON field layouts.
+
+A whole_snapshot location refers to the entire RequestSnapshot representation at its declared representation basis.
 
 The exact JSON wire shape remains unfrozen.
 
@@ -444,18 +451,30 @@ This is only presence of the Assertion.
 
 ### 9.2 Structurally valid binding
 
-A binding is structurally valid when:
+A binding is structurally valid when its record-level structure can be checked without requiring hidden target content:
 
 - source component/Region references resolve;
 - target RequestSnapshot resolves;
-- path scheme is recognized or syntactically valid under its profile;
-- path resolves when the target representation is available;
-- Region basis/unit is compatible with the selected value;
-- interval bounds are valid when lengths are available.
+- RequestLocation form is recognized;
+- path scheme and path syntax are valid under the applicable profile;
+- Region basis/unit declarations are syntactically compatible with the location form;
+- interval ordering constraints such as start <= end are valid.
 
-Structural validity alone does not prove that source and target representations match.
+Structural validity does not establish that a structured path exists in the target representation or that a declared range lies within the actual target length.
 
-### 9.3 Commitment-matched binding evidence
+### 9.3 Location-resolved binding
+
+A binding is location-resolved when the verifier can additionally establish the target location itself.
+
+For structured locations this means the path resolves in the target representation and any subrange lies within the selected value.
+
+For byte locations this means the declared byte Region lies within the captured byte representation.
+
+Location resolution requires the target representation or a recognized proof/profile capable of establishing the same property.
+
+Location-resolved does not by itself establish equality between the source component and target representation.
+
+### 9.4 Commitment-matched binding evidence
 
 A verifier can report compatible commitment equality when the source scope and the exact target scope both have comparable commitments.
 
@@ -463,7 +482,7 @@ Commitment equality supports equality of the committed representations under the
 
 For a subpath or subrange of a larger RequestSnapshot, merely recording a separate digest for the claimed target region does not independently prove that the region is actually contained at that location unless the relation to the enclosing snapshot is verifiable.
 
-### 9.4 Representation-verified binding
+### 9.5 Representation-verified binding
 
 A binding is representation-verified when the verifier can independently obtain the source and target representations required by the binding, resolve the target location, and verify the claimed equality/mapping under the applicable representation profile.
 
@@ -473,7 +492,7 @@ Examples:
 - structured component canonical representation equals selected structured value under a declared semantic profile;
 - byte component equals a byte Region of the prepared body.
 
-### 9.5 Proof-verified future profiles
+### 9.6 Proof-verified future profiles
 
 A future cryptographic inclusion-proof profile can establish subrepresentation membership without revealing the full RequestSnapshot.
 
@@ -830,15 +849,15 @@ A verifier MUST NOT merge RequestSnapshot identities solely because semantic or 
 
 Planned test: request-digest-no-identity-001.
 
-### REQ-037 — Structural binding is not representation verification
+### REQ-037 — Binding verification levels remain distinct
 
-A verifier MUST distinguish a structurally valid RequestBinding from a representation-verified RequestBinding.
+A verifier MUST distinguish recorded, structurally valid, location-resolved, commitment-matched, and representation-verified binding claims when the corresponding evidence states differ.
 
 Planned test: request-binding-verification-level-001.
 
 ### REQ-038 — Hash-only sublocation limitation
 
-For a subpath or subrange binding, a verifier MUST NOT report independently verified inclusion solely from a whole-snapshot digest and/or a Producer-recorded digest for the claimed target sublocation when no target representation or recognized inclusion proof is available.
+For a subpath or subrange binding, a verifier MUST NOT report the binding as location-resolved or representation-verified solely from a whole-snapshot digest and/or a Producer-recorded digest for the claimed target sublocation when no target representation or recognized inclusion proof is available.
 
 Planned test: request-hash-only-sublocation-001.
 
@@ -883,6 +902,30 @@ Planned test: request-binding-propagation-partial-001.
 If an essential request-transition contribution or location mapping is unknown, a verifier MUST NOT synthesize a positive later RequestBinding solely from the earlier binding and surrounding snapshots.
 
 Planned test: request-binding-propagation-unknown-001.
+
+### REQ-049 — RequestLocation form is explicit
+
+Every RequestBinding MUST identify exactly one RequestLocation semantic form compatible with the target RequestSnapshot representation.
+
+Planned test: request-location-form-001.
+
+### REQ-050 — Structural validity does not imply path existence
+
+A verifier MUST NOT report a structured path as resolved merely because the RequestBinding references, path scheme, and path syntax are structurally valid.
+
+Planned test: request-structural-not-resolved-001.
+
+### REQ-051 — Location resolution evidence
+
+A verifier MUST NOT report a RequestBinding as location-resolved unless the target representation or a recognized proof/profile establishes that the target path/Region exists and is within bounds.
+
+Planned test: request-location-resolution-001.
+
+### REQ-052 — Whole snapshot location semantics
+
+A whole_snapshot RequestLocation MUST refer to the entire RequestSnapshot representation at that snapshot's declared representation basis and MUST NOT be interpreted as an unspecified sublocation.
+
+Planned test: request-whole-snapshot-location-001.
 
 ### REQ-046 — Prepared body is not Provider receipt
 
@@ -1025,9 +1068,9 @@ The receipt provides:
 
 The verifier cannot recompute the selected target location from the whole digest.
 
-It reports structural validity and any commitment match, not independently verified inclusion.
+It can report structural validity and any commitment match. It cannot report the path as location-resolved or the inclusion as representation-verified.
 
-Result: RESOLVED by REQ-037 through REQ-039.
+Result: RESOLVED by REQ-037 through REQ-039 and REQ-050 through REQ-051.
 
 ### Review K — Whole component equals whole snapshot, both hash-only
 
@@ -1221,10 +1264,11 @@ Part C locks the following decisions:
 14. Prepared-body byte inclusion requires byte location evidence, not structured path alone.
 15. Binary/media core partial binding uses byte Regions when bytes are exposed.
 16. Semantic digest and byte digest have different representation bases and claims.
-17. Hash-only sublocation bindings are not independently inclusion-verified without target representation or a recognized inclusion proof.
-18. Exact binding propagation across capture levels requires exact coordinate-compatible request-transition lineage.
-19. prepared_http_body does not prove Provider receipt, complete wire request, or provider-internal prompt.
-20. RequestBinding never proves model-internal causality.
+17. Binding verification distinguishes structural validity, location resolution, commitment matching, and representation verification.
+18. Hash-only sublocation bindings are not location-resolved or independently inclusion-verified without target representation or a recognized inclusion proof.
+19. Exact binding propagation across capture levels requires exact coordinate-compatible request-transition lineage.
+20. prepared_http_body does not prove Provider receipt, complete wire request, or provider-internal prompt.
+21. RequestBinding never proves model-internal causality.
 
 ## 18. Open items handed to later phases
 
