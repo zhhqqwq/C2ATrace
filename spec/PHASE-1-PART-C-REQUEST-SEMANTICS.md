@@ -671,7 +671,7 @@ Planned test: request-invocation-snapshot-reuse-001.
 
 ### REQ-007 — Effective snapshot cardinality
 
-For one ProviderAttempt and one capture level, at most one RequestSnapshot MUST be designated as the effective snapshot.
+A ProviderAttempt MUST NOT designate more than one effective RequestSnapshot for the same capture level.
 
 Planned test: request-effective-snapshot-cardinality-001.
 
@@ -903,6 +903,24 @@ If an essential request-transition contribution or location mapping is unknown, 
 
 Planned test: request-binding-propagation-unknown-001.
 
+### REQ-046 — Prepared body is not Provider receipt
+
+A verifier MUST NOT report prepared_http_body capture as proof that the Provider received those body bytes.
+
+Planned test: request-prepared-body-no-provider-receipt-001.
+
+### REQ-047 — Prepared body is not wire-completeness proof
+
+A verifier MUST NOT describe prepared_http_body as the complete on-wire HTTP request unless a future transport-evidence profile establishes headers, transfer/content codings, framing, and other required transport details.
+
+Planned test: request-prepared-body-no-wire-overclaim-001.
+
+### REQ-048 — Provider internals remain outside binding scope
+
+A RequestBinding MUST NOT be reported as proof of provider-internal prompt composition or model-internal representation.
+
+Planned test: request-binding-no-provider-internal-001.
+
 ### REQ-049 — RequestLocation form is explicit
 
 Every RequestBinding MUST identify exactly one RequestLocation semantic form compatible with the target RequestSnapshot representation.
@@ -926,24 +944,6 @@ Planned test: request-location-resolution-001.
 A whole_snapshot RequestLocation MUST refer to the entire RequestSnapshot representation at that snapshot's declared representation basis and MUST NOT be interpreted as an unspecified sublocation.
 
 Planned test: request-whole-snapshot-location-001.
-
-### REQ-046 — Prepared body is not Provider receipt
-
-A verifier MUST NOT report prepared_http_body capture as proof that the Provider received those body bytes.
-
-Planned test: request-prepared-body-no-provider-receipt-001.
-
-### REQ-047 — Prepared body is not wire-completeness proof
-
-A verifier MUST NOT describe prepared_http_body as the complete on-wire HTTP request unless a future transport-evidence profile establishes headers, transfer/content codings, framing, and other required transport details.
-
-Planned test: request-prepared-body-no-wire-overclaim-001.
-
-### REQ-048 — Provider internals remain outside binding scope
-
-A RequestBinding MUST NOT be reported as proof of provider-internal prompt composition or model-internal representation.
-
-Planned test: request-binding-no-provider-internal-001.
 
 ## 15. Adversarial architecture review
 
