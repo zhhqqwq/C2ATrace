@@ -77,12 +77,15 @@ Planned test: `claim-no-upgrade-001`.
 
 ### CLAIM-002 — Binding verification levels
 
-A verifier MUST distinguish at least:
+A verifier MUST preserve distinct RequestBinding evidence states when they differ, including:
 
-- a RequestBinding that is structurally valid, and
-- a RequestBinding whose inclusion is representation-verified.
+- recorded;
+- structurally valid;
+- location-resolved;
+- commitment-matched;
+- representation-verified.
 
-If required representations are unavailable, it MUST NOT report representation-verified inclusion.
+If the target representation or a recognized location/inclusion proof is unavailable, it MUST NOT report a subpath or subrange binding as location-resolved or representation-verified solely from recorded digests.
 
 Planned test: `binding-verification-level-001`.
 
@@ -112,7 +115,10 @@ Planned test: `claim-causality-001`.
 | Object reference resolves | E1 | Yes | Structural |
 | Graph invariants hold | E1 | Yes | Internal consistency |
 | Digest matches supplied representation | E2 | Yes | Representation equality |
-| Fragment matches recorded request range | E2 | Conditional | Requires both representations |
+| RequestBinding is structurally valid | E1 | Yes | Does not prove target path exists in hidden content |
+| RequestBinding target location resolves | E2 or recognized proof | Conditional | Requires target representation/proof |
+| Component matches recorded request location | E2 | Conditional | Requires source and target representations or recognized proof |
+| Compatible commitments match | E2 | Conditional | Commitment equality is distinct from target-location membership |
 | Signature is mathematically valid | E3 | Yes | Cryptographic validity only |
 | Public key belongs to organization X | External | No | Key identity outside core v0.1 |
 | Producer states URL X was fetched | E4 | Yes, as an assertion | Does not prove remote origin |
