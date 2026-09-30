@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part C aligned.
+Status: Phase 1 Part D aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, and REQ-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, and OUT-* requirements.
 
 ## Artifact
 
@@ -356,29 +356,125 @@ See CLAIM-002 and REQ-037 through REQ-042.
 
 ## ModelInvocation
 
-A logical Activity representing the application's request to obtain a model result.
+A logical Activity representing one Producer-recorded application request for a model result.
 
-It can have zero or more ProviderAttempts and can own invocation-scoped RequestSnapshots.
+Its identity is occurrence-based rather than request-content-based. It can have zero or more ProviderAttempts, own invocation-scoped RequestSnapshots, and optionally designate one accepted ModelOutput.
+
+Retry/failover/hedge grouping is Producer-recorded orchestration rather than something inferred from equal requests or timestamps.
+
+See OUT-001 through OUT-005 and OUT-012 through OUT-018.
 
 ## ProviderAttempt
 
 An Activity representing one discrete application-observed attempt to invoke a Provider.
 
-Every ProviderAttempt belongs to exactly one ModelInvocation. A ProviderAttempt can designate effective RequestSnapshots at zero or more capture levels. Its existence does not prove Provider receipt or Provider-internal processing.
+Every ProviderAttempt belongs to exactly one ModelInvocation. It can designate effective RequestSnapshots at zero or more capture levels and can own zero or one core ModelOutput.
 
-See REQ-001 through REQ-008.
+Its existence does not prove Provider receipt or provider-internal processing.
+
+See REQ-001 through REQ-008 and OUT-003 through OUT-014.
+
+## Attempt Disposition
+
+The Producer-recorded terminal classification of a ProviderAttempt.
+
+Core Part D conceptual terminal values are completed, failed, timeout, cancelled, interrupted, and unknown.
+
+Attempt Disposition describes the application-observed attempt lifecycle and is separate from response completion and output capture completeness.
+
+## Attempt Relationship
+
+A Producer-asserted orchestration relationship among ProviderAttempts within one ModelInvocation, such as retry_of, failover_from, or hedged_with.
+
+Retry/failover predecessor relationships are distinct from timestamp order and preserve concurrent/hedged execution semantics.
+
+See OUT-012, OUT-013, and OUT-051 through OUT-053.
+
+## Accepted ModelOutput
+
+The optional ModelOutput selected by a ModelInvocation as its application-accepted logical result.
+
+At most one accepted ModelOutput exists in core v0.1. Acceptance does not imply response completion or output capture completeness.
+
+See OUT-015 through OUT-018.
+
+## Invocation-Requested Model
+
+The Producer-recorded model label requested or intended at the logical ModelInvocation level.
+
+It is not proof of provider-internal model identity.
+
+## Attempt-Effective Requested Model
+
+The model label visible in the effective request representation for a specific ProviderAttempt.
+
+It can differ between retries/failovers and can be representation-verified when the relevant RequestSnapshot is available.
+
+## Provider-Reported Model
+
+A model identifier reported in application-visible provider/SDK response metadata.
+
+It remains reported evidence and is not provider-internal model attestation.
+
+See OUT-019 through OUT-022.
 
 ## ModelOutput
 
-An Artifact representing application-visible model output associated with a ProviderAttempt.
+An immutable Artifact representing the zero-or-one terminal assembled application-visible model-result representation captured for one ProviderAttempt.
 
-It excludes hidden reasoning and unknown provider-internal state.
+Core ModelOutput is not the raw provider wire response and does not expose provider-internal state.
+
+See OUT-023 through OUT-032.
+
+## Response Termination
+
+Producer-recorded evidence about whether the application observed the model response reach its normal completion boundary.
+
+Core conceptual values are complete, incomplete, and unknown.
+
+Response Termination is independent of Output Capture Extent.
+
+## Output Capture Extent
+
+Producer-recorded evidence about whether instrumentation captured all application-visible model-result content within the declared adapter-boundary capture scope.
+
+Core conceptual values are complete, partial, and unknown.
+
+Complete capture at this boundary does not establish provider-internal completeness.
+
+See OUT-027 through OUT-032.
 
 ## OutputItem
 
-An abstract Artifact subtype contained in ModelOutput.
+An immutable, occurrence-identified Artifact subtype contained in exactly one ModelOutput.
 
-Examples include TextOutput, StructuredOutput, ToolProposal, or UnknownOutput.
+Core conceptual kinds are text, structured, tool_proposal, and unknown.
+
+Identical item content does not merge occurrence identities.
+
+See OUT-033 through OUT-039.
+
+## TextOutput
+
+An OutputItem containing captured application-visible text. It is not hidden reasoning or token-level internal generation history.
+
+See OUT-046.
+
+## StructuredOutput
+
+An OutputItem containing a captured application-visible structured result.
+
+Independent schema validation can establish representation/schema conformance when applicable, but does not establish semantic correctness or provider-internal generation facts.
+
+See OUT-047.
+
+## Streaming Assembly
+
+The core Part D model in which streaming deltas, if any, are assembled into the terminal immutable ModelOutput and OutputItems.
+
+Chunk-level/wire-level evidence is deferred to a future profile. Absence of chunk records does not prove non-streaming behavior.
+
+See OUT-039 through OUT-043.
 
 ## ToolProposal
 
