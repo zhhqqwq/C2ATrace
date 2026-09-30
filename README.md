@@ -10,37 +10,37 @@ C2ATrace is a provider-neutral, framework-neutral, policy-neutral provenance pro
 
 ~~~text
 SourceRef
-  ↓
+  ↓ observed_from
 SourceObservation
-  ↓
-Transform / Derivation
-  ↓
+  ↓ used by
+Transform
+  ↓ generates
 ModelInputComponent / ContextFragment
-  ↓
-RequestBinding
-  ↓
+  ↓ RequestBinding
 RequestSnapshot
-  ↓
+  ↓ used by
 ProviderAttempt
-  ↓
+  ↓ produces
 ModelOutput
-  ↓
+  ↓ contains
 ToolProposal
-  ↓
+  ↓ optional application preparation Transform
 ToolInvocation
-  ↓
+  ↓ used by
 ToolExecution
-  ↓
+  ↓ returns
 ToolResult
-  ↓
+  ↓ supports
 EffectObservation
 ~~~
+
+Derivation is an explicit assertion between Artifacts; it is not the same thing as Transform. A recorded transformation path does not automatically establish exact derivation.
 
 C2ATrace records provenance and execution linkage. It does not claim model-internal causality, producer completeness, provider-internal visibility, or external truth beyond available evidence.
 
 ## Current status
 
-Specification-first. Phase 0 foundations are accepted with revisions. JSON Schema and implementation are intentionally not frozen yet.
+Specification-first. Phase 0 has passed a second logical/architecture review with open design items. JSON Schema remains unfrozen and implementation has not started.
 
 See:
 
@@ -58,7 +58,9 @@ See:
 - Conservative over false precision.
 - Integrity is not truth.
 - Execution is not outcome.
-- Every normative claim must map to a future conformance test.
+- Transform is not Derivation.
+- Recorded inclusion is not causal responsibility.
+- Every numbered normative requirement maps to a planned conformance test.
 
 ## What v0.1 is not
 
