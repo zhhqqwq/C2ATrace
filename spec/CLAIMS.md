@@ -1,77 +1,139 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Phase 0 baseline.
+Status: Phase 0 baseline, second-review revision.
 
-## 1. Claim strength classes
+## 1. Claim evidence model
 
-### C1 — Structurally Verifiable
+The previous draft described C1-C5 as "claim strength classes." That was too rigid because one claim can depend on multiple kinds of evidence.
 
-The verifier can establish the claim from supplied graph structure and protocol rules alone.
+Phase 0 now uses **evidence basis tags**, which may be combined:
+
+### E1 — STRUCTURAL
+
+Established from supplied graph structure and protocol invariants.
 
 Examples: reference resolves, object type is compatible, graph invariant holds.
 
-### C2 — Representation Verifiable
+### E2 — REPRESENTATION
 
-The verifier can establish the claim when the necessary representation is supplied.
+Established by comparing supplied representations, ranges, or digests under defined representation rules.
 
-Examples: digest matches bytes; a fragment matches a recorded request range.
+Examples: digest matches bytes; a fragment matches a supplied request range.
 
-If privacy mode withholds the representation, the verifier MUST NOT report the representation-level claim as verified.
+### E3 — CRYPTOGRAPHIC
 
-### C3 — Cryptographically Verifiable
+Established by validating a cryptographic commitment or signature under the relevant cryptographic profile.
 
-The verifier can validate a cryptographic commitment or signature. Cryptographic validity does not establish external truth or completeness.
+Cryptographic validity does not establish external truth or completeness.
 
-### C4 — Producer Asserted
+### E4 — PRODUCER_ASSERTED
 
-The Producer records that an external or runtime event occurred. The verifier can validate the assertion's representation, references, and integrity, but not necessarily the external fact.
+The Producer states that a runtime or external fact occurred.
 
-Examples: a URL was fetched, a provider request was transmitted, a tool execution occurred, a remote system returned a result.
+Examples: a URL was fetched, a request was transmitted, a tool execution occurred, a remote service returned a result.
 
-### C5 — Prohibited Automatic Inference
+The verifier may validate the assertion's syntax, references, and integrity without establishing the external fact.
 
-Claims that C2ATrace v0.1 MUST NOT derive automatically.
+### P1 — PROHIBITED_INFERENCE
+
+Not an evidence basis. This marks a conclusion that core C2ATrace v0.1 MUST NOT automatically derive from weaker premises.
 
 Examples:
 
-- Source X caused Action Y.
+- Source X caused downstream action Y.
 - The Producer captured everything.
-- trusted means objectively trustworthy.
-- a valid signature means the events are true.
+- a source labeled trusted is objectively trustworthy.
+- a valid signature means the recorded events are true.
 - tool success means the intended outcome succeeded.
-- a valid supplied chain means the full history is complete.
+- valid supplied receipt linkage means the full history is complete.
 
-## 2. Claim matrix
+## 2. Composition rule
 
-| Claim | Class | Offline verifier | Meaning |
+A claim MAY depend on multiple evidence tags. Reporting MUST preserve the weakest unresolved premise.
+
+For example:
+
+~~~text
+STRUCTURAL graph path
++
+PRODUCER_ASSERTED TrustAssertion(label="untrusted")
+=
+verified statement:
+  "a source carrying an 'untrusted' TrustAssertion is on the recorded path"
+
+not:
+  "an objectively untrusted source is on the path"
+~~~
+
+## 3. Normative claim-reporting requirements
+
+### CLAIM-001 — No evidence-basis upgrade
+
+A verifier MUST NOT report a PRODUCER_ASSERTED premise as independently established external truth solely because STRUCTURAL, REPRESENTATION, or CRYPTOGRAPHIC checks succeed.
+
+Planned test: `claim-no-upgrade-001`.
+
+### CLAIM-002 — Binding verification levels
+
+A verifier MUST distinguish at least:
+
+- a RequestBinding that is structurally valid, and
+- a RequestBinding whose inclusion is representation-verified.
+
+If required representations are unavailable, it MUST NOT report representation-verified inclusion.
+
+Planned test: `binding-verification-level-001`.
+
+### CLAIM-003 — Trust-label wording
+
+When trust status comes from TrustAssertion, verifier output MUST preserve that it is an asserted label and MUST NOT restate it as objective source truth.
+
+Planned test: `trust-label-wording-001`.
+
+### CLAIM-004 — Absence wording
+
+A verifier MUST distinguish "not present in the supplied Receipt" from "did not happen."
+
+Planned test: `absence-wording-001`.
+
+### CLAIM-005 — Prohibited causal strengthening
+
+A verifier MUST NOT transform inclusion, derivation, taint ancestry, or graph reachability into model-internal causal responsibility.
+
+Planned test: `claim-causality-001`.
+
+## 4. Claim matrix
+
+| Claim | Evidence basis | Offline verifier | Meaning |
 |---|---|---:|---|
-| Receipt structure is valid | C1 | Yes | Structural only |
-| Object reference resolves | C1 | Yes | Structural |
-| Graph invariants hold | C1 | Yes | Internal consistency |
-| Digest matches supplied representation | C2 | Yes | Representation equality |
-| Fragment matches recorded request range | C2 | Conditional | Requires both representations |
-| Signature is mathematically valid | C3 | Yes | Cryptographic integrity only |
-| Public key belongs to organization X | External | No | Key trust is outside v0.1 |
-| URL X was really fetched | C4 | No | Producer assertion |
-| SourceObservation digest matches supplied bytes | C2 | Yes | Does not prove source origin |
-| observed_at is accurate wall-clock time | C4 | No | No trusted timestamp |
-| Provider received request R | C4 | No | Producer-side observation unless provider evidence exists |
-| Provider internally supplied exactly R to the model | C5 | No | Prohibited without separate evidence |
-| ModelOutput is linked to ProviderAttempt | C1+C4 | Partial | Link is structural; factual capture is asserted |
-| ToolProposal belongs to ModelOutput | C1/C2 | Conditional | Depends on output representation availability |
-| ToolInvocation differs from ToolProposal | C2 | Conditional | Requires representations |
-| ToolExecution occurred | C4 | No | Producer assertion |
-| ToolResult was recorded | C1+C4 | Partial | Artifact exists; external origin is asserted |
-| External effect exists | C4 | No | EffectObservation is evidence, not ground truth |
-| Untrusted source exists in recorded provenance envelope | Derived | Yes | Graph path plus TrustAssertion |
-| Untrusted source caused downstream action | C5 | No | Prohibited causal inference |
-| Receipt unchanged since signing | C3 | Yes | Subject to signature model |
-| Supplied receipt chain links correctly | C1 | Yes | Supplied scope only |
-| Full run history is complete | C5 | No | Not established in v0.1 |
+| Receipt structure is valid | E1 | Yes | Structural only |
+| Object reference resolves | E1 | Yes | Structural |
+| Graph invariants hold | E1 | Yes | Internal consistency |
+| Digest matches supplied representation | E2 | Yes | Representation equality |
+| Fragment matches recorded request range | E2 | Conditional | Requires both representations |
+| Signature is mathematically valid | E3 | Yes | Cryptographic validity only |
+| Public key belongs to organization X | External | No | Key identity outside core v0.1 |
+| Producer states URL X was fetched | E4 | Yes, as an assertion | Does not prove remote origin |
+| SourceObservation digest matches supplied bytes | E2 | Yes | Does not prove source origin |
+| Producer states observed_at = T | E4 | Yes, as an assertion | No trusted timestamp |
+| Producer states request R was transmitted | E4 | Yes, as an assertion | Does not prove Provider receipt |
+| Provider received request R | External / unsupported by core | No | Requires external/provider evidence |
+| Provider internally supplied exactly R to the model | P1 unless future evidence profile exists | No | Core v0.1 must not establish |
+| ModelOutput references ProviderAttempt | E1 + E4 premise | Partial | Link is structural; capture occurrence is asserted |
+| ToolProposal is structurally contained in ModelOutput | E1; E2 if bytes supplied | Yes/conditional | Structure versus representation verification |
+| ToolInvocation differs from ToolProposal | E2 | Conditional | Requires comparable representations |
+| Producer states ToolExecution occurred | E4 | Yes, as an assertion | External/runtime occurrence not independently proven |
+| ToolResult artifact exists | E1 | Yes | Origin/return occurrence may still be E4 |
+| EffectObservation exists with evidence basis | E1 + E4 premise | Partial | Observation record is not external truth |
+| A source carrying TrustAssertion(label="untrusted") is on recorded path | E1 + E4 premise | Yes, with asserted-label wording | Does not establish objective untrustworthiness |
+| Untrusted source caused downstream action | P1 | No | Prohibited causal inference |
+| Receipt signature validates under supplied trusted key | E3 | Yes | Does not prove signer honesty |
+| Supplied receipt linkage is internally valid | E1/E3 depending profile | Conditional | Supplied scope only |
+| Full run history is complete | P1 | No | Not established in core v0.1 |
 
-## 3. Verifier language
+## 5. Verifier language
 
-A verifier SHOULD prefer precise status language such as:
+Preferred status vocabulary includes:
 
 ~~~text
 VALID
@@ -84,12 +146,4 @@ UNKNOWN
 NOT PRESENT IN SUPPLIED RECEIPT
 ~~~
 
-A verifier SHOULD avoid stronger terms such as TRUE, PROVEN, SAFE, TRUSTWORTHY, CAUSED, COMPLETE, or FULLY VERIFIED unless the exact stronger property has actually been established.
-
-In particular:
-
-~~~text
-not present in supplied receipt
-≠
-did not happen
-~~~
+Stronger words such as TRUE, PROVEN, SAFE, TRUSTWORTHY, CAUSED, COMPLETE, or FULLY VERIFIED should only appear if a future profile defines and establishes that exact stronger property.
