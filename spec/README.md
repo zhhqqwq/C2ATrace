@@ -5,13 +5,16 @@ Status: pre-schema specification work.
 ## Current documents
 
 - PHASE-0-FOUNDATIONS.md — reviewed Phase 0 baseline, object taxonomy, relation semantics, graph invariants, and open design gates.
+- PHASE-1-PART-A-SOURCE-SEMANTICS.md — accepted SourceRef / SourceObservation semantics after adversarial review.
 - THREAT-MODEL.md — trust boundaries, adversary assumptions, and numbered normative threat requirements.
 - CLAIMS.md — composable evidence-basis model and numbered verifier-reporting requirements.
-- TERMINOLOGY.md — primarily definitional vocabulary for v0.1.
+- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Phase 1 Part A.
 
 ## Project gate
 
-JSON Schema remains unfrozen until the open Phase 0 design questions are resolved and the resulting object semantics pass adversarial architecture review.
+JSON Schema remains unfrozen. Phase 1 Part A is complete; the current specification focus is Part B: Transform / Derivation semantics.
+
+After Part B, RequestSnapshot / RequestBinding semantics must still be completed and adversarially reviewed before Schema freeze.
 
 ## Normative language discipline
 
