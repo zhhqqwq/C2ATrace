@@ -279,6 +279,16 @@ When content required for representation verification is unavailable, claim stre
 
 ## 7. Observation extent and completeness
 
+### 7.1 Declared Capture Target
+
+A Declared Capture Target is the Producer-described representation scope against which observation extent is stated.
+
+Examples include an HTTP selected response representation, a file object, a database projection, an API page, or another explicitly bounded source representation.
+
+Declaring a capture target is itself Producer-authored scope metadata; choosing a narrow target does not prove that a larger external resource was completely captured.
+
+### 7.2 Observation extent
+
 A SourceObservation represents what was captured at the C2ATrace source boundary.
 
 It does not automatically mean the Producer captured the entire remote resource.
@@ -342,11 +352,11 @@ Within a C2ATrace resolution scope, a verifier MUST use SourceRef identity, not 
 
 Planned test: `source-identity-key-001`.
 
-### SRC-002 — SourceRef definition consistency
+### SRC-002 — SourceRef resolution uniqueness
 
-Within one resolution scope, one SourceRef identity MUST NOT resolve to conflicting SourceRef definitions.
+Within one resolution scope, one SourceRef identity MUST resolve to exactly one SourceRef record.
 
-Planned test: `source-ref-conflict-001`.
+Planned test: `source-ref-resolution-001`.
 
 ### SRC-003 — No locator-based merge
 
@@ -426,7 +436,7 @@ Planned test: `source-version-order-001`.
 
 ### SRC-015 — Commitment basis is explicit
 
-Any content commitment used for representation-level verification MUST identify a commitment method and a representation basis sufficient for a verifier to determine whether two commitments are comparable.
+Any content commitment used for representation-level verification MUST record both a commitment-method identifier and a representation-basis identifier. Comparability is determined by the applicable commitment profile.
 
 Planned test: `source-commitment-basis-001`.
 
