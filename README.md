@@ -40,12 +40,13 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0 is complete after second review. Phase 1 Part A (SourceRef / SourceObservation semantics) is complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
+Specification-first. Phase 0 is complete after second review. Phase 1 Part A (SourceRef / SourceObservation) and Part B (Transform / Derivation) are complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
 
 See:
 
 - [Phase 0 Foundations](spec/PHASE-0-FOUNDATIONS.md)
 - [Phase 1 Part A — Source Semantics](spec/PHASE-1-PART-A-SOURCE-SEMANTICS.md)
+- [Phase 1 Part B — Transform / Derivation](spec/PHASE-1-PART-B-TRANSFORM-DERIVATION.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -59,7 +60,9 @@ See:
 - Conservative over false precision.
 - Integrity is not truth.
 - Execution is not outcome.
-- Transform is not Derivation.
+- Transform use/generation is not Derivation.
+- Control influence is not representation derivation.
+- Selection/forwarding is not generation.
 - Locator equality is not source identity.
 - Content equality is not source identity.
 - Recorded inclusion is not causal responsibility.
@@ -71,4 +74,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-The next phase is Phase 1 Part B: Transform / Derivation semantics. RequestSnapshot / RequestBinding semantics follow after Part B. JSON Schema freeze remains blocked until both have passed adversarial review.
+The next phase is Phase 1 Part C: RequestSnapshot / RequestBinding semantics. JSON Schema freeze remains blocked until Part C and the remaining trust/taint, privacy, and integrity semantics pass their specification gates.
