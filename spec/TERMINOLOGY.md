@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part B aligned.
+Status: Phase 1 Part C aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, and DRV-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, and REQ-* requirements.
 
 ## Artifact
 
@@ -254,33 +254,119 @@ See DRV-013 through DRV-015.
 
 ## RequestSnapshot
 
-An immutable Artifact representing a provider request at one declared capture level.
+An immutable Artifact representing one recorded request representation at exactly one Capture Level.
 
-Candidate capture levels include sdk_arguments, provider_payload, and prepared_http_body. Exact vocabulary remains open under OQ-005.
+Every RequestSnapshot has exactly one Capture-Scope Owner: one ModelInvocation or one ProviderAttempt. Different capture levels remain different RequestSnapshot identities even when their committed representations match.
+
+See REQ-003 through REQ-010.
 
 ## Capture Level
 
 The application-observation boundary represented by a RequestSnapshot.
 
-TM-012 governs how strongly a verifier may describe a request relative to its capture level.
+Core Part C levels are sdk_arguments, provider_payload, prepared_http_body, and unknown.
+
+sdk_arguments is the structured representation at the instrumented SDK/adapter entry boundary. provider_payload is the provider-specific structured payload after recorded application-visible preparation. prepared_http_body is the captured body-byte representation at the instrumented application-side transport boundary.
+
+Capture Level does not establish Provider receipt or provider-internal prompt state.
+
+See TM-012 and REQ-011 through REQ-014.
+
+## Capture-Scope Owner
+
+The ModelInvocation or ProviderAttempt whose scope contains a RequestSnapshot capture.
+
+Invocation-scoped snapshots can be reused only by attempts belonging to that same ModelInvocation. Attempt-scoped snapshots are isolated to their owning attempt.
+
+## Effective RequestSnapshot
+
+The RequestSnapshot designated as the effective representation for one ProviderAttempt at one Capture Level.
+
+One ProviderAttempt has at most one effective snapshot per level, although intermediate snapshots can exist in request-preparation history.
 
 ## RequestBinding
 
-An Assertion recording that a ModelInputComponent is bound into exactly one target RequestSnapshot at some path and, where defined later, range.
+An occurrence-specific Assertion that one ModelInputComponent scope appears at one RequestLocation in exactly one RequestSnapshot.
 
-A RequestBinding can be structurally valid without being representation-verified; see CLAIM-002.
+RequestBinding is capture-level-local. It does not automatically propagate across RequestSnapshot transitions.
+
+See REQ-015 through REQ-019 and REQ-043 through REQ-045.
+
+## RequestLocation
+
+The target scope within one RequestSnapshot.
+
+Part C semantic forms are whole_snapshot, structured_value, structured_text_region, and byte_region. These are semantic categories rather than frozen JSON fields.
+
+## Request Path
+
+A scheme-qualified selector into a structured RequestSnapshot.
+
+For snapshots using the JSON data model, the core interoperable path scheme is json_pointer. A path to a JSON string selects the decoded string value rather than lexical serialized JSON bytes.
+
+See REQ-020 through REQ-023.
+
+## Request Text Region
+
+A RequestBinding Region over decoded text using Unicode scalar value offsets and half-open [start,end) intervals.
+
+The unit is not UTF-8 bytes, UTF-16 code units, grapheme clusters, or JSON escape characters.
+
+See REQ-024 through REQ-026.
+
+## Request Byte Region
+
+A RequestBinding Region over an exact byte-oriented representation using byte offsets and half-open [start,end) intervals.
+
+See REQ-027 through REQ-031.
+
+## Semantic Digest
+
+A digest over canonical bytes produced from a structured RequestSnapshot by an explicitly identified semantic canonicalization profile.
+
+Semantic-digest equality does not imply byte equality.
+
+See REQ-032 through REQ-036.
+
+## Byte Digest
+
+A digest over the exact declared captured byte sequence of a byte-oriented RequestSnapshot.
+
+A prepared_http_body Byte Digest does not prove that the Provider received those bytes.
+
+See REQ-033 through REQ-036 and REQ-046.
+
+## Binding Structural Validity
+
+Evidence that the RequestBinding record, references, location form, path syntax, and Region declarations are structurally valid without establishing that the target sublocation exists in unavailable content.
+
+## Binding Location Resolution
+
+Evidence that the target RequestLocation exists and is in bounds in the target RequestSnapshot, established from the target representation or a recognized proof/profile.
+
+## Binding Commitment Match
+
+Evidence that compatible commitments for the claimed source and target scopes are equal. Commitment matching is distinct from proving that a claimed sublocation is actually contained in a larger hidden RequestSnapshot.
+
+## Binding Representation Verification
+
+Evidence that the verifier can resolve the RequestLocation and verify the claimed source-to-target representation relationship using the required representations or a recognized proof profile.
+
+See CLAIM-002 and REQ-037 through REQ-042.
 
 ## ModelInvocation
 
 A logical Activity representing the application's request to obtain a model result.
 
-It may be associated with zero or more ProviderAttempts.
+It can have zero or more ProviderAttempts and can own invocation-scoped RequestSnapshots.
 
 ## ProviderAttempt
 
-An Activity representing one discrete attempt to invoke a Provider through the instrumented boundary.
+An Activity representing one discrete application-observed attempt to invoke a Provider.
 
-A ProviderAttempt records an application-side attempt; by itself it does not prove Provider receipt or Provider-internal processing.
+Every ProviderAttempt belongs to exactly one ModelInvocation. A ProviderAttempt can designate effective RequestSnapshots at zero or more capture levels. Its existence does not prove Provider receipt or Provider-internal processing.
+
+See REQ-001 through REQ-008.
 
 ## ModelOutput
 
