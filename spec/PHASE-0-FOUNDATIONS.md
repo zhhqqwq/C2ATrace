@@ -64,6 +64,8 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 
 Transform and Derivation are deliberately separate: Transform is an Activity; Derivation is an Assertion.
 
+The diagram is compositional rather than mandatory: a valid path may omit Transform when no transformation is recorded.
+
 ~~~text
 SourceRef
     ▲
@@ -252,7 +254,7 @@ The unresolved items below are explicitly deferred and do not authorize stronger
 
 ## 8. Open questions before Schema freeze
 
-The following MUST be resolved before JSON Schema is frozen:
+Project gate: all of the following are to be resolved before JSON Schema is frozen:
 
 - OQ-001 RequestBinding text-range coordinate system.
 - OQ-002 Binary/media partial binding.
@@ -280,7 +282,7 @@ Terminology: PASS AFTER SECOND REVIEW.
 
 Core Artifact/Event Graph: PASS AFTER SECOND REVIEW WITH OPEN DESIGN ITEMS.
 
-The next specification stage MUST focus on:
+Next specification focus:
 
 ~~~text
 SourceRef / SourceObservation
@@ -290,4 +292,4 @@ Transform / Derivation
 RequestSnapshot / RequestBinding
 ~~~
 
-No JSON Schema freeze or implementation work may begin until those semantics and their adversarial conformance cases are complete.
+Project gate: JSON Schema freeze and implementation remain blocked until those semantics and their adversarial conformance cases are complete.
