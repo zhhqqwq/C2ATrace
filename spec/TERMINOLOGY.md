@@ -140,9 +140,17 @@ Examples may include the captured byte sequence or an explicitly defined canonic
 
 Representation Basis is necessary to determine whether two commitments are comparable.
 
+## Declared Capture Target
+
+The Producer-described representation scope against which SourceObservation extent is stated.
+
+Examples include a selected HTTP response representation, a file object, a database projection, an API page, or another explicitly bounded representation.
+
+The declared scope is Producer-authored metadata and does not independently prove completeness of any broader external resource.
+
 ## Observation Extent
 
-Producer-recorded metadata describing how much of the declared capture target a SourceObservation represents.
+Producer-recorded metadata describing how much of the Declared Capture Target a SourceObservation represents.
 
 Conceptually this may distinguish complete-relative-to-target, partial, and unknown observations.
 
