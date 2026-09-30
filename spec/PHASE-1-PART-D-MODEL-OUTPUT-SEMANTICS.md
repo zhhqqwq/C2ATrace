@@ -295,9 +295,9 @@ Raw provider wire-response snapshots are outside this core object and can be int
 
 Every ModelOutput belongs to exactly one ProviderAttempt.
 
-Core v0.1 designates at most one effective ModelOutput per ProviderAttempt.
+Core v0.1 records zero or one terminal assembled ModelOutput for one ProviderAttempt.
 
-An attempt can have no ModelOutput.
+An attempt can have no ModelOutput. Intermediate streaming/chunk snapshots are not additional core ModelOutputs; they belong to a future streaming-event profile.
 
 ### 7.3 Partial ModelOutput
 
@@ -659,11 +659,11 @@ Every ModelOutput MUST reference exactly one ProviderAttempt.
 
 Planned test: model-output-attempt-owner-001.
 
-### OUT-024 — Effective ModelOutput cardinality
+### OUT-024 — ModelOutput cardinality per attempt
 
-A ProviderAttempt MUST NOT designate more than one effective ModelOutput in core v0.1.
+A ProviderAttempt MUST NOT own more than one core ModelOutput.
 
-Planned test: model-output-effective-cardinality-001.
+Planned test: model-output-cardinality-001.
 
 ### OUT-025 — ModelOutput is application-visible boundary
 
@@ -821,6 +821,24 @@ A verifier MUST NOT use ModelOutput existence by itself as proof that the Provid
 
 Planned test: model-output-no-exact-request-receipt-001.
 
+### OUT-051 — Attempt relationship stays within invocation
+
+Every recorded retry_of, failover_from, hedged_with, or equivalent core attempt relationship MUST connect ProviderAttempts owned by the same ModelInvocation.
+
+Planned test: model-attempt-relation-same-invocation-001.
+
+### OUT-052 — Attempt predecessor relation is not self-referential
+
+A ProviderAttempt MUST NOT identify itself as its own retry_of or failover_from predecessor.
+
+Planned test: model-attempt-relation-no-self-loop-001.
+
+### OUT-053 — Retry/failover predecessor graph is acyclic
+
+The directed predecessor graph formed by retry_of and failover_from relationships within one ModelInvocation MUST be acyclic.
+
+Planned test: model-attempt-predecessor-cycle-001.
+
 ## 16. Adversarial architecture review
 
 ### Review A — First attempt times out, second succeeds
@@ -876,9 +894,9 @@ Result: RESOLVED by OUT-014 through OUT-016.
 
 ### Review E — Hedged attempts overlap in time
 
-Timestamp order does not create retry causality or a total order.
+Timestamp order does not create retry causality or a total order. Any explicit retry/failover/hedge relationship remains within the same ModelInvocation, and retry/failover predecessor links cannot form cycles.
 
-Result: RESOLVED by OUT-012 and OUT-013.
+Result: RESOLVED by OUT-012, OUT-013, and OUT-051 through OUT-053.
 
 ### Review F — Same prompt intentionally called twice
 
@@ -1046,7 +1064,7 @@ Part D locks the following decisions:
 5. One invocation has at most one accepted/effective ModelOutput in core v0.1.
 6. Acceptance does not imply completeness.
 7. Requested, effective-requested, provider-reported, and provider-internal model identities are distinct claim levels.
-8. One ModelOutput belongs to exactly one ProviderAttempt; one attempt has at most one effective core ModelOutput.
+8. One ModelOutput belongs to exactly one ProviderAttempt; one attempt has zero or one core terminal assembled ModelOutput.
 9. ModelOutput is the terminal assembled application-visible result boundary, not raw provider wire response.
 10. Response Termination and Output Capture Extent are independent axes.
 11. Output capture completeness is bounded to application-visible captured content and does not imply provider-internal completeness.
