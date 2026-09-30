@@ -1,12 +1,12 @@
 # C2ATrace v0.1 Threat Model
 
-Status: Phase 0 baseline.
+Status: Phase 0 baseline, second-review revision.
 
 ## 1. Fundamental security model
 
 C2ATrace describes Producer-recorded provenance, not objective reality itself.
 
-The protocol MUST preserve the following distinctions:
+The model is founded on these distinctions:
 
 ~~~text
 recorded ≠ true
@@ -17,6 +17,8 @@ trusted ≠ objectively trustworthy
 tainted ≠ malicious
 tool succeeded ≠ desired outcome achieved
 ~~~
+
+The numbered requirements below enforce the machine-testable parts of those boundaries.
 
 ## 2. Actors and trust boundaries
 
@@ -30,11 +32,11 @@ Captures sources, transformations, provider requests, model outputs, and tool ac
 
 ### Provider Adapter
 
-Captures the application-side provider boundary. It may record RequestSnapshot, ProviderAttempt, and ModelOutput, but MUST NOT claim visibility into provider-internal state without separate evidence.
+Captures the application-side provider boundary. It records application-visible evidence only.
 
 ### Model Provider
 
-Provider-internal instructions, rewriting, routing, model selection, server-side retries, safety transforms, provider-added tools, and internal model representations are unknown unless separately evidenced.
+Provider-internal instructions, rewriting, routing, model selection, server-side retries, safety transforms, provider-added tools, and internal model representations are outside the default visibility boundary.
 
 ### Tool Runtime
 
@@ -42,15 +44,15 @@ Executes ToolInvocation. Tool-runtime success and returned data are recorded evi
 
 ### Signer
 
-A valid signature establishes that the corresponding private-key holder authenticated a representation. It does not establish Producer honesty, capture completeness, factual correctness, or trusted wall-clock time.
+A valid signature authenticates a defined representation under a public key. It does not by itself establish Producer honesty, capture completeness, factual correctness, trusted wall-clock time, or real-world identity of the key holder.
 
 ### Verifier
 
-Checks syntax, graph structure, references, digests, signatures, and semantic invariants. It MUST NOT silently strengthen claims beyond their evidence.
+Checks syntax, graph structure, references, representations, digests, signatures, and semantic invariants. It does not silently strengthen claim scope.
 
-## 3. In-scope failure classes
+## 3. Failure/adversary cases considered
 
-C2ATrace v0.1 MUST safely represent or reject, as appropriate:
+Phase 0 is designed to avoid false precision when confronted with:
 
 - malicious external content
 - incorrect source metadata
@@ -73,10 +75,10 @@ C2ATrace v0.1 MUST safely represent or reject, as appropriate:
 
 C2ATrace v0.1 does not establish:
 
-- malicious Producer omission resistance
+- resistance to malicious Producer omission
 - security under a fully compromised process
 - signing-key non-compromise
-- public-key identity
+- public-key real-world identity
 - trusted wall-clock time
 - provider-internal visibility
 - model hidden reasoning
@@ -92,66 +94,74 @@ C2ATrace v0.1 does not establish:
 
 ### TM-001 — Integrity / truth / completeness separation
 
-An implementation MUST distinguish integrity, truth, and completeness.
+A conforming verifier MUST NOT report integrity success as establishing factual truth or capture completeness.
 
-Planned test: verifier-wording-001.
+Planned test: `verifier-wording-001`.
 
 ### TM-002 — No causal inference
 
-A verifier MUST NOT infer model causal responsibility merely from a provenance path.
+A conforming verifier MUST NOT infer model causal responsibility merely from a provenance path.
 
-Planned test: causality-negative-001.
+Planned test: `causality-negative-001`.
 
 ### TM-003 — Unknown is first-class
 
-Where the specification permits unknown provenance, trust, derivation, or effect state, a conforming implementation MUST accept and preserve unknown.
+Where the specification permits unknown provenance, trust, derivation, effect basis, or provider-internal state, a conforming implementation MUST preserve that unknown state rather than replace it with a stronger value.
 
-Planned test: unknown-valid-001.
+Planned test: `unknown-valid-001`.
 
 ### TM-004 — Producer assertion is not independent verification
 
-A verifier MUST NOT upgrade a Producer-asserted external fact to independently verified merely because receipt integrity or signature verification succeeds.
+A conforming verifier MUST NOT upgrade a Producer-asserted external fact to independently verified merely because representation integrity or signature verification succeeds.
 
-Planned test: producer-assertion-001.
+Planned test: `producer-assertion-001`.
 
 ### TM-005 — Provider attempts are distinct
 
-Each recorded ProviderAttempt MUST have a distinct identity. A retry MUST NOT overwrite a prior attempt.
+Each recorded ProviderAttempt MUST have a distinct identity. A retry MUST NOT overwrite or reuse a prior ProviderAttempt identity.
 
-Planned test: provider-retry-001.
+Planned test: `provider-retry-001`.
 
 ### TM-006 — Effective invocation is explicit
 
 When an application may modify, supplement, validate, or normalize proposed tool arguments, the protocol MUST be able to represent the final effective ToolInvocation separately from ToolProposal.
 
-Planned test: tool-enrichment-001.
+Planned test: `tool-enrichment-001`.
 
 ### TM-007 — No execution without an execution attempt
 
 If a ToolProposal is rejected before execution begins, a ToolExecution MUST NOT be created solely to encode that rejection.
 
-Planned test: tool-denied-001.
+Planned test: `tool-denied-001`.
 
 ### TM-008 — Execution is not effect
 
-A successful ToolExecution MUST NOT automatically establish external Effect truth.
+A successful ToolExecution MUST NOT, by itself, establish external Effect truth or desired-outcome success.
 
-Planned test: tool-success-no-effect-001.
+Planned test: `tool-success-no-effect-001`.
 
-### TM-009 — Chain validity is not global completeness
+### TM-009 — Supplied linkage is not global completeness
 
-A verifier MAY report that the supplied receipt chain is valid, but MUST NOT infer that no earlier, later, or omitted receipts exist.
+If an implementation supports linkage among multiple Receipts, a verifier MUST NOT infer from valid supplied linkage that no earlier, later, or omitted Receipt exists.
 
-Planned test: chain-truncation-001.
+Planned test: `chain-truncation-001`.
 
 ### TM-010 — Provider internals default to unknown
 
-Provider-internal state MUST remain unknown unless supported by separate provider-originated or otherwise independently acceptable evidence.
+In core v0.1, a verifier MUST report provider-internal processing state as UNKNOWN unless a future recognized evidence profile explicitly defines how that state is established.
 
-Planned test: provider-hidden-state-001.
+Planned test: `provider-hidden-state-001`.
 
 ### TM-011 — Explicit dependency ordering dominates timestamps
 
-Wall-clock timestamps MUST NOT be used as the sole basis to override contradictory explicit provenance dependencies. A verifier SHOULD report timestamp inconsistency.
+A verifier MUST NOT use wall-clock timestamp ordering to override contradictory explicit provenance dependencies.
 
-Planned test: timestamp-conflict-001.
+Planned test: `timestamp-conflict-001`.
+
+### TM-012 — Capture-level bounded claims
+
+A verifier MUST NOT report a request claim at a stronger boundary than the RequestSnapshot capture level supports.
+
+Examples: a provider_payload snapshot does not establish exact transmitted bytes or provider-internal model input.
+
+Planned test: `capture-level-overclaim-001`.
