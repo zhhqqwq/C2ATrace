@@ -36,7 +36,7 @@ The verifier may validate the assertion's syntax, references, and integrity with
 
 ### P1 — PROHIBITED_INFERENCE
 
-Not an evidence basis. This marks a conclusion that core C2ATrace v0.1 MUST NOT automatically derive from weaker premises.
+P1 is not an evidence basis. It marks conclusions that core C2ATrace v0.1 does not automatically derive from weaker premises.
 
 Examples:
 
@@ -47,9 +47,13 @@ Examples:
 - tool success means the intended outcome succeeded.
 - valid supplied receipt linkage means the full history is complete.
 
-## 2. Composition rule
+## 2. Normative claim-reporting requirements
 
-A claim MAY depend on multiple evidence tags. Reporting MUST preserve the weakest unresolved premise.
+### CLAIM-000 — Evidence composition
+
+A claim MAY depend on multiple evidence tags. A verifier MUST preserve the weakest unresolved premise when reporting the composed claim.
+
+Planned test: `claim-composition-001`.
 
 For example:
 
@@ -64,8 +68,6 @@ verified statement:
 not:
   "an objectively untrusted source is on the path"
 ~~~
-
-## 3. Normative claim-reporting requirements
 
 ### CLAIM-001 — No evidence-basis upgrade
 
@@ -102,7 +104,7 @@ A verifier MUST NOT transform inclusion, derivation, taint ancestry, or graph re
 
 Planned test: `claim-causality-001`.
 
-## 4. Claim matrix
+## 3. Claim matrix
 
 | Claim | Evidence basis | Offline verifier | Meaning |
 |---|---|---:|---|
@@ -118,11 +120,11 @@ Planned test: `claim-causality-001`.
 | Producer states observed_at = T | E4 | Yes, as an assertion | No trusted timestamp |
 | Producer states request R was transmitted | E4 | Yes, as an assertion | Does not prove Provider receipt |
 | Provider received request R | External / unsupported by core | No | Requires external/provider evidence |
-| Provider internally supplied exactly R to the model | P1 unless future evidence profile exists | No | Core v0.1 must not establish |
+| Provider internally supplied exactly R to the model | P1 unless future evidence profile exists | No | Core v0.1 does not establish |
 | ModelOutput references ProviderAttempt | E1 + E4 premise | Partial | Link is structural; capture occurrence is asserted |
 | ToolProposal is structurally contained in ModelOutput | E1; E2 if bytes supplied | Yes/conditional | Structure versus representation verification |
 | ToolInvocation differs from ToolProposal | E2 | Conditional | Requires comparable representations |
-| Producer states ToolExecution occurred | E4 | Yes, as an assertion | External/runtime occurrence not independently proven |
+| Producer states ToolExecution occurred | E4 | Yes, as an assertion | Runtime occurrence not independently proven |
 | ToolResult artifact exists | E1 | Yes | Origin/return occurrence may still be E4 |
 | EffectObservation exists with evidence basis | E1 + E4 premise | Partial | Observation record is not external truth |
 | A source carrying TrustAssertion(label="untrusted") is on recorded path | E1 + E4 premise | Yes, with asserted-label wording | Does not establish objective untrustworthiness |
@@ -131,7 +133,7 @@ Planned test: `claim-causality-001`.
 | Supplied receipt linkage is internally valid | E1/E3 depending profile | Conditional | Supplied scope only |
 | Full run history is complete | P1 | No | Not established in core v0.1 |
 
-## 5. Verifier language
+## 4. Verifier language
 
 Preferred status vocabulary includes:
 
