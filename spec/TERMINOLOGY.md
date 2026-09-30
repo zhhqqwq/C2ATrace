@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 0 baseline, second-review revision.
+Status: Phase 1 Part A aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, and GRAPH-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, and SRC-* requirements.
 
 ## Artifact
 
@@ -18,7 +18,7 @@ Core Activity types currently include Transform, ModelInvocation, ProviderAttemp
 
 A recorded claim about an object, relation, or property. Assertion presence does not establish external truth.
 
-Core Assertion types currently include Derivation, RequestBinding, TrustAssertion, and TaintAssertion.
+Core Assertion types currently include Derivation, RequestBinding, TrustAssertion, and TaintAssertion. Source alias and source-origin relationships are also treated as assertions when recorded.
 
 ## Reference
 
@@ -64,17 +64,91 @@ Inclusion is represented by RequestBinding. CLAIM-002 distinguishes structural v
 
 ## SourceRef
 
-A logical source identity or locator, such as a URL, app URI, user-message URI, or RAG-document URI.
+A Reference that provides C2ATrace's protocol-level identity for one recorded logical source inside a resolution scope.
 
-SourceRef is a Reference, not the exact bytes observed during a particular run.
+SourceRef identity is distinct from locator equality, content equality, real-world resource identity, and external source-version identity.
+
+The external truth of the Producer's source grouping is not established merely because records share a SourceRef.
+
+See SRC-001 through SRC-005 and SRC-022.
+
+## Source Locator
+
+An address, identifier string, or access reference associated with a SourceRef or a particular SourceObservation acquisition.
+
+Examples include URLs, app-specific URIs, file URIs, user-message identifiers, and RAG-document identifiers.
+
+A locator is not the protocol-level identity key for SourceRef.
+
+## Locator Resolution Trace
+
+Producer-recorded information describing how a requested locator resolved through zero or more redirect or resolver steps to an effective locator.
+
+A Locator Resolution Trace describes an access path, not source-identity equivalence.
+
+See SRC-006 and SRC-007.
+
+## Source Alias Assertion
+
+A Producer assertion that distinct SourceRefs or locators are treated as aliases for some application purpose.
+
+An alias assertion does not collapse SourceRef identities or prior provenance histories in core v0.1.
+
+See SRC-008.
 
 ## SourceObservation
 
-An immutable Artifact containing the Producer-recorded representation claimed to have been observed from a SourceRef during execution.
+An immutable Artifact representing one recorded capture occurrence of a representation associated with exactly one SourceRef.
 
-One SourceRef may have multiple SourceObservations.
+A SourceObservation is not a universal source-version number. Separate capture occurrences can have separate SourceObservation identities even when their content commitments or external validators match.
 
-The digest of a SourceObservation can bind supplied bytes without independently proving that those bytes originated from the claimed SourceRef.
+The same previously captured SourceObservation can be referenced again when no new capture occurrence is recorded.
+
+See SRC-009 through SRC-012.
+
+## Capture Occurrence
+
+The Producer-recorded event boundary that gives rise to a SourceObservation.
+
+Capture occurrence identity is distinct from content equality and external version metadata.
+
+Part A does not define a separate CaptureOccurrence protocol object; the term describes SourceObservation identity semantics.
+
+## Source Version Hint
+
+External metadata reported or observed for a source representation, such as an ETag, Last-Modified value, revision ID, database row version, document version, object generation, or commit identifier.
+
+A Source Version Hint is observation metadata rather than SourceObservation identity.
+
+Core v0.1 does not assign generic total-order semantics to such hints.
+
+See SRC-013 and SRC-014.
+
+## Content Commitment
+
+Metadata binding a SourceObservation to a declared representation under a specified commitment method and representation basis.
+
+A matching compatible Content Commitment supports a representation-level match claim. It does not establish SourceRef identity, SourceObservation identity, capture-occurrence identity, locator equality, or external origin.
+
+See SRC-015 through SRC-018.
+
+## Representation Basis
+
+A declaration of the representation to which a Content Commitment applies.
+
+Examples may include the captured byte sequence or an explicitly defined canonical encoding of captured text.
+
+Representation Basis is necessary to determine whether two commitments are comparable.
+
+## Observation Extent
+
+Producer-recorded metadata describing how much of the declared capture target a SourceObservation represents.
+
+Conceptually this may distinguish complete-relative-to-target, partial, and unknown observations.
+
+"Complete" is still a Producer assertion relative to the declared capture target, not proof that the entire external resource was captured.
+
+See SRC-019 and SRC-020.
 
 ## ContextFragment
 
@@ -207,6 +281,8 @@ Exact lattice and propagation rules remain open under OQ-011 and OQ-012.
 A first-class state meaning the available record does not justify a more specific claim.
 
 Unknown is semantically distinct from false, safe, trusted, untrusted, empty, and an accidentally missing field.
+
+For source identity, distinct unknown SourceRefs remain distinct recorded logical identities unless an explicit relationship is later asserted.
 
 ## Run
 
