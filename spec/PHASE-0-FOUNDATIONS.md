@@ -81,8 +81,11 @@ Transform
     ▼
 ContextFragment / ModelInputComponent
 
-Optional explicit assertion:
+Optional display shorthand:
 ContextFragment ── derived_from ──> SourceObservation
+
+Part B refinement:
+Derivation is semantically a qualified Assertion with one target output, one generating Transform, and one or more contributing inputs. The binary edge above is only the one-input shorthand.
 
 ModelInputComponent
     │
@@ -119,7 +122,8 @@ A Transform using an Artifact and generating another Artifact does not, by itsel
 | observed_from | SourceObservation | SourceRef | Assertion |
 | uses | Activity | Artifact | Provenance relation |
 | generates | Activity | Artifact | Provenance relation |
-| derived_from | Artifact | Artifact | Derivation Assertion |
+| derived_from | Artifact(s) | Artifact | Derivation Assertion; binary rendering is shorthand for the qualified Part B form |
+| selects_or_forwards | Transform | Artifact | Existing Artifact selected/forwarded without generation |
 | bound_into | ModelInputComponent | RequestSnapshot | RequestBinding Assertion |
 | uses_request | ProviderAttempt | RequestSnapshot | Provenance relation |
 | attempt_of | ProviderAttempt | ModelInvocation | Structural/provenance relation |
@@ -258,8 +262,8 @@ Project gate: all of the following are to be resolved before JSON Schema is froz
 
 - OQ-001 RequestBinding text-range coordinate system.
 - OQ-002 Binary/media partial binding.
-- OQ-003 Exact / partial / approximate derivation vocabulary.
-- OQ-004 Split / concat / truncation range lineage.
+- OQ-003 RESOLVED by Phase 1 Part B: exact and partial are positive derivation precision states; unknown is not a positive Derivation Assertion.
+- OQ-004 RESOLVED at semantic level by Phase 1 Part B: split / concat / truncation use qualified Region lineage; concrete Region selector vocabularies remain open.
 - OQ-005 RequestSnapshot capture-level transition model.
 - OQ-006 Semantic digest versus byte digest.
 - OQ-007 Hash-only verification strength for RequestBinding.
@@ -282,14 +286,17 @@ Terminology: PASS AFTER SECOND REVIEW.
 
 Core Artifact/Event Graph: PASS AFTER SECOND REVIEW WITH OPEN DESIGN ITEMS.
 
-Next specification focus:
+Specification progress:
 
 ~~~text
 SourceRef / SourceObservation
-        ↓
+        ✓ Phase 1 Part A
+
 Transform / Derivation
-        ↓
+        ✓ Phase 1 Part B
+
 RequestSnapshot / RequestBinding
+        ← Phase 1 Part C
 ~~~
 
 Project gate: JSON Schema freeze and implementation remain blocked until those semantics and their adversarial conformance cases are complete.
