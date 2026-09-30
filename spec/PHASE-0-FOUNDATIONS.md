@@ -46,10 +46,10 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 | Derivation | Assertion | Explicit artifact-to-artifact ancestry claim |
 | RequestBinding | Assertion | Occurrence-specific, capture-level-local inclusion claim relative to one RequestSnapshot |
 | RequestSnapshot | Artifact | Request representation at one capture level with one capture-scope owner |
-| ModelInvocation | Activity | Logical application-level model invocation |
-| ProviderAttempt | Activity | One discrete provider attempt |
-| ModelOutput | Artifact | Application-visible output representation |
-| OutputItem | Artifact abstraction | Item contained in ModelOutput |
+| ModelInvocation | Activity | Logical application-level model invocation; can contain multiple physical attempts |
+| ProviderAttempt | Activity | One discrete application-observed provider attempt |
+| ModelOutput | Artifact | Terminal assembled application-visible model-result representation for one ProviderAttempt |
+| OutputItem | Artifact abstraction | Occurrence-identified item contained in one ModelOutput |
 | ToolProposal | Artifact | OutputItem subtype |
 | ToolInvocation | Artifact | Effective tool invocation before execution |
 | ToolExecution | Activity | Actual execution attempt |
@@ -96,6 +96,7 @@ RequestSnapshot
 ProviderAttempt ── uses_request ──> RequestSnapshot
 ProviderAttempt ── attempt_of ────> ModelInvocation
 ProviderAttempt ── produces ──────> ModelOutput
+ModelInvocation ── accepted_output ─> ModelOutput  (optional, at most one)
 ModelOutput ────── contains ──────> OutputItem / ToolProposal
 
 ToolProposal
@@ -127,7 +128,9 @@ A Transform using an Artifact and generating another Artifact does not, by itsel
 | bound_into | ModelInputComponent | RequestSnapshot | RequestBinding Assertion |
 | uses_request | ProviderAttempt | RequestSnapshot | Effective request-snapshot association at a declared capture level |
 | attempt_of | ProviderAttempt | ModelInvocation | Structural/provenance relation |
+| retry_of / failover_from / hedged_with | ProviderAttempt | ProviderAttempt | Optional Producer-asserted orchestration relation within one ModelInvocation |
 | produces | ProviderAttempt | ModelOutput | Provenance relation |
+| accepted_output | ModelInvocation | ModelOutput | Producer-asserted selected logical result |
 | contains | ModelOutput | OutputItem | Structural composition |
 | uses_invocation | ToolExecution | ToolInvocation | Provenance relation |
 | returns | ToolExecution | ToolResult | Provenance relation |
@@ -268,7 +271,7 @@ Project gate: all of the following are to be resolved before JSON Schema is froz
 - OQ-006 RESOLVED at semantic level by Phase 1 Part C: semantic digest commits a profile-canonicalized structured representation; byte digest commits exact captured bytes; concrete algorithms remain later profile work.
 - OQ-007 RESOLVED by Phase 1 Part C: hash-only sublocations are not location-resolved or representation-verified without the target representation or a recognized inclusion proof.
 - OQ-008 ToolInvocation argument-level provenance.
-- OQ-009 ModelOutput multi-item / streaming profile.
+- OQ-009 RESOLVED at core semantic level by Phase 1 Part D: one attempt has zero or one terminal assembled ModelOutput; OutputItems are occurrence-identified; streaming chunk evidence is deferred to a future profile while response termination and output capture extent remain separate.
 - OQ-010 TrustAssertion subjects and vocabulary.
 - OQ-011 Taint lattice and propagation rules.
 - OQ-012 Sanitization semantics and anti-laundering constraints.
@@ -299,6 +302,9 @@ RequestSnapshot / RequestBinding
         ✓ Phase 1 Part C
 
 ModelInvocation / ProviderAttempt / ModelOutput
+        ✓ Phase 1 Part D
+
+ToolProposal / ToolInvocation / ToolExecution / ToolResult / EffectObservation
         ← next semantic focus
 ~~~
 
