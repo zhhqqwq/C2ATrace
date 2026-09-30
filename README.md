@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0 is complete after second review. Phase 1 Parts A (SourceRef / SourceObservation), B (Transform / Derivation), and C (RequestSnapshot / RequestBinding) are complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
+Specification-first. Phase 0 is complete after second review. Phase 1 Parts A (SourceRef / SourceObservation), B (Transform / Derivation), C (RequestSnapshot / RequestBinding), and D (ModelInvocation / ProviderAttempt / ModelOutput) are complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
 
 See:
 
@@ -48,6 +48,7 @@ See:
 - [Phase 1 Part A — Source Semantics](spec/PHASE-1-PART-A-SOURCE-SEMANTICS.md)
 - [Phase 1 Part B — Transform / Derivation](spec/PHASE-1-PART-B-TRANSFORM-DERIVATION.md)
 - [Phase 1 Part C — Request Semantics](spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md)
+- [Phase 1 Part D — Model Invocation / Output](spec/PHASE-1-PART-D-MODEL-OUTPUT-SEMANTICS.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -69,6 +70,9 @@ See:
 - RequestBinding is capture-level-local.
 - Prepared HTTP body capture is not Provider receipt.
 - Hash-only commitment equality is not hidden sublocation proof.
+- Attempt completion is not output capture completeness.
+- Accepted output is not complete output.
+- Requested/reported model identity is not provider-internal model identity.
 - Recorded inclusion is not causal responsibility.
 - Every numbered normative requirement maps to a planned conformance test.
 
@@ -78,4 +82,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-The next semantic phase defines ModelInvocation / ProviderAttempt / ModelOutput behavior. JSON Schema freeze remains blocked until the remaining model-output, tool/effect, trust/taint, privacy, integrity/receipt, adapter, and verifier semantics pass their specification gates.
+The next semantic phase is Part E: ToolProposal / ToolInvocation / ToolExecution / ToolResult / EffectObservation. JSON Schema freeze remains blocked until the remaining tool/effect, trust/taint, privacy, integrity/receipt, adapter, and verifier semantics pass their specification gates.
