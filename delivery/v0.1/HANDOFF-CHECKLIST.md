@@ -31,11 +31,11 @@
 
 ~~~text
 requirements / mapped cases      907 / 907
-executable cases                 102
+executable cases                 136
 accepted cases                     6
 
 direct_schema                     6 / 6 accepted
-mixed_schema_semantic            53 / 87 executable
+mixed_schema_semantic            87 / 87 executable
 deterministic_vector             43 / 43 executable
 semantic_verifier               771 total
 ~~~
@@ -108,7 +108,7 @@ Golden matcher 只比较规范性字段，例如：
 ## G. 推荐执行顺序
 
 - [x] 完成 deterministic_vector materialization（43 / 43 executable；runner acceptance pending）。
-- [ ] 完成 mixed_schema_semantic 剩余 wave。
+- [x] 完成 mixed_schema_semantic materialization（87 / 87 executable；runner acceptance pending）。
 - [ ] 建立 reusable semantic scenario primitives。
 - [ ] 批量 materialize semantic_verifier cases。
 - [ ] 完成 expected VerificationFinding matcher。

@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-01  
-状态基线提交：`c3bf0b50458677241336b6360e2d1b6b7cdbbc56`
+状态基线提交：`55879decbe8fe3bcb98e51a5da839934544bfe6e`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases   102
+executable cases   136
 accepted cases       6
 ~~~
 
@@ -475,7 +475,7 @@ accepted cases       6
 | Layer | Total | Executable / Accepted state |
 |---|---:|---|
 | direct_schema | 6 | 6 accepted |
-| mixed_schema_semantic | 87 | 53 executable，34 remaining |
+| mixed_schema_semantic | 87 | 87 executable，0 remaining；acceptance pending |
 | semantic_verifier | 771 | 当前尚处大规模 materialization 前期 |
 | deterministic_vector | 43 | 43 executable，0 remaining；acceptance pending |
 
@@ -537,11 +537,12 @@ materialization complete; runner acceptance pending
 当前：
 
 ~~~text
-53 / 87 executable
-34 remaining
+87 / 87 executable
+0 remaining
+materialization complete; runner acceptance pending
 ~~~
 
-已经开始覆盖：
+已覆盖：
 
 - ownership/cardinality；
 - request capture-level vocabulary；
@@ -563,7 +564,19 @@ materialization complete; runner acceptance pending
 - ToolExecution / ToolResult ownership；
 - EffectObservation evidence basis；
 - ToolDecision subject；
-- CaptureDiagnostic scope 等。
+- CaptureDiagnostic scope；
+- Derivation partial/region/many-to-one contributor semantics；
+- attempt-scoped / invocation-scoped RequestSnapshot boundaries；
+- request preparation level ordering；
+- binding occurrence / partial source scope；
+- proposal-to-invocation explicit lineage；
+- redaction Transform/Derivation lineage；
+- Provider request snapshot-or-diagnostic behavior；
+- Tool argument rewrite effective value；
+- effect capability / bounded proposition / separate observation / external attestation；
+- explicit ToolInvocation capture degradation；
+- non-1:1 proposal→invocation cardinality；
+- verifier profile dispatch / resolver evidence / key-relative signature / resolver attribution。
 
 ### 9.6 semantic verifier
 
@@ -766,16 +779,16 @@ v0.1 Schema 已冻结。
 
 ### Stage C3 — mixed_schema_semantic
 
-继续完成：
+状态：
+
+> MATERIALIZATION COMPLETE / ACCEPTANCE PENDING
 
 ~~~text
-34 remaining
+87 / 87 executable
+0 remaining
 ~~~
 
-每条必须同时覆盖：
-
-- 适用的 JSON Schema 层；
-- semantic verifier 层。
+全部 mixed-schema-semantic requirements 已覆盖适用 JSON Schema 层与 semantic verifier 层。下一步等待独立 runner 与后续 cross-language normalized equivalence acceptance。
 
 ### Stage C4 — semantic_verifier case materialization
 
@@ -1002,12 +1015,12 @@ FULLY VERIFIED
 当前最合适的执行顺序：
 
 ~~~text
-1. 完成 mixed_schema_semantic 剩余 34 cases
-2. 建立 semantic_verifier reusable scenario primitives
-3. 批量 materialize semantic cases
+1. 建立 semantic_verifier reusable scenario primitives
+2. 批量 materialize 771 semantic_verifier cases
+3. 完成 expected VerificationFinding matcher
 4. 实现独立 conformance runner A
 5. 实现第二语言 runner B
-6. 执行 deterministic_vector acceptance
+6. 执行 deterministic_vector / mixed acceptance
 7. 907/907 acceptance audit
 8. Conformance Suite Gate
 9. 解锁 Product Independent Verifier
