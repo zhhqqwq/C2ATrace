@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TRUST-017",
+      "check_id": "trust-signature-no-truth-upgrade-001",
+      "subject_selector": {
+        "receipt_id": "receipt-trust-signed-001",
+        "object_id": "trust-signed-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:valid_signature_upgrades_trust_judgement_to_objective_truth"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TRUST-017"
+  ],
+  "planned_test_ids": [
+    "trust-signature-no-truth-upgrade-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A valid receipt signature authenticates the recorded TrustAssertion but does not make the trust judgement objectively correct.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/trust-signed-valid.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [
+      "verification_keys"
+    ],
+    "verifier_goals": [
+      "TRUST-017"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-trust-017",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TRUST-017"
+    ],
+    "verification_keys": [
+      "test-ed25519-key-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.trust.assertion, prim.integrity.composition, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001.json"
+}

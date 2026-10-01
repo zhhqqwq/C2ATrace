@@ -1231,10 +1231,43 @@
         "VFY-126",
         "VFY-145"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_04_materialized",
+      "executable_primary_requirement_count": 17,
       "wave_01_primary_requirements": [],
-      "wave_01_dependency_requirements": []
+      "wave_01_dependency_requirements": [],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/trust-self-subject.json",
+        "conformance/v0.1/primitives/receipts/trust-cross-policy.json",
+        "conformance/v0.1/primitives/receipts/trust-unknown.json",
+        "conformance/v0.1/primitives/receipts/trust-conflict.json",
+        "conformance/v0.1/primitives/receipts/trust-source-only.json",
+        "conformance/v0.1/primitives/receipts/trust-upstream-only.json",
+        "conformance/v0.1/primitives/receipts/trust-modeloutput-only.json",
+        "conformance/v0.1/primitives/receipts/trust-request-only.json",
+        "conformance/v0.1/primitives/receipts/trust-tool-proposal-only.json",
+        "conformance/v0.1/primitives/receipts/trust-taint-independent.json",
+        "conformance/v0.1/primitives/receipts/trust-region-only.json",
+        "conformance/v0.1/primitives/receipts/trust-signed-valid.json"
+      ],
+      "wave_04_primary_requirements": [
+        "TRUST-002",
+        "TRUST-008",
+        "TRUST-009",
+        "TRUST-010",
+        "TRUST-011",
+        "TRUST-012",
+        "TRUST-013",
+        "TRUST-014",
+        "TRUST-015",
+        "TRUST-016",
+        "TRUST-017",
+        "TRUST-018",
+        "TRUST-019",
+        "TRUST-020",
+        "TRUST-021",
+        "TRUST-023",
+        "TRUST-024"
+      ]
     },
     {
       "id": "prim.taint.flow",
@@ -2300,7 +2333,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 184,
-  "remaining_semantic_requirements": 587,
-  "materialization_wave": "03-tool-b"
+  "executable_semantic_requirements": 201,
+  "remaining_semantic_requirements": 570,
+  "materialization_wave": "04-trust"
 }

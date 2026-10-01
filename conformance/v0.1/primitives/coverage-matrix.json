@@ -9651,7 +9651,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-002-trust-no-self-subject-001"
     },
     {
       "family": "trust",
@@ -9679,7 +9681,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.trust.assertion",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001"
     },
     {
       "family": "trust",
@@ -9694,7 +9698,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-009-trust-unknown-preserved-001"
     },
     {
       "family": "trust",
@@ -9709,7 +9715,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-010-trust-absence-not-state-001"
     },
     {
       "family": "trust",
@@ -9724,7 +9732,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-011-trust-wording-bounded-001"
     },
     {
       "family": "trust",
@@ -9737,7 +9747,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.trust.assertion",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-012-trust-source-no-inheritance-001"
     },
     {
       "family": "trust",
@@ -9752,7 +9764,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-013-trust-derivation-no-inheritance-001"
     },
     {
       "family": "trust",
@@ -9765,7 +9779,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.trust.assertion",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-014-trust-containment-no-inheritance-001"
     },
     {
       "family": "trust",
@@ -9780,7 +9796,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-015-trust-request-output-no-inheritance-001"
     },
     {
       "family": "trust",
@@ -9795,7 +9813,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-016-trust-tool-chain-no-inheritance-001"
     },
     {
       "family": "trust",
@@ -9811,7 +9831,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001"
     },
     {
       "family": "trust",
@@ -9826,7 +9848,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-018-trust-no-implicit-taint-001"
     },
     {
       "family": "trust",
@@ -9841,7 +9865,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-019-trust-no-taint-conversion-001"
     },
     {
       "family": "trust",
@@ -9856,7 +9882,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-020-trust-no-tool-authorization-001"
     },
     {
       "family": "trust",
@@ -9871,7 +9899,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-021-trust-conflict-preserved-001"
     },
     {
       "family": "trust",
@@ -9901,7 +9931,9 @@
       "primary_primitive": "prim.trust.assertion",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-023-trust-unknown-authority-wording-001"
     },
     {
       "family": "trust",
@@ -9917,7 +9949,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-024-trust-region-no-whole-upgrade-001"
     },
     {
       "family": "trust",
@@ -12126,6 +12160,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 184,
-  "remaining_semantic_requirements": 587
+  "executable_semantic_requirements": 201,
+  "remaining_semantic_requirements": 570
 }

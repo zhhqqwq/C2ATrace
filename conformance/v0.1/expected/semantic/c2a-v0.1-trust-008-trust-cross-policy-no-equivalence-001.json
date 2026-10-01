@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TRUST-008",
+      "check_id": "trust-cross-policy-no-equivalence-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "trust-policy-b"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:cross_policy_trust_labels_are_equivalent"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

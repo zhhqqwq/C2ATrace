@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-trust-010-trust-absence-not-state-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TRUST-010"
+  ],
+  "planned_test_ids": [
+    "trust-absence-not-state-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The baseline receipt contains no TrustAssertion; absence is not an explicit trust state.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TRUST-010"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-trust-010",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TRUST-010"
+    ]
+  },
+  "notes": [
+    "primitives: prim.trust.assertion, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-010-trust-absence-not-state-001.json"
+}

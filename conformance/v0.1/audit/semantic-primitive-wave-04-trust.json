@@ -1,0 +1,48 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-04-trust",
+  "status": "complete",
+  "total_semantic_requirements": 771,
+  "newly_materialized": [
+    "c2a-v0.1-trust-002-trust-no-self-subject-001",
+    "c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001",
+    "c2a-v0.1-trust-009-trust-unknown-preserved-001",
+    "c2a-v0.1-trust-010-trust-absence-not-state-001",
+    "c2a-v0.1-trust-011-trust-wording-bounded-001",
+    "c2a-v0.1-trust-012-trust-source-no-inheritance-001",
+    "c2a-v0.1-trust-013-trust-derivation-no-inheritance-001",
+    "c2a-v0.1-trust-014-trust-containment-no-inheritance-001",
+    "c2a-v0.1-trust-015-trust-request-output-no-inheritance-001",
+    "c2a-v0.1-trust-016-trust-tool-chain-no-inheritance-001",
+    "c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001",
+    "c2a-v0.1-trust-018-trust-no-implicit-taint-001",
+    "c2a-v0.1-trust-019-trust-no-taint-conversion-001",
+    "c2a-v0.1-trust-020-trust-no-tool-authorization-001",
+    "c2a-v0.1-trust-021-trust-conflict-preserved-001",
+    "c2a-v0.1-trust-023-trust-unknown-authority-wording-001",
+    "c2a-v0.1-trust-024-trust-region-no-whole-upgrade-001"
+  ],
+  "trust_primary_requirements": 17,
+  "executable_semantic_requirements": 201,
+  "remaining_semantic_requirements": 570,
+  "reusable_receipts": [
+    "conformance/v0.1/primitives/receipts/trust-self-subject.json",
+    "conformance/v0.1/primitives/receipts/trust-cross-policy.json",
+    "conformance/v0.1/primitives/receipts/trust-unknown.json",
+    "conformance/v0.1/primitives/receipts/trust-conflict.json",
+    "conformance/v0.1/primitives/receipts/trust-source-only.json",
+    "conformance/v0.1/primitives/receipts/trust-upstream-only.json",
+    "conformance/v0.1/primitives/receipts/trust-modeloutput-only.json",
+    "conformance/v0.1/primitives/receipts/trust-request-only.json",
+    "conformance/v0.1/primitives/receipts/trust-tool-proposal-only.json",
+    "conformance/v0.1/primitives/receipts/trust-taint-independent.json",
+    "conformance/v0.1/primitives/receipts/trust-region-only.json",
+    "conformance/v0.1/primitives/receipts/trust-signed-valid.json"
+  ],
+  "assertions": {
+    "trust_primary_coverage_complete": true,
+    "scope_policy_conflict_and_noninheritance_materialized": true,
+    "signed_trust_boundedness_materialized": true,
+    "frozen_schema_unchanged": true
+  }
+}

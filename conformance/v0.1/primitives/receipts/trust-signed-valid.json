@@ -1,0 +1,99 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-trust-signed-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-trust-001",
+      "frag-trust-001",
+      "trust-signed-001"
+    ],
+    "records": [
+      {
+        "id": "run-trust-001",
+        "kind": "Run",
+        "label": "trust-signed"
+      },
+      {
+        "id": "frag-trust-001",
+        "kind": "ContextFragment",
+        "run_id": "run-trust-001",
+        "representation": {
+          "representation_kind": "text",
+          "text": "alpha",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        }
+      },
+      {
+        "id": "trust-signed-001",
+        "kind": "TrustAssertion",
+        "run_id": "run-trust-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "frag-trust-001",
+            "expected_kind": "ContextFragment"
+          },
+          "representation_basis": "decoded_text_utf8"
+        },
+        "dimension": "content_reliability",
+        "state": "trusted",
+        "asserted_by": {
+          "state": "known",
+          "id": "producer-001"
+        },
+        "policy": {
+          "state": "known",
+          "id": "urn:test:trust-policy:v1"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-trust-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "J9VLfpX6LZLvVjhwRaX7boBwWnEOiNunBsxdr12Vero"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": [
+    {
+      "id": "env-trust-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-trust-signed-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "J9VLfpX6LZLvVjhwRaX7boBwWnEOiNunBsxdr12Vero"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "G9Cqu-bK5VarBz-u2UZB-l1kHWzVxv4dyqF2q2u_yX95rzhHnSFsB1VHoS80GQhgR_4Cw78sABzCRHIcwDDYDg"
+      }
+    }
+  ]
+}
