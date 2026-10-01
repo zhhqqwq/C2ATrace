@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Phase 1 Part H: Integrity / Receipt Semantics
 
-Status: DRAFT FOR ADVERSARIAL REVIEW.
+Status: ACCEPTED AFTER ADVERSARIAL REVIEW.
 
 Scope: Receipt identity/scope/subset semantics; package inventory; explicit external references; multi-Receipt resolution; ReceiptLink semantics; canonical representation; payload digest/signature scope; embedded/detached IntegrityEnvelope; signer/key-reference limits; tampering versus omission; privacy/integrity composition; independent verifier result model.
 
@@ -1778,6 +1778,14 @@ These remain constrained by Part H semantics.
 
 ## 35. Gate decision
 
-Phase 1 Part H is ready for adversarial/mechanical review.
+Phase 1 Part H: PASS AFTER ADVERSARIAL REVIEW.
 
-JSON Schema and implementation remain BLOCKED.
+The next pre-Schema work is:
+
+~~~text
+Provider Adapter Contract
+Tool Adapter Contract
+Verifier Contract
+~~~
+
+JSON Schema and implementation remain BLOCKED until those contracts pass their specification gates.
