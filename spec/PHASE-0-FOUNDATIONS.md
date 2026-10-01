@@ -39,6 +39,7 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 |---|---|---|
 | Run | Scope | Logical grouping; does not imply completeness |
 | SourceRef | Reference | Logical source identity / locator |
+| ExternalReference | Reference form | Explicit cross-Receipt object address with optional target-payload pin |
 | SourceObservation | Artifact | Producer-recorded observed representation |
 | ModelInputComponent | Artifact abstraction | Abstract superclass for application-visible model inputs |
 | ContextFragment | Artifact | ModelInputComponent subtype |
@@ -58,8 +59,9 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 | EffectObservation | Artifact | Bounded evidence claim about possible external state |
 | TrustAssertion | Assertion | Trust judgement and basis |
 | TaintAssertion | Assertion | Conservative taint judgement and basis |
-| Receipt | Package | Portable set of records |
-| IntegrityEnvelope | Integrity metadata | Commitments/signatures over defined representations |
+| Receipt | Package | Portable package identity centered on one immutable Authenticated Receipt Payload |
+| ReceiptLink | Integrity metadata | Digest-pinned package-level link to a prior Receipt payload |
+| IntegrityEnvelope | Integrity metadata | Embedded/detached signature metadata authenticating a defined Receipt payload commitment |
 
 ## 4. Corrected core graph
 
@@ -150,7 +152,7 @@ Exact wire names remain unfrozen.
 
 ### GRAPH-001 — Reference resolution
 
-Until an external-reference profile is defined, every normative internal reference in a conforming Receipt MUST resolve within that supplied Receipt.
+Every normative object reference in a conforming Receipt MUST either resolve internally within that Receipt or be explicitly represented as an ExternalReference under the Part H external-reference-capable semantics; an unresolved ordinary local reference is invalid and MUST NOT be silently treated as external.
 
 Planned test: `graph-missing-reference-001`.
 
@@ -283,9 +285,9 @@ Project gate: all of the following are to be resolved before JSON Schema is froz
 - OQ-010 RESOLVED by Phase 1 Part F: TrustAssertion is subject-local, dimensioned, issuer/policy-scoped, and uses trusted / untrusted / unknown without automatic inheritance.
 - OQ-011 RESOLVED by Phase 1 Part F: TaintAssertion uses policy-defined taint_kind plus state/channel/precision; compatible conservative state join is absent < unknown < present and propagation is policy-scoped.
 - OQ-012 RESOLVED by Phase 1 Part F: sanitization is explicit, kind/channel/scope-specific, evidence-bounded, and history-preserving; sanitizer names, trust labels, tool success, signatures, and representation changes do not launder taint.
-- OQ-013 External references and multi-receipt resolution.
-- OQ-014 Receipt scope declaration without implying completeness.
-- OQ-015 IntegrityEnvelope signing scope and detached/embedded representation.
+- OQ-013 RESOLVED by Phase 1 Part H: ExternalReference explicitly addresses target Receipt + object identity with optional target payload-digest pin; Resolution Set ambiguity/unresolved state is preserved and cross-Receipt graph invariants remain enforced.
+- OQ-014 RESOLVED by Phase 1 Part H: package inventory, Producer-authored Receipt scope, reference closure, and runtime/history completeness are distinct; subset Receipts are first-class and core v0.1 has no generic complete-history bit.
+- OQ-015 RESOLVED by Phase 1 Part H: immutable Authenticated Receipt Payload is canonicalized with RFC 8785 JCS, digested with SHA-256, and authenticated by embedded/detached Ed25519 IntegrityEnvelopes over a domain-separated canonical Signing Statement; envelope attachments are outside ARP identity.
 
 ## 9. Gate decision
 
@@ -322,7 +324,10 @@ Privacy
         ✓ Phase 1 Part G
 
 Integrity / Receipt
+        ✓ Phase 1 Part H
+
+Provider / Tool Adapter Contracts
         ← next semantic focus
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-G are complete, but integrity/receipt, adapter, and verifier semantics still require specification gates.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-H are complete; provider/tool adapter and verifier contracts remain before Schema freeze.
