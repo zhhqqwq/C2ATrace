@@ -1,0 +1,37 @@
+{
+  "case_id": "c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "complete-valid",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability",
+      "status": "valid"
+    },
+    {
+      "document_id": "missing-invocation-boundary-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    },
+    {
+      "document_id": "missing-execution-boundary-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    },
+    {
+      "document_id": "missing-result-boundary-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": []
+}
