@@ -247,7 +247,7 @@
       "requirement_id": "INTG-031",
       "planned_test_id": "integrity-signature-key-relative-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-031-integrity-signature-key-relative-001.json"
     },
     {
