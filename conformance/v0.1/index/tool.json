@@ -295,7 +295,7 @@
       "requirement_id": "TOOL-037",
       "planned_test_id": "tool-result-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-037-tool-result-cardinality-001.json"
     },
     {
