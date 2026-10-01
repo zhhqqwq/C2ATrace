@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, and Verifier Contract are complete after adversarial review. All pre-Schema gates are complete. JSON Schema freeze is now the active next phase; implementation has not started.
+Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The complete conformance fixture/vector suite is the active next phase; implementation has not started.
 
 See:
 
@@ -56,6 +56,8 @@ See:
 - [Provider Adapter Contract](spec/PROVIDER-ADAPTER-CONTRACT.md)
 - [Tool Adapter Contract](spec/TOOL-ADAPTER-CONTRACT.md)
 - [Verifier Contract](spec/VERIFIER-CONTRACT.md)
+- [v0.1 JSON Schema](schema/v0.1/README.md)
+- [Schema Freeze Audit](schema/v0.1/FREEZE-AUDIT.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -136,4 +138,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-All pre-Schema semantic and contract gates are complete. The next phase is JSON Schema freeze, followed by normative fixtures, invalid fixtures, cross-language test vectors, independent verifier implementation, and SDK implementation.
+All pre-Schema semantic/contract gates and the v0.1 JSON Schema freeze are complete. The next phase is the complete normative fixtures, invalid fixtures, and cross-language conformance-vector suite. Independent verifier implementation and SDK implementation remain blocked until that gate passes.
