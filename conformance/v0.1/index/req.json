@@ -31,7 +31,7 @@
       "requirement_id": "REQ-004",
       "planned_test_id": "request-snapshot-owner-cardinality-001",
       "primary_enforcement": "direct_schema",
-      "status": "mapped",
+      "status": "accepted",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-004-request-snapshot-owner-cardinality-001.json"
     },
     {
