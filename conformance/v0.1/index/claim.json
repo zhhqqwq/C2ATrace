@@ -1,0 +1,54 @@
+{
+  "family": "CLAIM",
+  "count": 6,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-claim-000-claim-composition-001",
+      "requirement_id": "CLAIM-000",
+      "planned_test_id": "claim-composition-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/claim/c2a-v0.1-claim-000-claim-composition-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-claim-001-claim-no-upgrade-001",
+      "requirement_id": "CLAIM-001",
+      "planned_test_id": "claim-no-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/claim/c2a-v0.1-claim-001-claim-no-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-claim-002-binding-verification-level-001",
+      "requirement_id": "CLAIM-002",
+      "planned_test_id": "binding-verification-level-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/claim/c2a-v0.1-claim-002-binding-verification-level-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-claim-003-trust-label-wording-001",
+      "requirement_id": "CLAIM-003",
+      "planned_test_id": "trust-label-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/claim/c2a-v0.1-claim-003-trust-label-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-claim-004-absence-wording-001",
+      "requirement_id": "CLAIM-004",
+      "planned_test_id": "absence-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/claim/c2a-v0.1-claim-004-absence-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-claim-005-claim-causality-001",
+      "requirement_id": "CLAIM-005",
+      "planned_test_id": "claim-causality-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/claim/c2a-v0.1-claim-005-claim-causality-001.json"
+    }
+  ]
+}
