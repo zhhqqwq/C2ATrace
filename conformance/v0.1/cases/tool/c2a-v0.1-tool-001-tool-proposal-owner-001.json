@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-tool-001-tool-proposal-owner-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-001"
+  ],
+  "planned_test_ids": [
+    "tool-proposal-owner-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ToolProposal output Reference is syntactically valid but resolves to ToolResult rather than its containing ModelOutput.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/4/output/id",
+          "value": "result-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TOOL-001"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-001",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-001"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-001-tool-proposal-owner-001.json"
+}
