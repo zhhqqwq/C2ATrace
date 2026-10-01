@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0 and Phase 1 Parts A-H are complete after adversarial review. Provider Adapter Contract and Tool Adapter Contract are also complete. JSON Schema remains unfrozen and implementation has not started.
+Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, and Verifier Contract are complete after adversarial review. All pre-Schema gates are complete. JSON Schema freeze is now the active next phase; implementation has not started.
 
 See:
 
@@ -55,6 +55,7 @@ See:
 - [Phase 1 Part H — Integrity / Receipt Semantics](spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md)
 - [Provider Adapter Contract](spec/PROVIDER-ADAPTER-CONTRACT.md)
 - [Tool Adapter Contract](spec/TOOL-ADAPTER-CONTRACT.md)
+- [Verifier Contract](spec/VERIFIER-CONTRACT.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -120,6 +121,12 @@ See:
 - separate_observation requires a distinct observation occurrence.
 - EffectObservation is not OutcomeVerification.
 - Tool Adapter diagnostics are not tool-path completeness proof.
+- Verifier authority is evidence-bounded and invocation-relative.
+- Valid/matched/asserted/unknown/unverified/unsupported/conflict are typed results, not one strength scale.
+- Signature validity and binding to the supplied ARP are separate verifier dimensions.
+- A fully resolved Resolution Set is not complete global history.
+- Human output and CLI exit status cannot strengthen machine findings.
+- There is no unqualified overall fully_verified boolean.
 - Recorded inclusion is not causal responsibility.
 - Every numbered normative requirement maps to a planned conformance test.
 
@@ -129,4 +136,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-Provider Adapter Contract and Tool Adapter Contract are complete. The final pre-Schema specification gate is Verifier Contract. JSON Schema freeze remains blocked until the Verifier Contract passes its specification gate.
+All pre-Schema semantic and contract gates are complete. The next phase is JSON Schema freeze, followed by normative fixtures, invalid fixtures, cross-language test vectors, independent verifier implementation, and SDK implementation.
