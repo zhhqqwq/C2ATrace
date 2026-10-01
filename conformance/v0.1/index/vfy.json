@@ -1,0 +1,1238 @@
+{
+  "family": "VFY",
+  "count": 154,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-vfy-001-verifier-authority-bounded-001",
+      "requirement_id": "VFY-001",
+      "planned_test_id": "verifier-authority-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-001-verifier-authority-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-002-verifier-invocation-relative-001",
+      "requirement_id": "VFY-002",
+      "planned_test_id": "verifier-invocation-relative-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-002-verifier-invocation-relative-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-003-verifier-no-hidden-evidence-001",
+      "requirement_id": "VFY-003",
+      "planned_test_id": "verifier-no-hidden-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-003-verifier-no-hidden-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-004-verifier-no-history-repair-001",
+      "requirement_id": "VFY-004",
+      "planned_test_id": "verifier-no-history-repair-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-004-verifier-no-history-repair-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-005-verifier-key-not-identity-001",
+      "requirement_id": "VFY-005",
+      "planned_test_id": "verifier-key-not-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-005-verifier-key-not-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-006-verifier-hmac-capability-bounded-001",
+      "requirement_id": "VFY-006",
+      "planned_test_id": "verifier-hmac-capability-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-006-verifier-hmac-capability-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-007-verifier-candidate-no-history-rewrite-001",
+      "requirement_id": "VFY-007",
+      "planned_test_id": "verifier-candidate-no-history-rewrite-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-007-verifier-candidate-no-history-rewrite-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-008-verifier-policy-no-history-rewrite-001",
+      "requirement_id": "VFY-008",
+      "planned_test_id": "verifier-policy-no-history-rewrite-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-008-verifier-policy-no-history-rewrite-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-009-verifier-dependency-prerequisite-001",
+      "requirement_id": "VFY-009",
+      "planned_test_id": "verifier-dependency-prerequisite-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-009-verifier-dependency-prerequisite-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-010-verifier-independent-checks-001",
+      "requirement_id": "VFY-010",
+      "planned_test_id": "verifier-independent-checks-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-010-verifier-independent-checks-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-011-verifier-parse-no-repair-001",
+      "requirement_id": "VFY-011",
+      "planned_test_id": "verifier-parse-no-repair-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-011-verifier-parse-no-repair-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-012-verifier-profile-dispatch-001",
+      "requirement_id": "VFY-012",
+      "planned_test_id": "verifier-profile-dispatch-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-012-verifier-profile-dispatch-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-013-verifier-profile-no-fallback-001",
+      "requirement_id": "VFY-013",
+      "planned_test_id": "verifier-profile-no-fallback-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-013-verifier-profile-no-fallback-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-014-verifier-jcs-input-constraints-001",
+      "requirement_id": "VFY-014",
+      "planned_test_id": "verifier-jcs-input-constraints-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-014-verifier-jcs-input-constraints-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-015-verifier-multireceipt-partial-evaluation-001",
+      "requirement_id": "VFY-015",
+      "planned_test_id": "verifier-multireceipt-partial-evaluation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-015-verifier-multireceipt-partial-evaluation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-016-verifier-receipt-id-not-digest-001",
+      "requirement_id": "VFY-016",
+      "planned_test_id": "verifier-receipt-id-not-digest-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-016-verifier-receipt-id-not-digest-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-017-verifier-receipt-id-conflict-001",
+      "requirement_id": "VFY-017",
+      "planned_test_id": "verifier-receipt-id-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-017-verifier-receipt-id-conflict-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-018-verifier-presentation-no-new-receipt-001",
+      "requirement_id": "VFY-018",
+      "planned_test_id": "verifier-presentation-no-new-receipt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-018-verifier-presentation-no-new-receipt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-019-verifier-cross-receipt-object-identity-001",
+      "requirement_id": "VFY-019",
+      "planned_test_id": "verifier-cross-receipt-object-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-019-verifier-cross-receipt-object-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-020-verifier-internal-reference-local-001",
+      "requirement_id": "VFY-020",
+      "planned_test_id": "verifier-internal-reference-local-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-020-verifier-internal-reference-local-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-021-verifier-external-address-001",
+      "requirement_id": "VFY-021",
+      "planned_test_id": "verifier-external-address-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-021-verifier-external-address-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-022-verifier-external-unpinned-001",
+      "requirement_id": "VFY-022",
+      "planned_test_id": "verifier-external-unpinned-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-022-verifier-external-unpinned-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-023-verifier-external-pin-match-001",
+      "requirement_id": "VFY-023",
+      "planned_test_id": "verifier-external-pin-match-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-023-verifier-external-pin-match-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-024-verifier-external-pin-bounded-001",
+      "requirement_id": "VFY-024",
+      "planned_test_id": "verifier-external-pin-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-024-verifier-external-pin-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-025-verifier-external-unresolved-001",
+      "requirement_id": "VFY-025",
+      "planned_test_id": "verifier-external-unresolved-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-025-verifier-external-unresolved-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-026-verifier-external-ambiguous-001",
+      "requirement_id": "VFY-026",
+      "planned_test_id": "verifier-external-ambiguous-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-026-verifier-external-ambiguous-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-027-verifier-no-implicit-io-001",
+      "requirement_id": "VFY-027",
+      "planned_test_id": "verifier-no-implicit-io-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-027-verifier-no-implicit-io-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-028-verifier-resolver-evidence-001",
+      "requirement_id": "VFY-028",
+      "planned_test_id": "verifier-resolver-evidence-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-028-verifier-resolver-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-029-verifier-cross-receipt-graph-001",
+      "requirement_id": "VFY-029",
+      "planned_test_id": "verifier-cross-receipt-graph-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-029-verifier-cross-receipt-graph-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-030-verifier-unresolved-not-valid-001",
+      "requirement_id": "VFY-030",
+      "planned_test_id": "verifier-unresolved-not-valid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-030-verifier-unresolved-not-valid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-031-verifier-cross-receipt-derivation-cycle-001",
+      "requirement_id": "VFY-031",
+      "planned_test_id": "verifier-cross-receipt-derivation-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-031-verifier-cross-receipt-derivation-cycle-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-032-verifier-receiptlink-cycle-001",
+      "requirement_id": "VFY-032",
+      "planned_test_id": "verifier-receiptlink-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-032-verifier-receiptlink-cycle-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-033-verifier-dependency-vs-time-001",
+      "requirement_id": "VFY-033",
+      "planned_test_id": "verifier-dependency-vs-time-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-033-verifier-dependency-vs-time-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-034-verifier-representation-basis-001",
+      "requirement_id": "VFY-034",
+      "planned_test_id": "verifier-representation-basis-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-034-verifier-representation-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-035-verifier-equality-bounded-001",
+      "requirement_id": "VFY-035",
+      "planned_test_id": "verifier-equality-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-035-verifier-equality-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-036-verifier-mismatch-bounded-001",
+      "requirement_id": "VFY-036",
+      "planned_test_id": "verifier-mismatch-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-036-verifier-mismatch-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-037-verifier-binding-levels-001",
+      "requirement_id": "VFY-037",
+      "planned_test_id": "verifier-binding-levels-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-037-verifier-binding-levels-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-038-verifier-binding-whole-commitment-001",
+      "requirement_id": "VFY-038",
+      "planned_test_id": "verifier-binding-whole-commitment-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-038-verifier-binding-whole-commitment-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-039-verifier-binding-redacted-original-001",
+      "requirement_id": "VFY-039",
+      "planned_test_id": "verifier-binding-redacted-original-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-039-verifier-binding-redacted-original-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-040-verifier-privacy-capability-001",
+      "requirement_id": "VFY-040",
+      "planned_test_id": "verifier-privacy-capability-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-040-verifier-privacy-capability-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-041-verifier-hash-no-confidentiality-001",
+      "requirement_id": "VFY-041",
+      "planned_test_id": "verifier-hash-no-confidentiality-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-041-verifier-hash-no-confidentiality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-042-verifier-hmac-secret-required-001",
+      "requirement_id": "VFY-042",
+      "planned_test_id": "verifier-hmac-secret-required-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-042-verifier-hmac-secret-required-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-043-verifier-hmac-secret-nondisclosure-001",
+      "requirement_id": "VFY-043",
+      "planned_test_id": "verifier-hmac-secret-nondisclosure-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-043-verifier-hmac-secret-nondisclosure-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-044-verifier-hmac-tag-bounded-001",
+      "requirement_id": "VFY-044",
+      "planned_test_id": "verifier-hmac-tag-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-044-verifier-hmac-tag-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-045-verifier-redacted-bounded-001",
+      "requirement_id": "VFY-045",
+      "planned_test_id": "verifier-redacted-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-045-verifier-redacted-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-046-verifier-privacy-no-upgrade-001",
+      "requirement_id": "VFY-046",
+      "planned_test_id": "verifier-privacy-no-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-046-verifier-privacy-no-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-047-verifier-arp-jcs-001",
+      "requirement_id": "VFY-047",
+      "planned_test_id": "verifier-arp-jcs-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-047-verifier-arp-jcs-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-048-verifier-digest-recompute-001",
+      "requirement_id": "VFY-048",
+      "planned_test_id": "verifier-digest-recompute-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-048-verifier-digest-recompute-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-049-verifier-digest-bounded-001",
+      "requirement_id": "VFY-049",
+      "planned_test_id": "verifier-digest-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-049-verifier-digest-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-050-verifier-digest-mismatch-001",
+      "requirement_id": "VFY-050",
+      "planned_test_id": "verifier-digest-mismatch-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-050-verifier-digest-mismatch-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-051-verifier-envelope-individual-001",
+      "requirement_id": "VFY-051",
+      "planned_test_id": "verifier-envelope-individual-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-051-verifier-envelope-individual-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-052-verifier-signing-statement-binding-001",
+      "requirement_id": "VFY-052",
+      "planned_test_id": "verifier-signing-statement-binding-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-052-verifier-signing-statement-binding-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-053-verifier-signing-statement-jcs-001",
+      "requirement_id": "VFY-053",
+      "planned_test_id": "verifier-signing-statement-jcs-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-053-verifier-signing-statement-jcs-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-054-verifier-key-unresolved-vs-invalid-001",
+      "requirement_id": "VFY-054",
+      "planned_test_id": "verifier-key-unresolved-vs-invalid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-054-verifier-key-unresolved-vs-invalid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-055-verifier-signature-unsupported-vs-invalid-001",
+      "requirement_id": "VFY-055",
+      "planned_test_id": "verifier-signature-unsupported-vs-invalid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-055-verifier-signature-unsupported-vs-invalid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-056-verifier-signature-key-relative-001",
+      "requirement_id": "VFY-056",
+      "planned_test_id": "verifier-signature-key-relative-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-056-verifier-signature-key-relative-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-057-verifier-signature-no-key-trust-001",
+      "requirement_id": "VFY-057",
+      "planned_test_id": "verifier-signature-no-key-trust-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-057-verifier-signature-no-key-trust-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-058-verifier-signature-vs-arp-binding-001",
+      "requirement_id": "VFY-058",
+      "planned_test_id": "verifier-signature-vs-arp-binding-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-058-verifier-signature-vs-arp-binding-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-059-verifier-signature-no-truth-001",
+      "requirement_id": "VFY-059",
+      "planned_test_id": "verifier-signature-no-truth-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-059-verifier-signature-no-truth-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-060-verifier-signature-no-completeness-001",
+      "requirement_id": "VFY-060",
+      "planned_test_id": "verifier-signature-no-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-060-verifier-signature-no-completeness-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-061-verifier-invalid-signature-bounded-001",
+      "requirement_id": "VFY-061",
+      "planned_test_id": "verifier-invalid-signature-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-061-verifier-invalid-signature-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-062-verifier-multisig-no-truth-vote-001",
+      "requirement_id": "VFY-062",
+      "planned_test_id": "verifier-multisig-no-truth-vote-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-062-verifier-multisig-no-truth-vote-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-063-verifier-receiptlink-bounded-001",
+      "requirement_id": "VFY-063",
+      "planned_test_id": "verifier-receiptlink-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-063-verifier-receiptlink-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-064-verifier-receiptlink-missing-001",
+      "requirement_id": "VFY-064",
+      "planned_test_id": "verifier-receiptlink-missing-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-064-verifier-receiptlink-missing-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-065-verifier-adapter-assertion-bounded-001",
+      "requirement_id": "VFY-065",
+      "planned_test_id": "verifier-adapter-assertion-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-065-verifier-adapter-assertion-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-066-verifier-record-vs-fact-001",
+      "requirement_id": "VFY-066",
+      "planned_test_id": "verifier-record-vs-fact-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-066-verifier-record-vs-fact-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-067-verifier-capture-diagnostic-bounded-001",
+      "requirement_id": "VFY-067",
+      "planned_test_id": "verifier-capture-diagnostic-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-067-verifier-capture-diagnostic-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-068-verifier-tool-success-no-effect-001",
+      "requirement_id": "VFY-068",
+      "planned_test_id": "verifier-tool-success-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-068-verifier-tool-success-no-effect-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-069-verifier-tool-failure-not-no-effect-001",
+      "requirement_id": "VFY-069",
+      "planned_test_id": "verifier-tool-failure-not-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-069-verifier-tool-failure-not-no-effect-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-070-verifier-effect-not-outcome-001",
+      "requirement_id": "VFY-070",
+      "planned_test_id": "verifier-effect-not-outcome-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-070-verifier-effect-not-outcome-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-071-verifier-evidence-count-bounded-001",
+      "requirement_id": "VFY-071",
+      "planned_test_id": "verifier-evidence-count-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-071-verifier-evidence-count-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-072-verifier-no-causal-upgrade-001",
+      "requirement_id": "VFY-072",
+      "planned_test_id": "verifier-no-causal-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-072-verifier-no-causal-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-073-verifier-finding-premises-001",
+      "requirement_id": "VFY-073",
+      "planned_test_id": "verifier-finding-premises-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-073-verifier-finding-premises-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-074-verifier-composition-weakest-premise-001",
+      "requirement_id": "VFY-074",
+      "planned_test_id": "verifier-composition-weakest-premise-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-074-verifier-composition-weakest-premise-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-075-verifier-established-scope-001",
+      "requirement_id": "VFY-075",
+      "planned_test_id": "verifier-established-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-075-verifier-established-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-076-verifier-matched-scope-001",
+      "requirement_id": "VFY-076",
+      "planned_test_id": "verifier-matched-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-076-verifier-matched-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-077-verifier-asserted-wording-001",
+      "requirement_id": "VFY-077",
+      "planned_test_id": "verifier-asserted-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-077-verifier-asserted-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-078-verifier-unknown-not-false-001",
+      "requirement_id": "VFY-078",
+      "planned_test_id": "verifier-unknown-not-false-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-078-verifier-unknown-not-false-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-079-verifier-unverified-semantics-001",
+      "requirement_id": "VFY-079",
+      "planned_test_id": "verifier-unverified-semantics-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-079-verifier-unverified-semantics-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-080-verifier-unsupported-semantics-001",
+      "requirement_id": "VFY-080",
+      "planned_test_id": "verifier-unsupported-semantics-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-080-verifier-unsupported-semantics-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-081-verifier-invalid-bounded-001",
+      "requirement_id": "VFY-081",
+      "planned_test_id": "verifier-invalid-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-081-verifier-invalid-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-082-verifier-mismatch-semantics-001",
+      "requirement_id": "VFY-082",
+      "planned_test_id": "verifier-mismatch-semantics-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-082-verifier-mismatch-semantics-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-083-verifier-not-present-bounded-001",
+      "requirement_id": "VFY-083",
+      "planned_test_id": "verifier-not-present-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-083-verifier-not-present-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-084-verifier-typed-status-domains-001",
+      "requirement_id": "VFY-084",
+      "planned_test_id": "verifier-typed-status-domains-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-084-verifier-typed-status-domains-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-085-verifier-valid-not-true-001",
+      "requirement_id": "VFY-085",
+      "planned_test_id": "verifier-valid-not-true-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-085-verifier-valid-not-true-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-086-verifier-invalid-vs-uncertain-001",
+      "requirement_id": "VFY-086",
+      "planned_test_id": "verifier-invalid-vs-uncertain-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-086-verifier-invalid-vs-uncertain-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-087-verifier-external-conflict-001",
+      "requirement_id": "VFY-087",
+      "planned_test_id": "verifier-external-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-087-verifier-external-conflict-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-088-verifier-inventory-not-history-001",
+      "requirement_id": "VFY-088",
+      "planned_test_id": "verifier-inventory-not-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-088-verifier-inventory-not-history-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-089-verifier-reference-closure-not-history-001",
+      "requirement_id": "VFY-089",
+      "planned_test_id": "verifier-reference-closure-not-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-089-verifier-reference-closure-not-history-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-090-verifier-history-completeness-default-001",
+      "requirement_id": "VFY-090",
+      "planned_test_id": "verifier-history-completeness-default-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-090-verifier-history-completeness-default-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-091-verifier-adapter-completeness-bounded-001",
+      "requirement_id": "VFY-091",
+      "planned_test_id": "verifier-adapter-completeness-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-091-verifier-adapter-completeness-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-092-verifier-absence-no-completeness-001",
+      "requirement_id": "VFY-092",
+      "planned_test_id": "verifier-absence-no-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-092-verifier-absence-no-completeness-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-093-verifier-conflict-preservation-001",
+      "requirement_id": "VFY-093",
+      "planned_test_id": "verifier-conflict-preservation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-093-verifier-conflict-preservation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-094-verifier-conflict-no-timestamp-winner-001",
+      "requirement_id": "VFY-094",
+      "planned_test_id": "verifier-conflict-no-timestamp-winner-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-094-verifier-conflict-no-timestamp-winner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-095-verifier-conflict-no-signature-vote-001",
+      "requirement_id": "VFY-095",
+      "planned_test_id": "verifier-conflict-no-signature-vote-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-095-verifier-conflict-no-signature-vote-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-096-verifier-conflict-independent-checks-001",
+      "requirement_id": "VFY-096",
+      "planned_test_id": "verifier-conflict-independent-checks-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-096-verifier-conflict-independent-checks-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-097-verifier-unsupported-no-downgrade-001",
+      "requirement_id": "VFY-097",
+      "planned_test_id": "verifier-unsupported-no-downgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-097-verifier-unsupported-no-downgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-098-verifier-malformed-supported-invalid-001",
+      "requirement_id": "VFY-098",
+      "planned_test_id": "verifier-malformed-supported-invalid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-098-verifier-malformed-supported-invalid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-099-verifier-profile-no-code-execution-001",
+      "requirement_id": "VFY-099",
+      "planned_test_id": "verifier-profile-no-code-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-099-verifier-profile-no-code-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-100-verifier-resolution-set-order-001",
+      "requirement_id": "VFY-100",
+      "planned_test_id": "verifier-resolution-set-order-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-100-verifier-resolution-set-order-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-101-verifier-presentation-envelope-union-001",
+      "requirement_id": "VFY-101",
+      "planned_test_id": "verifier-presentation-envelope-union-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-101-verifier-presentation-envelope-union-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-102-verifier-partial-resolution-local-001",
+      "requirement_id": "VFY-102",
+      "planned_test_id": "verifier-partial-resolution-local-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-102-verifier-partial-resolution-local-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-103-verifier-resolved-set-not-history-001",
+      "requirement_id": "VFY-103",
+      "planned_test_id": "verifier-resolved-set-not-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-103-verifier-resolved-set-not-history-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-104-verifier-report-not-runtime-provenance-001",
+      "requirement_id": "VFY-104",
+      "planned_test_id": "verifier-report-not-runtime-provenance-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-104-verifier-report-not-runtime-provenance-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-105-verifier-finding-minimum-001",
+      "requirement_id": "VFY-105",
+      "planned_test_id": "verifier-finding-minimum-001",
+      "primary_enforcement": "direct_schema",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-105-verifier-finding-minimum-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-106-verifier-finding-evidence-basis-001",
+      "requirement_id": "VFY-106",
+      "planned_test_id": "verifier-finding-evidence-basis-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-106-verifier-finding-evidence-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-107-verifier-finding-private-evidence-001",
+      "requirement_id": "VFY-107",
+      "planned_test_id": "verifier-finding-private-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-107-verifier-finding-private-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-108-verifier-report-no-keyed-secret-001",
+      "requirement_id": "VFY-108",
+      "planned_test_id": "verifier-report-no-keyed-secret-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-108-verifier-report-no-keyed-secret-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-109-verifier-report-no-candidate-echo-001",
+      "requirement_id": "VFY-109",
+      "planned_test_id": "verifier-report-no-candidate-echo-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-109-verifier-report-no-candidate-echo-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-110-verifier-human-no-strengthening-001",
+      "requirement_id": "VFY-110",
+      "planned_test_id": "verifier-human-no-strengthening-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-110-verifier-human-no-strengthening-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-111-verifier-human-asserted-wording-001",
+      "requirement_id": "VFY-111",
+      "planned_test_id": "verifier-human-asserted-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-111-verifier-human-asserted-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-112-verifier-human-unknown-wording-001",
+      "requirement_id": "VFY-112",
+      "planned_test_id": "verifier-human-unknown-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-112-verifier-human-unknown-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-113-verifier-human-summary-scope-001",
+      "requirement_id": "VFY-113",
+      "planned_test_id": "verifier-human-summary-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-113-verifier-human-summary-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-114-verifier-no-overall-boolean-001",
+      "requirement_id": "VFY-114",
+      "planned_test_id": "verifier-no-overall-boolean-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-114-verifier-no-overall-boolean-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-115-verifier-exit-operational-only-001",
+      "requirement_id": "VFY-115",
+      "planned_test_id": "verifier-exit-operational-only-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-115-verifier-exit-operational-only-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-116-verifier-exit-invalidity-001",
+      "requirement_id": "VFY-116",
+      "planned_test_id": "verifier-exit-invalidity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-116-verifier-exit-invalidity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-117-verifier-exit-incomplete-001",
+      "requirement_id": "VFY-117",
+      "planned_test_id": "verifier-exit-incomplete-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-117-verifier-exit-incomplete-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-118-verifier-exit-operational-error-001",
+      "requirement_id": "VFY-118",
+      "planned_test_id": "verifier-exit-operational-error-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-118-verifier-exit-operational-error-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-119-verifier-exit-zero-bounded-001",
+      "requirement_id": "VFY-119",
+      "planned_test_id": "verifier-exit-zero-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-119-verifier-exit-zero-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-120-verifier-determinism-001",
+      "requirement_id": "VFY-120",
+      "planned_test_id": "verifier-determinism-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-120-verifier-determinism-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-121-verifier-resource-limit-bounded-001",
+      "requirement_id": "VFY-121",
+      "planned_test_id": "verifier-resource-limit-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-121-verifier-resource-limit-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-122-verifier-untrusted-metadata-no-io-001",
+      "requirement_id": "VFY-122",
+      "planned_test_id": "verifier-untrusted-metadata-no-io-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-122-verifier-untrusted-metadata-no-io-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-123-verifier-resolver-attribution-001",
+      "requirement_id": "VFY-123",
+      "planned_test_id": "verifier-resolver-attribution-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-123-verifier-resolver-attribution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-124-verifier-provider-receipt-unestablished-001",
+      "requirement_id": "VFY-124",
+      "planned_test_id": "verifier-provider-receipt-unestablished-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-124-verifier-provider-receipt-unestablished-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-125-verifier-tool-remote-unestablished-001",
+      "requirement_id": "VFY-125",
+      "planned_test_id": "verifier-tool-remote-unestablished-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-125-verifier-tool-remote-unestablished-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-126-verifier-trust-wording-001",
+      "requirement_id": "VFY-126",
+      "planned_test_id": "verifier-trust-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-126-verifier-trust-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-127-verifier-taint-wording-001",
+      "requirement_id": "VFY-127",
+      "planned_test_id": "verifier-taint-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-127-verifier-taint-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-128-verifier-sanitization-history-001",
+      "requirement_id": "VFY-128",
+      "planned_test_id": "verifier-sanitization-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-128-verifier-sanitization-history-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-129-verifier-signed-private-evidence-001",
+      "requirement_id": "VFY-129",
+      "planned_test_id": "verifier-signed-private-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-129-verifier-signed-private-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-130-verifier-linkage-no-history-001",
+      "requirement_id": "VFY-130",
+      "planned_test_id": "verifier-linkage-no-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-130-verifier-linkage-no-history-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-131-verifier-schema-not-semantic-proof-001",
+      "requirement_id": "VFY-131",
+      "planned_test_id": "verifier-schema-not-semantic-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-131-verifier-schema-not-semantic-proof-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-132-verifier-schema-failure-001",
+      "requirement_id": "VFY-132",
+      "planned_test_id": "verifier-schema-failure-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-132-verifier-schema-failure-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-133-verifier-unsupported-extension-integrity-001",
+      "requirement_id": "VFY-133",
+      "planned_test_id": "verifier-unsupported-extension-integrity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-133-verifier-unsupported-extension-integrity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001",
+      "requirement_id": "VFY-134",
+      "planned_test_id": "verifier-unknown-extension-no-guess-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-135-verifier-unsigned-not-invalid-001",
+      "requirement_id": "VFY-135",
+      "planned_test_id": "verifier-unsigned-not-invalid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-135-verifier-unsigned-not-invalid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-136-verifier-signature-absence-001",
+      "requirement_id": "VFY-136",
+      "planned_test_id": "verifier-signature-absence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-136-verifier-signature-absence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-137-verifier-key-resolution-ambiguous-001",
+      "requirement_id": "VFY-137",
+      "planned_test_id": "verifier-key-resolution-ambiguous-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-137-verifier-key-resolution-ambiguous-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-138-verifier-key-success-no-identity-resolution-001",
+      "requirement_id": "VFY-138",
+      "planned_test_id": "verifier-key-success-no-identity-resolution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-138-verifier-key-success-no-identity-resolution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001",
+      "requirement_id": "VFY-139",
+      "planned_test_id": "verifier-withheld-not-not-present-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-140-verifier-conflict-not-unknown-001",
+      "requirement_id": "VFY-140",
+      "planned_test_id": "verifier-conflict-not-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-140-verifier-conflict-not-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-141-verifier-report-goals-capabilities-001",
+      "requirement_id": "VFY-141",
+      "planned_test_id": "verifier-report-goals-capabilities-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-141-verifier-report-goals-capabilities-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-142-verifier-report-mandatory-accounting-001",
+      "requirement_id": "VFY-142",
+      "planned_test_id": "verifier-report-mandatory-accounting-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-142-verifier-report-mandatory-accounting-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-143-verifier-report-failure-visibility-001",
+      "requirement_id": "VFY-143",
+      "planned_test_id": "verifier-report-failure-visibility-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-143-verifier-report-failure-visibility-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-144-verifier-resolver-content-binding-001",
+      "requirement_id": "VFY-144",
+      "planned_test_id": "verifier-resolver-content-binding-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-144-verifier-resolver-content-binding-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-145-verifier-trusted-time-required-001",
+      "requirement_id": "VFY-145",
+      "planned_test_id": "verifier-trusted-time-required-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-145-verifier-trusted-time-required-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-146-verifier-invalid-and-incomplete-coexist-001",
+      "requirement_id": "VFY-146",
+      "planned_test_id": "verifier-invalid-and-incomplete-coexist-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-146-verifier-invalid-and-incomplete-coexist-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-147-verifier-exit-precedence-001",
+      "requirement_id": "VFY-147",
+      "planned_test_id": "verifier-exit-precedence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-147-verifier-exit-precedence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-148-verifier-exit-does-not-hide-findings-001",
+      "requirement_id": "VFY-148",
+      "planned_test_id": "verifier-exit-does-not-hide-findings-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-148-verifier-exit-does-not-hide-findings-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-149-verifier-optional-extension-exit-001",
+      "requirement_id": "VFY-149",
+      "planned_test_id": "verifier-optional-extension-exit-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-149-verifier-optional-extension-exit-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-150-verifier-check-applicability-001",
+      "requirement_id": "VFY-150",
+      "planned_test_id": "verifier-check-applicability-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-150-verifier-check-applicability-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-151-verifier-consistent-bounded-001",
+      "requirement_id": "VFY-151",
+      "planned_test_id": "verifier-consistent-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-151-verifier-consistent-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-152-verifier-consistent-prerequisites-001",
+      "requirement_id": "VFY-152",
+      "planned_test_id": "verifier-consistent-prerequisites-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-152-verifier-consistent-prerequisites-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-153-verifier-conflict-and-invalid-001",
+      "requirement_id": "VFY-153",
+      "planned_test_id": "verifier-conflict-and-invalid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-153-verifier-conflict-and-invalid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-vfy-154-verifier-conflict-not-universal-invalidity-001",
+      "requirement_id": "VFY-154",
+      "planned_test_id": "verifier-conflict-not-universal-invalidity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-154-verifier-conflict-not-universal-invalidity-001.json"
+    }
+  ]
+}
