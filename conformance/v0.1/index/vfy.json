@@ -839,7 +839,7 @@
       "requirement_id": "VFY-105",
       "planned_test_id": "verifier-finding-minimum-001",
       "primary_enforcement": "direct_schema",
-      "status": "mapped",
+      "status": "accepted",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-105-verifier-finding-minimum-001.json"
     },
     {
