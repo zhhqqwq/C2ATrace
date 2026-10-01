@@ -1437,6 +1437,66 @@ A verifier MUST NOT report Tool Adapter-recorded invocation/execution/capture ti
 
 Planned test: tool-adapter-time-bounded-001.
 
+### TAD-109 — Post-boundary execution mutation remains unknown
+
+A Tool Adapter MUST NOT report that no execution-relevant mutation occurred after its highest observed ToolInvocation boundary when lower tool/runtime/transport layers remain outside its visibility.
+
+Planned test: tool-invocation-post-boundary-mutation-001.
+
+### TAD-110 — ToolDecision does not automatically govern a ToolExecution
+
+A verifier MUST NOT infer that a ToolDecision authorized, denied, or governed a specific ToolExecution solely because the decision targets the same ToolInvocation/ToolProposal or has a nearby timestamp; an explicit applicable relation/order/basis is required for that stronger claim.
+
+Planned test: tool-decision-no-implicit-governance-001.
+
+### TAD-111 — EffectObservation identity is occurrence-based
+
+A Tool Adapter MUST NOT merge distinct EffectObservation occurrences solely because they state the same proposition, reference the same external identifier, or use equal evidence representations.
+
+Planned test: tool-effect-observation-no-merge-001.
+
+### TAD-112 — ToolResult commitment-before-discard uses exact observed basis
+
+When privacy configuration retains only commitment evidence for ToolResult content, the Tool Adapter MUST compute it from the exact observed ToolResult representation basis before that representation becomes unavailable, or downgrade if only reconstruction remains.
+
+Planned test: tool-privacy-result-commit-before-discard-001.
+
+### TAD-113 — Non-completed execution does not imply no Effect
+
+A Tool Adapter/verifier MUST NOT infer absence of external Effect solely from ToolExecution disposition=failed, timeout, cancelled, interrupted, or unknown.
+
+Planned test: tool-noncompleted-not-no-effect-001.
+
+### TAD-114 — Missing ToolExecution is not negative proof under incomplete capture
+
+A verifier MUST NOT report that execution did not occur solely because no ToolExecution is present when tool-execution capture completeness/bypass status is not independently established.
+
+Planned test: tool-missing-execution-not-negation-001.
+
+### TAD-115 — Missing ToolResult is not proof no result existed
+
+A verifier MUST NOT report that the runtime/tool produced no result solely because ToolResult is absent when result capture was unavailable, partial, unsupported, bypassed, or unknown.
+
+Planned test: tool-missing-result-not-negation-001.
+
+### TAD-116 — external_observed metadata is not automatically separate_observation
+
+A Tool Adapter MUST NOT classify metadata as EffectObservation(basis=separate_observation) solely because its origin is external_observed; a distinct observation occurrence/evidence Artifact satisfying TAD-078 is still required.
+
+Planned test: tool-external-metadata-not-effect-observation-001.
+
+### TAD-117 — Async acceptance is not remote completion/effect proof
+
+A Tool Adapter/verifier MUST NOT interpret tool-reported accepted, queued, scheduled, pending, or job-created status as proof that the asynchronous remote operation completed, produced the claimed Effect, or achieved the Outcome.
+
+Planned test: tool-async-acceptance-bounded-001.
+
+### TAD-118 — Proposal-to-invocation cardinality is not assumed
+
+A Tool Adapter MUST NOT assume a fixed one-to-one ToolProposal→ToolInvocation cardinality when explicit Transform/Derivation evidence records zero, one, or multiple relevant proposal/invocation occurrences.
+
+Planned test: tool-proposal-invocation-cardinality-001.
+
 ## 32. Adversarial architecture review
 
 ### Review A — Model proposes a tool, executor sees only final function call
@@ -1715,6 +1775,64 @@ Client-side completed ToolExecution and success ToolResult do not establish side
 
 Result: RESOLVED by TAD-105.
 
+### Review AQ — Tool runtime injects an auth/routing value after the declared ToolInvocation boundary
+
+The captured ToolInvocation remains the final representation at the declared visible boundary, but the adapter cannot claim the lower hidden execution request was unchanged.
+
+Result: RESOLVED by TAD-024 and TAD-109.
+
+### Review AR — Allow decision and execution share invocation ID but ordering/governance is unclear
+
+The verifier does not infer that this allow authorized this execution solely from common subject or timestamp proximity.
+
+Result: RESOLVED by TAD-110.
+
+### Review AS — Tool writes data then throws an exception
+
+ToolExecution can be failed while an external Effect still occurred.
+
+Failure is not no-effect evidence.
+
+Result: RESOLVED by TAD-113.
+
+### Review AT — Tool Adapter loses execution hook and no ToolExecution appears
+
+Missing execution record is not proof of no execution when capture completeness is not established.
+
+Result: RESOLVED by TAD-114.
+
+### Review AU — Tool returns a value but result-capture hook fails
+
+The absent ToolResult in the Receipt is not proof that no runtime result existed.
+
+Result: RESOLVED by TAD-115.
+
+### Review AV — Remote monitoring metadata is tagged external_observed
+
+The origin label alone does not make it a separate effect observation; a distinct observation occurrence/evidence Artifact is still required.
+
+Result: RESOLVED by TAD-116.
+
+### Review AW — Remote tool returns job_status=queued
+
+The adapter can preserve that tool-reported status but cannot claim asynchronous job completion, Effect, or Outcome.
+
+Result: RESOLVED by TAD-117.
+
+### Review AX — One proposal is expanded into two effective invocations
+
+Explicit Transform/Derivation can represent both invocation occurrences.
+
+The adapter does not enforce an artificial 1:1 proposal/invocation assumption.
+
+Result: RESOLVED by TAD-118.
+
+### Review AY — HMAC-only ToolResult is discarded after commitment
+
+The adapter computes the commitment from the exact observed result representation before plaintext becomes unavailable; later reconstruction cannot silently replace that basis.
+
+Result: RESOLVED by TAD-112.
+
 ## 33. Architecture revisions caused by Tool Adapter Contract
 
 ### 33.1 Baseline versus optional upstream/effect capabilities
@@ -1769,7 +1887,7 @@ The Tool Adapter Contract locks:
 4. ToolProposal ancestry is never inferred from equality/proximity.
 5. ToolDecision is captured only from a real observed/received decision occurrence.
 6. Execution does not imply explicit allow; denial does not erase later execution.
-7. Effective ToolInvocation is the final visible execution-relevant pre-execution representation.
+7. Effective ToolInvocation is the final visible execution-relevant pre-execution representation; lower post-boundary mutation remains unknown.
 8. Changed effective representation requires new ToolInvocation identity.
 9. Argument provenance uses positive Derivation and preserves control/content separation.
 10. Application enrichment/secrets are not model_supplied by proximity.
@@ -1782,16 +1900,17 @@ The Tool Adapter Contract locks:
 17. Tool/server metadata origin is explicit and reported values remain reported evidence.
 18. Tool-reported success/transaction IDs do not establish external Effect/commit.
 19. EffectObservation acquisition is optional and evidence-basis-declared.
-20. separate_observation requires a distinct observation occurrence.
-21. EffectObservation remains evidence-bounded and is not OutcomeVerification.
+20. separate_observation requires a distinct observation occurrence; metadata origin labels alone do not create it.
+21. EffectObservation identities are occurrence-based, remain evidence-bounded, and are not OutcomeVerification.
 22. Temporal association/identifier equality do not establish external causality.
 23. Privacy disclosure is orthogonal to runtime argument/result capture.
-24. Instrumentation failure is distinct from tool/runtime failure.
-25. Effect-observer failure is not effect absence.
+24. Instrumentation failure is distinct from tool/runtime failure; missing execution/result records are not negative proof when capture is unresolved.
+25. Failed/timeout/cancelled/interrupted execution and Effect-observer failure are not effect-absence proof.
 26. bypass_detected requires positive evidence and does not reconstruct missed provenance.
 27. Adapter assertions remain assertions even when signed.
-28. Remote server receipt/commit/retry/effect cardinality remain unestablished by default.
-29. Unknown is required when stronger evidence is not justified.
+28. Remote server receipt/commit/retry/effect cardinality and asynchronous job completion remain unestablished by default.
+29. Proposal→Invocation cardinality follows explicit Transform/Derivation rather than an assumed fixed 1:1 mapping.
+30. Unknown is required when stronger evidence is not justified.
 
 ## 35. Open items handed to Verifier Contract / later profiles
 
