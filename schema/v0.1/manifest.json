@@ -4,5 +4,31 @@
   "status": "schema-freeze",
   "json_schema_dialect": "https://json-schema.org/draft/2020-12/schema",
   "schema_namespace": "urn:c2atrace:schema:v0.1:",
-  "profile_namespace": "urn:c2atrace:profile:v0.1:"
+  "profile_namespace": "urn:c2atrace:profile:v0.1:",
+  "baseline_profiles": {
+    "core": "urn:c2atrace:profile:v0.1:core",
+    "integrity": "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519",
+    "privacy": "urn:c2atrace:profile:v0.1:privacy:core",
+    "provider_adapter": "urn:c2atrace:profile:v0.1:adapter:provider",
+    "tool_adapter": "urn:c2atrace:profile:v0.1:adapter:tool",
+    "verifier": "urn:c2atrace:profile:v0.1:verifier"
+  },
+  "schemas": {
+    "primitives": "primitives.schema.json",
+    "reference": "reference.schema.json",
+    "representation": "representation.schema.json",
+    "core": "core.schema.json",
+    "source": "source.schema.json",
+    "transform": "transform.schema.json",
+    "request": "request.schema.json",
+    "model": "model.schema.json",
+    "tool": "tool.schema.json",
+    "trust-taint": "trust-taint.schema.json",
+    "privacy": "privacy.schema.json",
+    "adapter": "adapter.schema.json",
+    "records": "records.schema.json",
+    "receipt": "receipt.schema.json",
+    "verifier": "verifier.schema.json",
+    "c2atrace": "c2atrace.schema.json"
+  }
 }
