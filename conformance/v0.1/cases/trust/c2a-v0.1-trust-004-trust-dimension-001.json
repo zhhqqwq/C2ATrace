@@ -1,0 +1,109 @@
+{
+  "case_id": "c2a-v0.1-trust-004-trust-dimension-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TRUST-004"
+  ],
+  "planned_test_ids": [
+    "trust-dimension-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "TrustAssertion requires an explicit dimension locally; a receipt with one dimension remains semantically valid.",
+  "documents": [
+    {
+      "document_id": "trust-missing-dimension",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "trust-raw-001",
+          "kind": "TrustAssertion",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "frag-001",
+              "expected_kind": "ContextFragment"
+            }
+          },
+          "state": "trusted",
+          "asserted_by": {
+            "state": "unknown"
+          },
+          "policy": {
+            "state": "unknown"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:trust-taint#/$defs/TrustAssertion"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "trust-dimension-001",
+              "kind": "TrustAssertion",
+              "run_id": "run-sr-001",
+              "subject": {
+                "ref": {
+                  "ref_type": "local",
+                  "id": "frag-001",
+                  "expected_kind": "ContextFragment"
+                }
+              },
+              "dimension": "source_reliability",
+              "state": "trusted",
+              "asserted_by": {
+                "state": "unknown"
+              },
+              "policy": {
+                "state": "unknown"
+              }
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "trust-dimension-001"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TRUST-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-trust-004",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TRUST-004"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-004-trust-dimension-001.json"
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "c2a-v0.1-trust-006-trust-issuer-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "trust-missing-issuer",
+      "schema_target": "urn:c2atrace:schema:v0.1:trust-taint#/$defs/TrustAssertion",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    },
+    {
+      "document_id": "semantic-receipt",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TRUST-006",
+      "check_id": "trust-issuer-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "trust-issuer-001"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

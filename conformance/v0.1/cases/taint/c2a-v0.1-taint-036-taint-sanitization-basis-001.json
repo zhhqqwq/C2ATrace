@@ -1,0 +1,90 @@
+{
+  "case_id": "c2a-v0.1-taint-036-taint-sanitization-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAINT-036"
+  ],
+  "planned_test_ids": [
+    "taint-sanitization-basis-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A sanitization-based absent TaintAssertion is locally Schema-valid but semantically invalid when sanitizer Transform and upstream taint evidence are omitted.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "taint-sanitization-invalid-001",
+              "kind": "TaintAssertion",
+              "run_id": "run-sr-001",
+              "subject": {
+                "ref": {
+                  "ref_type": "local",
+                  "id": "frag-001",
+                  "expected_kind": "ContextFragment"
+                }
+              },
+              "taint_kind": "untrusted_input",
+              "state": "absent",
+              "channel": "content",
+              "precision": "exact",
+              "basis_kind": "sanitization",
+              "asserted_by": {
+                "state": "known",
+                "id": "sanitizer-001"
+              },
+              "policy": {
+                "state": "known",
+                "id": "urn:c2atrace:policy:test:sanitize"
+              }
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "taint-sanitization-invalid-001"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TAINT-036"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-taint-036",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAINT-036"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-taint-036-taint-sanitization-basis-001.json"
+}

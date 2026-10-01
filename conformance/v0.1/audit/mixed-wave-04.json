@@ -1,0 +1,29 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "04",
+  "status": "in_progress",
+  "total_requirements": 87,
+  "executable_requirements": 43,
+  "remaining_requirements": 44,
+  "newly_materialized": [
+    "c2a-v0.1-trust-001-trust-subject-cardinality-001",
+    "c2a-v0.1-trust-004-trust-dimension-001",
+    "c2a-v0.1-trust-006-trust-issuer-001",
+    "c2a-v0.1-trust-007-trust-policy-context-001",
+    "c2a-v0.1-taint-001-taint-subject-cardinality-001",
+    "c2a-v0.1-taint-004-taint-kind-001",
+    "c2a-v0.1-taint-006-taint-channel-vocabulary-001",
+    "c2a-v0.1-taint-007-taint-precision-vocabulary-001",
+    "c2a-v0.1-taint-008-taint-issuer-001",
+    "c2a-v0.1-taint-009-taint-policy-context-001",
+    "c2a-v0.1-taint-036-taint-sanitization-basis-001"
+  ],
+  "assertions": {
+    "required_field_and_enum_schema_negatives_materialized": true,
+    "explicit_unknown_positive_semantics_materialized": true,
+    "sanitization_semantic_gap_materialized_as_schema_valid_invalid_semantic": true,
+    "frozen_schema_unchanged": true,
+    "direct_schema_acceptance_unchanged": true
+  },
+  "note": "Wave 04 materializes Trust/Taint explicit subject/dimension/kind/channel/precision/issuer/policy rules plus the sanitization discharge semantic boundary. Acceptance remains pending an independent conformance runner."
+}
