@@ -255,7 +255,7 @@
       "requirement_id": "RCPT-032",
       "planned_test_id": "receipt-link-pinned-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-032-receipt-link-pinned-001.json"
     },
     {
