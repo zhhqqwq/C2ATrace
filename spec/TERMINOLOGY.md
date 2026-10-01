@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part G aligned.
+Status: Phase 1 Part H aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, and PRIV-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, and INTG-* requirements.
 
 ## Artifact
 
@@ -778,15 +778,101 @@ Run does not imply complete capture, a single process, a single thread, a single
 
 ## Receipt
 
-A Package containing some C2ATrace records plus integrity-related metadata.
+A Package identity centered on one immutable Authenticated Receipt Payload (ARP), with zero or more non-identity-defining IntegrityEnvelope attachments.
 
-A Receipt may represent all or part of a Run. Until OQ-013 defines external-reference semantics, normative internal references in a conforming Receipt are self-contained under GRAPH-001.
+A Receipt may represent all or part of a Run. Subset Receipts are first-class and do not imply complete runtime history.
+
+See RCPT-001 through RCPT-011.
+
+## Receipt Presentation
+
+A concrete transport serialization of one Receipt ARP together with some selected embedded/detached IntegrityEnvelope material.
+
+Different Presentations of the same unchanged ARP/Receipt identity do not create new Receipt identity.
+
+## Authenticated Receipt Payload (ARP)
+
+The complete semantics-bearing Receipt payload committed by the baseline digest/signature profile.
+
+It includes Receipt identity, inventory, included records, ExternalReferences, ReceiptLinks, scope/privacy metadata, and other semantics-bearing fields. IntegrityEnvelope signature values/attachments are outside the ARP.
+
+## Receipt Inventory
+
+The explicit or deterministic membership set of records included in one ARP.
+
+Inventory completeness is package-local and does not establish Run/runtime/history completeness.
+
+## Receipt Scope Descriptor
+
+Producer-authored metadata describing the intended selection context of a Receipt, such as Run, root objects, time window, or application selection.
+
+Scope does not imply complete coverage.
+
+## ExternalReference
+
+An explicit cross-Receipt Reference form locating a target by target Receipt identity plus target object identity, with an optional target Receipt payload-digest pin.
+
+The tuple is a package-location address; it does not redefine the underlying C2ATrace object identity.
+
+Unpinned resolution is identifier-based; digest pinning binds an exact target ARP commitment when matched.
+
+See RCPT-012 through RCPT-030 and RCPT-049 through RCPT-050.
+
+## Resolution Set
+
+The Receipts and external resolution material actually available to one verifier invocation.
+
+External-reference resolution, ambiguity, and closure are relative to this supplied set/capability.
+
+## Reference Closure
+
+The state in which all explicit normative references required for a given verification operation are resolvable in the supplied Resolution Set.
+
+Reference closure is not runtime/capture/history completeness.
+
+## ReceiptLink
+
+Digest-pinned package-level integrity/linkage metadata included in the current ARP, pointing to a prior Receipt identity and payload digest.
+
+ReceiptLink is distinct from object-level ExternalReference. Multiple prior links are allowed and create partial order, not global complete history.
+
+See RCPT-031 through RCPT-045.
 
 ## IntegrityEnvelope
 
-Integrity metadata describing commitments, digests, signatures, signer/key references, and authenticated scope for a Receipt or other defined representation.
+Occurrence-identified integrity metadata authenticating a defined Receipt ARP commitment under a signature profile.
 
-Its cryptographic structure is not frozen in Phase 0. Signing scope and embedding rules remain open under OQ-015.
+IntegrityEnvelopes can be embedded or detached and multiple envelopes can authenticate one ARP. Envelope attachment count does not define Receipt identity.
+
+## Receipt Payload Digest
+
+The computational commitment to the canonical ARP under the selected canonicalization/digest profile.
+
+Baseline v0.1 uses RFC 8785 JCS UTF-8 canonical bytes followed by SHA-256.
+
+Digest match is not factual truth, completeness, or Receipt identity.
+
+## Signing Statement
+
+The deterministic domain-separated statement authenticated by an IntegrityEnvelope signature.
+
+Baseline v0.1 canonicalizes the Signing Statement with RFC 8785 JCS to UTF-8 and signs it with Ed25519. It binds Receipt identity, payload digest, algorithm/profile identifiers, verification-key reference, envelope identity, and interpreted signed envelope metadata.
+
+## Receipt Integrity Status
+
+The multidimensional result of canonicalization, digest, signature, key resolution, reference/link resolution, and related checks.
+
+Core v0.1 does not collapse these dimensions into one generic fully-verified boolean.
+
+## Runtime/History Completeness
+
+The claim that all relevant runtime/capture/history records in a defined scope are present.
+
+Ordinary Receipt inventory, reference closure, signatures, or ReceiptLinks do not establish this claim.
+
+## Unknown
+
+A first-class state meaning the available record does not justify a more specific claim.
 
 ## Action
 
