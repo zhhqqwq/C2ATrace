@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Phase 1 Part F: Trust / Taint Semantics
 
-Status: DRAFT FOR ADVERSARIAL REVIEW.
+Status: ACCEPTED AFTER ADVERSARIAL REVIEW.
 
 Scope: TrustAssertion subjects, trust dimensions and labels, issuer/policy identity, unknown/conflict semantics, inheritance prohibitions; TaintAssertion subjects, taint kind/state/channel/precision, conservative lattice, content/control propagation, mixed ancestry, sanitization, anti-laundering, and model/tool/effect boundary rules.
 
@@ -1385,6 +1385,14 @@ These remain constrained by Part F semantics.
 
 ## 22. Gate decision
 
-Phase 1 Part F is ready for adversarial/mechanical review.
+Phase 1 Part F: PASS AFTER ADVERSARIAL REVIEW.
+
+The next semantic work is:
+
+~~~text
+Privacy semantics
+~~~
+
+Integrity / Receipt semantics, adapter contracts, and verifier contract remain subsequent pre-Schema gates.
 
 JSON Schema and implementation remain BLOCKED.
