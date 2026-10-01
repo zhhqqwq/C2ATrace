@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-priv-010-privacy-hmac-profile-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "privacy-hmac-sha256-001",
+      "check": "correct-key-positive-candidate",
+      "status": "matched"
+    },
+    {
+      "vector_id": "privacy-hmac-sha256-001",
+      "check": "wrong-key-positive-candidate",
+      "status": "mismatched"
+    },
+    {
+      "vector_id": "privacy-hmac-sha256-001",
+      "check": "correct-key-negative-candidate",
+      "status": "mismatched"
+    }
+  ]
+}
