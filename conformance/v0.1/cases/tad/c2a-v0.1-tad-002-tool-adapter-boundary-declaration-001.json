@@ -1,0 +1,142 @@
+{
+  "case_id": "c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-002"
+  ],
+  "planned_test_ids": [
+    "tool-adapter-boundary-declaration-001"
+  ],
+  "primary_enforcement": "direct_schema",
+  "status": "executable",
+  "description": "Tool Adapter must declare effective invocation, execution, and result boundaries.",
+  "documents": [
+    {
+      "document_id": "complete-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-invocation-boundary-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-execution-boundary-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-result-boundary-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/direct/c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001.json"
+}
