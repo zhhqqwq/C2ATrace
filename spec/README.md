@@ -12,15 +12,16 @@ Status: pre-schema specification work.
 - PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md — accepted ToolProposal / ToolInvocation / ToolDecision / ToolExecution / ToolResult / EffectObservation semantics, argument provenance, denial, retry/idempotency, and effect-evidence boundaries after adversarial review.
 - PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md — accepted TrustAssertion / TaintAssertion semantics, policy scoping, conservative taint lattice, content/control separation, sanitization, and anti-laundering boundaries after adversarial review.
 - PHASE-1-PART-G-PRIVACY-SEMANTICS.md — accepted package-relative privacy semantics, full/hash-only/HMAC/redacted profiles, metadata leakage, redacted identity, verifier capability, and verification downgrade boundaries after adversarial review.
+- PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md — accepted Receipt identity/scope/subset, ExternalReference/multi-Receipt resolution, ReceiptLink, RFC 8785 + SHA-256 + Ed25519 integrity, privacy composition, and multidimensional verifier-result semantics after adversarial review.
 - THREAT-MODEL.md — trust boundaries, adversary assumptions, and numbered normative threat requirements.
 - CLAIMS.md — composable evidence-basis model and numbered verifier-reporting requirements.
-- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Phase 1 Part G.
+- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Phase 1 Part H.
 
 ## Project gate
 
-JSON Schema remains unfrozen. Phase 1 Parts A through G are complete.
+JSON Schema remains unfrozen. Phase 1 Parts A through H are complete.
 
-The next semantic focus is Integrity / Receipt semantics, followed by provider/tool adapter and verifier contracts. These gates remain before Schema freeze.
+The remaining pre-Schema specification gates are Provider Adapter Contract, Tool Adapter Contract, and Verifier Contract.
 
 ## Normative language discipline
 
