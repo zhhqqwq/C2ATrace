@@ -50,10 +50,10 @@
             "adapter_declaration": {
               "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
             }
-          },
-          "unevaluatedProperties": false
+          }
         }
-      ]
+      ],
+      "unevaluatedProperties": false
     },
     "ProviderAdapterCapability": {
       "allOf": [
@@ -148,10 +148,10 @@
               },
               "uniqueItems": true
             }
-          },
-          "unevaluatedProperties": false
+          }
         }
-      ]
+      ],
+      "unevaluatedProperties": false
     },
     "ToolAdapterCapability": {
       "allOf": [
@@ -262,10 +262,10 @@
               },
               "uniqueItems": true
             }
-          },
-          "unevaluatedProperties": false
+          }
         }
-      ]
+      ],
+      "unevaluatedProperties": false
     },
     "AdapterDeclaration": {
       "oneOf": [
