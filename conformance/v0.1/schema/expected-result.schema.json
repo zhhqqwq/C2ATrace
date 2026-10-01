@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:conformance:v0.1:expected-result",
+  "title": "C2ATrace v0.1 Conformance Expected Result",
+  "$defs": {
+    "SchemaResult": {
+      "type": "object",
+      "required": [
+        "document_id",
+        "status"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "valid",
+            "invalid"
+          ]
+        },
+        "error_classes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "FindingMatcher": {
+      "type": "object",
+      "required": [
+        "requirement_id",
+        "domain",
+        "status"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "pattern": "^(TM|CLAIM|GRAPH|SRC|DRV|REQ|OUT|TOOL|TRUST|TAINT|PRIV|RCPT|INTG|PAD|TAD|VFY)-[0-9]{3}$"
+        },
+        "check_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_selector": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "domain": {
+          "enum": [
+            "conformance",
+            "resolution",
+            "comparison",
+            "cryptographic",
+            "claim",
+            "presence",
+            "support",
+            "conflict",
+            "completeness"
+          ]
+        },
+        "status": {
+          "enum": [
+            "established",
+            "valid",
+            "invalid",
+            "matched",
+            "mismatched",
+            "consistent",
+            "resolved",
+            "unresolved",
+            "ambiguous",
+            "asserted",
+            "unknown",
+            "unverified",
+            "unsupported",
+            "conflict",
+            "present",
+            "not_present",
+            "withheld",
+            "absent"
+          ]
+        },
+        "evidence_bases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(E1|E2|E3|E4|profile:.+)$"
+          },
+          "uniqueItems": true
+        },
+        "prohibited_inferences": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^P1(?::.+)?$"
+          },
+          "uniqueItems": true
+        },
+        "reason_code": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "EnvelopeMatcher": {
+      "type": "object",
+      "required": [
+        "envelope_id"
+      ],
+      "properties": {
+        "envelope_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key_resolution": {
+          "enum": [
+            "resolved",
+            "unresolved",
+            "ambiguous",
+            "unsupported"
+          ]
+        },
+        "signature_status": {
+          "enum": [
+            "valid",
+            "invalid",
+            "unverified",
+            "unsupported"
+          ]
+        },
+        "arp_binding": {
+          "enum": [
+            "matched",
+            "mismatched",
+            "unverified",
+            "unsupported"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "case_id",
+    "comparison_mode",
+    "schema_results",
+    "required_findings",
+    "forbidden_findings"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^c2a-v0\\.1-[a-z0-9][a-z0-9._-]*$"
+    },
+    "comparison_mode": {
+      "enum": [
+        "contains_normative",
+        "exact_normative"
+      ]
+    },
+    "schema_results": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:c2atrace:conformance:v0.1:expected-result#/$defs/SchemaResult"
+      }
+    },
+    "required_findings": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:c2atrace:conformance:v0.1:expected-result#/$defs/FindingMatcher"
+      }
+    },
+    "forbidden_findings": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:c2atrace:conformance:v0.1:expected-result#/$defs/FindingMatcher"
+      }
+    },
+    "envelope_results": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:c2atrace:conformance:v0.1:expected-result#/$defs/EnvelopeMatcher"
+      }
+    },
+    "process_outcome": {
+      "enum": [
+        "completed",
+        "invalidity_detected",
+        "incomplete_evaluation",
+        "operational_error"
+      ]
+    },
+    "completeness": {
+      "type": "object",
+      "properties": {
+        "package_inventory": {
+          "enum": [
+            "established",
+            "unknown",
+            "unverified",
+            "unsupported"
+          ]
+        },
+        "reference_closure": {
+          "enum": [
+            "established",
+            "unknown",
+            "unverified",
+            "unsupported"
+          ]
+        },
+        "runtime_history": {
+          "enum": [
+            "established",
+            "unknown",
+            "unverified",
+            "unsupported"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
