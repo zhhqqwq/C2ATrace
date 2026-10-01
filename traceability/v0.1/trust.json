@@ -5,8 +5,13 @@
     {
       "id": "TRUST-001",
       "title": "Trust subject cardinality",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-subject-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -15,8 +20,12 @@
     {
       "id": "TRUST-002",
       "title": "No self-subject assertion",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-no-self-subject-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -25,8 +34,12 @@
     {
       "id": "TRUST-003",
       "title": "Trust assertion identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-assertion-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -35,8 +48,13 @@
     {
       "id": "TRUST-004",
       "title": "Trust dimension is explicit",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-dimension-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -45,8 +63,13 @@
     {
       "id": "TRUST-005",
       "title": "Core trust state",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-state-vocabulary-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -55,8 +78,13 @@
     {
       "id": "TRUST-006",
       "title": "Issuer is explicit or unknown",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-issuer-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -65,8 +93,13 @@
     {
       "id": "TRUST-007",
       "title": "Policy context is explicit or unknown",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-policy-context-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -75,8 +108,12 @@
     {
       "id": "TRUST-008",
       "title": "Cross-policy labels are not automatically equivalent",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-cross-policy-no-equivalence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -85,8 +122,12 @@
     {
       "id": "TRUST-009",
       "title": "Unknown trust is first-class",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-unknown-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -95,8 +136,12 @@
     {
       "id": "TRUST-010",
       "title": "Missing assertion is not explicit unknown",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-absence-not-state-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -105,8 +150,12 @@
     {
       "id": "TRUST-011",
       "title": "Trust is not objective truth",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-wording-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -115,8 +164,12 @@
     {
       "id": "TRUST-012",
       "title": "No SourceRef inheritance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-source-no-inheritance-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -125,8 +178,12 @@
     {
       "id": "TRUST-013",
       "title": "No derivation inheritance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-derivation-no-inheritance-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -135,8 +192,12 @@
     {
       "id": "TRUST-014",
       "title": "No containment inheritance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-containment-no-inheritance-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -145,8 +206,12 @@
     {
       "id": "TRUST-015",
       "title": "No request/output inheritance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-request-output-no-inheritance-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -155,8 +220,12 @@
     {
       "id": "TRUST-016",
       "title": "No tool-chain inheritance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-tool-chain-no-inheritance-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -165,8 +234,12 @@
     {
       "id": "TRUST-017",
       "title": "Signature does not upgrade trust judgement",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-signature-no-truth-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -175,8 +248,12 @@
     {
       "id": "TRUST-018",
       "title": "Trust does not create taint",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-no-implicit-taint-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -185,8 +262,12 @@
     {
       "id": "TRUST-019",
       "title": "Taint does not create trust",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-no-taint-conversion-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -195,8 +276,12 @@
     {
       "id": "TRUST-020",
       "title": "Trust does not authorize tools",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-no-tool-authorization-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -205,8 +290,12 @@
     {
       "id": "TRUST-021",
       "title": "Conflicting assertions are preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-conflict-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -215,8 +304,12 @@
     {
       "id": "TRUST-022",
       "title": "Timestamp is not trust precedence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-no-last-write-wins-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -225,8 +318,12 @@
     {
       "id": "TRUST-023",
       "title": "Unknown issuer/policy limits wording",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-unknown-authority-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -235,8 +332,12 @@
     {
       "id": "TRUST-024",
       "title": "Region trust does not imply whole-artifact trust",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-region-no-whole-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -245,8 +346,12 @@
     {
       "id": "TRUST-025",
       "title": "Unknown policy is not a shared policy identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md",
+      "planned_test": "trust-unknown-policy-no-equivalence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/trust-taint.schema.json",
         "schema/v0.1/semantic-checks.md"
