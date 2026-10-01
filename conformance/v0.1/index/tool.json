@@ -250,7 +250,7 @@
       "requirement_id": "TOOL-028",
       "planned_test_id": "tool-execution-owner-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-028-tool-execution-owner-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-028-tool-execution-owner-001.json"
     },
@@ -322,7 +322,7 @@
       "requirement_id": "TOOL-036",
       "planned_test_id": "tool-result-owner-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-036-tool-result-owner-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-036-tool-result-owner-001.json"
     },

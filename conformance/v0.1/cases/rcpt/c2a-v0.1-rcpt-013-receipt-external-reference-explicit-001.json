@@ -1,0 +1,62 @@
+{
+  "case_id": "c2a-v0.1-rcpt-013-receipt-external-reference-explicit-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-013"
+  ],
+  "planned_test_ids": [
+    "receipt-external-reference-explicit-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A reference with no explicit local/external tag is not a conforming Reference; the multi-Receipt fixture uses an explicit ExternalReference for a nonlocal target.",
+  "documents": [
+    {
+      "document_id": "invalid-implicit-external",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "obs-multi-001"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "RCPT-013"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-013",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-013"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-rcpt-013-receipt-external-reference-explicit-001.json"
+}

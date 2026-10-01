@@ -1,0 +1,28 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "05",
+  "status": "in_progress",
+  "total_requirements": 87,
+  "executable_requirements": 53,
+  "remaining_requirements": 34,
+  "newly_materialized": [
+    "c2a-v0.1-rcpt-012-receipt-internal-reference-local-001",
+    "c2a-v0.1-rcpt-013-receipt-external-reference-explicit-001",
+    "c2a-v0.1-rcpt-015-receipt-external-reference-address-001",
+    "c2a-v0.1-out-015-model-accepted-output-cardinality-001",
+    "c2a-v0.1-out-023-model-output-attempt-owner-001",
+    "c2a-v0.1-out-033-model-output-item-owner-001",
+    "c2a-v0.1-out-036-model-output-item-kind-001",
+    "c2a-v0.1-tool-028-tool-execution-owner-001",
+    "c2a-v0.1-tool-036-tool-result-owner-001",
+    "c2a-v0.1-graph-012-effect-basis-001"
+  ],
+  "assertions": {
+    "reference_form_schema_negatives_materialized": true,
+    "ownership_schema_negatives_materialized": true,
+    "semantic_positive_resolution_materialized": true,
+    "effect_basis_boundary_materialized": true,
+    "frozen_schema_unchanged": true
+  },
+  "note": "Wave 05 adds Receipt reference explicitness, model/output ownership and cardinality, tool execution/result ownership, and graph effect-basis cases. Acceptance remains pending an independent conformance runner."
+}

@@ -1,0 +1,63 @@
+{
+  "case_id": "c2a-v0.1-rcpt-015-receipt-external-reference-address-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-015"
+  ],
+  "planned_test_ids": [
+    "receipt-external-reference-address-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ExternalReference wire shape requires both target Receipt identity and target object identity; the multi-Receipt fixture supplies both and resolves them.",
+  "documents": [
+    {
+      "document_id": "invalid-external-address",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "ref_type": "external",
+          "id": "obs-multi-001"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:reference#/$defs/ExternalReference"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "RCPT-015"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-015",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-015"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-rcpt-015-receipt-external-reference-address-001.json"
+}

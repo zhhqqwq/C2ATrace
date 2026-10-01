@@ -1,0 +1,69 @@
+{
+  "case_id": "c2a-v0.1-out-036-model-output-item-kind-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "OUT-036"
+  ],
+  "planned_test_ids": [
+    "model-output-item-kind-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Unknown wire record kinds are rejected; a core TextOutput provides the conceptual text OutputItem kind under semantic verification.",
+  "documents": [
+    {
+      "document_id": "invalid-output-kind",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "audio-output-001",
+          "kind": "AudioOutput",
+          "output": {
+            "ref_type": "local",
+            "id": "out-x",
+            "expected_kind": "ModelOutput"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:records#/$defs/Record"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/streaming-partial.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "OUT-036"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-out-036",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "OUT-036"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-out-036-model-output-item-kind-001.json"
+}

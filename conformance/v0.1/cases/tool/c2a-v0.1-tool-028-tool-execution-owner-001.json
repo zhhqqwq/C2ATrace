@@ -1,0 +1,66 @@
+{
+  "case_id": "c2a-v0.1-tool-028-tool-execution-owner-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-028"
+  ],
+  "planned_test_ids": [
+    "tool-execution-owner-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ToolExecution requires exactly one ToolInvocation owner Reference locally; the tool-effect fixture resolves that owner.",
+  "documents": [
+    {
+      "document_id": "invalid-execution",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "exec-missing-owner",
+          "kind": "ToolExecution",
+          "lifecycle_state": "terminal",
+          "terminal_disposition": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:tool#/$defs/ToolExecution"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TOOL-028"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-028",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-028"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-028-tool-execution-owner-001.json"
+}
