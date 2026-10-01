@@ -1,0 +1,142 @@
+{
+  "case_id": "c2a-v0.1-trust-005-trust-state-vocabulary-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TRUST-005"
+  ],
+  "planned_test_ids": [
+    "trust-state-vocabulary-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Core TrustAssertion state vocabulary is locally frozen and a valid state remains a bounded assertion under semantic verification.",
+  "documents": [
+    {
+      "document_id": "trust-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "trust-state-001",
+          "kind": "TrustAssertion",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "frag-001",
+              "expected_kind": "ContextFragment"
+            }
+          },
+          "dimension": "source_reliability",
+          "state": "trusted",
+          "asserted_by": {
+            "state": "known",
+            "id": "policy-engine-001"
+          },
+          "policy": {
+            "state": "known",
+            "id": "urn:c2atrace:policy:test:trust"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:trust-taint#/$defs/TrustAssertion"
+    },
+    {
+      "document_id": "trust-invalid-state",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "trust-state-001",
+          "kind": "TrustAssertion",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "frag-001",
+              "expected_kind": "ContextFragment"
+            }
+          },
+          "dimension": "source_reliability",
+          "state": "safe",
+          "asserted_by": {
+            "state": "known",
+            "id": "policy-engine-001"
+          },
+          "policy": {
+            "state": "known",
+            "id": "urn:c2atrace:policy:test:trust"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:trust-taint#/$defs/TrustAssertion"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "trust-state-001",
+            "kind": "TrustAssertion",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "frag-001",
+                "expected_kind": "ContextFragment"
+              }
+            },
+            "dimension": "source_reliability",
+            "state": "trusted",
+            "asserted_by": {
+              "state": "known",
+              "id": "policy-engine-001"
+            },
+            "policy": {
+              "state": "known",
+              "id": "urn:c2atrace:policy:test:trust"
+            },
+            "run_id": "run-sr-001"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "trust-state-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TRUST-005"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-trust-005",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TRUST-005"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-005-trust-state-vocabulary-001.json"
+}
