@@ -79,7 +79,7 @@
       "requirement_id": "TAD-009",
       "planned_test_id": "tool-capture-diagnostic-scope-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001.json"
     },
