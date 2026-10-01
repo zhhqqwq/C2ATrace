@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:conformance:v0.1:case-index",
+  "title": "C2ATrace v0.1 Conformance Case Index",
+  "type": "object",
+  "required": [
+    "family",
+    "count",
+    "cases"
+  ],
+  "properties": {
+    "family": {
+      "type": "string",
+      "pattern": "^(TM|CLAIM|GRAPH|SRC|DRV|REQ|OUT|TOOL|TRUST|TAINT|PRIV|RCPT|INTG|PAD|TAD|VFY)$"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "requirement_id",
+          "planned_test_id",
+          "primary_enforcement",
+          "status",
+          "case_path"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "pattern": "^c2a-v0\\.1-[a-z0-9][a-z0-9._-]*$"
+          },
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "planned_test_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primary_enforcement": {
+            "enum": [
+              "direct_schema",
+              "mixed_schema_semantic",
+              "semantic_verifier",
+              "deterministic_vector"
+            ]
+          },
+          "status": {
+            "enum": [
+              "mapped",
+              "planned",
+              "executable",
+              "accepted"
+            ]
+          },
+          "case_path": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
