@@ -7,7 +7,7 @@
       "requirement_id": "REQ-001",
       "planned_test_id": "request-attempt-invocation-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-001-request-attempt-invocation-cardinality-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-req-001-request-attempt-invocation-cardinality-001.json"
     },
@@ -142,7 +142,7 @@
       "requirement_id": "REQ-016",
       "planned_test_id": "request-binding-source-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-016-request-binding-source-cardinality-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-req-016-request-binding-source-cardinality-001.json"
     },
