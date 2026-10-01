@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-priv-008-privacy-hash-only-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-008"
+  ],
+  "planned_test_ids": [
+    "privacy-hash-only-profile-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "hash_only uses deterministic unkeyed SHA-256 commitment comparison for the declared representation basis.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/privacy-hash-sha256.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-priv-008-privacy-hash-only-profile-001.json"
+}
