@@ -15,7 +15,7 @@
       "requirement_id": "PAD-002",
       "planned_test_id": "provider-adapter-boundary-declaration-001",
       "primary_enforcement": "direct_schema",
-      "status": "mapped",
+      "status": "accepted",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-002-provider-adapter-boundary-declaration-001.json"
     },
     {
@@ -23,7 +23,7 @@
       "requirement_id": "PAD-003",
       "planned_test_id": "provider-adapter-capability-declaration-001",
       "primary_enforcement": "direct_schema",
-      "status": "mapped",
+      "status": "accepted",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-003-provider-adapter-capability-declaration-001.json"
     },
     {
