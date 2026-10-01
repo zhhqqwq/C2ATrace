@@ -1,0 +1,23 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "06-C",
+  "status": "materialization_complete_acceptance_pending",
+  "total_requirements": 87,
+  "executable_requirements": 87,
+  "remaining_requirements": 0,
+  "newly_materialized": [
+    "c2a-v0.1-vfy-012-verifier-profile-dispatch-001",
+    "c2a-v0.1-vfy-028-verifier-resolver-evidence-001",
+    "c2a-v0.1-vfy-056-verifier-signature-key-relative-001",
+    "c2a-v0.1-vfy-123-verifier-resolver-attribution-001"
+  ],
+  "assertions": {
+    "profile_dispatch_case_materialized": true,
+    "resolver_evidence_case_materialized": true,
+    "key_relative_signature_case_materialized": true,
+    "resolver_attribution_case_materialized": true,
+    "verification_report_schema_and_semantic_layers_exercised": true,
+    "frozen_schema_unchanged": true
+  },
+  "note": "Wave 06-C completes mixed-schema-semantic materialization at 87/87 executable. Acceptance remains pending independent runner execution and cross-language normalized equivalence."
+}

@@ -1,0 +1,91 @@
+{
+  "case_id": "c2a-v0.1-vfy-056-verifier-signature-key-relative-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-056"
+  ],
+  "planned_test_ids": [
+    "verifier-signature-key-relative-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A schema-valid envelope result that reports signature_status=valid while omitting the actual key_ref used is semantically invalid because signature validity is key-relative.",
+  "documents": [
+    {
+      "document_id": "report-missing-key-binding",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-056",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [
+              "receipt-minimal-001"
+            ],
+            "goals": [
+              {
+                "check_id": "verifier-signature-key-relative-001",
+                "mandatory": true
+              }
+            ],
+            "capability_summary": {
+              "verification_keys": [
+                "test-ed25519-key-001"
+              ]
+            }
+          },
+          "findings": [],
+          "envelope_results": [
+            {
+              "envelope_id": "env-test-001",
+              "key_resolution": "resolved",
+              "signature_status": "valid",
+              "arp_binding": "matched"
+            }
+          ],
+          "completeness": {
+            "package_inventory": "unverified",
+            "reference_closure": "unverified",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "VFY-056"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-056",
+    "primary_documents": [
+      "report-missing-key-binding"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-056"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-vfy-056-verifier-signature-key-relative-001.json"
+}

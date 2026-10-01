@@ -1,0 +1,100 @@
+{
+  "case_id": "c2a-v0.1-vfy-012-verifier-profile-dispatch-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-012"
+  ],
+  "planned_test_ids": [
+    "verifier-profile-dispatch-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "The VerificationReport records profile dispatch as unsupported for an unimplemented profile and does not manufacture profile-specific cryptographic results before dispatch.",
+  "documents": [
+    {
+      "document_id": "report-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-012",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [],
+            "goals": [
+              {
+                "check_id": "verifier-profile-dispatch-001",
+                "mandatory": true
+              }
+            ],
+            "capability_summary": {
+              "supported_profiles": [
+                "urn:c2atrace:profile:v0.1:core"
+              ],
+              "dispatched_profiles": [
+                "urn:c2atrace:profile:test:unsupported"
+              ]
+            }
+          },
+          "findings": [
+            {
+              "finding_id": "finding-vfy-012-profile-unsupported",
+              "check_id": "profile-dispatch-unsupported-profile",
+              "subject": {
+                "subject_kind": "profile",
+                "profile_id": "urn:c2atrace:profile:test:unsupported"
+              },
+              "domain": "support",
+              "status": "unsupported",
+              "evidence_bases": [
+                "profile:urn:c2atrace:profile:test:unsupported"
+              ],
+              "mandatory": false,
+              "reason_code": "profile_not_implemented"
+            }
+          ],
+          "envelope_results": [],
+          "completeness": {
+            "package_inventory": "unverified",
+            "reference_closure": "unverified",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "VFY-012"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-012",
+    "primary_documents": [
+      "report-valid"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-012"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-vfy-012-verifier-profile-dispatch-001.json"
+}
