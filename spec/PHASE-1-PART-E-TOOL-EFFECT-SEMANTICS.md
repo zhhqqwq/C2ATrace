@@ -958,11 +958,11 @@ A verifier MUST NOT infer retry_of, replay_of, duplicate_of, or equivalent ToolE
 
 Planned test: tool-execution-relation-no-inference-001.
 
-### TOOL-050 — Execution relationship stays within invocation
+### TOOL-050 — Execution relationship does not imply invocation equality
 
-Every recorded retry_of, replay_of, or duplicate_of ToolExecution relationship MUST connect ToolExecutions that reference the same ToolInvocation.
+A verifier MUST NOT infer that ToolExecutions related by retry_of, replay_of, or duplicate_of reference the same or representation-equal ToolInvocation.
 
-Planned test: tool-execution-relation-same-invocation-001.
+Planned test: tool-execution-relation-no-invocation-equality-001.
 
 ### TOOL-051 — Execution predecessor is not self-referential
 
@@ -972,7 +972,7 @@ Planned test: tool-execution-relation-no-self-loop-001.
 
 ### TOOL-052 — Retry/replay predecessor graph is acyclic
 
-The directed predecessor graph formed by retry_of and replay_of relationships for one ToolInvocation MUST be acyclic.
+Within one C2ATrace resolution scope, the directed predecessor graph formed by retry_of and replay_of ToolExecution relationships MUST be acyclic, including when related executions reference different ToolInvocations.
 
 Planned test: tool-execution-predecessor-cycle-001.
 
@@ -1020,9 +1020,21 @@ Planned test: tool-effect-absence-not-negation-001.
 
 ### TOOL-060 — Missing execution is not no-execution proof
 
-Absence of ToolExecution in a partial supplied Receipt MUST NOT be reported as proof that no execution occurred, except where the verifier is evaluating the narrower claim that no ToolExecution is present in the supplied Receipt.
+Absence of ToolExecution in the supplied Receipt MUST NOT be reported as proof that no execution occurred, except for the narrower statement that no ToolExecution is present in the supplied Receipt.
 
 Planned test: tool-execution-absence-scope-001.
+
+### TOOL-061 — ToolDecision identity is occurrence-based
+
+A verifier MUST NOT merge distinct ToolDecision identities solely because their subjects, decision values, policy labels, or evidence bases match.
+
+Planned test: tool-decision-no-content-merge-001.
+
+### TOOL-062 — Missing ToolDecision is not no-decision proof
+
+Absence of ToolDecision in the supplied Receipt MUST NOT be reported as proof that no application/policy decision occurred.
+
+Planned test: tool-decision-absence-not-negation-001.
 
 ## 15. Adversarial architecture review
 
@@ -1187,7 +1199,9 @@ Result: RESOLVED by TOOL-030, TOOL-031, and TOOL-049.
 
 The execution-relevant invocation representation changed, so a new ToolInvocation identity is required.
 
-Result: RESOLVED by TOOL-010 and TOOL-056.
+The later execution can still be explicitly recorded as retry_of the earlier execution. That orchestration relation does not claim ToolInvocation equality.
+
+Result: RESOLVED by TOOL-010, TOOL-050, and TOOL-056.
 
 ### Review P — Same idempotency key used twice
 
@@ -1324,9 +1338,10 @@ Part E locks the following decisions:
 15. ToolResult success/status remains tool-reported evidence and not Effect truth.
 16. EffectObservation records a bounded effect claim plus execution_result / separate_observation / external_attestation / unknown evidence basis.
 17. EffectObservation is not objective Effect truth or OutcomeVerification.
-18. Retry/replay/duplicate execution relationships are explicit and do not establish effect cardinality.
+18. Retry/replay/duplicate execution relationships are explicit, can span changed ToolInvocations, and do not establish invocation equality or effect cardinality.
 19. Idempotency metadata does not prove exactly-once semantics.
 20. ToolResult does not become future model context without explicit later provenance.
+21. ToolDecision identities are occurrence-based, and missing decisions do not prove no decision occurred.
 
 ## 18. Open items handed to later phases
 
