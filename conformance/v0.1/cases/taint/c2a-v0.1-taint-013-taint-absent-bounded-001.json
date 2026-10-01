@@ -26,7 +26,6 @@
       "resolve_references",
       "graph_checks",
       "representation_checks",
-      "integrity_checks",
       "claim_checks",
       "aggregate_report"
     ],
