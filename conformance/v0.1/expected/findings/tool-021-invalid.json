@@ -1,0 +1,16 @@
+{
+  "finding_id": "golden-tool-021",
+  "check_id": "tool-decision-subject-001",
+  "subject": {
+    "subject_kind": "object",
+    "receipt_id": "receipt-tool-effect-001",
+    "object_id": "decision-bad-subject-001",
+    "expected_kind": "ToolDecision"
+  },
+  "domain": "conformance",
+  "status": "invalid",
+  "evidence_bases": [
+    "E1"
+  ],
+  "mandatory": true
+}
