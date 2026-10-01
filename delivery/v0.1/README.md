@@ -17,7 +17,7 @@ Pre-Schema semantics/contracts   COMPLETE
 JSON Schema v0.1                FROZEN
 Requirement mapping             907 / 907
 Conformance Suite               IN PROGRESS
-Executable cases                81
+Executable cases               102
 Accepted cases                   6
 Product Verifier                BLOCKED
 SDK                             BLOCKED

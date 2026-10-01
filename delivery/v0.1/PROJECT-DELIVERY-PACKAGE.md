@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-01  
-状态基线提交：`0750a4079c4ae5517ff2ceddc18227f0f55620e6`
+状态基线提交：`c3bf0b50458677241336b6360e2d1b6b7cdbbc56`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases    81
+executable cases   102
 accepted cases       6
 ~~~
 
@@ -475,7 +475,7 @@ accepted cases       6
 | Layer | Total | Executable / Accepted state |
 |---|---:|---|
 | direct_schema | 6 | 6 accepted |
-| mixed_schema_semantic | 87 | 32 executable，55 remaining |
+| mixed_schema_semantic | 87 | 53 executable，34 remaining |
 | semantic_verifier | 771 | 当前尚处大规模 materialization 前期 |
 | deterministic_vector | 43 | 43 executable，0 remaining；acceptance pending |
 
@@ -537,8 +537,8 @@ materialization complete; runner acceptance pending
 当前：
 
 ~~~text
-32 / 87 executable
-55 remaining
+53 / 87 executable
+34 remaining
 ~~~
 
 已经开始覆盖：
@@ -555,6 +555,13 @@ materialization complete; runner acceptance pending
 - taint state；
 - commitment basis；
 - ReceiptLink pin；
+- Trust/Taint subject, dimension/kind, issuer/policy explicitness；
+- Taint channel / precision vocabulary；
+- sanitization discharge semantic evidence boundary；
+- local/external reference explicitness and address form；
+- accepted output / ModelOutput / OutputItem ownership and kind；
+- ToolExecution / ToolResult ownership；
+- EffectObservation evidence basis；
 - ToolDecision subject；
 - CaptureDiagnostic scope 等。
 
@@ -762,7 +769,7 @@ v0.1 Schema 已冻结。
 继续完成：
 
 ~~~text
-55 remaining
+34 remaining
 ~~~
 
 每条必须同时覆盖：
@@ -995,7 +1002,7 @@ FULLY VERIFIED
 当前最合适的执行顺序：
 
 ~~~text
-1. 完成 mixed_schema_semantic 剩余 55 cases
+1. 完成 mixed_schema_semantic 剩余 34 cases
 2. 建立 semantic_verifier reusable scenario primitives
 3. 批量 materialize semantic cases
 4. 实现独立 conformance runner A

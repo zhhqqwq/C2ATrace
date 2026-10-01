@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The Conformance Suite is now active: 907/907 requirements have mapped case IDs, 81 cases are executable, all 43 deterministic-vector requirements are materialized, and 6 direct-schema cases are accepted. Product Independent Verifier and SDK implementation remain blocked until the complete conformance gate passes.
+Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The Conformance Suite is now active: 907/907 requirements have mapped case IDs, 102 cases are executable, all 43 deterministic-vector requirements are materialized, 53/87 mixed schema-semantic requirements are executable, and 6 direct-schema cases are accepted. Product Independent Verifier and SDK implementation remain blocked until the complete conformance gate passes.
 
 See:
 
