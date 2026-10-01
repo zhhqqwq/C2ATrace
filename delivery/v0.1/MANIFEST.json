@@ -1,0 +1,95 @@
+{
+  "package_name": "C2ATrace v0.1 Project Delivery Package",
+  "package_version": "2026-10-01.1",
+  "protocol_version": "0.1",
+  "status": "current_handoff_baseline",
+  "source_snapshot_commit": "8a31269b012a2d7ecb3c9e19ce878b86b769a268",
+  "generated_date": "2026-10-01",
+  "project_positioning": "Provider-boundary Context-to-Action provenance protocol with SDK and independent verifier planned after conformance gate.",
+  "gates": {
+    "phase_0_foundations": "accepted",
+    "phase_1_semantics": "accepted",
+    "provider_adapter_contract": "accepted",
+    "tool_adapter_contract": "accepted",
+    "verifier_contract": "accepted",
+    "json_schema_freeze": "accepted_frozen",
+    "conformance_suite": "in_progress",
+    "product_independent_verifier": "blocked",
+    "sdk": "blocked"
+  },
+  "requirements": {
+    "total": 907,
+    "mapped_cases": 907,
+    "classification": {
+      "direct_schema": 6,
+      "mixed_schema_semantic": 87,
+      "semantic_verifier": 771,
+      "deterministic_vector": 43
+    }
+  },
+  "conformance": {
+    "status": "in_progress",
+    "executable_cases": 37,
+    "accepted_cases": 6,
+    "direct_schema": {
+      "total": 6,
+      "accepted": 6
+    },
+    "mixed_schema_semantic": {
+      "total": 87,
+      "executable": 26,
+      "remaining": 61
+    },
+    "deterministic_vector": {
+      "total": 43,
+      "executable": 5,
+      "remaining": 38
+    },
+    "semantic_verifier": {
+      "total": 771,
+      "status": "mapped_materialization_pending"
+    },
+    "runner_contract": "conformance/v0.1/RUNNER-CONTRACT.md",
+    "manifest": "conformance/v0.1/manifest.json"
+  },
+  "frozen_schema": {
+    "dialect": "https://json-schema.org/draft/2020-12/schema",
+    "resources": 16,
+    "runtime_record_union_branches": 24,
+    "top_level_union_branches": 5,
+    "manifest": "schema/v0.1/manifest.json",
+    "freeze_audit": "schema/v0.1/FREEZE-AUDIT.md"
+  },
+  "baseline_fixtures": {
+    "valid_receipts": 9,
+    "invalid_total": 6,
+    "invalid_schema": 2,
+    "invalid_semantic": 3,
+    "invalid_crypto": 1
+  },
+  "assets": {
+    "delivery_document": "delivery/v0.1/PROJECT-DELIVERY-PACKAGE.md",
+    "handoff_checklist": "delivery/v0.1/HANDOFF-CHECKLIST.md",
+    "project_readme": "README.md",
+    "spec_index": "spec/README.md",
+    "schema_manifest": "schema/v0.1/manifest.json",
+    "schema_audit": "schema/v0.1/FREEZE-AUDIT.md",
+    "traceability_manifest": "traceability/v0.1/manifest.json",
+    "conformance_manifest": "conformance/v0.1/manifest.json",
+    "conformance_runner_contract": "conformance/v0.1/RUNNER-CONTRACT.md",
+    "fixture_root": "fixtures/v0.1/",
+    "vector_root": "vectors/v0.1/"
+  },
+  "next_gate": {
+    "name": "Complete Conformance Suite Gate",
+    "acceptance": [
+      "907/907 requirement cases accepted",
+      "all mixed cases exercise schema and semantic verifier layers",
+      "all deterministic vectors independently recomputable",
+      "all semantic-verifier cases have deterministic inputs and normative finding matchers",
+      "cross-language runners produce equivalent normalized golden results",
+      "no golden result relies on free-text messages, implementation-generated finding IDs, or unspecified ordering"
+    ]
+  },
+  "implementation_unlock_rule": "Product Independent Verifier and SDK remain blocked until the complete conformance suite gate passes."
+}
