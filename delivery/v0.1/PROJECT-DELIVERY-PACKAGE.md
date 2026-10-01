@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-01  
-状态基线提交：`8a31269b012a2d7ecb3c9e19ce878b86b769a268`
+状态基线提交：`49037e4a6ca5978837cea515f2bcccf8a5c54915`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases    37
+executable cases    61
 accepted cases       6
 ~~~
 
@@ -475,9 +475,9 @@ accepted cases       6
 | Layer | Total | Executable / Accepted state |
 |---|---:|---|
 | direct_schema | 6 | 6 accepted |
-| mixed_schema_semantic | 87 | 26 executable，61 remaining |
+| mixed_schema_semantic | 87 | 32 executable，55 remaining |
 | semantic_verifier | 771 | 当前尚处大规模 materialization 前期 |
-| deterministic_vector | 43 | 5 executable，38 remaining |
+| deterministic_vector | 43 | 23 executable，20 remaining |
 
 注意：这是 Conformance executability review 后的当前责任分类，也是当前工作量规划的 source of truth。
 
@@ -503,13 +503,20 @@ Schema Freeze 初期分类曾经更粗；之后对 REQ-005、REQ-006、REQ-013�
 当前：
 
 ~~~text
-5 / 43 executable
-38 remaining
+23 / 43 executable
+20 remaining
 ~~~
 
 已覆盖至少：
 
 - JCS profile；
+- invalid / duplicate-name canonicalization rejection；
+- exact UTF-8 canonical bytes；
+- no extra Unicode normalization；
+- array-order preservation；
+- complete-ARP SHA-256 scope；
+- Ed25519 profile；
+- Signing Statement domain / receipt / digest / algorithm / key-ref / envelope-id binding；
 - invalid signature；
 - post-sign ARP tamper separation；
 - privacy hash-only；
@@ -520,13 +527,18 @@ Schema Freeze 初期分类曾经更粗；之后对 REQ-005、REQ-006、REQ-013�
 当前：
 
 ~~~text
-26 / 87 executable
-61 remaining
+32 / 87 executable
+55 remaining
 ~~~
 
 已经开始覆盖：
 
 - ownership/cardinality；
+- request capture-level vocabulary；
+- attempt/execution terminal-disposition vocabulary；
+- output capture-extent vocabulary；
+- ToolDecision decision vocabulary；
+- EffectObservation basis requirement；
 - output ownership；
 - RequestBinding；
 - provider/tool adapter declarations；
@@ -727,7 +739,7 @@ v0.1 Schema 已冻结。
 优先完成剩余：
 
 ~~~text
-38
+20
 ~~~
 
 原因：算法行为边界清晰、可独立重算，是建立 cross-language runner 的最佳起点。
@@ -737,7 +749,7 @@ v0.1 Schema 已冻结。
 继续完成：
 
 ~~~text
-61 remaining
+55 remaining
 ~~~
 
 每条必须同时覆盖：

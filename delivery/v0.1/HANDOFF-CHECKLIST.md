@@ -31,12 +31,12 @@
 
 ~~~text
 requirements / mapped cases      907 / 907
-executable cases                  37
+executable cases                  61
 accepted cases                     6
 
 direct_schema                     6 / 6 accepted
-mixed_schema_semantic            26 / 87 executable
-deterministic_vector              5 / 43 executable
+mixed_schema_semantic            32 / 87 executable
+deterministic_vector             23 / 43 executable
 semantic_verifier               771 total
 ~~~
 
