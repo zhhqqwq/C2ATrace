@@ -1,0 +1,9 @@
+{
+  "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationFinding",
+  "fixtures": [
+    "conformance/v0.1/expected/findings/req-007-invalid.json",
+    "conformance/v0.1/expected/findings/rcpt-032-matched.json",
+    "conformance/v0.1/expected/findings/intg-031-valid.json"
+  ],
+  "note": "These are canonical machine-readable examples. Cross-language golden comparison ignores finding_id and free-text fields."
+}
