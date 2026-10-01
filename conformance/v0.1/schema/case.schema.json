@@ -236,6 +236,9 @@
       "items": {
         "type": "string"
       }
+    },
+    "harness": {
+      "$ref": "urn:c2atrace:conformance:v0.1:harness-input"
     }
   },
   "additionalProperties": false
