@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0 is complete after second review. Phase 1 Parts A (SourceRef / SourceObservation), B (Transform / Derivation), C (RequestSnapshot / RequestBinding), D (ModelInvocation / ProviderAttempt / ModelOutput), and E (Tool / Effect semantics) are complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
+Specification-first. Phase 0 is complete after second review. Phase 1 Parts A (SourceRef / SourceObservation), B (Transform / Derivation), C (RequestSnapshot / RequestBinding), D (ModelInvocation / ProviderAttempt / ModelOutput), E (Tool / Effect semantics), and F (Trust / Taint) are complete after adversarial review. JSON Schema remains unfrozen and implementation has not started.
 
 See:
 
@@ -50,6 +50,7 @@ See:
 - [Phase 1 Part C — Request Semantics](spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md)
 - [Phase 1 Part D — Model Invocation / Output](spec/PHASE-1-PART-D-MODEL-OUTPUT-SEMANTICS.md)
 - [Phase 1 Part E — Tool / Effect Semantics](spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md)
+- [Phase 1 Part F — Trust / Taint Semantics](spec/PHASE-1-PART-F-TRUST-TAINT-SEMANTICS.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -79,6 +80,13 @@ See:
 - Tool completion or reported success is not external effect truth.
 - Effect observation is not outcome verification.
 - Idempotency metadata is not exactly-once proof.
+- Trusted is not objectively true.
+- Tainted is not malicious.
+- Trust does not automatically inherit.
+- Content taint and control taint are distinct.
+- Tainted request does not automatically taint model output.
+- Sanitized is not trusted.
+- Sanitization does not erase provenance history.
 - Recorded inclusion is not causal responsibility.
 - Every numbered normative requirement maps to a planned conformance test.
 
@@ -88,4 +96,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-The next semantic phase defines Trust / Taint semantics. JSON Schema freeze remains blocked until trust/taint, privacy, integrity/receipt, adapter, and verifier semantics pass their specification gates.
+The next semantic phase defines Privacy semantics. JSON Schema freeze remains blocked until privacy, integrity/receipt, adapter, and verifier semantics pass their specification gates.
