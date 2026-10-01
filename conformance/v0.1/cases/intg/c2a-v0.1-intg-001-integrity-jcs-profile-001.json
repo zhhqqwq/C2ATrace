@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-001-integrity-jcs-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-001"
+  ],
+  "planned_test_ids": [
+    "integrity-jcs-profile-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "Baseline ARP canonicalization uses the frozen RFC 8785 JCS profile.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-jcs-sha256-ed25519.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-001-integrity-jcs-profile-001.json"
+}
