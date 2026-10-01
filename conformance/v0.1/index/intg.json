@@ -214,7 +214,7 @@
       "requirement_id": "INTG-024",
       "planned_test_id": "integrity-embedded-envelope-stable-digest-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-024-integrity-embedded-envelope-stable-digest-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-024-integrity-embedded-envelope-stable-digest-001.json"
     },
@@ -223,7 +223,7 @@
       "requirement_id": "INTG-025",
       "planned_test_id": "integrity-detached-envelope-target-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-025-integrity-detached-envelope-target-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-025-integrity-detached-envelope-target-001.json"
     },
@@ -232,7 +232,7 @@
       "requirement_id": "INTG-026",
       "planned_test_id": "integrity-detached-mismatch-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-026-integrity-detached-mismatch-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-026-integrity-detached-mismatch-001.json"
     },
@@ -394,7 +394,7 @@
       "requirement_id": "INTG-044",
       "planned_test_id": "integrity-signed-record-deletion-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-044-integrity-signed-record-deletion-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-044-integrity-signed-record-deletion-001.json"
     },
@@ -430,7 +430,7 @@
       "requirement_id": "INTG-048",
       "planned_test_id": "integrity-hashonly-signing-scope-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-048-integrity-hashonly-signing-scope-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-048-integrity-hashonly-signing-scope-001.json"
     },
@@ -439,7 +439,7 @@
       "requirement_id": "INTG-049",
       "planned_test_id": "integrity-hmac-signature-no-secret-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-049-integrity-hmac-signature-no-secret-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-049-integrity-hmac-signature-no-secret-001.json"
     },
@@ -448,7 +448,7 @@
       "requirement_id": "INTG-050",
       "planned_test_id": "integrity-redacted-signing-scope-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-050-integrity-redacted-signing-scope-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-050-integrity-redacted-signing-scope-001.json"
     },
@@ -457,7 +457,7 @@
       "requirement_id": "INTG-051",
       "planned_test_id": "integrity-signed-commitment-candidate-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-051-integrity-signed-commitment-candidate-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-051-integrity-signed-commitment-candidate-001.json"
     },
@@ -583,7 +583,7 @@
       "requirement_id": "INTG-065",
       "planned_test_id": "integrity-signed-pin-bounded-001",
       "primary_enforcement": "deterministic_vector",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-065-integrity-signed-pin-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-intg-065-integrity-signed-pin-bounded-001.json"
     },

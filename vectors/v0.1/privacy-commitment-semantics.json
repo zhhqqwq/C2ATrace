@@ -1,0 +1,134 @@
+{
+  "vector_id": "privacy-commitment-semantics-001",
+  "profile_id": "urn:c2atrace:profile:v0.1:privacy:core",
+  "unkeyed": {
+    "candidate_utf8": "shared-representation",
+    "expected_sha256_hex": "dbdf2f71021d25d35adabab70db3a3e2c39d42d7c198d6fec73c40478537b3e8",
+    "expected_sha256_base64url": "298vcQIdJdNa2rq3DbOj4sOdQtfBmNb-xzxAR4U3s-g",
+    "compatible_commitment": {
+      "method": "sha256",
+      "representation_basis": "utf8-text",
+      "value": {
+        "encoding": "base64url",
+        "value": "298vcQIdJdNa2rq3DbOj4sOdQtfBmNb-xzxAR4U3s-g"
+      }
+    },
+    "incompatible_basis_commitment": {
+      "method": "sha256",
+      "representation_basis": "json-jcs-utf8",
+      "value": {
+        "encoding": "base64url",
+        "value": "298vcQIdJdNa2rq3DbOj4sOdQtfBmNb-xzxAR4U3s-g"
+      }
+    },
+    "incompatible_method_commitment": {
+      "method": "sha512",
+      "representation_basis": "utf8-text",
+      "value": {
+        "encoding": "base64url",
+        "value": "298vcQIdJdNa2rq3DbOj4sOdQtfBmNb-xzxAR4U3s-g"
+      }
+    }
+  },
+  "hmac": {
+    "candidate_utf8": "privacy-candidate",
+    "candidate_utf8_hex": "707269766163792d63616e646964617465",
+    "secret_key_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "expected_tag_hex": "c9db12c2a908ed7066107192ce0efbd655d64ffce0cca9b0c89d124fbfa76446",
+    "expected_tag_base64url": "ydsSwqkI7XBmEHGSzg771lXWT_zgzKmwyJ0ST7-nZEY",
+    "commitment": {
+      "method": "hmac-sha256",
+      "representation_basis": "utf8-text",
+      "key_ref": "test-hmac-key-001",
+      "comparison_domain": "test-domain",
+      "profile_id": "urn:c2atrace:profile:v0.1:privacy:hmac-sha256",
+      "value": {
+        "encoding": "base64url",
+        "value": "ydsSwqkI7XBmEHGSzg771lXWT_zgzKmwyJ0ST7-nZEY"
+      }
+    },
+    "incompatible_domain_commitment": {
+      "method": "hmac-sha256",
+      "representation_basis": "utf8-text",
+      "key_ref": "test-hmac-key-001",
+      "comparison_domain": "other-domain",
+      "profile_id": "urn:c2atrace:profile:v0.1:privacy:hmac-sha256",
+      "value": {
+        "encoding": "base64url",
+        "value": "ydsSwqkI7XBmEHGSzg771lXWT_zgzKmwyJ0ST7-nZEY"
+      }
+    }
+  },
+  "redaction": {
+    "original_candidate_utf8": "secret email alice@example.com",
+    "redacted_candidate_utf8": "secret email [REDACTED]",
+    "original_sha256_hex": "d46dfcaa4abdf34a377f9658f8b8933a1481ae37e515f2abcb9b03a93f85dc3c",
+    "original_sha256_base64url": "1G38qkq980o3f5ZY-LiTOhSBrjflFfKry5sDqT-F3Dw",
+    "redacted_sha256_hex": "61896f94402aeaa5ea84cea501a343f7bbe397696d99463cc924c6187beef24a",
+    "redacted_sha256_base64url": "YYlvlEAq6qXqhM6lAaND97vjl2ltmUY8ySTGGHvu8ko",
+    "original_commitment": {
+      "method": "sha256",
+      "representation_basis": "original_utf8-text",
+      "value": {
+        "encoding": "base64url",
+        "value": "1G38qkq980o3f5ZY-LiTOhSBrjflFfKry5sDqT-F3Dw"
+      }
+    },
+    "redacted_commitment": {
+      "method": "sha256",
+      "representation_basis": "redacted_utf8-text",
+      "value": {
+        "encoding": "base64url",
+        "value": "YYlvlEAq6qXqhM6lAaND97vjl2ltmUY8ySTGGHvu8ko"
+      }
+    }
+  },
+  "contexts": {
+    "hmac_with_secret_and_candidate": {
+      "secret_available": true,
+      "candidate_available": true,
+      "comparison_domain": "test-domain"
+    },
+    "hmac_without_secret": {
+      "secret_available": false,
+      "candidate_available": true,
+      "comparison_domain": "test-domain"
+    },
+    "hmac_wrong_domain": {
+      "secret_available": true,
+      "candidate_available": true,
+      "comparison_domain": "other-domain"
+    },
+    "hmac_without_candidate": {
+      "secret_available": true,
+      "candidate_available": false,
+      "comparison_domain": "test-domain"
+    },
+    "equal_recorded_tags_only": {
+      "secret_available": false,
+      "candidate_available": false,
+      "comparison_domain": "test-domain"
+    }
+  },
+  "expected": {
+    "compatible_unkeyed_commitment_match": true,
+    "incompatible_basis_representation_equality": false,
+    "incompatible_method_representation_equality": false,
+    "hmac_with_secret_candidate_match": true,
+    "hmac_without_secret_independent_match": false,
+    "hmac_wrong_domain_hidden_equality": false,
+    "pre_post_commitments_equal": false,
+    "redacted_commitment_matches_redacted_candidate": true,
+    "redacted_commitment_matches_original_candidate": false,
+    "original_commitment_matches_original_candidate": true,
+    "original_commitment_proves_redaction_correctness": false,
+    "whole_scope_hash_commitment_equality": true,
+    "whole_scope_hash_proves_identity": false,
+    "whole_scope_hash_proves_external_truth": false,
+    "whole_scope_hmac_candidate_match_with_capability": true,
+    "hmac_tag_presence_is_recomputation": false,
+    "candidate_match_without_candidate": false,
+    "equal_recorded_hmac_tags": true,
+    "equal_recorded_hmac_tags_prove_hidden_representation_equality": false
+  }
+}

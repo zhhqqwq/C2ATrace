@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-050-integrity-redacted-signing-scope-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-redacted.signature",
+      "status": "valid"
+    },
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-redacted.redacted-representation-authenticated",
+      "status": "matched"
+    },
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-redacted.original-plaintext-direct-authentication",
+      "status": "invalid"
+    }
+  ]
+}

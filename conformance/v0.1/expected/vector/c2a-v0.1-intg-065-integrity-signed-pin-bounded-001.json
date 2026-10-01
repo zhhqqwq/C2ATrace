@@ -1,0 +1,35 @@
+{
+  "case_id": "c2a-v0.1-intg-065-integrity-signed-pin-bounded-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-pin.current-signature",
+      "status": "valid"
+    },
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-pin.recorded-pin-authenticated",
+      "status": "matched"
+    },
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-pin.target-signature-authenticated-by-current-signature",
+      "status": "invalid"
+    },
+    {
+      "vector_id": "integrity-privacy-composition-001",
+      "check": "signed-pin.target-truth-authenticated-by-current-signature",
+      "status": "invalid"
+    }
+  ]
+}

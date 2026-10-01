@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-044-integrity-signed-record-deletion-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-044"
+  ],
+  "planned_test_ids": [
+    "integrity-signed-record-deletion-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "Deleting an included ARP record and inventory entry requires fresh digest recomputation and breaks the prior envelope binding.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-envelope-placement.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-044-integrity-signed-record-deletion-001.json"
+}

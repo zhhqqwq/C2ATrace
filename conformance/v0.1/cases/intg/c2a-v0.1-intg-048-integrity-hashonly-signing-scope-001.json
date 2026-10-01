@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-048-integrity-hashonly-signing-scope-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-048"
+  ],
+  "planned_test_ids": [
+    "integrity-hashonly-signing-scope-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "A valid signature over a hash-only ARP authenticates the disclosed commitment/profile metadata, not unavailable plaintext directly.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-privacy-composition.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-048-integrity-hashonly-signing-scope-001.json"
+}

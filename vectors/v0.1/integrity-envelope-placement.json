@@ -1,0 +1,324 @@
+{
+  "vector_id": "integrity-envelope-placement-001",
+  "profile_id": "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519",
+  "test_key": {
+    "private_seed_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg",
+    "key_ref": "test-ed25519-key-001"
+  },
+  "signing_statement_domain": "C2ATrace/v0.1/ReceiptSignature",
+  "base": {
+    "arp": {
+      "receipt_id": "receipt-envelope-vector-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-env-001",
+        "frag-env-001"
+      ],
+      "records": [
+        {
+          "id": "run-env-001",
+          "kind": "Run",
+          "label": "envelope-vector"
+        },
+        {
+          "id": "frag-env-001",
+          "kind": "ContextFragment",
+          "run_id": "run-env-001",
+          "representation": {
+            "representation_kind": "text",
+            "text": "payload",
+            "charset": "utf-8",
+            "media_type": "text/plain"
+          }
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-env-001"
+      }
+    },
+    "expected_arp_jcs_utf8": "{\"inventory\":[\"run-env-001\",\"frag-env-001\"],\"privacy\":[],\"profile_ids\":[\"urn:c2atrace:profile:v0.1:core\",\"urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519\"],\"protocol_version\":\"0.1\",\"receipt_id\":\"receipt-envelope-vector-001\",\"receipt_links\":[],\"records\":[{\"id\":\"run-env-001\",\"kind\":\"Run\",\"label\":\"envelope-vector\"},{\"id\":\"frag-env-001\",\"kind\":\"ContextFragment\",\"representation\":{\"charset\":\"utf-8\",\"media_type\":\"text/plain\",\"representation_kind\":\"text\",\"text\":\"payload\"},\"run_id\":\"run-env-001\"}],\"reference_mode\":\"self_contained\",\"scope\":{\"run_id\":\"run-env-001\",\"scope_kind\":\"run\"}}",
+    "expected_payload_digest_base64url": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU",
+    "expected_signing_statement_jcs_utf8": "{\"canonicalization_profile\":\"rfc8785-jcs\",\"digest_algorithm\":\"sha256\",\"domain\":\"C2ATrace/v0.1/ReceiptSignature\",\"envelope_id\":\"env-envelope-vector-001\",\"key_ref\":\"test-ed25519-key-001\",\"payload_digest\":{\"algorithm\":\"sha256\",\"canonicalization_profile\":\"rfc8785-jcs\",\"representation_basis\":\"arp_jcs_utf8\",\"value\":{\"encoding\":\"base64url\",\"value\":\"43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU\"}},\"receipt_id\":\"receipt-envelope-vector-001\",\"signature_profile\":\"ed25519\",\"signed_metadata\":{}}",
+    "expected_signature_base64url": "tAZESVD0uBVru3weOmU2uc4WreHFaANGsbwxbqmcGzCrwVY9gtYmQ9tkCjbaON_P1V1MhVHXs0Vub0zHVTNxBg"
+  },
+  "embedded": {
+    "presentation": {
+      "kind": "ReceiptPresentation",
+      "arp": {
+        "receipt_id": "receipt-envelope-vector-001",
+        "protocol_version": "0.1",
+        "profile_ids": [
+          "urn:c2atrace:profile:v0.1:core",
+          "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+        ],
+        "reference_mode": "self_contained",
+        "inventory": [
+          "run-env-001",
+          "frag-env-001"
+        ],
+        "records": [
+          {
+            "id": "run-env-001",
+            "kind": "Run",
+            "label": "envelope-vector"
+          },
+          {
+            "id": "frag-env-001",
+            "kind": "ContextFragment",
+            "run_id": "run-env-001",
+            "representation": {
+              "representation_kind": "text",
+              "text": "payload",
+              "charset": "utf-8",
+              "media_type": "text/plain"
+            }
+          }
+        ],
+        "receipt_links": [],
+        "privacy": [],
+        "scope": {
+          "scope_kind": "run",
+          "run_id": "run-env-001"
+        }
+      },
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "integrity_envelopes": [
+        {
+          "id": "env-envelope-vector-001",
+          "kind": "IntegrityEnvelope",
+          "placement": "embedded",
+          "receipt_id": "receipt-envelope-vector-001",
+          "payload_digest": {
+            "algorithm": "sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU"
+            },
+            "representation_basis": "arp_jcs_utf8",
+            "canonicalization_profile": "rfc8785-jcs"
+          },
+          "canonicalization_profile": "rfc8785-jcs",
+          "digest_algorithm": "sha256",
+          "signature_profile": "ed25519",
+          "key_ref": "test-ed25519-key-001",
+          "signed_metadata": {},
+          "signature": {
+            "encoding": "base64url",
+            "value": "tAZESVD0uBVru3weOmU2uc4WreHFaANGsbwxbqmcGzCrwVY9gtYmQ9tkCjbaON_P1V1MhVHXs0Vub0zHVTNxBg"
+          }
+        }
+      ]
+    },
+    "expected_recomputed_arp_digest_base64url": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU",
+    "expected_digest_unchanged_by_embedding": true,
+    "expected_signature_status": "valid"
+  },
+  "detached": {
+    "envelope": {
+      "id": "env-envelope-vector-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "detached",
+      "receipt_id": "receipt-envelope-vector-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "tAZESVD0uBVru3weOmU2uc4WreHFaANGsbwxbqmcGzCrwVY9gtYmQ9tkCjbaON_P1V1MhVHXs0Vub0zHVTNxBg"
+      }
+    },
+    "supplied_arp": {
+      "receipt_id": "receipt-envelope-vector-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-env-001",
+        "frag-env-001"
+      ],
+      "records": [
+        {
+          "id": "run-env-001",
+          "kind": "Run",
+          "label": "envelope-vector"
+        },
+        {
+          "id": "frag-env-001",
+          "kind": "ContextFragment",
+          "run_id": "run-env-001",
+          "representation": {
+            "representation_kind": "text",
+            "text": "payload",
+            "charset": "utf-8",
+            "media_type": "text/plain"
+          }
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-env-001"
+      }
+    },
+    "expected_target_receipt_id_match": true,
+    "expected_target_payload_digest_match": true,
+    "expected_signature_status": "valid",
+    "expected_target_binding": "matched"
+  },
+  "detached_mismatch": {
+    "envelope": {
+      "id": "env-envelope-vector-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "detached",
+      "receipt_id": "receipt-envelope-vector-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "tAZESVD0uBVru3weOmU2uc4WreHFaANGsbwxbqmcGzCrwVY9gtYmQ9tkCjbaON_P1V1MhVHXs0Vub0zHVTNxBg"
+      }
+    },
+    "supplied_arp": {
+      "receipt_id": "receipt-envelope-vector-002",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-env-001",
+        "frag-env-001"
+      ],
+      "records": [
+        {
+          "id": "run-env-001",
+          "kind": "Run",
+          "label": "envelope-vector"
+        },
+        {
+          "id": "frag-env-001",
+          "kind": "ContextFragment",
+          "run_id": "run-env-001",
+          "representation": {
+            "representation_kind": "text",
+            "text": "payload",
+            "charset": "utf-8",
+            "media_type": "text/plain"
+          }
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-env-001"
+      }
+    },
+    "expected_supplied_arp_digest_base64url": "g4gLz8emEj9L9c8u8RJaIij_AlU509twXrq6Mu98Z-Y",
+    "expected_signature_status_for_envelope_statement": "valid",
+    "expected_target_receipt_id_match": false,
+    "expected_target_payload_digest_match": false,
+    "expected_target_binding": "mismatched",
+    "expected_overall_detached_binding": "invalid"
+  },
+  "record_deletion": {
+    "original_envelope": {
+      "id": "env-envelope-vector-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-envelope-vector-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "43B1PEfGOSCUycipYit7LsBFDBlOFgmD1w_ZB04J1xU"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "tAZESVD0uBVru3weOmU2uc4WreHFaANGsbwxbqmcGzCrwVY9gtYmQ9tkCjbaON_P1V1MhVHXs0Vub0zHVTNxBg"
+      }
+    },
+    "modified_arp": {
+      "receipt_id": "receipt-envelope-vector-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-env-001"
+      ],
+      "records": [
+        {
+          "id": "run-env-001",
+          "kind": "Run",
+          "label": "envelope-vector"
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-env-001"
+      }
+    },
+    "expected_modified_arp_jcs_utf8": "{\"inventory\":[\"run-env-001\"],\"privacy\":[],\"profile_ids\":[\"urn:c2atrace:profile:v0.1:core\",\"urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519\"],\"protocol_version\":\"0.1\",\"receipt_id\":\"receipt-envelope-vector-001\",\"receipt_links\":[],\"records\":[{\"id\":\"run-env-001\",\"kind\":\"Run\",\"label\":\"envelope-vector\"}],\"reference_mode\":\"self_contained\",\"scope\":{\"run_id\":\"run-env-001\",\"scope_kind\":\"run\"}}",
+    "expected_modified_payload_digest_base64url": "s-HEdgUS5AG4M9n9kSFUzH5LOwOBWmkWWkb616mlUhs",
+    "expected_prior_digest_match": false,
+    "expected_arp_binding": "mismatched"
+  }
+}

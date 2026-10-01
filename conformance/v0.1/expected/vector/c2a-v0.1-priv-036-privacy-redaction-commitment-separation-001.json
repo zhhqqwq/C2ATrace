@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-priv-036-privacy-redaction-commitment-separation-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "privacy-commitment-semantics-001",
+      "check": "redaction.pre-post-commitment-equality",
+      "status": "mismatched"
+    },
+    {
+      "vector_id": "privacy-commitment-semantics-001",
+      "check": "redaction.commitment-substitution",
+      "status": "invalid"
+    }
+  ]
+}

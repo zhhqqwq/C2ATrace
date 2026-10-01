@@ -1,0 +1,379 @@
+{
+  "vector_id": "integrity-privacy-composition-001",
+  "profile_id": "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519",
+  "test_key": {
+    "private_seed_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg",
+    "key_ref": "test-ed25519-key-001"
+  },
+  "signing_statement_domain": "C2ATrace/v0.1/ReceiptSignature",
+  "signed_hash_only": {
+    "arp": {
+      "receipt_id": "receipt-signed-hash-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:privacy:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-signed-hash-001",
+        "frag-signed-hash-001"
+      ],
+      "records": [
+        {
+          "id": "run-signed-hash-001",
+          "kind": "Run",
+          "label": "signed-hash-only"
+        },
+        {
+          "id": "frag-signed-hash-001",
+          "kind": "ContextFragment",
+          "run_id": "run-signed-hash-001"
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [
+        {
+          "id": "privacy-signed-hash-001",
+          "kind": "PrivacyDescriptor",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "frag-signed-hash-001",
+              "expected_kind": "ContextFragment"
+            },
+            "representation_basis": "utf8-text"
+          },
+          "profile": "hash_only",
+          "availability": "original_withheld_with_commitment",
+          "commitments": [
+            {
+              "method": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "guclJl-OhMibIF2G5g7fwBBXuqSzAUciaYfrnWHI0e8"
+              },
+              "representation_basis": "utf8-text"
+            }
+          ]
+        }
+      ],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-signed-hash-001"
+      }
+    },
+    "expected_payload_digest_base64url": "_DJicSeICsukFcg-IbENy5v67hkBY-58FdoBIXqGCkc",
+    "envelope": {
+      "id": "env-signed-hash-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-signed-hash-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "_DJicSeICsukFcg-IbENy5v67hkBY-58FdoBIXqGCkc"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "4EYj_eL-rdLpjTa5GADSkTRcoqhTQ__9iNTeUe6_wGfLEJh7dmcXIdrljvmiaN2CJIk8_elKh9QutDQzlrzrDQ"
+      }
+    },
+    "external_candidate_utf8": "hash-candidate",
+    "expected_candidate_sha256_base64url": "guclJl-OhMibIF2G5g7fwBBXuqSzAUciaYfrnWHI0e8",
+    "expected_signature_status": "valid",
+    "expected_commitment_candidate_match": true,
+    "expected_candidate_directly_present_in_signed_arp": false
+  },
+  "signed_hmac": {
+    "arp": {
+      "receipt_id": "receipt-signed-hmac-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:privacy:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-signed-hmac-001",
+        "frag-signed-hmac-001"
+      ],
+      "records": [
+        {
+          "id": "run-signed-hmac-001",
+          "kind": "Run",
+          "label": "signed-hmac"
+        },
+        {
+          "id": "frag-signed-hmac-001",
+          "kind": "ContextFragment",
+          "run_id": "run-signed-hmac-001"
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [
+        {
+          "id": "privacy-signed-hmac-001",
+          "kind": "PrivacyDescriptor",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "frag-signed-hmac-001",
+              "expected_kind": "ContextFragment"
+            },
+            "representation_basis": "utf8-text"
+          },
+          "profile": "hmac",
+          "availability": "original_withheld_with_commitment",
+          "commitments": [
+            {
+              "method": "hmac-sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "ydsSwqkI7XBmEHGSzg771lXWT_zgzKmwyJ0ST7-nZEY"
+              },
+              "representation_basis": "utf8-text",
+              "key_ref": "test-hmac-key-001",
+              "comparison_domain": "test-domain",
+              "profile_id": "urn:c2atrace:profile:v0.1:privacy:hmac-sha256"
+            }
+          ]
+        }
+      ],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-signed-hmac-001"
+      }
+    },
+    "expected_payload_digest_base64url": "srb_fumA7xJdxCu8Kz_aQCa3UwybVpKUkMjZa4OXwu0",
+    "envelope": {
+      "id": "env-signed-hmac-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-signed-hmac-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "srb_fumA7xJdxCu8Kz_aQCa3UwybVpKUkMjZa4OXwu0"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "lUnxl20xiCf2mfZVRgg8zG7n85UsShaHytdKiiIR8RF5qkJ57WdWu0sOwqennfOn1TsH5Ojy9XIx7Z_-NZRMAQ"
+      }
+    },
+    "signature_only_context": {
+      "hmac_secret_available": false,
+      "candidate_available": false
+    },
+    "expected_signature_status": "valid",
+    "expected_hmac_secret_capability_from_signature": false,
+    "expected_candidate_hmac_verification_in_signature_only_context": false
+  },
+  "signed_redacted": {
+    "arp": {
+      "receipt_id": "receipt-signed-redacted-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:privacy:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-signed-redacted-001",
+        "frag-original-001",
+        "frag-redacted-001"
+      ],
+      "records": [
+        {
+          "id": "run-signed-redacted-001",
+          "kind": "Run",
+          "label": "signed-redacted"
+        },
+        {
+          "id": "frag-original-001",
+          "kind": "ContextFragment",
+          "run_id": "run-signed-redacted-001"
+        },
+        {
+          "id": "frag-redacted-001",
+          "kind": "ContextFragment",
+          "run_id": "run-signed-redacted-001",
+          "representation": {
+            "representation_kind": "text",
+            "text": "secret email [REDACTED]",
+            "charset": "utf-8",
+            "media_type": "text/plain"
+          }
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [
+        {
+          "id": "privacy-redacted-001",
+          "kind": "PrivacyDescriptor",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "frag-original-001",
+              "expected_kind": "ContextFragment"
+            },
+            "representation_basis": "original_utf8-text"
+          },
+          "profile": "redacted",
+          "availability": "redacted_derivative_disclosed",
+          "commitments": [
+            {
+              "method": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "1G38qkq980o3f5ZY-LiTOhSBrjflFfKry5sDqT-F3Dw"
+              },
+              "representation_basis": "original_utf8-text"
+            },
+            {
+              "method": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "YYlvlEAq6qXqhM6lAaND97vjl2ltmUY8ySTGGHvu8ko"
+              },
+              "representation_basis": "redacted_utf8-text"
+            }
+          ],
+          "redacted_derivative": {
+            "ref_type": "local",
+            "id": "frag-redacted-001",
+            "expected_kind": "ContextFragment"
+          }
+        }
+      ],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-signed-redacted-001"
+      }
+    },
+    "expected_payload_digest_base64url": "QGHUXt3tjU5j9BQ4AwHOKA9DFmDm5euu9I4s87WIg4M",
+    "envelope": {
+      "id": "env-signed-redacted-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-signed-redacted-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "QGHUXt3tjU5j9BQ4AwHOKA9DFmDm5euu9I4s87WIg4M"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "URGkT8ldi_vYiWJ94Z-OOfht6owLKun6UKZOFvXE79OtA4jsDs0Yyx3njXDesrlhiSxyTSIi9LBwhog0Whx8CQ"
+      }
+    },
+    "unavailable_original_candidate_utf8": "secret email alice@example.com",
+    "disclosed_redacted_candidate_utf8": "secret email [REDACTED]",
+    "expected_signature_status": "valid",
+    "expected_redacted_representation_authenticated": true,
+    "expected_unavailable_original_directly_authenticated": false
+  },
+  "signed_pin": {
+    "arp": {
+      "receipt_id": "receipt-signed-pin-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "external_references_allowed",
+      "inventory": [
+        "run-signed-pin-001"
+      ],
+      "records": [
+        {
+          "id": "run-signed-pin-001",
+          "kind": "Run",
+          "label": "signed-pin"
+        }
+      ],
+      "receipt_links": [
+        {
+          "linked_receipt_id": "receipt-multi-a",
+          "linked_payload_digest": {
+            "algorithm": "sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "meMQDqpyvdActfPcoL27RJ4mkuXNmrmBdmsGPxQOx90"
+            },
+            "representation_basis": "arp_jcs_utf8",
+            "canonicalization_profile": "rfc8785-jcs"
+          },
+          "relation": "prior"
+        }
+      ],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-signed-pin-001"
+      }
+    },
+    "expected_payload_digest_base64url": "1uoSHU0yGTupsarQzklyrP4Rx3_6T1UHWUmV0VzWusM",
+    "envelope": {
+      "id": "env-signed-pin-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-signed-pin-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "1uoSHU0yGTupsarQzklyrP4Rx3_6T1UHWUmV0VzWusM"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "FGbPPA5WQyJ0wfiDpJqGRLvvwti8q90_WSa87DeLS9OjxOQsObXWxEM9tKwGqMa1WiRoP_JwDP1EBc5qoSaJDQ"
+      }
+    },
+    "recorded_target_receipt_id": "receipt-multi-a",
+    "recorded_target_payload_digest_base64url": "meMQDqpyvdActfPcoL27RJ4mkuXNmrmBdmsGPxQOx90",
+    "expected_signature_status": "valid",
+    "expected_recorded_pin_authenticated": true,
+    "expected_target_receipt_signature_authenticated_by_current_signature": false,
+    "expected_target_truth_authenticated_by_current_signature": false
+  }
+}

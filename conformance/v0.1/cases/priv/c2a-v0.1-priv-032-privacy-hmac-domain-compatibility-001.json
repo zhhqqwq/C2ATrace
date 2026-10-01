@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-032"
+  ],
+  "planned_test_ids": [
+    "privacy-hmac-domain-compatibility-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "HMAC hidden-representation equality requires compatible effective key/comparison domains.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/privacy-commitment-semantics.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001.json"
+}

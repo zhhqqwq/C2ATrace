@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "privacy-commitment-semantics-001",
+      "check": "hmac-compatible-domain.candidate-match",
+      "status": "matched"
+    },
+    {
+      "vector_id": "privacy-commitment-semantics-001",
+      "check": "hmac-incompatible-domain.hidden-equality",
+      "status": "invalid"
+    }
+  ]
+}

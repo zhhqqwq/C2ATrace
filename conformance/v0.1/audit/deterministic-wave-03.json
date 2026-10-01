@@ -1,0 +1,53 @@
+{
+  "layer": "deterministic_vector",
+  "wave": "03",
+  "status": "executable_complete_acceptance_pending",
+  "total_requirements": 43,
+  "executable_requirements": 43,
+  "remaining_requirements": 0,
+  "newly_materialized": [
+    "c2a-v0.1-intg-024-integrity-embedded-envelope-stable-digest-001",
+    "c2a-v0.1-intg-025-integrity-detached-envelope-target-001",
+    "c2a-v0.1-intg-026-integrity-detached-mismatch-001",
+    "c2a-v0.1-intg-044-integrity-signed-record-deletion-001",
+    "c2a-v0.1-intg-048-integrity-hashonly-signing-scope-001",
+    "c2a-v0.1-intg-049-integrity-hmac-signature-no-secret-001",
+    "c2a-v0.1-intg-050-integrity-redacted-signing-scope-001",
+    "c2a-v0.1-intg-051-integrity-signed-commitment-candidate-001",
+    "c2a-v0.1-intg-065-integrity-signed-pin-bounded-001",
+    "c2a-v0.1-priv-023-privacy-commitment-compatibility-001",
+    "c2a-v0.1-priv-028-privacy-hmac-secret-required-001",
+    "c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001",
+    "c2a-v0.1-priv-036-privacy-redaction-commitment-separation-001",
+    "c2a-v0.1-priv-037-privacy-redacted-not-original-001",
+    "c2a-v0.1-priv-038-privacy-original-commitment-no-redaction-proof-001",
+    "c2a-v0.1-priv-046-privacy-whole-hash-equality-001",
+    "c2a-v0.1-priv-047-privacy-whole-hmac-match-001",
+    "c2a-v0.1-priv-071-privacy-hmac-tag-not-recomputed-001",
+    "c2a-v0.1-priv-072-privacy-candidate-required-001",
+    "c2a-v0.1-priv-077-privacy-hmac-tag-equality-bounded-001"
+  ],
+  "shared_vectors": [
+    "vectors/v0.1/integrity-envelope-placement.json",
+    "vectors/v0.1/privacy-commitment-semantics.json",
+    "vectors/v0.1/integrity-privacy-composition.json"
+  ],
+  "independent_recompute": {
+    "embedded_envelope_arp_digest_stability": true,
+    "detached_envelope_exact_target_binding": true,
+    "detached_mismatch_separates_signature_from_binding": true,
+    "record_deletion_recomputes_digest": true,
+    "commitment_compatibility_checks": true,
+    "hmac_secret_and_domain_requirements": true,
+    "redaction_pre_post_commitments_distinct": true,
+    "whole_scope_hash_and_hmac_checks": true,
+    "hmac_tag_presence_not_recomputation": true,
+    "candidate_presence_requirement": true,
+    "signed_hash_only_scope_bounded": true,
+    "signed_hmac_does_not_grant_secret": true,
+    "signed_redacted_scope_bounded": true,
+    "signed_commitment_candidate_composition_bounded": true,
+    "signed_pin_scope_bounded": true
+  },
+  "note": "Wave 03 completes deterministic-vector materialization at 43/43 executable. Acceptance remains pending independent runner execution and later cross-language normalized equivalence."
+}

@@ -198,6 +198,48 @@
         "envelope_id:bound",
         "signature_value:not_recursive"
       ]
+    },
+    {
+      "id": "integrity-envelope-placement",
+      "inputs": [
+        "vectors/v0.1/integrity-envelope-placement.json"
+      ],
+      "expected": [
+        "embedded_envelope:arp_digest_stable",
+        "detached_envelope:exact_target_matched",
+        "detached_mismatch:binding_invalid",
+        "record_deletion:prior_digest_mismatched"
+      ]
+    },
+    {
+      "id": "privacy-commitment-semantics",
+      "inputs": [
+        "vectors/v0.1/privacy-commitment-semantics.json"
+      ],
+      "expected": [
+        "commitment_compatibility:bounded",
+        "hmac_secret_capability:required",
+        "hmac_domain:compatible_required",
+        "redaction_pre_post:distinct",
+        "whole_hash:equality_bounded",
+        "whole_hmac:candidate_secret_required",
+        "tag_presence:not_recomputation",
+        "candidate:required",
+        "equal_tags:recorded_equality_only"
+      ]
+    },
+    {
+      "id": "integrity-privacy-composition",
+      "inputs": [
+        "vectors/v0.1/integrity-privacy-composition.json"
+      ],
+      "expected": [
+        "signed_hash_only:commitment_not_plaintext",
+        "signed_hmac:no_secret_capability_inference",
+        "signed_redacted:redacted_evidence_only",
+        "signed_commitment_plus_candidate:two_premise_composition",
+        "signed_pin:pin_authenticated_target_not_authenticated"
+      ]
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-026-integrity-detached-mismatch-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "integrity-envelope-placement-001",
+      "check": "detached-mismatch.signature",
+      "status": "valid"
+    },
+    {
+      "vector_id": "integrity-envelope-placement-001",
+      "check": "detached-mismatch.target-binding",
+      "status": "mismatched"
+    },
+    {
+      "vector_id": "integrity-envelope-placement-001",
+      "check": "detached-mismatch.overall-binding",
+      "status": "invalid"
+    }
+  ]
+}
