@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Tool Adapter Contract aligned.
+Status: Verifier Contract aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, INTG-*, PAD-*, and TAD-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, INTG-*, PAD-*, TAD-*, and VFY-* requirements.
 
 ## Artifact
 
@@ -935,6 +935,86 @@ Ordinary Receipt inventory, reference closure, signatures, or ReceiptLinks do no
 ## Unknown
 
 A first-class state meaning the available record does not justify a more specific claim.
+
+## Verifier
+
+An evaluator of supplied C2ATrace protocol material under one explicit Verification Invocation.
+
+The Verifier is evidence-bounded and does not become a Producer, Provider, Tool runtime, signer-identity authority, completeness oracle, or external truth oracle.
+
+## Verification Invocation
+
+The exact Receipt/Resolution Set, verification keys/key resolvers, keyed-commitment capabilities, candidate representations, recognized proof/evidence profiles, external evidence, and verification goals available to one verifier run.
+
+Verification results are relative to this invocation.
+
+## VerificationReport
+
+Machine-readable verifier-output metadata containing typed findings, per-envelope results, conflicts, unsupported/unverified checks, completeness dimensions, and process aggregation outcome.
+
+VerificationReport is not historical runtime provenance.
+
+## VerificationFinding
+
+One typed verifier result identifying the evaluated subject/scope, check/requirement, result domain, status, evidence basis, and premise references as applicable.
+
+A finding preserves the distinction among structural validity, comparison match, cryptographic validity, Producer assertion, factual unknown, unsupported capability, conflict, and absence.
+
+## Established
+
+A verifier result meaning the precisely worded claim is supported by the supplied evidence/capabilities and applicable rules.
+
+Established does not authorize broader truth, causality, trust, or completeness wording.
+
+## Matched / Mismatched
+
+Comparison-domain results meaning the declared representation/commitment/digest comparison succeeded or was actually performed and failed.
+
+These results do not establish occurrence identity or external truth.
+
+## Consistent
+
+A bounded consistency result meaning no incompatibility was detected for the specified evaluated supplied scope under that consistency check.
+
+Consistent does not establish factual truth, global consistency, or history completeness.
+
+## Asserted
+
+A result for a recorded E4 Producer/runtime/policy/external proposition that lacks stronger independent evidence for the external fact.
+
+## Unknown
+
+A semantic result meaning available evidence does not justify a stronger factual/provenance conclusion.
+
+Unknown is not false, absent, failed, safe, or invalid.
+
+## Unverified
+
+A result meaning a recognized check could not be completed because invocation-specific prerequisite evidence/capability was unavailable.
+
+## Unsupported
+
+A result meaning the verifier implementation does not implement the declared otherwise-recognizable profile/check.
+
+Unsupported is distinct from invalid.
+
+## Conflict
+
+A result preserving semantically incompatible supplied evidence/records when no applicable precedence/resolution rule resolves them.
+
+Conflict can coexist with structural invalidity when the conflict itself violates a normative invariant.
+
+## Not Present
+
+A supplied-scope presence result meaning the requested record/property was not found in the evaluated Receipt/Resolution Set.
+
+Not Present does not mean the runtime event/fact never occurred and is distinct from privacy-withheld representation.
+
+## Process Outcome
+
+A coarse operational verifier/CLI aggregation such as completed, invalidity_detected, incomplete_evaluation, or operational_error.
+
+Process Outcome is not a truth, provenance, signer-trust, or completeness verdict.
 
 ## Action
 
