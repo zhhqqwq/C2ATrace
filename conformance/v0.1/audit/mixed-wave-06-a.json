@@ -1,0 +1,30 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "06-A",
+  "status": "in_progress",
+  "total_requirements": 87,
+  "executable_requirements": 64,
+  "remaining_requirements": 23,
+  "newly_materialized": [
+    "c2a-v0.1-graph-015-core-type-classification-001",
+    "c2a-v0.1-req-017-request-binding-target-cardinality-001",
+    "c2a-v0.1-req-020-request-path-scheme-001",
+    "c2a-v0.1-req-032-request-semantic-digest-profile-001",
+    "c2a-v0.1-req-049-request-location-form-001",
+    "c2a-v0.1-priv-020-privacy-commitment-scope-001",
+    "c2a-v0.1-priv-022-privacy-commitment-profile-001",
+    "c2a-v0.1-pad-010-provider-capture-diagnostic-state-001",
+    "c2a-v0.1-pad-041-provider-output-cardinality-001",
+    "c2a-v0.1-tad-029-tool-argument-path-profile-001",
+    "c2a-v0.1-tad-058-tool-result-cardinality-001"
+  ],
+  "assertions": {
+    "mechanical_schema_negative_semantic_positive_cases_materialized": true,
+    "cross_record_cardinality_cases_schema_valid_semantic_invalid": true,
+    "semantic_digest_expected_value_recomputed": true,
+    "frozen_schema_unchanged": true,
+    "deterministic_vector_materialization_unchanged_at_43_of_43": true,
+    "direct_schema_acceptance_unchanged": true
+  },
+  "note": "Wave 06-A materializes mechanical classification, request location/digest, privacy commitment, provider diagnostic/output-cardinality, and tool argument/result-cardinality cases. Complex relationship-oriented mixed cases remain for Wave 06-B."
+}

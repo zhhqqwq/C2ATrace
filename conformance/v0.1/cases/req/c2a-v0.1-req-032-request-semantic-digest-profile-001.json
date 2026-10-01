@@ -1,0 +1,83 @@
+{
+  "case_id": "c2a-v0.1-req-032-request-semantic-digest-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-032"
+  ],
+  "planned_test_ids": [
+    "request-semantic-digest-profile-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "SemanticDigest requires an explicit canonicalization profile in addition to digest method; the semantic fixture carries a recomputable SHA-256 digest over the JCS canonical structured request value.",
+  "documents": [
+    {
+      "document_id": "semantic-digest-missing-profile-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "algorithm": "sha256",
+          "value": {
+            "encoding": "base64url",
+            "value": "Vo_rEq4gZ7Tqpfz32HUij5xPd6e6Q9cV6AOHcqpuaQ4"
+          },
+          "representation_basis": "json-data-model"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/SemanticDigest"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/8/semantic_digest",
+            "value": {
+              "algorithm": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "Vo_rEq4gZ7Tqpfz32HUij5xPd6e6Q9cV6AOHcqpuaQ4"
+              },
+              "representation_basis": "json-data-model",
+              "canonicalization_profile": "rfc8785-jcs"
+            }
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-032"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-032",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-032"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-032-request-semantic-digest-profile-001.json"
+}

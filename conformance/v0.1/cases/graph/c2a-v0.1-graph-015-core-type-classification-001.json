@@ -1,0 +1,64 @@
+{
+  "case_id": "c2a-v0.1-graph-015-core-type-classification-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "GRAPH-015"
+  ],
+  "planned_test_ids": [
+    "core-type-classification-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "An unknown core record shape is rejected by the frozen Record union, while a concrete RequestBinding in the semantic fixture has one explicit primary core classification.",
+  "documents": [
+    {
+      "document_id": "unknown-record-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "mystery-001",
+          "kind": "MysteryCoreObject"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:records#/$defs/Record"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "GRAPH-015"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-graph-015",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "GRAPH-015"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-015-core-type-classification-001.json"
+}

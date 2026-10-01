@@ -1,0 +1,78 @@
+{
+  "case_id": "c2a-v0.1-pad-041-provider-output-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-041"
+  ],
+  "planned_test_ids": [
+    "provider-output-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A Receipt with two schema-valid terminal ModelOutputs for one ProviderAttempt violates the Provider Adapter core output-cardinality semantic rule.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/provider-retry.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "out-r2-duplicate",
+              "kind": "ModelOutput",
+              "run_id": "run-retry-001",
+              "attempt": {
+                "ref_type": "local",
+                "id": "att-r2",
+                "expected_kind": "ProviderAttempt"
+              },
+              "item_refs": [],
+              "response_termination": "complete",
+              "capture_extent": "complete"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "out-r2-duplicate"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "PAD-041"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-041",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider"
+    ],
+    "goals": [
+      "PAD-041"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-pad-041-provider-output-cardinality-001.json"
+}

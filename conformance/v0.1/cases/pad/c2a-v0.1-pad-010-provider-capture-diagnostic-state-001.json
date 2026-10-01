@@ -1,0 +1,98 @@
+{
+  "case_id": "c2a-v0.1-pad-010-provider-capture-diagnostic-state-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-010"
+  ],
+  "planned_test_ids": [
+    "provider-capture-diagnostic-state-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "CaptureDiagnostic status vocabulary is locally frozen; observed is a valid bounded Provider Adapter diagnostic state.",
+  "documents": [
+    {
+      "document_id": "diagnostic-invalid-state",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "diag-pad-010-invalid",
+          "kind": "CaptureDiagnostic",
+          "subject": {
+            "ref": {
+              "ref_type": "local",
+              "id": "att-r2",
+              "expected_kind": "ProviderAttempt"
+            }
+          },
+          "slot": "provider_attempt.output",
+          "status": "complete"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/CaptureDiagnostic"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/provider-retry.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "diag-pad-010",
+              "kind": "CaptureDiagnostic",
+              "run_id": "run-retry-001",
+              "subject": {
+                "ref": {
+                  "ref_type": "local",
+                  "id": "att-r2",
+                  "expected_kind": "ProviderAttempt"
+                }
+              },
+              "slot": "provider_attempt.output",
+              "status": "observed"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "diag-pad-010"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "PAD-010"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-010",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider"
+    ],
+    "goals": [
+      "PAD-010"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-pad-010-provider-capture-diagnostic-state-001.json"
+}

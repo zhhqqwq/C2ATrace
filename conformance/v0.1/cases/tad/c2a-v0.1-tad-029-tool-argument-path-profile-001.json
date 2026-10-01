@@ -1,0 +1,69 @@
+{
+  "case_id": "c2a-v0.1-tad-029-tool-argument-path-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-029"
+  ],
+  "planned_test_ids": [
+    "tool-argument-path-profile-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ArgumentProvenance path requires an explicit scheme; the tool fixture records json_pointer for each argument-level provenance path.",
+  "documents": [
+    {
+      "document_id": "argument-provenance-missing-scheme-invalid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json",
+        "extract_pointer": "/arp/records/6/argument_provenance/0",
+        "patches": [
+          {
+            "op": "remove",
+            "path": "/path/scheme"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:tool#/$defs/ArgumentProvenance"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TAD-029"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-029",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool"
+    ],
+    "goals": [
+      "TAD-029"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-029-tool-argument-path-profile-001.json"
+}

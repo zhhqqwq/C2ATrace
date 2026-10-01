@@ -1,0 +1,68 @@
+{
+  "case_id": "c2a-v0.1-req-017-request-binding-target-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-017"
+  ],
+  "planned_test_ids": [
+    "request-binding-target-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "RequestBinding requires exactly one snapshot and one location locally; the baseline binding resolves one of each.",
+  "documents": [
+    {
+      "document_id": "binding-missing-location-invalid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "extract_pointer": "/arp/records/9",
+        "patches": [
+          {
+            "op": "remove",
+            "path": "/location"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-017"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-017",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-017"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-017-request-binding-target-cardinality-001.json"
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "c2a-v0.1-priv-020-privacy-commitment-scope-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "privacy-missing-subject-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:privacy#/$defs/PrivacyDescriptor",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    },
+    {
+      "document_id": "semantic-receipt",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PRIV-020",
+      "check_id": "privacy-commitment-scope-001",
+      "subject_selector": {
+        "receipt_id": "receipt-privacy-001",
+        "object_id": "privacy-001"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

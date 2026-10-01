@@ -1,0 +1,69 @@
+{
+  "case_id": "c2a-v0.1-priv-022-privacy-commitment-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-022"
+  ],
+  "planned_test_ids": [
+    "privacy-commitment-profile-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Commitment method/profile information is explicit enough to distinguish keyed operation; the HMAC fixture carries method, key reference, comparison domain, and profile identifier.",
+  "documents": [
+    {
+      "document_id": "commitment-missing-method-invalid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/privacy-hmac.json",
+        "extract_pointer": "/arp/privacy/0/commitments/0",
+        "patches": [
+          {
+            "op": "remove",
+            "path": "/method"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/privacy-hmac.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "PRIV-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-022",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:privacy:core",
+      "urn:c2atrace:profile:v0.1:privacy:hmac-sha256"
+    ],
+    "goals": [
+      "PRIV-022"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-022-privacy-commitment-profile-001.json"
+}
