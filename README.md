@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0 and Phase 1 Parts A-H are complete after adversarial review. The Provider Adapter Contract is also complete. JSON Schema remains unfrozen and implementation has not started.
+Specification-first. Phase 0 and Phase 1 Parts A-H are complete after adversarial review. Provider Adapter Contract and Tool Adapter Contract are also complete. JSON Schema remains unfrozen and implementation has not started.
 
 See:
 
@@ -54,6 +54,7 @@ See:
 - [Phase 1 Part G — Privacy Semantics](spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md)
 - [Phase 1 Part H — Integrity / Receipt Semantics](spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md)
 - [Provider Adapter Contract](spec/PROVIDER-ADAPTER-CONTRACT.md)
+- [Tool Adapter Contract](spec/TOOL-ADAPTER-CONTRACT.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -110,6 +111,15 @@ See:
 - Capture failure is not ProviderAttempt failure.
 - CaptureDiagnostic is not instrumentation completeness proof.
 - Provider-reported metadata is not provider-internal attestation.
+- Tool Adapter visibility is application/runtime-side.
+- Proposal ancestry and allow decisions are not inferred from execution.
+- Effective ToolInvocation is the final visible pre-execution representation.
+- ToolExecution failure/timeout/cancellation does not prove no Effect.
+- Idempotency metadata is not exactly-once proof.
+- Tool-reported success/transaction/job status is not external Effect truth.
+- separate_observation requires a distinct observation occurrence.
+- EffectObservation is not OutcomeVerification.
+- Tool Adapter diagnostics are not tool-path completeness proof.
 - Recorded inclusion is not causal responsibility.
 - Every numbered normative requirement maps to a planned conformance test.
 
@@ -119,4 +129,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-Provider Adapter Contract is complete. The remaining pre-Schema specification gates are Tool Adapter Contract and Verifier Contract. JSON Schema freeze remains blocked until those contracts pass their specification gates.
+Provider Adapter Contract and Tool Adapter Contract are complete. The final pre-Schema specification gate is Verifier Contract. JSON Schema freeze remains blocked until the Verifier Contract passes its specification gate.
