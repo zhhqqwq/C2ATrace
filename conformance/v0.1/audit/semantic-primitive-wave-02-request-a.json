@@ -1,0 +1,52 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-02-request-a",
+  "status": "complete",
+  "total_semantic_requirements": 771,
+  "newly_materialized": [
+    "c2a-v0.1-req-008-request-no-synthetic-snapshot-001",
+    "c2a-v0.1-req-011-request-capture-level-overclaim-001",
+    "c2a-v0.1-req-012-request-capture-level-unknown-001",
+    "c2a-v0.1-req-013-request-transition-no-inference-001",
+    "c2a-v0.1-req-015-request-binding-level-local-001",
+    "c2a-v0.1-req-021-request-json-pointer-001",
+    "c2a-v0.1-req-022-request-path-no-guess-001",
+    "c2a-v0.1-req-023-request-body-byte-location-001",
+    "c2a-v0.1-req-024-request-text-coordinate-001",
+    "c2a-v0.1-req-025-request-text-range-bounds-001",
+    "c2a-v0.1-req-026-request-text-invalid-scalar-001",
+    "c2a-v0.1-req-027-request-byte-coordinate-001",
+    "c2a-v0.1-req-028-request-byte-range-bounds-001",
+    "c2a-v0.1-req-029-request-region-basis-001",
+    "c2a-v0.1-req-030-request-binary-byte-binding-001",
+    "c2a-v0.1-req-031-request-media-encoded-lineage-001",
+    "c2a-v0.1-req-033-request-byte-digest-basis-001"
+  ],
+  "request_primary_requirements_materialized": 17,
+  "executable_semantic_requirements": 79,
+  "remaining_semantic_requirements": 692,
+  "reusable_receipts": [
+    "conformance/v0.1/primitives/receipts/request-missing-capture.json",
+    "conformance/v0.1/primitives/receipts/request-sdk-only.json",
+    "conformance/v0.1/primitives/receipts/request-unknown-level.json",
+    "conformance/v0.1/primitives/receipts/request-adjacent-no-transition.json",
+    "conformance/v0.1/primitives/receipts/request-transition-no-mapping.json",
+    "conformance/v0.1/primitives/receipts/request-unsupported-path.json",
+    "conformance/v0.1/primitives/receipts/request-prepared-structured-path.json",
+    "conformance/v0.1/primitives/receipts/request-text-region-valid.json",
+    "conformance/v0.1/primitives/receipts/request-text-region-oob.json",
+    "conformance/v0.1/primitives/receipts/request-text-invalid-scalar.json",
+    "conformance/v0.1/primitives/receipts/request-byte-region-valid.json",
+    "conformance/v0.1/primitives/receipts/request-byte-region-oob.json",
+    "conformance/v0.1/primitives/receipts/request-region-basis-mismatch.json",
+    "conformance/v0.1/primitives/receipts/request-encoded-media-lineage.json",
+    "conformance/v0.1/primitives/receipts/request-byte-digest.json"
+  ],
+  "assertions": {
+    "capture_level_and_path_rules_materialized": true,
+    "text_and_byte_region_rules_materialized": true,
+    "encoded_media_and_digest_basis_materialized": true,
+    "frozen_schema_unchanged": true
+  },
+  "note": "Request primitive batch A is materialized. Batch B covers digest comparison, privacy-backed bindings, propagation, bounded prepared-body claims, and location resolution."
+}

@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-req-023-request-body-byte-location-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-023"
+  ],
+  "planned_test_ids": [
+    "request-body-byte-location-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A structured location in a prepared_http_body snapshot is not sufficient evidence for byte-level inclusion without a byte Region or recognized mapping.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-prepared-structured-path.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-023"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-023",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-023"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-023-request-body-byte-location-001.json"
+}

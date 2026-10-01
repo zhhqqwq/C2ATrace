@@ -70,7 +70,7 @@
       "requirement_id": "REQ-008",
       "planned_test_id": "request-no-synthetic-snapshot-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-008-request-no-synthetic-snapshot-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-008-request-no-synthetic-snapshot-001.json"
     },
@@ -97,7 +97,7 @@
       "requirement_id": "REQ-011",
       "planned_test_id": "request-capture-level-overclaim-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-011-request-capture-level-overclaim-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-011-request-capture-level-overclaim-001.json"
     },
@@ -106,7 +106,7 @@
       "requirement_id": "REQ-012",
       "planned_test_id": "request-capture-level-unknown-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-012-request-capture-level-unknown-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-012-request-capture-level-unknown-001.json"
     },
@@ -115,7 +115,7 @@
       "requirement_id": "REQ-013",
       "planned_test_id": "request-transition-no-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-013-request-transition-no-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-013-request-transition-no-inference-001.json"
     },
@@ -133,7 +133,7 @@
       "requirement_id": "REQ-015",
       "planned_test_id": "request-binding-level-local-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-015-request-binding-level-local-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-015-request-binding-level-local-001.json"
     },
@@ -187,7 +187,7 @@
       "requirement_id": "REQ-021",
       "planned_test_id": "request-json-pointer-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-021-request-json-pointer-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-021-request-json-pointer-001.json"
     },
@@ -196,7 +196,7 @@
       "requirement_id": "REQ-022",
       "planned_test_id": "request-path-no-guess-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-022-request-path-no-guess-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-022-request-path-no-guess-001.json"
     },
@@ -205,7 +205,7 @@
       "requirement_id": "REQ-023",
       "planned_test_id": "request-body-byte-location-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-023-request-body-byte-location-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-023-request-body-byte-location-001.json"
     },
@@ -214,7 +214,7 @@
       "requirement_id": "REQ-024",
       "planned_test_id": "request-text-coordinate-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-024-request-text-coordinate-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-024-request-text-coordinate-001.json"
     },
@@ -223,7 +223,7 @@
       "requirement_id": "REQ-025",
       "planned_test_id": "request-text-range-bounds-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-025-request-text-range-bounds-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-025-request-text-range-bounds-001.json"
     },
@@ -232,7 +232,7 @@
       "requirement_id": "REQ-026",
       "planned_test_id": "request-text-invalid-scalar-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-026-request-text-invalid-scalar-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-026-request-text-invalid-scalar-001.json"
     },
@@ -241,7 +241,7 @@
       "requirement_id": "REQ-027",
       "planned_test_id": "request-byte-coordinate-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-027-request-byte-coordinate-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-027-request-byte-coordinate-001.json"
     },
@@ -250,7 +250,7 @@
       "requirement_id": "REQ-028",
       "planned_test_id": "request-byte-range-bounds-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-028-request-byte-range-bounds-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-028-request-byte-range-bounds-001.json"
     },
@@ -259,7 +259,7 @@
       "requirement_id": "REQ-029",
       "planned_test_id": "request-region-basis-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-029-request-region-basis-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-029-request-region-basis-001.json"
     },
@@ -268,7 +268,7 @@
       "requirement_id": "REQ-030",
       "planned_test_id": "request-binary-byte-binding-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-030-request-binary-byte-binding-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-030-request-binary-byte-binding-001.json"
     },
@@ -277,7 +277,7 @@
       "requirement_id": "REQ-031",
       "planned_test_id": "request-media-encoded-lineage-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-031-request-media-encoded-lineage-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-031-request-media-encoded-lineage-001.json"
     },
@@ -295,7 +295,7 @@
       "requirement_id": "REQ-033",
       "planned_test_id": "request-byte-digest-basis-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-033-request-byte-digest-basis-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-033-request-byte-digest-basis-001.json"
     },

@@ -597,11 +597,47 @@
         "VFY-058",
         "VFY-144"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_02_in_progress",
+      "executable_primary_requirement_count": 17,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "GRAPH-005"
+      ],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/request-missing-capture.json",
+        "conformance/v0.1/primitives/receipts/request-sdk-only.json",
+        "conformance/v0.1/primitives/receipts/request-unknown-level.json",
+        "conformance/v0.1/primitives/receipts/request-adjacent-no-transition.json",
+        "conformance/v0.1/primitives/receipts/request-transition-no-mapping.json",
+        "conformance/v0.1/primitives/receipts/request-unsupported-path.json",
+        "conformance/v0.1/primitives/receipts/request-prepared-structured-path.json",
+        "conformance/v0.1/primitives/receipts/request-text-region-valid.json",
+        "conformance/v0.1/primitives/receipts/request-text-region-oob.json",
+        "conformance/v0.1/primitives/receipts/request-text-invalid-scalar.json",
+        "conformance/v0.1/primitives/receipts/request-byte-region-valid.json",
+        "conformance/v0.1/primitives/receipts/request-byte-region-oob.json",
+        "conformance/v0.1/primitives/receipts/request-region-basis-mismatch.json",
+        "conformance/v0.1/primitives/receipts/request-encoded-media-lineage.json",
+        "conformance/v0.1/primitives/receipts/request-byte-digest.json"
+      ],
+      "wave_02_primary_requirements_a": [
+        "REQ-008",
+        "REQ-011",
+        "REQ-012",
+        "REQ-013",
+        "REQ-015",
+        "REQ-021",
+        "REQ-022",
+        "REQ-023",
+        "REQ-024",
+        "REQ-025",
+        "REQ-026",
+        "REQ-027",
+        "REQ-028",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-033"
       ]
     },
     {
@@ -2071,7 +2107,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 62,
-  "remaining_semantic_requirements": 709,
-  "materialization_wave": "02-derivation"
+  "executable_semantic_requirements": 79,
+  "remaining_semantic_requirements": 692,
+  "materialization_wave": "02-request-a"
 }

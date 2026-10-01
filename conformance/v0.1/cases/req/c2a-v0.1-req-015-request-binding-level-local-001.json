@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-req-015-request-binding-level-local-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-015"
+  ],
+  "planned_test_ids": [
+    "request-binding-level-local-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A binding to sdk_arguments does not automatically bind the provider_payload snapshot merely because a request-preparation Transform path exists.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-transition-no-mapping.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-015"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-015",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-015"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-015-request-binding-level-local-001.json"
+}

@@ -1,0 +1,287 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-source-request-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-sr-001",
+      "src-001",
+      "obs-001",
+      "xf-001",
+      "frag-001",
+      "drv-001",
+      "inv-001",
+      "att-001",
+      "snap-sdk-001",
+      "bind-001",
+      "snap-provider-001",
+      "xf-request-transition-001"
+    ],
+    "records": [
+      {
+        "id": "run-sr-001",
+        "kind": "Run",
+        "label": "source-to-request"
+      },
+      {
+        "id": "src-001",
+        "kind": "SourceRef",
+        "run_id": "run-sr-001",
+        "source_kind": "web",
+        "locators": [
+          "https://example.invalid/doc"
+        ]
+      },
+      {
+        "id": "obs-001",
+        "kind": "SourceObservation",
+        "run_id": "run-sr-001",
+        "source_ref": {
+          "ref_type": "local",
+          "id": "src-001",
+          "expected_kind": "SourceRef"
+        },
+        "representation": {
+          "representation_kind": "text",
+          "text": "alpha beta",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        },
+        "observation_extent": "complete"
+      },
+      {
+        "id": "xf-001",
+        "kind": "Transform",
+        "run_id": "run-sr-001",
+        "operation": "extract",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "obs-001",
+              "expected_kind": "SourceObservation"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "frag-001",
+            "expected_kind": "ContextFragment"
+          }
+        ],
+        "selected": []
+      },
+      {
+        "id": "frag-001",
+        "kind": "ContextFragment",
+        "run_id": "run-sr-001",
+        "representation": {
+          "representation_kind": "text",
+          "text": "alpha",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        }
+      },
+      {
+        "id": "drv-001",
+        "kind": "Derivation",
+        "run_id": "run-sr-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "xf-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "frag-001",
+            "expected_kind": "ContextFragment"
+          },
+          "representation_basis": "decoded_text_utf8"
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "obs-001",
+                "expected_kind": "SourceObservation"
+              },
+              "representation_basis": "decoded_text_utf8",
+              "region": {
+                "region_kind": "text",
+                "text": {
+                  "unit": "unicode_scalar",
+                  "start": 0,
+                  "end": 5
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "text",
+              "text": {
+                "unit": "unicode_scalar",
+                "start": 0,
+                "end": 5
+              }
+            }
+          }
+        ],
+        "precision": "exact"
+      },
+      {
+        "id": "inv-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-sr-001",
+        "lifecycle_state": "active",
+        "requested_model": "example-model"
+      },
+      {
+        "id": "att-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-sr-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "in_progress",
+        "provider": "example-provider",
+        "effective_requests": [
+          {
+            "capture_level": "sdk_arguments",
+            "snapshot": {
+              "ref_type": "local",
+              "id": "snap-sdk-001",
+              "expected_kind": "RequestSnapshot"
+            }
+          },
+          {
+            "capture_level": "provider_payload",
+            "snapshot": {
+              "ref_type": "local",
+              "id": "snap-provider-001",
+              "expected_kind": "RequestSnapshot"
+            }
+          }
+        ]
+      },
+      {
+        "id": "snap-sdk-001",
+        "kind": "RequestSnapshot",
+        "run_id": "run-sr-001",
+        "capture_level": "sdk_arguments",
+        "attempt_owner": {
+          "ref_type": "local",
+          "id": "att-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "representation_basis": "json-data-model",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "alpha"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "bind-001",
+        "kind": "RequestBinding",
+        "run_id": "run-sr-001",
+        "component": {
+          "ref_type": "local",
+          "id": "frag-001",
+          "expected_kind": "ContextFragment"
+        },
+        "snapshot": {
+          "ref_type": "local",
+          "id": "snap-sdk-001",
+          "expected_kind": "RequestSnapshot"
+        },
+        "location": {
+          "location_kind": "structured_value",
+          "path": {
+            "scheme": "json_pointer",
+            "value": "/messages/0/content"
+          }
+        }
+      },
+      {
+        "id": "snap-provider-001",
+        "kind": "RequestSnapshot",
+        "run_id": "run-sr-001",
+        "capture_level": "provider_payload",
+        "attempt_owner": {
+          "ref_type": "local",
+          "id": "att-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "representation_basis": "json-data-model",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "alpha"
+              }
+            ]
+          },
+          "media_type": "application/json"
+        }
+      },
+      {
+        "id": "xf-request-transition-001",
+        "kind": "Transform",
+        "run_id": "run-sr-001",
+        "operation": "request_preparation",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "snap-sdk-001",
+              "expected_kind": "RequestSnapshot"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "snap-provider-001",
+            "expected_kind": "RequestSnapshot"
+          }
+        ],
+        "selected": []
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-sr-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "x_idB5SkqLEeHdMZ40lHcW49J0Iudjc0qJpsTenOEfc"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

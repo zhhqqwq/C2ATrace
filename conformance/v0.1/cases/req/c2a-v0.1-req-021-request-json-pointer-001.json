@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-req-021-request-json-pointer-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-021"
+  ],
+  "planned_test_ids": [
+    "request-json-pointer-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A structured path into a JSON-data-model RequestSnapshot uses the core interoperable json_pointer scheme.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-021"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-021",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-021"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-021-request-json-pointer-001.json"
+}

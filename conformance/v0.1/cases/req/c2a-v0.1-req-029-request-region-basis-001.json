@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-req-029-request-region-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-029"
+  ],
+  "planned_test_ids": [
+    "request-region-basis-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A source text Region and target byte Region use different representation bases; without a mapping profile they are not directly comparable.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-region-basis-mismatch.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-029"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-029",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-029"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding, prim.derivation.mapping"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-029-request-region-basis-001.json"
+}

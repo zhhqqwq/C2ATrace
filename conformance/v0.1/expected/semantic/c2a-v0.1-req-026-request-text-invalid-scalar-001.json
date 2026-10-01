@@ -1,0 +1,26 @@
+{
+  "case_id": "c2a-v0.1-req-026-request-text-invalid-scalar-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "REQ-026",
+      "check_id": "request-text-invalid-scalar-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "bind-001"
+      },
+      "domain": "support",
+      "status": "unverified",
+      "reason_code": "selected_text_not_valid_unicode_scalar_sequence"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

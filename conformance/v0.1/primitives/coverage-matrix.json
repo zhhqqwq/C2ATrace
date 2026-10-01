@@ -5146,7 +5146,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-008-request-no-synthetic-snapshot-001"
     },
     {
       "family": "req",
@@ -5192,7 +5194,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-011-request-capture-level-overclaim-001"
     },
     {
       "family": "req",
@@ -5207,7 +5211,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-012-request-capture-level-unknown-001"
     },
     {
       "family": "req",
@@ -5222,7 +5228,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-013-request-transition-no-inference-001"
     },
     {
       "family": "req",
@@ -5235,7 +5243,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-015-request-binding-level-local-001"
     },
     {
       "family": "req",
@@ -5248,7 +5258,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-021-request-json-pointer-001"
     },
     {
       "family": "req",
@@ -5264,7 +5276,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-022-request-path-no-guess-001"
     },
     {
       "family": "req",
@@ -5279,7 +5293,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-023-request-body-byte-location-001"
     },
     {
       "family": "req",
@@ -5292,7 +5308,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-024-request-text-coordinate-001"
     },
     {
       "family": "req",
@@ -5305,7 +5323,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-025-request-text-range-bounds-001"
     },
     {
       "family": "req",
@@ -5318,7 +5338,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-026-request-text-invalid-scalar-001"
     },
     {
       "family": "req",
@@ -5331,7 +5353,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-027-request-byte-coordinate-001"
     },
     {
       "family": "req",
@@ -5344,7 +5368,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-028-request-byte-range-bounds-001"
     },
     {
       "family": "req",
@@ -5359,7 +5385,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-029-request-region-basis-001"
     },
     {
       "family": "req",
@@ -5372,7 +5400,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-030-request-binary-byte-binding-001"
     },
     {
       "family": "req",
@@ -5387,7 +5417,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-031-request-media-encoded-lineage-001"
     },
     {
       "family": "req",
@@ -5402,7 +5434,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-033-request-byte-digest-basis-001"
     },
     {
       "family": "req",
@@ -11882,6 +11916,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 62,
-  "remaining_semantic_requirements": 709
+  "executable_semantic_requirements": 79,
+  "remaining_semantic_requirements": 692
 }
