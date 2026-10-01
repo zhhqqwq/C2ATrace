@@ -1,0 +1,8 @@
+{
+  "schema_package": "C2ATrace",
+  "protocol_version": "0.1",
+  "status": "schema-freeze",
+  "json_schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "schema_namespace": "urn:c2atrace:schema:v0.1:",
+  "profile_namespace": "urn:c2atrace:profile:v0.1:"
+}
