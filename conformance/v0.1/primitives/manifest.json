@@ -1097,8 +1097,8 @@
         "VFY-118",
         "VFY-125"
       ],
-      "materialization_status": "wave_03_in_progress",
-      "executable_primary_requirement_count": 21,
+      "materialization_status": "wave_03_materialized",
+      "executable_primary_requirement_count": 43,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "GRAPH-007",
@@ -1121,7 +1121,21 @@
         "conformance/v0.1/primitives/receipts/tool-decision-deny-later-execution.json",
         "conformance/v0.1/primitives/receipts/tool-decision-unknown-basis.json",
         "conformance/v0.1/primitives/receipts/tool-invocation-no-execution.json",
-        "conformance/v0.1/primitives/receipts/tool-multiple-executions.json"
+        "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
+        "conformance/v0.1/primitives/receipts/tool-completed-no-effect.json",
+        "conformance/v0.1/primitives/receipts/tool-timeout-no-effect.json",
+        "conformance/v0.1/primitives/receipts/tool-cancelled-no-effect.json",
+        "conformance/v0.1/primitives/receipts/tool-execution-no-result.json",
+        "conformance/v0.1/primitives/receipts/tool-effect-separate-observation.json",
+        "conformance/v0.1/primitives/receipts/tool-effect-external-attestation.json",
+        "conformance/v0.1/primitives/receipts/tool-effect-unknown-basis.json",
+        "conformance/v0.1/primitives/receipts/tool-effect-multiple-evidence.json",
+        "conformance/v0.1/primitives/receipts/tool-executions-no-relation.json",
+        "conformance/v0.1/primitives/receipts/tool-execution-retry-different-invocation.json",
+        "conformance/v0.1/primitives/receipts/tool-execution-self-loop.json",
+        "conformance/v0.1/primitives/receipts/tool-execution-cycle.json",
+        "conformance/v0.1/primitives/receipts/tool-execution-retry-no-effect.json",
+        "conformance/v0.1/primitives/receipts/tool-idempotency-shared.json"
       ],
       "wave_03_primary_requirements_a": [
         "TOOL-003",
@@ -1145,6 +1159,30 @@
         "TOOL-027",
         "TOOL-029",
         "TOOL-030"
+      ],
+      "wave_03_primary_requirements_b": [
+        "TOOL-033",
+        "TOOL-034",
+        "TOOL-035",
+        "TOOL-038",
+        "TOOL-040",
+        "TOOL-041",
+        "TOOL-043",
+        "TOOL-044",
+        "TOOL-045",
+        "TOOL-046",
+        "TOOL-047",
+        "TOOL-048",
+        "TOOL-049",
+        "TOOL-050",
+        "TOOL-051",
+        "TOOL-052",
+        "TOOL-053",
+        "TOOL-054",
+        "TOOL-057",
+        "TOOL-059",
+        "TOOL-060",
+        "TOOL-062"
       ]
     },
     {
@@ -2262,7 +2300,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 162,
-  "remaining_semantic_requirements": 609,
-  "materialization_wave": "03-tool-a"
+  "executable_semantic_requirements": 184,
+  "remaining_semantic_requirements": 587,
+  "materialization_wave": "03-tool-b"
 }

@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-tool-048-tool-effect-not-outcome-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-048"
+  ],
+  "planned_test_ids": [
+    "tool-effect-not-outcome-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "EffectObservation records an observed proposition and does not prove the application's desired Outcome was achieved.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TOOL-048"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-048",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-048"
+    ]
+  },
+  "notes": [
+    "primitives: prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-048-tool-effect-not-outcome-001.json"
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-tool-044-tool-effect-separate-observation-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-044"
+  ],
+  "planned_test_ids": [
+    "tool-effect-separate-observation-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A separate later observation remains evidence-bounded and does not become objective external truth solely because it is separate.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-effect-separate-observation.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TOOL-044"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-044",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-044"
+    ]
+  },
+  "notes": [
+    "primitives: prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-044-tool-effect-separate-observation-bounded-001.json"
+}

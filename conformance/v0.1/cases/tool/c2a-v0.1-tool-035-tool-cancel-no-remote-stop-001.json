@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-tool-035-tool-cancel-no-remote-stop-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-035"
+  ],
+  "planned_test_ids": [
+    "tool-cancel-no-remote-stop-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "ToolExecution cancellation does not prove a remote tool or service stopped processing.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-cancelled-no-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TOOL-035"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-035",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-035"
+    ]
+  },
+  "notes": [
+    "primitives: prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-035-tool-cancel-no-remote-stop-001.json"
+}

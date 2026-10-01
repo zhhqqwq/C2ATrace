@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tool-038-tool-result-absence-not-negation-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TOOL-038",
+      "check_id": "tool-result-absence-not-negation-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-effect-001",
+        "object_id": "exec-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:missing_tool_result_proves_no_result_existed"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
