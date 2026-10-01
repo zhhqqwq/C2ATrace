@@ -5,8 +5,13 @@
     {
       "id": "INTG-001",
       "title": "Baseline canonicalization profile",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-jcs-profile-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -16,8 +21,13 @@
     {
       "id": "INTG-002",
       "title": "Baseline canonicalization requires compatible JSON",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-jcs-input-validity-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -27,8 +37,13 @@
     {
       "id": "INTG-003",
       "title": "Canonical digest bytes are UTF-8 JCS output",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-jcs-utf8-bytes-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -38,8 +53,13 @@
     {
       "id": "INTG-004",
       "title": "Duplicate JSON names are not accepted by baseline canonicalization",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-jcs-duplicate-name-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -49,8 +69,13 @@
     {
       "id": "INTG-005",
       "title": "Verifier does not add Unicode normalization",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-jcs-no-unicode-normalize-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -60,8 +85,13 @@
     {
       "id": "INTG-006",
       "title": "Verifier does not reorder arrays",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-jcs-array-order-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -71,8 +101,13 @@
     {
       "id": "INTG-007",
       "title": "Baseline payload digest is SHA-256",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-sha256-profile-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -82,8 +117,13 @@
     {
       "id": "INTG-008",
       "title": "Digest scope is the complete ARP",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-digest-complete-arp-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -93,8 +133,12 @@
     {
       "id": "INTG-009",
       "title": "Semantics-bearing fields are inside ARP",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-semantic-field-authenticated-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -104,8 +148,12 @@
     {
       "id": "INTG-010",
       "title": "IntegrityEnvelope signature value is outside ARP",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-no-self-signature-recursion-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -115,8 +163,12 @@
     {
       "id": "INTG-011",
       "title": "Transport metadata outside ARP is unauthenticated",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-transport-metadata-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -126,8 +178,12 @@
     {
       "id": "INTG-012",
       "title": "Transport metadata cannot alter core semantics",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-transport-no-override-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -137,8 +193,12 @@
     {
       "id": "INTG-013",
       "title": "Digest match is representation integrity only",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-digest-no-truth-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -148,8 +208,12 @@
     {
       "id": "INTG-014",
       "title": "Digest match is not Receipt identity equality",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-digest-no-receipt-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -159,8 +223,13 @@
     {
       "id": "INTG-015",
       "title": "Baseline signature algorithm is Ed25519",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-ed25519-profile-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -170,8 +239,13 @@
     {
       "id": "INTG-016",
       "title": "Signature input is domain-separated",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-domain-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -181,8 +255,13 @@
     {
       "id": "INTG-017",
       "title": "Signature binds Receipt identity",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-receipt-id-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -192,8 +271,13 @@
     {
       "id": "INTG-018",
       "title": "Signature binds payload digest",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-payload-digest-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -203,8 +287,13 @@
     {
       "id": "INTG-019",
       "title": "Signature binds canonicalization/digest algorithms",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-algorithm-binding-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -214,8 +303,13 @@
     {
       "id": "INTG-020",
       "title": "Signature binds signature profile",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-profile-binding-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -225,8 +319,13 @@
     {
       "id": "INTG-021",
       "title": "Signature binds verification-key reference",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-keyref-binding-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -236,8 +335,13 @@
     {
       "id": "INTG-022",
       "title": "Interpreted envelope metadata is authenticated",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-envelope-metadata-authenticated-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -247,8 +351,13 @@
     {
       "id": "INTG-023",
       "title": "Signature value is not recursively signed",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-no-recursion-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -258,8 +367,13 @@
     {
       "id": "INTG-024",
       "title": "Embedded envelope does not change ARP",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-embedded-envelope-stable-digest-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -269,8 +383,13 @@
     {
       "id": "INTG-025",
       "title": "Detached envelope targets exact Receipt commitment",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-detached-envelope-target-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -280,8 +399,13 @@
     {
       "id": "INTG-026",
       "title": "Detached digest mismatch is not valid binding",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-detached-mismatch-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -291,8 +415,12 @@
     {
       "id": "INTG-027",
       "title": "Multiple envelopes are allowed",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-multiple-envelopes-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -302,8 +430,12 @@
     {
       "id": "INTG-028",
       "title": "Envelope identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-envelope-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -313,8 +445,12 @@
     {
       "id": "INTG-029",
       "title": "Adding envelope does not imply stronger truth",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-multisig-no-truth-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -324,8 +460,12 @@
     {
       "id": "INTG-030",
       "title": "Removing envelope reduces evidence, not payload identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-envelope-removal-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -335,8 +475,13 @@
     {
       "id": "INTG-031",
       "title": "Signature validity is key-relative cryptographic validity",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-key-relative-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -346,8 +491,12 @@
     {
       "id": "INTG-032",
       "title": "Key reference is not real-world identity proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-keyref-no-real-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -357,8 +506,12 @@
     {
       "id": "INTG-033",
       "title": "Valid signature does not prove key ownership",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-key-no-ownership-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -368,8 +521,12 @@
     {
       "id": "INTG-034",
       "title": "Unresolved key means unresolved signature verification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-key-unresolved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -379,8 +536,13 @@
     {
       "id": "INTG-035",
       "title": "Wrong-key verification failure is invalid for that envelope/key",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-invalid-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -390,8 +552,12 @@
     {
       "id": "INTG-036",
       "title": "Unsupported profile is not successful verification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-profile-unsupported-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -401,8 +567,12 @@
     {
       "id": "INTG-037",
       "title": "Cryptographic validity does not establish key trust",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-no-key-trust-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -412,8 +582,12 @@
     {
       "id": "INTG-038",
       "title": "Signing time is not trusted time",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signing-time-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -423,8 +597,12 @@
     {
       "id": "INTG-039",
       "title": "Valid signature is not record truth",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-no-truth-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -434,8 +612,12 @@
     {
       "id": "INTG-040",
       "title": "Valid signature is not capture completeness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-no-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -445,8 +627,12 @@
     {
       "id": "INTG-041",
       "title": "Signed fabricated data remains possible",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signed-fabrication-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -456,8 +642,12 @@
     {
       "id": "INTG-042",
       "title": "Omission before signing is not detected by signature",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-pre-sign-omission-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -467,8 +657,13 @@
     {
       "id": "INTG-043",
       "title": "Recomputed digest mismatch breaks envelope binding",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-post-sign-tamper-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -478,8 +673,13 @@
     {
       "id": "INTG-044",
       "title": "Deleting record requires digest recomputation",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signed-record-deletion-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -489,8 +689,12 @@
     {
       "id": "INTG-045",
       "title": "Whole-Receipt omission can remain undetected",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-whole-receipt-omission-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -500,8 +704,12 @@
     {
       "id": "INTG-046",
       "title": "Valid linkage is not no-omission proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-linkage-no-omission-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -511,8 +719,12 @@
     {
       "id": "INTG-047",
       "title": "Replay is not detected by signature validity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-no-freshness-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -522,8 +734,13 @@
     {
       "id": "INTG-048",
       "title": "Signed hash-only Receipt authenticates disclosed commitment evidence",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-hashonly-signing-scope-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -533,8 +750,13 @@
     {
       "id": "INTG-049",
       "title": "Signed HMAC Receipt does not grant HMAC capability",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-hmac-signature-no-secret-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -544,8 +766,13 @@
     {
       "id": "INTG-050",
       "title": "Signed redacted Receipt authenticates redacted evidence only",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-redacted-signing-scope-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -555,8 +782,13 @@
     {
       "id": "INTG-051",
       "title": "Signed commitment plus candidate match uses composed wording",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signed-commitment-candidate-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -566,8 +798,12 @@
     {
       "id": "INTG-052",
       "title": "Signature does not prove redaction effectiveness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signature-no-redaction-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -577,8 +813,12 @@
     {
       "id": "INTG-053",
       "title": "Integrity does not strengthen privacy claims",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-no-privacy-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -588,8 +828,12 @@
     {
       "id": "INTG-054",
       "title": "Structural validity and signature validity are separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-structural-vs-signature-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -599,8 +843,12 @@
     {
       "id": "INTG-055",
       "title": "Per-envelope signature status is separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-per-envelope-status-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -610,8 +858,12 @@
     {
       "id": "INTG-056",
       "title": "Key-resolution status is separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-invalid-vs-unresolved-key-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -621,8 +873,12 @@
     {
       "id": "INTG-057",
       "title": "Unsupported profile is separate from invalid cryptography",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-unsupported-vs-invalid-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -632,8 +888,12 @@
     {
       "id": "INTG-058",
       "title": "Completeness status remains separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-verifier-completeness-dimension-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -643,8 +903,12 @@
     {
       "id": "INTG-059",
       "title": "Claim verification remains per-claim",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-per-claim-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -654,8 +918,12 @@
     {
       "id": "INTG-060",
       "title": "No fully-verified shorthand",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-no-fully-verified-shorthand-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -665,8 +933,12 @@
     {
       "id": "INTG-061",
       "title": "Weakest unresolved premise is preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-composed-claim-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -676,8 +948,12 @@
     {
       "id": "INTG-062",
       "title": "Signature failure does not prove record false",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-invalid-signature-not-falsehood-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -687,8 +963,12 @@
     {
       "id": "INTG-063",
       "title": "Unsigned does not mean structurally invalid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-unsigned-structure-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -698,8 +978,12 @@
     {
       "id": "INTG-064",
       "title": "Signed ARP does not authenticate external target payload unless pinned/linked",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-unpinned-external-target-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -709,8 +993,13 @@
     {
       "id": "INTG-065",
       "title": "Pinned target digest plus current signature authenticates the recorded pin",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signed-pin-bounded-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -720,8 +1009,12 @@
     {
       "id": "INTG-066",
       "title": "Signed link graph is supplied linkage only",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signed-linkage-not-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -731,8 +1024,13 @@
     {
       "id": "INTG-067",
       "title": "Signing Statement uses deterministic canonical bytes",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-signing-statement-jcs-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -742,8 +1040,13 @@
     {
       "id": "INTG-068",
       "title": "IntegrityEnvelope identity is authenticated when semantically present",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-envelope-id-binding-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -753,8 +1056,12 @@
     {
       "id": "INTG-069",
       "title": "Cryptographic integrity wording is computationally bounded",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-crypto-assumption-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
@@ -764,8 +1071,12 @@
     {
       "id": "INTG-070",
       "title": "Digest match is profile-relative commitment match",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "integrity-digest-match-profile-relative-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
