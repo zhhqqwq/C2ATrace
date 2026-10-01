@@ -320,6 +320,8 @@ valid means a defined structural/profile/cryptographic check succeeded.
 
 invalid means supplied material fails the applicable check.
 
+consistent means the specified evaluated supplied scope contains no detected incompatibility under the stated consistency check. It does not mean factually true, complete, or globally conflict-free.
+
 resolved/unresolved/ambiguous describe reference, dependency, or key resolution.
 
 conflict means semantically incompatible evidence remains unresolved.
@@ -1148,7 +1150,7 @@ Planned test: verifier-finding-minimum-001.
 
 ### VFY-106 — Finding preserves evidence basis
 
-A VerificationFinding MUST preserve applicable E1/E2/E3/E4/P1 or recognized profile-basis information rather than hide assertion premises behind generic success.
+A VerificationFinding MUST preserve applicable E1/E2/E3/E4 evidence-basis information, applicable P1 prohibited-inference markers, and recognized profile-basis information rather than hide assertion premises behind generic success.
 
 Planned test: verifier-finding-evidence-basis-001.
 
@@ -1415,6 +1417,30 @@ Planned test: verifier-optional-extension-exit-001.
 A Verifier MUST determine whether a check is applicable under the selected Receipt/profile/goals before treating absence, unsupported capability, or unverified evidence as a mandatory verification failure.
 
 Planned test: verifier-check-applicability-001.
+
+### VFY-151 — consistent is supplied-scope bounded
+
+A Verifier MUST use consistent only for a specified consistency check over the evaluated supplied scope and MUST NOT render it as factual truth, global consistency, or history completeness.
+
+Planned test: verifier-consistent-bounded-001.
+
+### VFY-152 — unresolved prerequisites prevent positive consistency when required
+
+A Verifier MUST NOT report a consistency check as consistent when unresolved/unsupported prerequisites could contain evidence required by that specific consistency check.
+
+Planned test: verifier-consistent-prerequisites-001.
+
+### VFY-153 — Conflict can coexist with structural invalidity
+
+When a detected conflict itself violates a normative identity/cardinality/profile invariant, a Verifier MUST preserve the conflict finding and the applicable invalid structural finding rather than forcing the event into only one category.
+
+Planned test: verifier-conflict-and-invalid-001.
+
+### VFY-154 — Conflict alone is not universal invalidity
+
+A Verifier MUST NOT treat every policy/evidence conflict as protocol invalidity unless an applicable normative invariant or selected mandatory policy check defines that conflict as failure.
+
+Planned test: verifier-conflict-not-universal-invalidity-001.
 
 ## 32. Adversarial architecture review
 
@@ -1694,6 +1720,24 @@ Both detailed states remain in the report. The coarse process outcome determinis
 
 Result: RESOLVED by VFY-146 through VFY-148.
 
+### Review AU — All supplied TrustAssertions agree, but one ExternalReference needed for the selected consistency check is unresolved
+
+The verifier does not report the broader consistency check as consistent merely because no contradiction was visible in the partial material.
+
+Result: RESOLVED by VFY-151 and VFY-152.
+
+### Review AV — Same Receipt ID denotes two different ARPs
+
+This is both an evidence/identity conflict and a violation of Receipt identity invariants. Both typed findings can coexist.
+
+Result: RESOLVED by VFY-017, VFY-153, and VFY-154.
+
+### Review AW — Two policy TrustAssertions disagree
+
+The policy conflict is preserved, but it is not automatically protocol-invalid unless an applicable policy/conformance rule says so.
+
+Result: RESOLVED by VFY-093, VFY-153, and VFY-154.
+
 ## 33. Architecture revisions caused by Verifier Contract
 
 ### 33.1 VerificationReport and VerificationFinding are verifier-output meta objects
@@ -1744,8 +1788,8 @@ The Verifier Contract locks:
 14. signature validity is separate from supplied-ARP binding and key trust;
 15. adapter/runtime statements remain assertions absent stronger evidence;
 16. per-claim composition preserves the weakest unresolved/asserted premise;
-17. result semantics are typed rather than globally ordered;
-18. structural invalidity is distinct from factual uncertainty/conflict;
+17. result semantics are typed rather than globally ordered; consistent is bounded to a specified evaluated supplied scope;
+18. structural invalidity is distinct from factual uncertainty/conflict, while conflicts that violate normative invariants can also yield invalid findings;
 19. package inventory/reference closure are distinct from runtime/history completeness;
 20. conflicts are preserved without generic timestamp/signature-count precedence;
 21. fully resolved supplied Resolution Set is not global history;
