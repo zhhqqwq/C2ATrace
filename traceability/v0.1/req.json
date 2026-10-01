@@ -65,9 +65,10 @@
       "title": "Attempt-scoped isolation",
       "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-attempt-snapshot-isolation-001",
-      "primary_enforcement": "direct_schema",
+      "primary_enforcement": "mixed_schema_semantic",
       "enforcement_layers": [
-        "json_schema"
+        "json_schema",
+        "semantic_verifier"
       ],
       "targets": [
         "schema/v0.1/request.schema.json",
@@ -79,9 +80,10 @@
       "title": "Invocation-scoped reuse boundary",
       "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-invocation-snapshot-reuse-001",
-      "primary_enforcement": "direct_schema",
+      "primary_enforcement": "mixed_schema_semantic",
       "enforcement_layers": [
-        "json_schema"
+        "json_schema",
+        "semantic_verifier"
       ],
       "targets": [
         "schema/v0.1/request.schema.json",
@@ -178,9 +180,9 @@
       "title": "No implicit request transition",
       "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-transition-no-inference-001",
-      "primary_enforcement": "direct_schema",
+      "primary_enforcement": "semantic_verifier",
       "enforcement_layers": [
-        "json_schema"
+        "semantic_verifier"
       ],
       "targets": [
         "schema/v0.1/request.schema.json",
@@ -192,9 +194,10 @@
       "title": "Forward preparation ordering",
       "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-transition-order-001",
-      "primary_enforcement": "direct_schema",
+      "primary_enforcement": "mixed_schema_semantic",
       "enforcement_layers": [
-        "json_schema"
+        "json_schema",
+        "semantic_verifier"
       ],
       "targets": [
         "schema/v0.1/request.schema.json",
