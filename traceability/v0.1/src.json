@@ -1,0 +1,226 @@
+{
+  "family": "SRC",
+  "count": 22,
+  "requirements": [
+    {
+      "id": "SRC-001",
+      "title": "SourceRef identity scope",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-identity-key-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-002",
+      "title": "SourceRef resolution uniqueness",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-ref-resolution-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-003",
+      "title": "No locator-based merge",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-locator-no-merge-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-004",
+      "title": "No content-based source merge",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-content-no-merge-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-005",
+      "title": "Multiple locator claim strength",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-multi-locator-wording-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-006",
+      "title": "Redirect preservation",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-redirect-preservation-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-007",
+      "title": "Redirect is not alias",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-redirect-no-alias-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-008",
+      "title": "Alias does not collapse identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-alias-no-collapse-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-009",
+      "title": "Observation source cardinality",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": "source-observation-cardinality-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-010",
+      "title": "Unknown source preservation",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-unknown-preservation-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-011",
+      "title": "Distinct capture occurrences",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-repeat-observation-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-012",
+      "title": "Reuse without recapture",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-observation-reuse-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-013",
+      "title": "External version hints are not Artifact identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-version-hint-identity-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-014",
+      "title": "No implicit version ordering",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-version-order-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-015",
+      "title": "Commitment basis is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": "source-commitment-basis-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-016",
+      "title": "No hidden commitment normalization",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-commitment-basis-wording-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-017",
+      "title": "Comparable commitments only",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-commitment-compatibility-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-018",
+      "title": "Commitment equality is not source identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-commitment-no-identity-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-019",
+      "title": "Observation completeness is bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-observation-completeness-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-020",
+      "title": "Unknown observation extent",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-observation-extent-unknown-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-021",
+      "title": "Source-origin claim strength",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-origin-claim-strength-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    },
+    {
+      "id": "SRC-022",
+      "title": "Cross-receipt identity is not implicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": "source-cross-receipt-identity-001",
+      "targets": [
+        "schema/v0.1/source.schema.json",
+        "schema/v0.1/reference.schema.json"
+      ]
+    }
+  ]
+}
