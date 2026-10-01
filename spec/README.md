@@ -14,15 +14,16 @@ Status: pre-schema specification work.
 - PHASE-1-PART-G-PRIVACY-SEMANTICS.md — accepted package-relative privacy semantics, full/hash-only/HMAC/redacted profiles, metadata leakage, redacted identity, verifier capability, and verification downgrade boundaries after adversarial review.
 - PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md — accepted Receipt identity/scope/subset, ExternalReference/multi-Receipt resolution, ReceiptLink, RFC 8785 + SHA-256 + Ed25519 integrity, privacy composition, and multidimensional verifier-result semantics after adversarial review.
 - PROVIDER-ADAPTER-CONTRACT.md — accepted application-visible Provider Adapter capture contract, capability declaration, CaptureDiagnostic, request/output/streaming/retry capture, privacy-aware degradation, and evidence-boundary rules after adversarial review.
+- TOOL-ADAPTER-CONTRACT.md — accepted application/runtime-visible Tool Adapter capture contract, effective invocation/argument provenance, decision/execution/result boundaries, retry/idempotency, streaming results, effect-evidence acquisition, privacy, and CaptureDiagnostic semantics after adversarial review.
 - THREAT-MODEL.md — trust boundaries, adversary assumptions, and numbered normative threat requirements.
 - CLAIMS.md — composable evidence-basis model and numbered verifier-reporting requirements.
-- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Provider Adapter Contract.
+- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Tool Adapter Contract.
 
 ## Project gate
 
 JSON Schema remains unfrozen. Phase 1 Parts A through H are complete.
 
-Provider Adapter Contract is complete. The remaining pre-Schema specification gates are Tool Adapter Contract and Verifier Contract.
+Provider Adapter Contract and Tool Adapter Contract are complete. The final pre-Schema specification gate is Verifier Contract.
 
 ## Normative language discipline
 
