@@ -1,0 +1,16 @@
+{
+  "finding_id": "golden-req-007",
+  "check_id": "request-effective-snapshot-cardinality-001",
+  "subject": {
+    "subject_kind": "object",
+    "receipt_id": "receipt-source-request-001",
+    "object_id": "att-001",
+    "expected_kind": "ProviderAttempt"
+  },
+  "domain": "conformance",
+  "status": "invalid",
+  "evidence_bases": [
+    "E1"
+  ],
+  "mandatory": true
+}
