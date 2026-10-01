@@ -3,5 +3,11 @@
   "method": "sha256",
   "representation_basis": "utf8-text",
   "candidate_utf8": "hash-candidate",
-  "expected_digest_base64url": "guclJl-OhMibIF2G5g7fwBBXuqSzAUciaYfrnWHI0e8"
+  "expected_digest_base64url": "guclJl-OhMibIF2G5g7fwBBXuqSzAUciaYfrnWHI0e8",
+  "candidate_utf8_hex": "686173682d63616e646964617465",
+  "expected_digest_hex": "82e725265f8e84c89b205d86e60edfc01057baa4b30147226987eb9d61c8d1ef",
+  "negative_candidate_utf8": "hash-candidate-x",
+  "negative_digest_hex": "7eb7a888ba6fc1c6de0da3075529534e84fe457a76755b4728d784577dea6549",
+  "negative_digest_base64url": "freoiLpvwcbeDaMHVSlTToT-RXp2dVtHKNeEV33qZUk",
+  "expected_negative_match": false
 }
