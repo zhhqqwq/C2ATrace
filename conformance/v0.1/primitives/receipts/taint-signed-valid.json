@@ -1,0 +1,102 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-taint-signed-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-taint-001",
+      "frag-taint-001",
+      "taint-signed-001"
+    ],
+    "records": [
+      {
+        "id": "run-taint-001",
+        "kind": "Run",
+        "label": "taint-signed"
+      },
+      {
+        "id": "frag-taint-001",
+        "kind": "ContextFragment",
+        "run_id": "run-taint-001",
+        "representation": {
+          "representation_kind": "text",
+          "text": "alpha",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        }
+      },
+      {
+        "id": "taint-signed-001",
+        "kind": "TaintAssertion",
+        "run_id": "run-taint-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "frag-taint-001",
+            "expected_kind": "ContextFragment"
+          },
+          "representation_basis": "decoded_text_utf8"
+        },
+        "taint_kind": "untrusted_input",
+        "state": "present",
+        "channel": "content",
+        "precision": "exact",
+        "basis_kind": "direct",
+        "asserted_by": {
+          "state": "known",
+          "id": "producer-001"
+        },
+        "policy": {
+          "state": "known",
+          "id": "urn:test:taint-policy:v1"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-taint-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "_5MzKwejGhofz6OZ-BnVUaH7iUXr8mUy8NIpf579gVk"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": [
+    {
+      "id": "env-taint-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-taint-signed-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "_5MzKwejGhofz6OZ-BnVUaH7iUXr8mUy8NIpf579gVk"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "Ghpztm6kaC75JgqxZcjyaiIYPSPJCIcZOKO8KxxPgdpt6mCZKGbC9tqSQq1Q_18WBRuDg4vUKaH0VodJzqQWCg"
+      }
+    }
+  ]
+}

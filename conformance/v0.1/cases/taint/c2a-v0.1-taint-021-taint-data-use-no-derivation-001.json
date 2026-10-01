@@ -1,0 +1,56 @@
+{
+  "case_id": "c2a-v0.1-taint-021-taint-data-use-no-derivation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAINT-021"
+  ],
+  "planned_test_ids": [
+    "taint-data-use-no-derivation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "usage_role=data without positive Derivation is insufficient for content-taint propagation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/taint-use-no-derivation.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TAINT-021"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-taint-021",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAINT-021"
+    ]
+  },
+  "notes": [
+    "primitives: prim.taint.flow, prim.derivation.mapping"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-taint-021-taint-data-use-no-derivation-001.json"
+}

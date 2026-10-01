@@ -1,0 +1,56 @@
+{
+  "case_id": "c2a-v0.1-taint-010-taint-absence-not-absent-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAINT-010"
+  ],
+  "planned_test_ids": [
+    "taint-absence-not-absent-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "No TaintAssertion in the baseline receipt is not equivalent to state=absent.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TAINT-010"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-taint-010",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAINT-010"
+    ]
+  },
+  "notes": [
+    "primitives: prim.taint.flow, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-taint-010-taint-absence-not-absent-001.json"
+}

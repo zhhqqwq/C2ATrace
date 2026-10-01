@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-taint-046-taint-partial-receipt-no-absence-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAINT-046",
+      "check_id": "taint-partial-receipt-no-absence-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b"
+      },
+      "domain": "claim",
+      "status": "unverified",
+      "prohibited_inferences": [
+        "P1:partial_receipt_missing_taint_means_absent"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

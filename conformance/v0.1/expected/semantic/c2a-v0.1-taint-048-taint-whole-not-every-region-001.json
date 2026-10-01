@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-taint-048-taint-whole-not-every-region-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAINT-048",
+      "check_id": "taint-whole-not-every-region-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "taint-whole-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:whole_scope_present_means_every_subregion_present"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

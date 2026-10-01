@@ -7908,7 +7908,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-002-taint-no-self-subject-001"
     },
     {
       "family": "taint",
@@ -7938,7 +7940,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-010-taint-absence-not-absent-001"
     },
     {
       "family": "taint",
@@ -7953,7 +7957,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-011-taint-absence-not-unknown-001"
     },
     {
       "family": "taint",
@@ -7966,7 +7972,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-012-taint-present-no-maliciousness-001"
     },
     {
       "family": "taint",
@@ -7979,7 +7987,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-013-taint-absent-bounded-001"
     },
     {
       "family": "taint",
@@ -7992,7 +8002,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-014-taint-lattice-compatibility-001"
     },
     {
       "family": "taint",
@@ -8005,7 +8017,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-015-taint-lattice-present-001"
     },
     {
       "family": "taint",
@@ -8020,7 +8034,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-016-taint-lattice-unknown-001"
     },
     {
       "family": "taint",
@@ -8035,7 +8051,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-017-taint-absent-complete-support-001"
     },
     {
       "family": "taint",
@@ -8048,7 +8066,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-018-taint-propagation-policy-required-001"
     },
     {
       "family": "taint",
@@ -8061,7 +8081,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-019-taint-content-positive-relation-001"
     },
     {
       "family": "taint",
@@ -8074,7 +8096,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-020-taint-control-not-content-001"
     },
     {
       "family": "taint",
@@ -8089,7 +8113,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-021-taint-data-use-no-derivation-001"
     },
     {
       "family": "taint",
@@ -8102,7 +8128,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-022-taint-control-propagation-evidence-001"
     },
     {
       "family": "taint",
@@ -8115,7 +8143,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-023-taint-mixed-channel-001"
     },
     {
       "family": "taint",
@@ -8130,7 +8160,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-024-taint-propagation-no-evidence-upgrade-001"
     },
     {
       "family": "taint",
@@ -8179,7 +8211,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-027-taint-unknown-contribution-001"
     },
     {
       "family": "taint",
@@ -8194,7 +8228,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-028-taint-binding-evidence-bound-001"
     },
     {
       "family": "taint",
@@ -8209,7 +8245,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-029-taint-no-model-causality-001"
     },
     {
       "family": "taint",
@@ -8225,7 +8263,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-030-taint-model-exposure-wording-001"
     },
     {
       "family": "taint",
@@ -8241,7 +8281,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-031-taint-tool-argument-lineage-001"
     },
     {
       "family": "taint",
@@ -8256,7 +8298,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-032-taint-invocation-no-result-content-001"
     },
     {
       "family": "taint",
@@ -8272,7 +8316,9 @@
       "dependency_primitives": [
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-033-taint-result-effect-no-content-propagation-001"
     },
     {
       "family": "taint",
@@ -8288,7 +8334,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-034-taint-result-context-lineage-001"
     },
     {
       "family": "taint",
@@ -8301,7 +8349,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-035-taint-sanitizer-name-no-clear-001"
     },
     {
       "family": "taint",
@@ -8316,7 +8366,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-037-taint-sanitization-history-preserved-001"
     },
     {
       "family": "taint",
@@ -8329,7 +8381,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-038-taint-sanitization-scope-001"
     },
     {
       "family": "taint",
@@ -8344,7 +8398,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-039-taint-sanitization-no-self-proof-001"
     },
     {
       "family": "taint",
@@ -8360,7 +8416,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-040-taint-sanitization-unknown-no-clear-001"
     },
     {
       "family": "taint",
@@ -8375,7 +8433,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-041-taint-sanitized-not-trusted-001"
     },
     {
       "family": "taint",
@@ -8390,7 +8450,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-042-taint-trust-no-discharge-001"
     },
     {
       "family": "taint",
@@ -8405,7 +8467,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-043-taint-transform-no-laundering-001"
     },
     {
       "family": "taint",
@@ -8420,7 +8484,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-044-taint-tool-success-no-clear-001"
     },
     {
       "family": "taint",
@@ -8435,7 +8501,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-045-taint-integrity-no-clear-001"
     },
     {
       "family": "taint",
@@ -8451,7 +8519,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-046-taint-partial-receipt-no-absence-001"
     },
     {
       "family": "taint",
@@ -8467,7 +8537,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-047-taint-region-to-whole-conservative-001"
     },
     {
       "family": "taint",
@@ -8482,7 +8554,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-048-taint-whole-not-every-region-001"
     },
     {
       "family": "taint",
@@ -8497,7 +8571,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-049-taint-conflict-preserved-001"
     },
     {
       "family": "taint",
@@ -8525,7 +8601,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.taint.flow",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-051-taint-cross-policy-no-join-001"
     },
     {
       "family": "taint",
@@ -8540,7 +8618,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-052-taint-no-causal-upgrade-001"
     },
     {
       "family": "taint",
@@ -8555,7 +8635,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-053-taint-no-tool-decision-001"
     },
     {
       "family": "taint",
@@ -8570,7 +8652,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-054-taint-unknown-channel-001"
     },
     {
       "family": "taint",
@@ -8585,7 +8669,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-055-taint-unknown-precision-001"
     },
     {
       "family": "taint",
@@ -8600,7 +8686,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-056-taint-unknown-state-001"
     },
     {
       "family": "taint",
@@ -8615,7 +8703,9 @@
       "primary_primitive": "prim.taint.flow",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-058-taint-unknown-policy-no-propagation-001"
     },
     {
       "family": "taint",
@@ -8631,7 +8721,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-059-taint-generated-content-absence-001"
     },
     {
       "family": "tm",
@@ -12160,6 +12252,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 201,
-  "remaining_semantic_requirements": 570
+  "executable_semantic_requirements": 247,
+  "remaining_semantic_requirements": 524
 }

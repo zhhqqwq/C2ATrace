@@ -1,0 +1,56 @@
+{
+  "case_id": "c2a-v0.1-taint-022-taint-control-propagation-evidence-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAINT-022"
+  ],
+  "planned_test_ids": [
+    "taint-control-propagation-evidence-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Control propagation requires explicit control/mixed evidence and policy support.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/taint-control-only.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TAINT-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-taint-022",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAINT-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.taint.flow"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-taint-022-taint-control-propagation-evidence-001.json"
+}

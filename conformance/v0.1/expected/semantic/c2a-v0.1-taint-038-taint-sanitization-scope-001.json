@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-taint-038-taint-sanitization-scope-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAINT-038",
+      "check_id": "taint-sanitization-scope-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "taint-sanitized-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:sanitization_scope_expands_implicitly"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
