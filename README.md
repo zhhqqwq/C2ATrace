@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The complete conformance fixture/vector suite is the active next phase; implementation has not started.
+Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The Conformance Suite is now active: 907/907 requirements have mapped case IDs, 37 cases are executable, and 6 direct-schema cases are accepted. Product Independent Verifier and SDK implementation remain blocked until the complete conformance gate passes.
 
 See:
 
@@ -58,6 +58,8 @@ See:
 - [Verifier Contract](spec/VERIFIER-CONTRACT.md)
 - [v0.1 JSON Schema](schema/v0.1/README.md)
 - [Schema Freeze Audit](schema/v0.1/FREEZE-AUDIT.md)
+- [Conformance Suite](conformance/v0.1/README.md)
+- [Project Delivery Package](delivery/v0.1/README.md)
 - [Threat Model](spec/THREAT-MODEL.md)
 - [Claim Matrix](spec/CLAIMS.md)
 - [Terminology](spec/TERMINOLOGY.md)
@@ -138,4 +140,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-All pre-Schema semantic/contract gates and the v0.1 JSON Schema freeze are complete. The next phase is the complete normative fixtures, invalid fixtures, and cross-language conformance-vector suite. Independent verifier implementation and SDK implementation remain blocked until that gate passes.
+All pre-Schema semantic/contract gates and the v0.1 JSON Schema freeze are complete. The active gate is the complete language-neutral Conformance Suite: all 907 requirements are mapped, with direct-schema acceptance complete and mixed/deterministic/semantic layers still being materialized. Independent verifier implementation and SDK implementation remain blocked until the suite reaches 907/907 accepted cases with cross-language normalized equivalence.
