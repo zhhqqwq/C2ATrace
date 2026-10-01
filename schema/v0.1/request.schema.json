@@ -1,93 +1,252 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "$id":"urn:c2atrace:schema:v0.1:request",
-  "title":"C2ATrace v0.1 Request",
-  "$defs":{
-    "ModelInputComponent":{
-      "allOf":[
-        {"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:schema:v0.1:request",
+  "title": "C2ATrace v0.1 Request",
+  "$defs": {
+    "ModelInputComponent": {
+      "allOf": [
         {
-          "type":"object",
-          "required":["kind","component_type"],
-          "properties":{
-            "kind":{"const":"ModelInputComponent"},
-            "component_type":{"enum":["instruction","tool_definition","structured_constraint","media","provider_parameter","unknown"]},
-            "representation":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Representation"}
-          },
-          "unevaluatedProperties":false
-        }
-      ]
-    },
-    "ContextFragment":{
-      "allOf":[
-        {"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
+          "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"
+        },
         {
-          "type":"object",
-          "required":["kind"],
-          "properties":{
-            "kind":{"const":"ContextFragment"},
-            "representation":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Representation"}
-          },
-          "unevaluatedProperties":false
-        }
-      ]
-    },
-    "SemanticDigest":{
-      "allOf":[
-        {"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Digest"},
-        {"type":"object","required":["canonicalization_profile"]}
-      ]
-    },
-    "ByteDigest":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Digest"},
-    "RequestSnapshot":{
-      "allOf":[
-        {"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
-        {
-          "type":"object",
-          "required":["kind","capture_level"],
-          "properties":{
-            "kind":{"const":"RequestSnapshot"},
-            "capture_level":{"enum":["sdk_arguments","provider_payload","prepared_http_body","unknown"]},
-            "invocation_owner":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"},
-            "attempt_owner":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"},
-            "representation":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Representation"},
-            "representation_basis":{"type":"string","minLength":1},
-            "semantic_digest":{"$ref":"#/$defs/SemanticDigest"},
-            "byte_digest":{"$ref":"#/$defs/ByteDigest"}
-          },
-          "oneOf":[
-            {"required":["invocation_owner"],"not":{"required":["attempt_owner"]}},
-            {"required":["attempt_owner"],"not":{"required":["invocation_owner"]}}
+          "type": "object",
+          "required": [
+            "kind",
+            "component_type"
           ],
-          "unevaluatedProperties":false
+          "properties": {
+            "kind": {
+              "const": "ModelInputComponent"
+            },
+            "component_type": {
+              "enum": [
+                "instruction",
+                "tool_definition",
+                "structured_constraint",
+                "media",
+                "provider_parameter",
+                "unknown"
+              ]
+            },
+            "representation": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/Representation"
+            }
+          }
         }
-      ]
+      ],
+      "unevaluatedProperties": false
     },
-    "RequestLocation":{
-      "oneOf":[
-        {"type":"object","required":["location_kind"],"properties":{"location_kind":{"const":"whole_snapshot"}},"additionalProperties":false},
-        {"type":"object","required":["location_kind","path"],"properties":{"location_kind":{"const":"structured_value"},"path":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/PathSelector"}},"additionalProperties":false},
-        {"type":"object","required":["location_kind","path","text"],"properties":{"location_kind":{"const":"structured_text_region"},"path":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/PathSelector"},"text":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/TextInterval"}},"additionalProperties":false},
-        {"type":"object","required":["location_kind","bytes"],"properties":{"location_kind":{"const":"byte_region"},"bytes":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/ByteInterval"}},"additionalProperties":false}
-      ]
-    },
-    "RequestBinding":{
-      "allOf":[
-        {"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
+    "ContextFragment": {
+      "allOf": [
         {
-          "type":"object",
-          "required":["kind","component","snapshot","location"],
-          "properties":{
-            "kind":{"const":"RequestBinding"},
-            "component":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"},
-            "source_scope":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/ArtifactScope"},
-            "snapshot":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"},
-            "location":{"$ref":"#/$defs/RequestLocation"},
-            "target_commitment":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"}
-          },
-          "unevaluatedProperties":false
+          "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "const": "ContextFragment"
+            },
+            "representation": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/Representation"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "SemanticDigest": {
+      "allOf": [
+        {
+          "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Digest"
+        },
+        {
+          "type": "object",
+          "required": [
+            "canonicalization_profile"
+          ]
         }
       ]
+    },
+    "ByteDigest": {
+      "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Digest"
+    },
+    "RequestSnapshot": {
+      "allOf": [
+        {
+          "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "capture_level"
+          ],
+          "properties": {
+            "kind": {
+              "const": "RequestSnapshot"
+            },
+            "capture_level": {
+              "enum": [
+                "sdk_arguments",
+                "provider_payload",
+                "prepared_http_body",
+                "unknown"
+              ]
+            },
+            "invocation_owner": {
+              "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
+            },
+            "attempt_owner": {
+              "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
+            },
+            "representation": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/Representation"
+            },
+            "representation_basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "semantic_digest": {
+              "$ref": "#/$defs/SemanticDigest"
+            },
+            "byte_digest": {
+              "$ref": "#/$defs/ByteDigest"
+            }
+          },
+          "oneOf": [
+            {
+              "required": [
+                "invocation_owner"
+              ],
+              "not": {
+                "required": [
+                  "attempt_owner"
+                ]
+              }
+            },
+            {
+              "required": [
+                "attempt_owner"
+              ],
+              "not": {
+                "required": [
+                  "invocation_owner"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "RequestLocation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "location_kind"
+          ],
+          "properties": {
+            "location_kind": {
+              "const": "whole_snapshot"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "location_kind",
+            "path"
+          ],
+          "properties": {
+            "location_kind": {
+              "const": "structured_value"
+            },
+            "path": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/PathSelector"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "location_kind",
+            "path",
+            "text"
+          ],
+          "properties": {
+            "location_kind": {
+              "const": "structured_text_region"
+            },
+            "path": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/PathSelector"
+            },
+            "text": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/TextInterval"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "location_kind",
+            "bytes"
+          ],
+          "properties": {
+            "location_kind": {
+              "const": "byte_region"
+            },
+            "bytes": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/ByteInterval"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RequestBinding": {
+      "allOf": [
+        {
+          "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "component",
+            "snapshot",
+            "location"
+          ],
+          "properties": {
+            "kind": {
+              "const": "RequestBinding"
+            },
+            "component": {
+              "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
+            },
+            "source_scope": {
+              "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/ArtifactScope"
+            },
+            "snapshot": {
+              "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
+            },
+            "location": {
+              "$ref": "#/$defs/RequestLocation"
+            },
+            "target_commitment": {
+              "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
     }
   }
 }
