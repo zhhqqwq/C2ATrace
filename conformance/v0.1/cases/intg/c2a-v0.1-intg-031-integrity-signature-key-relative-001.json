@@ -1,0 +1,59 @@
+{
+  "case_id": "c2a-v0.1-intg-031-integrity-signature-key-relative-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-031"
+  ],
+  "planned_test_ids": [
+    "integrity-signature-key-relative-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A valid Ed25519 result is evaluated relative to the explicitly supplied verification key and remains bound to that key_ref.",
+  "documents": [
+    {
+      "document_id": "signed-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "signed-receipt"
+    ],
+    "verifier_goals": [
+      "INTG-031"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-031",
+    "primary_documents": [
+      "signed-receipt"
+    ],
+    "resolution_set": [
+      "signed-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "INTG-031"
+    ],
+    "verification_keys": [
+      {
+        "key_ref": "test-ed25519-key-001",
+        "algorithm": "ed25519",
+        "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg"
+      }
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-intg-031-integrity-signature-key-relative-001.json"
+}
