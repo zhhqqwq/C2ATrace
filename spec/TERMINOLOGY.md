@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part H aligned.
+Status: Provider Adapter Contract aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, and INTG-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, INTG-*, and PAD-* requirements.
 
 ## Artifact
 
@@ -363,6 +363,42 @@ Its identity is occurrence-based rather than request-content-based. It can have 
 Retry/failover/hedge grouping is Producer-recorded orchestration rather than something inferred from equal requests or timestamps.
 
 See OUT-001 through OUT-005 and OUT-012 through OUT-018.
+
+## Provider Adapter
+
+Instrumentation at an application-visible boundary through which the application requests a model result and/or observes provider-facing request preparation and model-result delivery.
+
+A Provider Adapter can combine logical-call, request-builder, serialization/transport-body, response-result, and streaming-consumption hooks, but its claim ceiling is limited to the boundaries it actually observes.
+
+Provider Adapter evidence does not establish Provider receipt or provider-internal state by default.
+
+See PAD-001 through PAD-008 and PAD-080 through PAD-084.
+
+## Provider Adapter Conformance Declaration
+
+Metadata declaring the adapter's logical invocation boundary, ProviderAttempt boundary, supported RequestSnapshot capture levels, output/streaming capability, orchestration visibility, privacy capability, and implementation identity/version metadata.
+
+The declaration describes intended capability, not proof that every runtime occurrence was successfully captured.
+
+## CaptureDiagnostic
+
+An occurrence-identified Assertion describing instrumentation state for one bounded subject/scope and capture slot.
+
+Core conceptual states are observed, partial, unavailable, unsupported, bypass_detected, and unknown.
+
+CaptureDiagnostic is not a provenance edge, Provider attestation, or instrumentation completeness certificate. Conflicting diagnostics are preserved absent explicit resolution evidence.
+
+See PAD-009 through PAD-013 and PAD-085 through PAD-094.
+
+## Adapter Metadata Origin
+
+A bounded origin classification for semantics-bearing provider-adapter metadata.
+
+Core Provider Adapter conceptual classes are application_supplied, adapter_observed, provider_reported, adapter_derived, and unknown.
+
+The class describes evidence origin, not factual truth.
+
+See PAD-062 through PAD-065 and PAD-092.
 
 ## ProviderAttempt
 
