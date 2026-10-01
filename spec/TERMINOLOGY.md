@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part D aligned.
+Status: Phase 1 Part E aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, and OUT-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, and TOOL-* requirements.
 
 ## Artifact
 
@@ -478,35 +478,121 @@ See OUT-039 through OUT-043.
 
 ## ToolProposal
 
-An OutputItem Artifact suggesting a tool invocation.
+An immutable OutputItem Artifact representing one application-visible proposal to invoke a tool.
 
-It is not an execution record and may differ from the effective ToolInvocation.
+Its identity is occurrence-based. Provider/SDK tool-call identifiers are metadata rather than substitutes for ToolProposal identity.
+
+ToolProposal does not imply application authorization, ToolInvocation, or ToolExecution.
+
+See TOOL-001 through TOOL-004.
 
 ## ToolInvocation
 
-An immutable Artifact representing the final application-selected tool identity, effective arguments, and execution-relevant metadata immediately before execution.
+An immutable Artifact representing the effective application-selected tool call immediately before execution can begin.
 
-A ToolInvocation may derive from a ToolProposal, application-supplied data, both, or unknown provenance.
+It records the effective tool identifier, effective arguments, and applicable execution-relevant invocation representation. ToolInvocation can derive from ToolProposal and application/runtime/policy Artifacts, or can exist without ToolProposal ancestry.
+
+The same immutable ToolInvocation can be attempted by multiple ToolExecutions when it is actually reused unchanged.
+
+See TOOL-005 through TOOL-010 and TOOL-028 through TOOL-031.
+
+## Tool Argument Provenance
+
+Qualified Derivation over ToolInvocation argument Regions.
+
+For JSON-model arguments, core interoperable argument paths use json_pointer.
+
+Argument provenance can preserve ToolProposal, application, runtime, policy, external, or transform-generated contributors without replacing exact lineage with a coarse label.
+
+See TOOL-011 through TOOL-019.
+
+## Argument Provenance Summary
+
+A bounded coarse summary over Tool Argument Provenance.
+
+Core Part E classes are model_supplied, application_supplied, mixed, and unknown.
+
+model_supplied means ToolProposal-side representation ancestry at the application-visible proposal boundary; it does not establish hidden model-internal causality.
+
+See TOOL-012 through TOOL-016.
+
+## ToolDecision
+
+A core Assertion recording an application/policy decision about exactly one ToolProposal or ToolInvocation.
+
+Core conceptual values are allow, deny, and unknown.
+
+ToolDecision is not ToolExecution. Allow does not prove execution; deny does not erase a separately recorded later execution.
+
+ToolDecision identities are occurrence-based.
+
+See TOOL-021 through TOOL-027 and TOOL-061 through TOOL-062.
 
 ## ToolExecution
 
-An Activity representing an actual attempt to execute a ToolInvocation.
+An Activity representing one actual attempt to execute exactly one ToolInvocation.
 
-A proposal rejected before execution has no ToolExecution under TM-007.
+One ToolInvocation can have zero or more ToolExecutions. Each execution has occurrence identity and an application/runtime-observed lifecycle.
+
+Core conceptual terminal dispositions are completed, failed, timeout, cancelled, interrupted, and unknown.
+
+Completed execution does not establish semantic success, external Effect, or Outcome success.
+
+See TOOL-028 through TOOL-035.
+
+## ToolExecution Relationship
+
+A Producer-asserted orchestration relation such as retry_of, replay_of, or duplicate_of between ToolExecution occurrences.
+
+Such relations can span changed ToolInvocations and do not imply ToolInvocation equality or external effect cardinality.
+
+Retry/replay predecessor relations are acyclic within the resolution scope.
+
+See TOOL-049 through TOOL-056.
+
+## Idempotency Metadata
+
+Execution-relevant metadata intended to support duplicate suppression or idempotent remote handling.
+
+Presence or equality of an idempotency key does not establish remote support, correct enforcement, exactly-once execution, or exactly-once Effect.
+
+See TOOL-054 through TOOL-056.
 
 ## ToolResult
 
-An Artifact produced or returned by ToolExecution, such as a function result, MCP result, HTTP response, or error representation.
+An immutable Artifact representing the zero-or-one terminal assembled application-visible result representation associated with one ToolExecution.
 
-ToolResult is distinct from ToolExecution under GRAPH-010.
+It can contain normal returns, errors, remote identifiers, status fields, and runtime metadata.
+
+Tool-reported success/status is evidence about the returned representation and does not establish external Effect truth.
+
+See TOOL-036 through TOOL-041.
+
+## ToolResult Capture Extent
+
+Producer-recorded evidence about whether all application-visible result content within the declared tool-runtime capture scope was captured.
+
+Core conceptual values are complete, partial, and unknown.
+
+Complete capture does not establish complete remote state or objective truth.
 
 ## EffectObservation
 
-An Artifact recording evidence or an observation about possible external state.
+An immutable Artifact recording a bounded observation/evidence claim about possible external state.
 
-It carries or references an evidence basis, which may explicitly be unknown under GRAPH-012.
+It is not the external Effect itself and is not OutcomeVerification.
 
-An EffectObservation is not objective Effect truth.
+Core Part E conceptual evidence bases are execution_result, separate_observation, external_attestation, and unknown.
+
+See TOOL-042 through TOOL-048.
+
+## Effect Evidence Basis
+
+The recorded basis supporting an EffectObservation.
+
+execution_result means the effect claim is supported by the execution's ToolResult; separate_observation means a distinct later observation supports it; external_attestation refers to separately identified attestation evidence; unknown preserves lack of basis knowledge.
+
+None of these labels alone establishes objective external truth.
 
 ## Effect
 
