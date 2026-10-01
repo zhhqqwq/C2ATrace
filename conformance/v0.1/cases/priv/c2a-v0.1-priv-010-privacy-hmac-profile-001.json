@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-priv-010-privacy-hmac-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-010"
+  ],
+  "planned_test_ids": [
+    "privacy-hmac-profile-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "hmac uses keyed HMAC-SHA256 commitment semantics; wrong key or different candidate does not match.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/privacy-hmac-sha256.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-priv-010-privacy-hmac-profile-001.json"
+}
