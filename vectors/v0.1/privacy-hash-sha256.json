@@ -1,0 +1,7 @@
+{
+  "vector_id": "privacy-hash-sha256-001",
+  "method": "sha256",
+  "representation_basis": "utf8-text",
+  "candidate_utf8": "hash-candidate",
+  "expected_digest_base64url": "guclJl-OhMibIF2G5g7fwBBXuqSzAUciaYfrnWHI0e8"
+}
