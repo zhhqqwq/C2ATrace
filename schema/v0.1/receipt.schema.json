@@ -104,7 +104,7 @@
           "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
         },
         "linked_payload_digest": {
-          "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Digest"
+          "$ref": "#/$defs/BaselinePayloadDigest"
         },
         "relation": {
           "const": "prior"
@@ -235,7 +235,9 @@
         "digest_algorithm",
         "signature_profile",
         "key_ref",
-        "signature"
+        "signature",
+        "placement",
+        "signed_metadata"
       ],
       "properties": {
         "id": {
@@ -267,9 +269,6 @@
         },
         "key_ref": {
           "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
-        },
-        "signed_at": {
-          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"
         },
         "signed_metadata": {
           "type": "object",
