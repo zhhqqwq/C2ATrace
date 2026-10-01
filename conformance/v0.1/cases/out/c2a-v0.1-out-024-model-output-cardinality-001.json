@@ -1,0 +1,77 @@
+{
+  "case_id": "c2a-v0.1-out-024-model-output-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "OUT-024"
+  ],
+  "planned_test_ids": [
+    "model-output-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A single ProviderAttempt has two core ModelOutput records; each output is locally Schema-valid but the cross-record cardinality is invalid.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/provider-retry.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "out-r3",
+            "kind": "ModelOutput",
+            "run_id": "run-retry-001",
+            "attempt": {
+              "ref_type": "local",
+              "id": "att-r2",
+              "expected_kind": "ProviderAttempt"
+            },
+            "item_refs": [],
+            "response_termination": "complete",
+            "capture_extent": "complete"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "out-r3"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "OUT-024"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-out-024",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "OUT-024"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-out-024-model-output-cardinality-001.json"
+}
