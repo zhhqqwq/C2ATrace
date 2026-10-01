@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part F aligned.
+Status: Phase 1 Part G aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, and TAINT-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, and PRIV-* requirements.
 
 ## Artifact
 
@@ -689,6 +689,78 @@ A policy-scoped TaintAssertion with basis=sanitization that records downstream t
 Sanitization changes active downstream taint state; it does not delete upstream provenance or prior taint assertions, and it does not create Trust.
 
 See TAINT-035 through TAINT-045.
+
+## Privacy Disclosure Scope
+
+The concrete Receipt or exported C2ATrace package relative to which representation disclosure is evaluated.
+
+Privacy is package-relative. A representation withheld in one Receipt can be fully disclosed in another without changing the underlying Artifact identity.
+
+## Privacy Profile
+
+A package-relative description of how a representation scope is disclosed and what commitment capability remains.
+
+Core Part G named presets are full, hash_only, hmac, redacted, mixed, and unknown. These are compositional disclosure presets rather than intrinsic Artifact properties.
+
+See PRIV-001 through PRIV-019.
+
+## full Privacy Profile
+
+The original subject representation for the declared scope is disclosed in the evaluated package.
+
+full does not establish external truth, completeness, confidentiality, or provenance beyond the underlying Artifact semantics.
+
+## hash_only Privacy Profile
+
+The original subject representation is withheld from the evaluated package while an unkeyed commitment over an explicit representation basis is disclosed.
+
+hash_only is not a confidentiality guarantee and can allow low-entropy candidate enumeration and equality linkability.
+
+See PRIV-007 through PRIV-008 and PRIV-025 through PRIV-027.
+
+## hmac Privacy Profile
+
+The original subject representation is withheld while a keyed commitment/MAC over an explicit representation basis is disclosed.
+
+Candidate verification requires the corresponding secret capability. Independent authorized verification is possible without making verification public.
+
+Stable keyed commitments can still create linkability.
+
+See PRIV-009 through PRIV-010 and PRIV-028 through PRIV-033.
+
+## redacted Privacy Profile
+
+A package disclosure in which provenance-bearing replacement content is represented as a distinct redacted derivative Artifact produced through an explicit Transform/Derivation from the original Artifact.
+
+The redacted representation does not replace the original Artifact identity and does not verify the hidden original.
+
+See PRIV-011, PRIV-018, and PRIV-034 through PRIV-039.
+
+## Privacy Commitment
+
+A commitment associated with one explicit Artifact or Region representation scope and one declared representation basis/profile.
+
+Commitment equality is bounded evidence and does not establish external origin, hidden sublocation membership, Provider receipt, or Artifact occurrence identity.
+
+## Privacy Verifier Capability
+
+The actual evidence/capability set available to a verifier, such as original representation, candidate representation, keyed-commitment secret, compatible commitment profile, or recognized inclusion/redaction proof.
+
+Privacy withholding can preserve or reduce verification strength; it never strengthens a claim.
+
+See PRIV-070 through PRIV-075.
+
+## Withheld Representation
+
+A representation known or asserted to exist in the underlying provenance record but not disclosed in the evaluated package.
+
+Withheld is distinct from empty, null, false, zero, absent, and unknown existence.
+
+## Presentation Mask
+
+A user-interface or display-only replacement such as "***" or "[REDACTED]" that is not itself the underlying provenance-bearing representation unless explicitly recorded as such.
+
+A presentation mask must not be treated as the effective runtime value.
 
 ## Unknown
 
