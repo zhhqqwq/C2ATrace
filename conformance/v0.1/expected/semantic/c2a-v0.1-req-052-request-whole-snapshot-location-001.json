@@ -1,0 +1,38 @@
+{
+  "case_id": "c2a-v0.1-req-052-request-whole-snapshot-location-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "REQ-052",
+      "check_id": "request-whole-snapshot-location-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "bind-001"
+      },
+      "domain": "resolution",
+      "status": "resolved"
+    },
+    {
+      "requirement_id": "REQ-052",
+      "check_id": "request-whole-snapshot-location-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "bind-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:whole_snapshot_interpreted_as_unspecified_sublocation"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

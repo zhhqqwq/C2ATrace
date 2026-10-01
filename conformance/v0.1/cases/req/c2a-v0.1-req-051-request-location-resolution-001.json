@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-req-051-request-location-resolution-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-051"
+  ],
+  "planned_test_ids": [
+    "request-location-resolution-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The baseline JSON Pointer is reported location-resolved because the target representation establishes that the path exists and is in bounds.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-051"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-051",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-051"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-051-request-location-resolution-001.json"
+}

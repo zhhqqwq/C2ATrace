@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-req-035-request-semantic-not-byte-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-035"
+  ],
+  "planned_test_ids": [
+    "request-semantic-not-byte-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Equal semantic digests do not establish byte equality when the recorded byte digests differ.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-semantic-equal-byte-different.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-035"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-035",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-035"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-035-request-semantic-not-byte-001.json"
+}

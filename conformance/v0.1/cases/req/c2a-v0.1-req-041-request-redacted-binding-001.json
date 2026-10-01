@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-req-041-request-redacted-binding-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-041"
+  ],
+  "planned_test_ids": [
+    "request-redacted-binding-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The disclosed redacted RequestSnapshot can be verified as the binding target, but that does not representation-verify unavailable pre-redaction request content.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-redacted-snapshot.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-041"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-041",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-041"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding, prim.privacy.redaction"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-041-request-redacted-binding-001.json"
+}

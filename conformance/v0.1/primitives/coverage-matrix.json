@@ -5451,7 +5451,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-034-request-digest-compatibility-001"
     },
     {
       "family": "req",
@@ -5464,7 +5466,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-035-request-semantic-not-byte-001"
     },
     {
       "family": "req",
@@ -5493,7 +5497,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-037-request-binding-verification-level-001"
     },
     {
       "family": "req",
@@ -5508,7 +5514,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-038-request-hash-only-sublocation-001"
     },
     {
       "family": "req",
@@ -5524,7 +5532,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-039-request-commitment-match-wording-001"
     },
     {
       "family": "req",
@@ -5539,7 +5549,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-040-request-whole-commitment-equality-001"
     },
     {
       "family": "req",
@@ -5554,7 +5566,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.privacy.redaction"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-041-request-redacted-binding-001"
     },
     {
       "family": "req",
@@ -5569,7 +5583,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-042-request-hmac-verification-001"
     },
     {
       "family": "req",
@@ -5582,7 +5598,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-043-request-binding-propagation-exact-001"
     },
     {
       "family": "req",
@@ -5595,7 +5613,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-044-request-binding-propagation-partial-001"
     },
     {
       "family": "req",
@@ -5610,7 +5630,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-045-request-binding-propagation-unknown-001"
     },
     {
       "family": "req",
@@ -5625,7 +5647,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-046-request-prepared-body-no-provider-receipt-001"
     },
     {
       "family": "req",
@@ -5641,7 +5665,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-047-request-prepared-body-no-wire-overclaim-001"
     },
     {
       "family": "req",
@@ -5654,7 +5680,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-048-request-binding-no-provider-internal-001"
     },
     {
       "family": "req",
@@ -5669,7 +5697,9 @@
       "primary_primitive": "prim.request.binding",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-050-request-structural-not-resolved-001"
     },
     {
       "family": "req",
@@ -5682,7 +5712,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-051-request-location-resolution-001"
     },
     {
       "family": "req",
@@ -5695,7 +5727,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.request.binding",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-052-request-whole-snapshot-location-001"
     },
     {
       "family": "src",
@@ -11916,6 +11950,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 79,
-  "remaining_semantic_requirements": 692
+  "executable_semantic_requirements": 96,
+  "remaining_semantic_requirements": 675
 }

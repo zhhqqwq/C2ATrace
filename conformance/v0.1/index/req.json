@@ -304,7 +304,7 @@
       "requirement_id": "REQ-034",
       "planned_test_id": "request-digest-compatibility-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-034-request-digest-compatibility-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-034-request-digest-compatibility-001.json"
     },
@@ -313,7 +313,7 @@
       "requirement_id": "REQ-035",
       "planned_test_id": "request-semantic-not-byte-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-035-request-semantic-not-byte-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-035-request-semantic-not-byte-001.json"
     },
@@ -331,7 +331,7 @@
       "requirement_id": "REQ-037",
       "planned_test_id": "request-binding-verification-level-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-037-request-binding-verification-level-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-037-request-binding-verification-level-001.json"
     },
@@ -340,7 +340,7 @@
       "requirement_id": "REQ-038",
       "planned_test_id": "request-hash-only-sublocation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-038-request-hash-only-sublocation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-038-request-hash-only-sublocation-001.json"
     },
@@ -349,7 +349,7 @@
       "requirement_id": "REQ-039",
       "planned_test_id": "request-commitment-match-wording-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-039-request-commitment-match-wording-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-039-request-commitment-match-wording-001.json"
     },
@@ -358,7 +358,7 @@
       "requirement_id": "REQ-040",
       "planned_test_id": "request-whole-commitment-equality-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-040-request-whole-commitment-equality-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-040-request-whole-commitment-equality-001.json"
     },
@@ -367,7 +367,7 @@
       "requirement_id": "REQ-041",
       "planned_test_id": "request-redacted-binding-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-041-request-redacted-binding-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-041-request-redacted-binding-001.json"
     },
@@ -376,7 +376,7 @@
       "requirement_id": "REQ-042",
       "planned_test_id": "request-hmac-verification-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-042-request-hmac-verification-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-042-request-hmac-verification-001.json"
     },
@@ -385,7 +385,7 @@
       "requirement_id": "REQ-043",
       "planned_test_id": "request-binding-propagation-exact-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-043-request-binding-propagation-exact-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-043-request-binding-propagation-exact-001.json"
     },
@@ -394,7 +394,7 @@
       "requirement_id": "REQ-044",
       "planned_test_id": "request-binding-propagation-partial-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-044-request-binding-propagation-partial-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-044-request-binding-propagation-partial-001.json"
     },
@@ -403,7 +403,7 @@
       "requirement_id": "REQ-045",
       "planned_test_id": "request-binding-propagation-unknown-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-045-request-binding-propagation-unknown-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-045-request-binding-propagation-unknown-001.json"
     },
@@ -412,7 +412,7 @@
       "requirement_id": "REQ-046",
       "planned_test_id": "request-prepared-body-no-provider-receipt-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-046-request-prepared-body-no-provider-receipt-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-046-request-prepared-body-no-provider-receipt-001.json"
     },
@@ -421,7 +421,7 @@
       "requirement_id": "REQ-047",
       "planned_test_id": "request-prepared-body-no-wire-overclaim-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-047-request-prepared-body-no-wire-overclaim-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-047-request-prepared-body-no-wire-overclaim-001.json"
     },
@@ -430,7 +430,7 @@
       "requirement_id": "REQ-048",
       "planned_test_id": "request-binding-no-provider-internal-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-048-request-binding-no-provider-internal-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-048-request-binding-no-provider-internal-001.json"
     },
@@ -448,7 +448,7 @@
       "requirement_id": "REQ-050",
       "planned_test_id": "request-structural-not-resolved-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-050-request-structural-not-resolved-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-050-request-structural-not-resolved-001.json"
     },
@@ -457,7 +457,7 @@
       "requirement_id": "REQ-051",
       "planned_test_id": "request-location-resolution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-051-request-location-resolution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-051-request-location-resolution-001.json"
     },
@@ -466,7 +466,7 @@
       "requirement_id": "REQ-052",
       "planned_test_id": "request-whole-snapshot-location-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/req/c2a-v0.1-req-052-request-whole-snapshot-location-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-req-052-request-whole-snapshot-location-001.json"
     }

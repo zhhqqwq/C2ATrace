@@ -597,8 +597,8 @@
         "VFY-058",
         "VFY-144"
       ],
-      "materialization_status": "wave_02_in_progress",
-      "executable_primary_requirement_count": 17,
+      "materialization_status": "wave_02_materialized",
+      "executable_primary_requirement_count": 34,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "GRAPH-005"
@@ -618,7 +618,21 @@
         "conformance/v0.1/primitives/receipts/request-byte-region-oob.json",
         "conformance/v0.1/primitives/receipts/request-region-basis-mismatch.json",
         "conformance/v0.1/primitives/receipts/request-encoded-media-lineage.json",
-        "conformance/v0.1/primitives/receipts/request-byte-digest.json"
+        "conformance/v0.1/primitives/receipts/request-byte-digest.json",
+        "conformance/v0.1/primitives/receipts/request-digest-incompatible.json",
+        "conformance/v0.1/primitives/receipts/request-semantic-equal-byte-different.json",
+        "conformance/v0.1/primitives/receipts/request-commitment-subpath.json",
+        "conformance/v0.1/primitives/receipts/request-commitment-whole.json",
+        "conformance/v0.1/primitives/receipts/request-hash-only-sublocation.json",
+        "conformance/v0.1/primitives/receipts/request-verification-levels.json",
+        "conformance/v0.1/primitives/receipts/request-redacted-snapshot.json",
+        "conformance/v0.1/primitives/receipts/request-hmac-no-secret.json",
+        "conformance/v0.1/primitives/receipts/request-transition-exact.json",
+        "conformance/v0.1/primitives/receipts/request-transition-partial.json",
+        "conformance/v0.1/primitives/receipts/request-transition-unknown.json",
+        "conformance/v0.1/primitives/receipts/request-prepared-body-bytes.json",
+        "conformance/v0.1/primitives/receipts/request-structural-missing-path.json",
+        "conformance/v0.1/primitives/receipts/request-whole-snapshot.json"
       ],
       "wave_02_primary_requirements_a": [
         "REQ-008",
@@ -638,6 +652,25 @@
         "REQ-030",
         "REQ-031",
         "REQ-033"
+      ],
+      "wave_02_primary_requirements_b": [
+        "REQ-034",
+        "REQ-035",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-041",
+        "REQ-042",
+        "REQ-043",
+        "REQ-044",
+        "REQ-045",
+        "REQ-046",
+        "REQ-047",
+        "REQ-048",
+        "REQ-050",
+        "REQ-051",
+        "REQ-052"
       ]
     },
     {
@@ -2107,7 +2140,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 79,
-  "remaining_semantic_requirements": 692,
-  "materialization_wave": "02-request-a"
+  "executable_semantic_requirements": 96,
+  "remaining_semantic_requirements": 675,
+  "materialization_wave": "02-request-b"
 }

@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-req-048-request-binding-no-provider-internal-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-048"
+  ],
+  "planned_test_ids": [
+    "request-binding-no-provider-internal-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A RequestBinding proves only the captured request representation and must not be strengthened into provider-internal prompt composition or model-internal representation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "REQ-048"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-048",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-048"
+    ]
+  },
+  "notes": [
+    "primitives: prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-048-request-binding-no-provider-internal-001.json"
+}
