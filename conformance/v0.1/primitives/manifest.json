@@ -1643,10 +1643,20 @@
         "VFY-039",
         "VFY-045"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_04_materialized",
+      "executable_primary_requirement_count": 5,
       "wave_01_primary_requirements": [],
-      "wave_01_dependency_requirements": []
+      "wave_01_dependency_requirements": [],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/privacy-signed-redacted.json"
+      ],
+      "wave_04_primary_requirements": [
+        "PRIV-035",
+        "PRIV-039",
+        "PRIV-050",
+        "PRIV-073",
+        "PRIV-078"
+      ]
     },
     {
       "id": "prim.receipt.multi",
@@ -2492,7 +2502,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 301,
-  "remaining_semantic_requirements": 470,
-  "materialization_wave": "04-privacy-b"
+  "executable_semantic_requirements": 306,
+  "remaining_semantic_requirements": 465,
+  "materialization_wave": "04-privacy-redaction"
 }

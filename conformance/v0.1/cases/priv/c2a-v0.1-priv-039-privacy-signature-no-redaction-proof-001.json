@@ -1,0 +1,66 @@
+{
+  "case_id": "c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-039"
+  ],
+  "planned_test_ids": [
+    "privacy-signature-no-redaction-proof-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A valid signature authenticates the recorded redacted representation and privacy metadata but does not prove redaction effectiveness.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-signed-redacted.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [
+      "verification_keys"
+    ],
+    "verifier_goals": [
+      "PRIV-039"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-039",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PRIV-039"
+    ],
+    "verification_keys": [
+      {
+        "key_ref": "test-ed25519-key-001",
+        "algorithm": "ed25519",
+        "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg"
+      }
+    ]
+  },
+  "notes": [
+    "primitives: prim.privacy.redaction, prim.integrity.composition, prim.privacy.commitment"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001.json"
+}

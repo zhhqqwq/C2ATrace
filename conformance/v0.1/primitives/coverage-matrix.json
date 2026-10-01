@@ -3862,7 +3862,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-035-privacy-redaction-no-correctness-001"
     },
     {
       "family": "priv",
@@ -3881,7 +3883,9 @@
         "prim.integrity.composition",
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001"
     },
     {
       "family": "priv",
@@ -4048,7 +4052,9 @@
         "prim.derivation.mapping",
         "prim.privacy.commitment",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001"
     },
     {
       "family": "priv",
@@ -4450,7 +4456,9 @@
         "prim.adapter.capture",
         "prim.privacy.commitment",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-073-privacy-redacted-only-capability-001"
     },
     {
       "family": "priv",
@@ -4520,7 +4528,9 @@
       "primary_primitive": "prim.privacy.redaction",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-078-privacy-redaction-rule-required-001"
     },
     {
       "family": "priv",
@@ -12360,6 +12370,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 301,
-  "remaining_semantic_requirements": 470
+  "executable_semantic_requirements": 306,
+  "remaining_semantic_requirements": 465
 }

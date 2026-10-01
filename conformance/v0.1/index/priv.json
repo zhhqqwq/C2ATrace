@@ -313,7 +313,7 @@
       "requirement_id": "PRIV-035",
       "planned_test_id": "privacy-redaction-no-correctness-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-035-privacy-redaction-no-correctness-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-035-privacy-redaction-no-correctness-001.json"
     },
@@ -349,7 +349,7 @@
       "requirement_id": "PRIV-039",
       "planned_test_id": "privacy-signature-no-redaction-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001.json"
     },
@@ -448,7 +448,7 @@
       "requirement_id": "PRIV-050",
       "planned_test_id": "privacy-binding-redacted-no-original-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001.json"
     },
@@ -655,7 +655,7 @@
       "requirement_id": "PRIV-073",
       "planned_test_id": "privacy-redacted-only-capability-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-073-privacy-redacted-only-capability-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-073-privacy-redacted-only-capability-001.json"
     },
@@ -700,7 +700,7 @@
       "requirement_id": "PRIV-078",
       "planned_test_id": "privacy-redaction-rule-required-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-078-privacy-redaction-rule-required-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-078-privacy-redaction-rule-required-001.json"
     },

@@ -1,0 +1,25 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-04-privacy-redaction",
+  "status": "complete",
+  "total_semantic_requirements": 771,
+  "newly_materialized": [
+    "c2a-v0.1-priv-035-privacy-redaction-no-correctness-001",
+    "c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001",
+    "c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001",
+    "c2a-v0.1-priv-073-privacy-redacted-only-capability-001",
+    "c2a-v0.1-priv-078-privacy-redaction-rule-required-001"
+  ],
+  "privacy_redaction_primary_requirements": 5,
+  "executable_semantic_requirements": 306,
+  "remaining_semantic_requirements": 465,
+  "reusable_receipts": [
+    "conformance/v0.1/primitives/receipts/privacy-signed-redacted.json"
+  ],
+  "assertions": {
+    "privacy_redaction_primary_coverage_complete": true,
+    "redaction_lineage_and_correctness_separated": true,
+    "signed_redaction_boundedness_materialized": true,
+    "frozen_schema_unchanged": true
+  }
+}
