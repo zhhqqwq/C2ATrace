@@ -34,7 +34,6 @@
       "resolve_references",
       "representation_checks",
       "privacy_checks",
-      "integrity_checks",
       "claim_checks",
       "aggregate_report"
     ],
