@@ -1,0 +1,77 @@
+{
+  "case_id": "c2a-v0.1-priv-021-privacy-commitment-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-021"
+  ],
+  "planned_test_ids": [
+    "privacy-commitment-basis-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Privacy commitment representation basis is required in wire shape and remains explicit for semantic privacy interpretation.",
+  "documents": [
+    {
+      "document_id": "commitment-valid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/privacy-hmac.json",
+        "extract_pointer": "/arp/privacy/0/commitments/0"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"
+    },
+    {
+      "document_id": "commitment-missing-basis-invalid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/privacy-hmac.json",
+        "extract_pointer": "/arp/privacy/0/commitments/0"
+      },
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/representation_basis"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/privacy-hmac.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "PRIV-021"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-021",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PRIV-021"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-021-privacy-commitment-basis-001.json"
+}
