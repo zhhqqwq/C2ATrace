@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Tool Adapter Contract
 
-Status: DRAFT FOR ADVERSARIAL REVIEW.
+Status: ACCEPTED AFTER ADVERSARIAL REVIEW.
 
 Scope: Tool Adapter responsibility and visibility boundary; capability declaration; ToolProposal/ToolDecision association; effective ToolInvocation capture; argument-level provenance; execution-start boundary; ToolExecution lifecycle; retry/replay/duplicate/idempotency capture; ToolResult capture including streaming; remote/tool-server metadata; EffectObservation evidence acquisition; privacy-aware secret arguments/results; CaptureDiagnostic reuse; instrumentation failure versus tool-runtime failure; execution/effect/outcome evidence boundaries.
 
@@ -1933,6 +1933,12 @@ These remain constrained by this contract.
 
 ## 36. Gate decision
 
-Tool Adapter Contract is ready for adversarial/mechanical review.
+Tool Adapter Contract: PASS AFTER ADVERSARIAL REVIEW.
 
-JSON Schema and implementation remain BLOCKED.
+The final pre-Schema specification gate is:
+
+~~~text
+Verifier Contract
+~~~
+
+JSON Schema and implementation remain BLOCKED until the Verifier Contract passes its specification gate.
