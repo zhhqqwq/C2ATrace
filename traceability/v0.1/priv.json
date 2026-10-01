@@ -5,8 +5,12 @@
     {
       "id": "PRIV-001",
       "title": "Privacy treatment is disclosure-scope relative",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-package-relative-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -17,8 +21,12 @@
     {
       "id": "PRIV-002",
       "title": "Privacy profile is not non-observation proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-not-runtime-nonobservation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -29,8 +37,12 @@
     {
       "id": "PRIV-003",
       "title": "Privacy profile is not deletion proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-not-deletion-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -41,8 +53,12 @@
     {
       "id": "PRIV-004",
       "title": "Other-package disclosure remains unknown",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-not-global-disclosure-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -53,8 +69,12 @@
     {
       "id": "PRIV-005",
       "title": "Privacy treatment does not create provenance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-no-provenance-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -65,8 +85,12 @@
     {
       "id": "PRIV-006",
       "title": "full profile means original representation disclosed",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-full-original-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -77,8 +101,12 @@
     {
       "id": "PRIV-007",
       "title": "hash_only withholds original representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hash-only-withheld-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -89,8 +117,13 @@
     {
       "id": "PRIV-008",
       "title": "hash_only uses unkeyed commitment semantics",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hash-only-profile-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -101,8 +134,12 @@
     {
       "id": "PRIV-009",
       "title": "hmac withholds original representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-withheld-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -113,8 +150,13 @@
     {
       "id": "PRIV-010",
       "title": "hmac uses keyed commitment semantics",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-profile-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -125,8 +167,12 @@
     {
       "id": "PRIV-011",
       "title": "redacted profile uses derivative representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redacted-no-identity-substitution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -137,8 +183,12 @@
     {
       "id": "PRIV-012",
       "title": "mixed profile is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-mixed-profile-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -149,8 +199,12 @@
     {
       "id": "PRIV-013",
       "title": "unknown privacy remains unknown",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-profile-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -161,8 +215,12 @@
     {
       "id": "PRIV-014",
       "title": "Withheld is not empty",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-withheld-not-empty-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -173,8 +231,12 @@
     {
       "id": "PRIV-015",
       "title": "Withheld is not absent",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-withheld-not-absent-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -185,8 +247,12 @@
     {
       "id": "PRIV-016",
       "title": "Presentation placeholder is not underlying value",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-placeholder-not-value-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -197,8 +263,12 @@
     {
       "id": "PRIV-017",
       "title": "Withholding does not change Artifact identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-withholding-no-new-artifact-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -209,8 +279,12 @@
     {
       "id": "PRIV-018",
       "title": "Different redacted bytes require different Artifact identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redacted-new-artifact-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -221,8 +295,12 @@
     {
       "id": "PRIV-019",
       "title": "Privacy must preserve required internal references",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-reference-resolution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -233,8 +311,13 @@
     {
       "id": "PRIV-020",
       "title": "Commitment subject scope is explicit",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-commitment-scope-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -245,8 +328,13 @@
     {
       "id": "PRIV-021",
       "title": "Commitment representation basis is explicit",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-commitment-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -257,8 +345,13 @@
     {
       "id": "PRIV-022",
       "title": "Commitment profile is explicit",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-commitment-profile-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -269,8 +362,13 @@
     {
       "id": "PRIV-023",
       "title": "Incompatible commitments are not compared as representation evidence",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-commitment-compatibility-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -281,8 +379,12 @@
     {
       "id": "PRIV-024",
       "title": "Commitment equality is bounded",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-commitment-equality-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -293,8 +395,12 @@
     {
       "id": "PRIV-025",
       "title": "Hash-only is not confidentiality proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hash-not-confidentiality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -305,8 +411,12 @@
     {
       "id": "PRIV-026",
       "title": "Low-entropy hash risk is preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hash-low-entropy-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -317,8 +427,12 @@
     {
       "id": "PRIV-027",
       "title": "Stable hash equality can leak linkability",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hash-linkability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -329,8 +443,13 @@
     {
       "id": "PRIV-028",
       "title": "HMAC candidate verification requires secret capability",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-secret-required-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -341,8 +460,12 @@
     {
       "id": "PRIV-029",
       "title": "HMAC is not public verification by default",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-not-public-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -353,8 +476,12 @@
     {
       "id": "PRIV-030",
       "title": "Authorized secret verifier can remain independent",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-authorized-independent-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -365,8 +492,12 @@
     {
       "id": "PRIV-031",
       "title": "Raw HMAC key is not commitment evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-no-raw-key-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -377,8 +508,13 @@
     {
       "id": "PRIV-032",
       "title": "HMAC key/domain compatibility is required",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-domain-compatibility-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -389,8 +525,12 @@
     {
       "id": "PRIV-033",
       "title": "HMAC is not unlinkability proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-no-unlinkability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -401,8 +541,13 @@
     {
       "id": "PRIV-034",
       "title": "Redaction is explicit transformation",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redaction-lineage-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -413,8 +558,12 @@
     {
       "id": "PRIV-035",
       "title": "Redaction lineage is not redaction correctness proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redaction-no-correctness-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -425,8 +574,13 @@
     {
       "id": "PRIV-036",
       "title": "Pre/post commitments remain distinct",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redaction-commitment-separation-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -437,8 +591,13 @@
     {
       "id": "PRIV-037",
       "title": "Redacted commitment verifies only redacted representation",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redacted-not-original-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -449,8 +608,13 @@
     {
       "id": "PRIV-038",
       "title": "Original commitment does not verify redaction",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-original-commitment-no-redaction-proof-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -461,8 +625,12 @@
     {
       "id": "PRIV-039",
       "title": "Signature does not verify redaction effectiveness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-signature-no-redaction-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -473,8 +641,12 @@
     {
       "id": "PRIV-040",
       "title": "SourceObservation commitment-only form is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-source-commitment-only-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -485,8 +657,12 @@
     {
       "id": "PRIV-041",
       "title": "SourceObservation privacy does not alter source identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-source-identity-stable-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -497,8 +673,12 @@
     {
       "id": "PRIV-042",
       "title": "Source representation withholding downgrades verification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-source-verification-downgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -509,8 +689,12 @@
     {
       "id": "PRIV-043",
       "title": "RequestSnapshot commitment-only form is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-request-commitment-only-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -521,8 +705,12 @@
     {
       "id": "PRIV-044",
       "title": "Privacy does not change capture level",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-request-capture-level-stable-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -533,8 +721,12 @@
     {
       "id": "PRIV-045",
       "title": "Private request evidence does not prove Provider receipt",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-request-no-provider-receipt-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -545,8 +737,13 @@
     {
       "id": "PRIV-046",
       "title": "Whole-scope unkeyed commitment equality remains bounded",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-whole-hash-equality-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -557,8 +754,13 @@
     {
       "id": "PRIV-047",
       "title": "Whole-scope HMAC candidate match requires capability",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-whole-hmac-match-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -569,8 +771,12 @@
     {
       "id": "PRIV-048",
       "title": "Whole commitment does not prove hidden sublocation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-binding-whole-commitment-no-location-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -581,8 +787,12 @@
     {
       "id": "PRIV-049",
       "title": "Subregion commitment does not prove membership",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-binding-subregion-no-membership-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -593,8 +803,12 @@
     {
       "id": "PRIV-050",
       "title": "Redacted derivative does not verify original binding",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-binding-redacted-no-original-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -605,8 +819,12 @@
     {
       "id": "PRIV-051",
       "title": "Withheld RequestLocation prevents full structural/location verification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-binding-hidden-location-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -617,8 +835,12 @@
     {
       "id": "PRIV-052",
       "title": "Privacy does not upgrade RequestBinding evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-binding-no-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -629,8 +851,12 @@
     {
       "id": "PRIV-053",
       "title": "RequestLocation metadata leakage is not hidden by content withholding",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-location-metadata-leakage-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -641,8 +867,12 @@
     {
       "id": "PRIV-054",
       "title": "Length/offset metadata can leak",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-region-length-leakage-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -653,8 +883,12 @@
     {
       "id": "PRIV-055",
       "title": "Withheld tool argument is not missing",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-tool-arg-withheld-not-missing-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -665,8 +899,12 @@
     {
       "id": "PRIV-056",
       "title": "Tool placeholder is not effective value",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-tool-placeholder-not-effective-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -677,8 +915,12 @@
     {
       "id": "PRIV-057",
       "title": "Hidden tool argument limits representation verification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-tool-arg-verification-downgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -689,8 +931,12 @@
     {
       "id": "PRIV-058",
       "title": "ToolExecution does not reveal hidden arguments",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-tool-execution-no-secret-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -701,8 +947,12 @@
     {
       "id": "PRIV-059",
       "title": "Argument provenance survives withholding only at available evidence strength",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-tool-provenance-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -713,8 +963,12 @@
     {
       "id": "PRIV-060",
       "title": "Region-level privacy composition is permitted",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-region-composition-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -725,8 +979,12 @@
     {
       "id": "PRIV-061",
       "title": "Full parent disclosure defeats child withholding claim in that representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-parent-disclosure-overrides-label-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -737,8 +995,12 @@
     {
       "id": "PRIV-062",
       "title": "Duplicate disclosure defeats package-local withholding claim",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-duplicate-disclosure-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -749,8 +1011,12 @@
     {
       "id": "PRIV-063",
       "title": "Package privacy is not global privacy",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-package-not-global-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -761,8 +1027,12 @@
     {
       "id": "PRIV-064",
       "title": "Stable commitments can create linkability",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-commitment-linkability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -773,8 +1043,12 @@
     {
       "id": "PRIV-065",
       "title": "Privacy profile is not anonymity proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-no-anonymity-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -785,8 +1059,12 @@
     {
       "id": "PRIV-066",
       "title": "Signature/integrity does not add confidentiality",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-integrity-no-confidentiality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -797,8 +1075,12 @@
     {
       "id": "PRIV-067",
       "title": "Privacy does not clear taint",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-no-taint-clear-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -809,8 +1091,12 @@
     {
       "id": "PRIV-068",
       "title": "Privacy does not create trust",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-no-trust-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -821,8 +1107,12 @@
     {
       "id": "PRIV-069",
       "title": "Privacy omission cannot strengthen provenance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-no-provenance-strengthening-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -833,8 +1123,12 @@
     {
       "id": "PRIV-070",
       "title": "Verification follows actual capability set",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-verifier-capability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -845,8 +1139,13 @@
     {
       "id": "PRIV-071",
       "title": "HMAC tag presence is not HMAC recomputation",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-tag-not-recomputed-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -857,8 +1156,13 @@
     {
       "id": "PRIV-072",
       "title": "Candidate match requires candidate",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-candidate-required-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -869,8 +1173,12 @@
     {
       "id": "PRIV-073",
       "title": "Redacted-only verifier is bounded to redacted representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redacted-only-capability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -881,8 +1189,12 @@
     {
       "id": "PRIV-074",
       "title": "Weakest evidence premise is preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-composed-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -893,8 +1205,12 @@
     {
       "id": "PRIV-075",
       "title": "Privacy-unavailable representation is not representation-verified",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-unavailable-not-verified-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -905,8 +1221,12 @@
     {
       "id": "PRIV-076",
       "title": "Privacy profile does not prove encryption",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-no-encryption-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -917,8 +1237,13 @@
     {
       "id": "PRIV-077",
       "title": "Keyed tag equality without recomputation is only recorded tag equality",
-      "enforcement": "deterministic_vector",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-hmac-tag-equality-bounded-001",
+      "primary_enforcement": "deterministic_vector",
+      "enforcement_layers": [
+        "deterministic_vector",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -929,8 +1254,12 @@
     {
       "id": "PRIV-078",
       "title": "Original representation alone does not prove redaction policy correctness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-redaction-rule-required-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -941,8 +1270,12 @@
     {
       "id": "PRIV-079",
       "title": "Whole-scope privacy label must reflect partial plaintext disclosure",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-whole-scope-label-consistency-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -953,8 +1286,12 @@
     {
       "id": "PRIV-080",
       "title": "Conflicting privacy declarations are preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-G-PRIVACY-SEMANTICS.md",
+      "planned_test": "privacy-declaration-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/privacy.schema.json",
         "schema/v0.1/reference.schema.json",
