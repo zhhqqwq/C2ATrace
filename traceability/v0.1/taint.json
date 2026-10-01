@@ -1,0 +1,596 @@
+{
+  "family": "TAINT",
+  "count": 59,
+  "requirements": [
+    {
+      "id": "TAINT-001",
+      "title": "Taint subject cardinality",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-002",
+      "title": "No self-subject assertion",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-003",
+      "title": "Taint assertion identity is occurrence-based",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-004",
+      "title": "Taint kind is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-005",
+      "title": "Core taint state",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-006",
+      "title": "Core taint channel",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-007",
+      "title": "Core taint precision",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-008",
+      "title": "Taint issuer is explicit or unknown",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-009",
+      "title": "Taint policy is explicit or unknown",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-010",
+      "title": "Missing assertion is not absent",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-011",
+      "title": "Missing assertion is not explicit unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-012",
+      "title": "Taint present is not maliciousness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-013",
+      "title": "Taint absent is not objective cleanliness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-014",
+      "title": "Conservative lattice compatibility",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-015",
+      "title": "Present dominates conservative join",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-016",
+      "title": "Unknown dominates absent",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-017",
+      "title": "Absent requires bounded complete support",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-018",
+      "title": "Propagation requires policy context",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-019",
+      "title": "Content propagation requires positive representation relation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-020",
+      "title": "Control-only use is not content taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-021",
+      "title": "Data use without derivation is insufficient",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-022",
+      "title": "Control propagation requires explicit control evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-023",
+      "title": "Mixed channel requires both channels",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-024",
+      "title": "Propagation cannot strengthen evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-025",
+      "title": "Exact precision requires exact scope mapping",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-026",
+      "title": "Partial mapping degrades precision",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-027",
+      "title": "Unknown contribution is not exact propagation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-028",
+      "title": "RequestBinding verification bounds taint propagation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-029",
+      "title": "No automatic model-boundary taint propagation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-030",
+      "title": "Model exposure assertion is not content ancestry",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-031",
+      "title": "ToolProposal to ToolInvocation follows derivation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-032",
+      "title": "Invocation taint does not imply ToolResult content taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-033",
+      "title": "Result support does not imply EffectObservation content taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-034",
+      "title": "ToolResult later-context taint needs explicit lineage",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-035",
+      "title": "Sanitizer name does not clear taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-036",
+      "title": "Sanitization discharge basis is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-037",
+      "title": "Sanitization does not erase ancestry",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-038",
+      "title": "Sanitization is scope-specific",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-039",
+      "title": "Sanitization effectiveness is not self-proving",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-040",
+      "title": "Unknown sanitizer effectiveness does not become absent",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-041",
+      "title": "Sanitization does not create trust",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-042",
+      "title": "Trust does not discharge taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-043",
+      "title": "Copy/rename/serialization does not discharge taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-044",
+      "title": "Successful execution/result does not discharge taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-045",
+      "title": "Signature/integrity does not discharge taint",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-046",
+      "title": "Partial Receipt cannot prove taint absence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-047",
+      "title": "Region taint can support conservative whole scope",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-048",
+      "title": "Whole-scope present does not mean every subregion is tainted",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-049",
+      "title": "Conflicting taint assertions are preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-050",
+      "title": "Timestamp is not taint precedence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-051",
+      "title": "Cross-policy taint is not automatically comparable",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-052",
+      "title": "Taint is not causal attribution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-053",
+      "title": "Taint state does not create ToolDecision",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-054",
+      "title": "Unknown channel remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-055",
+      "title": "Unknown precision remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-056",
+      "title": "Unknown taint state remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-057",
+      "title": "Propagated basis is traceable",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-058",
+      "title": "Unknown policy is not a propagation policy",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAINT-059",
+      "title": "Transform-generated content participates in absence accounting",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/trust-taint.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    }
+  ]
+}
