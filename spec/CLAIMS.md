@@ -1,6 +1,6 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Phase 1 Part H aligned.
+Status: Provider Adapter Contract aligned.
 
 ## 1. Claim evidence model
 
@@ -172,6 +172,15 @@ Planned test: `claim-causality-001`.
 | Verification key belongs to named organization/person | E4 or external trust profile | No by core signature alone | Key label/reference is not real-world identity proof |
 | Signed Receipt is complete history | P1 | No | Signature/linkage cannot prove omitted records/Receipts do not exist |
 | Signed hash-only/redacted Receipt signs hidden plaintext directly | P1 | No | Signature authenticates disclosed ARP commitment/redacted evidence only |
+| Adapter says ProviderAttempt occurred | E4 | Yes, as Producer/instrumentation assertion | Does not prove Provider receipt/internal processing |
+| Adapter captures RequestSnapshot representation | E1/E2 + E4 occurrence premise | Conditional | Representation can be checked; runtime observation occurrence remains asserted |
+| CaptureDiagnostic(status=observed/partial/unavailable/unsupported/bypass_detected/unknown) | E4 | Yes, as bounded instrumentation assertion | Not global coverage/completeness proof |
+| Adapter capability says prepared_http_body supported | E4/config metadata | Yes, as declaration | Does not prove any specific body was captured |
+| Adapter reports provider metadata as provider_reported | E4 | Yes, as reported metadata | Not independent provider-internal attestation |
+| Adapter normalizes provider metadata | E4 + mapping basis if supplied | Conditional | Adapter-derived value, not raw provider evidence |
+| Adapter says stream capture complete | E4; E2 for supplied representation | Bounded | Complete only within declared application-visible capture scope |
+| No CaptureDiagnostic bypass_detected exists | P1 if used as no-bypass proof | No | Absence is not coverage proof |
+| Signed adapter/capture declaration proves instrumentation completeness | P1 | No | Signature authenticates assertion representation only |
 | Tainted request automatically taints ModelOutput | P1 / prohibited core inference | No | Would overclaim model causality |
 | Missing TaintAssertion means taint absent | P1 / prohibited inference | No | Absence of record is not a negative state |
 | Desired Outcome achieved | P1 / unsupported by core | No | OutcomeVerification outside core v0.1 |
