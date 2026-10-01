@@ -1,6 +1,6 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Tool Adapter Contract aligned.
+Status: Verifier Contract aligned.
 
 ## 1. Claim evidence model
 
@@ -124,7 +124,7 @@ Planned test: `claim-causality-001`.
 | RequestBinding target location resolves | E2 or recognized proof | Conditional | Requires target representation/proof |
 | Component matches recorded request location | E2 | Conditional | Requires source and target representations or recognized proof |
 | Compatible commitments match | E2 | Conditional | Commitment equality is distinct from target-location membership |
-| Signature is mathematically valid | E3 | Yes | Cryptographic validity only |
+| Signature cryptographically verifies under selected profile/key | E3 | Yes | Computational/key-relative validity only; not truth or key ownership |
 | Public key belongs to organization X | External | No | Key identity outside core v0.1 |
 | Producer states URL X was fetched | E4 | Yes, as an assertion | Does not prove remote origin |
 | SourceObservation digest matches supplied bytes | E2 | Yes | Does not prove source origin |
@@ -203,17 +203,22 @@ Planned test: `claim-causality-001`.
 
 ## 4. Verifier language
 
-Preferred status vocabulary includes:
+Verifier Contract refines the preferred vocabulary into typed result domains. Core terms include:
 
 ~~~text
-VALID
-INVALID
-MATCHED
+ESTABLISHED
+VALID / INVALID
+MATCHED / MISMATCHED
 CONSISTENT
+RESOLVED / UNRESOLVED / AMBIGUOUS
 ASSERTED
 UNVERIFIED
 UNKNOWN
+UNSUPPORTED
+CONFLICT
 NOT PRESENT IN SUPPLIED RECEIPT
 ~~~
 
-Stronger words such as TRUE, PROVEN, SAFE, TRUSTWORTHY, CAUSED, COMPLETE, or FULLY VERIFIED should only appear if a future profile defines and establishes that exact stronger property.
+These terms are not one total-order strength scale. Human-readable output must preserve their typed semantics.
+
+Stronger words such as TRUE, PROVEN, SAFE, TRUSTWORTHY, CAUSED, COMPLETE, or FULLY VERIFIED are not core shorthand and require a profile that establishes that exact stronger property.
