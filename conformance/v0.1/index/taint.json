@@ -1,0 +1,478 @@
+{
+  "family": "TAINT",
+  "count": 59,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-taint-001-taint-subject-cardinality-001",
+      "requirement_id": "TAINT-001",
+      "planned_test_id": "taint-subject-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-001-taint-subject-cardinality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-002-taint-no-self-subject-001",
+      "requirement_id": "TAINT-002",
+      "planned_test_id": "taint-no-self-subject-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-002-taint-no-self-subject-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-003-taint-assertion-no-merge-001",
+      "requirement_id": "TAINT-003",
+      "planned_test_id": "taint-assertion-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-003-taint-assertion-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-004-taint-kind-001",
+      "requirement_id": "TAINT-004",
+      "planned_test_id": "taint-kind-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-004-taint-kind-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-005-taint-state-vocabulary-001",
+      "requirement_id": "TAINT-005",
+      "planned_test_id": "taint-state-vocabulary-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-005-taint-state-vocabulary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-006-taint-channel-vocabulary-001",
+      "requirement_id": "TAINT-006",
+      "planned_test_id": "taint-channel-vocabulary-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-006-taint-channel-vocabulary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-007-taint-precision-vocabulary-001",
+      "requirement_id": "TAINT-007",
+      "planned_test_id": "taint-precision-vocabulary-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-007-taint-precision-vocabulary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-008-taint-issuer-001",
+      "requirement_id": "TAINT-008",
+      "planned_test_id": "taint-issuer-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-008-taint-issuer-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-009-taint-policy-context-001",
+      "requirement_id": "TAINT-009",
+      "planned_test_id": "taint-policy-context-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-009-taint-policy-context-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-010-taint-absence-not-absent-001",
+      "requirement_id": "TAINT-010",
+      "planned_test_id": "taint-absence-not-absent-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-010-taint-absence-not-absent-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-011-taint-absence-not-unknown-001",
+      "requirement_id": "TAINT-011",
+      "planned_test_id": "taint-absence-not-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-011-taint-absence-not-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-012-taint-present-no-maliciousness-001",
+      "requirement_id": "TAINT-012",
+      "planned_test_id": "taint-present-no-maliciousness-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-012-taint-present-no-maliciousness-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-013-taint-absent-bounded-001",
+      "requirement_id": "TAINT-013",
+      "planned_test_id": "taint-absent-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-013-taint-absent-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-014-taint-lattice-compatibility-001",
+      "requirement_id": "TAINT-014",
+      "planned_test_id": "taint-lattice-compatibility-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-014-taint-lattice-compatibility-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-015-taint-lattice-present-001",
+      "requirement_id": "TAINT-015",
+      "planned_test_id": "taint-lattice-present-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-015-taint-lattice-present-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-016-taint-lattice-unknown-001",
+      "requirement_id": "TAINT-016",
+      "planned_test_id": "taint-lattice-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-016-taint-lattice-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-017-taint-absent-complete-support-001",
+      "requirement_id": "TAINT-017",
+      "planned_test_id": "taint-absent-complete-support-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-017-taint-absent-complete-support-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-018-taint-propagation-policy-required-001",
+      "requirement_id": "TAINT-018",
+      "planned_test_id": "taint-propagation-policy-required-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-018-taint-propagation-policy-required-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-019-taint-content-positive-relation-001",
+      "requirement_id": "TAINT-019",
+      "planned_test_id": "taint-content-positive-relation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-019-taint-content-positive-relation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-020-taint-control-not-content-001",
+      "requirement_id": "TAINT-020",
+      "planned_test_id": "taint-control-not-content-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-020-taint-control-not-content-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-021-taint-data-use-no-derivation-001",
+      "requirement_id": "TAINT-021",
+      "planned_test_id": "taint-data-use-no-derivation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-021-taint-data-use-no-derivation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-022-taint-control-propagation-evidence-001",
+      "requirement_id": "TAINT-022",
+      "planned_test_id": "taint-control-propagation-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-022-taint-control-propagation-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-023-taint-mixed-channel-001",
+      "requirement_id": "TAINT-023",
+      "planned_test_id": "taint-mixed-channel-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-023-taint-mixed-channel-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-024-taint-propagation-no-evidence-upgrade-001",
+      "requirement_id": "TAINT-024",
+      "planned_test_id": "taint-propagation-no-evidence-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-024-taint-propagation-no-evidence-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-025-taint-exact-requires-exact-mapping-001",
+      "requirement_id": "TAINT-025",
+      "planned_test_id": "taint-exact-requires-exact-mapping-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-025-taint-exact-requires-exact-mapping-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-026-taint-partial-conservative-001",
+      "requirement_id": "TAINT-026",
+      "planned_test_id": "taint-partial-conservative-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-026-taint-partial-conservative-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-027-taint-unknown-contribution-001",
+      "requirement_id": "TAINT-027",
+      "planned_test_id": "taint-unknown-contribution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-027-taint-unknown-contribution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-028-taint-binding-evidence-bound-001",
+      "requirement_id": "TAINT-028",
+      "planned_test_id": "taint-binding-evidence-bound-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-028-taint-binding-evidence-bound-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-029-taint-no-model-causality-001",
+      "requirement_id": "TAINT-029",
+      "planned_test_id": "taint-no-model-causality-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-029-taint-no-model-causality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-030-taint-model-exposure-wording-001",
+      "requirement_id": "TAINT-030",
+      "planned_test_id": "taint-model-exposure-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-030-taint-model-exposure-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-031-taint-tool-argument-lineage-001",
+      "requirement_id": "TAINT-031",
+      "planned_test_id": "taint-tool-argument-lineage-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-031-taint-tool-argument-lineage-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-032-taint-invocation-no-result-content-001",
+      "requirement_id": "TAINT-032",
+      "planned_test_id": "taint-invocation-no-result-content-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-032-taint-invocation-no-result-content-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-033-taint-result-effect-no-content-propagation-001",
+      "requirement_id": "TAINT-033",
+      "planned_test_id": "taint-result-effect-no-content-propagation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-033-taint-result-effect-no-content-propagation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-034-taint-result-context-lineage-001",
+      "requirement_id": "TAINT-034",
+      "planned_test_id": "taint-result-context-lineage-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-034-taint-result-context-lineage-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-035-taint-sanitizer-name-no-clear-001",
+      "requirement_id": "TAINT-035",
+      "planned_test_id": "taint-sanitizer-name-no-clear-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-035-taint-sanitizer-name-no-clear-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-036-taint-sanitization-basis-001",
+      "requirement_id": "TAINT-036",
+      "planned_test_id": "taint-sanitization-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-036-taint-sanitization-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-037-taint-sanitization-history-preserved-001",
+      "requirement_id": "TAINT-037",
+      "planned_test_id": "taint-sanitization-history-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-037-taint-sanitization-history-preserved-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-038-taint-sanitization-scope-001",
+      "requirement_id": "TAINT-038",
+      "planned_test_id": "taint-sanitization-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-038-taint-sanitization-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-039-taint-sanitization-no-self-proof-001",
+      "requirement_id": "TAINT-039",
+      "planned_test_id": "taint-sanitization-no-self-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-039-taint-sanitization-no-self-proof-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-040-taint-sanitization-unknown-no-clear-001",
+      "requirement_id": "TAINT-040",
+      "planned_test_id": "taint-sanitization-unknown-no-clear-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-040-taint-sanitization-unknown-no-clear-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-041-taint-sanitized-not-trusted-001",
+      "requirement_id": "TAINT-041",
+      "planned_test_id": "taint-sanitized-not-trusted-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-041-taint-sanitized-not-trusted-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-042-taint-trust-no-discharge-001",
+      "requirement_id": "TAINT-042",
+      "planned_test_id": "taint-trust-no-discharge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-042-taint-trust-no-discharge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-043-taint-transform-no-laundering-001",
+      "requirement_id": "TAINT-043",
+      "planned_test_id": "taint-transform-no-laundering-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-043-taint-transform-no-laundering-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-044-taint-tool-success-no-clear-001",
+      "requirement_id": "TAINT-044",
+      "planned_test_id": "taint-tool-success-no-clear-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-044-taint-tool-success-no-clear-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-045-taint-integrity-no-clear-001",
+      "requirement_id": "TAINT-045",
+      "planned_test_id": "taint-integrity-no-clear-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-045-taint-integrity-no-clear-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-046-taint-partial-receipt-no-absence-001",
+      "requirement_id": "TAINT-046",
+      "planned_test_id": "taint-partial-receipt-no-absence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-046-taint-partial-receipt-no-absence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-047-taint-region-to-whole-conservative-001",
+      "requirement_id": "TAINT-047",
+      "planned_test_id": "taint-region-to-whole-conservative-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-047-taint-region-to-whole-conservative-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-048-taint-whole-not-every-region-001",
+      "requirement_id": "TAINT-048",
+      "planned_test_id": "taint-whole-not-every-region-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-048-taint-whole-not-every-region-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-049-taint-conflict-preserved-001",
+      "requirement_id": "TAINT-049",
+      "planned_test_id": "taint-conflict-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-049-taint-conflict-preserved-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-050-taint-no-last-write-wins-001",
+      "requirement_id": "TAINT-050",
+      "planned_test_id": "taint-no-last-write-wins-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-050-taint-no-last-write-wins-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-051-taint-cross-policy-no-join-001",
+      "requirement_id": "TAINT-051",
+      "planned_test_id": "taint-cross-policy-no-join-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-051-taint-cross-policy-no-join-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-052-taint-no-causal-upgrade-001",
+      "requirement_id": "TAINT-052",
+      "planned_test_id": "taint-no-causal-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-052-taint-no-causal-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-053-taint-no-tool-decision-001",
+      "requirement_id": "TAINT-053",
+      "planned_test_id": "taint-no-tool-decision-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-053-taint-no-tool-decision-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-054-taint-unknown-channel-001",
+      "requirement_id": "TAINT-054",
+      "planned_test_id": "taint-unknown-channel-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-054-taint-unknown-channel-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-055-taint-unknown-precision-001",
+      "requirement_id": "TAINT-055",
+      "planned_test_id": "taint-unknown-precision-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-055-taint-unknown-precision-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-056-taint-unknown-state-001",
+      "requirement_id": "TAINT-056",
+      "planned_test_id": "taint-unknown-state-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-056-taint-unknown-state-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-057-taint-propagated-basis-traceable-001",
+      "requirement_id": "TAINT-057",
+      "planned_test_id": "taint-propagated-basis-traceable-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-057-taint-propagated-basis-traceable-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-058-taint-unknown-policy-no-propagation-001",
+      "requirement_id": "TAINT-058",
+      "planned_test_id": "taint-unknown-policy-no-propagation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-058-taint-unknown-policy-no-propagation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-taint-059-taint-generated-content-absence-001",
+      "requirement_id": "TAINT-059",
+      "planned_test_id": "taint-generated-content-absence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-059-taint-generated-content-absence-001.json"
+    }
+  ]
+}
