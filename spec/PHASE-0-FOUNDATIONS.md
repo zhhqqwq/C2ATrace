@@ -50,11 +50,12 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 | ProviderAttempt | Activity | One discrete application-observed provider attempt |
 | ModelOutput | Artifact | Terminal assembled application-visible model-result representation for one ProviderAttempt |
 | OutputItem | Artifact abstraction | Occurrence-identified item contained in one ModelOutput |
-| ToolProposal | Artifact | OutputItem subtype |
-| ToolInvocation | Artifact | Effective tool invocation before execution |
-| ToolExecution | Activity | Actual execution attempt |
-| ToolResult | Artifact | Returned/result representation |
-| EffectObservation | Artifact | Recorded evidence about external state |
+| ToolProposal | Artifact | OutputItem subtype representing one model-output proposal occurrence |
+| ToolInvocation | Artifact | Immutable effective application-selected tool call before execution |
+| ToolDecision | Assertion | Application/policy allow/deny/unknown decision on one ToolProposal or ToolInvocation |
+| ToolExecution | Activity | One actual execution attempt of one ToolInvocation |
+| ToolResult | Artifact | Terminal assembled application-visible result representation for one ToolExecution |
+| EffectObservation | Artifact | Bounded evidence claim about possible external state |
 | TrustAssertion | Assertion | Trust judgement and basis |
 | TaintAssertion | Assertion | Conservative taint judgement and basis |
 | Receipt | Package | Portable set of records |
@@ -101,6 +102,8 @@ ModelOutput ────── contains ──────> OutputItem / ToolPro
 
 ToolProposal
     │
+    │ optional ToolDecision
+    │
     │ used by optional application preparation Transform
     ▼
 Transform
@@ -108,6 +111,9 @@ Transform
     │ generates
     ▼
 ToolInvocation
+    │
+    │ optional ToolDecision
+    ▼
 
 ToolExecution ── uses_invocation ──> ToolInvocation
 ToolExecution ── returns ──────────> ToolResult
@@ -132,7 +138,9 @@ A Transform using an Artifact and generating another Artifact does not, by itsel
 | produces | ProviderAttempt | ModelOutput | Provenance relation |
 | accepted_output | ModelInvocation | ModelOutput | Producer-asserted selected logical result |
 | contains | ModelOutput | OutputItem | Structural composition |
+| decision_on | ToolDecision | ToolProposal or ToolInvocation | Policy/application Assertion |
 | uses_invocation | ToolExecution | ToolInvocation | Provenance relation |
+| retry_of / replay_of / duplicate_of | ToolExecution | ToolExecution | Optional Producer-asserted execution orchestration relation |
 | returns | ToolExecution | ToolResult | Provenance relation |
 | supported_by | EffectObservation | Artifact | Evidence Assertion |
 
@@ -270,7 +278,7 @@ Project gate: all of the following are to be resolved before JSON Schema is froz
 - OQ-005 RESOLVED by Phase 1 Part C: core levels are sdk_arguments, provider_payload, prepared_http_body, and unknown; transitions reuse Transform / Derivation and remain explicitly recorded.
 - OQ-006 RESOLVED at semantic level by Phase 1 Part C: semantic digest commits a profile-canonicalized structured representation; byte digest commits exact captured bytes; concrete algorithms remain later profile work.
 - OQ-007 RESOLVED by Phase 1 Part C: hash-only sublocations are not location-resolved or representation-verified without the target representation or a recognized inclusion proof.
-- OQ-008 ToolInvocation argument-level provenance.
+- OQ-008 RESOLVED at semantic level by Phase 1 Part E: ToolInvocation argument provenance uses qualified Derivation over argument Regions; model_supplied / application_supplied / mixed / unknown are bounded coarse summaries over recorded representation ancestry.
 - OQ-009 RESOLVED at core semantic level by Phase 1 Part D: one attempt has zero or one terminal assembled ModelOutput; OutputItems are occurrence-identified; streaming chunk evidence is deferred to a future profile while response termination and output capture extent remain separate.
 - OQ-010 TrustAssertion subjects and vocabulary.
 - OQ-011 Taint lattice and propagation rules.
@@ -304,8 +312,11 @@ RequestSnapshot / RequestBinding
 ModelInvocation / ProviderAttempt / ModelOutput
         ✓ Phase 1 Part D
 
-ToolProposal / ToolInvocation / ToolExecution / ToolResult / EffectObservation
+ToolProposal / ToolInvocation / ToolDecision / ToolExecution / ToolResult / EffectObservation
+        ✓ Phase 1 Part E
+
+Trust / Taint
         ← next semantic focus
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-C are complete, but ModelOutput/tool, trust/taint, privacy, integrity, adapter, and verifier semantics still require specification gates.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-E are complete, but trust/taint, privacy, integrity/receipt, adapter, and verifier semantics still require specification gates.
