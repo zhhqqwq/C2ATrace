@@ -153,6 +153,33 @@
         }
       },
       "additionalProperties": false
+    },
+    "VectorResult": {
+      "type": "object",
+      "required": [
+        "vector_id",
+        "check",
+        "status"
+      ],
+      "properties": {
+        "vector_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "check": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "matched",
+            "mismatched",
+            "valid",
+            "invalid"
+          ]
+        }
+      },
+      "additionalProperties": false
     }
   },
   "type": "object",
@@ -240,6 +267,12 @@
       "type": "array",
       "items": {
         "type": "string"
+      }
+    },
+    "vector_results": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:c2atrace:conformance:v0.1:expected-result#/$defs/VectorResult"
       }
     }
   },
