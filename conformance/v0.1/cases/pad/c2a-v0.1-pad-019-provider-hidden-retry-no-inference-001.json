@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-019"
+  ],
+  "planned_test_ids": [
+    "provider-hidden-retry-no-inference-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Only one visible attempt is recorded; hidden retries below the adapter visibility boundary are not invented.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/provider-single-attempt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-019"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-019",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-019"
+    ]
+  },
+  "notes": [
+    "primitives: prim.provider.attempts, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001.json"
+}

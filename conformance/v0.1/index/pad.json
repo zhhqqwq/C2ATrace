@@ -169,7 +169,7 @@
       "requirement_id": "PAD-019",
       "planned_test_id": "provider-hidden-retry-no-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001.json"
     },
@@ -484,7 +484,7 @@
       "requirement_id": "PAD-054",
       "planned_test_id": "provider-retry-new-attempt-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-054-provider-retry-new-attempt-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-054-provider-retry-new-attempt-001.json"
     },
@@ -493,7 +493,7 @@
       "requirement_id": "PAD-055",
       "planned_test_id": "provider-retry-relation-positive-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-055-provider-retry-relation-positive-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-055-provider-retry-relation-positive-001.json"
     },
@@ -502,7 +502,7 @@
       "requirement_id": "PAD-056",
       "planned_test_id": "provider-retry-no-prior-negation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-056-provider-retry-no-prior-negation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-056-provider-retry-no-prior-negation-001.json"
     },
@@ -511,7 +511,7 @@
       "requirement_id": "PAD-057",
       "planned_test_id": "provider-failover-metadata-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-057-provider-failover-metadata-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-057-provider-failover-metadata-001.json"
     },
@@ -520,7 +520,7 @@
       "requirement_id": "PAD-058",
       "planned_test_id": "provider-failover-positive-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-058-provider-failover-positive-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-058-provider-failover-positive-001.json"
     },
@@ -529,7 +529,7 @@
       "requirement_id": "PAD-059",
       "planned_test_id": "provider-hedge-distinct-attempts-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-059-provider-hedge-distinct-attempts-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-059-provider-hedge-distinct-attempts-001.json"
     },
@@ -538,7 +538,7 @@
       "requirement_id": "PAD-060",
       "planned_test_id": "provider-hedge-no-total-order-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-060-provider-hedge-no-total-order-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-060-provider-hedge-no-total-order-001.json"
     },
@@ -547,7 +547,7 @@
       "requirement_id": "PAD-061",
       "planned_test_id": "provider-hedge-cancel-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-061-provider-hedge-cancel-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-061-provider-hedge-cancel-bounded-001.json"
     },

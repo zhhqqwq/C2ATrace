@@ -1452,7 +1452,9 @@
       "primary_primitive": "prim.provider.attempts",
       "dependency_primitives": [
         "prim.ordering.time"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-013-model-hedge-no-total-order-001"
     },
     {
       "family": "out",
@@ -1920,7 +1922,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-052-model-attempt-relation-no-self-loop-001"
     },
     {
       "family": "out",
@@ -1933,7 +1937,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-053-model-attempt-predecessor-cycle-001"
     },
     {
       "family": "pad",
@@ -2148,7 +2154,9 @@
       "primary_primitive": "prim.provider.attempts",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001"
     },
     {
       "family": "pad",
@@ -2677,7 +2685,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-054-provider-retry-new-attempt-001"
     },
     {
       "family": "pad",
@@ -2691,7 +2701,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-055-provider-retry-relation-positive-001"
     },
     {
       "family": "pad",
@@ -2705,7 +2717,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-056-provider-retry-no-prior-negation-001"
     },
     {
       "family": "pad",
@@ -2721,7 +2735,9 @@
       "primary_primitive": "prim.provider.attempts",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-057-provider-failover-metadata-001"
     },
     {
       "family": "pad",
@@ -2735,7 +2751,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-058-provider-failover-positive-001"
     },
     {
       "family": "pad",
@@ -2749,7 +2767,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-059-provider-hedge-distinct-attempts-001"
     },
     {
       "family": "pad",
@@ -2765,7 +2785,9 @@
       "primary_primitive": "prim.provider.attempts",
       "dependency_primitives": [
         "prim.ordering.time"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-060-provider-hedge-no-total-order-001"
     },
     {
       "family": "pad",
@@ -2779,7 +2801,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-061-provider-hedge-cancel-bounded-001"
     },
     {
       "family": "pad",
@@ -8606,7 +8630,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.provider.attempts",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tm-005-provider-retry-001"
     },
     {
       "family": "tm",
@@ -11950,6 +11976,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 96,
-  "remaining_semantic_requirements": 675
+  "executable_semantic_requirements": 109,
+  "remaining_semantic_requirements": 662
 }
