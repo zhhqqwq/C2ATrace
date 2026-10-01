@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-src-013-source-version-hint-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-013"
+  ],
+  "planned_test_ids": [
+    "source-version-hint-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "External version hints remain metadata and do not substitute for SourceObservation identity.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/source-repeat-observations.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "SRC-013"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-013",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-013"
+    ]
+  },
+  "notes": [
+    "primitives: prim.source.observation, prim.identity.occurrence"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-src-013-source-version-hint-identity-001.json"
+}

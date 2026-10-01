@@ -334,10 +334,45 @@
         "SRC-021"
       ],
       "dependency_requirements": [],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_02_materialized",
+      "executable_primary_requirement_count": 18,
       "wave_01_primary_requirements": [],
-      "wave_01_dependency_requirements": []
+      "wave_01_dependency_requirements": [],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/source-duplicate-identity.json",
+        "conformance/v0.1/primitives/receipts/source-same-locator-distinct.json",
+        "conformance/v0.1/primitives/receipts/source-same-commitment-distinct.json",
+        "conformance/v0.1/primitives/receipts/source-multiple-locators.json",
+        "conformance/v0.1/primitives/receipts/source-redirect.json",
+        "conformance/v0.1/primitives/receipts/source-alias-distinct.json",
+        "conformance/v0.1/primitives/receipts/source-unknown-distinct.json",
+        "conformance/v0.1/primitives/receipts/source-repeat-observations.json",
+        "conformance/v0.1/primitives/receipts/source-observation-reuse.json",
+        "conformance/v0.1/primitives/receipts/source-normalized-commitment.json",
+        "conformance/v0.1/primitives/receipts/source-incompatible-commitments.json",
+        "conformance/v0.1/primitives/receipts/source-partial-observation.json",
+        "conformance/v0.1/primitives/receipts/source-unknown-extent.json"
+      ],
+      "wave_02_primary_requirements": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004",
+        "SRC-005",
+        "SRC-006",
+        "SRC-007",
+        "SRC-008",
+        "SRC-010",
+        "SRC-011",
+        "SRC-012",
+        "SRC-013",
+        "SRC-016",
+        "SRC-017",
+        "SRC-018",
+        "SRC-019",
+        "SRC-020",
+        "SRC-021"
+      ]
     },
     {
       "id": "prim.derivation.mapping",
@@ -1990,7 +2025,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 21,
-  "remaining_semantic_requirements": 750,
-  "materialization_wave": "01"
+  "executable_semantic_requirements": 39,
+  "remaining_semantic_requirements": 732,
+  "materialization_wave": "02-source"
 }

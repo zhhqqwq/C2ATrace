@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-src-020-source-observation-extent-unknown-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "SRC-020",
+      "check_id": "source-observation-extent-unknown-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "obs-001"
+      },
+      "domain": "completeness",
+      "status": "unknown",
+      "prohibited_inferences": [
+        "P1:unknown_observation_extent_upgraded_to_complete"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

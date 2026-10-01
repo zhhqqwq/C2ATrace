@@ -5630,7 +5630,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-001-source-identity-key-001"
     },
     {
       "family": "src",
@@ -5643,7 +5645,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-002-source-ref-resolution-001"
     },
     {
       "family": "src",
@@ -5656,7 +5660,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-003-source-locator-no-merge-001"
     },
     {
       "family": "src",
@@ -5669,7 +5675,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-004-source-content-no-merge-001"
     },
     {
       "family": "src",
@@ -5684,7 +5692,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-005-source-multi-locator-wording-001"
     },
     {
       "family": "src",
@@ -5697,7 +5707,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-006-source-redirect-preservation-001"
     },
     {
       "family": "src",
@@ -5710,7 +5722,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-007-source-redirect-no-alias-001"
     },
     {
       "family": "src",
@@ -5723,7 +5737,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-008-source-alias-no-collapse-001"
     },
     {
       "family": "src",
@@ -5738,7 +5754,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-010-source-unknown-preservation-001"
     },
     {
       "family": "src",
@@ -5751,7 +5769,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-011-source-repeat-observation-001"
     },
     {
       "family": "src",
@@ -5764,7 +5784,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-012-source-observation-reuse-001"
     },
     {
       "family": "src",
@@ -5777,7 +5799,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.source.observation",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-013-source-version-hint-identity-001"
     },
     {
       "family": "src",
@@ -5806,7 +5830,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-016-source-commitment-basis-wording-001"
     },
     {
       "family": "src",
@@ -5821,7 +5847,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-017-source-commitment-compatibility-001"
     },
     {
       "family": "src",
@@ -5836,7 +5864,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-018-source-commitment-no-identity-001"
     },
     {
       "family": "src",
@@ -5851,7 +5881,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-019-source-observation-completeness-001"
     },
     {
       "family": "src",
@@ -5866,7 +5898,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-020-source-observation-extent-unknown-001"
     },
     {
       "family": "src",
@@ -5881,7 +5915,9 @@
       "primary_primitive": "prim.source.observation",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-021-source-origin-claim-strength-001"
     },
     {
       "family": "src",
@@ -11800,6 +11836,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 21,
-  "remaining_semantic_requirements": 750
+  "executable_semantic_requirements": 39,
+  "remaining_semantic_requirements": 732
 }

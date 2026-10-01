@@ -1,0 +1,50 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-02-source",
+  "status": "complete",
+  "total_semantic_requirements": 771,
+  "newly_materialized": [
+    "c2a-v0.1-src-001-source-identity-key-001",
+    "c2a-v0.1-src-002-source-ref-resolution-001",
+    "c2a-v0.1-src-003-source-locator-no-merge-001",
+    "c2a-v0.1-src-004-source-content-no-merge-001",
+    "c2a-v0.1-src-005-source-multi-locator-wording-001",
+    "c2a-v0.1-src-006-source-redirect-preservation-001",
+    "c2a-v0.1-src-007-source-redirect-no-alias-001",
+    "c2a-v0.1-src-008-source-alias-no-collapse-001",
+    "c2a-v0.1-src-010-source-unknown-preservation-001",
+    "c2a-v0.1-src-011-source-repeat-observation-001",
+    "c2a-v0.1-src-012-source-observation-reuse-001",
+    "c2a-v0.1-src-013-source-version-hint-identity-001",
+    "c2a-v0.1-src-016-source-commitment-basis-wording-001",
+    "c2a-v0.1-src-017-source-commitment-compatibility-001",
+    "c2a-v0.1-src-018-source-commitment-no-identity-001",
+    "c2a-v0.1-src-019-source-observation-completeness-001",
+    "c2a-v0.1-src-020-source-observation-extent-unknown-001",
+    "c2a-v0.1-src-021-source-origin-claim-strength-001"
+  ],
+  "source_primary_requirements": 18,
+  "executable_semantic_requirements": 39,
+  "remaining_semantic_requirements": 732,
+  "reusable_receipts": [
+    "conformance/v0.1/primitives/receipts/source-duplicate-identity.json",
+    "conformance/v0.1/primitives/receipts/source-same-locator-distinct.json",
+    "conformance/v0.1/primitives/receipts/source-same-commitment-distinct.json",
+    "conformance/v0.1/primitives/receipts/source-multiple-locators.json",
+    "conformance/v0.1/primitives/receipts/source-redirect.json",
+    "conformance/v0.1/primitives/receipts/source-alias-distinct.json",
+    "conformance/v0.1/primitives/receipts/source-unknown-distinct.json",
+    "conformance/v0.1/primitives/receipts/source-repeat-observations.json",
+    "conformance/v0.1/primitives/receipts/source-observation-reuse.json",
+    "conformance/v0.1/primitives/receipts/source-normalized-commitment.json",
+    "conformance/v0.1/primitives/receipts/source-incompatible-commitments.json",
+    "conformance/v0.1/primitives/receipts/source-partial-observation.json",
+    "conformance/v0.1/primitives/receipts/source-unknown-extent.json"
+  ],
+  "assertions": {
+    "source_primary_coverage_complete": true,
+    "identity_and_claim_strength_boundaries_preserved": true,
+    "frozen_schema_unchanged": true
+  },
+  "note": "Source observation primitive family is fully materialized. Acceptance remains pending independent runner execution."
+}

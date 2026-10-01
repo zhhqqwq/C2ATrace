@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-src-011-source-repeat-observation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-011"
+  ],
+  "planned_test_ids": [
+    "source-repeat-observation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Two recorded capture occurrences retain distinct SourceObservation identities even with matching content commitments and version hints.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/source-repeat-observations.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "SRC-011"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-011",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-011"
+    ]
+  },
+  "notes": [
+    "primitives: prim.source.observation, prim.identity.occurrence"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-src-011-source-repeat-observation-001.json"
+}

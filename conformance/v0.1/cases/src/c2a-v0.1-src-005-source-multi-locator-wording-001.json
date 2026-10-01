@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-src-005-source-multi-locator-wording-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-005"
+  ],
+  "planned_test_ids": [
+    "source-multi-locator-wording-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Multiple locators recorded on one SourceRef are Producer assertions; core records do not independently verify their external equivalence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/source-multiple-locators.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "SRC-005"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-005",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-005"
+    ]
+  },
+  "notes": [
+    "primitives: prim.source.observation, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-src-005-source-multi-locator-wording-001.json"
+}

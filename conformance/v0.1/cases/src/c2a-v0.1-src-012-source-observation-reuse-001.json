@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-src-012-source-observation-reuse-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-012"
+  ],
+  "planned_test_ids": [
+    "source-observation-reuse-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The same previously captured SourceObservation may be referenced by multiple later activities without creating a duplicate observation occurrence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/source-observation-reuse.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "SRC-012"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-012",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-012"
+    ]
+  },
+  "notes": [
+    "primitives: prim.source.observation"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-src-012-source-observation-reuse-001.json"
+}
