@@ -1,0 +1,154 @@
+{
+  "case_id": "c2a-v0.1-vfy-141-verifier-report-goals-capabilities-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-141"
+  ],
+  "planned_test_ids": [
+    "verifier-report-goals-capabilities-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "VerificationReport declares selected goals and a privacy-safe capability summary so its findings can be interpreted independently.",
+  "documents": [
+    {
+      "document_id": "report-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-141",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [
+              "receipt-minimal-001"
+            ],
+            "goals": [
+              {
+                "check_id": "integrity-signature-key-relative-001",
+                "mandatory": true
+              }
+            ],
+            "capability_summary": {
+              "verification_keys": [
+                "test-ed25519-key-001"
+              ]
+            }
+          },
+          "findings": [],
+          "envelope_results": [],
+          "completeness": {
+            "package_inventory": "unverified",
+            "reference_closure": "unverified",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    },
+    {
+      "document_id": "report-missing-goals-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-141",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [
+              "receipt-minimal-001"
+            ],
+            "capability_summary": {
+              "verification_keys": [
+                "test-ed25519-key-001"
+              ]
+            }
+          },
+          "findings": [],
+          "envelope_results": [],
+          "completeness": {
+            "package_inventory": "unverified",
+            "reference_closure": "unverified",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    },
+    {
+      "document_id": "report-missing-capabilities-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-141",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [
+              "receipt-minimal-001"
+            ],
+            "goals": [
+              {
+                "check_id": "integrity-signature-key-relative-001",
+                "mandatory": true
+              }
+            ]
+          },
+          "findings": [],
+          "envelope_results": [],
+          "completeness": {
+            "package_inventory": "unverified",
+            "reference_closure": "unverified",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "verifier_goals": [
+      "VFY-141"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-141",
+    "primary_documents": [
+      "report-valid"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-141"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-vfy-141-verifier-report-goals-capabilities-001.json"
+}
