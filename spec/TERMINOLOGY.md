@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Phase 1 Part E aligned.
+Status: Phase 1 Part F aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, and TOOL-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, and TAINT-* requirements.
 
 ## Artifact
 
@@ -606,27 +606,89 @@ A desired postcondition or goal state. Outcome verification is outside core v0.1
 
 ## Trust
 
-A Producer- or policy-issued assessment.
+A local Producer-/policy-issued assessment about one explicit subject and one Trust Dimension.
 
-Trust is represented through TrustAssertion and is not an intrinsic cryptographic property of a source.
+Trust is not objective truth, is not an intrinsic cryptographic property, and does not automatically inherit across provenance relations.
 
 ## TrustAssertion
 
-An Assertion associating a subject with a trust label and the identity, policy, or basis that asserted it.
+An occurrence-identified Assertion containing one subject, one Trust Dimension, one Trust State, asserted_by identity (or unknown), policy context (or unknown), and optional evidence/basis references.
 
-Exact vocabulary and subject rules remain open under OQ-010.
+Core Trust States are trusted, untrusted, and unknown.
+
+TrustAssertions are local. SourceRef trust does not automatically apply to SourceObservation; input trust does not automatically apply to derived/request/output/tool/effect objects.
+
+See TRUST-001 through TRUST-025.
+
+## Trust Dimension
+
+The policy-scoped dimension being assessed by a TrustAssertion.
+
+Examples may include source authority, content reliability, runtime integrity, policy approval, or application-defined dimensions.
+
+Core v0.1 does not define one universal "trusted" dimension.
+
+## Trust State
+
+One of trusted, untrusted, or unknown under one issuer/policy Trust Dimension.
+
+The state is an asserted assessment and not objective truth.
 
 ## Taint
 
-Conservative provenance metadata indicating that an object's recorded provenance envelope contains ancestry with a relevant property.
+Policy-scoped conservative metadata describing an active property over one subject scope.
 
-Taint is distinct from maliciousness, exact Derivation, and causal responsibility.
+Taint is distinct from maliciousness, objective safety, Trust, exact Derivation, and causal responsibility.
 
 ## TaintAssertion
 
-An Assertion recording taint state, basis, and later-defined propagation semantics for a subject.
+An occurrence-identified Assertion containing a subject scope, taint_kind, Taint State, Taint Channel, Taint Precision, asserted_by identity (or unknown), policy context (or unknown), and a direct/propagated/sanitization/unknown basis.
 
-Exact lattice and propagation rules remain open under OQ-011 and OQ-012.
+See TAINT-001 through TAINT-059.
+
+## Taint Kind
+
+A policy-defined identifier for the property tracked by TaintAssertion.
+
+Core v0.1 standardizes taint mechanics rather than a universal catalogue of taint kinds. Examples can include sensitive, secret, user_controlled, untrusted_source, or application-defined properties.
+
+## Taint State
+
+One of present, absent, or unknown.
+
+present means the policy asserts the active taint kind applies somewhere in the declared scope. absent means the policy asserts absence under its evidence/scope. unknown means neither stronger state is justified.
+
+absent does not mean objectively clean, and present does not mean malicious.
+
+## Taint Channel
+
+One of content, control, mixed, or unknown.
+
+content tracks representation ancestry. control tracks policy-defined influence through explicit control-use/activity relations without claiming representation contribution. mixed requires both channels.
+
+## Taint Precision
+
+One of exact, conservative, or unknown.
+
+exact means the asserted scope is not intentionally broader than the provenance/mapping evidence used. conservative can over-approximate the tainted scope. Precision does not upgrade factual truth.
+
+## Conservative Taint Lattice
+
+For compatible assertions under one policy identity, taint_kind, channel, and comparable subject scope, the conservative state order is:
+
+~~~text
+absent < unknown < present
+~~~
+
+Assertions from different or unknown policy contexts are not automatically joined.
+
+## Sanitization Discharge
+
+A policy-scoped TaintAssertion with basis=sanitization that records downstream taint discharge/reclassification for a specific taint kind, channel, and scope through an identified Transform and policy rule.
+
+Sanitization changes active downstream taint state; it does not delete upstream provenance or prior taint assertions, and it does not create Trust.
+
+See TAINT-035 through TAINT-045.
 
 ## Unknown
 
