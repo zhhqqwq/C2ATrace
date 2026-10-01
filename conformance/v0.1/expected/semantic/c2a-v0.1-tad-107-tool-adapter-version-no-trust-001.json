@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-107-tool-adapter-version-no-trust-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-107",
+      "check_id": "tool-adapter-version-no-trust-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-effect-001",
+        "object_id": "tool-adapter-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:tool_adapter_version_proves_trust"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

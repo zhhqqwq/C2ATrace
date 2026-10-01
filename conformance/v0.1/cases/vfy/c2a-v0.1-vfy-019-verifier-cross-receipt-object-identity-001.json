@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-vfy-019-verifier-cross-receipt-object-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-019"
+  ],
+  "planned_test_ids": [
+    "verifier-cross-receipt-object-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Repeated object identity with incompatible immutable representation is surfaced as identity conflict.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/graph-artifact-id-reuse.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "VFY-019"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-019",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-019"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.receipt.multi, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-019-verifier-cross-receipt-object-identity-001.json"
+}

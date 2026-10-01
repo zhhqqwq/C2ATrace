@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-tool-056-tool-retry-invocation-mutation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-056"
+  ],
+  "planned_test_ids": [
+    "tool-retry-invocation-mutation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A retry whose effective ToolInvocation changes references a new invocation identity.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-execution-retry-different-invocation.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TOOL-056"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-056",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-056"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.provider.attempts, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-056-tool-retry-invocation-mutation-001.json"
+}

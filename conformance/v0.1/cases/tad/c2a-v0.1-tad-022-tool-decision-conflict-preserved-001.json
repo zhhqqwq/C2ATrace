@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-tad-022-tool-decision-conflict-preserved-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-022"
+  ],
+  "planned_test_ids": [
+    "tool-decision-conflict-preserved-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Conflicting allow/deny decision occurrences are both preserved rather than merged.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/identity-tool-decisions.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TAD-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-022",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.tool.lifecycle, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-022-tool-decision-conflict-preserved-001.json"
+}

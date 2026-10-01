@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-drv-015-transform-aggregate-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-015"
+  ],
+  "planned_test_ids": [
+    "transform-aggregate-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A generated aggregate wrapper has a new Artifact identity distinct from the selected member Artifact.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/identity-selection-aggregate.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "DRV-015"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-015",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-015"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.derivation.mapping"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-drv-015-transform-aggregate-identity-001.json"
+}

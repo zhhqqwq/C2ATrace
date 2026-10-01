@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-out-039-model-stream-no-item-mutation-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "OUT-039",
+      "check_id": "model-stream-no-item-mutation-001",
+      "subject_selector": {
+        "receipt_id": "receipt-stream-001",
+        "object_id": "txt-stream-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:stream_capture_mutates_output_item_identity"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

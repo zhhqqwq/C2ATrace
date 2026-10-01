@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-req-036-request-digest-no-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-036"
+  ],
+  "planned_test_ids": [
+    "request-digest-no-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Equal semantic digest evidence does not merge distinct RequestSnapshot identities.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-semantic-equal-byte-different.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "REQ-036"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-036",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-036"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.integrity.composition, prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-req-036-request-digest-no-identity-001.json"
+}

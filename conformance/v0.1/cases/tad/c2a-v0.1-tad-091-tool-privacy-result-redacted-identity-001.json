@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-091"
+  ],
+  "planned_test_ids": [
+    "tool-privacy-result-redacted-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A redacted ToolResult derivative has identity distinct from the withheld original ToolResult.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/identity-tool-result-redacted.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TAD-091"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-091",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-091"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.privacy.redaction, prim.privacy.commitment, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json"
+}

@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-pad-065-provider-model-identity-separation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-065"
+  ],
+  "planned_test_ids": [
+    "provider-model-identity-separation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Provider-reported model metadata remains separate from C2ATrace occurrence identity.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/identity-model-mismatch.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "PAD-065"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-065",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-065"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-065-provider-model-identity-separation-001.json"
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-capability-only-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-capability-001",
+      "tool-adapter-capability-001"
+    ],
+    "records": [
+      {
+        "id": "run-capability-001",
+        "kind": "Run",
+        "label": "tool-capability-only"
+      },
+      {
+        "id": "tool-adapter-capability-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-capability-001",
+        "adapter_name": "test-tool-adapter",
+        "adapter_version": "1.0",
+        "invocation_boundary": "runtime call",
+        "execution_boundary": "execution attempt",
+        "result_boundary": "application result",
+        "argument_path_schemes": [
+          "json_pointer"
+        ],
+        "proposal_association": true,
+        "decision_capture": true,
+        "streaming_result": false,
+        "effect_observation": [
+          "execution_result"
+        ],
+        "privacy_profiles": [
+          "full",
+          "hmac",
+          "redacted"
+        ],
+        "retry_visibility": "direct",
+        "replay_visibility": "direct",
+        "duplicate_visibility": "direct"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-capability-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

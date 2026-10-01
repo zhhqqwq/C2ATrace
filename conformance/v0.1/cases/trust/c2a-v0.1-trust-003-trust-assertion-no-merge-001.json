@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-trust-003-trust-assertion-no-merge-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TRUST-003"
+  ],
+  "planned_test_ids": [
+    "trust-assertion-no-merge-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Equal TrustAssertion semantics can be represented as distinct assertion occurrences.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/identity-trust-assertions.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "TRUST-003"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-trust-003",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TRUST-003"
+    ]
+  },
+  "notes": [
+    "primitives: prim.identity.occurrence, prim.trust.assertion"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-003-trust-assertion-no-merge-001.json"
+}

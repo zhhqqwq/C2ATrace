@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-vfy-017-verifier-receipt-id-conflict-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "b",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-017",
+      "check_id": "verifier-receipt-id-conflict-001",
+      "subject_selector": {
+        "receipt_id": "receipt-ambiguous"
+      },
+      "domain": "conflict",
+      "status": "conflict",
+      "reason_code": "conflicting_receipt_identity_presentations"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
