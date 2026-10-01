@@ -1,0 +1,1 @@
+{"id":"att-bad-disposition","kind":"ProviderAttempt","invocation":{"ref_type":"local","id":"inv-1","expected_kind":"ModelInvocation"},"lifecycle_state":"terminal","terminal_disposition":"succeeded"}
