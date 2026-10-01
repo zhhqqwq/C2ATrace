@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:conformance:v0.1:suite-manifest",
+  "title": "C2ATrace v0.1 Conformance Suite Manifest",
+  "type": "object",
+  "required": [
+    "suite_version",
+    "protocol_version",
+    "status",
+    "frozen_schema_manifest",
+    "traceability_manifest",
+    "schemas",
+    "case_indexes",
+    "counts"
+  ],
+  "properties": {
+    "suite_version": {
+      "const": "0.1"
+    },
+    "protocol_version": {
+      "const": "0.1"
+    },
+    "status": {
+      "enum": [
+        "in_progress",
+        "accepted"
+      ]
+    },
+    "frozen_schema_manifest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "traceability_manifest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schemas": {
+      "type": "object",
+      "required": [
+        "case",
+        "case_index",
+        "expected_result",
+        "suite_manifest"
+      ],
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "case_indexes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "requirements",
+        "mapped_cases",
+        "accepted_cases",
+        "by_enforcement"
+      ],
+      "properties": {
+        "requirements": {
+          "const": 907
+        },
+        "mapped_cases": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 907
+        },
+        "accepted_cases": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 907
+        },
+        "by_enforcement": {
+          "type": "object",
+          "required": [
+            "direct_schema",
+            "mixed_schema_semantic",
+            "semantic_verifier",
+            "deterministic_vector"
+          ],
+          "properties": {
+            "direct_schema": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "mixed_schema_semantic": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "semantic_verifier": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "deterministic_vector": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "gate_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
