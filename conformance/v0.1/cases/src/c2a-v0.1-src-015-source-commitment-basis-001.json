@@ -1,0 +1,69 @@
+{
+  "case_id": "c2a-v0.1-src-015-source-commitment-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-015"
+  ],
+  "planned_test_ids": [
+    "source-commitment-basis-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "SourceObservation commitment explicitly identifies its representation basis and remains a bounded commitment assertion.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/2/content_commitments",
+          "value": [
+            {
+              "method": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "representation_basis": "decoded_text_utf8"
+            }
+          ]
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "SRC-015"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-015",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-015"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-src-015-source-commitment-basis-001.json"
+}
