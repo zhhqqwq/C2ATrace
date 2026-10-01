@@ -1,0 +1,1304 @@
+{
+  "family": "TAD",
+  "count": 118,
+  "requirements": [
+    {
+      "id": "TAD-001",
+      "title": "Tool Adapter visibility is declared and bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-002",
+      "title": "Tool Adapter boundary declaration",
+      "enforcement": "direct_schema",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-003",
+      "title": "Tool Adapter capability declaration",
+      "enforcement": "direct_schema",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-004",
+      "title": "Baseline effective invocation capability",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-005",
+      "title": "Baseline execution capability",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-006",
+      "title": "Baseline result capability",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-007",
+      "title": "Capability is not occurrence proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-008",
+      "title": "Tool Adapter does not infer remote receipt",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-009",
+      "title": "CaptureDiagnostic slot is bounded",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-010",
+      "title": "CaptureDiagnostic semantics are reused unchanged",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-011",
+      "title": "Missing diagnostic is not capture success",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-012",
+      "title": "No no-bypass inference",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-013",
+      "title": "Diagnostic conflicts are preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-014",
+      "title": "Proposal capability is optional",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-015",
+      "title": "Proposal linkage requires positive evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-016",
+      "title": "Ambiguous proposal linkage remains ambiguous",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-017",
+      "title": "ToolDecision requires observed/received decision occurrence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-018",
+      "title": "Proposal denial creates no fake invocation/execution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-019",
+      "title": "Invocation denial creates no fake execution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-020",
+      "title": "Execution does not imply allow decision",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-021",
+      "title": "Deny does not erase later execution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-022",
+      "title": "Conflicting decisions remain occurrence evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-023",
+      "title": "Effective ToolInvocation is final visible pre-execution representation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-024",
+      "title": "ToolInvocation is not remote wire request by default",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-025",
+      "title": "Changed effective representation gets new ToolInvocation identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-026",
+      "title": "Invocation reuse requires actual reuse",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-027",
+      "title": "Logical tool identity and executable target are not silently conflated",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-028",
+      "title": "ToolPreparation lineage requires positive evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-029",
+      "title": "Argument path/profile is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-030",
+      "title": "model_supplied requires positive proposal ancestry",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-031",
+      "title": "application_supplied requires positive non-proposal ancestry",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-032",
+      "title": "mixed requires both representation contributor classes",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-033",
+      "title": "Unknown argument provenance is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-034",
+      "title": "Control input is not argument content by default",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-035",
+      "title": "Rewritten argument is the effective value",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-036",
+      "title": "Dropped proposal argument is not effective argument",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-037",
+      "title": "Application enrichment is not model-supplied by proximity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-038",
+      "title": "Transport metadata is not proposal argument ancestry by proximity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-039",
+      "title": "Execution begins only at declared execution-start boundary",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-040",
+      "title": "Pre-start failure creates no fake ToolExecution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-041",
+      "title": "Remote client execution does not prove remote server start",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-042",
+      "title": "Distinct executions have distinct identities",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-043",
+      "title": "Execution disposition is runtime-observed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-044",
+      "title": "completed is not effect success",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-045",
+      "title": "timeout does not imply no effect",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-046",
+      "title": "cancellation does not prove remote stop",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-047",
+      "title": "Visible retry creates new ToolExecution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-048",
+      "title": "Changed retry invocation gets new ToolInvocation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-049",
+      "title": "retry_of requires orchestration evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-050",
+      "title": "retry_of does not negate prior effect",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-051",
+      "title": "replay_of requires orchestration evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-052",
+      "title": "duplicate_of is not duplicate Effect proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-053",
+      "title": "Hidden tool/runtime retries are not invented",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-054",
+      "title": "Idempotency key is execution metadata",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-055",
+      "title": "Idempotency does not establish exactly-once",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-056",
+      "title": "Tool-reported deduplication remains reported",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-057",
+      "title": "ToolResult is application-visible result",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-058",
+      "title": "Core ToolResult cardinality",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-059",
+      "title": "Exception is not automatically ToolResult",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-060",
+      "title": "ToolResult occurrence identity is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-061",
+      "title": "ToolResult capture extent follows capture evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-062",
+      "title": "Streaming support requires result-consumption visibility",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-063",
+      "title": "Streaming assembly follows tool event semantics",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-064",
+      "title": "Unsupported stream semantics degrade precision",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-065",
+      "title": "Partial streaming result evidence is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-066",
+      "title": "Lost result events prevent complete capture",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-067",
+      "title": "Consumer stop is not remote completion",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-068",
+      "title": "Chunk retention is optional",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-069",
+      "title": "Tool metadata origin is explicit when semantically relevant",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-070",
+      "title": "Tool-reported metadata remains reported",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-071",
+      "title": "Remote IDs are not C2ATrace identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-072",
+      "title": "Tool-reported transaction ID is not commit proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-073",
+      "title": "Tool/server timestamps are not trusted time",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-074",
+      "title": "Normalized tool metadata is adapter-derived",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-075",
+      "title": "Tool success does not establish Effect",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-076",
+      "title": "EffectObservation capability is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-077",
+      "title": "execution_result effect claim requires bounded proposition",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-078",
+      "title": "separate_observation requires distinct evidence occurrence",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-079",
+      "title": "Copying ToolResult is not separate observation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-080",
+      "title": "external_attestation requires separate evidence identity/profile",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-081",
+      "title": "Unknown effect basis is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-082",
+      "title": "Evidence count does not create truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-083",
+      "title": "Effect claim scope is evidence-bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-084",
+      "title": "EffectObservation is not OutcomeVerification",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-085",
+      "title": "Temporal association is not external causality",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-086",
+      "title": "Runtime argument capture and privacy disclosure are separate",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-087",
+      "title": "Secret placeholders are not effective arguments",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-088",
+      "title": "Argument commitment-before-discard uses exact observed basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-089",
+      "title": "Argument privacy does not strengthen provenance",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-090",
+      "title": "ToolResult privacy is disclosure-only",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-091",
+      "title": "Redacted ToolResult uses derivative identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-092",
+      "title": "Privacy does not upgrade effect basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-093",
+      "title": "Known ToolInvocation capture failure is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-094",
+      "title": "Execution instrumentation failure is not tool failure",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-095",
+      "title": "Result capture failure does not fabricate ToolResult",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-096",
+      "title": "Effect observer failure is not effect absence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-097",
+      "title": "Adapter exception is not tool/server exception",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-098",
+      "title": "Privacy does not hide known capture failure",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-099",
+      "title": "bypass_detected requires positive evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-100",
+      "title": "Detected bypass does not fabricate provenance",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-101",
+      "title": "Multiple hooks require occurrence correlation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-102",
+      "title": "Unknown state is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-103",
+      "title": "Adapter occurrence assertions remain assertions",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-104",
+      "title": "Representation verification does not prove runtime observation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-105",
+      "title": "Remote tool execution remains unestablished by client evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-106",
+      "title": "Signed capture diagnostics are not global coverage proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-107",
+      "title": "Adapter identity/version is not implementation trust",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-108",
+      "title": "Adapter timestamps are not trusted time",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-109",
+      "title": "Post-boundary execution mutation remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-110",
+      "title": "ToolDecision does not automatically govern a ToolExecution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-111",
+      "title": "EffectObservation identity is occurrence-based",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-112",
+      "title": "ToolResult commitment-before-discard uses exact observed basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-113",
+      "title": "Non-completed execution does not imply no Effect",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-114",
+      "title": "Missing ToolExecution is not negative proof under incomplete capture",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-115",
+      "title": "Missing ToolResult is not proof no result existed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-116",
+      "title": "external_observed metadata is not automatically separate_observation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-117",
+      "title": "Async acceptance is not remote completion/effect proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TAD-118",
+      "title": "Proposal-to-invocation cardinality is not assumed",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/tool.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    }
+  ]
+}
