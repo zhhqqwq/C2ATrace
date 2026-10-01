@@ -1,0 +1,123 @@
+{
+  "case_id": "c2a-v0.1-pad-004-provider-adapter-min-request-level-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-004"
+  ],
+  "planned_test_ids": [
+    "provider-adapter-min-request-level-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Baseline Provider Adapter declares at least one core request capture level, and the authenticated declaration is semantically visible in the ARP.",
+  "documents": [
+    {
+      "document_id": "capability-valid",
+      "role": "capability",
+      "source": {
+        "inline": {
+          "id": "pad-min-001",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "test-provider-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "logical invocation",
+          "attempt_boundary": "provider attempt",
+          "request_capture_levels": [
+            "provider_payload"
+          ],
+          "output_capture": true,
+          "streaming_output": false,
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    },
+    {
+      "document_id": "capability-empty-levels-invalid",
+      "role": "capability",
+      "source": {
+        "inline": {
+          "id": "pad-min-001",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "test-provider-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "logical invocation",
+          "attempt_boundary": "provider attempt",
+          "request_capture_levels": [],
+          "output_capture": true,
+          "streaming_output": false,
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-unsigned-receipt.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/adapter_declarations",
+          "value": [
+            {
+              "id": "pad-min-001",
+              "kind": "ProviderAdapterCapability",
+              "adapter_name": "test-provider-adapter",
+              "adapter_version": "0.1-test",
+              "invocation_boundary": "logical invocation",
+              "attempt_boundary": "provider attempt",
+              "request_capture_levels": [
+                "provider_payload"
+              ],
+              "output_capture": true,
+              "streaming_output": false,
+              "privacy_profiles": [
+                "full"
+              ]
+            }
+          ]
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "capabilities": [
+      "capability-valid"
+    ],
+    "verifier_goals": [
+      "PAD-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-004",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider"
+    ],
+    "goals": [
+      "PAD-004"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-pad-004-provider-adapter-min-request-level-001.json"
+}
