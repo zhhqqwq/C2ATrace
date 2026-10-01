@@ -1,0 +1,1 @@
+{"id":"snap-bad-owners","kind":"RequestSnapshot","capture_level":"provider_payload","invocation_owner":{"ref_type":"local","id":"inv-1","expected_kind":"ModelInvocation"},"attempt_owner":{"ref_type":"local","id":"att-1","expected_kind":"ProviderAttempt"}}
