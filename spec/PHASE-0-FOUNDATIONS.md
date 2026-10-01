@@ -280,9 +280,9 @@ Project gate: all of the following are to be resolved before JSON Schema is froz
 - OQ-007 RESOLVED by Phase 1 Part C: hash-only sublocations are not location-resolved or representation-verified without the target representation or a recognized inclusion proof.
 - OQ-008 RESOLVED at semantic level by Phase 1 Part E: ToolInvocation argument provenance uses qualified Derivation over argument Regions; model_supplied / application_supplied / mixed / unknown are bounded coarse summaries over recorded representation ancestry.
 - OQ-009 RESOLVED at core semantic level by Phase 1 Part D: one attempt has zero or one terminal assembled ModelOutput; OutputItems are occurrence-identified; streaming chunk evidence is deferred to a future profile while response termination and output capture extent remain separate.
-- OQ-010 TrustAssertion subjects and vocabulary.
-- OQ-011 Taint lattice and propagation rules.
-- OQ-012 Sanitization semantics and anti-laundering constraints.
+- OQ-010 RESOLVED by Phase 1 Part F: TrustAssertion is subject-local, dimensioned, issuer/policy-scoped, and uses trusted / untrusted / unknown without automatic inheritance.
+- OQ-011 RESOLVED by Phase 1 Part F: TaintAssertion uses policy-defined taint_kind plus state/channel/precision; compatible conservative state join is absent < unknown < present and propagation is policy-scoped.
+- OQ-012 RESOLVED by Phase 1 Part F: sanitization is explicit, kind/channel/scope-specific, evidence-bounded, and history-preserving; sanitizer names, trust labels, tool success, signatures, and representation changes do not launder taint.
 - OQ-013 External references and multi-receipt resolution.
 - OQ-014 Receipt scope declaration without implying completeness.
 - OQ-015 IntegrityEnvelope signing scope and detached/embedded representation.
@@ -316,7 +316,10 @@ ToolProposal / ToolInvocation / ToolDecision / ToolExecution / ToolResult / Effe
         ✓ Phase 1 Part E
 
 Trust / Taint
+        ✓ Phase 1 Part F
+
+Privacy
         ← next semantic focus
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-E are complete, but trust/taint, privacy, integrity/receipt, adapter, and verifier semantics still require specification gates.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-F are complete, but privacy, integrity/receipt, adapter, and verifier semantics still require specification gates.
