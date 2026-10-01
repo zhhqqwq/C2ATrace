@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:c2atrace:schema:v0.1:c2atrace",
+  "title":"C2ATrace v0.1 Top-Level Documents",
+  "oneOf":[
+    {"$ref":"urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"},
+    {"$ref":"urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"},
+    {"$ref":"urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"},
+    {"$ref":"urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"}
+  ]
+}
