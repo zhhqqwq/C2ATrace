@@ -1,0 +1,83 @@
+{
+  "case_id": "c2a-v0.1-tool-037-tool-result-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-037"
+  ],
+  "planned_test_ids": [
+    "tool-result-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "One ToolExecution has two core ToolResult artifacts; local wire shapes remain valid while cross-record cardinality is invalid.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "result-002",
+            "kind": "ToolResult",
+            "run_id": "run-tool-001",
+            "execution": {
+              "ref_type": "local",
+              "id": "exec-001",
+              "expected_kind": "ToolExecution"
+            },
+            "capture_extent": "complete",
+            "reported_status": "success",
+            "representation": {
+              "representation_kind": "json",
+              "value": {
+                "issue_id": 124,
+                "status": "created"
+              }
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "result-002"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TOOL-037"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-037",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-037"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-037-tool-result-cardinality-001.json"
+}
