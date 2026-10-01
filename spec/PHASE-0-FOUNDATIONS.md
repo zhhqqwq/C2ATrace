@@ -63,6 +63,8 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 | Receipt | Package | Portable package identity centered on one immutable Authenticated Receipt Payload |
 | ReceiptLink | Integrity metadata | Digest-pinned package-level link to a prior Receipt payload |
 | IntegrityEnvelope | Integrity metadata | Embedded/detached signature metadata authenticating a defined Receipt payload commitment |
+| VerificationReport | Verifier output metadata | Machine-readable multidimensional verification result; not runtime provenance |
+| VerificationFinding | Verifier output metadata | Typed per-check result with subject, status domain, evidence basis, and premises |
 
 ## 4. Corrected core graph
 
@@ -335,7 +337,10 @@ Tool Adapter Contract
         ✓ accepted
 
 Verifier Contract
-        ← final pre-Schema gate
+        ✓ accepted
+
+JSON Schema freeze
+        ← next phase
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-H plus Provider Adapter Contract and Tool Adapter Contract are complete; only the Verifier Contract remains before Schema freeze.
+Project gate: all Phase 0/Phase 1 semantic work and Provider/Tool Adapter plus Verifier contracts are complete. JSON Schema freeze is now UNBLOCKED and is the next phase. Implementation remains blocked until Schema freeze and conformance fixtures/test vectors are complete.
