@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-out-046-model-text-no-hidden-reasoning-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "OUT-046",
+      "check_id": "model-text-no-hidden-reasoning-001",
+      "subject_selector": {
+        "receipt_id": "receipt-retry-001",
+        "object_id": "txt-r2"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:text_output_is_hidden_reasoning_or_token_history"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,113 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-retry-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-retry-001",
+      "inv-r",
+      "att-r1",
+      "att-r2",
+      "out-r2",
+      "txt-r2"
+    ],
+    "records": [
+      {
+        "id": "run-retry-001",
+        "kind": "Run",
+        "label": "provider-retry"
+      },
+      {
+        "id": "inv-r",
+        "kind": "ModelInvocation",
+        "run_id": "run-retry-001",
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "unknown",
+        "requested_model": "model-A"
+      },
+      {
+        "id": "att-r1",
+        "kind": "ProviderAttempt",
+        "run_id": "run-retry-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-r",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "timeout",
+        "provider": "p1"
+      },
+      {
+        "id": "att-r2",
+        "kind": "ProviderAttempt",
+        "run_id": "run-retry-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-r",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "retry_of": {
+          "ref_type": "local",
+          "id": "att-r1",
+          "expected_kind": "ProviderAttempt"
+        },
+        "provider": "p1"
+      },
+      {
+        "id": "out-r2",
+        "kind": "ModelOutput",
+        "run_id": "run-retry-001",
+        "attempt": {
+          "ref_type": "local",
+          "id": "att-r2",
+          "expected_kind": "ProviderAttempt"
+        },
+        "item_refs": [
+          {
+            "ref_type": "local",
+            "id": "txt-r2",
+            "expected_kind": "TextOutput"
+          }
+        ],
+        "response_termination": "complete",
+        "capture_extent": "complete"
+      },
+      {
+        "id": "txt-r2",
+        "kind": "TextOutput",
+        "run_id": "run-retry-001",
+        "output": {
+          "ref_type": "local",
+          "id": "out-r2",
+          "expected_kind": "ModelOutput"
+        },
+        "ordinal": 0,
+        "text": "ok"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-retry-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "j-Dh43Rv3Je4J1C2ofWBJTHaYKCMpVlmcCBJY6eNwiQ"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

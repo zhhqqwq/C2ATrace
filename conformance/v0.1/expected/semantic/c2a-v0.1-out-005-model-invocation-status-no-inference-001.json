@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-out-005-model-invocation-status-no-inference-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "OUT-005",
+      "check_id": "model-invocation-status-no-inference-001",
+      "subject_selector": {
+        "receipt_id": "receipt-retry-001",
+        "object_id": "inv-r"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:receipt_attempts_or_outputs_determine_invocation_terminal_status"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

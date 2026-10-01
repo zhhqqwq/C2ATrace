@@ -34,7 +34,7 @@
       "requirement_id": "OUT-004",
       "planned_test_id": "model-invocation-zero-attempt-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-004-model-invocation-zero-attempt-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-004-model-invocation-zero-attempt-001.json"
     },
@@ -43,7 +43,7 @@
       "requirement_id": "OUT-005",
       "planned_test_id": "model-invocation-status-no-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-005-model-invocation-status-no-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-005-model-invocation-status-no-inference-001.json"
     },
@@ -52,7 +52,7 @@
       "requirement_id": "OUT-006",
       "planned_test_id": "model-no-phantom-attempt-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-006-model-no-phantom-attempt-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-006-model-no-phantom-attempt-001.json"
     },
@@ -70,7 +70,7 @@
       "requirement_id": "OUT-008",
       "planned_test_id": "model-attempt-completed-no-output-upgrade-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-008-model-attempt-completed-no-output-upgrade-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-008-model-attempt-completed-no-output-upgrade-001.json"
     },
@@ -79,7 +79,7 @@
       "requirement_id": "OUT-009",
       "planned_test_id": "model-timeout-partial-output-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-009-model-timeout-partial-output-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-009-model-timeout-partial-output-001.json"
     },
@@ -88,7 +88,7 @@
       "requirement_id": "OUT-010",
       "planned_test_id": "model-interrupted-partial-output-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-010-model-interrupted-partial-output-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-010-model-interrupted-partial-output-001.json"
     },
@@ -97,7 +97,7 @@
       "requirement_id": "OUT-011",
       "planned_test_id": "model-cancel-no-provider-stop-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-011-model-cancel-no-provider-stop-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-011-model-cancel-no-provider-stop-001.json"
     },
@@ -106,7 +106,7 @@
       "requirement_id": "OUT-012",
       "planned_test_id": "model-attempt-relation-no-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-012-model-attempt-relation-no-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-012-model-attempt-relation-no-inference-001.json"
     },
@@ -124,7 +124,7 @@
       "requirement_id": "OUT-014",
       "planned_test_id": "model-multiple-attempt-outputs-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-014-model-multiple-attempt-outputs-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-014-model-multiple-attempt-outputs-001.json"
     },
@@ -142,7 +142,7 @@
       "requirement_id": "OUT-016",
       "planned_test_id": "model-accepted-output-owner-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-016-model-accepted-output-owner-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-016-model-accepted-output-owner-001.json"
     },
@@ -151,7 +151,7 @@
       "requirement_id": "OUT-017",
       "planned_test_id": "model-accepted-output-no-completeness-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-017-model-accepted-output-no-completeness-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-017-model-accepted-output-no-completeness-001.json"
     },
@@ -160,7 +160,7 @@
       "requirement_id": "OUT-018",
       "planned_test_id": "model-accepted-output-absence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-018-model-accepted-output-absence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-018-model-accepted-output-absence-001.json"
     },
@@ -178,7 +178,7 @@
       "requirement_id": "OUT-020",
       "planned_test_id": "model-reported-model-no-upgrade-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-020-model-reported-model-no-upgrade-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-020-model-reported-model-no-upgrade-001.json"
     },
@@ -196,7 +196,7 @@
       "requirement_id": "OUT-022",
       "planned_test_id": "model-hidden-routing-unknown-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-022-model-hidden-routing-unknown-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-022-model-hidden-routing-unknown-001.json"
     },
@@ -223,7 +223,7 @@
       "requirement_id": "OUT-025",
       "planned_test_id": "model-output-boundary-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-025-model-output-boundary-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-025-model-output-boundary-001.json"
     },
@@ -241,7 +241,7 @@
       "requirement_id": "OUT-027",
       "planned_test_id": "model-output-partial-valid-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-027-model-output-partial-valid-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-027-model-output-partial-valid-001.json"
     },
@@ -268,7 +268,7 @@
       "requirement_id": "OUT-030",
       "planned_test_id": "model-completion-axes-independent-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-030-model-completion-axes-independent-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-030-model-completion-axes-independent-001.json"
     },
@@ -277,7 +277,7 @@
       "requirement_id": "OUT-031",
       "planned_test_id": "model-capture-complete-scope-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-031-model-capture-complete-scope-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-031-model-capture-complete-scope-001.json"
     },
@@ -286,7 +286,7 @@
       "requirement_id": "OUT-032",
       "planned_test_id": "model-attempt-status-no-capture-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-032-model-attempt-status-no-capture-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-032-model-attempt-status-no-capture-inference-001.json"
     },
@@ -304,7 +304,7 @@
       "requirement_id": "OUT-034",
       "planned_test_id": "model-output-zero-items-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-034-model-output-zero-items-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-034-model-output-zero-items-001.json"
     },
@@ -331,7 +331,7 @@
       "requirement_id": "OUT-037",
       "planned_test_id": "model-output-item-kind-unknown-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-037-model-output-item-kind-unknown-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-037-model-output-item-kind-unknown-001.json"
     },
@@ -358,7 +358,7 @@
       "requirement_id": "OUT-040",
       "planned_test_id": "model-stream-absence-not-negation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-040-model-stream-absence-not-negation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-040-model-stream-absence-not-negation-001.json"
     },
@@ -367,7 +367,7 @@
       "requirement_id": "OUT-041",
       "planned_test_id": "model-partial-stream-no-complete-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-041-model-partial-stream-no-complete-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-041-model-partial-stream-no-complete-001.json"
     },
@@ -376,7 +376,7 @@
       "requirement_id": "OUT-042",
       "planned_test_id": "model-stream-assembly-no-wire-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-042-model-stream-assembly-no-wire-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-042-model-stream-assembly-no-wire-inference-001.json"
     },
@@ -385,7 +385,7 @@
       "requirement_id": "OUT-043",
       "planned_test_id": "model-finish-reason-no-upgrade-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-043-model-finish-reason-no-upgrade-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-043-model-finish-reason-no-upgrade-001.json"
     },
@@ -394,7 +394,7 @@
       "requirement_id": "OUT-044",
       "planned_test_id": "model-tool-proposal-no-execution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-044-model-tool-proposal-no-execution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-044-model-tool-proposal-no-execution-001.json"
     },
@@ -412,7 +412,7 @@
       "requirement_id": "OUT-046",
       "planned_test_id": "model-text-no-hidden-reasoning-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-046-model-text-no-hidden-reasoning-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-046-model-text-no-hidden-reasoning-001.json"
     },
@@ -421,7 +421,7 @@
       "requirement_id": "OUT-047",
       "planned_test_id": "model-structured-validation-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-047-model-structured-validation-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-047-model-structured-validation-bounded-001.json"
     },
@@ -430,7 +430,7 @@
       "requirement_id": "OUT-048",
       "planned_test_id": "model-attempt-output-no-provider-truth-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-048-model-attempt-output-no-provider-truth-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-048-model-attempt-output-no-provider-truth-001.json"
     },
@@ -439,7 +439,7 @@
       "requirement_id": "OUT-049",
       "planned_test_id": "model-output-absence-not-negation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-049-model-output-absence-not-negation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-049-model-output-absence-not-negation-001.json"
     },
@@ -448,7 +448,7 @@
       "requirement_id": "OUT-050",
       "planned_test_id": "model-output-no-exact-request-receipt-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-050-model-output-no-exact-request-receipt-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-050-model-output-no-exact-request-receipt-001.json"
     },
@@ -457,7 +457,7 @@
       "requirement_id": "OUT-051",
       "planned_test_id": "model-attempt-relation-same-invocation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-051-model-attempt-relation-same-invocation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-051-model-attempt-relation-same-invocation-001.json"
     },

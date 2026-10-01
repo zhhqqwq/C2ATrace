@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-out-046-model-text-no-hidden-reasoning-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "OUT-046"
+  ],
+  "planned_test_ids": [
+    "model-text-no-hidden-reasoning-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A text OutputItem is application-visible model output text and is not evidence of hidden reasoning, chain-of-thought, or token-level generation history.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/provider-retry.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "OUT-046"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-out-046",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "OUT-046"
+    ]
+  },
+  "notes": [
+    "primitives: prim.model.output"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-out-046-model-text-no-hidden-reasoning-001.json"
+}

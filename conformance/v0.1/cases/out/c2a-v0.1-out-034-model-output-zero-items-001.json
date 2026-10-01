@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-out-034-model-output-zero-items-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "OUT-034"
+  ],
+  "planned_test_ids": [
+    "model-output-zero-items-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A ModelOutput with zero OutputItems is valid.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/model-zero-items.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "OUT-034"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-out-034",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "OUT-034"
+    ]
+  },
+  "notes": [
+    "primitives: prim.model.output"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-out-034-model-output-zero-items-001.json"
+}

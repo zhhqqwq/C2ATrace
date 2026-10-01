@@ -1331,7 +1331,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-004-model-invocation-zero-attempt-001"
     },
     {
       "family": "out",
@@ -1350,7 +1352,9 @@
         "prim.receipt.multi",
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-005-model-invocation-status-no-inference-001"
     },
     {
       "family": "out",
@@ -1365,7 +1369,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-006-model-no-phantom-attempt-001"
     },
     {
       "family": "out",
@@ -1382,7 +1388,9 @@
         "prim.claim.strength",
         "prim.provider.attempts",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-008-model-attempt-completed-no-output-upgrade-001"
     },
     {
       "family": "out",
@@ -1395,7 +1403,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-009-model-timeout-partial-output-001"
     },
     {
       "family": "out",
@@ -1408,7 +1418,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-010-model-interrupted-partial-output-001"
     },
     {
       "family": "out",
@@ -1421,7 +1433,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-011-model-cancel-no-provider-stop-001"
     },
     {
       "family": "out",
@@ -1437,7 +1451,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-012-model-attempt-relation-no-inference-001"
     },
     {
       "family": "out",
@@ -1469,7 +1485,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-014-model-multiple-attempt-outputs-001"
     },
     {
       "family": "out",
@@ -1485,7 +1503,9 @@
       "dependency_primitives": [
         "prim.ref.local",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-016-model-accepted-output-owner-001"
     },
     {
       "family": "out",
@@ -1500,7 +1520,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-017-model-accepted-output-no-completeness-001"
     },
     {
       "family": "out",
@@ -1515,7 +1537,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-018-model-accepted-output-absence-001"
     },
     {
       "family": "out",
@@ -1546,7 +1570,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-020-model-reported-model-no-upgrade-001"
     },
     {
       "family": "out",
@@ -1577,7 +1603,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-022-model-hidden-routing-unknown-001"
     },
     {
       "family": "out",
@@ -1590,7 +1618,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-025-model-output-boundary-001"
     },
     {
       "family": "out",
@@ -1616,7 +1646,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-027-model-output-partial-valid-001"
     },
     {
       "family": "out",
@@ -1629,7 +1661,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-030-model-completion-axes-independent-001"
     },
     {
       "family": "out",
@@ -1642,7 +1676,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-031-model-capture-complete-scope-001"
     },
     {
       "family": "out",
@@ -1658,7 +1694,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-032-model-attempt-status-no-capture-inference-001"
     },
     {
       "family": "out",
@@ -1671,7 +1709,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-034-model-output-zero-items-001"
     },
     {
       "family": "out",
@@ -1701,7 +1741,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-037-model-output-item-kind-unknown-001"
     },
     {
       "family": "out",
@@ -1744,7 +1786,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-040-model-stream-absence-not-negation-001"
     },
     {
       "family": "out",
@@ -1759,7 +1803,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-041-model-partial-stream-no-complete-001"
     },
     {
       "family": "out",
@@ -1774,7 +1820,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-042-model-stream-assembly-no-wire-inference-001"
     },
     {
       "family": "out",
@@ -1790,7 +1838,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-043-model-finish-reason-no-upgrade-001"
     },
     {
       "family": "out",
@@ -1805,7 +1855,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-044-model-tool-proposal-no-execution-001"
     },
     {
       "family": "out",
@@ -1833,7 +1885,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-046-model-text-no-hidden-reasoning-001"
     },
     {
       "family": "out",
@@ -1846,7 +1900,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.model.output",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-047-model-structured-validation-bounded-001"
     },
     {
       "family": "out",
@@ -1862,7 +1918,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-048-model-attempt-output-no-provider-truth-001"
     },
     {
       "family": "out",
@@ -1877,7 +1935,9 @@
       "primary_primitive": "prim.model.output",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-049-model-output-absence-not-negation-001"
     },
     {
       "family": "out",
@@ -1893,7 +1953,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-050-model-output-no-exact-request-receipt-001"
     },
     {
       "family": "out",
@@ -1909,7 +1971,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-051-model-attempt-relation-same-invocation-001"
     },
     {
       "family": "out",
@@ -11976,6 +12040,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 109,
-  "remaining_semantic_requirements": 662
+  "executable_semantic_requirements": 141,
+  "remaining_semantic_requirements": 630
 }
