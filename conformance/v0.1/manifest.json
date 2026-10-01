@@ -31,7 +31,7 @@
   "counts": {
     "requirements": 907,
     "mapped_cases": 907,
-    "accepted_cases": 0,
+    "accepted_cases": 6,
     "by_enforcement": {
       "direct_schema": 6,
       "mixed_schema_semantic": 87,
