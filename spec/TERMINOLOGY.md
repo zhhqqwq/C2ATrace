@@ -1,8 +1,8 @@
 # C2ATrace v0.1 Terminology
 
-Status: Provider Adapter Contract aligned.
+Status: Tool Adapter Contract aligned.
 
-This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, INTG-*, and PAD-* requirements.
+This document is primarily definitional. Normative behavior is carried by numbered TM-*, CLAIM-*, GRAPH-*, SRC-*, DRV-*, REQ-*, OUT-*, TOOL-*, TRUST-*, TAINT-*, PRIV-*, RCPT-*, INTG-*, PAD-*, and TAD-* requirements.
 
 ## Artifact
 
@@ -511,6 +511,32 @@ The core Part D model in which streaming deltas, if any, are assembled into the 
 Chunk-level/wire-level evidence is deferred to a future profile. Absence of chunk records does not prove non-streaming behavior.
 
 See OUT-039 through OUT-043.
+
+## Tool Adapter
+
+Instrumentation at an application-visible tool-runtime boundary where an application/runtime prepares, authorizes, starts, observes, or completes a tool execution.
+
+Baseline Tool Adapter conformance centers on effective ToolInvocation capture, ToolExecution lifecycle, ToolResult capture, and bounded CaptureDiagnostic evidence. ToolProposal association, ToolDecision capture, streaming results, EffectObservation acquisition, and remote evidence are declared capabilities.
+
+Tool Adapter evidence does not establish hidden remote/tool-server state by default.
+
+See TAD-001 through TAD-008 and TAD-103 through TAD-108.
+
+## Tool Adapter Conformance Declaration
+
+Metadata declaring the effective ToolInvocation boundary, ToolExecution boundary, ToolResult boundary, proposal/decision/streaming/effect capabilities, supported argument/path profiles, privacy capability, and adapter identity/version metadata.
+
+The declaration describes intended capability rather than runtime capture completeness.
+
+## Tool Metadata Origin
+
+A bounded origin classification for semantics-bearing tool metadata.
+
+Core conceptual classes are application_supplied, adapter_observed, tool_reported, adapter_derived, external_observed, and unknown.
+
+Origin describes where evidence was observed/reported, not whether the value is objectively true.
+
+See TAD-069 through TAD-074.
 
 ## ToolProposal
 
