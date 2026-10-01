@@ -1,0 +1,102 @@
+{
+  "family": "TM",
+  "count": 12,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-tm-001-verifier-wording-001",
+      "requirement_id": "TM-001",
+      "planned_test_id": "verifier-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-001-verifier-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-002-causality-negative-001",
+      "requirement_id": "TM-002",
+      "planned_test_id": "causality-negative-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-002-causality-negative-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-003-unknown-valid-001",
+      "requirement_id": "TM-003",
+      "planned_test_id": "unknown-valid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-003-unknown-valid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-004-producer-assertion-001",
+      "requirement_id": "TM-004",
+      "planned_test_id": "producer-assertion-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-004-producer-assertion-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-005-provider-retry-001",
+      "requirement_id": "TM-005",
+      "planned_test_id": "provider-retry-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-005-provider-retry-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-006-tool-enrichment-001",
+      "requirement_id": "TM-006",
+      "planned_test_id": "tool-enrichment-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-006-tool-enrichment-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-007-tool-denied-001",
+      "requirement_id": "TM-007",
+      "planned_test_id": "tool-denied-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-007-tool-denied-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-008-tool-success-no-effect-001",
+      "requirement_id": "TM-008",
+      "planned_test_id": "tool-success-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-008-tool-success-no-effect-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-009-chain-truncation-001",
+      "requirement_id": "TM-009",
+      "planned_test_id": "chain-truncation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-009-chain-truncation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-010-provider-hidden-state-001",
+      "requirement_id": "TM-010",
+      "planned_test_id": "provider-hidden-state-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-010-provider-hidden-state-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-011-timestamp-conflict-001",
+      "requirement_id": "TM-011",
+      "planned_test_id": "timestamp-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-011-timestamp-conflict-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tm-012-capture-level-overclaim-001",
+      "requirement_id": "TM-012",
+      "planned_test_id": "capture-level-overclaim-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-012-capture-level-overclaim-001.json"
+    }
+  ]
+}
