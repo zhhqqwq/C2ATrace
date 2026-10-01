@@ -172,9 +172,10 @@
       "title": "InternalReference stays local",
       "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
       "planned_test": "receipt-internal-reference-local-001",
-      "primary_enforcement": "direct_schema",
+      "primary_enforcement": "mixed_schema_semantic",
       "enforcement_layers": [
-        "json_schema"
+        "json_schema",
+        "semantic_verifier"
       ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
@@ -187,9 +188,10 @@
       "title": "Externality is explicit",
       "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
       "planned_test": "receipt-external-reference-explicit-001",
-      "primary_enforcement": "direct_schema",
+      "primary_enforcement": "mixed_schema_semantic",
       "enforcement_layers": [
-        "json_schema"
+        "json_schema",
+        "semantic_verifier"
       ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
