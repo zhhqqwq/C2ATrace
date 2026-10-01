@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:c2atrace:schema:v0.1:core",
+  "title":"C2ATrace v0.1 Core Envelopes",
+  "$defs":{
+    "Run":{
+      "allOf":[
+        {"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
+        {
+          "type":"object",
+          "required":["kind"],
+          "properties":{
+            "kind":{"const":"Run"},
+            "label":{"type":"string"},
+            "scope_metadata":{"type":"object","additionalProperties":true}
+          },
+          "unevaluatedProperties":false
+        }
+      ]
+    },
+    "ArtifactBase":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
+    "ActivityBase":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"},
+    "AssertionBase":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/BaseRecord"}
+  }
+}
