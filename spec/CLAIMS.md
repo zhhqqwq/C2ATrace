@@ -1,6 +1,6 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Phase 0 baseline, second-review revision.
+Status: Phase 1 Part F aligned.
 
 ## 1. Claim evidence model
 
@@ -60,10 +60,15 @@ For example:
 ~~~text
 STRUCTURAL graph path
 +
-PRODUCER_ASSERTED TrustAssertion(label="untrusted")
+PRODUCER_ASSERTED TrustAssertion(
+  dimension="source_authority",
+  state="untrusted",
+  policy="P"
+)
 =
 verified statement:
-  "a source carrying an 'untrusted' TrustAssertion is on the recorded path"
+  "a source carrying an asserted 'untrusted' state for
+   dimension 'source_authority' under policy P is on the recorded path"
 
 not:
   "an objectively untrusted source is on the path"
@@ -91,7 +96,7 @@ Planned test: `binding-verification-level-001`.
 
 ### CLAIM-003 — Trust-label wording
 
-When trust status comes from TrustAssertion, verifier output MUST preserve that it is an asserted label and MUST NOT restate it as objective source truth.
+When trust status comes from TrustAssertion, verifier output MUST preserve its asserted state, trust dimension, issuer/policy context when available, and MUST NOT restate it as objective source truth.
 
 Planned test: `trust-label-wording-001`.
 
@@ -145,8 +150,15 @@ Planned test: `claim-causality-001`.
 | ToolResult reports success | E4/tool-reported | No external proof | Does not establish external effect |
 | EffectObservation basis=execution_result | E1 + E4 premise | Partial | Same execution/result supports bounded claim |
 | EffectObservation basis=separate_observation | E1 + E4 premise | Partial | Distinct observation supports bounded claim, still not objective truth |
+| TrustAssertion state=trusted/untrusted/unknown | E4 | Yes, as assertion | Local issuer/policy assessment, not objective trustworthiness |
+| Conflicting TrustAssertions exist | E1 + E4 premises | Yes | Preserve conflict; no timestamp winner without policy precedence |
+| TaintAssertion state=present/absent/unknown | E4 | Yes, as assertion | Policy-scoped taint state, not maliciousness/cleanliness |
+| Propagated taint follows exact verified lineage | E1/E2 + E4 policy rule | Conditional | Evidence strength cannot exceed weakest propagation premise |
+| Sanitization records downstream taint absent | E4; stronger only with sanitizer evidence profile | Conditional | Does not erase upstream tainted ancestry or create trust |
+| Tainted request automatically taints ModelOutput | P1 / prohibited core inference | No | Would overclaim model causality |
+| Missing TaintAssertion means taint absent | P1 / prohibited inference | No | Absence of record is not a negative state |
 | Desired Outcome achieved | P1 / unsupported by core | No | OutcomeVerification outside core v0.1 |
-| A source carrying TrustAssertion(label="untrusted") is on recorded path | E1 + E4 premise | Yes, with asserted-label wording | Does not establish objective untrustworthiness |
+| A source carrying TrustAssertion(state="untrusted") is on recorded path | E1 + E4 premise | Yes, with asserted-state wording | Does not establish objective untrustworthiness |
 | Untrusted source caused downstream action | P1 | No | Prohibited causal inference |
 | Receipt signature validates under supplied trusted key | E3 | Yes | Does not prove signer honesty |
 | Supplied receipt linkage is internally valid | E1/E3 depending profile | Conditional | Supplied scope only |
