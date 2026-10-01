@@ -1,0 +1,51 @@
+{
+  "suite_version": "0.1",
+  "protocol_version": "0.1",
+  "status": "in_progress",
+  "frozen_schema_manifest": "schema/v0.1/manifest.json",
+  "traceability_manifest": "traceability/v0.1/manifest.json",
+  "schemas": {
+    "case": "conformance/v0.1/schema/case.schema.json",
+    "case_index": "conformance/v0.1/schema/case-index.schema.json",
+    "expected_result": "conformance/v0.1/schema/expected-result.schema.json",
+    "suite_manifest": "conformance/v0.1/schema/suite-manifest.schema.json"
+  },
+  "case_indexes": [
+    "conformance/v0.1/index/tm.json",
+    "conformance/v0.1/index/claim.json",
+    "conformance/v0.1/index/graph.json",
+    "conformance/v0.1/index/src.json",
+    "conformance/v0.1/index/drv.json",
+    "conformance/v0.1/index/req.json",
+    "conformance/v0.1/index/out.json",
+    "conformance/v0.1/index/tool.json",
+    "conformance/v0.1/index/trust.json",
+    "conformance/v0.1/index/taint.json",
+    "conformance/v0.1/index/priv.json",
+    "conformance/v0.1/index/rcpt.json",
+    "conformance/v0.1/index/intg.json",
+    "conformance/v0.1/index/pad.json",
+    "conformance/v0.1/index/tad.json",
+    "conformance/v0.1/index/vfy.json"
+  ],
+  "counts": {
+    "requirements": 907,
+    "mapped_cases": 907,
+    "accepted_cases": 0,
+    "by_enforcement": {
+      "direct_schema": 6,
+      "mixed_schema_semantic": 87,
+      "semantic_verifier": 771,
+      "deterministic_vector": 43
+    }
+  },
+  "gate_requirements": [
+    "All 907 requirements have unique case IDs and traceability back to planned tests.",
+    "All direct_schema cases are executable and accepted.",
+    "All mixed_schema_semantic cases exercise both applicable Schema and semantic-verifier layers.",
+    "All semantic_verifier cases have deterministic input sets and normative finding matchers.",
+    "All deterministic_vector cases have independently recomputable expected values.",
+    "Cross-language runners produce equivalent normalized golden results.",
+    "No case relies on free-text messages, implementation-generated finding IDs, or unspecified ordering."
+  ]
+}
