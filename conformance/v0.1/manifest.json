@@ -8,7 +8,8 @@
     "case": "conformance/v0.1/schema/case.schema.json",
     "case_index": "conformance/v0.1/schema/case-index.schema.json",
     "expected_result": "conformance/v0.1/schema/expected-result.schema.json",
-    "suite_manifest": "conformance/v0.1/schema/suite-manifest.schema.json"
+    "suite_manifest": "conformance/v0.1/schema/suite-manifest.schema.json",
+    "harness_input": "conformance/v0.1/schema/harness-input.schema.json"
   },
   "case_indexes": [
     "conformance/v0.1/index/tm.json",
