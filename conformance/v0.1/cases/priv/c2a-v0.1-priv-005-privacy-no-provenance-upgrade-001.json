@@ -1,0 +1,56 @@
+{
+  "case_id": "c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-005"
+  ],
+  "planned_test_ids": [
+    "privacy-no-provenance-upgrade-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Privacy metadata does not synthesize provenance, causality, decisions, effects, trust, or taint.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-hash-withheld.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "PRIV-005"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-005",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PRIV-005"
+    ]
+  },
+  "notes": [
+    "primitives: prim.privacy.commitment, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001.json"
+}

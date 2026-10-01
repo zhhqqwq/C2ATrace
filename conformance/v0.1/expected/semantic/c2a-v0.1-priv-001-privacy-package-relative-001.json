@@ -1,0 +1,32 @@
+{
+  "case_id": "c2a-v0.1-priv-001-privacy-package-relative-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "withheld",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "full",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PRIV-001",
+      "check_id": "privacy-package-relative-001",
+      "subject_selector": {
+        "object_id": "frag-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:privacy_profile_is_intrinsic_permanent_artifact_property"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

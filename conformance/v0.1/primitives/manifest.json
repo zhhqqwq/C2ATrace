@@ -1527,11 +1527,54 @@
         "VFY-109",
         "VFY-139"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_04_in_progress",
+      "executable_primary_requirement_count": 27,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "RCPT-046"
+      ],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/privacy-full.json",
+        "conformance/v0.1/primitives/receipts/privacy-hash-withheld.json",
+        "conformance/v0.1/primitives/receipts/privacy-hash-low-entropy.json",
+        "conformance/v0.1/primitives/receipts/privacy-mixed-subscopes.json",
+        "conformance/v0.1/primitives/receipts/privacy-unknown.json",
+        "conformance/v0.1/primitives/receipts/privacy-placeholder.json",
+        "conformance/v0.1/primitives/receipts/privacy-package-withheld.json",
+        "conformance/v0.1/primitives/receipts/privacy-package-full.json",
+        "conformance/v0.1/primitives/receipts/privacy-hash-linkable.json",
+        "conformance/v0.1/primitives/receipts/privacy-hmac-linkable.json",
+        "conformance/v0.1/primitives/receipts/privacy-source-commitment-only.json",
+        "conformance/v0.1/primitives/receipts/privacy-request-commitment-only.json"
+      ],
+      "wave_04_primary_requirements_a": [
+        "PRIV-001",
+        "PRIV-002",
+        "PRIV-003",
+        "PRIV-004",
+        "PRIV-005",
+        "PRIV-006",
+        "PRIV-007",
+        "PRIV-009",
+        "PRIV-012",
+        "PRIV-013",
+        "PRIV-014",
+        "PRIV-015",
+        "PRIV-016",
+        "PRIV-019",
+        "PRIV-024",
+        "PRIV-025",
+        "PRIV-026",
+        "PRIV-027",
+        "PRIV-029",
+        "PRIV-030",
+        "PRIV-031",
+        "PRIV-033",
+        "PRIV-040",
+        "PRIV-042",
+        "PRIV-043",
+        "PRIV-044",
+        "PRIV-045"
       ]
     },
     {
@@ -2407,7 +2450,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 247,
-  "remaining_semantic_requirements": 524,
-  "materialization_wave": "04-taint"
+  "executable_semantic_requirements": 274,
+  "remaining_semantic_requirements": 497,
+  "materialization_wave": "04-privacy-a"
 }

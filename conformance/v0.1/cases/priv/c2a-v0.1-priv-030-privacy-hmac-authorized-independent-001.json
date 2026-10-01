@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-030"
+  ],
+  "planned_test_ids": [
+    "privacy-hmac-authorized-independent-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "An independent authorized verifier with the required HMAC secret can verify the keyed commitment without making verification public.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/privacy-hmac.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [
+      "hmac_capabilities"
+    ],
+    "verifier_goals": [
+      "PRIV-030"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-030",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PRIV-030"
+    ],
+    "hmac_capabilities": [
+      {
+        "key_ref": "test-hmac-key-001",
+        "method": "hmac-sha256",
+        "secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f"
+      }
+    ]
+  },
+  "notes": [
+    "primitives: prim.privacy.commitment, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001.json"
+}

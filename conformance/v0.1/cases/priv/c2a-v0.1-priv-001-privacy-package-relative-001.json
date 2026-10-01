@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-priv-001-privacy-package-relative-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-001"
+  ],
+  "planned_test_ids": [
+    "privacy-package-relative-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Privacy treatment is interpreted relative to the evaluated disclosure package rather than as a permanent Artifact property.",
+  "documents": [
+    {
+      "document_id": "withheld",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-package-withheld.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "full",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-package-full.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "PRIV-001"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-001",
+    "primary_documents": [
+      "withheld",
+      "full"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PRIV-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.privacy.commitment, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-001-privacy-package-relative-001.json"
+}

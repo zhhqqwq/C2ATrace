@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PRIV-030",
+      "check_id": "privacy-hmac-authorized-independent-001",
+      "subject_selector": {
+        "receipt_id": "receipt-privacy-001",
+        "object_id": "privacy-001"
+      },
+      "domain": "comparison",
+      "status": "matched"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -3414,7 +3414,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-001-privacy-package-relative-001"
     },
     {
       "family": "priv",
@@ -3429,7 +3431,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-002-privacy-not-runtime-nonobservation-001"
     },
     {
       "family": "priv",
@@ -3444,7 +3448,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-003-privacy-not-deletion-proof-001"
     },
     {
       "family": "priv",
@@ -3462,7 +3468,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-004-privacy-not-global-disclosure-proof-001"
     },
     {
       "family": "priv",
@@ -3479,7 +3487,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001"
     },
     {
       "family": "priv",
@@ -3494,7 +3504,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-006-privacy-full-original-001"
     },
     {
       "family": "priv",
@@ -3509,7 +3521,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-007-privacy-hash-only-withheld-001"
     },
     {
       "family": "priv",
@@ -3524,7 +3538,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-009-privacy-hmac-withheld-001"
     },
     {
       "family": "priv",
@@ -3558,7 +3574,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-012-privacy-mixed-profile-001"
     },
     {
       "family": "priv",
@@ -3575,7 +3593,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-013-privacy-profile-unknown-001"
     },
     {
       "family": "priv",
@@ -3590,7 +3610,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-014-privacy-withheld-not-empty-001"
     },
     {
       "family": "priv",
@@ -3605,7 +3627,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-015-privacy-withheld-not-absent-001"
     },
     {
       "family": "priv",
@@ -3620,7 +3644,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-016-privacy-placeholder-not-value-001"
     },
     {
       "family": "priv",
@@ -3672,7 +3698,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-019-privacy-reference-resolution-001"
     },
     {
       "family": "priv",
@@ -3687,7 +3715,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-024-privacy-commitment-equality-bounded-001"
     },
     {
       "family": "priv",
@@ -3702,7 +3732,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-025-privacy-hash-not-confidentiality-001"
     },
     {
       "family": "priv",
@@ -3717,7 +3749,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-026-privacy-hash-low-entropy-001"
     },
     {
       "family": "priv",
@@ -3734,7 +3768,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-027-privacy-hash-linkability-001"
     },
     {
       "family": "priv",
@@ -3749,7 +3785,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-029-privacy-hmac-not-public-001"
     },
     {
       "family": "priv",
@@ -3766,7 +3804,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001"
     },
     {
       "family": "priv",
@@ -3783,7 +3823,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-031-privacy-hmac-no-raw-key-001"
     },
     {
       "family": "priv",
@@ -3800,7 +3842,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-033-privacy-hmac-no-unlinkability-001"
     },
     {
       "family": "priv",
@@ -3852,7 +3896,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-040-privacy-source-commitment-only-001"
     },
     {
       "family": "priv",
@@ -3884,7 +3930,9 @@
         "vectors/v0.1/privacy-hash-sha256.json"
       ],
       "primary_primitive": "prim.privacy.commitment",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-042-privacy-source-verification-downgrade-001"
     },
     {
       "family": "priv",
@@ -3901,7 +3949,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-043-privacy-request-commitment-only-001"
     },
     {
       "family": "priv",
@@ -3918,7 +3968,9 @@
       "primary_primitive": "prim.privacy.commitment",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-044-privacy-request-capture-level-stable-001"
     },
     {
       "family": "priv",
@@ -3936,7 +3988,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-045-privacy-request-no-provider-receipt-001"
     },
     {
       "family": "priv",
@@ -12252,6 +12306,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 247,
-  "remaining_semantic_requirements": 524
+  "executable_semantic_requirements": 274,
+  "remaining_semantic_requirements": 497
 }

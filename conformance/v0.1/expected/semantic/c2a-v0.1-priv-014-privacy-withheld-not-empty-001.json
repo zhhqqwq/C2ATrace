@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-priv-014-privacy-withheld-not-empty-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PRIV-014",
+      "check_id": "privacy-withheld-not-empty-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "frag-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:withheld_value_interpreted_as_empty"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
