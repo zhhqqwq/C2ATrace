@@ -4,9 +4,9 @@
   "all_requirements_have_planned_test": true,
   "duplicate_requirement_ids": [],
   "primary_enforcement_counts": {
-    "direct_schema": 12,
-    "mixed_schema_semantic": 82,
-    "semantic_verifier": 770,
+    "direct_schema": 6,
+    "mixed_schema_semantic": 87,
+    "semantic_verifier": 771,
     "deterministic_vector": 43
   },
   "enforcement_layers": {
@@ -80,5 +80,6 @@
       "count": 154,
       "path": "traceability/v0.1/vfy.json"
     }
-  }
+  },
+  "classification_note": "Post-freeze conformance executability audit corrected six enforcement classifications; protocol semantics and frozen Schema were unchanged."
 }
