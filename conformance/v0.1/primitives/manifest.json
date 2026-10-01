@@ -47,7 +47,21 @@
         "VFY-138",
         "VFY-152"
       ],
-      "materialization_status": "wave_01_selected"
+      "materialization_status": "wave_01_materialized",
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/ref-local-dangling.json",
+        "conformance/v0.1/primitives/receipts/ref-local-external-decoy.json",
+        "fixtures/v0.1/valid/source-to-request.json"
+      ],
+      "executable_primary_requirement_count": 1,
+      "wave_01_primary_requirements": [
+        "GRAPH-001"
+      ],
+      "wave_01_dependency_requirements": [
+        "RCPT-046",
+        "VFY-020",
+        "VFY-030"
+      ]
     },
     {
       "id": "prim.ref.external",
@@ -92,7 +106,29 @@
         "VFY-032",
         "VFY-064"
       ],
-      "materialization_status": "wave_01_selected"
+      "materialization_status": "wave_01_materialized",
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/ref-external-unpinned.json",
+        "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json",
+        "conformance/v0.1/primitives/receipts/ref-external-decoy-target.json",
+        "conformance/v0.1/primitives/receipts/ref-external-ambiguous-primary.json",
+        "conformance/v0.1/primitives/receipts/ref-external-ambiguous-a.json",
+        "conformance/v0.1/primitives/receipts/ref-external-ambiguous-b.json",
+        "fixtures/v0.1/valid/multi-receipt-a.json",
+        "fixtures/v0.1/valid/multi-receipt-b.json"
+      ],
+      "executable_primary_requirement_count": 4,
+      "wave_01_primary_requirements": [
+        "RCPT-018",
+        "RCPT-030",
+        "VFY-021",
+        "VFY-029"
+      ],
+      "wave_01_dependency_requirements": [
+        "RCPT-014",
+        "RCPT-017",
+        "RCPT-019"
+      ]
     },
     {
       "id": "prim.ref.failure",
@@ -124,7 +160,26 @@
         "VFY-137",
         "VFY-152"
       ],
-      "materialization_status": "wave_01_selected"
+      "materialization_status": "wave_01_materialized",
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/ref-local-dangling.json",
+        "conformance/v0.1/primitives/receipts/ref-local-external-decoy.json",
+        "conformance/v0.1/primitives/receipts/ref-external-unpinned.json",
+        "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json",
+        "conformance/v0.1/primitives/receipts/ref-external-ambiguous-primary.json"
+      ],
+      "executable_primary_requirement_count": 2,
+      "wave_01_primary_requirements": [
+        "RCPT-014",
+        "RCPT-046"
+      ],
+      "wave_01_dependency_requirements": [
+        "RCPT-018",
+        "RCPT-019",
+        "RCPT-020",
+        "RCPT-030",
+        "VFY-030"
+      ]
     },
     {
       "id": "prim.graph.invariants",
@@ -147,7 +202,31 @@
         "GRAPH-002",
         "GRAPH-013"
       ],
-      "materialization_status": "wave_01_selected"
+      "materialization_status": "wave_01_materialized",
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/graph-artifact-id-reuse.json",
+        "conformance/v0.1/primitives/receipts/graph-derivation-cycle.json",
+        "conformance/v0.1/primitives/receipts/graph-request-attempt-conflation.json",
+        "conformance/v0.1/primitives/receipts/graph-proposal-only.json",
+        "conformance/v0.1/primitives/receipts/graph-result-no-effect.json",
+        "conformance/v0.1/primitives/receipts/graph-timestamp-conflict.json",
+        "conformance/v0.1/primitives/receipts/graph-activity-assertion-confusion.json"
+      ],
+      "executable_primary_requirement_count": 7,
+      "wave_01_primary_requirements": [
+        "GRAPH-003",
+        "GRAPH-005",
+        "GRAPH-007",
+        "GRAPH-010",
+        "GRAPH-011",
+        "GRAPH-014",
+        "GRAPH-016"
+      ],
+      "wave_01_dependency_requirements": [
+        "GRAPH-001",
+        "GRAPH-002",
+        "GRAPH-013"
+      ]
     },
     {
       "id": "prim.identity.occurrence",
@@ -218,7 +297,15 @@
         "VFY-138"
       ],
       "dependency_requirements": [],
-      "materialization_status": "wave_01_selected"
+      "materialization_status": "wave_01_materialized",
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/graph-artifact-id-reuse.json"
+      ],
+      "executable_primary_requirement_count": 1,
+      "wave_01_primary_requirements": [
+        "GRAPH-002"
+      ],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.source.observation",
@@ -247,7 +334,10 @@
         "SRC-021"
       ],
       "dependency_requirements": [],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.derivation.mapping",
@@ -328,7 +418,12 @@
         "VFY-045",
         "VFY-128"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": [
+        "GRAPH-003"
+      ]
     },
     {
       "id": "prim.request.binding",
@@ -421,7 +516,12 @@
         "VFY-058",
         "VFY-144"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": [
+        "GRAPH-005"
+      ]
     },
     {
       "id": "prim.provider.attempts",
@@ -473,7 +573,12 @@
         "TOOL-053",
         "TOOL-056"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": [
+        "GRAPH-005"
+      ]
     },
     {
       "id": "prim.model.output",
@@ -540,7 +645,10 @@
         "TAD-067",
         "TAD-068"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.tool.lifecycle",
@@ -758,7 +866,14 @@
         "VFY-118",
         "VFY-125"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": [
+        "GRAPH-007",
+        "GRAPH-010",
+        "GRAPH-011"
+      ]
     },
     {
       "id": "prim.trust.assertion",
@@ -806,7 +921,10 @@
         "VFY-126",
         "VFY-145"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.taint.flow",
@@ -875,7 +993,10 @@
         "VFY-127",
         "VFY-128"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.privacy.commitment",
@@ -989,7 +1110,12 @@
         "VFY-109",
         "VFY-139"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": [
+        "RCPT-046"
+      ]
     },
     {
       "id": "prim.privacy.redaction",
@@ -1015,7 +1141,10 @@
         "VFY-039",
         "VFY-045"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.receipt.multi",
@@ -1125,7 +1254,20 @@
         "VFY-130",
         "VFY-135"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 3,
+      "wave_01_primary_requirements": [
+        "RCPT-017",
+        "RCPT-019",
+        "RCPT-020"
+      ],
+      "wave_01_dependency_requirements": [
+        "RCPT-014",
+        "RCPT-018",
+        "RCPT-030",
+        "RCPT-046",
+        "VFY-029"
+      ]
     },
     {
       "id": "prim.integrity.composition",
@@ -1216,7 +1358,10 @@
         "VFY-137",
         "VFY-138"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.claim.strength",
@@ -1378,7 +1523,13 @@
         "VFY-140",
         "VFY-145"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": [
+        "GRAPH-011",
+        "GRAPH-014"
+      ]
     },
     {
       "id": "prim.adapter.capture",
@@ -1571,7 +1722,10 @@
         "VFY-133",
         "VFY-149"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 0,
+      "wave_01_primary_requirements": [],
+      "wave_01_dependency_requirements": []
     },
     {
       "id": "prim.verifier.report",
@@ -1787,7 +1941,17 @@
         "VFY-138",
         "VFY-144"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 2,
+      "wave_01_primary_requirements": [
+        "VFY-020",
+        "VFY-030"
+      ],
+      "wave_01_dependency_requirements": [
+        "GRAPH-013",
+        "VFY-021",
+        "VFY-029"
+      ]
     },
     {
       "id": "prim.ordering.time",
@@ -1818,7 +1982,15 @@
         "RCPT-037",
         "VFY-100"
       ],
-      "materialization_status": "catalogued"
+      "materialization_status": "catalogued",
+      "executable_primary_requirement_count": 1,
+      "wave_01_primary_requirements": [
+        "GRAPH-013"
+      ],
+      "wave_01_dependency_requirements": []
     }
-  ]
+  ],
+  "executable_semantic_requirements": 21,
+  "remaining_semantic_requirements": 750,
+  "materialization_wave": "01"
 }

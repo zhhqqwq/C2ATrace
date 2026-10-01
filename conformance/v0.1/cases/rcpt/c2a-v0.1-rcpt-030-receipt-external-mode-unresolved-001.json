@@ -1,0 +1,52 @@
+{
+  "case_id": "c2a-v0.1-rcpt-030-receipt-external-mode-unresolved-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-030"
+  ],
+  "planned_test_ids": [
+    "receipt-external-mode-unresolved-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "An external-reference-capable Receipt remains schema-valid when the target is unavailable, but dependent reference/graph checks remain unresolved rather than successful.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "RCPT-030"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-030",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-030"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.external, prim.ref.failure, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-030-receipt-external-mode-unresolved-001.json"
+}

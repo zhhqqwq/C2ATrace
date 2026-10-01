@@ -463,7 +463,9 @@
       "primary_primitive": "prim.ref.local",
       "dependency_primitives": [
         "prim.graph.invariants"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-001-graph-missing-reference-001"
     },
     {
       "family": "graph",
@@ -478,7 +480,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.graph.invariants"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-002-artifact-id-reuse-001"
     },
     {
       "family": "graph",
@@ -493,7 +497,9 @@
       "primary_primitive": "prim.graph.invariants",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-003-derivation-cycle-001"
     },
     {
       "family": "graph",
@@ -509,7 +515,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-005-request-attempt-conflation-001"
     },
     {
       "family": "graph",
@@ -524,7 +532,9 @@
       "primary_primitive": "prim.graph.invariants",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-007-proposal-only-001"
     },
     {
       "family": "graph",
@@ -554,7 +564,9 @@
       "primary_primitive": "prim.graph.invariants",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-010-tool-result-artifact-001"
     },
     {
       "family": "graph",
@@ -570,7 +582,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-011-lying-tool-result-001"
     },
     {
       "family": "graph",
@@ -586,7 +600,9 @@
       "dependency_primitives": [
         "prim.graph.invariants",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-013-timestamp-conflict-001"
     },
     {
       "family": "graph",
@@ -601,7 +617,9 @@
       "primary_primitive": "prim.graph.invariants",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-014-absence-not-negation-001"
     },
     {
       "family": "graph",
@@ -614,7 +632,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.graph.invariants",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-graph-016-activity-assertion-separation-001"
     },
     {
       "family": "intg",
@@ -4477,7 +4497,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001"
     },
     {
       "family": "rcpt",
@@ -4507,7 +4529,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-017-receipt-external-type-resolution-001"
     },
     {
       "family": "rcpt",
@@ -4524,7 +4548,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.ref.failure"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-018-receipt-external-unresolved-001"
     },
     {
       "family": "rcpt",
@@ -4541,7 +4567,9 @@
       "dependency_primitives": [
         "prim.ref.external",
         "prim.ref.failure"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-019-receipt-external-unresolved-not-negation-001"
     },
     {
       "family": "rcpt",
@@ -4557,7 +4585,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ref.failure"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-020-receipt-external-ambiguous-001"
     },
     {
       "family": "rcpt",
@@ -4721,7 +4751,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.ref.failure"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-030-receipt-external-mode-unresolved-001"
     },
     {
       "family": "rcpt",
@@ -4960,7 +4992,9 @@
         "prim.privacy.commitment",
         "prim.receipt.multi",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-046-receipt-privacy-reference-closure-001"
     },
     {
       "family": "rcpt",
@@ -9849,7 +9883,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-020-verifier-internal-reference-local-001"
     },
     {
       "family": "vfy",
@@ -9864,7 +9900,9 @@
       "primary_primitive": "prim.ref.external",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-021-verifier-external-address-001"
     },
     {
       "family": "vfy",
@@ -9977,7 +10015,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-029-verifier-cross-receipt-graph-001"
     },
     {
       "family": "vfy",
@@ -9993,7 +10033,9 @@
       "dependency_primitives": [
         "prim.ref.failure",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-030-verifier-unresolved-not-valid-001"
     },
     {
       "family": "vfy",
@@ -11757,5 +11799,7 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": []
     }
-  ]
+  ],
+  "executable_semantic_requirements": 21,
+  "remaining_semantic_requirements": 750
 }

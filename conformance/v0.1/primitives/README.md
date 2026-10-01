@@ -35,3 +35,13 @@ A semantic case may reuse an existing public fixture or a materialized primitive
 Wave 01 initially materializes the reference/graph/identity foundation primitives. Later waves add reusable request, provider, tool, trust/taint, privacy, multi-Receipt, integrity, claim, adapter, verifier, and ordering scenarios.
 
 Primitive classification is planning/execution infrastructure. It does not change frozen v0.1 protocol semantics or JSON Schema.
+
+## Wave 01 status
+
+- catalogued semantic requirements: 771 / 771
+- primitive families: 21
+- executable semantic cases: 21 / 771
+- remaining semantic cases: 750
+- materialized foundation primitives: local reference, external reference, reference failures, graph invariants, occurrence identity
+
+The first materialized Receipt primitives live under `receipts/` and are shared by multiple cases.

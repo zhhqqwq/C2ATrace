@@ -1,0 +1,66 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-ambiguous",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-multi-001",
+      "src-multi-001",
+      "obs-ambiguous"
+    ],
+    "records": [
+      {
+        "id": "run-multi-001",
+        "kind": "Run",
+        "label": "multi-receipt"
+      },
+      {
+        "id": "src-multi-001",
+        "kind": "SourceRef",
+        "run_id": "run-multi-001",
+        "source_kind": "application",
+        "locators": [
+          "app://doc/multi"
+        ]
+      },
+      {
+        "id": "obs-ambiguous",
+        "kind": "SourceObservation",
+        "run_id": "run-multi-001",
+        "source_ref": {
+          "ref_type": "local",
+          "id": "src-multi-001",
+          "expected_kind": "SourceRef"
+        },
+        "representation": {
+          "representation_kind": "text",
+          "text": "candidate one",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        },
+        "observation_extent": "complete"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-multi-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

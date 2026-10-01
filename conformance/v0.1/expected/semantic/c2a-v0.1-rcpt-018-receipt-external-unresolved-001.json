@@ -1,0 +1,26 @@
+{
+  "case_id": "c2a-v0.1-rcpt-018-receipt-external-unresolved-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-018",
+      "check_id": "receipt-external-unresolved-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "xf-multi-001"
+      },
+      "domain": "resolution",
+      "status": "unresolved",
+      "reason_code": "external_target_unavailable"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

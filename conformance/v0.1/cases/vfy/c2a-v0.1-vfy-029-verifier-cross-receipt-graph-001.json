@@ -1,0 +1,64 @@
+{
+  "case_id": "c2a-v0.1-vfy-029-verifier-cross-receipt-graph-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-029"
+  ],
+  "planned_test_ids": [
+    "verifier-cross-receipt-graph-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A successfully addressed external object has the wrong resolved kind; the verifier must apply graph/type checks across the Resolution Set and surface the mismatch.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "resolution-wrong-kind",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "resolution-wrong-kind"
+    ],
+    "verifier_goals": [
+      "VFY-029"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-029",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [
+      "resolution-wrong-kind"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-029"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.external, prim.ref.failure, prim.graph.invariants, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-029-verifier-cross-receipt-graph-001.json"
+}

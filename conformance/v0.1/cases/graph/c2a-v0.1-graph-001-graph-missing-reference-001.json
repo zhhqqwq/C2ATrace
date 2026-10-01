@@ -1,0 +1,52 @@
+{
+  "case_id": "c2a-v0.1-graph-001-graph-missing-reference-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "GRAPH-001"
+  ],
+  "planned_test_ids": [
+    "graph-missing-reference-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A schema-valid local RequestBinding reference targets a missing RequestSnapshot and must remain unresolved/invalid rather than being silently repaired.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-local-dangling.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "GRAPH-001"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-graph-001",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "GRAPH-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.local, prim.ref.failure, prim.graph.invariants"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-001-graph-missing-reference-001.json"
+}

@@ -1,0 +1,52 @@
+{
+  "case_id": "c2a-v0.1-rcpt-019-receipt-external-unresolved-not-negation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-019"
+  ],
+  "planned_test_ids": [
+    "receipt-external-unresolved-not-negation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The same unavailable ExternalReference remains unresolved; unresolved resolution must not be strengthened into a claim that the target never existed.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "RCPT-019"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-019",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-019"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.external, prim.ref.failure, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-019-receipt-external-unresolved-not-negation-001.json"
+}

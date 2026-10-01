@@ -1,0 +1,74 @@
+{
+  "case_id": "c2a-v0.1-vfy-021-verifier-external-address-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-021"
+  ],
+  "planned_test_ids": [
+    "verifier-external-address-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The Resolution Set contains a decoy object with the same object ID/content under another Receipt; the verifier must follow the explicit ExternalReference receipt_id/object_id address.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "resolution-a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "resolution-decoy",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-decoy-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "resolution-a",
+      "resolution-decoy"
+    ],
+    "verifier_goals": [
+      "VFY-021"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-021",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [
+      "resolution-a",
+      "resolution-decoy"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-021"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.external, prim.ref.failure, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-021-verifier-external-address-001.json"
+}

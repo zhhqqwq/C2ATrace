@@ -1,0 +1,37 @@
+{
+  "case_id": "c2a-v0.1-graph-001-graph-missing-reference-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "GRAPH-001",
+      "check_id": "graph-missing-reference-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "bind-001"
+      },
+      "domain": "resolution",
+      "status": "unresolved",
+      "reason_code": "local_target_missing"
+    },
+    {
+      "requirement_id": "GRAPH-001",
+      "check_id": "graph-missing-reference-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "bind-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "reason_code": "unresolved_local_reference"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

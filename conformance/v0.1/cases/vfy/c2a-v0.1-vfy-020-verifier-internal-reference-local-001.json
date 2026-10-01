@@ -1,0 +1,64 @@
+{
+  "case_id": "c2a-v0.1-vfy-020-verifier-internal-reference-local-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-020"
+  ],
+  "planned_test_ids": [
+    "verifier-internal-reference-local-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Even with another Receipt containing the same object ID in the Resolution Set, the verifier keeps InternalReference/local resolution scoped to the primary Receipt.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-local-external-decoy.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "resolution-a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "resolution-a"
+    ],
+    "verifier_goals": [
+      "VFY-020"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-020",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [
+      "resolution-a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-020"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.local, prim.ref.failure, prim.ref.external, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-020-verifier-internal-reference-local-001.json"
+}

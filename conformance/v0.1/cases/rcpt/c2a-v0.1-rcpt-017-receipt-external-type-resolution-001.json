@@ -1,0 +1,64 @@
+{
+  "case_id": "c2a-v0.1-rcpt-017-receipt-external-type-resolution-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-017"
+  ],
+  "planned_test_ids": [
+    "receipt-external-type-resolution-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "An ExternalReference records expected_kind=SourceObservation but resolves to a ContextFragment; the recorded type hint is not self-verifying and compatibility must fail after resolution.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "resolution-wrong-kind",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "resolution-wrong-kind"
+    ],
+    "verifier_goals": [
+      "RCPT-017"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-017",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [
+      "resolution-wrong-kind"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-017"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.external, prim.ref.failure, prim.graph.invariants"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-017-receipt-external-type-resolution-001.json"
+}

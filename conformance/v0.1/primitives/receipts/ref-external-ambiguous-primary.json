@@ -1,0 +1,119 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-multi-b",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "external_references_allowed",
+    "inventory": [
+      "xf-multi-001",
+      "frag-multi-001",
+      "drv-multi-001"
+    ],
+    "records": [
+      {
+        "id": "xf-multi-001",
+        "kind": "Transform",
+        "run_id": "run-multi-001",
+        "operation": "extract",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "external",
+              "receipt_id": "receipt-ambiguous",
+              "id": "obs-ambiguous",
+              "expected_kind": "SourceObservation"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "frag-multi-001",
+            "expected_kind": "ContextFragment"
+          }
+        ],
+        "selected": []
+      },
+      {
+        "id": "frag-multi-001",
+        "kind": "ContextFragment",
+        "run_id": "run-multi-001",
+        "representation": {
+          "representation_kind": "text",
+          "text": "cross",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        }
+      },
+      {
+        "id": "drv-multi-001",
+        "kind": "Derivation",
+        "run_id": "run-multi-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "xf-multi-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "frag-multi-001",
+            "expected_kind": "ContextFragment"
+          },
+          "representation_basis": "decoded_text_utf8"
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "external",
+                "receipt_id": "receipt-ambiguous",
+                "id": "obs-ambiguous",
+                "expected_kind": "SourceObservation"
+              },
+              "representation_basis": "decoded_text_utf8",
+              "region": {
+                "region_kind": "text",
+                "text": {
+                  "unit": "unicode_scalar",
+                  "start": 0,
+                  "end": 5
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "text",
+              "text": {
+                "unit": "unicode_scalar",
+                "start": 0,
+                "end": 5
+              }
+            }
+          }
+        ],
+        "precision": "exact"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-multi-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "cAh_dsw-nWkinS0ZcX9HZvBfdl_ZJ9W2O_tF5cOmB_w"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

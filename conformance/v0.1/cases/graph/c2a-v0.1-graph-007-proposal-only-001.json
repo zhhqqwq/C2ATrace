@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-graph-007-proposal-only-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "GRAPH-007"
+  ],
+  "planned_test_ids": [
+    "proposal-only-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A ToolProposal is retained without any ToolInvocation or ToolExecution; the verifier must not infer execution from proposal presence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/graph-proposal-only.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "GRAPH-007"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-graph-007",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "GRAPH-007"
+    ]
+  },
+  "notes": [
+    "primitives: prim.graph.invariants, prim.tool.lifecycle, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-007-proposal-only-001.json"
+}

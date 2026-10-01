@@ -1,0 +1,44 @@
+{
+  "case_id": "c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "resolution-a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-014",
+      "check_id": "receipt-no-implicit-external-resolution-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "xf-001"
+      },
+      "domain": "resolution",
+      "status": "unresolved",
+      "reason_code": "local_reference_not_external"
+    },
+    {
+      "requirement_id": "RCPT-014",
+      "check_id": "receipt-no-implicit-external-resolution-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "xf-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:unresolved_local_reference_as_external"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

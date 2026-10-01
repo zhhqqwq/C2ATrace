@@ -1,0 +1,36 @@
+{
+  "case_id": "c2a-v0.1-rcpt-020-receipt-external-ambiguous-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "candidate-a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "candidate-b",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-020",
+      "check_id": "receipt-external-ambiguous-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "xf-multi-001"
+      },
+      "domain": "resolution",
+      "status": "ambiguous",
+      "reason_code": "multiple_incompatible_external_candidates"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

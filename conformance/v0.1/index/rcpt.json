@@ -124,7 +124,7 @@
       "requirement_id": "RCPT-014",
       "planned_test_id": "receipt-no-implicit-external-resolution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001.json"
     },
@@ -151,7 +151,7 @@
       "requirement_id": "RCPT-017",
       "planned_test_id": "receipt-external-type-resolution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-017-receipt-external-type-resolution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-017-receipt-external-type-resolution-001.json"
     },
@@ -160,7 +160,7 @@
       "requirement_id": "RCPT-018",
       "planned_test_id": "receipt-external-unresolved-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-018-receipt-external-unresolved-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-018-receipt-external-unresolved-001.json"
     },
@@ -169,7 +169,7 @@
       "requirement_id": "RCPT-019",
       "planned_test_id": "receipt-external-unresolved-not-negation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-019-receipt-external-unresolved-not-negation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-019-receipt-external-unresolved-not-negation-001.json"
     },
@@ -178,7 +178,7 @@
       "requirement_id": "RCPT-020",
       "planned_test_id": "receipt-external-ambiguous-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-020-receipt-external-ambiguous-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-020-receipt-external-ambiguous-001.json"
     },
@@ -268,7 +268,7 @@
       "requirement_id": "RCPT-030",
       "planned_test_id": "receipt-external-mode-unresolved-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-030-receipt-external-mode-unresolved-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-030-receipt-external-mode-unresolved-001.json"
     },
@@ -412,7 +412,7 @@
       "requirement_id": "RCPT-046",
       "planned_test_id": "receipt-privacy-reference-closure-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-046-receipt-privacy-reference-closure-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-046-receipt-privacy-reference-closure-001.json"
     },

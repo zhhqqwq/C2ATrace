@@ -1,0 +1,64 @@
+{
+  "case_id": "c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-014"
+  ],
+  "planned_test_ids": [
+    "receipt-no-implicit-external-resolution-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A dangling local reference has a matching object ID in another Receipt supplied to the Resolution Set; it must remain local/unresolved and must not be reinterpreted as external.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-local-external-decoy.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "resolution-a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "resolution-a"
+    ],
+    "verifier_goals": [
+      "RCPT-014"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-014",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [
+      "resolution-a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-014"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.local, prim.ref.failure, prim.ref.external, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001.json"
+}
