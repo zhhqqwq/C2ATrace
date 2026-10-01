@@ -1,0 +1,288 @@
+{
+  "case_id": "c2a-v0.1-tad-003-tool-adapter-capability-declaration-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-003"
+  ],
+  "planned_test_ids": [
+    "tool-adapter-capability-declaration-001"
+  ],
+  "primary_enforcement": "direct_schema",
+  "status": "executable",
+  "description": "Tool Adapter must explicitly declare proposal, decision, streaming, orchestration, effect-observation, and privacy capabilities.",
+  "documents": [
+    {
+      "document_id": "complete-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-proposal-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-decision-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-streaming-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-retry-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-replay-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-duplicate-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ],
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-effect-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "missing-privacy-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "tad-direct-001",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "effect_observation": [
+            "execution_result"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/direct/c2a-v0.1-tad-003-tool-adapter-capability-declaration-001.json"
+}
