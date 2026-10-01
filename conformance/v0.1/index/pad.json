@@ -1,0 +1,766 @@
+{
+  "family": "PAD",
+  "count": 95,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-pad-001-provider-adapter-visibility-boundary-001",
+      "requirement_id": "PAD-001",
+      "planned_test_id": "provider-adapter-visibility-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-001-provider-adapter-visibility-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-002-provider-adapter-boundary-declaration-001",
+      "requirement_id": "PAD-002",
+      "planned_test_id": "provider-adapter-boundary-declaration-001",
+      "primary_enforcement": "direct_schema",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-002-provider-adapter-boundary-declaration-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-003-provider-adapter-capability-declaration-001",
+      "requirement_id": "PAD-003",
+      "planned_test_id": "provider-adapter-capability-declaration-001",
+      "primary_enforcement": "direct_schema",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-003-provider-adapter-capability-declaration-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-004-provider-adapter-min-request-level-001",
+      "requirement_id": "PAD-004",
+      "planned_test_id": "provider-adapter-min-request-level-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-004-provider-adapter-min-request-level-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-005-provider-adapter-output-capability-001",
+      "requirement_id": "PAD-005",
+      "planned_test_id": "provider-adapter-output-capability-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-005-provider-adapter-output-capability-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-006-provider-adapter-capability-not-observation-001",
+      "requirement_id": "PAD-006",
+      "planned_test_id": "provider-adapter-capability-not-observation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-006-provider-adapter-capability-not-observation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-007-provider-adapter-boundary-unknown-001",
+      "requirement_id": "PAD-007",
+      "planned_test_id": "provider-adapter-boundary-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-007-provider-adapter-boundary-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-008-provider-adapter-no-provider-receipt-001",
+      "requirement_id": "PAD-008",
+      "planned_test_id": "provider-adapter-no-provider-receipt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-008-provider-adapter-no-provider-receipt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-009-provider-capture-diagnostic-scope-001",
+      "requirement_id": "PAD-009",
+      "planned_test_id": "provider-capture-diagnostic-scope-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-009-provider-capture-diagnostic-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-010-provider-capture-diagnostic-state-001",
+      "requirement_id": "PAD-010",
+      "planned_test_id": "provider-capture-diagnostic-state-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-010-provider-capture-diagnostic-state-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-011-provider-capture-observed-bounded-001",
+      "requirement_id": "PAD-011",
+      "planned_test_id": "provider-capture-observed-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-011-provider-capture-observed-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-012-provider-capture-no-bypass-inference-001",
+      "requirement_id": "PAD-012",
+      "planned_test_id": "provider-capture-no-bypass-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-012-provider-capture-no-bypass-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-013-provider-capture-diagnostic-asserted-001",
+      "requirement_id": "PAD-013",
+      "planned_test_id": "provider-capture-diagnostic-asserted-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-013-provider-capture-diagnostic-asserted-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-014-provider-invocation-context-001",
+      "requirement_id": "PAD-014",
+      "planned_test_id": "provider-invocation-context-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-014-provider-invocation-context-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-015-provider-invocation-no-content-merge-001",
+      "requirement_id": "PAD-015",
+      "planned_test_id": "provider-invocation-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-015-provider-invocation-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-016-provider-pre-attempt-no-fake-attempt-001",
+      "requirement_id": "PAD-016",
+      "planned_test_id": "provider-pre-attempt-no-fake-attempt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-016-provider-pre-attempt-no-fake-attempt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-017-provider-accepted-output-positive-evidence-001",
+      "requirement_id": "PAD-017",
+      "planned_test_id": "provider-accepted-output-positive-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-017-provider-accepted-output-positive-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-018-provider-attempt-boundary-001",
+      "requirement_id": "PAD-018",
+      "planned_test_id": "provider-attempt-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-018-provider-attempt-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001",
+      "requirement_id": "PAD-019",
+      "planned_test_id": "provider-hidden-retry-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-019-provider-hidden-retry-no-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-020-provider-attempt-distinct-identity-001",
+      "requirement_id": "PAD-020",
+      "planned_test_id": "provider-attempt-distinct-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-020-provider-attempt-distinct-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-021-provider-attempt-disposition-boundary-001",
+      "requirement_id": "PAD-021",
+      "planned_test_id": "provider-attempt-disposition-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-021-provider-attempt-disposition-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-022-provider-attempt-correlation-001",
+      "requirement_id": "PAD-022",
+      "planned_test_id": "provider-attempt-correlation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-022-provider-attempt-correlation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-023-provider-id-not-c2a-identity-001",
+      "requirement_id": "PAD-023",
+      "planned_test_id": "provider-id-not-c2a-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-023-provider-id-not-c2a-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-024-provider-request-snapshot-or-diagnostic-001",
+      "requirement_id": "PAD-024",
+      "planned_test_id": "provider-request-snapshot-or-diagnostic-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-024-provider-request-snapshot-or-diagnostic-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-025-provider-no-synthetic-level-001",
+      "requirement_id": "PAD-025",
+      "planned_test_id": "provider-no-synthetic-level-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-025-provider-no-synthetic-level-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-026-provider-capture-level-evidence-001",
+      "requirement_id": "PAD-026",
+      "planned_test_id": "provider-capture-level-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-026-provider-capture-level-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-027-provider-sdk-args-bounded-001",
+      "requirement_id": "PAD-027",
+      "planned_test_id": "provider-sdk-args-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-027-provider-sdk-args-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-028-provider-payload-no-reconstruction-001",
+      "requirement_id": "PAD-028",
+      "planned_test_id": "provider-payload-no-reconstruction-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-028-provider-payload-no-reconstruction-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-029-provider-body-exact-capture-001",
+      "requirement_id": "PAD-029",
+      "planned_test_id": "provider-body-exact-capture-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-029-provider-body-exact-capture-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-030-provider-body-transport-boundary-001",
+      "requirement_id": "PAD-030",
+      "planned_test_id": "provider-body-transport-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-030-provider-body-transport-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-031-provider-effective-snapshot-positive-001",
+      "requirement_id": "PAD-031",
+      "planned_test_id": "provider-effective-snapshot-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-031-provider-effective-snapshot-positive-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-032-provider-missing-level-valid-001",
+      "requirement_id": "PAD-032",
+      "planned_test_id": "provider-missing-level-valid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-032-provider-missing-level-valid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-033-provider-request-transition-positive-001",
+      "requirement_id": "PAD-033",
+      "planned_test_id": "provider-request-transition-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-033-provider-request-transition-positive-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-034-provider-request-mutation-new-snapshot-001",
+      "requirement_id": "PAD-034",
+      "planned_test_id": "provider-request-mutation-new-snapshot-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-034-provider-request-mutation-new-snapshot-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-035-provider-request-reuse-not-equality-001",
+      "requirement_id": "PAD-035",
+      "planned_test_id": "provider-request-reuse-not-equality-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-035-provider-request-reuse-not-equality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-036-provider-binding-level-local-001",
+      "requirement_id": "PAD-036",
+      "planned_test_id": "provider-binding-level-local-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-036-provider-binding-level-local-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-037-provider-binding-positive-mapping-001",
+      "requirement_id": "PAD-037",
+      "planned_test_id": "provider-binding-positive-mapping-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-037-provider-binding-positive-mapping-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-038-provider-request-post-boundary-unknown-001",
+      "requirement_id": "PAD-038",
+      "planned_test_id": "provider-request-post-boundary-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-038-provider-request-post-boundary-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-039-provider-request-comparison-bounded-001",
+      "requirement_id": "PAD-039",
+      "planned_test_id": "provider-request-comparison-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-039-provider-request-comparison-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-040-provider-output-boundary-001",
+      "requirement_id": "PAD-040",
+      "planned_test_id": "provider-output-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-040-provider-output-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-041-provider-output-cardinality-001",
+      "requirement_id": "PAD-041",
+      "planned_test_id": "provider-output-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-041-provider-output-cardinality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-042-provider-error-not-model-output-001",
+      "requirement_id": "PAD-042",
+      "planned_test_id": "provider-error-not-model-output-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-042-provider-error-not-model-output-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-043-provider-outputitem-no-merge-001",
+      "requirement_id": "PAD-043",
+      "planned_test_id": "provider-outputitem-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-043-provider-outputitem-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-044-provider-output-capture-evidence-001",
+      "requirement_id": "PAD-044",
+      "planned_test_id": "provider-output-capture-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-044-provider-output-capture-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-045-provider-nonstream-result-boundary-001",
+      "requirement_id": "PAD-045",
+      "planned_test_id": "provider-nonstream-result-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-045-provider-nonstream-result-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-046-provider-stream-consumption-boundary-001",
+      "requirement_id": "PAD-046",
+      "planned_test_id": "provider-stream-consumption-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-046-provider-stream-consumption-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-047-provider-stream-event-semantics-001",
+      "requirement_id": "PAD-047",
+      "planned_test_id": "provider-stream-event-semantics-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-047-provider-stream-event-semantics-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-048-provider-stream-unsupported-degrade-001",
+      "requirement_id": "PAD-048",
+      "planned_test_id": "provider-stream-unsupported-degrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-048-provider-stream-unsupported-degrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-049-provider-stream-partial-preserve-001",
+      "requirement_id": "PAD-049",
+      "planned_test_id": "provider-stream-partial-preserve-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-049-provider-stream-partial-preserve-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-050-provider-stream-app-stop-bounded-001",
+      "requirement_id": "PAD-050",
+      "planned_test_id": "provider-stream-app-stop-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-050-provider-stream-app-stop-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-051-provider-stream-drop-no-complete-001",
+      "requirement_id": "PAD-051",
+      "planned_test_id": "provider-stream-drop-no-complete-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-051-provider-stream-drop-no-complete-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-052-provider-stream-tool-fragment-001",
+      "requirement_id": "PAD-052",
+      "planned_test_id": "provider-stream-tool-fragment-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-052-provider-stream-tool-fragment-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-053-provider-stream-chunks-optional-001",
+      "requirement_id": "PAD-053",
+      "planned_test_id": "provider-stream-chunks-optional-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-053-provider-stream-chunks-optional-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-054-provider-retry-new-attempt-001",
+      "requirement_id": "PAD-054",
+      "planned_test_id": "provider-retry-new-attempt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-054-provider-retry-new-attempt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-055-provider-retry-relation-positive-001",
+      "requirement_id": "PAD-055",
+      "planned_test_id": "provider-retry-relation-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-055-provider-retry-relation-positive-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-056-provider-retry-no-prior-negation-001",
+      "requirement_id": "PAD-056",
+      "planned_test_id": "provider-retry-no-prior-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-056-provider-retry-no-prior-negation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-057-provider-failover-metadata-001",
+      "requirement_id": "PAD-057",
+      "planned_test_id": "provider-failover-metadata-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-057-provider-failover-metadata-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-058-provider-failover-positive-001",
+      "requirement_id": "PAD-058",
+      "planned_test_id": "provider-failover-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-058-provider-failover-positive-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-059-provider-hedge-distinct-attempts-001",
+      "requirement_id": "PAD-059",
+      "planned_test_id": "provider-hedge-distinct-attempts-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-059-provider-hedge-distinct-attempts-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-060-provider-hedge-no-total-order-001",
+      "requirement_id": "PAD-060",
+      "planned_test_id": "provider-hedge-no-total-order-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-060-provider-hedge-no-total-order-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-061-provider-hedge-cancel-bounded-001",
+      "requirement_id": "PAD-061",
+      "planned_test_id": "provider-hedge-cancel-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-061-provider-hedge-cancel-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-062-provider-metadata-origin-001",
+      "requirement_id": "PAD-062",
+      "planned_test_id": "provider-metadata-origin-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-062-provider-metadata-origin-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-063-provider-metadata-reported-bounded-001",
+      "requirement_id": "PAD-063",
+      "planned_test_id": "provider-metadata-reported-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-063-provider-metadata-reported-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-064-provider-metadata-normalized-origin-001",
+      "requirement_id": "PAD-064",
+      "planned_test_id": "provider-metadata-normalized-origin-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-064-provider-metadata-normalized-origin-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-065-provider-model-identity-separation-001",
+      "requirement_id": "PAD-065",
+      "planned_test_id": "provider-model-identity-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-065-provider-model-identity-separation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-066-provider-transport-secret-not-model-input-001",
+      "requirement_id": "PAD-066",
+      "planned_test_id": "provider-transport-secret-not-model-input-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-066-provider-transport-secret-not-model-input-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-067-provider-privacy-capture-separation-001",
+      "requirement_id": "PAD-067",
+      "planned_test_id": "provider-privacy-capture-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-067-provider-privacy-capture-separation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-068-provider-privacy-placeholder-no-mutation-001",
+      "requirement_id": "PAD-068",
+      "planned_test_id": "provider-privacy-placeholder-no-mutation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-068-provider-privacy-placeholder-no-mutation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-069-provider-privacy-commit-before-discard-001",
+      "requirement_id": "PAD-069",
+      "planned_test_id": "provider-privacy-commit-before-discard-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-069-provider-privacy-commit-before-discard-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-070-provider-privacy-redacted-identity-001",
+      "requirement_id": "PAD-070",
+      "planned_test_id": "provider-privacy-redacted-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-070-provider-privacy-redacted-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-071-provider-privacy-no-failure-laundering-001",
+      "requirement_id": "PAD-071",
+      "planned_test_id": "provider-privacy-no-failure-laundering-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-071-provider-privacy-no-failure-laundering-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-072-provider-capture-failure-explicit-001",
+      "requirement_id": "PAD-072",
+      "planned_test_id": "provider-capture-failure-explicit-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-072-provider-capture-failure-explicit-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-073-provider-capture-failure-no-fabrication-001",
+      "requirement_id": "PAD-073",
+      "planned_test_id": "provider-capture-failure-no-fabrication-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-073-provider-capture-failure-no-fabrication-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-074-provider-capture-vs-attempt-failure-001",
+      "requirement_id": "PAD-074",
+      "planned_test_id": "provider-capture-vs-attempt-failure-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-074-provider-capture-vs-attempt-failure-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-075-provider-adapter-error-origin-001",
+      "requirement_id": "PAD-075",
+      "planned_test_id": "provider-adapter-error-origin-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-075-provider-adapter-error-origin-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-076-provider-bypass-positive-evidence-001",
+      "requirement_id": "PAD-076",
+      "planned_test_id": "provider-bypass-positive-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-076-provider-bypass-positive-evidence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-077-provider-bypass-no-fabrication-001",
+      "requirement_id": "PAD-077",
+      "planned_test_id": "provider-bypass-no-fabrication-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-077-provider-bypass-no-fabrication-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-078-provider-multihook-correlation-001",
+      "requirement_id": "PAD-078",
+      "planned_test_id": "provider-multihook-correlation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-078-provider-multihook-correlation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001",
+      "requirement_id": "PAD-079",
+      "planned_test_id": "provider-adapter-unknown-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001",
+      "requirement_id": "PAD-080",
+      "planned_test_id": "provider-adapter-assertion-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-081-provider-representation-not-observation-proof-001",
+      "requirement_id": "PAD-081",
+      "planned_test_id": "provider-representation-not-observation-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-081-provider-representation-not-observation-proof-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001",
+      "requirement_id": "PAD-082",
+      "planned_test_id": "provider-adapter-provider-receipt-unestablished-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001",
+      "requirement_id": "PAD-083",
+      "planned_test_id": "provider-adapter-internals-unestablished-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001",
+      "requirement_id": "PAD-084",
+      "planned_test_id": "provider-capture-diagnostic-no-global-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001",
+      "requirement_id": "PAD-085",
+      "planned_test_id": "provider-capture-diagnostic-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-086-provider-capture-diagnostic-absence-not-success-001",
+      "requirement_id": "PAD-086",
+      "planned_test_id": "provider-capture-diagnostic-absence-not-success-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-086-provider-capture-diagnostic-absence-not-success-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-087-provider-capture-diagnostic-conflict-001",
+      "requirement_id": "PAD-087",
+      "planned_test_id": "provider-capture-diagnostic-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-087-provider-capture-diagnostic-conflict-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-088-provider-adapter-version-no-trust-001",
+      "requirement_id": "PAD-088",
+      "planned_test_id": "provider-adapter-version-no-trust-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-088-provider-adapter-version-no-trust-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-089-provider-adapter-time-bounded-001",
+      "requirement_id": "PAD-089",
+      "planned_test_id": "provider-adapter-time-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-089-provider-adapter-time-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-090-provider-response-parse-failure-no-output-001",
+      "requirement_id": "PAD-090",
+      "planned_test_id": "provider-response-parse-failure-no-output-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-090-provider-response-parse-failure-no-output-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001",
+      "requirement_id": "PAD-091",
+      "planned_test_id": "provider-stream-unsupported-explicit-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-092-provider-metadata-normalization-basis-001",
+      "requirement_id": "PAD-092",
+      "planned_test_id": "provider-metadata-normalization-basis-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-092-provider-metadata-normalization-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001",
+      "requirement_id": "PAD-093",
+      "planned_test_id": "provider-capture-unsupported-vs-unavailable-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-094-provider-capture-privacy-reason-bounded-001",
+      "requirement_id": "PAD-094",
+      "planned_test_id": "provider-capture-privacy-reason-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-094-provider-capture-privacy-reason-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-pad-095-provider-response-capture-lifecycle-001",
+      "requirement_id": "PAD-095",
+      "planned_test_id": "provider-response-capture-lifecycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-095-provider-response-capture-lifecycle-001.json"
+    }
+  ]
+}
