@@ -135,11 +135,17 @@ Planned test: `claim-causality-001`.
 | ModelOutput response_termination=complete | E4 | No external proof | Normal completion observed at application boundary |
 | Provider-reported model identifier | E4 | No | Does not establish provider-internal model identity |
 | OutputItem representation matches supplied content | E2 | Conditional | Representation equality only |
-| ToolProposal is structurally contained in ModelOutput | E1; E2 if representation supplied | Yes/conditional | Proposal is output occurrence, not execution |
-| ToolInvocation differs from ToolProposal | E2 | Conditional | Requires comparable representations |
+| ToolProposal is structurally contained in ModelOutput | E1; E2 if representation supplied | Yes/conditional | Proposal is output occurrence, not authorization/execution |
+| ToolInvocation derives from ToolProposal | E1 + E4; E2 where mappings are independently checked | Conditional | Positive preparation lineage; not implicit from matching args |
+| ToolInvocation argument is model_supplied/application_supplied/mixed | Derived from explicit lineage | Conditional | Bounded provenance summary, not hidden model causality |
+| ToolDecision allow/deny exists | E1 + E4 | Yes, as assertion | Does not establish execution or policy correctness |
 | Producer states ToolExecution occurred | E4 | Yes, as an assertion | Runtime occurrence not independently proven |
-| ToolResult artifact exists | E1 | Yes | Origin/return occurrence may still be E4 |
-| EffectObservation exists with evidence basis | E1 + E4 premise | Partial | Observation record is not external truth |
+| ToolExecution disposition=completed | E4 | Yes, as assertion | Does not establish semantic success/effect |
+| ToolResult artifact exists | E1 + E4 premise | Partial | Returned representation; external truth not established |
+| ToolResult reports success | E4/tool-reported | No external proof | Does not establish external effect |
+| EffectObservation basis=execution_result | E1 + E4 premise | Partial | Same execution/result supports bounded claim |
+| EffectObservation basis=separate_observation | E1 + E4 premise | Partial | Distinct observation supports bounded claim, still not objective truth |
+| Desired Outcome achieved | P1 / unsupported by core | No | OutcomeVerification outside core v0.1 |
 | A source carrying TrustAssertion(label="untrusted") is on recorded path | E1 + E4 premise | Yes, with asserted-label wording | Does not establish objective untrustworthiness |
 | Untrusted source caused downstream action | P1 | No | Prohibited causal inference |
 | Receipt signature validates under supplied trusted key | E3 | Yes | Does not prove signer honesty |
