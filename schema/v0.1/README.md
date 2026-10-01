@@ -1,6 +1,6 @@
 # C2ATrace v0.1 JSON Schema Freeze
 
-Status: SCHEMA FREEZE IN PROGRESS.
+Status: ACCEPTED AND FROZEN AFTER AUDIT.
 
 Dialect: JSON Schema Draft 2020-12.
 
@@ -16,4 +16,6 @@ Schema IDs use `urn:c2atrace:schema:v0.1:`. Profile IDs use `urn:c2atrace:profil
 - Unknown core top-level fields are rejected. Future extensions enter through explicit extension/profile points.
 - JSON Schema validates wire shape. Cross-object provenance, graph, commitment, signature, completeness, conflict, and claim-strength requirements remain verifier semantic checks.
 
-The package manifest maps the protocol namespace. `semantic-checks.md` records the Schema/verifier boundary and the conformance matrix maps every numbered requirement.
+The package manifest maps the protocol namespace. `semantic-checks.md` records the Schema/verifier boundary; `FREEZE-AUDIT.md` records the acceptance audit; and `traceability/v0.1/` maps all 907 numbered requirements to their enforcement layer and planned conformance test.
+
+The frozen Schema does not unlock implementation by itself. The complete normative fixture and cross-language conformance-vector suite remains the next gate.
