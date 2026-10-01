@@ -1,0 +1,502 @@
+{
+  "family": "TOOL",
+  "count": 62,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-tool-001-tool-proposal-owner-001",
+      "requirement_id": "TOOL-001",
+      "planned_test_id": "tool-proposal-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-001-tool-proposal-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-002-tool-proposal-no-content-merge-001",
+      "requirement_id": "TOOL-002",
+      "planned_test_id": "tool-proposal-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-002-tool-proposal-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-003-tool-proposal-no-invocation-001",
+      "requirement_id": "TOOL-003",
+      "planned_test_id": "tool-proposal-no-invocation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-003-tool-proposal-no-invocation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-004-tool-proposal-no-authorization-001",
+      "requirement_id": "TOOL-004",
+      "planned_test_id": "tool-proposal-no-authorization-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-004-tool-proposal-no-authorization-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-005-tool-invocation-no-content-merge-001",
+      "requirement_id": "TOOL-005",
+      "planned_test_id": "tool-invocation-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-005-tool-invocation-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-006-tool-invocation-without-proposal-001",
+      "requirement_id": "TOOL-006",
+      "planned_test_id": "tool-invocation-without-proposal-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-006-tool-invocation-without-proposal-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-007-tool-proposal-invocation-no-inference-001",
+      "requirement_id": "TOOL-007",
+      "planned_test_id": "tool-proposal-invocation-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-007-tool-proposal-invocation-no-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-008-tool-proposal-invocation-lineage-001",
+      "requirement_id": "TOOL-008",
+      "planned_test_id": "tool-proposal-invocation-lineage-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-008-tool-proposal-invocation-lineage-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-009-tool-proposal-invocation-identity-separation-001",
+      "requirement_id": "TOOL-009",
+      "planned_test_id": "tool-proposal-invocation-identity-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-009-tool-proposal-invocation-identity-separation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-010-tool-invocation-mutation-new-identity-001",
+      "requirement_id": "TOOL-010",
+      "planned_test_id": "tool-invocation-mutation-new-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-010-tool-invocation-mutation-new-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-011-tool-argument-json-pointer-001",
+      "requirement_id": "TOOL-011",
+      "planned_test_id": "tool-argument-json-pointer-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-011-tool-argument-json-pointer-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-012-tool-argument-provenance-positive-001",
+      "requirement_id": "TOOL-012",
+      "planned_test_id": "tool-argument-provenance-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-012-tool-argument-provenance-positive-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-013-tool-argument-model-supplied-bounded-001",
+      "requirement_id": "TOOL-013",
+      "planned_test_id": "tool-argument-model-supplied-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-013-tool-argument-model-supplied-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-014-tool-argument-application-supplied-001",
+      "requirement_id": "TOOL-014",
+      "planned_test_id": "tool-argument-application-supplied-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-014-tool-argument-application-supplied-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-015-tool-argument-mixed-001",
+      "requirement_id": "TOOL-015",
+      "planned_test_id": "tool-argument-mixed-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-015-tool-argument-mixed-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-016-tool-argument-unknown-001",
+      "requirement_id": "TOOL-016",
+      "planned_test_id": "tool-argument-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-016-tool-argument-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-017-tool-argument-control-no-content-001",
+      "requirement_id": "TOOL-017",
+      "planned_test_id": "tool-argument-control-no-content-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-017-tool-argument-control-no-content-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-018-tool-argument-dropped-001",
+      "requirement_id": "TOOL-018",
+      "planned_test_id": "tool-argument-dropped-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-018-tool-argument-dropped-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-019-tool-argument-rewrite-effective-001",
+      "requirement_id": "TOOL-019",
+      "planned_test_id": "tool-argument-rewrite-effective-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-019-tool-argument-rewrite-effective-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-020-tool-validation-bounded-001",
+      "requirement_id": "TOOL-020",
+      "planned_test_id": "tool-validation-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-020-tool-validation-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-021-tool-decision-subject-001",
+      "requirement_id": "TOOL-021",
+      "planned_test_id": "tool-decision-subject-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-021-tool-decision-subject-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-022-tool-decision-value-001",
+      "requirement_id": "TOOL-022",
+      "planned_test_id": "tool-decision-value-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-022-tool-decision-value-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-023-tool-deny-proposal-no-invocation-001",
+      "requirement_id": "TOOL-023",
+      "planned_test_id": "tool-deny-proposal-no-invocation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-023-tool-deny-proposal-no-invocation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-024-tool-deny-no-execution-001",
+      "requirement_id": "TOOL-024",
+      "planned_test_id": "tool-deny-no-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-024-tool-deny-no-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-025-tool-allow-no-execution-001",
+      "requirement_id": "TOOL-025",
+      "planned_test_id": "tool-allow-no-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-025-tool-allow-no-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-026-tool-deny-later-execution-001",
+      "requirement_id": "TOOL-026",
+      "planned_test_id": "tool-deny-later-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-026-tool-deny-later-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-027-tool-decision-basis-unknown-001",
+      "requirement_id": "TOOL-027",
+      "planned_test_id": "tool-decision-basis-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-027-tool-decision-basis-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-028-tool-execution-owner-001",
+      "requirement_id": "TOOL-028",
+      "planned_test_id": "tool-execution-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-028-tool-execution-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-029-tool-no-phantom-execution-001",
+      "requirement_id": "TOOL-029",
+      "planned_test_id": "tool-no-phantom-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-029-tool-no-phantom-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-030-tool-multiple-executions-001",
+      "requirement_id": "TOOL-030",
+      "planned_test_id": "tool-multiple-executions-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-030-tool-multiple-executions-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-031-tool-execution-no-merge-001",
+      "requirement_id": "TOOL-031",
+      "planned_test_id": "tool-execution-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-031-tool-execution-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-032-tool-execution-disposition-001",
+      "requirement_id": "TOOL-032",
+      "planned_test_id": "tool-execution-disposition-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-032-tool-execution-disposition-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-033-tool-execution-completed-no-effect-001",
+      "requirement_id": "TOOL-033",
+      "planned_test_id": "tool-execution-completed-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-033-tool-execution-completed-no-effect-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-034-tool-timeout-effect-unknown-001",
+      "requirement_id": "TOOL-034",
+      "planned_test_id": "tool-timeout-effect-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-034-tool-timeout-effect-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-035-tool-cancel-no-remote-stop-001",
+      "requirement_id": "TOOL-035",
+      "planned_test_id": "tool-cancel-no-remote-stop-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-035-tool-cancel-no-remote-stop-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-036-tool-result-owner-001",
+      "requirement_id": "TOOL-036",
+      "planned_test_id": "tool-result-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-036-tool-result-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-037-tool-result-cardinality-001",
+      "requirement_id": "TOOL-037",
+      "planned_test_id": "tool-result-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-037-tool-result-cardinality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-038-tool-result-absence-not-negation-001",
+      "requirement_id": "TOOL-038",
+      "planned_test_id": "tool-result-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-038-tool-result-absence-not-negation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-039-tool-result-no-content-merge-001",
+      "requirement_id": "TOOL-039",
+      "planned_test_id": "tool-result-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-039-tool-result-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-040-tool-result-capture-bounded-001",
+      "requirement_id": "TOOL-040",
+      "planned_test_id": "tool-result-capture-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-040-tool-result-capture-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-041-tool-result-success-no-effect-001",
+      "requirement_id": "TOOL-041",
+      "planned_test_id": "tool-result-success-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-041-tool-result-success-no-effect-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-042-tool-effect-basis-001",
+      "requirement_id": "TOOL-042",
+      "planned_test_id": "tool-effect-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-042-tool-effect-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-043-tool-effect-result-basis-bounded-001",
+      "requirement_id": "TOOL-043",
+      "planned_test_id": "tool-effect-result-basis-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-043-tool-effect-result-basis-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-044-tool-effect-separate-observation-bounded-001",
+      "requirement_id": "TOOL-044",
+      "planned_test_id": "tool-effect-separate-observation-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-044-tool-effect-separate-observation-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-045-tool-effect-attestation-profile-001",
+      "requirement_id": "TOOL-045",
+      "planned_test_id": "tool-effect-attestation-profile-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-045-tool-effect-attestation-profile-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-046-tool-effect-basis-unknown-001",
+      "requirement_id": "TOOL-046",
+      "planned_test_id": "tool-effect-basis-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-046-tool-effect-basis-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-047-tool-effect-multiple-evidence-no-truth-001",
+      "requirement_id": "TOOL-047",
+      "planned_test_id": "tool-effect-multiple-evidence-no-truth-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-047-tool-effect-multiple-evidence-no-truth-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-048-tool-effect-not-outcome-001",
+      "requirement_id": "TOOL-048",
+      "planned_test_id": "tool-effect-not-outcome-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-048-tool-effect-not-outcome-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-049-tool-execution-relation-no-inference-001",
+      "requirement_id": "TOOL-049",
+      "planned_test_id": "tool-execution-relation-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-049-tool-execution-relation-no-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-050-tool-execution-relation-no-invocation-equality-001",
+      "requirement_id": "TOOL-050",
+      "planned_test_id": "tool-execution-relation-no-invocation-equality-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-050-tool-execution-relation-no-invocation-equality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-051-tool-execution-relation-no-self-loop-001",
+      "requirement_id": "TOOL-051",
+      "planned_test_id": "tool-execution-relation-no-self-loop-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-051-tool-execution-relation-no-self-loop-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-052-tool-execution-predecessor-cycle-001",
+      "requirement_id": "TOOL-052",
+      "planned_test_id": "tool-execution-predecessor-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-052-tool-execution-predecessor-cycle-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-053-tool-retry-prior-effect-unknown-001",
+      "requirement_id": "TOOL-053",
+      "planned_test_id": "tool-retry-prior-effect-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-053-tool-retry-prior-effect-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-054-tool-idempotency-no-exactly-once-001",
+      "requirement_id": "TOOL-054",
+      "planned_test_id": "tool-idempotency-no-exactly-once-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-054-tool-idempotency-no-exactly-once-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-055-tool-idempotency-no-merge-001",
+      "requirement_id": "TOOL-055",
+      "planned_test_id": "tool-idempotency-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-055-tool-idempotency-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-056-tool-retry-invocation-mutation-001",
+      "requirement_id": "TOOL-056",
+      "planned_test_id": "tool-retry-invocation-mutation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-056-tool-retry-invocation-mutation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-057-tool-result-no-context-inference-001",
+      "requirement_id": "TOOL-057",
+      "planned_test_id": "tool-result-no-context-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-057-tool-result-no-context-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-058-tool-effect-time-no-causality-001",
+      "requirement_id": "TOOL-058",
+      "planned_test_id": "tool-effect-time-no-causality-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-058-tool-effect-time-no-causality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-059-tool-effect-absence-not-negation-001",
+      "requirement_id": "TOOL-059",
+      "planned_test_id": "tool-effect-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-059-tool-effect-absence-not-negation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-060-tool-execution-absence-scope-001",
+      "requirement_id": "TOOL-060",
+      "planned_test_id": "tool-execution-absence-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-060-tool-execution-absence-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-061-tool-decision-no-content-merge-001",
+      "requirement_id": "TOOL-061",
+      "planned_test_id": "tool-decision-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-061-tool-decision-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-tool-062-tool-decision-absence-not-negation-001",
+      "requirement_id": "TOOL-062",
+      "planned_test_id": "tool-decision-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-062-tool-decision-absence-not-negation-001.json"
+    }
+  ]
+}
