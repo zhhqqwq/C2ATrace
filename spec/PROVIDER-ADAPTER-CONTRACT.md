@@ -960,7 +960,9 @@ Planned test: provider-output-capture-evidence-001.
 
 ### PAD-045 — Non-streaming result uses declared result boundary
 
-A Provider Adapter MUST capture the non-streaming ModelOutput representation at its declared application-visible result boundary and MUST NOT mislabel a later application-transformed value as the provider-adapter result unless that later boundary is explicitly the adapter boundary.
+When the adapter successfully observes a non-streaming model result, it MUST capture the ModelOutput representation at its declared application-visible result boundary and MUST NOT mislabel a later application-transformed value as the provider-adapter result unless that later boundary is explicitly the adapter boundary.
+
+If the supported result capture itself fails, PAD-072 applies.
 
 Planned test: provider-nonstream-result-boundary-001.
 
@@ -982,9 +984,9 @@ If streaming event semantics needed for correct assembly are unsupported or unkn
 
 Planned test: provider-stream-unsupported-degrade-001.
 
-### PAD-049 — Partial stream content is preserved when observed
+### PAD-049 — Partial stream evidence is preserved when observed
 
-When application-visible model content was observed before abnormal stream termination, the adapter MUST NOT discard that observed content solely because the attempt later timed out, failed, was cancelled, or was interrupted.
+When application-visible model content was observed before abnormal stream termination, the adapter MUST preserve provenance evidence for that observed content according to the configured privacy treatment and MUST NOT erase it solely because the attempt later timed out, failed, was cancelled, or was interrupted.
 
 Planned test: provider-stream-partial-preserve-001.
 
@@ -1197,6 +1199,72 @@ Planned test: provider-adapter-internals-unestablished-001.
 A verifier MUST NOT report a signed CaptureDiagnostic or signed adapter capability declaration as proof that all applicable provider operations were instrumented.
 
 Planned test: provider-capture-diagnostic-no-global-completeness-001.
+
+### PAD-085 — CaptureDiagnostic identity is occurrence-based
+
+A verifier MUST NOT merge distinct CaptureDiagnostic identities solely because their subject/scope, slot, state, reason, adapter identity, or timestamps match.
+
+Planned test: provider-capture-diagnostic-no-merge-001.
+
+### PAD-086 — Missing diagnostic is not successful observation proof
+
+Absence of CaptureDiagnostic for a capture slot MUST NOT be reported as proof that the slot was successfully observed.
+
+Planned test: provider-capture-diagnostic-absence-not-success-001.
+
+### PAD-087 — Conflicting diagnostics are preserved
+
+When incompatible CaptureDiagnostics exist for the same bounded slot/scope and no explicit supersession/evidence rule resolves them, a verifier MUST preserve/report the conflict rather than choose by timestamp or insertion order.
+
+Planned test: provider-capture-diagnostic-conflict-001.
+
+### PAD-088 — Adapter identity/version is not implementation trust
+
+A verifier MUST NOT infer code authenticity, correct instrumentation behavior, or trusted adapter implementation solely from recorded adapter name/version/capability metadata.
+
+Planned test: provider-adapter-version-no-trust-001.
+
+### PAD-089 — Adapter timestamps are not trusted time
+
+A verifier MUST NOT report adapter-recorded invocation/attempt/capture timestamps as trusted wall-clock time without a separate trusted-time profile.
+
+Planned test: provider-adapter-time-bounded-001.
+
+### PAD-090 — Response parse failure is not fabricated ModelOutput
+
+If provider/transport response bytes or metadata are observed but the declared application-visible model-result parsing/assembly boundary fails before a model result is established, the adapter MUST NOT fabricate ModelOutput from the raw response solely to fill the output slot.
+
+Planned test: provider-response-parse-failure-no-output-001.
+
+### PAD-091 — Streaming unsupported is explicit when applicable
+
+If a call uses streaming but the adapter's declared capability does not support the required stream-consumption boundary, the adapter MUST NOT report complete streaming capture and MUST preserve the unsupported/unknown limitation when producing diagnostics.
+
+Planned test: provider-stream-unsupported-explicit-001.
+
+### PAD-092 — Normalized metadata needs bounded mapping basis
+
+When adapter_derived metadata is used as a semantics-bearing normalized value, the adapter MUST preserve the provider-specific source field/value or an explicit mapping/profile basis when that basis is available under the configured privacy treatment; otherwise the normalization basis remains unknown rather than being presented as raw provider evidence.
+
+Planned test: provider-metadata-normalization-basis-001.
+
+### PAD-093 — CaptureDiagnostic unsupported and unavailable remain distinct
+
+A verifier MUST NOT collapse CaptureDiagnostic(status=unsupported) and status=unavailable: unsupported describes declared capability absence, while unavailable describes failure/lack of evidence for a slot that was expected/supported for the occurrence.
+
+Planned test: provider-capture-unsupported-vs-unavailable-001.
+
+### PAD-094 — Diagnostic privacy reason does not redefine capture state
+
+A privacy disclosure reason attached to CaptureDiagnostic MUST NOT by itself convert a successfully observed runtime slot into status=unavailable or partial.
+
+Planned test: provider-capture-privacy-reason-bounded-001.
+
+### PAD-095 — Adapter response capture failure preserves attempt lifecycle uncertainty
+
+When response/result instrumentation fails after an attempt has begun, the adapter MUST NOT infer completed, failed, timeout, cancelled, or interrupted solely from the capture failure; it uses separately observed lifecycle evidence or unknown.
+
+Planned test: provider-response-capture-lifecycle-001.
 
 ## 27. Adversarial architecture review
 
@@ -1434,6 +1502,52 @@ It does not independently prove instrumentation coverage or absence of bypass.
 
 Result: RESOLVED by PAD-080, PAD-081, and PAD-084.
 
+### Review AH — HTTP 200 arrives but SDK response parser crashes
+
+Transport/response bytes can exist while no application-visible model-result representation was successfully established.
+
+The adapter keeps raw/provider diagnostics separate and does not invent ModelOutput.
+
+Result: RESOLVED by PAD-040, PAD-042, and PAD-090.
+
+### Review AI — Adapter supports non-streaming only, application requests streaming
+
+The adapter does not treat stream creation as complete output capture.
+
+It preserves unsupported/unknown streaming limitation.
+
+Result: RESOLVED by PAD-046 and PAD-091.
+
+### Review AJ — Two CaptureDiagnostics disagree for the same body-capture slot
+
+One reports observed; another reports unavailable.
+
+The verifier preserves the conflict absent explicit resolution evidence and does not use latest timestamp as truth.
+
+Result: RESOLVED by PAD-085 through PAD-087.
+
+### Review AK — Receipt says adapter=v1.2.3 from trusted project name
+
+The version/name identifies recorded implementation metadata only.
+
+It does not prove that exact code ran or that instrumentation was correct.
+
+Result: RESOLVED by PAD-088.
+
+### Review AL — Adapter timestamp is signed
+
+The signature authenticates the timestamp representation but does not make it trusted wall-clock time.
+
+Result: RESOLVED by PAD-089.
+
+### Review AM — Partial stream captured under hash_only privacy
+
+The adapter can preserve commitment evidence for observed partial content without retaining/disclosing plaintext.
+
+Abnormal termination does not erase the observation, and privacy does not turn it into a capture failure.
+
+Result: RESOLVED by PAD-049, PAD-067, and PAD-094.
+
 ## 28. Architecture revisions caused by Provider Adapter Contract
 
 ### 28.1 CaptureDiagnostic becomes a reusable Assertion
@@ -1483,7 +1597,7 @@ The Provider Adapter Contract locks:
 1. Provider Adapter visibility is application-side and explicitly declared.
 2. A baseline adapter has a defensible ModelInvocation boundary, attempt boundary, at least one request capture level, and model-result observation capability.
 3. Capture capability declaration is not runtime capture proof.
-4. CaptureDiagnostic explicitly records bounded instrumentation degradation without claiming global coverage.
+4. CaptureDiagnostic is occurrence-identified, preserves conflicts, and explicitly records bounded instrumentation state/degradation without claiming global coverage.
 5. ModelInvocation grouping is based on observed logical call context, not request equality.
 6. ProviderAttempt is created only at the declared visible attempt boundary; hidden lower retries are not invented.
 7. Request capture levels remain exactly those defined by Part C and are evidence-bound.
@@ -1497,15 +1611,16 @@ The Provider Adapter Contract locks:
 15. Partial visible output is preserved across timeout/failure/cancellation/interruption.
 16. Visible retries/failovers/hedges remain distinct attempts and orchestration relations require positive evidence.
 17. Provider IDs remain metadata, not C2ATrace identity.
-18. Provider-reported metadata stays reported; normalized metadata is adapter-derived.
+18. Provider-reported metadata stays reported; normalized metadata is adapter-derived and retains a bounded mapping basis when available.
 19. Transport credentials are not model-visible inputs by proximity.
 20. Runtime capture and privacy disclosure are orthogonal.
 21. Known adapter capture failure is explicit and cannot fabricate missing provenance.
 22. Instrumentation failure is separate from provider-attempt failure.
 23. bypass_detected requires positive evidence; absence of bypass diagnostic is not no-bypass proof.
 24. Unknown is the required downgrade when evidence is insufficient.
-25. Adapter assertions remain Producer/instrumentation assertions even when signed.
-26. Provider receipt and provider-internal behavior remain unestablished by default.
+25. Adapter identity/version/timestamps remain bounded metadata rather than implementation-trust or trusted-time proof.
+26. Adapter assertions remain Producer/instrumentation assertions even when signed.
+27. Provider receipt and provider-internal behavior remain unestablished by default.
 
 ## 30. Open items handed to later contracts
 
