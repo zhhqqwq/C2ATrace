@@ -1,0 +1,34 @@
+{
+  "case_id": "c2a-v0.1-req-004-request-snapshot-owner-cardinality-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "invocation-owner-valid",
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot",
+      "status": "valid"
+    },
+    {
+      "document_id": "attempt-owner-valid",
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot",
+      "status": "valid"
+    },
+    {
+      "document_id": "both-owners-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot",
+      "status": "invalid",
+      "error_classes": [
+        "oneOf"
+      ]
+    },
+    {
+      "document_id": "no-owner-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot",
+      "status": "invalid",
+      "error_classes": [
+        "oneOf"
+      ]
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": []
+}
