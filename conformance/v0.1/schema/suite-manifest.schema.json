@@ -41,7 +41,8 @@
         "case_index",
         "expected_result",
         "suite_manifest",
-        "harness_input"
+        "harness_input",
+        "deterministic_vector"
       ],
       "additionalProperties": {
         "type": "string",
