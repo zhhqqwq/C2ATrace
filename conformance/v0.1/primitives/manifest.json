@@ -1527,8 +1527,8 @@
         "VFY-109",
         "VFY-139"
       ],
-      "materialization_status": "wave_04_in_progress",
-      "executable_primary_requirement_count": 27,
+      "materialization_status": "wave_04_materialized",
+      "executable_primary_requirement_count": 54,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "RCPT-046"
@@ -1545,7 +1545,20 @@
         "conformance/v0.1/primitives/receipts/privacy-hash-linkable.json",
         "conformance/v0.1/primitives/receipts/privacy-hmac-linkable.json",
         "conformance/v0.1/primitives/receipts/privacy-source-commitment-only.json",
-        "conformance/v0.1/primitives/receipts/privacy-request-commitment-only.json"
+        "conformance/v0.1/primitives/receipts/privacy-request-commitment-only.json",
+        "conformance/v0.1/primitives/receipts/privacy-request-location-withheld.json",
+        "conformance/v0.1/primitives/receipts/privacy-request-location-visible.json",
+        "conformance/v0.1/primitives/receipts/privacy-region-metadata-visible.json",
+        "conformance/v0.1/primitives/receipts/privacy-tool-hidden-with-execution.json",
+        "conformance/v0.1/primitives/receipts/privacy-tool-placeholder.json",
+        "conformance/v0.1/primitives/receipts/privacy-tool-provenance-withheld.json",
+        "conformance/v0.1/primitives/receipts/privacy-region-composed.json",
+        "conformance/v0.1/primitives/receipts/privacy-parent-full-child-hidden.json",
+        "conformance/v0.1/primitives/receipts/privacy-duplicate-disclosure.json",
+        "conformance/v0.1/primitives/receipts/privacy-taint-preserved.json",
+        "conformance/v0.1/primitives/receipts/privacy-conflict.json",
+        "conformance/v0.1/primitives/receipts/privacy-whole-label-partial-plaintext.json",
+        "conformance/v0.1/primitives/receipts/privacy-signed-hash-only.json"
       ],
       "wave_04_primary_requirements_a": [
         "PRIV-001",
@@ -1575,6 +1588,35 @@
         "PRIV-043",
         "PRIV-044",
         "PRIV-045"
+      ],
+      "wave_04_primary_requirements_b": [
+        "PRIV-048",
+        "PRIV-049",
+        "PRIV-051",
+        "PRIV-052",
+        "PRIV-053",
+        "PRIV-054",
+        "PRIV-055",
+        "PRIV-056",
+        "PRIV-057",
+        "PRIV-058",
+        "PRIV-059",
+        "PRIV-060",
+        "PRIV-061",
+        "PRIV-062",
+        "PRIV-063",
+        "PRIV-064",
+        "PRIV-065",
+        "PRIV-066",
+        "PRIV-067",
+        "PRIV-068",
+        "PRIV-069",
+        "PRIV-070",
+        "PRIV-074",
+        "PRIV-075",
+        "PRIV-076",
+        "PRIV-079",
+        "PRIV-080"
       ]
     },
     {
@@ -2450,7 +2492,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 274,
-  "remaining_semantic_requirements": 497,
-  "materialization_wave": "04-privacy-a"
+  "executable_semantic_requirements": 301,
+  "remaining_semantic_requirements": 470,
+  "materialization_wave": "04-privacy-b"
 }

@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-priv-054-privacy-region-length-leakage-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PRIV-054",
+      "check_id": "privacy-region-length-leakage-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "privacy-region-hidden-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:hidden_content_means_zero_metadata_leakage"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,107 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-privacy-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-privacy-001",
+      "invoke-secret-001",
+      "exec-secret-001",
+      "result-secret-001"
+    ],
+    "records": [
+      {
+        "id": "run-privacy-001",
+        "kind": "Run",
+        "label": "privacy-hmac"
+      },
+      {
+        "id": "invoke-secret-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-privacy-001",
+        "tool_name": "secret_tool",
+        "metadata": [
+          {
+            "name": "argument_capture",
+            "value": "withheld",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "exec-secret-001",
+        "kind": "ToolExecution",
+        "run_id": "run-privacy-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-secret-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      },
+      {
+        "id": "result-secret-001",
+        "kind": "ToolResult",
+        "run_id": "run-privacy-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-secret-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "reported_status": "success"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [
+      {
+        "id": "privacy-001",
+        "kind": "PrivacyDescriptor",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "invoke-secret-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "tool_arguments_json"
+        },
+        "profile": "hmac",
+        "availability": "original_withheld_with_commitment",
+        "commitments": [
+          {
+            "method": "hmac-sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "ydsSwqkI7XBmEHGSzg771lXWT_zgzKmwyJ0ST7-nZEY"
+            },
+            "representation_basis": "utf8-text",
+            "key_ref": "test-hmac-key-001",
+            "comparison_domain": "test-domain",
+            "profile_id": "urn:c2atrace:profile:v0.1:privacy:hmac-sha256"
+          }
+        ]
+      }
+    ],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-privacy-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "XObHt1t3HeANfQsqOZ9TvIgKF9wBY81p2pOMZOup6eU"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}
