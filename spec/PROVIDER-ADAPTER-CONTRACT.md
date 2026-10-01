@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Provider Adapter Contract
 
-Status: DRAFT FOR ADVERSARIAL REVIEW.
+Status: ACCEPTED AFTER ADVERSARIAL REVIEW.
 
 Scope: provider-adapter responsibility and visibility boundary; capture capability declaration; CaptureDiagnostic; ModelInvocation / ProviderAttempt / RequestSnapshot / ModelOutput capture responsibilities; core capture levels; streaming assembly; retry/failover/hedge visibility; provider-reported metadata; request mutation; privacy-aware capture; instrumentation failure/bypass/partial capture; unknown downgrade; adapter assertions versus independently verifiable evidence.
 
@@ -1642,6 +1642,13 @@ These remain constrained by this contract.
 
 ## 31. Gate decision
 
-Provider Adapter Contract is ready for adversarial/mechanical review.
+Provider Adapter Contract: PASS AFTER ADVERSARIAL REVIEW.
 
-JSON Schema and implementation remain BLOCKED.
+The next pre-Schema work is:
+
+~~~text
+Tool Adapter Contract
+Verifier Contract
+~~~
+
+JSON Schema and implementation remain BLOCKED until those contracts pass their specification gates.
