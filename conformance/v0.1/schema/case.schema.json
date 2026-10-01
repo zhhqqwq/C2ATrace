@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:conformance:v0.1:case",
+  "title": "C2ATrace v0.1 Conformance Case",
+  "$defs": {
+    "JsonPatch": {
+      "type": "object",
+      "required": [
+        "op",
+        "path"
+      ],
+      "properties": {
+        "op": {
+          "enum": [
+            "add",
+            "remove",
+            "replace"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "value": true
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "enum": [
+                  "add",
+                  "replace"
+                ]
+              }
+            },
+            "required": [
+              "op"
+            ]
+          },
+          "then": {
+            "required": [
+              "value"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "Document": {
+      "type": "object",
+      "required": [
+        "document_id",
+        "role",
+        "source",
+        "schema_target"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "raw_object",
+            "primary_receipt",
+            "resolution_receipt",
+            "key_material",
+            "capability",
+            "external_evidence"
+          ]
+        },
+        "source": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "path"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "extract_pointer": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "inline"
+              ],
+              "properties": {
+                "inline": true
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "patches": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:c2atrace:conformance:v0.1:case#/$defs/JsonPatch"
+          }
+        },
+        "schema_target": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "case_id",
+    "protocol_version",
+    "requirement_ids",
+    "planned_test_ids",
+    "primary_enforcement",
+    "status",
+    "documents",
+    "execution",
+    "expected_result"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^c2a-v0\\.1-[a-z0-9][a-z0-9._-]*$"
+    },
+    "protocol_version": {
+      "const": "0.1"
+    },
+    "requirement_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(TM|CLAIM|GRAPH|SRC|DRV|REQ|OUT|TOOL|TRUST|TAINT|PRIV|RCPT|INTG|PAD|TAD|VFY)-[0-9]{3}$"
+      }
+    },
+    "planned_test_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "primary_enforcement": {
+      "enum": [
+        "direct_schema",
+        "mixed_schema_semantic",
+        "semantic_verifier",
+        "deterministic_vector"
+      ]
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "executable",
+        "accepted"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "urn:c2atrace:conformance:v0.1:case#/$defs/Document"
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "phases"
+      ],
+      "properties": {
+        "phases": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "schema_validate",
+              "resolve_references",
+              "graph_checks",
+              "representation_checks",
+              "privacy_checks",
+              "integrity_checks",
+              "claim_checks",
+              "aggregate_report"
+            ]
+          }
+        },
+        "resolution_set": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "verifier_goals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "expected_result": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
