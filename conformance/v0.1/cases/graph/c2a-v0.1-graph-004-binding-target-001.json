@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-graph-004-binding-target-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "GRAPH-004"
+  ],
+  "planned_test_ids": [
+    "binding-target-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "RequestBinding retains a syntactically valid snapshot Reference whose target resolves to a ContextFragment rather than RequestSnapshot.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/9/snapshot/id",
+          "value": "frag-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "GRAPH-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-graph-004",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "GRAPH-004"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-004-binding-target-001.json"
+}
