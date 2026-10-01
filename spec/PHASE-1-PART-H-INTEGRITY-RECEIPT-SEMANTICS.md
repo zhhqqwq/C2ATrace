@@ -70,9 +70,11 @@ The exact JSON field names and binary/text encodings remain unfrozen until Schem
 
 ### 3.1 Receipt role
 
-A Receipt is an immutable Package containing a defined C2ATrace Receipt Payload plus zero or more IntegrityEnvelopes.
+A Receipt is a Package identity centered on one immutable Authenticated Receipt Payload plus zero or more non-identity-defining IntegrityEnvelope attachments.
 
 Receipt is not a Run, Activity, Artifact, or Assertion.
+
+A concrete transport serialization of one Receipt ARP together with some selected embedded/detached envelope material is a Receipt Presentation. Multiple Presentations can represent the same Receipt identity.
 
 ### 3.2 Receipt identity
 
@@ -396,9 +398,9 @@ canonical_payload = JCS_UTF8(ARP)
 payload_digest = SHA256(canonical_payload)
 ~~~
 
-The payload digest is a representation commitment.
+The payload digest is a computational representation commitment under the selected digest profile/security assumptions.
 
-It is not factual truth, signer identity, capture completeness, or Receipt occurrence identity.
+It is not factual truth, signer identity, capture completeness, mathematical proof of collision impossibility, or Receipt occurrence identity.
 
 ## 16. IntegrityEnvelope
 
@@ -525,11 +527,17 @@ It does not make the representation factually true.
 
 ### 22.1 Post-signing payload mutation
 
-Changing ARP content after digest/signature creation causes the baseline canonical payload digest to differ and therefore invalidates the corresponding envelope binding.
+The verifier recomputes the baseline digest from the supplied ARP.
+
+If the recomputed digest differs from the authenticated payload digest, the corresponding envelope does not bind to the modified ARP.
+
+Digest-based tamper evidence remains computational and relies on the selected digest algorithm's security assumptions.
 
 ### 22.2 Removing a record from a signed ARP
 
-Removing or changing an included record changes the signed ARP commitment.
+Removing or changing an included record changes the canonical ARP input that must be re-digested.
+
+The modified payload retains digest-match status only if the recomputed digest actually matches the authenticated digest under the selected profile.
 
 ### 22.3 Producer omission before signing
 
@@ -947,6 +955,12 @@ After resolving ExternalReferences, the combined explicit Artifact Derivation gr
 
 Planned test: receipt-cross-receipt-derivation-cycle-001.
 
+### RCPT-051 — Receipt Presentation does not define new Receipt identity
+
+A verifier MUST NOT create a new Receipt identity solely because the same Receipt ARP is transported with different serialization wrappers, embedded/detached envelope placement, or a different subset/order of non-identity-defining IntegrityEnvelope attachments.
+
+Planned test: receipt-presentation-no-new-identity-001.
+
 ## 29. Normative Integrity requirements
 
 ### INTG-001 — Baseline canonicalization profile
@@ -1201,15 +1215,15 @@ A verifier MUST NOT claim that signature validity detects records/events omitted
 
 Planned test: integrity-pre-sign-omission-001.
 
-### INTG-043 — Post-signing ARP mutation breaks digest binding
+### INTG-043 — Recomputed digest mismatch breaks envelope binding
 
-A verifier MUST report payload-digest mismatch when the supplied ARP canonical bytes do not match the authenticated payload digest.
+A verifier MUST report payload-digest mismatch when SHA-256 recomputation over the supplied canonical ARP produces a value different from the authenticated payload digest.
 
 Planned test: integrity-post-sign-tamper-001.
 
-### INTG-044 — Deleting record from signed ARP is payload mutation
+### INTG-044 — Deleting record requires digest recomputation
 
-Removing an included ARP record after signing MUST change the canonical ARP/digest and MUST NOT retain baseline digest-match status.
+After an included ARP record is removed or changed, a verifier MUST recompute the canonical ARP digest and MUST NOT retain prior digest-match status without a fresh matching recomputation.
 
 Planned test: integrity-signed-record-deletion-001.
 
@@ -1356,6 +1370,18 @@ Planned test: integrity-signing-statement-jcs-001.
 If an IntegrityEnvelope identity is part of the protocol representation, the baseline Signing Statement MUST cryptographically bind that envelope identity so it cannot be substituted without invalidating the signature.
 
 Planned test: integrity-envelope-id-binding-001.
+
+### INTG-069 — Cryptographic integrity wording is computationally bounded
+
+A verifier MUST NOT describe SHA-256 digest matching or Ed25519 signature validity as mathematical proof that collisions, forgeries, or key compromise are impossible; results are reported under the selected cryptographic profile/security assumptions.
+
+Planned test: integrity-crypto-assumption-wording-001.
+
+### INTG-070 — Digest match is profile-relative commitment match
+
+A verifier reporting payload-digest success MUST describe it as a match under the selected canonicalization/digest profile and MUST NOT upgrade it to stronger factual/completeness claims.
+
+Planned test: integrity-digest-match-profile-relative-001.
 
 ## 30. Adversarial architecture review
 
@@ -1603,6 +1629,20 @@ The baseline Signing Statement is JCS-canonicalized before Ed25519 signing/verif
 
 Result: RESOLVED by INTG-067.
 
+### Review AJ — Same ARP shipped once with embedded signature and once with detached signature
+
+These are different Receipt Presentations of the same Receipt identity, not new Receipt occurrences, provided the ARP/Receipt identity is unchanged.
+
+Result: RESOLVED by RCPT-004 and RCPT-051.
+
+### Review AK — Modified ARP happens to have a colliding SHA-256 digest
+
+Core integrity language is computational rather than mathematical.
+
+Verifier behavior is based on recomputed profile results and does not claim collision impossibility.
+
+Result: RESOLVED by INTG-043, INTG-069, and INTG-070.
+
 ## 31. Architecture revisions caused by Part H
 
 ### 31.1 ExternalReference becomes a core Reference form
@@ -1688,8 +1728,8 @@ Embedded and detached envelopes have equivalent authentication semantics when bo
 
 Part H locks the following decisions:
 
-1. Receipt identity is package occurrence identity and is distinct from payload digest.
-2. Receipt identity denotes one immutable ARP; envelopes can be added/removed without changing ARP identity.
+1. Receipt identity is package occurrence identity centered on one immutable ARP and is distinct from payload digest or transport Presentation.
+2. Receipt identity denotes one immutable ARP; envelopes can be added/removed or embedded/detached without changing ARP identity.
 3. ARP contains all semantics-bearing Receipt payload data and excludes the signature value/envelope set.
 4. Receipt package inventory is exact for the supplied ARP but does not establish runtime history completeness.
 5. Receipt scope metadata is Producer-authored and does not imply complete coverage.
@@ -1707,7 +1747,7 @@ Part H locks the following decisions:
 17. Baseline signatures authenticate RFC 8785 JCS UTF-8 canonical bytes of a domain-separated Signing Statement binding Receipt ID, payload digest, algorithm profiles, verification-key reference, envelope identity, and interpreted envelope metadata.
 18. Embedded/detached envelopes are semantically equivalent when bound to the same ARP.
 19. Multiple envelopes are first-class and evaluated individually.
-20. Signature validity establishes key-relative cryptographic validity, not real-world signer identity, key trust, truth, completeness, or trusted time.
+20. Signature/digest validity is computationally profile-relative and establishes key-/commitment-relative cryptographic results, not mathematical collision/forgery impossibility, real-world signer identity, key trust, truth, completeness, or trusted time.
 21. Tampering with an already signed ARP is detectable; Producer omission before signing generally is not.
 22. Whole-Receipt omission/truncation can leave supplied signatures/linkage valid.
 23. Signature validity does not establish freshness/non-replay.
