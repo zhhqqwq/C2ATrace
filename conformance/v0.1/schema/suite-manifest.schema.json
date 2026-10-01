@@ -63,7 +63,8 @@
         "requirements",
         "mapped_cases",
         "accepted_cases",
-        "by_enforcement"
+        "by_enforcement",
+        "executable_cases"
       ],
       "properties": {
         "requirements": {
@@ -106,6 +107,11 @@
             }
           },
           "additionalProperties": false
+        },
+        "executable_cases": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 907
         }
       },
       "additionalProperties": false
