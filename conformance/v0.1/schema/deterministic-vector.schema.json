@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+  "title": "C2ATrace v0.1 Deterministic Vector Document",
+  "type": "object",
+  "required": [
+    "vector_id"
+  ],
+  "properties": {
+    "vector_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}
