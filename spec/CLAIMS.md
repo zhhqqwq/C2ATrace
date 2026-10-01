@@ -1,6 +1,6 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Provider Adapter Contract aligned.
+Status: Tool Adapter Contract aligned.
 
 ## 1. Claim evidence model
 
@@ -181,6 +181,17 @@ Planned test: `claim-causality-001`.
 | Adapter says stream capture complete | E4; E2 for supplied representation | Bounded | Complete only within declared application-visible capture scope |
 | No CaptureDiagnostic bypass_detected exists | P1 if used as no-bypass proof | No | Absence is not coverage proof |
 | Signed adapter/capture declaration proves instrumentation completeness | P1 | No | Signature authenticates assertion representation only |
+| ToolInvocation effective arguments were captured | E1/E2 + E4 occurrence premise | Conditional | Representation can be checked; runtime observation occurrence remains asserted |
+| ToolDecision allow/deny occurred | E4 | Yes, as assertion | Does not prove execution governance or authorization correctness |
+| ToolExecution began/completed | E4 | Yes, as application/runtime assertion | Client-side occurrence does not prove remote server receipt/commit |
+| ToolResult representation matches supplied content | E2 + E4 occurrence premise | Conditional | Representation match only; result truth/effect not established |
+| ToolResult status=success | E4/tool_reported | No external proof | Does not establish Effect or Outcome |
+| EffectObservation basis=execution_result | E1 + E4 | Conditional | Bounded result-reported effect claim, not independent verification |
+| EffectObservation basis=separate_observation | E1/E2 + E4 observation premise | Conditional | Distinct observation occurrence; truth bounded by observation source |
+| ToolExecution failed/timeout/cancelled | E4 | Yes, as lifecycle assertion | Does not prove no external Effect occurred |
+| Idempotency key reused | E1/E2 if representation available | Conditional | Does not establish exactly-once behavior |
+| Tool/server says deduplicated/queued/committed | E4/tool_reported | Yes, as reported metadata | Does not independently establish deduplication, completion, commit, or Effect |
+| Signed Tool Adapter diagnostic proves all tool paths covered | P1 | No | Bounded instrumentation assertion only |
 | Tainted request automatically taints ModelOutput | P1 / prohibited core inference | No | Would overclaim model causality |
 | Missing TaintAssertion means taint absent | P1 / prohibited inference | No | Absence of record is not a negative state |
 | Desired Outcome achieved | P1 / unsupported by core | No | OutcomeVerification outside core v0.1 |
