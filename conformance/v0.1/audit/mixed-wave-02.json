@@ -1,0 +1,28 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "02",
+  "status": "in_progress",
+  "total_requirements": 87,
+  "executable_requirements": 26,
+  "remaining_requirements": 61,
+  "newly_materialized": [
+    "c2a-v0.1-drv-002-derivation-transform-cardinality-001",
+    "c2a-v0.1-drv-003-derivation-output-cardinality-001",
+    "c2a-v0.1-graph-004-binding-target-001",
+    "c2a-v0.1-graph-008-execution-without-invocation-001",
+    "c2a-v0.1-out-003-model-attempt-owner-001",
+    "c2a-v0.1-out-028-model-response-termination-vocabulary-001",
+    "c2a-v0.1-req-001-request-attempt-invocation-cardinality-001",
+    "c2a-v0.1-req-016-request-binding-source-cardinality-001",
+    "c2a-v0.1-src-015-source-commitment-basis-001",
+    "c2a-v0.1-taint-005-taint-state-vocabulary-001",
+    "c2a-v0.1-tool-001-tool-proposal-owner-001",
+    "c2a-v0.1-tool-021-tool-decision-subject-001"
+  ],
+  "assertions": {
+    "case_and_expected_files_present": true,
+    "index_status_promoted": true,
+    "direct_schema_acceptance_unchanged": true
+  },
+  "note": "This wave expands mechanically auditable ownership, cardinality, reference-kind, commitment-basis, and vocabulary cases. Acceptance of mixed cases awaits an independent conformance runner."
+}
