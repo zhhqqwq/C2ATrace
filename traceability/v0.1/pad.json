@@ -1,0 +1,1051 @@
+{
+  "family": "PAD",
+  "count": 95,
+  "requirements": [
+    {
+      "id": "PAD-001",
+      "title": "Provider Adapter visibility is application-side",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-002",
+      "title": "Adapter boundary declaration",
+      "enforcement": "direct_schema",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-003",
+      "title": "Capture capability declaration",
+      "enforcement": "direct_schema",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-004",
+      "title": "Baseline request capability",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-005",
+      "title": "Baseline output capability",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-006",
+      "title": "Capability is not capture proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-007",
+      "title": "Unknown over boundary guessing",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-008",
+      "title": "No provider receipt inference",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-009",
+      "title": "CaptureDiagnostic is bounded",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-010",
+      "title": "CaptureDiagnostic state vocabulary",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-011",
+      "title": "Diagnostic observed is not global completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-012",
+      "title": "No no-bypass inference",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-013",
+      "title": "Capture diagnostic is assertion evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-014",
+      "title": "Logical invocation needs defensible context",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-015",
+      "title": "Distinct logical calls remain distinct",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-016",
+      "title": "Pre-attempt failure has zero attempt",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-017",
+      "title": "Accepted output requires positive selection evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-018",
+      "title": "Attempt creation follows declared boundary",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-019",
+      "title": "Hidden retry is not invented",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-020",
+      "title": "Distinct observed attempts have distinct identities",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-021",
+      "title": "Attempt disposition is lifecycle evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-022",
+      "title": "Request/response correlation is occurrence-based",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-023",
+      "title": "Provider IDs are not C2ATrace identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-024",
+      "title": "Supported/applicable request capture produces snapshot or diagnostic",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-025",
+      "title": "Unsupported request level is not synthesized",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-026",
+      "title": "Capture level classification is evidence-bound",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-027",
+      "title": "sdk_arguments is not later-level evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-028",
+      "title": "provider_payload requires actual structured capture",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-029",
+      "title": "prepared_http_body requires exact captured bytes",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-030",
+      "title": "prepared body does not include unobserved transport stages",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-031",
+      "title": "Effective snapshot selection is positive",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-032",
+      "title": "Missing intermediate level is valid",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-033",
+      "title": "Request transition requires positive evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-034",
+      "title": "Changed same-level representation gets new identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-035",
+      "title": "Reuse requires actual reuse",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-036",
+      "title": "RequestBinding stays capture-level local",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-037",
+      "title": "RequestBinding requires positive mapping",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-038",
+      "title": "Mutation outside visibility remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-039",
+      "title": "Representation comparison stays capture-local",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-040",
+      "title": "ModelOutput is application-visible result",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-041",
+      "title": "Core output cardinality",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-042",
+      "title": "Error text is not automatically ModelOutput",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-043",
+      "title": "Output occurrence multiplicity is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-044",
+      "title": "Capture extent follows instrumentation evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-045",
+      "title": "Non-streaming result uses declared result boundary",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-046",
+      "title": "Streaming support requires stream-consumption observation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-047",
+      "title": "Streaming assembly follows event semantics",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-048",
+      "title": "Unsupported stream semantics degrade precision",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-049",
+      "title": "Partial stream evidence is preserved when observed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-050",
+      "title": "Application stop is not provider completion",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-051",
+      "title": "Known dropped events prevent complete capture",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-052",
+      "title": "Incomplete tool fragments are not completed ToolProposals",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-053",
+      "title": "Chunk retention is not baseline-required",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-054",
+      "title": "Visible retry creates new attempt",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-055",
+      "title": "retry_of requires known orchestration",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-056",
+      "title": "Retry does not negate prior provider work",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-057",
+      "title": "Failover preserves per-attempt request/model metadata",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-058",
+      "title": "failover_from requires known orchestration",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-059",
+      "title": "Hedged attempts remain distinct",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-060",
+      "title": "Hedging does not create total order",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-061",
+      "title": "Losing hedge cancellation is application-side evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-062",
+      "title": "Provider metadata origin is explicit when semantically relevant",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-063",
+      "title": "Provider-reported metadata stays reported",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-064",
+      "title": "Normalized metadata is adapter-derived",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-065",
+      "title": "Provider-reported model stays separate",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-066",
+      "title": "Transport credentials are not model inputs by proximity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-067",
+      "title": "Runtime capture and Receipt disclosure are separate",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-068",
+      "title": "Privacy masking does not mutate runtime representation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-069",
+      "title": "Commitment-before-discard uses exact observed basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-070",
+      "title": "Redacted capture uses derivative identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-071",
+      "title": "Privacy does not hide known capture failure",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-072",
+      "title": "Known capture failure is explicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-073",
+      "title": "Capture failure does not fabricate representation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-074",
+      "title": "Capture failure is separate from attempt failure",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-075",
+      "title": "Adapter exception is not Provider exception",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-076",
+      "title": "Known bypass uses positive evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-077",
+      "title": "Bypass evidence does not fabricate missing provenance",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-078",
+      "title": "Multiple hooks require occurrence correlation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-079",
+      "title": "Unknown state is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-080",
+      "title": "Adapter assertions remain Producer/instrumentation assertions",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-081",
+      "title": "Representation verification does not prove runtime observation truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-082",
+      "title": "Provider receipt remains unestablished by default",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-083",
+      "title": "Provider internals remain unestablished by default",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-084",
+      "title": "Signed CaptureDiagnostic is not coverage completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-085",
+      "title": "CaptureDiagnostic identity is occurrence-based",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-086",
+      "title": "Missing diagnostic is not successful observation proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-087",
+      "title": "Conflicting diagnostics are preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-088",
+      "title": "Adapter identity/version is not implementation trust",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-089",
+      "title": "Adapter timestamps are not trusted time",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-090",
+      "title": "Response parse failure is not fabricated ModelOutput",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-091",
+      "title": "Streaming unsupported is explicit when applicable",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-092",
+      "title": "Normalized metadata needs bounded mapping basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-093",
+      "title": "CaptureDiagnostic unsupported and unavailable remain distinct",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-094",
+      "title": "Diagnostic privacy reason does not redefine capture state",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "PAD-095",
+      "title": "Adapter response capture failure preserves attempt lifecycle uncertainty",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/adapter.schema.json",
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    }
+  ]
+}
