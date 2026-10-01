@@ -196,7 +196,8 @@
               "privacy_checks",
               "integrity_checks",
               "claim_checks",
-              "aggregate_report"
+              "aggregate_report",
+              "vector_checks"
             ]
           }
         },
