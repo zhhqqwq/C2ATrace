@@ -1,0 +1,37 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:c2atrace:schema:v0.1:records",
+  "title":"C2ATrace v0.1 Runtime Record Union",
+  "$defs":{
+    "Record":{
+      "oneOf":[
+        {"$ref":"urn:c2atrace:schema:v0.1:core#/$defs/Run"},
+        {"$ref":"urn:c2atrace:schema:v0.1:source#/$defs/SourceRef"},
+        {"$ref":"urn:c2atrace:schema:v0.1:source#/$defs/SourceObservation"},
+        {"$ref":"urn:c2atrace:schema:v0.1:transform#/$defs/Transform"},
+        {"$ref":"urn:c2atrace:schema:v0.1:transform#/$defs/Derivation"},
+        {"$ref":"urn:c2atrace:schema:v0.1:request#/$defs/ModelInputComponent"},
+        {"$ref":"urn:c2atrace:schema:v0.1:request#/$defs/ContextFragment"},
+        {"$ref":"urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot"},
+        {"$ref":"urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding"},
+        {"$ref":"urn:c2atrace:schema:v0.1:model#/$defs/ModelInvocation"},
+        {"$ref":"urn:c2atrace:schema:v0.1:model#/$defs/ProviderAttempt"},
+        {"$ref":"urn:c2atrace:schema:v0.1:model#/$defs/ModelOutput"},
+        {"$ref":"urn:c2atrace:schema:v0.1:model#/$defs/TextOutput"},
+        {"$ref":"urn:c2atrace:schema:v0.1:model#/$defs/StructuredOutput"},
+        {"$ref":"urn:c2atrace:schema:v0.1:model#/$defs/UnknownOutput"},
+        {"$ref":"urn:c2atrace:schema:v0.1:tool#/$defs/ToolProposal"},
+        {"$ref":"urn:c2atrace:schema:v0.1:tool#/$defs/ToolDecision"},
+        {"$ref":"urn:c2atrace:schema:v0.1:tool#/$defs/ToolInvocation"},
+        {"$ref":"urn:c2atrace:schema:v0.1:tool#/$defs/ToolExecution"},
+        {"$ref":"urn:c2atrace:schema:v0.1:tool#/$defs/ToolResult"},
+        {"$ref":"urn:c2atrace:schema:v0.1:tool#/$defs/EffectObservation"},
+        {"$ref":"urn:c2atrace:schema:v0.1:trust-taint#/$defs/TrustAssertion"},
+        {"$ref":"urn:c2atrace:schema:v0.1:trust-taint#/$defs/TaintAssertion"},
+        {"$ref":"urn:c2atrace:schema:v0.1:adapter#/$defs/CaptureDiagnostic"},
+        {"$ref":"urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"},
+        {"$ref":"urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"}
+      ]
+    }
+  }
+}
