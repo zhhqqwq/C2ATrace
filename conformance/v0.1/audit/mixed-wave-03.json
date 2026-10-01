@@ -1,0 +1,24 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "03",
+  "status": "in_progress",
+  "total_requirements": 87,
+  "executable_requirements": 32,
+  "remaining_requirements": 55,
+  "newly_materialized": [
+    "c2a-v0.1-req-003-request-snapshot-capture-level-001",
+    "c2a-v0.1-out-007-model-attempt-terminal-disposition-001",
+    "c2a-v0.1-out-029-model-capture-extent-vocabulary-001",
+    "c2a-v0.1-tool-022-tool-decision-value-001",
+    "c2a-v0.1-tool-032-tool-execution-disposition-001",
+    "c2a-v0.1-tool-042-tool-effect-basis-001"
+  ],
+  "assertions": {
+    "case_and_expected_files_present": true,
+    "schema_negative_and_semantic_positive_paths_materialized": true,
+    "index_status_promoted": true,
+    "frozen_schema_unchanged": true,
+    "direct_schema_acceptance_unchanged": true
+  },
+  "note": "Wave 03 adds capture-level, terminal-disposition, capture-extent, decision-value, and effect-basis mixed cases. Mixed-case acceptance remains pending an independent conformance runner."
+}

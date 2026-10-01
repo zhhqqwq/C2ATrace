@@ -1,0 +1,71 @@
+{
+  "case_id": "c2a-v0.1-tool-032-tool-execution-disposition-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-032"
+  ],
+  "planned_test_ids": [
+    "tool-execution-disposition-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ToolExecution terminal_disposition is locally frozen; succeeded is rejected while completed satisfies the semantic requirement.",
+  "documents": [
+    {
+      "document_id": "invalid-execution",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "exec-invalid-disposition-001",
+          "kind": "ToolExecution",
+          "invocation": {
+            "ref_type": "local",
+            "id": "invoke-x",
+            "expected_kind": "ToolInvocation"
+          },
+          "lifecycle_state": "terminal",
+          "terminal_disposition": "succeeded"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:tool#/$defs/ToolExecution"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TOOL-032"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-032",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-032"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-032-tool-execution-disposition-001.json"
+}

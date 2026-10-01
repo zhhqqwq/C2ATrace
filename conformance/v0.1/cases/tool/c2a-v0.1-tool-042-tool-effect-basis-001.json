@@ -1,0 +1,66 @@
+{
+  "case_id": "c2a-v0.1-tool-042-tool-effect-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-042"
+  ],
+  "planned_test_ids": [
+    "tool-effect-basis-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "EffectObservation basis is required locally; omitting it is rejected while execution_result is an explicit semantic basis.",
+  "documents": [
+    {
+      "document_id": "invalid-effect",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "effect-missing-basis-001",
+          "kind": "EffectObservation",
+          "proposition": "An observed effect proposition"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:tool#/$defs/EffectObservation"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TOOL-042"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-042",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-042"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-042-tool-effect-basis-001.json"
+}

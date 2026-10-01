@@ -196,7 +196,7 @@
       "requirement_id": "TOOL-022",
       "planned_test_id": "tool-decision-value-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-022-tool-decision-value-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-022-tool-decision-value-001.json"
     },
@@ -286,7 +286,7 @@
       "requirement_id": "TOOL-032",
       "planned_test_id": "tool-execution-disposition-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-032-tool-execution-disposition-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-032-tool-execution-disposition-001.json"
     },
@@ -376,7 +376,7 @@
       "requirement_id": "TOOL-042",
       "planned_test_id": "tool-effect-basis-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-042-tool-effect-basis-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-042-tool-effect-basis-001.json"
     },
