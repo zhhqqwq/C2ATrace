@@ -1,0 +1,86 @@
+{
+  "case_id": "c2a-v0.1-req-005-request-attempt-snapshot-isolation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-005"
+  ],
+  "planned_test_ids": [
+    "request-attempt-snapshot-isolation-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "An attempt-owned RequestSnapshot is schema-valid but semantically invalid when a second ProviderAttempt designates that snapshot as its effective request.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "att-002",
+              "kind": "ProviderAttempt",
+              "run_id": "run-sr-001",
+              "invocation": {
+                "ref_type": "local",
+                "id": "inv-001",
+                "expected_kind": "ModelInvocation"
+              },
+              "lifecycle_state": "active",
+              "effective_requests": [
+                {
+                  "capture_level": "provider_payload",
+                  "snapshot": {
+                    "ref_type": "local",
+                    "id": "snap-001",
+                    "expected_kind": "RequestSnapshot"
+                  }
+                }
+              ],
+              "provider": "example-provider"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "att-002"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-005"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-005",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-005"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-005-request-attempt-snapshot-isolation-001.json"
+}

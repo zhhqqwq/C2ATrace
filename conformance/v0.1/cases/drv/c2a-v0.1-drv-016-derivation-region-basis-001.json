@@ -1,0 +1,69 @@
+{
+  "case_id": "c2a-v0.1-drv-016-derivation-region-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-016"
+  ],
+  "planned_test_ids": [
+    "derivation-region-basis-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A normative Derivation region scope requires an explicit representation basis; the baseline contributor scope records decoded_text_utf8 and a Unicode-scalar text region.",
+  "documents": [
+    {
+      "document_id": "scope-missing-basis-invalid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "extract_pointer": "/arp/records/5/contributors/0/scope",
+        "patches": [
+          {
+            "op": "remove",
+            "path": "/representation_basis"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:representation#/$defs/ArtifactScope"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "DRV-016"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-016",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-016"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-drv-016-derivation-region-basis-001.json"
+}

@@ -1,0 +1,143 @@
+{
+  "case_id": "c2a-v0.1-req-014-request-transition-order-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-014"
+  ],
+  "planned_test_ids": [
+    "request-transition-order-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A request_preparation Transform that moves from prepared_http_body back to sdk_arguments is schema-valid but violates the forward core capture-level ordering.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "snap-prepared-001",
+              "kind": "RequestSnapshot",
+              "run_id": "run-sr-001",
+              "capture_level": "prepared_http_body",
+              "attempt_owner": {
+                "ref_type": "local",
+                "id": "att-001",
+                "expected_kind": "ProviderAttempt"
+              },
+              "representation_basis": "json-data-model",
+              "representation": {
+                "representation_kind": "json",
+                "value": {
+                  "body": "prepared"
+                }
+              }
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "snap-prepared-001"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "snap-sdk-backward-001",
+              "kind": "RequestSnapshot",
+              "run_id": "run-sr-001",
+              "capture_level": "sdk_arguments",
+              "attempt_owner": {
+                "ref_type": "local",
+                "id": "att-001",
+                "expected_kind": "ProviderAttempt"
+              },
+              "representation_basis": "json-data-model",
+              "representation": {
+                "representation_kind": "json",
+                "value": {
+                  "messages": []
+                }
+              }
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "snap-sdk-backward-001"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "xf-request-backward-001",
+              "kind": "Transform",
+              "run_id": "run-sr-001",
+              "operation": "request_preparation",
+              "inputs": [
+                {
+                  "artifact": {
+                    "ref_type": "local",
+                    "id": "snap-prepared-001",
+                    "expected_kind": "RequestSnapshot"
+                  },
+                  "usage_role": "data"
+                }
+              ],
+              "generated": [
+                {
+                  "ref_type": "local",
+                  "id": "snap-sdk-backward-001",
+                  "expected_kind": "RequestSnapshot"
+                }
+              ],
+              "selected": []
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "xf-request-backward-001"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-014"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-014",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-014"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-014-request-transition-order-001.json"
+}

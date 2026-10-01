@@ -1,0 +1,72 @@
+{
+  "case_id": "c2a-v0.1-req-019-request-binding-partial-source-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-019"
+  ],
+  "planned_test_ids": [
+    "request-binding-partial-source-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A binding that targets only a text subrange is schema-valid but semantically invalid when it omits source_scope Region and thereby implies whole-component inclusion.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/arp/records/9/location",
+            "value": {
+              "location_kind": "structured_text_region",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/messages/0/content"
+              },
+              "text": {
+                "unit": "unicode_scalar",
+                "start": 0,
+                "end": 3
+              }
+            }
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-019"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-019",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-019"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-019-request-binding-partial-source-001.json"
+}

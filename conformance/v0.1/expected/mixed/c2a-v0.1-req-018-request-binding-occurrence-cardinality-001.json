@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-req-018-request-binding-occurrence-cardinality-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "binding-multi-location-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding",
+      "status": "invalid"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "REQ-018",
+      "check_id": "request-binding-occurrence-cardinality-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "bind-002"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

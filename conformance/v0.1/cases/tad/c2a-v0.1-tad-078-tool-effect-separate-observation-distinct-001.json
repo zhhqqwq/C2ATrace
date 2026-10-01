@@ -1,0 +1,72 @@
+{
+  "case_id": "c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-078"
+  ],
+  "planned_test_ids": [
+    "tool-effect-separate-observation-distinct-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A separate_observation EffectObservation must cite evidence from a distinct observation occurrence; reusing the effect-causing ToolResult as evidence is schema-valid but semantically invalid.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/arp/records/9/basis",
+            "value": "separate_observation"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/9/evidence",
+            "value": [
+              {
+                "ref_type": "local",
+                "id": "result-001",
+                "expected_kind": "ToolResult"
+              }
+            ]
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TAD-078"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-078",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool"
+    ],
+    "goals": [
+      "TAD-078"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001.json"
+}

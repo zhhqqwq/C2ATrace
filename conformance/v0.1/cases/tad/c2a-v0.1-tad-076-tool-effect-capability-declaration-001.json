@@ -1,0 +1,112 @@
+{
+  "case_id": "c2a-v0.1-tad-076-tool-effect-capability-declaration-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-076"
+  ],
+  "planned_test_ids": [
+    "tool-effect-capability-declaration-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ToolAdapterCapability must explicitly declare supported EffectObservation evidence-basis kinds; the semantic fixture authenticates a capability supporting execution_result.",
+  "documents": [
+    {
+      "document_id": "capability-missing-effect-invalid",
+      "role": "capability",
+      "source": {
+        "inline": {
+          "id": "tad-cap-076",
+          "kind": "ToolAdapterCapability",
+          "adapter_name": "test-tool-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "effective pre-execution ToolInvocation",
+          "execution_boundary": "tool execution start through terminal runtime boundary",
+          "result_boundary": "application-visible ToolResult",
+          "argument_path_schemes": [
+            "json_pointer"
+          ],
+          "proposal_association": true,
+          "decision_capture": true,
+          "streaming_result": false,
+          "retry_visibility": "direct",
+          "replay_visibility": "direct",
+          "duplicate_visibility": "direct",
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ToolAdapterCapability"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/adapter_declarations",
+            "value": [
+              {
+                "id": "tad-cap-076",
+                "kind": "ToolAdapterCapability",
+                "adapter_name": "test-tool-adapter",
+                "adapter_version": "0.1-test",
+                "invocation_boundary": "effective pre-execution ToolInvocation",
+                "execution_boundary": "tool execution start through terminal runtime boundary",
+                "result_boundary": "application-visible ToolResult",
+                "argument_path_schemes": [
+                  "json_pointer"
+                ],
+                "proposal_association": true,
+                "decision_capture": true,
+                "streaming_result": false,
+                "retry_visibility": "direct",
+                "replay_visibility": "direct",
+                "duplicate_visibility": "direct",
+                "effect_observation": [
+                  "execution_result"
+                ],
+                "privacy_profiles": [
+                  "full"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TAD-076"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-076",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool"
+    ],
+    "goals": [
+      "TAD-076"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-076-tool-effect-capability-declaration-001.json"
+}

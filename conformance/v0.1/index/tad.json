@@ -313,7 +313,7 @@
       "requirement_id": "TAD-035",
       "planned_test_id": "tool-argument-rewrite-effective-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-035-tool-argument-rewrite-effective-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-035-tool-argument-rewrite-effective-001.json"
     },
@@ -682,7 +682,7 @@
       "requirement_id": "TAD-076",
       "planned_test_id": "tool-effect-capability-declaration-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-076-tool-effect-capability-declaration-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-076-tool-effect-capability-declaration-001.json"
     },
@@ -691,7 +691,7 @@
       "requirement_id": "TAD-077",
       "planned_test_id": "tool-effect-execution-result-proposition-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001.json"
     },
@@ -700,7 +700,7 @@
       "requirement_id": "TAD-078",
       "planned_test_id": "tool-effect-separate-observation-distinct-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001.json"
     },
@@ -718,7 +718,7 @@
       "requirement_id": "TAD-080",
       "planned_test_id": "tool-effect-external-attestation-basis-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001.json"
     },
@@ -835,7 +835,7 @@
       "requirement_id": "TAD-093",
       "planned_test_id": "tool-capture-invocation-failure-explicit-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001.json"
     },
@@ -1060,7 +1060,7 @@
       "requirement_id": "TAD-118",
       "planned_test_id": "tool-proposal-invocation-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001.json"
     }

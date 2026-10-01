@@ -1,0 +1,100 @@
+{
+  "case_id": "c2a-v0.1-pad-024-provider-request-snapshot-or-diagnostic-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-024"
+  ],
+  "planned_test_ids": [
+    "provider-request-snapshot-or-diagnostic-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A declared-supported provider_payload capture that is applicable and observed is represented by the existing RequestSnapshot/effective-request pair under an authenticated ProviderAdapterCapability declaration.",
+  "documents": [
+    {
+      "document_id": "capability-valid",
+      "role": "capability",
+      "source": {
+        "inline": {
+          "id": "pad-cap-024",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "test-provider-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "logical invocation",
+          "attempt_boundary": "provider attempt",
+          "request_capture_levels": [
+            "provider_payload"
+          ],
+          "output_capture": true,
+          "streaming_output": false,
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/adapter_declarations",
+            "value": [
+              {
+                "id": "pad-cap-024",
+                "kind": "ProviderAdapterCapability",
+                "adapter_name": "test-provider-adapter",
+                "adapter_version": "0.1-test",
+                "invocation_boundary": "logical invocation",
+                "attempt_boundary": "provider attempt",
+                "request_capture_levels": [
+                  "provider_payload"
+                ],
+                "output_capture": true,
+                "streaming_output": false,
+                "privacy_profiles": [
+                  "full"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "PAD-024"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-024",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider"
+    ],
+    "goals": [
+      "PAD-024"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-pad-024-provider-request-snapshot-or-diagnostic-001.json"
+}

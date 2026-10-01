@@ -1,0 +1,94 @@
+{
+  "case_id": "c2a-v0.1-drv-019-derivation-many-to-one-contributors-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-019"
+  ],
+  "planned_test_ids": [
+    "derivation-many-to-one-contributors-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "An exact many-to-one derivation is schema-valid but semantically incomplete when the Transform has two representation-contributing data inputs and the Derivation records only one contributor.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "obs-002",
+              "kind": "SourceObservation",
+              "run_id": "run-sr-001",
+              "source_ref": {
+                "ref_type": "local",
+                "id": "src-001",
+                "expected_kind": "SourceRef"
+              },
+              "representation": {
+                "representation_kind": "text",
+                "text": "gamma",
+                "charset": "utf-8",
+                "media_type": "text/plain"
+              },
+              "observation_extent": "complete"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "obs-002"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/3/inputs/-",
+            "value": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "obs-002",
+                "expected_kind": "SourceObservation"
+              },
+              "usage_role": "data"
+            }
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "DRV-019"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-019",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-019"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-drv-019-derivation-many-to-one-contributors-001.json"
+}

@@ -1,0 +1,99 @@
+{
+  "case_id": "c2a-v0.1-priv-034-privacy-redaction-lineage-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PRIV-034"
+  ],
+  "planned_test_ids": [
+    "privacy-redaction-lineage-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "A PrivacyDescriptor can schema-validly identify an original and redacted derivative, but claiming that relationship without redaction Transform/Derivation lineage is semantically invalid.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "frag-redacted-001",
+              "kind": "ContextFragment",
+              "run_id": "run-sr-001",
+              "representation": {
+                "representation_kind": "text",
+                "text": "[REDACTED]",
+                "charset": "utf-8",
+                "media_type": "text/plain"
+              }
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "frag-redacted-001"
+          },
+          {
+            "op": "add",
+            "path": "/arp/privacy/-",
+            "value": {
+              "id": "privacy-redaction-lineage-001",
+              "kind": "PrivacyDescriptor",
+              "subject": {
+                "ref": {
+                  "ref_type": "local",
+                  "id": "frag-001",
+                  "expected_kind": "ContextFragment"
+                },
+                "representation_basis": "decoded_text_utf8"
+              },
+              "profile": "redacted",
+              "availability": "redacted_derivative_disclosed",
+              "redacted_derivative": {
+                "ref_type": "local",
+                "id": "frag-redacted-001",
+                "expected_kind": "ContextFragment"
+              }
+            }
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "privacy_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "PRIV-034"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-priv-034",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PRIV-034"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-034-privacy-redaction-lineage-001.json"
+}

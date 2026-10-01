@@ -1,0 +1,40 @@
+{
+  "layer": "mixed_schema_semantic",
+  "wave": "06-B",
+  "status": "in_progress",
+  "total_requirements": 87,
+  "executable_requirements": 83,
+  "remaining_requirements": 4,
+  "newly_materialized": [
+    "c2a-v0.1-drv-009-derivation-partial-positive-001",
+    "c2a-v0.1-drv-016-derivation-region-basis-001",
+    "c2a-v0.1-drv-019-derivation-many-to-one-contributors-001",
+    "c2a-v0.1-req-005-request-attempt-snapshot-isolation-001",
+    "c2a-v0.1-req-006-request-invocation-snapshot-reuse-001",
+    "c2a-v0.1-req-014-request-transition-order-001",
+    "c2a-v0.1-req-018-request-binding-occurrence-cardinality-001",
+    "c2a-v0.1-req-019-request-binding-partial-source-001",
+    "c2a-v0.1-tool-008-tool-proposal-invocation-lineage-001",
+    "c2a-v0.1-priv-034-privacy-redaction-lineage-001",
+    "c2a-v0.1-pad-009-provider-capture-diagnostic-scope-001",
+    "c2a-v0.1-pad-024-provider-request-snapshot-or-diagnostic-001",
+    "c2a-v0.1-tad-035-tool-argument-rewrite-effective-001",
+    "c2a-v0.1-tad-076-tool-effect-capability-declaration-001",
+    "c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001",
+    "c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001",
+    "c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001",
+    "c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001",
+    "c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001"
+  ],
+  "assertions": {
+    "derivation_relationship_cases_materialized": true,
+    "request_scope_and_transition_cases_materialized": true,
+    "tool_lineage_and_effect_cases_materialized": true,
+    "privacy_redaction_lineage_case_materialized": true,
+    "provider_capture_relationship_cases_materialized": true,
+    "tool_adapter_relationship_cases_materialized": true,
+    "schema_valid_semantic_invalid_boundaries_preserved": true,
+    "frozen_schema_unchanged": true
+  },
+  "note": "Wave 06-B materializes the remaining non-verifier complex relationship mixed cases. Four verifier-contract mixed cases remain for Wave 06-C."
+}

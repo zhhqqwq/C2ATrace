@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-drv-019-derivation-many-to-one-contributors-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "semantic-receipt",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "DRV-019",
+      "check_id": "derivation-many-to-one-contributors-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "drv-001"
+      },
+      "domain": "conformance",
+      "status": "invalid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

@@ -1,0 +1,118 @@
+{
+  "case_id": "c2a-v0.1-req-018-request-binding-occurrence-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-018"
+  ],
+  "planned_test_ids": [
+    "request-binding-occurrence-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Two distinct target occurrences of the same component are represented by two distinct RequestBinding assertions; attempting to encode multiple locations in one binding is schema-invalid.",
+  "documents": [
+    {
+      "document_id": "binding-multi-location-invalid",
+      "role": "raw_object",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "extract_pointer": "/arp/records/9",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/location",
+            "value": [
+              {
+                "location_kind": "structured_value",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/messages/0/content"
+                }
+              },
+              {
+                "location_kind": "structured_value",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/messages/0/role"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding"
+    },
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "bind-002",
+              "kind": "RequestBinding",
+              "run_id": "run-sr-001",
+              "component": {
+                "ref_type": "local",
+                "id": "frag-001",
+                "expected_kind": "ContextFragment"
+              },
+              "snapshot": {
+                "ref_type": "local",
+                "id": "snap-001",
+                "expected_kind": "RequestSnapshot"
+              },
+              "location": {
+                "location_kind": "structured_value",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/messages/0/role"
+                }
+              }
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "bind-002"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-018"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-018",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-018"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-018-request-binding-occurrence-cardinality-001.json"
+}
