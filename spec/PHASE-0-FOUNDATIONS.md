@@ -332,10 +332,10 @@ Provider Adapter Contract
         ✓ accepted
 
 Tool Adapter Contract
-        ← next semantic focus
+        ✓ accepted
 
 Verifier Contract
-        pending
+        ← final pre-Schema gate
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-H plus Provider Adapter Contract are complete; Tool Adapter Contract and Verifier Contract remain before Schema freeze.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-H plus Provider Adapter Contract and Tool Adapter Contract are complete; only the Verifier Contract remains before Schema freeze.
