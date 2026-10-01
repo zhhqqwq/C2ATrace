@@ -45,3 +45,16 @@ Primitive classification is planning/execution infrastructure. It does not chang
 - materialized foundation primitives: local reference, external reference, reference failures, graph invariants, occurrence identity
 
 The first materialized Receipt primitives live under `receipts/` and are shared by multiple cases.
+
+## Wave 02 status
+
+- executable semantic cases: 96 / 771
+- remaining semantic cases: 675
+- fully materialized primary primitive families:
+  - `prim.source.observation` — 18 / 18
+  - `prim.derivation.mapping` — 23 / 23
+  - `prim.request.binding` — 34 / 34
+- reusable primitive Receipts: 77
+- normalized semantic expected results: 96
+
+Wave 02 uses shared primitive Receipts plus case-level normative matchers. It does not change frozen protocol semantics or JSON Schema.

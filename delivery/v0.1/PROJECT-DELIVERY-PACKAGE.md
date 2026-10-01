@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-01  
-状态基线提交：`1f6fb77b68f8fc9c38b44a2e274a369ffc829731`
+状态基线提交：`3ac5a4997d6473292699e08bb1b1785b48975f0d`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases   157
+executable cases   232
 accepted cases       6
 ~~~
 
@@ -476,7 +476,7 @@ accepted cases       6
 |---|---:|---|
 | direct_schema | 6 | 6 accepted |
 | mixed_schema_semantic | 87 | 87 executable，0 remaining；acceptance pending |
-| semantic_verifier | 771 | 21 executable，750 remaining；Primitive Wave 01 in progress |
+| semantic_verifier | 771 | 96 executable，675 remaining；Primitive Waves 01-02 in progress |
 | deterministic_vector | 43 | 43 executable，0 remaining；acceptance pending |
 
 注意：这是 Conformance executability review 后的当前责任分类，也是当前工作量规划的 source of truth。
@@ -585,8 +585,8 @@ materialization complete; runner acceptance pending
 当前：
 
 ~~~text
-21 / 771 executable
-750 remaining
+96 / 771 executable
+675 remaining
 21 reusable primitive families
 771 / 771 primitive coverage assignments
 ~~~
@@ -598,7 +598,7 @@ Primitive Wave 01 已建立：
 - reusable primitive Receipts；
 - semantic expected-result layer。
 
-首批已覆盖 local/external reference resolution、dangling/ambiguous/wrong-kind、graph DAG/role separation、occurrence identity、cross-Receipt resolved-material checks。
+已覆盖 reference/graph/identity foundation，并完成 SourceRef/SourceObservation、Transform/Derivation、RequestSnapshot/RequestBinding 三个 primary primitive family 的全部 materialization。
 
 主要剩余语义包含：
 
@@ -1029,8 +1029,8 @@ FULLY VERIFIED
 当前最合适的执行顺序：
 
 ~~~text
-1. 继续 Semantic Verifier Primitive Wave 02+
-2. 将 semantic_verifier 从 21 / 771 批量推进到 771 / 771 executable
+1. 继续 Semantic Verifier Primitive Wave 03+
+2. 将 semantic_verifier 从 96 / 771 批量推进到 771 / 771 executable
 3. 完成 expected VerificationFinding matcher coverage audit
 4. 实现独立 conformance runner A
 5. 实现第二语言 runner B

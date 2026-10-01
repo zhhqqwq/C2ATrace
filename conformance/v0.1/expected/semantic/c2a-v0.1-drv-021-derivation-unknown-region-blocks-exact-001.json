@@ -22,5 +22,5 @@
     }
   ],
   "forbidden_findings": [],
-  "process_outcome": "invalidity_detected"
+  "process_outcome": "incomplete_evaluation"
 }
