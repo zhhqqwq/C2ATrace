@@ -1,0 +1,14 @@
+{
+  "finding_id": "golden-rcpt-032",
+  "check_id": "receipt-link-pinned-001",
+  "subject": {
+    "subject_kind": "receipt",
+    "receipt_id": "receipt-multi-b"
+  },
+  "domain": "comparison",
+  "status": "matched",
+  "evidence_bases": [
+    "E2"
+  ],
+  "mandatory": true
+}
