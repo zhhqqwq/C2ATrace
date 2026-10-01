@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Verifier Contract
 
-Status: DRAFT FOR ADVERSARIAL REVIEW.
+Status: ACCEPTED AFTER ADVERSARIAL REVIEW.
 
 Scope: verifier authority and trust boundary; Verification Invocation input model; parsing/profile prechecks; reference resolution; graph invariants; representation and commitment verification; privacy capability handling; Receipt canonicalization/digest/signature checks; per-envelope results; adapter assertion handling; per-claim evidence composition; typed result semantics; invalidity versus uncertainty; completeness/conflict/unsupported reporting; multi-Receipt verification; machine/human output; process exit boundary.
 
@@ -1827,6 +1827,10 @@ Schema work must encode accepted semantics rather than reopen them implicitly.
 
 ## 36. Gate decision
 
-Verifier Contract is ready for adversarial/mechanical review.
+Verifier Contract: PASS AFTER ADVERSARIAL REVIEW.
 
-JSON Schema remains BLOCKED until this contract passes.
+All pre-Schema semantic and adapter/verifier contract gates are now complete.
+
+JSON Schema freeze is UNBLOCKED and becomes the next specification phase.
+
+Implementation remains BLOCKED until Schema freeze, normative fixtures, invalid fixtures, and cross-language test vectors are completed.
