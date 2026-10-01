@@ -115,12 +115,14 @@ Traceability integrity:
 
 Primary enforcement classification:
 
-- direct_schema: 12
-- mixed_schema_semantic: 82
-- semantic_verifier: 770
+- direct_schema: 6
+- mixed_schema_semantic: 87
+- semantic_verifier: 771
 - deterministic_vector: 43
 
 The classification is an implementation responsibility map, not a verification-strength ranking.
+
+Post-freeze conformance executability audit corrected six responsibility classifications (REQ-005, REQ-006, REQ-013, REQ-014, RCPT-012, RCPT-013). This changed no protocol semantics and no frozen Schema shape.
 
 ## Schema / verifier boundary
 
