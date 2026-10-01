@@ -1,6 +1,6 @@
 # C2ATrace v0.1 — Phase 1 Part G: Privacy Semantics
 
-Status: DRAFT FOR ADVERSARIAL REVIEW.
+Status: ACCEPTED AFTER ADVERSARIAL REVIEW.
 
 Scope: package-relative privacy profiles; full / hash-only / HMAC / redacted semantics; representation disclosure versus commitment; low-entropy leakage and linkability; HMAC verifier capability; redacted representation identity; pre-/post-redaction commitments; privacy-preserving SourceObservation, RequestSnapshot, RequestBinding, Regions, and tool arguments; profile composition; verifier capability downgrade.
 
@@ -1380,6 +1380,14 @@ These remain constrained by Part G semantics.
 
 ## 27. Gate decision
 
-Phase 1 Part G is ready for adversarial/mechanical review.
+Phase 1 Part G: PASS AFTER ADVERSARIAL REVIEW.
+
+The next semantic work is:
+
+~~~text
+Integrity / Receipt semantics
+~~~
+
+Provider adapter contract, Tool adapter contract, and Verifier contract remain subsequent pre-Schema gates.
 
 JSON Schema and implementation remain BLOCKED.
