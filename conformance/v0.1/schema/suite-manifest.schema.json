@@ -40,7 +40,8 @@
         "case",
         "case_index",
         "expected_result",
-        "suite_manifest"
+        "suite_manifest",
+        "harness_input"
       ],
       "additionalProperties": {
         "type": "string",
