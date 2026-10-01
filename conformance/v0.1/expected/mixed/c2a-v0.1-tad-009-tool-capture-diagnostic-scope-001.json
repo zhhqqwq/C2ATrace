@@ -1,0 +1,38 @@
+{
+  "case_id": "c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "diagnostic-valid",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/CaptureDiagnostic",
+      "status": "valid"
+    },
+    {
+      "document_id": "diagnostic-missing-slot-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/CaptureDiagnostic",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    },
+    {
+      "document_id": "semantic-receipt",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-009",
+      "check_id": "tool-capture-diagnostic-scope-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-effect-001",
+        "object_id": "diag-tool-missing-001"
+      },
+      "domain": "conformance",
+      "status": "invalid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}
