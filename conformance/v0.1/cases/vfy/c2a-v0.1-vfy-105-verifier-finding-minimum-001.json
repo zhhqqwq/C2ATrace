@@ -1,0 +1,105 @@
+{
+  "case_id": "c2a-v0.1-vfy-105-verifier-finding-minimum-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-105"
+  ],
+  "planned_test_ids": [
+    "verifier-finding-minimum-001"
+  ],
+  "primary_enforcement": "direct_schema",
+  "status": "executable",
+  "description": "VerificationFinding must identify the check, subject/scope, result domain, and status.",
+  "documents": [
+    {
+      "document_id": "complete-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "finding_id": "finding-direct-001",
+          "check_id": "VFY-105",
+          "subject": {
+            "subject_kind": "verification_invocation"
+          },
+          "domain": "conformance",
+          "status": "valid",
+          "evidence_bases": [],
+          "mandatory": true
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationFinding"
+    },
+    {
+      "document_id": "missing-check-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "finding_id": "finding-direct-001",
+          "subject": {
+            "subject_kind": "verification_invocation"
+          },
+          "domain": "conformance",
+          "status": "valid",
+          "evidence_bases": [],
+          "mandatory": true
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationFinding"
+    },
+    {
+      "document_id": "missing-subject-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "finding_id": "finding-direct-001",
+          "check_id": "VFY-105",
+          "domain": "conformance",
+          "status": "valid",
+          "evidence_bases": [],
+          "mandatory": true
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationFinding"
+    },
+    {
+      "document_id": "missing-domain-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "finding_id": "finding-direct-001",
+          "check_id": "VFY-105",
+          "subject": {
+            "subject_kind": "verification_invocation"
+          },
+          "status": "valid",
+          "evidence_bases": [],
+          "mandatory": true
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationFinding"
+    },
+    {
+      "document_id": "missing-status-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "finding_id": "finding-direct-001",
+          "check_id": "VFY-105",
+          "subject": {
+            "subject_kind": "verification_invocation"
+          },
+          "domain": "conformance",
+          "evidence_bases": [],
+          "mandatory": true
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationFinding"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/direct/c2a-v0.1-vfy-105-verifier-finding-minimum-001.json"
+}
