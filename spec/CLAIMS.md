@@ -1,6 +1,6 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Phase 1 Part G aligned.
+Status: Phase 1 Part H aligned.
 
 ## 1. Claim evidence model
 
@@ -163,6 +163,15 @@ Planned test: `claim-causality-001`.
 | Redacted derivative proves original plaintext | P1 | No | Prohibited evidence-scope upgrade |
 | Whole commitment proves hidden RequestBinding sublocation | P1 | No | Needs target representation or recognized inclusion proof |
 | hash_only/hmac proves global confidentiality | P1 | No | Privacy is package-relative and metadata/linkability can leak |
+| Receipt package inventory is complete for supplied ARP | E1/E2 | Conditional | Package membership only, not runtime/history completeness |
+| ExternalReference uniquely resolves | E1 plus supplied Resolution Set | Conditional | Resolution only; exact target payload binding requires pin |
+| ExternalReference payload pin matches | E2 | Conditional | Binds target ARP commitment, not signer/truth/completeness |
+| ReceiptLink target digest matches | E2 | Conditional | Supplied linkage only, not adjacency/global history |
+| ARP SHA-256 digest matches | E2 | Yes under selected profile | Computational commitment match, not factual truth |
+| Ed25519 signature verifies | E3 | Yes under key/profile | Key-relative cryptographic validity only |
+| Verification key belongs to named organization/person | E4 or external trust profile | No by core signature alone | Key label/reference is not real-world identity proof |
+| Signed Receipt is complete history | P1 | No | Signature/linkage cannot prove omitted records/Receipts do not exist |
+| Signed hash-only/redacted Receipt signs hidden plaintext directly | P1 | No | Signature authenticates disclosed ARP commitment/redacted evidence only |
 | Tainted request automatically taints ModelOutput | P1 / prohibited core inference | No | Would overclaim model causality |
 | Missing TaintAssertion means taint absent | P1 / prohibited inference | No | Absence of record is not a negative state |
 | Desired Outcome achieved | P1 / unsupported by core | No | OutcomeVerification outside core v0.1 |
