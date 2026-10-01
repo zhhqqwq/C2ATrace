@@ -5,8 +5,12 @@
     {
       "id": "PAD-001",
       "title": "Provider Adapter visibility is application-side",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-visibility-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -16,8 +20,12 @@
     {
       "id": "PAD-002",
       "title": "Adapter boundary declaration",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-boundary-declaration-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -27,8 +35,12 @@
     {
       "id": "PAD-003",
       "title": "Capture capability declaration",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-capability-declaration-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -38,8 +50,13 @@
     {
       "id": "PAD-004",
       "title": "Baseline request capability",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-min-request-level-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -49,8 +66,12 @@
     {
       "id": "PAD-005",
       "title": "Baseline output capability",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-output-capability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -60,8 +81,12 @@
     {
       "id": "PAD-006",
       "title": "Capability is not capture proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-capability-not-observation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -71,8 +96,12 @@
     {
       "id": "PAD-007",
       "title": "Unknown over boundary guessing",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-boundary-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -82,8 +111,12 @@
     {
       "id": "PAD-008",
       "title": "No provider receipt inference",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-no-provider-receipt-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -93,8 +126,13 @@
     {
       "id": "PAD-009",
       "title": "CaptureDiagnostic is bounded",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-scope-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -104,8 +142,13 @@
     {
       "id": "PAD-010",
       "title": "CaptureDiagnostic state vocabulary",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-state-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -115,8 +158,12 @@
     {
       "id": "PAD-011",
       "title": "Diagnostic observed is not global completeness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-observed-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -126,8 +173,12 @@
     {
       "id": "PAD-012",
       "title": "No no-bypass inference",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-no-bypass-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -137,8 +188,12 @@
     {
       "id": "PAD-013",
       "title": "Capture diagnostic is assertion evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-asserted-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -148,8 +203,12 @@
     {
       "id": "PAD-014",
       "title": "Logical invocation needs defensible context",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-invocation-context-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -159,8 +218,12 @@
     {
       "id": "PAD-015",
       "title": "Distinct logical calls remain distinct",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-invocation-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -170,8 +233,12 @@
     {
       "id": "PAD-016",
       "title": "Pre-attempt failure has zero attempt",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-pre-attempt-no-fake-attempt-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -181,8 +248,12 @@
     {
       "id": "PAD-017",
       "title": "Accepted output requires positive selection evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-accepted-output-positive-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -192,8 +263,12 @@
     {
       "id": "PAD-018",
       "title": "Attempt creation follows declared boundary",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-attempt-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -203,8 +278,12 @@
     {
       "id": "PAD-019",
       "title": "Hidden retry is not invented",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-hidden-retry-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -214,8 +293,12 @@
     {
       "id": "PAD-020",
       "title": "Distinct observed attempts have distinct identities",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-attempt-distinct-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -225,8 +308,12 @@
     {
       "id": "PAD-021",
       "title": "Attempt disposition is lifecycle evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-attempt-disposition-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -236,8 +323,12 @@
     {
       "id": "PAD-022",
       "title": "Request/response correlation is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-attempt-correlation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -247,8 +338,12 @@
     {
       "id": "PAD-023",
       "title": "Provider IDs are not C2ATrace identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-id-not-c2a-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -258,8 +353,13 @@
     {
       "id": "PAD-024",
       "title": "Supported/applicable request capture produces snapshot or diagnostic",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-request-snapshot-or-diagnostic-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -269,8 +369,12 @@
     {
       "id": "PAD-025",
       "title": "Unsupported request level is not synthesized",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-no-synthetic-level-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -280,8 +384,12 @@
     {
       "id": "PAD-026",
       "title": "Capture level classification is evidence-bound",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-level-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -291,8 +399,12 @@
     {
       "id": "PAD-027",
       "title": "sdk_arguments is not later-level evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-sdk-args-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -302,8 +414,12 @@
     {
       "id": "PAD-028",
       "title": "provider_payload requires actual structured capture",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-payload-no-reconstruction-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -313,8 +429,12 @@
     {
       "id": "PAD-029",
       "title": "prepared_http_body requires exact captured bytes",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-body-exact-capture-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -324,8 +444,12 @@
     {
       "id": "PAD-030",
       "title": "prepared body does not include unobserved transport stages",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-body-transport-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -335,8 +459,12 @@
     {
       "id": "PAD-031",
       "title": "Effective snapshot selection is positive",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-effective-snapshot-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -346,8 +474,12 @@
     {
       "id": "PAD-032",
       "title": "Missing intermediate level is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-missing-level-valid-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -357,8 +489,12 @@
     {
       "id": "PAD-033",
       "title": "Request transition requires positive evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-request-transition-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -368,8 +504,12 @@
     {
       "id": "PAD-034",
       "title": "Changed same-level representation gets new identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-request-mutation-new-snapshot-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -379,8 +519,12 @@
     {
       "id": "PAD-035",
       "title": "Reuse requires actual reuse",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-request-reuse-not-equality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -390,8 +534,12 @@
     {
       "id": "PAD-036",
       "title": "RequestBinding stays capture-level local",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-binding-level-local-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -401,8 +549,12 @@
     {
       "id": "PAD-037",
       "title": "RequestBinding requires positive mapping",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-binding-positive-mapping-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -412,8 +564,12 @@
     {
       "id": "PAD-038",
       "title": "Mutation outside visibility remains unknown",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-request-post-boundary-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -423,8 +579,12 @@
     {
       "id": "PAD-039",
       "title": "Representation comparison stays capture-local",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-request-comparison-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -434,8 +594,12 @@
     {
       "id": "PAD-040",
       "title": "ModelOutput is application-visible result",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-output-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -445,8 +609,13 @@
     {
       "id": "PAD-041",
       "title": "Core output cardinality",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-output-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -456,8 +625,12 @@
     {
       "id": "PAD-042",
       "title": "Error text is not automatically ModelOutput",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-error-not-model-output-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -467,8 +640,12 @@
     {
       "id": "PAD-043",
       "title": "Output occurrence multiplicity is preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-outputitem-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -478,8 +655,12 @@
     {
       "id": "PAD-044",
       "title": "Capture extent follows instrumentation evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-output-capture-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -489,8 +670,12 @@
     {
       "id": "PAD-045",
       "title": "Non-streaming result uses declared result boundary",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-nonstream-result-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -500,8 +685,12 @@
     {
       "id": "PAD-046",
       "title": "Streaming support requires stream-consumption observation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-consumption-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -511,8 +700,12 @@
     {
       "id": "PAD-047",
       "title": "Streaming assembly follows event semantics",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-event-semantics-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -522,8 +715,12 @@
     {
       "id": "PAD-048",
       "title": "Unsupported stream semantics degrade precision",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-unsupported-degrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -533,8 +730,12 @@
     {
       "id": "PAD-049",
       "title": "Partial stream evidence is preserved when observed",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-partial-preserve-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -544,8 +745,12 @@
     {
       "id": "PAD-050",
       "title": "Application stop is not provider completion",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-app-stop-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -555,8 +760,12 @@
     {
       "id": "PAD-051",
       "title": "Known dropped events prevent complete capture",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-drop-no-complete-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -566,8 +775,12 @@
     {
       "id": "PAD-052",
       "title": "Incomplete tool fragments are not completed ToolProposals",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-tool-fragment-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -577,8 +790,12 @@
     {
       "id": "PAD-053",
       "title": "Chunk retention is not baseline-required",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-chunks-optional-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -588,8 +805,12 @@
     {
       "id": "PAD-054",
       "title": "Visible retry creates new attempt",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-retry-new-attempt-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -599,8 +820,12 @@
     {
       "id": "PAD-055",
       "title": "retry_of requires known orchestration",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-retry-relation-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -610,8 +835,12 @@
     {
       "id": "PAD-056",
       "title": "Retry does not negate prior provider work",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-retry-no-prior-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -621,8 +850,12 @@
     {
       "id": "PAD-057",
       "title": "Failover preserves per-attempt request/model metadata",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-failover-metadata-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -632,8 +865,12 @@
     {
       "id": "PAD-058",
       "title": "failover_from requires known orchestration",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-failover-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -643,8 +880,12 @@
     {
       "id": "PAD-059",
       "title": "Hedged attempts remain distinct",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-hedge-distinct-attempts-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -654,8 +895,12 @@
     {
       "id": "PAD-060",
       "title": "Hedging does not create total order",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-hedge-no-total-order-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -665,8 +910,12 @@
     {
       "id": "PAD-061",
       "title": "Losing hedge cancellation is application-side evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-hedge-cancel-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -676,8 +925,12 @@
     {
       "id": "PAD-062",
       "title": "Provider metadata origin is explicit when semantically relevant",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-metadata-origin-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -687,8 +940,12 @@
     {
       "id": "PAD-063",
       "title": "Provider-reported metadata stays reported",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-metadata-reported-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -698,8 +955,12 @@
     {
       "id": "PAD-064",
       "title": "Normalized metadata is adapter-derived",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-metadata-normalized-origin-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -709,8 +970,12 @@
     {
       "id": "PAD-065",
       "title": "Provider-reported model stays separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-model-identity-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -720,8 +985,12 @@
     {
       "id": "PAD-066",
       "title": "Transport credentials are not model inputs by proximity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-transport-secret-not-model-input-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -731,8 +1000,12 @@
     {
       "id": "PAD-067",
       "title": "Runtime capture and Receipt disclosure are separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-privacy-capture-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -742,8 +1015,12 @@
     {
       "id": "PAD-068",
       "title": "Privacy masking does not mutate runtime representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-privacy-placeholder-no-mutation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -753,8 +1030,12 @@
     {
       "id": "PAD-069",
       "title": "Commitment-before-discard uses exact observed basis",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-privacy-commit-before-discard-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -764,8 +1045,12 @@
     {
       "id": "PAD-070",
       "title": "Redacted capture uses derivative identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-privacy-redacted-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -775,8 +1060,12 @@
     {
       "id": "PAD-071",
       "title": "Privacy does not hide known capture failure",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-privacy-no-failure-laundering-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -786,8 +1075,12 @@
     {
       "id": "PAD-072",
       "title": "Known capture failure is explicit",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-failure-explicit-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -797,8 +1090,12 @@
     {
       "id": "PAD-073",
       "title": "Capture failure does not fabricate representation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-failure-no-fabrication-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -808,8 +1105,12 @@
     {
       "id": "PAD-074",
       "title": "Capture failure is separate from attempt failure",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-vs-attempt-failure-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -819,8 +1120,12 @@
     {
       "id": "PAD-075",
       "title": "Adapter exception is not Provider exception",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-error-origin-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -830,8 +1135,12 @@
     {
       "id": "PAD-076",
       "title": "Known bypass uses positive evidence",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-bypass-positive-evidence-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -841,8 +1150,12 @@
     {
       "id": "PAD-077",
       "title": "Bypass evidence does not fabricate missing provenance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-bypass-no-fabrication-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -852,8 +1165,12 @@
     {
       "id": "PAD-078",
       "title": "Multiple hooks require occurrence correlation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-multihook-correlation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -863,8 +1180,12 @@
     {
       "id": "PAD-079",
       "title": "Unknown state is preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-unknown-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -874,8 +1195,12 @@
     {
       "id": "PAD-080",
       "title": "Adapter assertions remain Producer/instrumentation assertions",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-assertion-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -885,8 +1210,12 @@
     {
       "id": "PAD-081",
       "title": "Representation verification does not prove runtime observation truth",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-representation-not-observation-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -896,8 +1225,12 @@
     {
       "id": "PAD-082",
       "title": "Provider receipt remains unestablished by default",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-provider-receipt-unestablished-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -907,8 +1240,12 @@
     {
       "id": "PAD-083",
       "title": "Provider internals remain unestablished by default",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-internals-unestablished-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -918,8 +1255,12 @@
     {
       "id": "PAD-084",
       "title": "Signed CaptureDiagnostic is not coverage completeness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-no-global-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -929,8 +1270,12 @@
     {
       "id": "PAD-085",
       "title": "CaptureDiagnostic identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -940,8 +1285,12 @@
     {
       "id": "PAD-086",
       "title": "Missing diagnostic is not successful observation proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-absence-not-success-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -951,8 +1300,12 @@
     {
       "id": "PAD-087",
       "title": "Conflicting diagnostics are preserved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-diagnostic-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -962,8 +1315,12 @@
     {
       "id": "PAD-088",
       "title": "Adapter identity/version is not implementation trust",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-version-no-trust-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -973,8 +1330,12 @@
     {
       "id": "PAD-089",
       "title": "Adapter timestamps are not trusted time",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-adapter-time-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -984,8 +1345,12 @@
     {
       "id": "PAD-090",
       "title": "Response parse failure is not fabricated ModelOutput",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-response-parse-failure-no-output-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -995,8 +1360,12 @@
     {
       "id": "PAD-091",
       "title": "Streaming unsupported is explicit when applicable",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-stream-unsupported-explicit-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -1006,8 +1375,12 @@
     {
       "id": "PAD-092",
       "title": "Normalized metadata needs bounded mapping basis",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-metadata-normalization-basis-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -1017,8 +1390,12 @@
     {
       "id": "PAD-093",
       "title": "CaptureDiagnostic unsupported and unavailable remain distinct",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-unsupported-vs-unavailable-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -1028,8 +1405,12 @@
     {
       "id": "PAD-094",
       "title": "Diagnostic privacy reason does not redefine capture state",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-capture-privacy-reason-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
@@ -1039,8 +1420,12 @@
     {
       "id": "PAD-095",
       "title": "Adapter response capture failure preserves attempt lifecycle uncertainty",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PROVIDER-ADAPTER-CONTRACT.md",
+      "planned_test": "provider-response-capture-lifecycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/adapter.schema.json",
         "schema/v0.1/model.schema.json",
