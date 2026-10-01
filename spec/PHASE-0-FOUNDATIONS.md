@@ -4,7 +4,7 @@ Status: REVIEWED AND REVISED.
 
 Scope: Threat Model, Claim Matrix, Terminology, Core Artifact/Event Graph.
 
-JSON Schema: NOT FROZEN.
+JSON Schema: FROZEN v0.1 AFTER AUDIT.
 
 Implementation: NOT STARTED.
 
@@ -150,7 +150,7 @@ A Transform using an Artifact and generating another Artifact does not, by itsel
 | supported_by | EffectObservation | Artifact | Evidence Assertion |
 | diagnoses | CaptureDiagnostic | bounded instrumentation subject/scope | Instrumentation Assertion |
 
-Exact wire names remain unfrozen.
+Concrete v0.1 wire names are frozen in `schema/v0.1/`; semantic relation names in this document remain conceptual where the Schema encodes them structurally.
 
 ## 6. Core graph invariants
 
@@ -340,7 +340,10 @@ Verifier Contract
         ✓ accepted
 
 JSON Schema freeze
+        ✓ accepted / frozen
+
+Conformance fixtures / cross-language vectors
         ← next phase
 ~~~
 
-Project gate: all Phase 0/Phase 1 semantic work and Provider/Tool Adapter plus Verifier contracts are complete. JSON Schema freeze is now UNBLOCKED and is the next phase. Implementation remains blocked until Schema freeze and conformance fixtures/test vectors are complete.
+Project gate: all Phase 0/Phase 1 semantic work, Provider/Tool Adapter and Verifier contracts, and the v0.1 JSON Schema freeze are complete. The next gate is the complete normative fixture / invalid-fixture / cross-language conformance-vector suite. Independent Verifier and SDK implementation remain blocked until that suite passes.
