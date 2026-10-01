@@ -8,7 +8,8 @@
       "planned_test_id": "privacy-package-relative-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-001-privacy-package-relative-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-001-privacy-package-relative-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-001-privacy-package-relative-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-002-privacy-not-runtime-nonobservation-001",
@@ -16,7 +17,8 @@
       "planned_test_id": "privacy-not-runtime-nonobservation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-002-privacy-not-runtime-nonobservation-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-002-privacy-not-runtime-nonobservation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-002-privacy-not-runtime-nonobservation-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-003-privacy-not-deletion-proof-001",
@@ -24,7 +26,8 @@
       "planned_test_id": "privacy-not-deletion-proof-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-003-privacy-not-deletion-proof-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-003-privacy-not-deletion-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-003-privacy-not-deletion-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-004-privacy-not-global-disclosure-proof-001",
@@ -32,7 +35,8 @@
       "planned_test_id": "privacy-not-global-disclosure-proof-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-004-privacy-not-global-disclosure-proof-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-004-privacy-not-global-disclosure-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-004-privacy-not-global-disclosure-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001",
@@ -40,7 +44,8 @@
       "planned_test_id": "privacy-no-provenance-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-005-privacy-no-provenance-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-006-privacy-full-original-001",
@@ -48,7 +53,8 @@
       "planned_test_id": "privacy-full-original-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-006-privacy-full-original-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-006-privacy-full-original-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-006-privacy-full-original-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-007-privacy-hash-only-withheld-001",
@@ -56,7 +62,8 @@
       "planned_test_id": "privacy-hash-only-withheld-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-007-privacy-hash-only-withheld-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-007-privacy-hash-only-withheld-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-007-privacy-hash-only-withheld-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-008-privacy-hash-only-profile-001",
@@ -64,7 +71,8 @@
       "planned_test_id": "privacy-hash-only-profile-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-008-privacy-hash-only-profile-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-008-privacy-hash-only-profile-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-008-privacy-hash-only-profile-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-009-privacy-hmac-withheld-001",
@@ -72,7 +80,8 @@
       "planned_test_id": "privacy-hmac-withheld-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-009-privacy-hmac-withheld-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-009-privacy-hmac-withheld-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-009-privacy-hmac-withheld-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-010-privacy-hmac-profile-001",
@@ -80,7 +89,8 @@
       "planned_test_id": "privacy-hmac-profile-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-010-privacy-hmac-profile-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-010-privacy-hmac-profile-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-010-privacy-hmac-profile-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-011-privacy-redacted-no-identity-substitution-001",
@@ -88,7 +98,8 @@
       "planned_test_id": "privacy-redacted-no-identity-substitution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-011-privacy-redacted-no-identity-substitution-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-011-privacy-redacted-no-identity-substitution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-011-privacy-redacted-no-identity-substitution-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-012-privacy-mixed-profile-001",
@@ -96,7 +107,8 @@
       "planned_test_id": "privacy-mixed-profile-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-012-privacy-mixed-profile-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-012-privacy-mixed-profile-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-012-privacy-mixed-profile-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-013-privacy-profile-unknown-001",
@@ -104,7 +116,8 @@
       "planned_test_id": "privacy-profile-unknown-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-013-privacy-profile-unknown-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-013-privacy-profile-unknown-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-013-privacy-profile-unknown-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-014-privacy-withheld-not-empty-001",
@@ -112,7 +125,8 @@
       "planned_test_id": "privacy-withheld-not-empty-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-014-privacy-withheld-not-empty-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-014-privacy-withheld-not-empty-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-014-privacy-withheld-not-empty-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-015-privacy-withheld-not-absent-001",
@@ -120,7 +134,8 @@
       "planned_test_id": "privacy-withheld-not-absent-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-015-privacy-withheld-not-absent-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-015-privacy-withheld-not-absent-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-015-privacy-withheld-not-absent-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-016-privacy-placeholder-not-value-001",
@@ -128,7 +143,8 @@
       "planned_test_id": "privacy-placeholder-not-value-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-016-privacy-placeholder-not-value-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-016-privacy-placeholder-not-value-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-016-privacy-placeholder-not-value-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-017-privacy-withholding-no-new-artifact-001",
@@ -136,7 +152,8 @@
       "planned_test_id": "privacy-withholding-no-new-artifact-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-017-privacy-withholding-no-new-artifact-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-017-privacy-withholding-no-new-artifact-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-017-privacy-withholding-no-new-artifact-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-018-privacy-redacted-new-artifact-001",
@@ -144,7 +161,8 @@
       "planned_test_id": "privacy-redacted-new-artifact-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-018-privacy-redacted-new-artifact-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-018-privacy-redacted-new-artifact-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-018-privacy-redacted-new-artifact-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-019-privacy-reference-resolution-001",
@@ -152,7 +170,8 @@
       "planned_test_id": "privacy-reference-resolution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-019-privacy-reference-resolution-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-019-privacy-reference-resolution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-019-privacy-reference-resolution-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-020-privacy-commitment-scope-001",
@@ -160,7 +179,8 @@
       "planned_test_id": "privacy-commitment-scope-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-020-privacy-commitment-scope-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-020-privacy-commitment-scope-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-020-privacy-commitment-scope-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-021-privacy-commitment-basis-001",
@@ -168,7 +188,8 @@
       "planned_test_id": "privacy-commitment-basis-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-021-privacy-commitment-basis-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-021-privacy-commitment-basis-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-021-privacy-commitment-basis-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-022-privacy-commitment-profile-001",
@@ -176,7 +197,8 @@
       "planned_test_id": "privacy-commitment-profile-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-022-privacy-commitment-profile-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-022-privacy-commitment-profile-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-022-privacy-commitment-profile-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-023-privacy-commitment-compatibility-001",
@@ -184,7 +206,8 @@
       "planned_test_id": "privacy-commitment-compatibility-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-023-privacy-commitment-compatibility-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-023-privacy-commitment-compatibility-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-023-privacy-commitment-compatibility-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-024-privacy-commitment-equality-bounded-001",
@@ -192,7 +215,8 @@
       "planned_test_id": "privacy-commitment-equality-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-024-privacy-commitment-equality-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-024-privacy-commitment-equality-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-024-privacy-commitment-equality-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-025-privacy-hash-not-confidentiality-001",
@@ -200,7 +224,8 @@
       "planned_test_id": "privacy-hash-not-confidentiality-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-025-privacy-hash-not-confidentiality-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-025-privacy-hash-not-confidentiality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-025-privacy-hash-not-confidentiality-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-026-privacy-hash-low-entropy-001",
@@ -208,7 +233,8 @@
       "planned_test_id": "privacy-hash-low-entropy-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-026-privacy-hash-low-entropy-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-026-privacy-hash-low-entropy-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-026-privacy-hash-low-entropy-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-027-privacy-hash-linkability-001",
@@ -216,7 +242,8 @@
       "planned_test_id": "privacy-hash-linkability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-027-privacy-hash-linkability-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-027-privacy-hash-linkability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-027-privacy-hash-linkability-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-028-privacy-hmac-secret-required-001",
@@ -224,7 +251,8 @@
       "planned_test_id": "privacy-hmac-secret-required-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-028-privacy-hmac-secret-required-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-028-privacy-hmac-secret-required-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-028-privacy-hmac-secret-required-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-029-privacy-hmac-not-public-001",
@@ -232,7 +260,8 @@
       "planned_test_id": "privacy-hmac-not-public-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-029-privacy-hmac-not-public-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-029-privacy-hmac-not-public-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-029-privacy-hmac-not-public-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001",
@@ -240,7 +269,8 @@
       "planned_test_id": "privacy-hmac-authorized-independent-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-030-privacy-hmac-authorized-independent-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-031-privacy-hmac-no-raw-key-001",
@@ -248,7 +278,8 @@
       "planned_test_id": "privacy-hmac-no-raw-key-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-031-privacy-hmac-no-raw-key-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-031-privacy-hmac-no-raw-key-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-031-privacy-hmac-no-raw-key-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001",
@@ -256,7 +287,8 @@
       "planned_test_id": "privacy-hmac-domain-compatibility-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-032-privacy-hmac-domain-compatibility-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-033-privacy-hmac-no-unlinkability-001",
@@ -264,7 +296,8 @@
       "planned_test_id": "privacy-hmac-no-unlinkability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-033-privacy-hmac-no-unlinkability-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-033-privacy-hmac-no-unlinkability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-033-privacy-hmac-no-unlinkability-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-034-privacy-redaction-lineage-001",
@@ -272,7 +305,8 @@
       "planned_test_id": "privacy-redaction-lineage-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-034-privacy-redaction-lineage-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-034-privacy-redaction-lineage-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-priv-034-privacy-redaction-lineage-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-035-privacy-redaction-no-correctness-001",
@@ -280,7 +314,8 @@
       "planned_test_id": "privacy-redaction-no-correctness-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-035-privacy-redaction-no-correctness-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-035-privacy-redaction-no-correctness-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-035-privacy-redaction-no-correctness-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-036-privacy-redaction-commitment-separation-001",
@@ -288,7 +323,8 @@
       "planned_test_id": "privacy-redaction-commitment-separation-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-036-privacy-redaction-commitment-separation-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-036-privacy-redaction-commitment-separation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-036-privacy-redaction-commitment-separation-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-037-privacy-redacted-not-original-001",
@@ -296,7 +332,8 @@
       "planned_test_id": "privacy-redacted-not-original-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-037-privacy-redacted-not-original-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-037-privacy-redacted-not-original-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-037-privacy-redacted-not-original-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-038-privacy-original-commitment-no-redaction-proof-001",
@@ -304,7 +341,8 @@
       "planned_test_id": "privacy-original-commitment-no-redaction-proof-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-038-privacy-original-commitment-no-redaction-proof-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-038-privacy-original-commitment-no-redaction-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-038-privacy-original-commitment-no-redaction-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001",
@@ -312,7 +350,8 @@
       "planned_test_id": "privacy-signature-no-redaction-proof-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-039-privacy-signature-no-redaction-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-040-privacy-source-commitment-only-001",
@@ -320,7 +359,8 @@
       "planned_test_id": "privacy-source-commitment-only-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-040-privacy-source-commitment-only-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-040-privacy-source-commitment-only-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-040-privacy-source-commitment-only-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-041-privacy-source-identity-stable-001",
@@ -328,7 +368,8 @@
       "planned_test_id": "privacy-source-identity-stable-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-041-privacy-source-identity-stable-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-041-privacy-source-identity-stable-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-041-privacy-source-identity-stable-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-042-privacy-source-verification-downgrade-001",
@@ -336,7 +377,8 @@
       "planned_test_id": "privacy-source-verification-downgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-042-privacy-source-verification-downgrade-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-042-privacy-source-verification-downgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-042-privacy-source-verification-downgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-043-privacy-request-commitment-only-001",
@@ -344,7 +386,8 @@
       "planned_test_id": "privacy-request-commitment-only-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-043-privacy-request-commitment-only-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-043-privacy-request-commitment-only-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-043-privacy-request-commitment-only-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-044-privacy-request-capture-level-stable-001",
@@ -352,7 +395,8 @@
       "planned_test_id": "privacy-request-capture-level-stable-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-044-privacy-request-capture-level-stable-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-044-privacy-request-capture-level-stable-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-044-privacy-request-capture-level-stable-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-045-privacy-request-no-provider-receipt-001",
@@ -360,7 +404,8 @@
       "planned_test_id": "privacy-request-no-provider-receipt-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-045-privacy-request-no-provider-receipt-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-045-privacy-request-no-provider-receipt-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-045-privacy-request-no-provider-receipt-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-046-privacy-whole-hash-equality-001",
@@ -368,7 +413,8 @@
       "planned_test_id": "privacy-whole-hash-equality-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-046-privacy-whole-hash-equality-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-046-privacy-whole-hash-equality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-046-privacy-whole-hash-equality-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-047-privacy-whole-hmac-match-001",
@@ -376,7 +422,8 @@
       "planned_test_id": "privacy-whole-hmac-match-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-047-privacy-whole-hmac-match-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-047-privacy-whole-hmac-match-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-047-privacy-whole-hmac-match-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-048-privacy-binding-whole-commitment-no-location-001",
@@ -384,7 +431,8 @@
       "planned_test_id": "privacy-binding-whole-commitment-no-location-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-048-privacy-binding-whole-commitment-no-location-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-048-privacy-binding-whole-commitment-no-location-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-048-privacy-binding-whole-commitment-no-location-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-049-privacy-binding-subregion-no-membership-001",
@@ -392,7 +440,8 @@
       "planned_test_id": "privacy-binding-subregion-no-membership-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-049-privacy-binding-subregion-no-membership-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-049-privacy-binding-subregion-no-membership-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-049-privacy-binding-subregion-no-membership-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001",
@@ -400,7 +449,8 @@
       "planned_test_id": "privacy-binding-redacted-no-original-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-050-privacy-binding-redacted-no-original-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-051-privacy-binding-hidden-location-001",
@@ -408,7 +458,8 @@
       "planned_test_id": "privacy-binding-hidden-location-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-051-privacy-binding-hidden-location-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-051-privacy-binding-hidden-location-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-051-privacy-binding-hidden-location-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-052-privacy-binding-no-upgrade-001",
@@ -416,7 +467,8 @@
       "planned_test_id": "privacy-binding-no-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-052-privacy-binding-no-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-052-privacy-binding-no-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-052-privacy-binding-no-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-053-privacy-location-metadata-leakage-001",
@@ -424,7 +476,8 @@
       "planned_test_id": "privacy-location-metadata-leakage-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-053-privacy-location-metadata-leakage-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-053-privacy-location-metadata-leakage-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-053-privacy-location-metadata-leakage-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-054-privacy-region-length-leakage-001",
@@ -432,7 +485,8 @@
       "planned_test_id": "privacy-region-length-leakage-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-054-privacy-region-length-leakage-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-054-privacy-region-length-leakage-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-054-privacy-region-length-leakage-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-055-privacy-tool-arg-withheld-not-missing-001",
@@ -440,7 +494,8 @@
       "planned_test_id": "privacy-tool-arg-withheld-not-missing-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-055-privacy-tool-arg-withheld-not-missing-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-055-privacy-tool-arg-withheld-not-missing-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-055-privacy-tool-arg-withheld-not-missing-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-056-privacy-tool-placeholder-not-effective-001",
@@ -448,7 +503,8 @@
       "planned_test_id": "privacy-tool-placeholder-not-effective-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-056-privacy-tool-placeholder-not-effective-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-056-privacy-tool-placeholder-not-effective-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-056-privacy-tool-placeholder-not-effective-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-057-privacy-tool-arg-verification-downgrade-001",
@@ -456,7 +512,8 @@
       "planned_test_id": "privacy-tool-arg-verification-downgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-057-privacy-tool-arg-verification-downgrade-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-057-privacy-tool-arg-verification-downgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-057-privacy-tool-arg-verification-downgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-058-privacy-tool-execution-no-secret-inference-001",
@@ -464,7 +521,8 @@
       "planned_test_id": "privacy-tool-execution-no-secret-inference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-058-privacy-tool-execution-no-secret-inference-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-058-privacy-tool-execution-no-secret-inference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-058-privacy-tool-execution-no-secret-inference-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-059-privacy-tool-provenance-bounded-001",
@@ -472,7 +530,8 @@
       "planned_test_id": "privacy-tool-provenance-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-059-privacy-tool-provenance-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-059-privacy-tool-provenance-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-059-privacy-tool-provenance-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-060-privacy-region-composition-001",
@@ -480,7 +539,8 @@
       "planned_test_id": "privacy-region-composition-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-060-privacy-region-composition-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-060-privacy-region-composition-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-060-privacy-region-composition-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-061-privacy-parent-disclosure-overrides-label-001",
@@ -488,7 +548,8 @@
       "planned_test_id": "privacy-parent-disclosure-overrides-label-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-061-privacy-parent-disclosure-overrides-label-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-061-privacy-parent-disclosure-overrides-label-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-061-privacy-parent-disclosure-overrides-label-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-062-privacy-duplicate-disclosure-001",
@@ -496,7 +557,8 @@
       "planned_test_id": "privacy-duplicate-disclosure-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-062-privacy-duplicate-disclosure-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-062-privacy-duplicate-disclosure-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-062-privacy-duplicate-disclosure-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-063-privacy-package-not-global-001",
@@ -504,7 +566,8 @@
       "planned_test_id": "privacy-package-not-global-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-063-privacy-package-not-global-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-063-privacy-package-not-global-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-063-privacy-package-not-global-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-064-privacy-commitment-linkability-001",
@@ -512,7 +575,8 @@
       "planned_test_id": "privacy-commitment-linkability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-064-privacy-commitment-linkability-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-064-privacy-commitment-linkability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-064-privacy-commitment-linkability-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-065-privacy-no-anonymity-upgrade-001",
@@ -520,7 +584,8 @@
       "planned_test_id": "privacy-no-anonymity-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-065-privacy-no-anonymity-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-065-privacy-no-anonymity-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-065-privacy-no-anonymity-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-066-privacy-integrity-no-confidentiality-001",
@@ -528,7 +593,8 @@
       "planned_test_id": "privacy-integrity-no-confidentiality-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-066-privacy-integrity-no-confidentiality-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-066-privacy-integrity-no-confidentiality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-066-privacy-integrity-no-confidentiality-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-067-privacy-no-taint-clear-001",
@@ -536,7 +602,8 @@
       "planned_test_id": "privacy-no-taint-clear-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-067-privacy-no-taint-clear-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-067-privacy-no-taint-clear-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-067-privacy-no-taint-clear-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-068-privacy-no-trust-upgrade-001",
@@ -544,7 +611,8 @@
       "planned_test_id": "privacy-no-trust-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-068-privacy-no-trust-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-068-privacy-no-trust-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-068-privacy-no-trust-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-069-privacy-no-provenance-strengthening-001",
@@ -552,7 +620,8 @@
       "planned_test_id": "privacy-no-provenance-strengthening-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-069-privacy-no-provenance-strengthening-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-069-privacy-no-provenance-strengthening-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-069-privacy-no-provenance-strengthening-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-070-privacy-verifier-capability-001",
@@ -560,7 +629,8 @@
       "planned_test_id": "privacy-verifier-capability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-070-privacy-verifier-capability-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-070-privacy-verifier-capability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-070-privacy-verifier-capability-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-071-privacy-hmac-tag-not-recomputed-001",
@@ -568,7 +638,8 @@
       "planned_test_id": "privacy-hmac-tag-not-recomputed-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-071-privacy-hmac-tag-not-recomputed-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-071-privacy-hmac-tag-not-recomputed-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-071-privacy-hmac-tag-not-recomputed-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-072-privacy-candidate-required-001",
@@ -576,7 +647,8 @@
       "planned_test_id": "privacy-candidate-required-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-072-privacy-candidate-required-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-072-privacy-candidate-required-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-072-privacy-candidate-required-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-073-privacy-redacted-only-capability-001",
@@ -584,7 +656,8 @@
       "planned_test_id": "privacy-redacted-only-capability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-073-privacy-redacted-only-capability-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-073-privacy-redacted-only-capability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-073-privacy-redacted-only-capability-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-074-privacy-composed-evidence-001",
@@ -592,7 +665,8 @@
       "planned_test_id": "privacy-composed-evidence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-074-privacy-composed-evidence-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-074-privacy-composed-evidence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-074-privacy-composed-evidence-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-075-privacy-unavailable-not-verified-001",
@@ -600,7 +674,8 @@
       "planned_test_id": "privacy-unavailable-not-verified-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-075-privacy-unavailable-not-verified-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-075-privacy-unavailable-not-verified-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-075-privacy-unavailable-not-verified-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-076-privacy-no-encryption-inference-001",
@@ -608,7 +683,8 @@
       "planned_test_id": "privacy-no-encryption-inference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-076-privacy-no-encryption-inference-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-076-privacy-no-encryption-inference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-076-privacy-no-encryption-inference-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-077-privacy-hmac-tag-equality-bounded-001",
@@ -616,7 +692,8 @@
       "planned_test_id": "privacy-hmac-tag-equality-bounded-001",
       "primary_enforcement": "deterministic_vector",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-077-privacy-hmac-tag-equality-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-077-privacy-hmac-tag-equality-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/vector/c2a-v0.1-priv-077-privacy-hmac-tag-equality-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-078-privacy-redaction-rule-required-001",
@@ -624,7 +701,8 @@
       "planned_test_id": "privacy-redaction-rule-required-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-078-privacy-redaction-rule-required-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-078-privacy-redaction-rule-required-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-078-privacy-redaction-rule-required-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-079-privacy-whole-scope-label-consistency-001",
@@ -632,7 +710,8 @@
       "planned_test_id": "privacy-whole-scope-label-consistency-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-079-privacy-whole-scope-label-consistency-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-079-privacy-whole-scope-label-consistency-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-079-privacy-whole-scope-label-consistency-001.json"
     },
     {
       "case_id": "c2a-v0.1-priv-080-privacy-declaration-conflict-001",
@@ -640,7 +719,8 @@
       "planned_test_id": "privacy-declaration-conflict-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-080-privacy-declaration-conflict-001.json"
+      "case_path": "conformance/v0.1/cases/priv/c2a-v0.1-priv-080-privacy-declaration-conflict-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-priv-080-privacy-declaration-conflict-001.json"
     }
   ]
 }
