@@ -40,7 +40,9 @@
       "semantic_verifier": 771,
       "deterministic_vector": 43
     },
-    "executable_cases": 20
+    "executable_cases": 32,
+    "mixed_schema_semantic_executable": 26,
+    "mixed_schema_semantic_remaining": 61
   },
   "gate_requirements": [
     "All 907 requirements have unique case IDs and traceability back to planned tests.",
