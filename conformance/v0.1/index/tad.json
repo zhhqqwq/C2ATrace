@@ -8,7 +8,8 @@
       "planned_test_id": "tool-adapter-visibility-boundary-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-001-tool-adapter-visibility-boundary-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-001-tool-adapter-visibility-boundary-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-001-tool-adapter-visibility-boundary-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001",
@@ -16,7 +17,8 @@
       "planned_test_id": "tool-adapter-boundary-declaration-001",
       "primary_enforcement": "direct_schema",
       "status": "accepted",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001.json",
+      "expected_result_path": "conformance/v0.1/expected/direct/c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-003-tool-adapter-capability-declaration-001",
@@ -24,7 +26,8 @@
       "planned_test_id": "tool-adapter-capability-declaration-001",
       "primary_enforcement": "direct_schema",
       "status": "accepted",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-003-tool-adapter-capability-declaration-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-003-tool-adapter-capability-declaration-001.json",
+      "expected_result_path": "conformance/v0.1/expected/direct/c2a-v0.1-tad-003-tool-adapter-capability-declaration-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-004-tool-adapter-effective-invocation-capability-001",
@@ -32,7 +35,8 @@
       "planned_test_id": "tool-adapter-effective-invocation-capability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-004-tool-adapter-effective-invocation-capability-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-004-tool-adapter-effective-invocation-capability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-004-tool-adapter-effective-invocation-capability-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-005-tool-adapter-execution-capability-001",
@@ -40,7 +44,8 @@
       "planned_test_id": "tool-adapter-execution-capability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-005-tool-adapter-execution-capability-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-005-tool-adapter-execution-capability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-005-tool-adapter-execution-capability-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-006-tool-adapter-result-capability-001",
@@ -48,7 +53,8 @@
       "planned_test_id": "tool-adapter-result-capability-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-006-tool-adapter-result-capability-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-006-tool-adapter-result-capability-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-006-tool-adapter-result-capability-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001",
@@ -56,7 +62,8 @@
       "planned_test_id": "tool-adapter-capability-not-observation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-008-tool-adapter-no-remote-receipt-001",
@@ -64,7 +71,8 @@
       "planned_test_id": "tool-adapter-no-remote-receipt-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-008-tool-adapter-no-remote-receipt-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-008-tool-adapter-no-remote-receipt-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-008-tool-adapter-no-remote-receipt-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001",
@@ -72,7 +80,8 @@
       "planned_test_id": "tool-capture-diagnostic-scope-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-009-tool-capture-diagnostic-scope-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-010-tool-capture-diagnostic-reuse-001",
@@ -80,7 +89,8 @@
       "planned_test_id": "tool-capture-diagnostic-reuse-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-010-tool-capture-diagnostic-reuse-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-010-tool-capture-diagnostic-reuse-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-010-tool-capture-diagnostic-reuse-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001",
@@ -88,7 +98,8 @@
       "planned_test_id": "tool-capture-diagnostic-absence-not-success-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-012-tool-capture-no-bypass-inference-001",
@@ -96,7 +107,8 @@
       "planned_test_id": "tool-capture-no-bypass-inference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-012-tool-capture-no-bypass-inference-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-012-tool-capture-no-bypass-inference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-012-tool-capture-no-bypass-inference-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-013-tool-capture-diagnostic-conflict-001",
@@ -104,7 +116,8 @@
       "planned_test_id": "tool-capture-diagnostic-conflict-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-013-tool-capture-diagnostic-conflict-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-013-tool-capture-diagnostic-conflict-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-013-tool-capture-diagnostic-conflict-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-014-tool-proposal-capability-optional-001",
@@ -112,7 +125,8 @@
       "planned_test_id": "tool-proposal-capability-optional-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-014-tool-proposal-capability-optional-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-014-tool-proposal-capability-optional-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-014-tool-proposal-capability-optional-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-015-tool-proposal-link-positive-001",
@@ -120,7 +134,8 @@
       "planned_test_id": "tool-proposal-link-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-015-tool-proposal-link-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-015-tool-proposal-link-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-015-tool-proposal-link-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-016-tool-proposal-link-ambiguous-001",
@@ -128,7 +143,8 @@
       "planned_test_id": "tool-proposal-link-ambiguous-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-016-tool-proposal-link-ambiguous-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-016-tool-proposal-link-ambiguous-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-016-tool-proposal-link-ambiguous-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-017-tool-decision-positive-occurrence-001",
@@ -136,7 +152,8 @@
       "planned_test_id": "tool-decision-positive-occurrence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-017-tool-decision-positive-occurrence-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-017-tool-decision-positive-occurrence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-017-tool-decision-positive-occurrence-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001",
@@ -144,7 +161,8 @@
       "planned_test_id": "tool-proposal-denial-no-fake-execution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001",
@@ -152,7 +170,8 @@
       "planned_test_id": "tool-invocation-denial-no-fake-execution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001",
@@ -160,7 +179,8 @@
       "planned_test_id": "tool-execution-no-implicit-allow-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-021-tool-deny-later-execution-001",
@@ -168,7 +188,8 @@
       "planned_test_id": "tool-deny-later-execution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-021-tool-deny-later-execution-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-021-tool-deny-later-execution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-021-tool-deny-later-execution-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-022-tool-decision-conflict-preserved-001",
@@ -176,7 +197,8 @@
       "planned_test_id": "tool-decision-conflict-preserved-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-022-tool-decision-conflict-preserved-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-022-tool-decision-conflict-preserved-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-022-tool-decision-conflict-preserved-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001",
@@ -184,7 +206,8 @@
       "planned_test_id": "tool-effective-invocation-final-boundary-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-024-tool-invocation-not-wire-request-001",
@@ -192,7 +215,8 @@
       "planned_test_id": "tool-invocation-not-wire-request-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-024-tool-invocation-not-wire-request-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-024-tool-invocation-not-wire-request-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-024-tool-invocation-not-wire-request-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001",
@@ -200,7 +224,8 @@
       "planned_test_id": "tool-invocation-mutation-new-id-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001",
@@ -208,7 +233,8 @@
       "planned_test_id": "tool-invocation-reuse-not-equality-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001",
@@ -216,7 +242,8 @@
       "planned_test_id": "tool-logical-vs-executable-identity-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-028-tool-preparation-lineage-positive-001",
@@ -224,7 +251,8 @@
       "planned_test_id": "tool-preparation-lineage-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-028-tool-preparation-lineage-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-028-tool-preparation-lineage-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-028-tool-preparation-lineage-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-029-tool-argument-path-profile-001",
@@ -232,7 +260,8 @@
       "planned_test_id": "tool-argument-path-profile-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-029-tool-argument-path-profile-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-029-tool-argument-path-profile-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-029-tool-argument-path-profile-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001",
@@ -240,7 +269,8 @@
       "planned_test_id": "tool-argument-model-supplied-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001",
@@ -248,7 +278,8 @@
       "planned_test_id": "tool-argument-app-supplied-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-032-tool-argument-mixed-positive-001",
@@ -256,7 +287,8 @@
       "planned_test_id": "tool-argument-mixed-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-032-tool-argument-mixed-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-032-tool-argument-mixed-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-032-tool-argument-mixed-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-033-tool-argument-provenance-unknown-001",
@@ -264,7 +296,8 @@
       "planned_test_id": "tool-argument-provenance-unknown-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-033-tool-argument-provenance-unknown-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-033-tool-argument-provenance-unknown-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-033-tool-argument-provenance-unknown-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-034-tool-argument-control-not-content-001",
@@ -272,7 +305,8 @@
       "planned_test_id": "tool-argument-control-not-content-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-034-tool-argument-control-not-content-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-034-tool-argument-control-not-content-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-034-tool-argument-control-not-content-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-035-tool-argument-rewrite-effective-001",
@@ -280,7 +314,8 @@
       "planned_test_id": "tool-argument-rewrite-effective-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-035-tool-argument-rewrite-effective-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-035-tool-argument-rewrite-effective-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-035-tool-argument-rewrite-effective-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001",
@@ -288,7 +323,8 @@
       "planned_test_id": "tool-argument-dropped-not-effective-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-037-tool-argument-enrichment-origin-001",
@@ -296,7 +332,8 @@
       "planned_test_id": "tool-argument-enrichment-origin-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-037-tool-argument-enrichment-origin-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-037-tool-argument-enrichment-origin-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-037-tool-argument-enrichment-origin-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001",
@@ -304,7 +341,8 @@
       "planned_test_id": "tool-transport-metadata-no-proposal-ancestry-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-039-tool-execution-start-boundary-001",
@@ -312,7 +350,8 @@
       "planned_test_id": "tool-execution-start-boundary-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-039-tool-execution-start-boundary-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-039-tool-execution-start-boundary-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-039-tool-execution-start-boundary-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001",
@@ -320,7 +359,8 @@
       "planned_test_id": "tool-prestart-failure-no-execution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-041-tool-client-start-no-remote-start-001",
@@ -328,7 +368,8 @@
       "planned_test_id": "tool-client-start-no-remote-start-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-041-tool-client-start-no-remote-start-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-041-tool-client-start-no-remote-start-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-041-tool-client-start-no-remote-start-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-042-tool-execution-distinct-identity-001",
@@ -336,7 +377,8 @@
       "planned_test_id": "tool-execution-distinct-identity-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-042-tool-execution-distinct-identity-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-042-tool-execution-distinct-identity-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-042-tool-execution-distinct-identity-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-043-tool-execution-disposition-boundary-001",
@@ -344,7 +386,8 @@
       "planned_test_id": "tool-execution-disposition-boundary-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-043-tool-execution-disposition-boundary-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-043-tool-execution-disposition-boundary-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-043-tool-execution-disposition-boundary-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-044-tool-completed-not-effect-001",
@@ -352,7 +395,8 @@
       "planned_test_id": "tool-completed-not-effect-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-044-tool-completed-not-effect-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-044-tool-completed-not-effect-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-044-tool-completed-not-effect-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-045-tool-timeout-not-no-effect-001",
@@ -360,7 +404,8 @@
       "planned_test_id": "tool-timeout-not-no-effect-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-045-tool-timeout-not-no-effect-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-045-tool-timeout-not-no-effect-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-045-tool-timeout-not-no-effect-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001",
@@ -368,7 +413,8 @@
       "planned_test_id": "tool-cancel-no-remote-stop-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-047-tool-retry-new-execution-001",
@@ -376,7 +422,8 @@
       "planned_test_id": "tool-retry-new-execution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-047-tool-retry-new-execution-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-047-tool-retry-new-execution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-047-tool-retry-new-execution-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-048-tool-retry-changed-invocation-001",
@@ -384,7 +431,8 @@
       "planned_test_id": "tool-retry-changed-invocation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-048-tool-retry-changed-invocation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-048-tool-retry-changed-invocation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-048-tool-retry-changed-invocation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-049-tool-retry-relation-positive-001",
@@ -392,7 +440,8 @@
       "planned_test_id": "tool-retry-relation-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-049-tool-retry-relation-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-049-tool-retry-relation-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-049-tool-retry-relation-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001",
@@ -400,7 +449,8 @@
       "planned_test_id": "tool-retry-no-prior-effect-inference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-051-tool-replay-relation-positive-001",
@@ -408,7 +458,8 @@
       "planned_test_id": "tool-replay-relation-positive-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-051-tool-replay-relation-positive-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-051-tool-replay-relation-positive-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-051-tool-replay-relation-positive-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001",
@@ -416,7 +467,8 @@
       "planned_test_id": "tool-duplicate-relation-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001",
@@ -424,7 +476,8 @@
       "planned_test_id": "tool-hidden-retry-no-inference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-054-tool-idempotency-metadata-001",
@@ -432,7 +485,8 @@
       "planned_test_id": "tool-idempotency-metadata-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-054-tool-idempotency-metadata-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-054-tool-idempotency-metadata-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-054-tool-idempotency-metadata-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001",
@@ -440,7 +494,8 @@
       "planned_test_id": "tool-idempotency-no-exactly-once-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001",
@@ -448,7 +503,8 @@
       "planned_test_id": "tool-idempotency-reported-dedup-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-057-tool-result-boundary-001",
@@ -456,7 +512,8 @@
       "planned_test_id": "tool-result-boundary-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-057-tool-result-boundary-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-057-tool-result-boundary-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-057-tool-result-boundary-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-058-tool-result-cardinality-001",
@@ -464,7 +521,8 @@
       "planned_test_id": "tool-result-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-058-tool-result-cardinality-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-058-tool-result-cardinality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-058-tool-result-cardinality-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-059-tool-exception-not-result-001",
@@ -472,7 +530,8 @@
       "planned_test_id": "tool-exception-not-result-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-059-tool-exception-not-result-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-059-tool-exception-not-result-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-059-tool-exception-not-result-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-060-tool-result-no-merge-001",
@@ -480,7 +539,8 @@
       "planned_test_id": "tool-result-no-merge-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-060-tool-result-no-merge-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-060-tool-result-no-merge-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-060-tool-result-no-merge-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-061-tool-result-capture-evidence-001",
@@ -488,7 +548,8 @@
       "planned_test_id": "tool-result-capture-evidence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-061-tool-result-capture-evidence-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-061-tool-result-capture-evidence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-061-tool-result-capture-evidence-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-062-tool-stream-result-consumption-001",
@@ -496,7 +557,8 @@
       "planned_test_id": "tool-stream-result-consumption-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-062-tool-stream-result-consumption-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-062-tool-stream-result-consumption-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-062-tool-stream-result-consumption-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-063-tool-stream-result-semantics-001",
@@ -504,7 +566,8 @@
       "planned_test_id": "tool-stream-result-semantics-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-063-tool-stream-result-semantics-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-063-tool-stream-result-semantics-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-063-tool-stream-result-semantics-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-064-tool-stream-result-unsupported-001",
@@ -512,7 +575,8 @@
       "planned_test_id": "tool-stream-result-unsupported-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-064-tool-stream-result-unsupported-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-064-tool-stream-result-unsupported-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-064-tool-stream-result-unsupported-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-065-tool-stream-result-partial-preserve-001",
@@ -520,7 +584,8 @@
       "planned_test_id": "tool-stream-result-partial-preserve-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-065-tool-stream-result-partial-preserve-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-065-tool-stream-result-partial-preserve-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-065-tool-stream-result-partial-preserve-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-066-tool-stream-result-loss-001",
@@ -528,7 +593,8 @@
       "planned_test_id": "tool-stream-result-loss-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-066-tool-stream-result-loss-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-066-tool-stream-result-loss-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-066-tool-stream-result-loss-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001",
@@ -536,7 +602,8 @@
       "planned_test_id": "tool-stream-consumer-stop-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-068-tool-stream-chunks-optional-001",
@@ -544,7 +611,8 @@
       "planned_test_id": "tool-stream-chunks-optional-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-068-tool-stream-chunks-optional-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-068-tool-stream-chunks-optional-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-068-tool-stream-chunks-optional-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-069-tool-metadata-origin-001",
@@ -552,7 +620,8 @@
       "planned_test_id": "tool-metadata-origin-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-069-tool-metadata-origin-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-069-tool-metadata-origin-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-069-tool-metadata-origin-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-070-tool-metadata-reported-bounded-001",
@@ -560,7 +629,8 @@
       "planned_test_id": "tool-metadata-reported-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-070-tool-metadata-reported-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-070-tool-metadata-reported-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-070-tool-metadata-reported-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001",
@@ -568,7 +638,8 @@
       "planned_test_id": "tool-remote-id-not-c2a-identity-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-072-tool-transaction-id-no-commit-proof-001",
@@ -576,7 +647,8 @@
       "planned_test_id": "tool-transaction-id-no-commit-proof-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-072-tool-transaction-id-no-commit-proof-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-072-tool-transaction-id-no-commit-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-072-tool-transaction-id-no-commit-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-073-tool-server-time-bounded-001",
@@ -584,7 +656,8 @@
       "planned_test_id": "tool-server-time-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-073-tool-server-time-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-073-tool-server-time-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-073-tool-server-time-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-074-tool-metadata-normalized-origin-001",
@@ -592,7 +665,8 @@
       "planned_test_id": "tool-metadata-normalized-origin-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-074-tool-metadata-normalized-origin-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-074-tool-metadata-normalized-origin-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-074-tool-metadata-normalized-origin-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-075-tool-success-no-effect-proof-001",
@@ -600,7 +674,8 @@
       "planned_test_id": "tool-success-no-effect-proof-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-075-tool-success-no-effect-proof-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-075-tool-success-no-effect-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-075-tool-success-no-effect-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-076-tool-effect-capability-declaration-001",
@@ -608,7 +683,8 @@
       "planned_test_id": "tool-effect-capability-declaration-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-076-tool-effect-capability-declaration-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-076-tool-effect-capability-declaration-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-076-tool-effect-capability-declaration-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001",
@@ -616,7 +692,8 @@
       "planned_test_id": "tool-effect-execution-result-proposition-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-077-tool-effect-execution-result-proposition-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001",
@@ -624,7 +701,8 @@
       "planned_test_id": "tool-effect-separate-observation-distinct-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-078-tool-effect-separate-observation-distinct-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-079-tool-effect-copy-not-independent-001",
@@ -632,7 +710,8 @@
       "planned_test_id": "tool-effect-copy-not-independent-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001",
@@ -640,7 +719,8 @@
       "planned_test_id": "tool-effect-external-attestation-basis-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-080-tool-effect-external-attestation-basis-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-081-tool-effect-basis-unknown-001",
@@ -648,7 +728,8 @@
       "planned_test_id": "tool-effect-basis-unknown-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001",
@@ -656,7 +737,8 @@
       "planned_test_id": "tool-effect-multiple-evidence-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-083-tool-effect-claim-scope-001",
@@ -664,7 +746,8 @@
       "planned_test_id": "tool-effect-claim-scope-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-083-tool-effect-claim-scope-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-083-tool-effect-claim-scope-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-083-tool-effect-claim-scope-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-084-tool-effect-not-outcome-001",
@@ -672,7 +755,8 @@
       "planned_test_id": "tool-effect-not-outcome-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-084-tool-effect-not-outcome-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-084-tool-effect-not-outcome-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-084-tool-effect-not-outcome-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-085-tool-effect-no-causal-inference-001",
@@ -680,7 +764,8 @@
       "planned_test_id": "tool-effect-no-causal-inference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001",
@@ -688,7 +773,8 @@
       "planned_test_id": "tool-privacy-argument-capture-separation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001",
@@ -696,7 +782,8 @@
       "planned_test_id": "tool-privacy-placeholder-not-effective-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001",
@@ -704,7 +791,8 @@
       "planned_test_id": "tool-privacy-argument-commit-before-discard-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001",
@@ -712,7 +800,8 @@
       "planned_test_id": "tool-privacy-argument-no-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001",
@@ -720,7 +809,8 @@
       "planned_test_id": "tool-privacy-result-capture-separation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001",
@@ -728,7 +818,8 @@
       "planned_test_id": "tool-privacy-result-redacted-identity-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001",
@@ -736,7 +827,8 @@
       "planned_test_id": "tool-privacy-effect-basis-stable-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001",
@@ -744,7 +836,8 @@
       "planned_test_id": "tool-capture-invocation-failure-explicit-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-093-tool-capture-invocation-failure-explicit-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001",
@@ -752,7 +845,8 @@
       "planned_test_id": "tool-capture-execution-failure-separation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001",
@@ -760,7 +854,8 @@
       "planned_test_id": "tool-capture-result-failure-no-fabrication-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001",
@@ -768,7 +863,8 @@
       "planned_test_id": "tool-effect-observer-failure-not-absence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-097-tool-adapter-error-origin-001",
@@ -776,7 +872,8 @@
       "planned_test_id": "tool-adapter-error-origin-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-097-tool-adapter-error-origin-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-097-tool-adapter-error-origin-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-097-tool-adapter-error-origin-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001",
@@ -784,7 +881,8 @@
       "planned_test_id": "tool-privacy-no-failure-laundering-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-099-tool-bypass-positive-evidence-001",
@@ -792,7 +890,8 @@
       "planned_test_id": "tool-bypass-positive-evidence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-099-tool-bypass-positive-evidence-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-099-tool-bypass-positive-evidence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-099-tool-bypass-positive-evidence-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-100-tool-bypass-no-fabrication-001",
@@ -800,7 +899,8 @@
       "planned_test_id": "tool-bypass-no-fabrication-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-100-tool-bypass-no-fabrication-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-100-tool-bypass-no-fabrication-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-100-tool-bypass-no-fabrication-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-101-tool-multihook-correlation-001",
@@ -808,7 +908,8 @@
       "planned_test_id": "tool-multihook-correlation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-101-tool-multihook-correlation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-101-tool-multihook-correlation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-101-tool-multihook-correlation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-102-tool-adapter-unknown-preserved-001",
@@ -816,7 +917,8 @@
       "planned_test_id": "tool-adapter-unknown-preserved-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-102-tool-adapter-unknown-preserved-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-102-tool-adapter-unknown-preserved-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-102-tool-adapter-unknown-preserved-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001",
@@ -824,7 +926,8 @@
       "planned_test_id": "tool-adapter-assertion-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-104-tool-representation-not-observation-proof-001",
@@ -832,7 +935,8 @@
       "planned_test_id": "tool-representation-not-observation-proof-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-104-tool-representation-not-observation-proof-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-104-tool-representation-not-observation-proof-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-104-tool-representation-not-observation-proof-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-105-tool-remote-internals-unestablished-001",
@@ -840,7 +944,8 @@
       "planned_test_id": "tool-remote-internals-unestablished-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-105-tool-remote-internals-unestablished-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-105-tool-remote-internals-unestablished-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-105-tool-remote-internals-unestablished-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001",
@@ -848,7 +953,8 @@
       "planned_test_id": "tool-capture-diagnostic-no-global-completeness-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-107-tool-adapter-version-no-trust-001",
@@ -856,7 +962,8 @@
       "planned_test_id": "tool-adapter-version-no-trust-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-107-tool-adapter-version-no-trust-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-107-tool-adapter-version-no-trust-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-107-tool-adapter-version-no-trust-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-108-tool-adapter-time-bounded-001",
@@ -864,7 +971,8 @@
       "planned_test_id": "tool-adapter-time-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-108-tool-adapter-time-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-108-tool-adapter-time-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-108-tool-adapter-time-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-109-tool-invocation-post-boundary-mutation-001",
@@ -872,7 +980,8 @@
       "planned_test_id": "tool-invocation-post-boundary-mutation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-109-tool-invocation-post-boundary-mutation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-109-tool-invocation-post-boundary-mutation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-109-tool-invocation-post-boundary-mutation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001",
@@ -880,7 +989,8 @@
       "planned_test_id": "tool-decision-no-implicit-governance-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-111-tool-effect-observation-no-merge-001",
@@ -888,7 +998,8 @@
       "planned_test_id": "tool-effect-observation-no-merge-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-111-tool-effect-observation-no-merge-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-111-tool-effect-observation-no-merge-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-111-tool-effect-observation-no-merge-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001",
@@ -896,7 +1007,8 @@
       "planned_test_id": "tool-privacy-result-commit-before-discard-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-113-tool-noncompleted-not-no-effect-001",
@@ -904,7 +1016,8 @@
       "planned_test_id": "tool-noncompleted-not-no-effect-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-113-tool-noncompleted-not-no-effect-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-113-tool-noncompleted-not-no-effect-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-113-tool-noncompleted-not-no-effect-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-114-tool-missing-execution-not-negation-001",
@@ -912,7 +1025,8 @@
       "planned_test_id": "tool-missing-execution-not-negation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-114-tool-missing-execution-not-negation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-114-tool-missing-execution-not-negation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-114-tool-missing-execution-not-negation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-115-tool-missing-result-not-negation-001",
@@ -920,7 +1034,8 @@
       "planned_test_id": "tool-missing-result-not-negation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-115-tool-missing-result-not-negation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-115-tool-missing-result-not-negation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-115-tool-missing-result-not-negation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001",
@@ -928,7 +1043,8 @@
       "planned_test_id": "tool-external-metadata-not-effect-observation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-117-tool-async-acceptance-bounded-001",
@@ -936,7 +1052,8 @@
       "planned_test_id": "tool-async-acceptance-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-117-tool-async-acceptance-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-117-tool-async-acceptance-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-117-tool-async-acceptance-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001",
@@ -944,7 +1061,8 @@
       "planned_test_id": "tool-proposal-invocation-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001.json"
+      "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-tad-118-tool-proposal-invocation-cardinality-001.json"
     }
   ]
 }
