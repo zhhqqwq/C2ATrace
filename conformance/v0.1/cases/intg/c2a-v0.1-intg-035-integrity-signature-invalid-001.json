@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-035-integrity-signature-invalid-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-035"
+  ],
+  "planned_test_ids": [
+    "integrity-signature-invalid-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "The baseline signature is invalid relative to a different supplied Ed25519 public key.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-separation.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-035-integrity-signature-invalid-001.json"
+}
