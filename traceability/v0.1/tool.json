@@ -5,8 +5,13 @@
     {
       "id": "TOOL-001",
       "title": "Proposal ownership",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -15,8 +20,12 @@
     {
       "id": "TOOL-002",
       "title": "Proposal identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -25,8 +34,12 @@
     {
       "id": "TOOL-003",
       "title": "Proposal is not invocation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-no-invocation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -35,8 +48,12 @@
     {
       "id": "TOOL-004",
       "title": "Proposal is not authorization",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-no-authorization-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -45,8 +62,12 @@
     {
       "id": "TOOL-005",
       "title": "Invocation identity is occurrence-bound",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-invocation-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -55,8 +76,12 @@
     {
       "id": "TOOL-006",
       "title": "Invocation without proposal is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-invocation-without-proposal-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -65,8 +90,12 @@
     {
       "id": "TOOL-007",
       "title": "No implicit proposal linkage",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-invocation-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -75,8 +104,13 @@
     {
       "id": "TOOL-008",
       "title": "Proposal-derived invocation uses explicit lineage",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-invocation-lineage-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -85,8 +119,12 @@
     {
       "id": "TOOL-009",
       "title": "Proposal and invocation identities remain distinct",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-proposal-invocation-identity-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -95,8 +133,12 @@
     {
       "id": "TOOL-010",
       "title": "Effective invocation mutation creates new identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-invocation-mutation-new-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -105,8 +147,12 @@
     {
       "id": "TOOL-011",
       "title": "Argument path scheme",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-json-pointer-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -115,8 +161,12 @@
     {
       "id": "TOOL-012",
       "title": "Argument provenance requires positive derivation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-provenance-positive-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -125,8 +175,12 @@
     {
       "id": "TOOL-013",
       "title": "model_supplied is proposal-boundary provenance",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-model-supplied-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -135,8 +189,12 @@
     {
       "id": "TOOL-014",
       "title": "application_supplied excludes proposal contributors",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-application-supplied-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -145,8 +203,12 @@
     {
       "id": "TOOL-015",
       "title": "mixed requires both contributor domains",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-mixed-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -155,8 +217,12 @@
     {
       "id": "TOOL-016",
       "title": "Unknown provenance remains unknown",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -165,8 +231,12 @@
     {
       "id": "TOOL-017",
       "title": "Control input is not argument content ancestry",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-control-no-content-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -175,8 +245,12 @@
     {
       "id": "TOOL-018",
       "title": "Dropped proposal argument is not effective argument",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-dropped-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -185,8 +259,12 @@
     {
       "id": "TOOL-019",
       "title": "Rewrite preserves effective value",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-argument-rewrite-effective-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -195,8 +273,12 @@
     {
       "id": "TOOL-020",
       "title": "Validation success is bounded",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-validation-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -205,8 +287,13 @@
     {
       "id": "TOOL-021",
       "title": "ToolDecision subject cardinality",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-decision-subject-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -215,8 +302,13 @@
     {
       "id": "TOOL-022",
       "title": "ToolDecision value",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-decision-value-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -225,8 +317,12 @@
     {
       "id": "TOOL-023",
       "title": "Denial before invocation needs no invocation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-deny-proposal-no-invocation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -235,8 +331,12 @@
     {
       "id": "TOOL-024",
       "title": "Denial is not execution",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-deny-no-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -245,8 +345,12 @@
     {
       "id": "TOOL-025",
       "title": "Allow is not execution",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-allow-no-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -255,8 +359,12 @@
     {
       "id": "TOOL-026",
       "title": "Decision does not erase contradictory later history",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-deny-later-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -265,8 +373,12 @@
     {
       "id": "TOOL-027",
       "title": "Decision basis unknown is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-decision-basis-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -275,8 +387,13 @@
     {
       "id": "TOOL-028",
       "title": "Execution ownership",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -285,8 +402,12 @@
     {
       "id": "TOOL-029",
       "title": "Execution starts before it exists",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-no-phantom-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -295,8 +416,12 @@
     {
       "id": "TOOL-030",
       "title": "Multiple executions per invocation",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-multiple-executions-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -305,8 +430,12 @@
     {
       "id": "TOOL-031",
       "title": "Execution identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -315,8 +444,13 @@
     {
       "id": "TOOL-032",
       "title": "Execution terminal disposition is single-valued",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-disposition-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -325,8 +459,12 @@
     {
       "id": "TOOL-033",
       "title": "Completed execution is not effect proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-completed-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -335,8 +473,12 @@
     {
       "id": "TOOL-034",
       "title": "Timeout preserves uncertain effect",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-timeout-effect-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -345,8 +487,12 @@
     {
       "id": "TOOL-035",
       "title": "Cancellation is not remote-stop proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-cancel-no-remote-stop-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -355,8 +501,13 @@
     {
       "id": "TOOL-036",
       "title": "ToolResult ownership",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -365,8 +516,13 @@
     {
       "id": "TOOL-037",
       "title": "ToolResult cardinality",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -375,8 +531,12 @@
     {
       "id": "TOOL-038",
       "title": "Result absence is not no-result proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -385,8 +545,12 @@
     {
       "id": "TOOL-039",
       "title": "ToolResult identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -395,8 +559,12 @@
     {
       "id": "TOOL-040",
       "title": "Result capture extent is bounded",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-capture-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -405,8 +573,12 @@
     {
       "id": "TOOL-041",
       "title": "Tool-reported success is not effect truth",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-success-no-effect-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -415,8 +587,13 @@
     {
       "id": "TOOL-042",
       "title": "EffectObservation basis required",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -425,8 +602,12 @@
     {
       "id": "TOOL-043",
       "title": "execution_result basis is not independent verification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-result-basis-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -435,8 +616,12 @@
     {
       "id": "TOOL-044",
       "title": "Separate observation remains evidence-bounded",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-separate-observation-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -445,8 +630,12 @@
     {
       "id": "TOOL-045",
       "title": "External attestation label is not self-validating",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-attestation-profile-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -455,8 +644,12 @@
     {
       "id": "TOOL-046",
       "title": "Unknown effect basis remains unknown",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-basis-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -465,8 +658,12 @@
     {
       "id": "TOOL-047",
       "title": "Evidence multiplicity is not truth",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-multiple-evidence-no-truth-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -475,8 +672,12 @@
     {
       "id": "TOOL-048",
       "title": "EffectObservation is not OutcomeVerification",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-not-outcome-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -485,8 +686,12 @@
     {
       "id": "TOOL-049",
       "title": "Execution relationship is explicit",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-relation-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -495,8 +700,12 @@
     {
       "id": "TOOL-050",
       "title": "Execution relationship does not imply invocation equality",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-relation-no-invocation-equality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -505,8 +714,12 @@
     {
       "id": "TOOL-051",
       "title": "Execution predecessor is not self-referential",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-relation-no-self-loop-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -515,8 +728,12 @@
     {
       "id": "TOOL-052",
       "title": "Retry/replay predecessor graph is acyclic",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-predecessor-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -525,8 +742,12 @@
     {
       "id": "TOOL-053",
       "title": "Retry does not negate prior effect",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-retry-prior-effect-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -535,8 +756,12 @@
     {
       "id": "TOOL-054",
       "title": "Idempotency key is not exactly-once proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-idempotency-no-exactly-once-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -545,8 +770,12 @@
     {
       "id": "TOOL-055",
       "title": "Idempotency equality does not merge identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-idempotency-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -555,8 +784,12 @@
     {
       "id": "TOOL-056",
       "title": "Invocation change across retry requires new invocation identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-retry-invocation-mutation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -565,8 +798,12 @@
     {
       "id": "TOOL-057",
       "title": "ToolResult is not future context automatically",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-result-no-context-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -575,8 +812,12 @@
     {
       "id": "TOOL-058",
       "title": "Effect timing is not causality",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-time-no-causality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -585,8 +826,12 @@
     {
       "id": "TOOL-059",
       "title": "Missing EffectObservation is not no-effect proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-effect-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -595,8 +840,12 @@
     {
       "id": "TOOL-060",
       "title": "Missing execution is not no-execution proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-execution-absence-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -605,8 +854,12 @@
     {
       "id": "TOOL-061",
       "title": "ToolDecision identity is occurrence-based",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-decision-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -615,8 +868,12 @@
     {
       "id": "TOOL-062",
       "title": "Missing ToolDecision is not no-decision proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-E-TOOL-EFFECT-SEMANTICS.md",
+      "planned_test": "tool-decision-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/tool.schema.json",
         "schema/v0.1/semantic-checks.md"
