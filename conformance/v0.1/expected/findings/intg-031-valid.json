@@ -1,0 +1,16 @@
+{
+  "finding_id": "golden-intg-031",
+  "check_id": "integrity-signature-key-relative-001",
+  "subject": {
+    "subject_kind": "integrity_envelope",
+    "receipt_id": "receipt-minimal-001",
+    "envelope_id": "env-test-001"
+  },
+  "domain": "cryptographic",
+  "status": "valid",
+  "evidence_bases": [
+    "E3"
+  ],
+  "mandatory": true,
+  "capability": "verification-key:test-ed25519-key-001"
+}
