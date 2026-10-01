@@ -16,7 +16,7 @@
       "requirement_id": "TOOL-002",
       "planned_test_id": "tool-proposal-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-002-tool-proposal-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-002-tool-proposal-no-content-merge-001.json"
     },
@@ -43,7 +43,7 @@
       "requirement_id": "TOOL-005",
       "planned_test_id": "tool-invocation-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-005-tool-invocation-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-005-tool-invocation-no-content-merge-001.json"
     },
@@ -79,7 +79,7 @@
       "requirement_id": "TOOL-009",
       "planned_test_id": "tool-proposal-invocation-identity-separation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-009-tool-proposal-invocation-identity-separation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-009-tool-proposal-invocation-identity-separation-001.json"
     },
@@ -88,7 +88,7 @@
       "requirement_id": "TOOL-010",
       "planned_test_id": "tool-invocation-mutation-new-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-010-tool-invocation-mutation-new-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-010-tool-invocation-mutation-new-identity-001.json"
     },
@@ -277,7 +277,7 @@
       "requirement_id": "TOOL-031",
       "planned_test_id": "tool-execution-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-031-tool-execution-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-031-tool-execution-no-merge-001.json"
     },
@@ -349,7 +349,7 @@
       "requirement_id": "TOOL-039",
       "planned_test_id": "tool-result-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-039-tool-result-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-039-tool-result-no-content-merge-001.json"
     },
@@ -493,7 +493,7 @@
       "requirement_id": "TOOL-055",
       "planned_test_id": "tool-idempotency-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-055-tool-idempotency-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-055-tool-idempotency-no-merge-001.json"
     },
@@ -502,7 +502,7 @@
       "requirement_id": "TOOL-056",
       "planned_test_id": "tool-retry-invocation-mutation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-056-tool-retry-invocation-mutation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-056-tool-retry-invocation-mutation-001.json"
     },
@@ -547,7 +547,7 @@
       "requirement_id": "TOOL-061",
       "planned_test_id": "tool-decision-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tool/c2a-v0.1-tool-061-tool-decision-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-061-tool-decision-no-content-merge-001.json"
     },

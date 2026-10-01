@@ -224,7 +224,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-013-transform-selection-identity-001"
     },
     {
       "family": "drv",
@@ -256,7 +258,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-015-transform-aggregate-identity-001"
     },
     {
       "family": "drv",
@@ -1298,7 +1302,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-001-model-invocation-no-content-merge-001"
     },
     {
       "family": "out",
@@ -1554,7 +1560,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-019-model-requested-not-internal-001"
     },
     {
       "family": "out",
@@ -1588,7 +1596,9 @@
       "dependency_primitives": [
         "prim.request.binding",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-021-model-identity-mismatch-preserved-001"
     },
     {
       "family": "out",
@@ -1633,7 +1643,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.identity.occurrence",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-026-model-output-no-content-merge-001"
     },
     {
       "family": "out",
@@ -1726,7 +1738,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-035-model-output-item-no-content-merge-001"
     },
     {
       "family": "out",
@@ -1771,7 +1785,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-039-model-stream-no-item-mutation-001"
     },
     {
       "family": "out",
@@ -1872,7 +1888,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-045-model-tool-proposal-occurrence-001"
     },
     {
       "family": "out",
@@ -2156,7 +2174,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-015-provider-invocation-no-content-merge-001"
     },
     {
       "family": "pad",
@@ -2236,7 +2256,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-020-provider-attempt-distinct-identity-001"
     },
     {
       "family": "pad",
@@ -2269,7 +2291,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-022-provider-attempt-correlation-001"
     },
     {
       "family": "pad",
@@ -2283,7 +2307,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.identity.occurrence",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-023-provider-id-not-c2a-identity-001"
     },
     {
       "family": "pad",
@@ -2441,7 +2467,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-034-provider-request-mutation-new-snapshot-001"
     },
     {
       "family": "pad",
@@ -2573,7 +2601,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-043-provider-outputitem-no-merge-001"
     },
     {
       "family": "pad",
@@ -2929,7 +2959,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-065-provider-model-identity-separation-001"
     },
     {
       "family": "pad",
@@ -3010,7 +3042,9 @@
         "prim.derivation.mapping",
         "prim.privacy.commitment",
         "prim.privacy.redaction"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-070-provider-privacy-redacted-identity-001"
     },
     {
       "family": "pad",
@@ -3126,7 +3160,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.identity.occurrence",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-078-provider-multihook-correlation-001"
     },
     {
       "family": "pad",
@@ -3232,7 +3268,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.identity.occurrence",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001"
     },
     {
       "family": "pad",
@@ -3281,7 +3319,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-088-provider-adapter-version-no-trust-001"
     },
     {
       "family": "pad",
@@ -3559,7 +3599,9 @@
         "prim.derivation.mapping",
         "prim.privacy.commitment",
         "prim.privacy.redaction"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-011-privacy-redacted-no-identity-substitution-001"
     },
     {
       "family": "priv",
@@ -3663,7 +3705,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-017-privacy-withholding-no-new-artifact-001"
     },
     {
       "family": "priv",
@@ -3681,7 +3725,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.privacy.redaction"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-018-privacy-redacted-new-artifact-001"
     },
     {
       "family": "priv",
@@ -3919,7 +3965,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-priv-041-privacy-source-identity-stable-001"
     },
     {
       "family": "priv",
@@ -5339,7 +5387,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-002-request-attempt-identity-001"
     },
     {
       "family": "req",
@@ -5369,7 +5419,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-009-request-level-identity-separation-001"
     },
     {
       "family": "req",
@@ -5384,7 +5436,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-010-request-mutation-new-snapshot-001"
     },
     {
       "family": "req",
@@ -5690,7 +5744,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-req-036-request-digest-no-identity-001"
     },
     {
       "family": "req",
@@ -6331,7 +6387,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001"
     },
     {
       "family": "tad",
@@ -6482,7 +6540,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-017-tool-decision-positive-occurrence-001"
     },
     {
       "family": "tad",
@@ -6563,7 +6623,9 @@
       "dependency_primitives": [
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-022-tool-decision-conflict-preserved-001"
     },
     {
       "family": "tad",
@@ -6612,7 +6674,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001"
     },
     {
       "family": "tad",
@@ -6645,7 +6709,9 @@
       "dependency_primitives": [
         "prim.ref.local",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001"
     },
     {
       "family": "tad",
@@ -6859,7 +6925,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-042-tool-execution-distinct-identity-001"
     },
     {
       "family": "tad",
@@ -7140,7 +7208,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-060-tool-result-no-merge-001"
     },
     {
       "family": "tad",
@@ -7326,7 +7396,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001"
     },
     {
       "family": "tad",
@@ -7598,7 +7670,9 @@
         "prim.privacy.commitment",
         "prim.privacy.redaction",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001"
     },
     {
       "family": "tad",
@@ -7746,7 +7820,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-101-tool-multihook-correlation-001"
     },
     {
       "family": "tad",
@@ -7780,7 +7856,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001"
     },
     {
       "family": "tad",
@@ -7847,7 +7925,9 @@
         "prim.adapter.capture",
         "prim.tool.lifecycle",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-107-tool-adapter-version-no-trust-001"
     },
     {
       "family": "tad",
@@ -7914,7 +7994,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-111-tool-effect-observation-no-merge-001"
     },
     {
       "family": "tad",
@@ -8043,7 +8125,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-003-taint-assertion-no-merge-001"
     },
     {
       "family": "taint",
@@ -9019,7 +9103,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-002-tool-proposal-no-content-merge-001"
     },
     {
       "family": "tool",
@@ -9064,7 +9150,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-005-tool-invocation-no-content-merge-001"
     },
     {
       "family": "tool",
@@ -9112,7 +9200,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-009-tool-proposal-invocation-identity-separation-001"
     },
     {
       "family": "tool",
@@ -9127,7 +9217,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-010-tool-invocation-mutation-new-identity-001"
     },
     {
       "family": "tool",
@@ -9411,7 +9503,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-031-tool-execution-no-merge-001"
     },
     {
       "family": "tool",
@@ -9490,7 +9584,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-039-tool-result-no-content-merge-001"
     },
     {
       "family": "tool",
@@ -9731,7 +9827,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-055-tool-idempotency-no-merge-001"
     },
     {
       "family": "tool",
@@ -9747,7 +9845,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-056-tool-retry-invocation-mutation-001"
     },
     {
       "family": "tool",
@@ -9829,7 +9929,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-061-tool-decision-no-content-merge-001"
     },
     {
       "family": "tool",
@@ -9878,7 +9980,9 @@
       "primary_primitive": "prim.identity.occurrence",
       "dependency_primitives": [
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-003-trust-assertion-no-merge-001"
     },
     {
       "family": "trust",
@@ -10177,7 +10281,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-trust-025-trust-unknown-policy-no-equivalence-001"
     },
     {
       "family": "vfy",
@@ -10247,7 +10353,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-005-verifier-key-not-identity-001"
     },
     {
       "family": "vfy",
@@ -10391,7 +10499,9 @@
         "prim.integrity.composition",
         "prim.receipt.multi",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-016-verifier-receipt-id-not-digest-001"
     },
     {
       "family": "vfy",
@@ -10407,7 +10517,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-017-verifier-receipt-id-conflict-001"
     },
     {
       "family": "vfy",
@@ -10438,7 +10550,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-019-verifier-cross-receipt-object-identity-001"
     },
     {
       "family": "vfy",
@@ -11648,7 +11762,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-101-verifier-presentation-envelope-union-001"
     },
     {
       "family": "vfy",
@@ -12157,7 +12273,9 @@
         "prim.integrity.composition",
         "prim.ref.local",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-138-verifier-key-success-no-identity-resolution-001"
     },
     {
       "family": "vfy",
@@ -12370,6 +12488,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 306,
-  "remaining_semantic_requirements": 465
+  "executable_semantic_requirements": 365,
+  "remaining_semantic_requirements": 406
 }

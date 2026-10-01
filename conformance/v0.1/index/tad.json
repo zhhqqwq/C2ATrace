@@ -61,7 +61,7 @@
       "requirement_id": "TAD-007",
       "planned_test_id": "tool-adapter-capability-not-observation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-007-tool-adapter-capability-not-observation-001.json"
     },
@@ -151,7 +151,7 @@
       "requirement_id": "TAD-017",
       "planned_test_id": "tool-decision-positive-occurrence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-017-tool-decision-positive-occurrence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-017-tool-decision-positive-occurrence-001.json"
     },
@@ -196,7 +196,7 @@
       "requirement_id": "TAD-022",
       "planned_test_id": "tool-decision-conflict-preserved-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-022-tool-decision-conflict-preserved-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-022-tool-decision-conflict-preserved-001.json"
     },
@@ -223,7 +223,7 @@
       "requirement_id": "TAD-025",
       "planned_test_id": "tool-invocation-mutation-new-id-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-025-tool-invocation-mutation-new-id-001.json"
     },
@@ -241,7 +241,7 @@
       "requirement_id": "TAD-027",
       "planned_test_id": "tool-logical-vs-executable-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001.json"
     },
@@ -376,7 +376,7 @@
       "requirement_id": "TAD-042",
       "planned_test_id": "tool-execution-distinct-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-042-tool-execution-distinct-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-042-tool-execution-distinct-identity-001.json"
     },
@@ -538,7 +538,7 @@
       "requirement_id": "TAD-060",
       "planned_test_id": "tool-result-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-060-tool-result-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-060-tool-result-no-merge-001.json"
     },
@@ -637,7 +637,7 @@
       "requirement_id": "TAD-071",
       "planned_test_id": "tool-remote-id-not-c2a-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001.json"
     },
@@ -817,7 +817,7 @@
       "requirement_id": "TAD-091",
       "planned_test_id": "tool-privacy-result-redacted-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json"
     },
@@ -907,7 +907,7 @@
       "requirement_id": "TAD-101",
       "planned_test_id": "tool-multihook-correlation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-101-tool-multihook-correlation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-101-tool-multihook-correlation-001.json"
     },
@@ -925,7 +925,7 @@
       "requirement_id": "TAD-103",
       "planned_test_id": "tool-adapter-assertion-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-103-tool-adapter-assertion-bounded-001.json"
     },
@@ -961,7 +961,7 @@
       "requirement_id": "TAD-107",
       "planned_test_id": "tool-adapter-version-no-trust-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-107-tool-adapter-version-no-trust-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-107-tool-adapter-version-no-trust-001.json"
     },
@@ -997,7 +997,7 @@
       "requirement_id": "TAD-111",
       "planned_test_id": "tool-effect-observation-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-111-tool-effect-observation-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-111-tool-effect-observation-no-merge-001.json"
     },

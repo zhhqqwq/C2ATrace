@@ -133,7 +133,7 @@
       "requirement_id": "PAD-015",
       "planned_test_id": "provider-invocation-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-015-provider-invocation-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-015-provider-invocation-no-content-merge-001.json"
     },
@@ -178,7 +178,7 @@
       "requirement_id": "PAD-020",
       "planned_test_id": "provider-attempt-distinct-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-020-provider-attempt-distinct-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-020-provider-attempt-distinct-identity-001.json"
     },
@@ -196,7 +196,7 @@
       "requirement_id": "PAD-022",
       "planned_test_id": "provider-attempt-correlation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-022-provider-attempt-correlation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-022-provider-attempt-correlation-001.json"
     },
@@ -205,7 +205,7 @@
       "requirement_id": "PAD-023",
       "planned_test_id": "provider-id-not-c2a-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-023-provider-id-not-c2a-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-023-provider-id-not-c2a-identity-001.json"
     },
@@ -304,7 +304,7 @@
       "requirement_id": "PAD-034",
       "planned_test_id": "provider-request-mutation-new-snapshot-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-034-provider-request-mutation-new-snapshot-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-034-provider-request-mutation-new-snapshot-001.json"
     },
@@ -385,7 +385,7 @@
       "requirement_id": "PAD-043",
       "planned_test_id": "provider-outputitem-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-043-provider-outputitem-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-043-provider-outputitem-no-merge-001.json"
     },
@@ -583,7 +583,7 @@
       "requirement_id": "PAD-065",
       "planned_test_id": "provider-model-identity-separation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-065-provider-model-identity-separation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-065-provider-model-identity-separation-001.json"
     },
@@ -628,7 +628,7 @@
       "requirement_id": "PAD-070",
       "planned_test_id": "provider-privacy-redacted-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-070-provider-privacy-redacted-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-070-provider-privacy-redacted-identity-001.json"
     },
@@ -700,7 +700,7 @@
       "requirement_id": "PAD-078",
       "planned_test_id": "provider-multihook-correlation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-078-provider-multihook-correlation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-078-provider-multihook-correlation-001.json"
     },
@@ -763,7 +763,7 @@
       "requirement_id": "PAD-085",
       "planned_test_id": "provider-capture-diagnostic-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001.json"
     },
@@ -790,7 +790,7 @@
       "requirement_id": "PAD-088",
       "planned_test_id": "provider-adapter-version-no-trust-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-088-provider-adapter-version-no-trust-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-088-provider-adapter-version-no-trust-001.json"
     },

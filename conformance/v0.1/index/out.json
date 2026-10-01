@@ -7,7 +7,7 @@
       "requirement_id": "OUT-001",
       "planned_test_id": "model-invocation-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-001-model-invocation-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-001-model-invocation-no-content-merge-001.json"
     },
@@ -169,7 +169,7 @@
       "requirement_id": "OUT-019",
       "planned_test_id": "model-requested-not-internal-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-019-model-requested-not-internal-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-019-model-requested-not-internal-001.json"
     },
@@ -187,7 +187,7 @@
       "requirement_id": "OUT-021",
       "planned_test_id": "model-identity-mismatch-preserved-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-021-model-identity-mismatch-preserved-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-021-model-identity-mismatch-preserved-001.json"
     },
@@ -232,7 +232,7 @@
       "requirement_id": "OUT-026",
       "planned_test_id": "model-output-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-026-model-output-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-026-model-output-no-content-merge-001.json"
     },
@@ -313,7 +313,7 @@
       "requirement_id": "OUT-035",
       "planned_test_id": "model-output-item-no-content-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-035-model-output-item-no-content-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-035-model-output-item-no-content-merge-001.json"
     },
@@ -349,7 +349,7 @@
       "requirement_id": "OUT-039",
       "planned_test_id": "model-stream-no-item-mutation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-039-model-stream-no-item-mutation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-039-model-stream-no-item-mutation-001.json"
     },
@@ -403,7 +403,7 @@
       "requirement_id": "OUT-045",
       "planned_test_id": "model-tool-proposal-occurrence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-045-model-tool-proposal-occurrence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-out-045-model-tool-proposal-occurrence-001.json"
     },
