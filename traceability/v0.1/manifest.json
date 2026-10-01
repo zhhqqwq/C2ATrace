@@ -1,0 +1,84 @@
+{
+  "protocol_version": "0.1",
+  "requirement_count": 907,
+  "all_requirements_have_planned_test": true,
+  "duplicate_requirement_ids": [],
+  "primary_enforcement_counts": {
+    "direct_schema": 12,
+    "mixed_schema_semantic": 82,
+    "semantic_verifier": 770,
+    "deterministic_vector": 43
+  },
+  "enforcement_layers": {
+    "direct_schema": "Local wire-shape constraint directly checkable by JSON Schema.",
+    "mixed_schema_semantic": "JSON Schema constrains local representation; verifier semantic checks are still required.",
+    "semantic_verifier": "Cross-object, provenance, claim-strength, conflict, completeness, causality, or external-fact rule.",
+    "deterministic_vector": "Algorithmic/canonicalization/commitment behavior requiring deterministic vectors plus verifier checks."
+  },
+  "families": {
+    "TM": {
+      "count": 12,
+      "path": "traceability/v0.1/tm.json"
+    },
+    "CLAIM": {
+      "count": 6,
+      "path": "traceability/v0.1/claim.json"
+    },
+    "GRAPH": {
+      "count": 16,
+      "path": "traceability/v0.1/graph.json"
+    },
+    "SRC": {
+      "count": 22,
+      "path": "traceability/v0.1/src.json"
+    },
+    "DRV": {
+      "count": 32,
+      "path": "traceability/v0.1/drv.json"
+    },
+    "REQ": {
+      "count": 52,
+      "path": "traceability/v0.1/req.json"
+    },
+    "OUT": {
+      "count": 53,
+      "path": "traceability/v0.1/out.json"
+    },
+    "TOOL": {
+      "count": 62,
+      "path": "traceability/v0.1/tool.json"
+    },
+    "TRUST": {
+      "count": 25,
+      "path": "traceability/v0.1/trust.json"
+    },
+    "TAINT": {
+      "count": 59,
+      "path": "traceability/v0.1/taint.json"
+    },
+    "PRIV": {
+      "count": 80,
+      "path": "traceability/v0.1/priv.json"
+    },
+    "RCPT": {
+      "count": 51,
+      "path": "traceability/v0.1/rcpt.json"
+    },
+    "INTG": {
+      "count": 70,
+      "path": "traceability/v0.1/intg.json"
+    },
+    "PAD": {
+      "count": 95,
+      "path": "traceability/v0.1/pad.json"
+    },
+    "TAD": {
+      "count": 118,
+      "path": "traceability/v0.1/tad.json"
+    },
+    "VFY": {
+      "count": 154,
+      "path": "traceability/v0.1/vfy.json"
+    }
+  }
+}
