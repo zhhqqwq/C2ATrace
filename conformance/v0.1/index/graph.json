@@ -8,7 +8,8 @@
       "planned_test_id": "graph-missing-reference-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-001-graph-missing-reference-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-001-graph-missing-reference-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-001-graph-missing-reference-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-002-artifact-id-reuse-001",
@@ -16,7 +17,8 @@
       "planned_test_id": "artifact-id-reuse-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-002-artifact-id-reuse-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-002-artifact-id-reuse-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-002-artifact-id-reuse-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-003-derivation-cycle-001",
@@ -24,7 +26,8 @@
       "planned_test_id": "derivation-cycle-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-003-derivation-cycle-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-003-derivation-cycle-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-003-derivation-cycle-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-004-binding-target-001",
@@ -32,7 +35,8 @@
       "planned_test_id": "binding-target-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-004-binding-target-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-004-binding-target-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-004-binding-target-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-005-request-attempt-conflation-001",
@@ -40,7 +44,8 @@
       "planned_test_id": "request-attempt-conflation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-005-request-attempt-conflation-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-005-request-attempt-conflation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-005-request-attempt-conflation-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-006-orphan-model-output-001",
@@ -48,7 +53,8 @@
       "planned_test_id": "orphan-model-output-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "executable",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-006-orphan-model-output-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-006-orphan-model-output-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-006-orphan-model-output-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-007-proposal-only-001",
@@ -56,7 +62,8 @@
       "planned_test_id": "proposal-only-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-007-proposal-only-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-007-proposal-only-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-007-proposal-only-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-008-execution-without-invocation-001",
@@ -64,7 +71,8 @@
       "planned_test_id": "execution-without-invocation-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-008-execution-without-invocation-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-008-execution-without-invocation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-008-execution-without-invocation-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-009-denied-with-fake-execution-001",
@@ -72,7 +80,8 @@
       "planned_test_id": "denied-with-fake-execution-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-009-denied-with-fake-execution-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-009-denied-with-fake-execution-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-009-denied-with-fake-execution-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-010-tool-result-artifact-001",
@@ -80,7 +89,8 @@
       "planned_test_id": "tool-result-artifact-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-010-tool-result-artifact-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-010-tool-result-artifact-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-010-tool-result-artifact-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-011-lying-tool-result-001",
@@ -88,7 +98,8 @@
       "planned_test_id": "lying-tool-result-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-011-lying-tool-result-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-011-lying-tool-result-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-011-lying-tool-result-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-012-effect-basis-001",
@@ -96,7 +107,8 @@
       "planned_test_id": "effect-basis-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-012-effect-basis-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-012-effect-basis-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-012-effect-basis-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-013-timestamp-conflict-001",
@@ -104,7 +116,8 @@
       "planned_test_id": "timestamp-conflict-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-013-timestamp-conflict-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-013-timestamp-conflict-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-013-timestamp-conflict-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-014-absence-not-negation-001",
@@ -112,7 +125,8 @@
       "planned_test_id": "absence-not-negation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-014-absence-not-negation-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-014-absence-not-negation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-014-absence-not-negation-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-015-core-type-classification-001",
@@ -120,7 +134,8 @@
       "planned_test_id": "core-type-classification-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-015-core-type-classification-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-015-core-type-classification-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-graph-015-core-type-classification-001.json"
     },
     {
       "case_id": "c2a-v0.1-graph-016-activity-assertion-separation-001",
@@ -128,7 +143,8 @@
       "planned_test_id": "activity-assertion-separation-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-016-activity-assertion-separation-001.json"
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-016-activity-assertion-separation-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-016-activity-assertion-separation-001.json"
     }
   ]
 }
