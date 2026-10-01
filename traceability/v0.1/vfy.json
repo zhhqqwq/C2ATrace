@@ -1,0 +1,1546 @@
+{
+  "family": "VFY",
+  "count": 154,
+  "requirements": [
+    {
+      "id": "VFY-001",
+      "title": "Verifier authority is evidence-bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-002",
+      "title": "Verification is invocation-relative",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-003",
+      "title": "No hidden evidence assumption",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-004",
+      "title": "No history repair by invention",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-005",
+      "title": "Supplied key is not identity proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-006",
+      "title": "HMAC secret is verifier capability only",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-007",
+      "title": "Candidate match does not rewrite historical disclosure",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-008",
+      "title": "Caller policy does not change historical evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-009",
+      "title": "Dependent checks respect prerequisites",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-010",
+      "title": "Independent checks continue",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-011",
+      "title": "Parse without silent repair",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-012",
+      "title": "Profile dispatch precedes profile checks",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-013",
+      "title": "No unsupported-profile fallback",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-014",
+      "title": "Baseline JCS constraints are enforced",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-015",
+      "title": "Malformed Receipt does not erase independent results",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-016",
+      "title": "Receipt identity is not payload digest",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-017",
+      "title": "Conflicting Receipt identity is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-018",
+      "title": "Repeated Presentation is not new Receipt",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-019",
+      "title": "Repeated object identity obeys immutability",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-020",
+      "title": "InternalReference stays local",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-021",
+      "title": "ExternalReference follows explicit address",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-022",
+      "title": "Unpinned resolution is not exact payload binding",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-023",
+      "title": "Pinned resolution requires target digest match",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-024",
+      "title": "Pin match does not prove target signature/truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-025",
+      "title": "Unavailable target remains unresolved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-026",
+      "title": "Ambiguous target remains ambiguous",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-027",
+      "title": "No implicit external I/O",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-028",
+      "title": "Resolver evidence is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-029",
+      "title": "Cross-Receipt graph checks use resolved material",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-030",
+      "title": "Unresolved dependency is not valid",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-031",
+      "title": "Derivation acyclicity is global over resolved graph",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-032",
+      "title": "ReceiptLink acyclicity is global over resolved links",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-033",
+      "title": "Explicit dependencies outrank timestamps",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-034",
+      "title": "Representation verification uses declared basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-035",
+      "title": "Equality remains scope-bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-036",
+      "title": "Mismatch remains check-local",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-037",
+      "title": "RequestBinding evidence levels remain distinct",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-038",
+      "title": "Whole commitment does not prove hidden sublocation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-039",
+      "title": "Redacted derivative does not verify hidden original binding",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-040",
+      "title": "Privacy verification follows actual capabilities",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-041",
+      "title": "Hash match is not confidentiality proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-042",
+      "title": "HMAC recomputation requires secret capability",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-043",
+      "title": "HMAC secrets are not report content",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-044",
+      "title": "HMAC tag presence is not candidate verification",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-045",
+      "title": "Redacted verification stays derivative-bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-046",
+      "title": "Privacy omission cannot strengthen findings",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-047",
+      "title": "Baseline ARP canonicalization uses JCS",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-048",
+      "title": "Digest is independently recomputed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-049",
+      "title": "Digest match is bounded commitment evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-050",
+      "title": "Digest mismatch blocks supplied-ARP binding",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-051",
+      "title": "IntegrityEnvelopes are evaluated individually",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-052",
+      "title": "Signing Statement uses authenticated metadata",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-053",
+      "title": "Baseline Signing Statement uses JCS UTF-8 bytes",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-054",
+      "title": "Unresolved key differs from invalid signature",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-055",
+      "title": "Unsupported signature profile differs from invalid",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-056",
+      "title": "Signature validity is key-relative",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-057",
+      "title": "Signature validity is not key trust",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-058",
+      "title": "Signature verification differs from supplied-ARP binding",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-059",
+      "title": "Valid signature is not record truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-060",
+      "title": "Valid signature is not completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-061",
+      "title": "Invalid signature is not universal factual falsehood",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-062",
+      "title": "Signature count is not truth voting",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-063",
+      "title": "ReceiptLink result remains linkage-only",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-064",
+      "title": "Missing linked target remains unresolved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-065",
+      "title": "Adapter assertions remain assertions",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-066",
+      "title": "Record existence differs from external fact",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-067",
+      "title": "CaptureDiagnostic is not global coverage",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-068",
+      "title": "Tool success is not Effect truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-069",
+      "title": "Non-completed execution is not no-effect proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-070",
+      "title": "EffectObservation is not OutcomeVerification",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-071",
+      "title": "Evidence count does not create truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-072",
+      "title": "Temporal proximity and reachability are not causality",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-073",
+      "title": "Finding premises remain traceable",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-074",
+      "title": "Weakest unresolved premise bounds conclusion",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-075",
+      "title": "established is precisely scoped",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-076",
+      "title": "matched is comparison-only",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-077",
+      "title": "asserted preserves E4 nature",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-078",
+      "title": "unknown is not false",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-079",
+      "title": "unverified means prerequisite/capability missing",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-080",
+      "title": "unsupported is implementation limitation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-081",
+      "title": "invalid is check-specific",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-082",
+      "title": "mismatched requires an actual comparison",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-083",
+      "title": "not_present is supplied-scope absence only",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-084",
+      "title": "Result domains remain typed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-085",
+      "title": "valid is not true",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-086",
+      "title": "Invalidity differs from factual uncertainty",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-087",
+      "title": "Contradictory external evidence is preserved as conflict",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-088",
+      "title": "Package inventory completeness is package-local",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-089",
+      "title": "Reference closure is not history completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-090",
+      "title": "Runtime/history completeness defaults not established",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-091",
+      "title": "Adapter capture completeness stays bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-092",
+      "title": "Absence cannot complete history",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-093",
+      "title": "Conflicts are preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-094",
+      "title": "Timestamp is not generic conflict precedence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-095",
+      "title": "Signature count is not conflict precedence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-096",
+      "title": "Unrelated checks continue through conflict",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-097",
+      "title": "Unsupported profile is not silently downgraded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-098",
+      "title": "Malformed supported profile is invalid, not unsupported",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-099",
+      "title": "Profile identifiers do not execute code",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-100",
+      "title": "Multi-Receipt semantics are input-order independent",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-101",
+      "title": "Presentation deduplication preserves envelope occurrences",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-102",
+      "title": "Partial resolution permits local verification",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-103",
+      "title": "Fully resolved supplied set is not global history",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-104",
+      "title": "VerificationReport is not historical provenance",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-105",
+      "title": "Finding identifies check, subject, domain, status",
+      "enforcement": "direct_schema",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-106",
+      "title": "Finding preserves evidence basis",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-107",
+      "title": "Private evidence need not be echoed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-108",
+      "title": "Keyed secrets never appear in ordinary report",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-109",
+      "title": "Candidate plaintext is not automatically echoed",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-110",
+      "title": "Human output cannot strengthen machine findings",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-111",
+      "title": "asserted cannot render as proved truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-112",
+      "title": "unknown cannot render as false",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-113",
+      "title": "Summary omission is scope-explicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-114",
+      "title": "No overall fully-verified boolean",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-115",
+      "title": "Process outcome is operational only",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-116",
+      "title": "invalidity_detected requires failed mandatory check",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-117",
+      "title": "incomplete_evaluation preserves blocked mandatory checks",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-118",
+      "title": "operational_error is verifier execution failure",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-119",
+      "title": "Exit zero cannot mean all facts true",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-120",
+      "title": "Semantic determinism",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-121",
+      "title": "Resource limits do not rewrite claims",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-122",
+      "title": "Untrusted metadata does not authorize I/O",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-123",
+      "title": "External resolver use is attributable",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-124",
+      "title": "Provider receipt remains unestablished by adapter evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-125",
+      "title": "Remote tool receipt/commit remains unestablished by client evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-126",
+      "title": "TrustAssertion stays policy-scoped",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-127",
+      "title": "TaintAssertion stays policy-scoped",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-128",
+      "title": "Sanitization does not erase ancestry",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-129",
+      "title": "Signed private evidence remains disclosure-bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-130",
+      "title": "Valid linkage does not complete history",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-131",
+      "title": "Schema validation does not replace semantic verification",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-132",
+      "title": "Schema failure is structural invalidity when applicable",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-133",
+      "title": "Unsupported extension does not erase independently verifiable integrity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-134",
+      "title": "Unknown extension is not silently interpreted",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-135",
+      "title": "Unsigned Receipt is not invalid solely for signature absence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-136",
+      "title": "Signature absence is distinct from unverified/invalid",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-137",
+      "title": "Ambiguous key resolution is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-138",
+      "title": "Key verification success does not resolve unrelated key ambiguity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-139",
+      "title": "Withheld is not not_present",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-140",
+      "title": "Conflict is distinct from unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-141",
+      "title": "VerificationReport declares invocation goals and capability summary",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-142",
+      "title": "Mandatory checks cannot disappear from machine report",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-143",
+      "title": "Detected mandatory failures remain visible",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-144",
+      "title": "Resolver material is content-bound for reproducibility",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-145",
+      "title": "Trusted-time claim requires recognized time evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-146",
+      "title": "Invalidity and incompleteness can coexist in findings",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-147",
+      "title": "Process outcome aggregation precedence is deterministic",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-148",
+      "title": "Process outcome never hides detailed findings",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-149",
+      "title": "Unsupported optional extension does not force incomplete mandatory baseline",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-150",
+      "title": "Profile/check applicability is explicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-151",
+      "title": "consistent is supplied-scope bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-152",
+      "title": "unresolved prerequisites prevent positive consistency when required",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-153",
+      "title": "Conflict can coexist with structural invalidity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "VFY-154",
+      "title": "Conflict alone is not universal invalidity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/verifier.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    }
+  ]
+}
