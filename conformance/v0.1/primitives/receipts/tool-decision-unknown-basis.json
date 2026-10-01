@@ -1,0 +1,122 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-effect-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tool-001",
+      "inv-tool-001",
+      "att-tool-001",
+      "out-tool-001",
+      "proposal-001",
+      "decision-unknown-001"
+    ],
+    "records": [
+      {
+        "id": "run-tool-001",
+        "kind": "Run",
+        "label": "tool-effect"
+      },
+      {
+        "id": "inv-tool-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-tool-001",
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "output_accepted",
+        "accepted_output": {
+          "ref_type": "local",
+          "id": "out-tool-001",
+          "expected_kind": "ModelOutput"
+        }
+      },
+      {
+        "id": "att-tool-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-tool-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-tool-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "provider": "example-provider"
+      },
+      {
+        "id": "out-tool-001",
+        "kind": "ModelOutput",
+        "run_id": "run-tool-001",
+        "attempt": {
+          "ref_type": "local",
+          "id": "att-tool-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "item_refs": [
+          {
+            "ref_type": "local",
+            "id": "proposal-001",
+            "expected_kind": "ToolProposal"
+          }
+        ],
+        "response_termination": "complete",
+        "capture_extent": "complete"
+      },
+      {
+        "id": "proposal-001",
+        "kind": "ToolProposal",
+        "run_id": "run-tool-001",
+        "output": {
+          "ref_type": "local",
+          "id": "out-tool-001",
+          "expected_kind": "ModelOutput"
+        },
+        "ordinal": 0,
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "decision-unknown-001",
+        "kind": "ToolDecision",
+        "run_id": "run-tool-001",
+        "subject": {
+          "ref_type": "local",
+          "id": "proposal-001",
+          "expected_kind": "ToolProposal"
+        },
+        "decision": "unknown",
+        "asserted_by": {
+          "state": "unknown"
+        },
+        "policy": {
+          "state": "unknown"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tool-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "KJzbz-wfmR5SB7CWVarZsFlSOdWOYpvl6wp0J1feKHI"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

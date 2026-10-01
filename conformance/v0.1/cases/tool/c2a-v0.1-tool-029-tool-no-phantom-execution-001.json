@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-tool-029-tool-no-phantom-execution-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-029"
+  ],
+  "planned_test_ids": [
+    "tool-no-phantom-execution-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "An invocation may be present without a ToolExecution when execution never began at the instrumented boundary.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-invocation-no-execution.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TOOL-029"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-029",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-029"
+    ]
+  },
+  "notes": [
+    "primitives: prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tool-029-tool-no-phantom-execution-001.json"
+}

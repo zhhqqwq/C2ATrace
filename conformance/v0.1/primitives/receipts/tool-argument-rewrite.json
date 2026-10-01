@@ -1,0 +1,267 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-effect-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tool-001",
+      "inv-tool-001",
+      "att-tool-001",
+      "out-tool-001",
+      "proposal-001",
+      "prep-001",
+      "invoke-001",
+      "exec-001",
+      "result-001",
+      "effect-001",
+      "drv-tool-title-rewrite-001"
+    ],
+    "records": [
+      {
+        "id": "run-tool-001",
+        "kind": "Run",
+        "label": "tool-effect"
+      },
+      {
+        "id": "inv-tool-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-tool-001",
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "output_accepted",
+        "accepted_output": {
+          "ref_type": "local",
+          "id": "out-tool-001",
+          "expected_kind": "ModelOutput"
+        }
+      },
+      {
+        "id": "att-tool-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-tool-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-tool-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "provider": "example-provider"
+      },
+      {
+        "id": "out-tool-001",
+        "kind": "ModelOutput",
+        "run_id": "run-tool-001",
+        "attempt": {
+          "ref_type": "local",
+          "id": "att-tool-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "item_refs": [
+          {
+            "ref_type": "local",
+            "id": "proposal-001",
+            "expected_kind": "ToolProposal"
+          }
+        ],
+        "response_termination": "complete",
+        "capture_extent": "complete"
+      },
+      {
+        "id": "proposal-001",
+        "kind": "ToolProposal",
+        "run_id": "run-tool-001",
+        "output": {
+          "ref_type": "local",
+          "id": "out-tool-001",
+          "expected_kind": "ModelOutput"
+        },
+        "ordinal": 0,
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": " BUG "
+          }
+        }
+      },
+      {
+        "id": "prep-001",
+        "kind": "Transform",
+        "run_id": "run-tool-001",
+        "operation": "normalize_arguments",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "proposal-001",
+              "expected_kind": "ToolProposal"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "invoke-001",
+            "expected_kind": "ToolInvocation"
+          }
+        ],
+        "selected": []
+      },
+      {
+        "id": "invoke-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tool-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        },
+        "argument_provenance": [
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/title"
+            },
+            "classification": "model_supplied",
+            "derivations": [
+              {
+                "ref_type": "local",
+                "id": "drv-tool-title-rewrite-001",
+                "expected_kind": "Derivation"
+              }
+            ]
+          }
+        ],
+        "preparation_transform": {
+          "ref_type": "local",
+          "id": "prep-001",
+          "expected_kind": "Transform"
+        }
+      },
+      {
+        "id": "exec-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tool-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      },
+      {
+        "id": "result-001",
+        "kind": "ToolResult",
+        "run_id": "run-tool-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "reported_status": "success",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "issue_id": 123,
+            "status": "created"
+          }
+        }
+      },
+      {
+        "id": "effect-001",
+        "kind": "EffectObservation",
+        "run_id": "run-tool-001",
+        "basis": "execution_result",
+        "proposition": "ToolResult reported issue 123 created",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-001",
+          "expected_kind": "ToolExecution"
+        },
+        "result": {
+          "ref_type": "local",
+          "id": "result-001",
+          "expected_kind": "ToolResult"
+        }
+      },
+      {
+        "id": "drv-tool-title-rewrite-001",
+        "kind": "Derivation",
+        "run_id": "run-tool-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "prep-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "invoke-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "tool_arguments_json",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/title"
+            }
+          }
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "proposal-001",
+                "expected_kind": "ToolProposal"
+              },
+              "representation_basis": "tool_proposal_arguments_json",
+              "region": {
+                "region_kind": "structured",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/title"
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "structured",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/title"
+              }
+            }
+          }
+        ],
+        "precision": "partial"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tool-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "KJzbz-wfmR5SB7CWVarZsFlSOdWOYpvl6wp0J1feKHI"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

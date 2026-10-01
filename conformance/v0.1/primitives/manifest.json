@@ -1097,13 +1097,54 @@
         "VFY-118",
         "VFY-125"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_03_in_progress",
+      "executable_primary_requirement_count": 21,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "GRAPH-007",
         "GRAPH-010",
         "GRAPH-011"
+      ],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/tool-invocation-no-proposal.json",
+        "conformance/v0.1/primitives/receipts/tool-proposal-invocation-no-lineage.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-model-positive.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-application-positive.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-mixed-positive.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-unknown.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-control-only.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-dropped.json",
+        "conformance/v0.1/primitives/receipts/tool-argument-rewrite.json",
+        "conformance/v0.1/primitives/receipts/tool-validation-success.json",
+        "conformance/v0.1/primitives/receipts/tool-decision-deny-no-invocation.json",
+        "conformance/v0.1/primitives/receipts/tool-decision-allow-no-execution.json",
+        "conformance/v0.1/primitives/receipts/tool-decision-deny-later-execution.json",
+        "conformance/v0.1/primitives/receipts/tool-decision-unknown-basis.json",
+        "conformance/v0.1/primitives/receipts/tool-invocation-no-execution.json",
+        "conformance/v0.1/primitives/receipts/tool-multiple-executions.json"
+      ],
+      "wave_03_primary_requirements_a": [
+        "TOOL-003",
+        "TOOL-004",
+        "TOOL-006",
+        "TOOL-007",
+        "TOOL-011",
+        "TOOL-012",
+        "TOOL-013",
+        "TOOL-014",
+        "TOOL-015",
+        "TOOL-016",
+        "TOOL-017",
+        "TOOL-018",
+        "TOOL-019",
+        "TOOL-020",
+        "TOOL-023",
+        "TOOL-024",
+        "TOOL-025",
+        "TOOL-026",
+        "TOOL-027",
+        "TOOL-029",
+        "TOOL-030"
       ]
     },
     {
@@ -2221,7 +2262,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 141,
-  "remaining_semantic_requirements": 630,
-  "materialization_wave": "03-model-output"
+  "executable_semantic_requirements": 162,
+  "remaining_semantic_requirements": 609,
+  "materialization_wave": "03-tool-a"
 }

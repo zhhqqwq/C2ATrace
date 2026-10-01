@@ -8822,7 +8822,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-003-tool-proposal-no-invocation-001"
     },
     {
       "family": "tool",
@@ -8835,7 +8837,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-004-tool-proposal-no-authorization-001"
     },
     {
       "family": "tool",
@@ -8863,7 +8867,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-006-tool-invocation-without-proposal-001"
     },
     {
       "family": "tool",
@@ -8879,7 +8885,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-007-tool-proposal-invocation-no-inference-001"
     },
     {
       "family": "tool",
@@ -8924,7 +8932,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-011-tool-argument-json-pointer-001"
     },
     {
       "family": "tool",
@@ -8939,7 +8949,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-012-tool-argument-provenance-positive-001"
     },
     {
       "family": "tool",
@@ -8952,7 +8964,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-013-tool-argument-model-supplied-bounded-001"
     },
     {
       "family": "tool",
@@ -8967,7 +8981,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-014-tool-argument-application-supplied-001"
     },
     {
       "family": "tool",
@@ -8982,7 +8998,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-015-tool-argument-mixed-001"
     },
     {
       "family": "tool",
@@ -8997,7 +9015,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-016-tool-argument-unknown-001"
     },
     {
       "family": "tool",
@@ -9012,7 +9032,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-017-tool-argument-control-no-content-001"
     },
     {
       "family": "tool",
@@ -9025,7 +9047,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-018-tool-argument-dropped-001"
     },
     {
       "family": "tool",
@@ -9038,7 +9062,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-019-tool-argument-rewrite-effective-001"
     },
     {
       "family": "tool",
@@ -9051,7 +9077,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-020-tool-validation-bounded-001"
     },
     {
       "family": "tool",
@@ -9064,7 +9092,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-023-tool-deny-proposal-no-invocation-001"
     },
     {
       "family": "tool",
@@ -9077,7 +9107,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-024-tool-deny-no-execution-001"
     },
     {
       "family": "tool",
@@ -9090,7 +9122,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-025-tool-allow-no-execution-001"
     },
     {
       "family": "tool",
@@ -9103,7 +9137,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-026-tool-deny-later-execution-001"
     },
     {
       "family": "tool",
@@ -9118,7 +9154,9 @@
       "primary_primitive": "prim.tool.lifecycle",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-027-tool-decision-basis-unknown-001"
     },
     {
       "family": "tool",
@@ -9131,7 +9169,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-029-tool-no-phantom-execution-001"
     },
     {
       "family": "tool",
@@ -9144,7 +9184,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.tool.lifecycle",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-030-tool-multiple-executions-001"
     },
     {
       "family": "tool",
@@ -12040,6 +12082,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 141,
-  "remaining_semantic_requirements": 630
+  "executable_semantic_requirements": 162,
+  "remaining_semantic_requirements": 609
 }
