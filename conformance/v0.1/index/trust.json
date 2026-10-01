@@ -8,7 +8,8 @@
       "planned_test_id": "trust-subject-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-001-trust-subject-cardinality-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-001-trust-subject-cardinality-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-001-trust-subject-cardinality-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-002-trust-no-self-subject-001",
@@ -16,7 +17,8 @@
       "planned_test_id": "trust-no-self-subject-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-002-trust-no-self-subject-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-002-trust-no-self-subject-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-002-trust-no-self-subject-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-003-trust-assertion-no-merge-001",
@@ -24,7 +26,8 @@
       "planned_test_id": "trust-assertion-no-merge-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-003-trust-assertion-no-merge-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-003-trust-assertion-no-merge-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-003-trust-assertion-no-merge-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-004-trust-dimension-001",
@@ -32,7 +35,8 @@
       "planned_test_id": "trust-dimension-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-004-trust-dimension-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-004-trust-dimension-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-004-trust-dimension-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-005-trust-state-vocabulary-001",
@@ -40,7 +44,8 @@
       "planned_test_id": "trust-state-vocabulary-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-005-trust-state-vocabulary-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-005-trust-state-vocabulary-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-005-trust-state-vocabulary-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-006-trust-issuer-001",
@@ -48,7 +53,8 @@
       "planned_test_id": "trust-issuer-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-006-trust-issuer-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-006-trust-issuer-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-006-trust-issuer-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-007-trust-policy-context-001",
@@ -56,7 +62,8 @@
       "planned_test_id": "trust-policy-context-001",
       "primary_enforcement": "mixed_schema_semantic",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-007-trust-policy-context-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-007-trust-policy-context-001.json",
+      "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-trust-007-trust-policy-context-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001",
@@ -64,7 +71,8 @@
       "planned_test_id": "trust-cross-policy-no-equivalence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-008-trust-cross-policy-no-equivalence-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-009-trust-unknown-preserved-001",
@@ -72,7 +80,8 @@
       "planned_test_id": "trust-unknown-preserved-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-009-trust-unknown-preserved-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-009-trust-unknown-preserved-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-009-trust-unknown-preserved-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-010-trust-absence-not-state-001",
@@ -80,7 +89,8 @@
       "planned_test_id": "trust-absence-not-state-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-010-trust-absence-not-state-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-010-trust-absence-not-state-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-010-trust-absence-not-state-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-011-trust-wording-bounded-001",
@@ -88,7 +98,8 @@
       "planned_test_id": "trust-wording-bounded-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-011-trust-wording-bounded-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-011-trust-wording-bounded-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-011-trust-wording-bounded-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-012-trust-source-no-inheritance-001",
@@ -96,7 +107,8 @@
       "planned_test_id": "trust-source-no-inheritance-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-012-trust-source-no-inheritance-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-012-trust-source-no-inheritance-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-012-trust-source-no-inheritance-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-013-trust-derivation-no-inheritance-001",
@@ -104,7 +116,8 @@
       "planned_test_id": "trust-derivation-no-inheritance-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-013-trust-derivation-no-inheritance-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-013-trust-derivation-no-inheritance-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-013-trust-derivation-no-inheritance-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-014-trust-containment-no-inheritance-001",
@@ -112,7 +125,8 @@
       "planned_test_id": "trust-containment-no-inheritance-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-014-trust-containment-no-inheritance-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-014-trust-containment-no-inheritance-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-014-trust-containment-no-inheritance-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-015-trust-request-output-no-inheritance-001",
@@ -120,7 +134,8 @@
       "planned_test_id": "trust-request-output-no-inheritance-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-015-trust-request-output-no-inheritance-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-015-trust-request-output-no-inheritance-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-015-trust-request-output-no-inheritance-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-016-trust-tool-chain-no-inheritance-001",
@@ -128,7 +143,8 @@
       "planned_test_id": "trust-tool-chain-no-inheritance-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-016-trust-tool-chain-no-inheritance-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-016-trust-tool-chain-no-inheritance-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-016-trust-tool-chain-no-inheritance-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001",
@@ -136,7 +152,8 @@
       "planned_test_id": "trust-signature-no-truth-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-017-trust-signature-no-truth-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-018-trust-no-implicit-taint-001",
@@ -144,7 +161,8 @@
       "planned_test_id": "trust-no-implicit-taint-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-018-trust-no-implicit-taint-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-018-trust-no-implicit-taint-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-018-trust-no-implicit-taint-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-019-trust-no-taint-conversion-001",
@@ -152,7 +170,8 @@
       "planned_test_id": "trust-no-taint-conversion-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-019-trust-no-taint-conversion-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-019-trust-no-taint-conversion-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-019-trust-no-taint-conversion-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-020-trust-no-tool-authorization-001",
@@ -160,7 +179,8 @@
       "planned_test_id": "trust-no-tool-authorization-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-020-trust-no-tool-authorization-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-020-trust-no-tool-authorization-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-020-trust-no-tool-authorization-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-021-trust-conflict-preserved-001",
@@ -168,7 +188,8 @@
       "planned_test_id": "trust-conflict-preserved-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-021-trust-conflict-preserved-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-021-trust-conflict-preserved-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-021-trust-conflict-preserved-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-022-trust-no-last-write-wins-001",
@@ -176,7 +197,8 @@
       "planned_test_id": "trust-no-last-write-wins-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-022-trust-no-last-write-wins-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-022-trust-no-last-write-wins-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-022-trust-no-last-write-wins-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-023-trust-unknown-authority-wording-001",
@@ -184,7 +206,8 @@
       "planned_test_id": "trust-unknown-authority-wording-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-023-trust-unknown-authority-wording-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-023-trust-unknown-authority-wording-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-023-trust-unknown-authority-wording-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-024-trust-region-no-whole-upgrade-001",
@@ -192,7 +215,8 @@
       "planned_test_id": "trust-region-no-whole-upgrade-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-024-trust-region-no-whole-upgrade-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-024-trust-region-no-whole-upgrade-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-024-trust-region-no-whole-upgrade-001.json"
     },
     {
       "case_id": "c2a-v0.1-trust-025-trust-unknown-policy-no-equivalence-001",
@@ -200,7 +224,8 @@
       "planned_test_id": "trust-unknown-policy-no-equivalence-001",
       "primary_enforcement": "semantic_verifier",
       "status": "mapped",
-      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-025-trust-unknown-policy-no-equivalence-001.json"
+      "case_path": "conformance/v0.1/cases/trust/c2a-v0.1-trust-025-trust-unknown-policy-no-equivalence-001.json",
+      "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-025-trust-unknown-policy-no-equivalence-001.json"
     }
   ]
 }
