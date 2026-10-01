@@ -1,0 +1,40 @@
+{
+  "case_id": "c2a-v0.1-vfy-141-verifier-report-goals-capabilities-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report-valid",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    },
+    {
+      "document_id": "report-missing-goals-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    },
+    {
+      "document_id": "report-missing-capabilities-invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "invalid",
+      "error_classes": [
+        "required"
+      ]
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-141",
+      "check_id": "verifier-report-goals-capabilities-001",
+      "subject_selector": {
+        "report_id": "report-vfy-141"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
