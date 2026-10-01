@@ -1,0 +1,114 @@
+{
+  "family": "TM",
+  "count": 12,
+  "requirements": [
+    {
+      "id": "TM-001",
+      "title": "Integrity / truth / completeness separation",
+      "enforcement": "semantic_verifier",
+      "planned_test": "verifier-wording-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-002",
+      "title": "No causal inference",
+      "enforcement": "semantic_verifier",
+      "planned_test": "causality-negative-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-003",
+      "title": "Unknown is first-class",
+      "enforcement": "semantic_verifier",
+      "planned_test": "unknown-valid-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-004",
+      "title": "Producer assertion is not independent verification",
+      "enforcement": "semantic_verifier",
+      "planned_test": "producer-assertion-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-005",
+      "title": "Provider attempts are distinct",
+      "enforcement": "semantic_verifier",
+      "planned_test": "provider-retry-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-006",
+      "title": "Effective invocation is explicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": "tool-enrichment-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-007",
+      "title": "No execution without an execution attempt",
+      "enforcement": "semantic_verifier",
+      "planned_test": "tool-denied-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-008",
+      "title": "Execution is not effect",
+      "enforcement": "semantic_verifier",
+      "planned_test": "tool-success-no-effect-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-009",
+      "title": "Supplied linkage is not global completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": "chain-truncation-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-010",
+      "title": "Provider internals default to unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": "provider-hidden-state-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-011",
+      "title": "Explicit dependency ordering dominates timestamps",
+      "enforcement": "semantic_verifier",
+      "planned_test": "timestamp-conflict-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "TM-012",
+      "title": "Capture-level bounded claims",
+      "enforcement": "semantic_verifier",
+      "planned_test": "capture-level-overclaim-001",
+      "targets": [
+        "schema/v0.1/semantic-checks.md"
+      ]
+    }
+  ]
+}
