@@ -1,118 +1,379 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "$id":"urn:c2atrace:schema:v0.1:receipt",
-  "title":"C2ATrace v0.1 Receipt and Integrity",
-  "$defs":{
-    "ReceiptScope":{
-      "oneOf":[
-        {"type":"object","required":["scope_kind","run_id"],"properties":{"scope_kind":{"const":"run"},"run_id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"}},"additionalProperties":false},
-        {"type":"object","required":["scope_kind","roots"],"properties":{"scope_kind":{"const":"roots"},"roots":{"type":"array","minItems":1,"items":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"}}},"additionalProperties":false},
-        {"type":"object","required":["scope_kind","start","end"],"properties":{"scope_kind":{"const":"time_window"},"start":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"},"end":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"}},"additionalProperties":false},
-        {"type":"object","required":["scope_kind","selection"],"properties":{"scope_kind":{"const":"selection"},"selection":{"type":"object","additionalProperties":true}},"additionalProperties":false},
-        {"type":"object","required":["scope_kind"],"properties":{"scope_kind":{"const":"unknown"}},"additionalProperties":false}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:schema:v0.1:receipt",
+  "title": "C2ATrace v0.1 Receipt and Integrity",
+  "$defs": {
+    "ReceiptScope": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "scope_kind",
+            "run_id"
+          ],
+          "properties": {
+            "scope_kind": {
+              "const": "run"
+            },
+            "run_id": {
+              "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "scope_kind",
+            "roots"
+          ],
+          "properties": {
+            "scope_kind": {
+              "const": "roots"
+            },
+            "roots": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Reference"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "scope_kind",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "scope_kind": {
+              "const": "time_window"
+            },
+            "start": {
+              "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"
+            },
+            "end": {
+              "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "scope_kind",
+            "selection"
+          ],
+          "properties": {
+            "scope_kind": {
+              "const": "selection"
+            },
+            "selection": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "scope_kind"
+          ],
+          "properties": {
+            "scope_kind": {
+              "const": "unknown"
+            }
+          },
+          "additionalProperties": false
+        }
       ]
     },
-    "ReceiptLink":{
-      "type":"object",
-      "required":["linked_receipt_id","linked_payload_digest","relation"],
-      "properties":{
-        "linked_receipt_id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "linked_payload_digest":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Digest"},
-        "relation":{"const":"prior"}
-      },
-      "additionalProperties":false
-    },
-    "AuthenticatedReceiptPayload":{
-      "type":"object",
-      "required":["receipt_id","protocol_version","profile_ids","reference_mode","inventory","records","receipt_links","privacy","scope"],
-      "properties":{
-        "receipt_id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "protocol_version":{"const":"0.1"},
-        "profile_ids":{"type":"array","minItems":1,"items":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/ProfileId"},"uniqueItems":true},
-        "reference_mode":{"enum":["self_contained","external_references_allowed"]},
-        "inventory":{"type":"array","items":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},"uniqueItems":true},
-        "records":{"type":"array","items":{"$ref":"urn:c2atrace:schema:v0.1:records#/$defs/Record"}},
-        "receipt_links":{"type":"array","items":{"$ref":"#/$defs/ReceiptLink"}},
-        "privacy":{"type":"array","items":{"$ref":"urn:c2atrace:schema:v0.1:privacy#/$defs/PrivacyDescriptor"}},
-        "scope":{"$ref":"#/$defs/ReceiptScope"},
-        "extensions":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Extensions"}
-      },
-      "additionalProperties":false
-    },
-    "BaselinePayloadDigest":{
-      "type":"object",
-      "required":["algorithm","value","representation_basis","canonicalization_profile"],
-      "properties":{
-        "algorithm":{"const":"sha256"},
-        "value":{
-          "type":"object",
-          "required":["encoding","value"],
-          "properties":{
-            "encoding":{"const":"base64url"},
-            "value":{"type":"string","pattern":"^[A-Za-z0-9_-]{43}$"}
-          },
-          "additionalProperties":false
+    "ReceiptLink": {
+      "type": "object",
+      "required": [
+        "linked_receipt_id",
+        "linked_payload_digest",
+        "relation"
+      ],
+      "properties": {
+        "linked_receipt_id": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
         },
-        "representation_basis":{"const":"arp_jcs_utf8"},
-        "canonicalization_profile":{"const":"rfc8785-jcs"}
-      },
-      "additionalProperties":false
-    },
-    "IntegrityEnvelope":{
-      "type":"object",
-      "required":["id","kind","receipt_id","payload_digest","canonicalization_profile","digest_algorithm","signature_profile","key_ref","signature"],
-      "properties":{
-        "id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "kind":{"const":"IntegrityEnvelope"},
-        "placement":{"enum":["embedded","detached"]},
-        "receipt_id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "payload_digest":{"$ref":"#/$defs/BaselinePayloadDigest"},
-        "canonicalization_profile":{"const":"rfc8785-jcs"},
-        "digest_algorithm":{"const":"sha256"},
-        "signature_profile":{"const":"ed25519"},
-        "key_ref":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "signed_at":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"},
-        "signed_metadata":{"type":"object","additionalProperties":true},
-        "signature":{
-          "type":"object",
-          "required":["encoding","value"],
-          "properties":{
-            "encoding":{"const":"base64url"},
-            "value":{"type":"string","pattern":"^[A-Za-z0-9_-]{86}$"}
-          },
-          "additionalProperties":false
+        "linked_payload_digest": {
+          "$ref": "urn:c2atrace:schema:v0.1:reference#/$defs/Digest"
         },
-        "transport_metadata":{"type":"object","additionalProperties":true}
+        "relation": {
+          "const": "prior"
+        }
       },
-      "additionalProperties":false
+      "additionalProperties": false
     },
-    "SigningStatement":{
-      "type":"object",
-      "required":["domain","receipt_id","payload_digest","canonicalization_profile","digest_algorithm","signature_profile","key_ref","envelope_id","signed_metadata"],
-      "properties":{
-        "domain":{"const":"C2ATrace/v0.1/ReceiptSignature"},
-        "receipt_id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "payload_digest":{"$ref":"#/$defs/BaselinePayloadDigest"},
-        "canonicalization_profile":{"const":"rfc8785-jcs"},
-        "digest_algorithm":{"const":"sha256"},
-        "signature_profile":{"const":"ed25519"},
-        "key_ref":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "envelope_id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
-        "signed_metadata":{"type":"object","additionalProperties":true}
+    "AuthenticatedReceiptPayload": {
+      "type": "object",
+      "required": [
+        "receipt_id",
+        "protocol_version",
+        "profile_ids",
+        "reference_mode",
+        "inventory",
+        "records",
+        "receipt_links",
+        "privacy",
+        "scope"
+      ],
+      "properties": {
+        "receipt_id": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "protocol_version": {
+          "const": "0.1"
+        },
+        "profile_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/ProfileId"
+          },
+          "uniqueItems": true
+        },
+        "reference_mode": {
+          "enum": [
+            "self_contained",
+            "external_references_allowed"
+          ]
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+          },
+          "uniqueItems": true
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:c2atrace:schema:v0.1:records#/$defs/Record"
+          }
+        },
+        "receipt_links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReceiptLink"
+          }
+        },
+        "privacy": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:c2atrace:schema:v0.1:privacy#/$defs/PrivacyDescriptor"
+          }
+        },
+        "scope": {
+          "$ref": "#/$defs/ReceiptScope"
+        },
+        "extensions": {
+          "$ref": "urn:c2atrace:schema:v0.1:representation#/$defs/Extensions"
+        },
+        "adapter_declarations": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:c2atrace:schema:v0.1:adapter#/$defs/AdapterDeclaration"
+          }
+        }
       },
-      "additionalProperties":false
+      "additionalProperties": false
     },
-    "ReceiptPresentation":{
-      "type":"object",
-      "required":["kind","arp","payload_digest","integrity_envelopes"],
-      "properties":{
-        "kind":{"const":"ReceiptPresentation"},
-        "arp":{"$ref":"#/$defs/AuthenticatedReceiptPayload"},
-        "payload_digest":{"$ref":"#/$defs/BaselinePayloadDigest"},
-        "integrity_envelopes":{"type":"array","items":{"$ref":"#/$defs/IntegrityEnvelope"}},
-        "transport_metadata":{"type":"object","additionalProperties":true}
+    "BaselinePayloadDigest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value",
+        "representation_basis",
+        "canonicalization_profile"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "object",
+          "required": [
+            "encoding",
+            "value"
+          ],
+          "properties": {
+            "encoding": {
+              "const": "base64url"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{43}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "representation_basis": {
+          "const": "arp_jcs_utf8"
+        },
+        "canonicalization_profile": {
+          "const": "rfc8785-jcs"
+        }
       },
-      "additionalProperties":false
+      "additionalProperties": false
+    },
+    "IntegrityEnvelope": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "receipt_id",
+        "payload_digest",
+        "canonicalization_profile",
+        "digest_algorithm",
+        "signature_profile",
+        "key_ref",
+        "signature"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "kind": {
+          "const": "IntegrityEnvelope"
+        },
+        "placement": {
+          "enum": [
+            "embedded",
+            "detached"
+          ]
+        },
+        "receipt_id": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "payload_digest": {
+          "$ref": "#/$defs/BaselinePayloadDigest"
+        },
+        "canonicalization_profile": {
+          "const": "rfc8785-jcs"
+        },
+        "digest_algorithm": {
+          "const": "sha256"
+        },
+        "signature_profile": {
+          "const": "ed25519"
+        },
+        "key_ref": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "signed_at": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Timestamp"
+        },
+        "signed_metadata": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "signature": {
+          "type": "object",
+          "required": [
+            "encoding",
+            "value"
+          ],
+          "properties": {
+            "encoding": {
+              "const": "base64url"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{86}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "transport_metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "SigningStatement": {
+      "type": "object",
+      "required": [
+        "domain",
+        "receipt_id",
+        "payload_digest",
+        "canonicalization_profile",
+        "digest_algorithm",
+        "signature_profile",
+        "key_ref",
+        "envelope_id",
+        "signed_metadata"
+      ],
+      "properties": {
+        "domain": {
+          "const": "C2ATrace/v0.1/ReceiptSignature"
+        },
+        "receipt_id": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "payload_digest": {
+          "$ref": "#/$defs/BaselinePayloadDigest"
+        },
+        "canonicalization_profile": {
+          "const": "rfc8785-jcs"
+        },
+        "digest_algorithm": {
+          "const": "sha256"
+        },
+        "signature_profile": {
+          "const": "ed25519"
+        },
+        "key_ref": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "envelope_id": {
+          "$ref": "urn:c2atrace:schema:v0.1:primitives#/$defs/Id"
+        },
+        "signed_metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ReceiptPresentation": {
+      "type": "object",
+      "required": [
+        "kind",
+        "arp",
+        "payload_digest",
+        "integrity_envelopes"
+      ],
+      "properties": {
+        "kind": {
+          "const": "ReceiptPresentation"
+        },
+        "arp": {
+          "$ref": "#/$defs/AuthenticatedReceiptPayload"
+        },
+        "payload_digest": {
+          "$ref": "#/$defs/BaselinePayloadDigest"
+        },
+        "integrity_envelopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IntegrityEnvelope"
+          }
+        },
+        "transport_metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
     }
   }
 }
