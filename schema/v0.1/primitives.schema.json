@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:c2atrace:schema:v0.1:primitives",
+  "title": "C2ATrace v0.1 Primitive Types",
+  "$defs": {
+    "Id": {"type":"string","minLength":1,"maxLength":256},
+    "ProfileId": {"type":"string","minLength":1,"maxLength":512},
+    "Timestamp": {"type":"string","format":"date-time"},
+    "EncodedValue": {
+      "type":"object",
+      "required":["encoding","value"],
+      "properties":{
+        "encoding":{"enum":["base64url","base64","hex"]},
+        "value":{"type":"string","minLength":1}
+      },
+      "additionalProperties":false
+    },
+    "PrincipalRef": {
+      "oneOf":[
+        {"type":"object","required":["state","id"],"properties":{"state":{"const":"known"},"id":{"$ref":"#/$defs/Id"}},"additionalProperties":false},
+        {"type":"object","required":["state"],"properties":{"state":{"const":"unknown"}},"additionalProperties":false}
+      ]
+    },
+    "PolicyRef": {
+      "oneOf":[
+        {"type":"object","required":["state","id"],"properties":{"state":{"const":"known"},"id":{"$ref":"#/$defs/ProfileId"}},"additionalProperties":false},
+        {"type":"object","required":["state"],"properties":{"state":{"const":"unknown"}},"additionalProperties":false}
+      ]
+    }
+  }
+}
