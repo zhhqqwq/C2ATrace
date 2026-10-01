@@ -1,6 +1,6 @@
 # C2ATrace v0.1 Claim Matrix
 
-Status: Phase 1 Part F aligned.
+Status: Phase 1 Part G aligned.
 
 ## 1. Claim evidence model
 
@@ -155,6 +155,14 @@ Planned test: `claim-causality-001`.
 | TaintAssertion state=present/absent/unknown | E4 | Yes, as assertion | Policy-scoped taint state, not maliciousness/cleanliness |
 | Propagated taint follows exact verified lineage | E1/E2 + E4 policy rule | Conditional | Evidence strength cannot exceed weakest propagation premise |
 | Sanitization records downstream taint absent | E4; stronger only with sanitizer evidence profile | Conditional | Does not erase upstream tainted ancestry or create trust |
+| Original representation is disclosed in this Receipt | Direct package inspection | Yes | Package-relative disclosure fact only |
+| Original representation is withheld in this Receipt | Package structure/profile | Yes | Does not prove non-observation, deletion, or absence elsewhere |
+| Unkeyed commitment candidate matches | E2 + candidate | Conditional | Candidate/commitment match only; low-entropy enumeration remains possible |
+| HMAC candidate matches | E2 + candidate + secret capability | Conditional | Authorized keyed verification, not public verification |
+| Redacted derivative commitment matches | E2 | Conditional | Redacted representation only |
+| Redacted derivative proves original plaintext | P1 | No | Prohibited evidence-scope upgrade |
+| Whole commitment proves hidden RequestBinding sublocation | P1 | No | Needs target representation or recognized inclusion proof |
+| hash_only/hmac proves global confidentiality | P1 | No | Privacy is package-relative and metadata/linkability can leak |
 | Tainted request automatically taints ModelOutput | P1 / prohibited core inference | No | Would overclaim model causality |
 | Missing TaintAssertion means taint absent | P1 / prohibited inference | No | Absence of record is not a negative state |
 | Desired Outcome achieved | P1 / unsupported by core | No | OutcomeVerification outside core v0.1 |
