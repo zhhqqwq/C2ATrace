@@ -455,7 +455,7 @@
       "requirement_id": "TAINT-057",
       "planned_test_id": "taint-propagated-basis-traceable-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-057-taint-propagated-basis-traceable-001.json"
     },
     {
