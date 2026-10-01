@@ -1,0 +1,134 @@
+{
+  "family": "GRAPH",
+  "count": 16,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-graph-001-graph-missing-reference-001",
+      "requirement_id": "GRAPH-001",
+      "planned_test_id": "graph-missing-reference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-001-graph-missing-reference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-002-artifact-id-reuse-001",
+      "requirement_id": "GRAPH-002",
+      "planned_test_id": "artifact-id-reuse-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-002-artifact-id-reuse-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-003-derivation-cycle-001",
+      "requirement_id": "GRAPH-003",
+      "planned_test_id": "derivation-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-003-derivation-cycle-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-004-binding-target-001",
+      "requirement_id": "GRAPH-004",
+      "planned_test_id": "binding-target-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-004-binding-target-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-005-request-attempt-conflation-001",
+      "requirement_id": "GRAPH-005",
+      "planned_test_id": "request-attempt-conflation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-005-request-attempt-conflation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-006-orphan-model-output-001",
+      "requirement_id": "GRAPH-006",
+      "planned_test_id": "orphan-model-output-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-006-orphan-model-output-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-007-proposal-only-001",
+      "requirement_id": "GRAPH-007",
+      "planned_test_id": "proposal-only-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-007-proposal-only-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-008-execution-without-invocation-001",
+      "requirement_id": "GRAPH-008",
+      "planned_test_id": "execution-without-invocation-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-008-execution-without-invocation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-009-denied-with-fake-execution-001",
+      "requirement_id": "GRAPH-009",
+      "planned_test_id": "denied-with-fake-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-009-denied-with-fake-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-010-tool-result-artifact-001",
+      "requirement_id": "GRAPH-010",
+      "planned_test_id": "tool-result-artifact-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-010-tool-result-artifact-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-011-lying-tool-result-001",
+      "requirement_id": "GRAPH-011",
+      "planned_test_id": "lying-tool-result-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-011-lying-tool-result-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-012-effect-basis-001",
+      "requirement_id": "GRAPH-012",
+      "planned_test_id": "effect-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-012-effect-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-013-timestamp-conflict-001",
+      "requirement_id": "GRAPH-013",
+      "planned_test_id": "timestamp-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-013-timestamp-conflict-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-014-absence-not-negation-001",
+      "requirement_id": "GRAPH-014",
+      "planned_test_id": "absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-014-absence-not-negation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-015-core-type-classification-001",
+      "requirement_id": "GRAPH-015",
+      "planned_test_id": "core-type-classification-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-015-core-type-classification-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-graph-016-activity-assertion-separation-001",
+      "requirement_id": "GRAPH-016",
+      "planned_test_id": "activity-assertion-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/graph/c2a-v0.1-graph-016-activity-assertion-separation-001.json"
+    }
+  ]
+}
