@@ -9,7 +9,8 @@
     "case_index": "conformance/v0.1/schema/case-index.schema.json",
     "expected_result": "conformance/v0.1/schema/expected-result.schema.json",
     "suite_manifest": "conformance/v0.1/schema/suite-manifest.schema.json",
-    "harness_input": "conformance/v0.1/schema/harness-input.schema.json"
+    "harness_input": "conformance/v0.1/schema/harness-input.schema.json",
+    "deterministic_vector": "conformance/v0.1/schema/deterministic-vector.schema.json"
   },
   "case_indexes": [
     "conformance/v0.1/index/tm.json",
