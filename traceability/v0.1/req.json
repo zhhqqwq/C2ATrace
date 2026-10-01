@@ -5,8 +5,13 @@
     {
       "id": "REQ-001",
       "title": "ProviderAttempt invocation ownership",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-attempt-invocation-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -15,8 +20,12 @@
     {
       "id": "REQ-002",
       "title": "Attempt identity remains distinct",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-attempt-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -25,8 +34,13 @@
     {
       "id": "REQ-003",
       "title": "Snapshot capture level",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-snapshot-capture-level-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -35,8 +49,12 @@
     {
       "id": "REQ-004",
       "title": "Snapshot scope owner",
-      "enforcement": "direct_schema",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-snapshot-owner-cardinality-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -45,8 +63,12 @@
     {
       "id": "REQ-005",
       "title": "Attempt-scoped isolation",
-      "enforcement": "direct_schema",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-attempt-snapshot-isolation-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -55,8 +77,12 @@
     {
       "id": "REQ-006",
       "title": "Invocation-scoped reuse boundary",
-      "enforcement": "direct_schema",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-invocation-snapshot-reuse-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -65,8 +91,13 @@
     {
       "id": "REQ-007",
       "title": "Effective snapshot cardinality",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-effective-snapshot-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -75,8 +106,12 @@
     {
       "id": "REQ-008",
       "title": "Missing capture is not synthesized",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-no-synthetic-snapshot-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -85,8 +120,12 @@
     {
       "id": "REQ-009",
       "title": "Different levels have distinct identities",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-level-identity-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -95,8 +134,12 @@
     {
       "id": "REQ-010",
       "title": "Mutation requires new snapshot identity",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-mutation-new-snapshot-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -105,8 +148,12 @@
     {
       "id": "REQ-011",
       "title": "Capture-level bounded reporting",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-capture-level-overclaim-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -115,8 +162,12 @@
     {
       "id": "REQ-012",
       "title": "Unknown capture level remains unknown",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-capture-level-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -125,8 +176,12 @@
     {
       "id": "REQ-013",
       "title": "No implicit request transition",
-      "enforcement": "direct_schema",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-transition-no-inference-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -135,8 +190,12 @@
     {
       "id": "REQ-014",
       "title": "Forward preparation ordering",
-      "enforcement": "direct_schema",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-transition-order-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -145,8 +204,12 @@
     {
       "id": "REQ-015",
       "title": "Cross-level binding is not automatic",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-level-local-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -155,8 +218,13 @@
     {
       "id": "REQ-016",
       "title": "Binding source cardinality",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-source-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -165,8 +233,13 @@
     {
       "id": "REQ-017",
       "title": "Binding target cardinality",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-target-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -175,8 +248,13 @@
     {
       "id": "REQ-018",
       "title": "One occurrence per binding",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-occurrence-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -185,8 +263,13 @@
     {
       "id": "REQ-019",
       "title": "Partial source scope",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-partial-source-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -195,8 +278,13 @@
     {
       "id": "REQ-020",
       "title": "Structured path scheme is explicit",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-path-scheme-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -205,8 +293,12 @@
     {
       "id": "REQ-021",
       "title": "JSON-data-model interoperability path",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-json-pointer-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -215,8 +307,12 @@
     {
       "id": "REQ-022",
       "title": "Unsupported path schemes are not guessed",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-path-no-guess-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -225,8 +321,12 @@
     {
       "id": "REQ-023",
       "title": "Prepared body requires byte location for byte-level claim",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-body-byte-location-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -235,8 +335,12 @@
     {
       "id": "REQ-024",
       "title": "Text coordinate unit",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-text-coordinate-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -245,8 +349,12 @@
     {
       "id": "REQ-025",
       "title": "Text interval bounds",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-text-range-bounds-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -255,8 +363,12 @@
     {
       "id": "REQ-026",
       "title": "Ill-formed scalar sequences",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-text-invalid-scalar-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -265,8 +377,12 @@
     {
       "id": "REQ-027",
       "title": "Byte coordinate unit",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-byte-coordinate-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -275,8 +391,12 @@
     {
       "id": "REQ-028",
       "title": "Byte interval bounds",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-byte-range-bounds-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -285,8 +405,12 @@
     {
       "id": "REQ-029",
       "title": "Region basis remains explicit",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-region-basis-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -295,8 +419,12 @@
     {
       "id": "REQ-030",
       "title": "Binary/media core partial binding",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binary-byte-binding-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -305,8 +433,12 @@
     {
       "id": "REQ-031",
       "title": "Encoded media is bound at visible representation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-media-encoded-lineage-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -315,8 +447,13 @@
     {
       "id": "REQ-032",
       "title": "Semantic digest profile",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-semantic-digest-profile-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -325,8 +462,12 @@
     {
       "id": "REQ-033",
       "title": "Byte digest basis",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-byte-digest-basis-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -335,8 +476,12 @@
     {
       "id": "REQ-034",
       "title": "Digest comparability",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-digest-compatibility-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -345,8 +490,12 @@
     {
       "id": "REQ-035",
       "title": "Semantic equality is not byte equality",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-semantic-not-byte-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -355,8 +504,12 @@
     {
       "id": "REQ-036",
       "title": "Digest equality is not snapshot identity",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-digest-no-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -365,8 +518,12 @@
     {
       "id": "REQ-037",
       "title": "Binding verification levels remain distinct",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-verification-level-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -375,8 +532,12 @@
     {
       "id": "REQ-038",
       "title": "Hash-only sublocation limitation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-hash-only-sublocation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -385,8 +546,12 @@
     {
       "id": "REQ-039",
       "title": "Commitment match wording",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-commitment-match-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -395,8 +560,12 @@
     {
       "id": "REQ-040",
       "title": "Whole-scope commitment equality",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-whole-commitment-equality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -405,8 +574,12 @@
     {
       "id": "REQ-041",
       "title": "Redacted snapshot scope",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-redacted-binding-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -415,8 +588,12 @@
     {
       "id": "REQ-042",
       "title": "HMAC verification dependency",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-hmac-verification-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -425,8 +602,12 @@
     {
       "id": "REQ-043",
       "title": "Exact binding propagation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-propagation-exact-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -435,8 +616,12 @@
     {
       "id": "REQ-044",
       "title": "Partial transition blocks exact binding propagation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-propagation-partial-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -445,8 +630,12 @@
     {
       "id": "REQ-045",
       "title": "Unknown transition blocks positive propagation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-propagation-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -455,8 +644,12 @@
     {
       "id": "REQ-046",
       "title": "Prepared body is not Provider receipt",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-prepared-body-no-provider-receipt-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -465,8 +658,12 @@
     {
       "id": "REQ-047",
       "title": "Prepared body is not wire-completeness proof",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-prepared-body-no-wire-overclaim-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -475,8 +672,12 @@
     {
       "id": "REQ-048",
       "title": "Provider internals remain outside binding scope",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-binding-no-provider-internal-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -485,8 +686,13 @@
     {
       "id": "REQ-049",
       "title": "RequestLocation form is explicit",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-location-form-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -495,8 +701,12 @@
     {
       "id": "REQ-050",
       "title": "Structural validity does not imply path existence",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-structural-not-resolved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -505,8 +715,12 @@
     {
       "id": "REQ-051",
       "title": "Location resolution evidence",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-location-resolution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
@@ -515,8 +729,12 @@
     {
       "id": "REQ-052",
       "title": "Whole snapshot location semantics",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-1-PART-C-REQUEST-SEMANTICS.md",
       "planned_test": "request-whole-snapshot-location-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/request.schema.json",
         "schema/v0.1/representation.schema.json"
