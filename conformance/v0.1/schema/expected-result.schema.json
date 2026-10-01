@@ -146,6 +146,10 @@
             "unverified",
             "unsupported"
           ]
+        },
+        "key_ref": {
+          "type": "string",
+          "minLength": 1
         }
       },
       "additionalProperties": false
