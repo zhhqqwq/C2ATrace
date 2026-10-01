@@ -15,15 +15,16 @@ Status: pre-schema specification work.
 - PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md — accepted Receipt identity/scope/subset, ExternalReference/multi-Receipt resolution, ReceiptLink, RFC 8785 + SHA-256 + Ed25519 integrity, privacy composition, and multidimensional verifier-result semantics after adversarial review.
 - PROVIDER-ADAPTER-CONTRACT.md — accepted application-visible Provider Adapter capture contract, capability declaration, CaptureDiagnostic, request/output/streaming/retry capture, privacy-aware degradation, and evidence-boundary rules after adversarial review.
 - TOOL-ADAPTER-CONTRACT.md — accepted application/runtime-visible Tool Adapter capture contract, effective invocation/argument provenance, decision/execution/result boundaries, retry/idempotency, streaming results, effect-evidence acquisition, privacy, and CaptureDiagnostic semantics after adversarial review.
+- VERIFIER-CONTRACT.md — accepted evidence-bounded independent-verifier contract covering Resolution Sets, graph/representation/privacy/integrity checks, typed findings, completeness/conflict/unsupported semantics, machine/human output, and process outcomes after adversarial review.
 - THREAT-MODEL.md — trust boundaries, adversary assumptions, and numbered normative threat requirements.
 - CLAIMS.md — composable evidence-basis model and numbered verifier-reporting requirements.
-- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Tool Adapter Contract.
+- TERMINOLOGY.md — shared definitional vocabulary, now aligned through Verifier Contract.
 
 ## Project gate
 
-JSON Schema remains unfrozen. Phase 1 Parts A through H are complete.
+Phase 0, Phase 1 Parts A through H, Provider Adapter Contract, Tool Adapter Contract, and Verifier Contract are complete.
 
-Provider Adapter Contract and Tool Adapter Contract are complete. The final pre-Schema specification gate is Verifier Contract.
+All pre-Schema semantic/contract gates are complete. JSON Schema freeze is now UNBLOCKED and is the next specification phase. Implementation remains blocked until Schema freeze and conformance fixtures/test vectors are complete.
 
 ## Normative language discipline
 
