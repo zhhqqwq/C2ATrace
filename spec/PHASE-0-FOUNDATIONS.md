@@ -319,7 +319,10 @@ Trust / Taint
         ✓ Phase 1 Part F
 
 Privacy
+        ✓ Phase 1 Part G
+
+Integrity / Receipt
         ← next semantic focus
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-F are complete, but privacy, integrity/receipt, adapter, and verifier semantics still require specification gates.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-G are complete, but integrity/receipt, adapter, and verifier semantics still require specification gates.
