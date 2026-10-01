@@ -1,0 +1,430 @@
+{
+  "family": "OUT",
+  "count": 53,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-out-001-model-invocation-no-content-merge-001",
+      "requirement_id": "OUT-001",
+      "planned_test_id": "model-invocation-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-001-model-invocation-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-002-model-attempt-grouping-no-inference-001",
+      "requirement_id": "OUT-002",
+      "planned_test_id": "model-attempt-grouping-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-002-model-attempt-grouping-no-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-003-model-attempt-owner-001",
+      "requirement_id": "OUT-003",
+      "planned_test_id": "model-attempt-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-003-model-attempt-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-004-model-invocation-zero-attempt-001",
+      "requirement_id": "OUT-004",
+      "planned_test_id": "model-invocation-zero-attempt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-004-model-invocation-zero-attempt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-005-model-invocation-status-no-inference-001",
+      "requirement_id": "OUT-005",
+      "planned_test_id": "model-invocation-status-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-005-model-invocation-status-no-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-006-model-no-phantom-attempt-001",
+      "requirement_id": "OUT-006",
+      "planned_test_id": "model-no-phantom-attempt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-006-model-no-phantom-attempt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-007-model-attempt-terminal-disposition-001",
+      "requirement_id": "OUT-007",
+      "planned_test_id": "model-attempt-terminal-disposition-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-007-model-attempt-terminal-disposition-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-008-model-attempt-completed-no-output-upgrade-001",
+      "requirement_id": "OUT-008",
+      "planned_test_id": "model-attempt-completed-no-output-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-008-model-attempt-completed-no-output-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-009-model-timeout-partial-output-001",
+      "requirement_id": "OUT-009",
+      "planned_test_id": "model-timeout-partial-output-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-009-model-timeout-partial-output-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-010-model-interrupted-partial-output-001",
+      "requirement_id": "OUT-010",
+      "planned_test_id": "model-interrupted-partial-output-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-010-model-interrupted-partial-output-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-011-model-cancel-no-provider-stop-001",
+      "requirement_id": "OUT-011",
+      "planned_test_id": "model-cancel-no-provider-stop-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-011-model-cancel-no-provider-stop-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-012-model-attempt-relation-no-inference-001",
+      "requirement_id": "OUT-012",
+      "planned_test_id": "model-attempt-relation-no-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-012-model-attempt-relation-no-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-013-model-hedge-no-total-order-001",
+      "requirement_id": "OUT-013",
+      "planned_test_id": "model-hedge-no-total-order-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-013-model-hedge-no-total-order-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-014-model-multiple-attempt-outputs-001",
+      "requirement_id": "OUT-014",
+      "planned_test_id": "model-multiple-attempt-outputs-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-014-model-multiple-attempt-outputs-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-015-model-accepted-output-cardinality-001",
+      "requirement_id": "OUT-015",
+      "planned_test_id": "model-accepted-output-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-015-model-accepted-output-cardinality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-016-model-accepted-output-owner-001",
+      "requirement_id": "OUT-016",
+      "planned_test_id": "model-accepted-output-owner-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-016-model-accepted-output-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-017-model-accepted-output-no-completeness-001",
+      "requirement_id": "OUT-017",
+      "planned_test_id": "model-accepted-output-no-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-017-model-accepted-output-no-completeness-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-018-model-accepted-output-absence-001",
+      "requirement_id": "OUT-018",
+      "planned_test_id": "model-accepted-output-absence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-018-model-accepted-output-absence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-019-model-requested-not-internal-001",
+      "requirement_id": "OUT-019",
+      "planned_test_id": "model-requested-not-internal-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-019-model-requested-not-internal-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-020-model-reported-model-no-upgrade-001",
+      "requirement_id": "OUT-020",
+      "planned_test_id": "model-reported-model-no-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-020-model-reported-model-no-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-021-model-identity-mismatch-preserved-001",
+      "requirement_id": "OUT-021",
+      "planned_test_id": "model-identity-mismatch-preserved-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-021-model-identity-mismatch-preserved-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-022-model-hidden-routing-unknown-001",
+      "requirement_id": "OUT-022",
+      "planned_test_id": "model-hidden-routing-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-022-model-hidden-routing-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-023-model-output-attempt-owner-001",
+      "requirement_id": "OUT-023",
+      "planned_test_id": "model-output-attempt-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-023-model-output-attempt-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-024-model-output-cardinality-001",
+      "requirement_id": "OUT-024",
+      "planned_test_id": "model-output-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-024-model-output-cardinality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-025-model-output-boundary-001",
+      "requirement_id": "OUT-025",
+      "planned_test_id": "model-output-boundary-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-025-model-output-boundary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-026-model-output-no-content-merge-001",
+      "requirement_id": "OUT-026",
+      "planned_test_id": "model-output-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-026-model-output-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-027-model-output-partial-valid-001",
+      "requirement_id": "OUT-027",
+      "planned_test_id": "model-output-partial-valid-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-027-model-output-partial-valid-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-028-model-response-termination-vocabulary-001",
+      "requirement_id": "OUT-028",
+      "planned_test_id": "model-response-termination-vocabulary-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-028-model-response-termination-vocabulary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-029-model-capture-extent-vocabulary-001",
+      "requirement_id": "OUT-029",
+      "planned_test_id": "model-capture-extent-vocabulary-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-029-model-capture-extent-vocabulary-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-030-model-completion-axes-independent-001",
+      "requirement_id": "OUT-030",
+      "planned_test_id": "model-completion-axes-independent-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-030-model-completion-axes-independent-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-031-model-capture-complete-scope-001",
+      "requirement_id": "OUT-031",
+      "planned_test_id": "model-capture-complete-scope-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-031-model-capture-complete-scope-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-032-model-attempt-status-no-capture-inference-001",
+      "requirement_id": "OUT-032",
+      "planned_test_id": "model-attempt-status-no-capture-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-032-model-attempt-status-no-capture-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-033-model-output-item-owner-001",
+      "requirement_id": "OUT-033",
+      "planned_test_id": "model-output-item-owner-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-033-model-output-item-owner-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-034-model-output-zero-items-001",
+      "requirement_id": "OUT-034",
+      "planned_test_id": "model-output-zero-items-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-034-model-output-zero-items-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-035-model-output-item-no-content-merge-001",
+      "requirement_id": "OUT-035",
+      "planned_test_id": "model-output-item-no-content-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-035-model-output-item-no-content-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-036-model-output-item-kind-001",
+      "requirement_id": "OUT-036",
+      "planned_test_id": "model-output-item-kind-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-036-model-output-item-kind-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-037-model-output-item-kind-unknown-001",
+      "requirement_id": "OUT-037",
+      "planned_test_id": "model-output-item-kind-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-037-model-output-item-kind-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-038-model-output-item-order-no-timestamp-001",
+      "requirement_id": "OUT-038",
+      "planned_test_id": "model-output-item-order-no-timestamp-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-038-model-output-item-order-no-timestamp-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-039-model-stream-no-item-mutation-001",
+      "requirement_id": "OUT-039",
+      "planned_test_id": "model-stream-no-item-mutation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-039-model-stream-no-item-mutation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-040-model-stream-absence-not-negation-001",
+      "requirement_id": "OUT-040",
+      "planned_test_id": "model-stream-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-040-model-stream-absence-not-negation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-041-model-partial-stream-no-complete-001",
+      "requirement_id": "OUT-041",
+      "planned_test_id": "model-partial-stream-no-complete-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-041-model-partial-stream-no-complete-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-042-model-stream-assembly-no-wire-inference-001",
+      "requirement_id": "OUT-042",
+      "planned_test_id": "model-stream-assembly-no-wire-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-042-model-stream-assembly-no-wire-inference-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-043-model-finish-reason-no-upgrade-001",
+      "requirement_id": "OUT-043",
+      "planned_test_id": "model-finish-reason-no-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-043-model-finish-reason-no-upgrade-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-044-model-tool-proposal-no-execution-001",
+      "requirement_id": "OUT-044",
+      "planned_test_id": "model-tool-proposal-no-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-044-model-tool-proposal-no-execution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-045-model-tool-proposal-occurrence-001",
+      "requirement_id": "OUT-045",
+      "planned_test_id": "model-tool-proposal-occurrence-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-045-model-tool-proposal-occurrence-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-046-model-text-no-hidden-reasoning-001",
+      "requirement_id": "OUT-046",
+      "planned_test_id": "model-text-no-hidden-reasoning-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-046-model-text-no-hidden-reasoning-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-047-model-structured-validation-bounded-001",
+      "requirement_id": "OUT-047",
+      "planned_test_id": "model-structured-validation-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-047-model-structured-validation-bounded-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-048-model-attempt-output-no-provider-truth-001",
+      "requirement_id": "OUT-048",
+      "planned_test_id": "model-attempt-output-no-provider-truth-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-048-model-attempt-output-no-provider-truth-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-049-model-output-absence-not-negation-001",
+      "requirement_id": "OUT-049",
+      "planned_test_id": "model-output-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-049-model-output-absence-not-negation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-050-model-output-no-exact-request-receipt-001",
+      "requirement_id": "OUT-050",
+      "planned_test_id": "model-output-no-exact-request-receipt-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-050-model-output-no-exact-request-receipt-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-051-model-attempt-relation-same-invocation-001",
+      "requirement_id": "OUT-051",
+      "planned_test_id": "model-attempt-relation-same-invocation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-051-model-attempt-relation-same-invocation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-052-model-attempt-relation-no-self-loop-001",
+      "requirement_id": "OUT-052",
+      "planned_test_id": "model-attempt-relation-no-self-loop-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-052-model-attempt-relation-no-self-loop-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-out-053-model-attempt-predecessor-cycle-001",
+      "requirement_id": "OUT-053",
+      "planned_test_id": "model-attempt-predecessor-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-053-model-attempt-predecessor-cycle-001.json"
+    }
+  ]
+}
