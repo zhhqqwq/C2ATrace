@@ -212,9 +212,7 @@ optional target Receipt payload-digest pin
 
 The exact wire structure remains unfrozen.
 
-### 7.3 Global address within a resolution set
-
-Object IDs are scoped by their Receipt identity for cross-Receipt resolution.
+### 7.3 Cross-Receipt address versus object identity
 
 Conceptually:
 
@@ -222,7 +220,11 @@ Conceptually:
 (receipt_id, object_id)
 ~~~
 
-forms the cross-Receipt object address.
+is a package-location address telling the resolver which Receipt occurrence should supply the referenced object.
+
+The Receipt component does not redefine the underlying C2ATrace object identity.
+
+The same immutable C2ATrace object identity can be packaged in multiple Receipts. When the same object identity appears more than once in one Resolution Set, the normal object-identity/immutability rules apply across all resolved occurrences.
 
 ### 7.4 Explicit externality
 
@@ -647,7 +649,7 @@ The verifier does not use "fully verified" as shorthand for all dimensions.
 
 ### RCPT-001 — Receipt identity is occurrence/package identity
 
-A verifier MUST NOT merge distinct Receipt identities solely because their payloads, payload digests, Run IDs, timestamps, or IntegrityEnvelopes match.
+A verifier MUST NOT merge distinct Receipt identities solely because their non-identity payload content, Run IDs, timestamps, or IntegrityEnvelopes match.
 
 Planned test: receipt-identity-no-merge-001.
 
@@ -735,11 +737,11 @@ A conforming ExternalReference MUST identify a target Receipt identity and targe
 
 Planned test: receipt-external-reference-address-001.
 
-### RCPT-016 — Object identity is Receipt-scoped across Receipts
+### RCPT-016 — Cross-Receipt address does not redefine object identity
 
-A verifier MUST NOT treat equal object IDs in different Receipt identities as the same cross-Receipt object without an explicit resolution relation.
+A verifier MUST NOT treat the Receipt component of an ExternalReference address as creating a new underlying C2ATrace object identity when the referenced object ID denotes an existing identity in the Resolution Set.
 
-Planned test: receipt-object-id-scope-001.
+Planned test: receipt-address-vs-object-identity-001.
 
 ### RCPT-017 — Optional target type is not self-verifying
 
@@ -932,6 +934,18 @@ Planned test: receipt-resolution-capability-001.
 A Receipt that links to other Receipts MUST NOT be treated as a complete superseding aggregate unless an explicit recognized aggregation/completeness profile establishes that stronger claim.
 
 Planned test: receipt-linked-subset-not-aggregate-001.
+
+### RCPT-049 — Repeated object identity across Receipts must remain representation-consistent
+
+When the same immutable Artifact/object identity is supplied by multiple Receipts in one Resolution Set, a verifier MUST enforce the applicable identity/immutability constraints across those occurrences and MUST report incompatible representations as an identity conflict.
+
+Planned test: receipt-cross-receipt-object-consistency-001.
+
+### RCPT-050 — Resolved cross-Receipt Derivation graph remains acyclic
+
+After resolving ExternalReferences, the combined explicit Artifact Derivation graph across the Resolution Set MUST satisfy GRAPH-003 and remain acyclic.
+
+Planned test: receipt-cross-receipt-derivation-cycle-001.
 
 ## 29. Normative Integrity requirements
 
@@ -1331,6 +1345,18 @@ Even when every supplied ReceiptLink is included in valid signed ARPs and every 
 
 Planned test: integrity-signed-linkage-not-history-001.
 
+### INTG-067 — Signing Statement uses deterministic canonical bytes
+
+The baseline Ed25519 signature input MUST be the UTF-8 bytes of the baseline RFC 8785 JCS-canonicalized C2ATrace Signing Statement.
+
+Planned test: integrity-signing-statement-jcs-001.
+
+### INTG-068 — IntegrityEnvelope identity is authenticated when semantically present
+
+If an IntegrityEnvelope identity is part of the protocol representation, the baseline Signing Statement MUST cryptographically bind that envelope identity so it cannot be substituted without invalidating the signature.
+
+Planned test: integrity-envelope-id-binding-001.
+
 ## 30. Adversarial architecture review
 
 ### Review A — Same payload exported twice with different Receipt IDs
@@ -1547,6 +1573,36 @@ It still does not prove no omitted branch or Receipt exists.
 
 Result: RESOLVED by INTG-065 and INTG-066.
 
+### Review AF — Same Artifact appears full in Receipt A and commitment-only in Receipt B
+
+The Artifact keeps one object identity across the Resolution Set.
+
+The tuple (receipt_id, object_id) locates the packaged occurrence; it does not create two Artifacts.
+
+If the disclosed representations/commitments conflict, the verifier reports an object-identity conflict.
+
+Result: RESOLVED by RCPT-016 and RCPT-049.
+
+### Review AG — Cross-Receipt Derivation closes a cycle
+
+Each individual Receipt can look locally acyclic while the resolved combined graph creates A→B→A across package boundaries.
+
+The combined resolved Derivation graph must still satisfy GRAPH-003.
+
+Result: RESOLVED by RCPT-050.
+
+### Review AH — Envelope ID changed while signature value is copied
+
+If envelope identity is protocol-semantic metadata, changing it changes the authenticated Signing Statement and invalidates the copied signature.
+
+Result: RESOLVED by INTG-022 and INTG-068.
+
+### Review AI — Signing Statement serialized with different JSON key order
+
+The baseline Signing Statement is JCS-canonicalized before Ed25519 signing/verifying, so semantically equivalent object key ordering does not change signature input.
+
+Result: RESOLVED by INTG-067.
+
 ## 31. Architecture revisions caused by Part H
 
 ### 31.1 ExternalReference becomes a core Reference form
@@ -1639,7 +1695,7 @@ Part H locks the following decisions:
 5. Receipt scope metadata is Producer-authored and does not imply complete coverage.
 6. Subset Receipts are first-class.
 7. Cross-Receipt object references use explicit ExternalReference.
-8. Cross-Receipt object address is Receipt identity + object identity.
+8. Receipt identity + object identity is a package-location address; underlying C2ATrace object identity remains stable across repeated packaging and must remain representation-consistent.
 9. ExternalReference can be unpinned or payload-digest pinned; pinning binds target content commitment, not target truth/signature.
 10. Cross-Receipt resolution is Resolution-Set/capability relative and ambiguity is preserved.
 11. ReceiptLink is separate package-level prior-payload linkage.
@@ -1648,7 +1704,7 @@ Part H locks the following decisions:
 14. Baseline canonicalization is RFC 8785 JCS over the ARP with UTF-8 canonical bytes.
 15. Baseline payload digest is SHA-256.
 16. Baseline signature algorithm is Ed25519.
-17. Baseline signatures authenticate a domain-separated Signing Statement binding Receipt ID, payload digest, algorithm profiles, verification-key reference, and interpreted envelope metadata.
+17. Baseline signatures authenticate RFC 8785 JCS UTF-8 canonical bytes of a domain-separated Signing Statement binding Receipt ID, payload digest, algorithm profiles, verification-key reference, envelope identity, and interpreted envelope metadata.
 18. Embedded/detached envelopes are semantically equivalent when bound to the same ARP.
 19. Multiple envelopes are first-class and evaluated individually.
 20. Signature validity establishes key-relative cryptographic validity, not real-world signer identity, key trust, truth, completeness, or trusted time.
