@@ -1,9 +1,9 @@
 {
   "package_name": "C2ATrace v0.1 Project Delivery Package",
-  "package_version": "2026-10-01.2",
+  "package_version": "2026-10-01.3",
   "protocol_version": "0.1",
   "status": "current_handoff_baseline",
-  "source_snapshot_commit": "49037e4a6ca5978837cea515f2bcccf8a5c54915",
+  "source_snapshot_commit": "0750a4079c4ae5517ff2ceddc18227f0f55620e6",
   "generated_date": "2026-10-01",
   "project_positioning": "Provider-boundary Context-to-Action provenance protocol with SDK and independent verifier planned after conformance gate.",
   "gates": {
@@ -29,7 +29,7 @@
   },
   "conformance": {
     "status": "in_progress",
-    "executable_cases": 61,
+    "executable_cases": 81,
     "accepted_cases": 6,
     "direct_schema": {
       "total": 6,
@@ -42,8 +42,9 @@
     },
     "deterministic_vector": {
       "total": 43,
-      "executable": 23,
-      "remaining": 20
+      "executable": 43,
+      "remaining": 0,
+      "materialization_status": "complete_acceptance_pending"
     },
     "semantic_verifier": {
       "total": 771,

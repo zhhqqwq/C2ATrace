@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-01  
-状态基线提交：`49037e4a6ca5978837cea515f2bcccf8a5c54915`
+状态基线提交：`0750a4079c4ae5517ff2ceddc18227f0f55620e6`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases    61
+executable cases    81
 accepted cases       6
 ~~~
 
@@ -477,7 +477,7 @@ accepted cases       6
 | direct_schema | 6 | 6 accepted |
 | mixed_schema_semantic | 87 | 32 executable，55 remaining |
 | semantic_verifier | 771 | 当前尚处大规模 materialization 前期 |
-| deterministic_vector | 43 | 23 executable，20 remaining |
+| deterministic_vector | 43 | 43 executable，0 remaining；acceptance pending |
 
 注意：这是 Conformance executability review 后的当前责任分类，也是当前工作量规划的 source of truth。
 
@@ -503,8 +503,9 @@ Schema Freeze 初期分类曾经更粗；之后对 REQ-005、REQ-006、REQ-013�
 当前：
 
 ~~~text
-23 / 43 executable
-20 remaining
+43 / 43 executable
+0 remaining
+materialization complete; runner acceptance pending
 ~~~
 
 已覆盖至少：
@@ -520,7 +521,16 @@ Schema Freeze 初期分类曾经更粗；之后对 REQ-005、REQ-006、REQ-013�
 - invalid signature；
 - post-sign ARP tamper separation；
 - privacy hash-only；
-- privacy HMAC。
+- privacy HMAC；
+- embedded vs detached envelope binding；
+- detached target mismatch separation；
+- signed record deletion / fresh digest recomputation；
+- commitment compatibility and representation-basis separation；
+- HMAC secret/candidate/comparison-domain capability boundaries；
+- original vs redacted commitment separation；
+- whole-scope hash/HMAC bounded equality；
+- signed hash-only / HMAC / redacted scope composition；
+- signed ReceiptLink pin authentication boundaries。
 
 ### 9.5 mixed wave
 
@@ -736,13 +746,16 @@ v0.1 Schema 已冻结。
 
 ### Stage C2 — deterministic vectors
 
-优先完成剩余：
+状态：
+
+> MATERIALIZATION COMPLETE / ACCEPTANCE PENDING
 
 ~~~text
-20
+43 / 43 executable
+0 remaining
 ~~~
 
-原因：算法行为边界清晰、可独立重算，是建立 cross-language runner 的最佳起点。
+全部 deterministic requirements 已有可独立重算的向量与 exact normative expectations。下一步等待独立 runner 与后续 cross-language normalized equivalence acceptance。
 
 ### Stage C3 — mixed_schema_semantic
 
@@ -982,12 +995,12 @@ FULLY VERIFIED
 当前最合适的执行顺序：
 
 ~~~text
-1. 继续 deterministic_vector wave
-2. 继续 mixed_schema_semantic wave
-3. 建立 semantic_verifier reusable scenario primitives
-4. 批量 materialize semantic cases
-5. 实现独立 conformance runner A
-6. 实现第二语言 runner B
+1. 完成 mixed_schema_semantic 剩余 55 cases
+2. 建立 semantic_verifier reusable scenario primitives
+3. 批量 materialize semantic cases
+4. 实现独立 conformance runner A
+5. 实现第二语言 runner B
+6. 执行 deterministic_vector acceptance
 7. 907/907 acceptance audit
 8. Conformance Suite Gate
 9. 解锁 Product Independent Verifier
