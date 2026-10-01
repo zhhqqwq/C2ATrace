@@ -1,0 +1,16 @@
+{
+  "finding_id": "golden-taint-005",
+  "check_id": "taint-state-vocabulary-001",
+  "subject": {
+    "subject_kind": "object",
+    "receipt_id": "receipt-source-request-001",
+    "object_id": "taint-state-001",
+    "expected_kind": "TaintAssertion"
+  },
+  "domain": "conformance",
+  "status": "valid",
+  "evidence_bases": [
+    "E4"
+  ],
+  "mandatory": true
+}
