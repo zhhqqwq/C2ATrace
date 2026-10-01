@@ -5,8 +5,12 @@
     {
       "id": "GRAPH-001",
       "title": "Reference resolution",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "graph-missing-reference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -15,8 +19,12 @@
     {
       "id": "GRAPH-002",
       "title": "Immutable Artifact identity",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "artifact-id-reuse-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -25,8 +33,12 @@
     {
       "id": "GRAPH-003",
       "title": "Derivation DAG",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "derivation-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -35,8 +47,13 @@
     {
       "id": "GRAPH-004",
       "title": "Binding target",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "binding-target-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -45,8 +62,12 @@
     {
       "id": "GRAPH-005",
       "title": "Request is not attempt",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "request-attempt-conflation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -55,8 +76,13 @@
     {
       "id": "GRAPH-006",
       "title": "Output attempt identity",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "orphan-model-output-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -65,8 +91,12 @@
     {
       "id": "GRAPH-007",
       "title": "Proposal is not execution",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "proposal-only-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -75,8 +105,13 @@
     {
       "id": "GRAPH-008",
       "title": "Effective invocation",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "execution-without-invocation-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -85,8 +120,12 @@
     {
       "id": "GRAPH-009",
       "title": "No fake denied execution",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "denied-with-fake-execution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -95,8 +134,12 @@
     {
       "id": "GRAPH-010",
       "title": "Result remains an Artifact",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "tool-result-artifact-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -105,8 +148,12 @@
     {
       "id": "GRAPH-011",
       "title": "Result is not effect truth",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "lying-tool-result-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -115,8 +162,13 @@
     {
       "id": "GRAPH-012",
       "title": "Effect evidence basis",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "effect-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -125,8 +177,12 @@
     {
       "id": "GRAPH-013",
       "title": "Explicit ordering dominates timestamps",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "timestamp-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -135,8 +191,12 @@
     {
       "id": "GRAPH-014",
       "title": "Missing edge is not negation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -145,8 +205,13 @@
     {
       "id": "GRAPH-015",
       "title": "Core object classification is explicit",
-      "enforcement": "mixed_schema_semantic",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "core-type-classification-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -155,8 +220,12 @@
     {
       "id": "GRAPH-016",
       "title": "Activity / Assertion separation",
-      "enforcement": "semantic_verifier",
+      "source": "spec/PHASE-0-FOUNDATIONS.md",
       "planned_test": "activity-assertion-separation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/records.schema.json",
         "schema/v0.1/semantic-checks.md"
