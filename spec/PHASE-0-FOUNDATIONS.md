@@ -59,6 +59,7 @@ This distinction closes the object taxonomy without forcing SourceRef, Run, Rece
 | EffectObservation | Artifact | Bounded evidence claim about possible external state |
 | TrustAssertion | Assertion | Trust judgement and basis |
 | TaintAssertion | Assertion | Conservative taint judgement and basis |
+| CaptureDiagnostic | Assertion | Bounded instrumentation capture-state/degradation assertion; not completeness proof |
 | Receipt | Package | Portable package identity centered on one immutable Authenticated Receipt Payload |
 | ReceiptLink | Integrity metadata | Digest-pinned package-level link to a prior Receipt payload |
 | IntegrityEnvelope | Integrity metadata | Embedded/detached signature metadata authenticating a defined Receipt payload commitment |
@@ -145,6 +146,7 @@ A Transform using an Artifact and generating another Artifact does not, by itsel
 | retry_of / replay_of / duplicate_of | ToolExecution | ToolExecution | Optional Producer-asserted execution orchestration relation |
 | returns | ToolExecution | ToolResult | Provenance relation |
 | supported_by | EffectObservation | Artifact | Evidence Assertion |
+| diagnoses | CaptureDiagnostic | bounded instrumentation subject/scope | Instrumentation Assertion |
 
 Exact wire names remain unfrozen.
 
@@ -326,8 +328,14 @@ Privacy
 Integrity / Receipt
         ✓ Phase 1 Part H
 
-Provider / Tool Adapter Contracts
+Provider Adapter Contract
+        ✓ accepted
+
+Tool Adapter Contract
         ← next semantic focus
+
+Verifier Contract
+        pending
 ~~~
 
-Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-H are complete; provider/tool adapter and verifier contracts remain before Schema freeze.
+Project gate: JSON Schema freeze and implementation remain blocked. Phase 1 Parts A-H plus Provider Adapter Contract are complete; Tool Adapter Contract and Verifier Contract remain before Schema freeze.
