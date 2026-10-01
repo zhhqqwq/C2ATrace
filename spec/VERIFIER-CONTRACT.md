@@ -1296,6 +1296,126 @@ A Verifier MUST NOT report valid signed/pinned Receipt linkage as proof that no 
 
 Planned test: verifier-linkage-no-history-001.
 
+### VFY-131 — Schema validation does not replace semantic verification
+
+After Schema freeze, a Verifier MUST NOT treat JSON Schema or equivalent structural-schema success as proof that cross-object semantic, representation, cryptographic, provenance, or completeness requirements are satisfied.
+
+Planned test: verifier-schema-not-semantic-proof-001.
+
+### VFY-132 — Schema failure is structural invalidity when applicable
+
+When a selected supported protocol Schema applies and supplied data violates that Schema, a Verifier MUST report the applicable structural invalidity while still permitting independent checks that do not require the invalid structure where safely possible.
+
+Planned test: verifier-schema-failure-001.
+
+### VFY-133 — Unsupported extension does not erase independently verifiable integrity
+
+If an extension/profile semantic is unsupported but the Receipt remains parseable/canonicalizable under a supported integrity profile, a Verifier MUST preserve unsupported semantic findings while still evaluating independent digest/signature checks that do not require understanding that extension.
+
+Planned test: verifier-unsupported-extension-integrity-001.
+
+### VFY-134 — Unknown extension is not silently interpreted
+
+A Verifier MUST NOT invent semantics for an unknown extension field/profile merely because its JSON shape resembles a known object.
+
+Planned test: verifier-unknown-extension-no-guess-001.
+
+### VFY-135 — Unsigned Receipt is not invalid solely for signature absence
+
+A Verifier MUST NOT report a structurally conforming unsigned Receipt invalid solely because no IntegrityEnvelope is present unless the selected verification goal/profile explicitly requires a signature.
+
+Planned test: verifier-unsigned-not-invalid-001.
+
+### VFY-136 — Signature absence is distinct from unverified/invalid
+
+When signature evaluation is applicable but no IntegrityEnvelope exists, a Verifier MUST preserve signature absence as a presence/applicability result rather than fabricate invalid cryptography or unresolved key.
+
+Planned test: verifier-signature-absence-001.
+
+### VFY-137 — Ambiguous key resolution is preserved
+
+If a key reference resolves to multiple incompatible candidate verification keys without a rule establishing one applicable key, a Verifier MUST report ambiguous key resolution and MUST NOT silently select a key solely because one candidate verifies the signature.
+
+Planned test: verifier-key-resolution-ambiguous-001.
+
+### VFY-138 — Key verification success does not resolve unrelated key ambiguity
+
+A successful cryptographic check under one candidate key MUST NOT by itself establish that the ambiguous key reference was uniquely/authoritatively resolved.
+
+Planned test: verifier-key-success-no-identity-resolution-001.
+
+### VFY-139 — Withheld is not not_present
+
+A Verifier MUST NOT report a privacy-withheld representation/value as not_present when the protocol record establishes that the subject/scope exists but its representation is withheld.
+
+Planned test: verifier-withheld-not-not-present-001.
+
+### VFY-140 — Conflict is distinct from unknown
+
+A Verifier MUST NOT collapse positively detected incompatible evidence into unknown merely to avoid reporting conflict.
+
+Planned test: verifier-conflict-not-unknown-001.
+
+### VFY-141 — VerificationReport declares invocation goals and capability summary
+
+A machine-readable VerificationReport MUST identify the selected verification goals/profile and a privacy-safe summary of material capabilities used or unavailable sufficiently to interpret unverified/unsupported findings.
+
+Planned test: verifier-report-goals-capabilities-001.
+
+### VFY-142 — Mandatory checks cannot disappear from machine report
+
+A VerificationReport MUST represent every requested mandatory check as evaluated, blocked/unverified, unsupported, invalid/mismatched, or otherwise explicitly accounted for and MUST NOT silently omit a mandatory check.
+
+Planned test: verifier-report-mandatory-accounting-001.
+
+### VFY-143 — Detected mandatory failures remain visible
+
+A VerificationReport MUST NOT omit detected mandatory invalid/mismatch/conflict findings from the machine-readable result merely because a higher-level summary is shorter.
+
+Planned test: verifier-report-failure-visibility-001.
+
+### VFY-144 — Resolver material is content-bound for reproducibility
+
+When external resolver material contributes to verification, a Verifier MUST retain or identify a stable content commitment/identity for the resolved material sufficient to distinguish later changed resolver output.
+
+Planned test: verifier-resolver-content-binding-001.
+
+### VFY-145 — Trusted-time claim requires recognized time evidence
+
+A Verifier MUST NOT upgrade producer-, adapter-, tool-, provider-, or signer-recorded timestamps to trusted wall-clock time without a recognized trusted-time evidence profile.
+
+Planned test: verifier-trusted-time-required-001.
+
+### VFY-146 — Invalidity and incompleteness can coexist in findings
+
+A Verifier MUST preserve both detected invalid/mismatch findings and blocked/unverified/unsupported mandatory findings when they coexist, even though the process outcome is coarse.
+
+Planned test: verifier-invalid-and-incomplete-coexist-001.
+
+### VFY-147 — Process outcome aggregation precedence is deterministic
+
+When a trustworthy VerificationReport can be produced, process aggregation MUST use deterministic precedence: invalidity_detected over incomplete_evaluation over completed; operational_error is used when the invocation itself cannot reliably complete/report according to its execution contract.
+
+Planned test: verifier-exit-precedence-001.
+
+### VFY-148 — Process outcome never hides detailed findings
+
+A coarse process outcome MUST NOT replace, erase, or semantically override detailed machine-readable findings.
+
+Planned test: verifier-exit-does-not-hide-findings-001.
+
+### VFY-149 — Unsupported optional extension does not force incomplete mandatory baseline
+
+A Verifier MUST NOT classify baseline verification incomplete solely because an optional extension is unsupported when no selected mandatory verification goal depends on that extension.
+
+Planned test: verifier-optional-extension-exit-001.
+
+### VFY-150 — Profile/check applicability is explicit
+
+A Verifier MUST determine whether a check is applicable under the selected Receipt/profile/goals before treating absence, unsupported capability, or unverified evidence as a mandatory verification failure.
+
+Planned test: verifier-check-applicability-001.
+
 ## 32. Adversarial architecture review
 
 ### Review A — Everything is structurally valid and signed, but Producer fabricated the run
@@ -1514,6 +1634,66 @@ Human rendering cannot strengthen unknown into success.
 
 Result: RESOLVED by VFY-110 and VFY-112.
 
+### Review AK — Receipt is Schema-valid but cross-Receipt Derivation is cyclic
+
+Schema success does not replace semantic graph verification.
+
+Result: RESOLVED by VFY-131.
+
+### Review AL — Receipt contains an optional extension the verifier does not understand
+
+The extension semantic checks are unsupported, but JCS/digest/signature checks can still run when their inputs remain supported and canonicalizable.
+
+Result: RESOLVED by VFY-133, VFY-134, and VFY-149.
+
+### Review AM — Receipt has no signatures
+
+Unsigned does not mean structurally invalid. Signature absence is reported as absence unless the caller/profile requires signature verification.
+
+Result: RESOLVED by VFY-135, VFY-136, and VFY-150.
+
+### Review AN — Key reference resolves to two keys and one verifies
+
+The verifier can report the cryptographic result under the tested key while preserving ambiguous key-reference resolution; successful verification does not silently establish key identity.
+
+Result: RESOLVED by VFY-137 and VFY-138.
+
+### Review AO — Secret ToolInvocation argument exists but is withheld
+
+The argument is withheld, not not_present.
+
+Result: RESOLVED by VFY-139.
+
+### Review AP — Two contradictory CaptureDiagnostics exist
+
+Positive contradiction is conflict, not generic unknown.
+
+Result: RESOLVED by VFY-093 and VFY-140.
+
+### Review AQ — Verification requested five mandatory checks but report only lists four
+
+The machine report is incomplete/non-conforming because mandatory checks cannot silently disappear.
+
+Result: RESOLVED by VFY-141 through VFY-143.
+
+### Review AR — External resolver returns different content tomorrow
+
+The verification invocation/result retains a stable content identity/commitment for the material actually used so later resolver changes do not rewrite the original verification context.
+
+Result: RESOLVED by VFY-144.
+
+### Review AS — Signed adapter timestamp looks plausible
+
+Without recognized trusted-time evidence it remains recorded/signed time, not trusted wall-clock time.
+
+Result: RESOLVED by VFY-145.
+
+### Review AT — One mandatory signature is invalid and another mandatory external proof is unavailable
+
+Both detailed states remain in the report. The coarse process outcome deterministically selects invalidity_detected while preserving the incomplete check.
+
+Result: RESOLVED by VFY-146 through VFY-148.
+
 ## 33. Architecture revisions caused by Verifier Contract
 
 ### 33.1 VerificationReport and VerificationFinding are verifier-output meta objects
@@ -1552,15 +1732,15 @@ The Verifier Contract locks:
 2. verification is relative to an explicit Verification Invocation;
 3. inputs can include Receipt/Resolution Set plus keys, keyed secrets, candidates, recognized proof/evidence profiles, external evidence, and verification goals;
 4. evaluation is dependency-ordered while independent checks continue;
-5. unsupported profile is distinct from malformed/invalid supported profile;
+5. unsupported profile is distinct from malformed/invalid supported profile; unsupported optional extensions do not block independent baseline integrity checks;
 6. baseline verification performs no implicit network/filesystem resolution;
 7. ExternalReference resolution is explicit and pin-aware;
 8. cross-Receipt identity and graph invariants are globally evaluated after resolution;
 9. representation/commitment equality remains scope-bounded;
 10. RequestBinding verification preserves its evidence ladder;
 11. privacy-dependent verification follows actual capabilities;
-12. secret verifier capabilities and undisclosed candidates are not automatically emitted;
-13. ARP canonicalization/digest and per-envelope signatures remain separate dimensions;
+12. secret verifier capabilities, withheld values, and undisclosed candidates remain distinct from absence and are not automatically emitted;
+13. ARP canonicalization/digest and per-envelope signatures remain separate dimensions; unsigned Receipt remains structurally evaluable;
 14. signature validity is separate from supplied-ARP binding and key trust;
 15. adapter/runtime statements remain assertions absent stronger evidence;
 16. per-claim composition preserves the weakest unresolved/asserted premise;
@@ -1570,14 +1750,16 @@ The Verifier Contract locks:
 20. conflicts are preserved without generic timestamp/signature-count precedence;
 21. fully resolved supplied Resolution Set is not global history;
 22. VerificationReport/VerificationFinding are verifier-output meta objects;
-23. machine-readable findings are normative and human output cannot strengthen them;
+23. machine-readable findings are normative, account for all requested mandatory checks, and human output cannot strengthen them;
 24. there is no unqualified overall fully_verified boolean;
-25. process/CLI outcome is operational aggregation only;
+25. process/CLI outcome is operational aggregation only, with deterministic invalidity_detected > incomplete_evaluation > completed precedence when a trustworthy report is produced;
 26. semantic results are deterministic for semantically identical inputs/capabilities;
 27. resource limits/operational failure do not rewrite unevaluated claims as invalid/false;
 28. untrusted metadata cannot trigger arbitrary code/network/filesystem access;
-29. ordinary Provider/Tool adapter evidence does not establish hidden remote/internal state;
-30. valid supplied linkage does not establish complete history.
+29. Schema validation does not replace semantic verification, and future extensions remain explicitly supported/unsupported rather than guessed;
+30. recorded timestamps do not become trusted time without a recognized time-evidence profile;
+31. ordinary Provider/Tool adapter evidence does not establish hidden remote/internal state;
+32. valid supplied linkage does not establish complete history.
 
 ## 35. Schema-unlock implications
 
