@@ -1,0 +1,16 @@
+{
+  "finding_id": "golden-graph-004",
+  "check_id": "binding-target-001",
+  "subject": {
+    "subject_kind": "object",
+    "receipt_id": "receipt-source-request-001",
+    "object_id": "bind-001",
+    "expected_kind": "RequestBinding"
+  },
+  "domain": "conformance",
+  "status": "invalid",
+  "evidence_bases": [
+    "E1"
+  ],
+  "mandatory": true
+}
