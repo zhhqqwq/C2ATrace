@@ -71,7 +71,7 @@
       "requirement_id": "SRC-009",
       "planned_test_id": "source-observation-cardinality-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-009-source-observation-cardinality-001.json"
     },
     {
