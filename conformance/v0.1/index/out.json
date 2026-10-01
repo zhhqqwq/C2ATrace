@@ -25,7 +25,7 @@
       "requirement_id": "OUT-003",
       "planned_test_id": "model-attempt-owner-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-003-model-attempt-owner-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-out-003-model-attempt-owner-001.json"
     },
@@ -250,7 +250,7 @@
       "requirement_id": "OUT-028",
       "planned_test_id": "model-response-termination-vocabulary-001",
       "primary_enforcement": "mixed_schema_semantic",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/out/c2a-v0.1-out-028-model-response-termination-vocabulary-001.json",
       "expected_result_path": "conformance/v0.1/expected/mixed/c2a-v0.1-out-028-model-response-termination-vocabulary-001.json"
     },
