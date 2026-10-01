@@ -1,0 +1,46 @@
+{
+  "vector_id": "integrity-separation-001",
+  "profile_id": "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519",
+  "base_fixture": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+  "verification_key": {
+    "key_ref": "test-ed25519-key-001",
+    "algorithm": "ed25519",
+    "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg"
+  },
+  "cases": [
+    {
+      "case_id": "baseline-valid",
+      "patches": [],
+      "expected_recomputed_arp_digest_base64url": "rFTRfzA5v_UScc1oHBm94lW2_D026aKld5pz70URrsw",
+      "expected_signature_status": "valid",
+      "expected_arp_binding": "matched"
+    },
+    {
+      "case_id": "tampered-arp-preserve-envelope",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/0/label",
+          "value": "minimal-tampered"
+        }
+      ],
+      "expected_recomputed_arp_jcs_utf8": "{\"inventory\":[\"run-001\"],\"privacy\":[],\"profile_ids\":[\"urn:c2atrace:profile:v0.1:core\",\"urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519\"],\"protocol_version\":\"0.1\",\"receipt_id\":\"receipt-minimal-001\",\"receipt_links\":[],\"records\":[{\"id\":\"run-001\",\"kind\":\"Run\",\"label\":\"minimal-tampered\"}],\"reference_mode\":\"self_contained\",\"scope\":{\"run_id\":\"run-001\",\"scope_kind\":\"run\"}}",
+      "expected_recomputed_arp_digest_hex": "ac90e19b497f565752626f004b3584f919a92d1ca0ebc56d7f796fbcb9689af6",
+      "expected_recomputed_arp_digest_base64url": "rJDhm0l_VldSYm8ASzWE-RmpLRyg68Vtf3lvvLlomvY",
+      "expected_signature_status": "valid",
+      "expected_arp_binding": "mismatched",
+      "note": "The unchanged signature still validates its unchanged Signing Statement; that statement remains bound to the original payload digest, not the tampered supplied ARP."
+    },
+    {
+      "case_id": "wrong-public-key",
+      "patches": [],
+      "verification_key_override": {
+        "key_ref": "test-ed25519-wrong-key-001",
+        "algorithm": "ed25519",
+        "public_key_base64url": "Kay64UG8yvCyLhqU000LxzYeUm0L_hLIl5S8kyKWbdc"
+      },
+      "expected_signature_status": "invalid",
+      "expected_arp_binding": "matched"
+    }
+  ]
+}
