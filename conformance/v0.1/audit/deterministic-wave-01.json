@@ -1,0 +1,27 @@
+{
+  "layer": "deterministic_vector",
+  "wave": "01",
+  "status": "in_progress",
+  "total_requirements": 43,
+  "executable_requirements": 5,
+  "remaining_requirements": 38,
+  "executable_cases": [
+    "c2a-v0.1-intg-001-integrity-jcs-profile-001",
+    "c2a-v0.1-intg-035-integrity-signature-invalid-001",
+    "c2a-v0.1-intg-043-integrity-post-sign-tamper-001",
+    "c2a-v0.1-priv-008-privacy-hash-only-profile-001",
+    "c2a-v0.1-priv-010-privacy-hmac-profile-001"
+  ],
+  "independent_recompute": {
+    "hash_sha256_positive": true,
+    "hash_sha256_negative": true,
+    "hmac_sha256_correct_key": true,
+    "hmac_sha256_wrong_key": true,
+    "tampered_arp_digest": true,
+    "ed25519_correct_key_valid": true,
+    "ed25519_wrong_key_invalid": true,
+    "tampered_arp_signature_still_valid": true,
+    "tampered_arp_binding_mismatched": true
+  },
+  "note": "Executable means vector inputs and exact normative expectations are materialized and independently recomputable. Full deterministic-vector gate remains open."
+}
