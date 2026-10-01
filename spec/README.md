@@ -1,6 +1,6 @@
 # C2ATrace Specification
 
-Status: pre-schema specification work.
+Status: pre-Schema contracts complete; v0.1 JSON Schema frozen.
 
 ## Current documents
 
@@ -24,7 +24,7 @@ Status: pre-schema specification work.
 
 Phase 0, Phase 1 Parts A through H, Provider Adapter Contract, Tool Adapter Contract, and Verifier Contract are complete.
 
-All pre-Schema semantic/contract gates are complete. JSON Schema freeze is now UNBLOCKED and is the next specification phase. Implementation remains blocked until Schema freeze and conformance fixtures/test vectors are complete.
+All pre-Schema semantic/contract gates and the v0.1 JSON Schema freeze are complete. The next gate is the complete normative fixture, invalid-fixture, and cross-language conformance-vector suite. Independent Verifier and SDK implementation remain blocked until that suite passes.
 
 ## Normative language discipline
 
