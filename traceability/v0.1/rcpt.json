@@ -5,8 +5,12 @@
     {
       "id": "RCPT-001",
       "title": "Receipt identity is occurrence/package identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-identity-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -16,8 +20,12 @@
     {
       "id": "RCPT-002",
       "title": "Receipt payload identity is immutable",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-id-payload-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -27,8 +35,12 @@
     {
       "id": "RCPT-003",
       "title": "Payload digest is not Receipt identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-digest-not-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -38,8 +50,12 @@
     {
       "id": "RCPT-004",
       "title": "IntegrityEnvelope count does not define Receipt identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-envelope-no-new-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -49,8 +65,12 @@
     {
       "id": "RCPT-005",
       "title": "Unsigned Receipt is structurally representable",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-unsigned-valid-structure-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -60,8 +80,12 @@
     {
       "id": "RCPT-006",
       "title": "Package inventory is explicit/deterministic",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-inventory-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -71,8 +95,12 @@
     {
       "id": "RCPT-007",
       "title": "Inventory completeness is package-local",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-inventory-not-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -82,8 +110,12 @@
     {
       "id": "RCPT-008",
       "title": "Scope descriptor does not establish completeness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-scope-no-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -93,8 +125,12 @@
     {
       "id": "RCPT-009",
       "title": "Subset Receipt is valid",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-subset-valid-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -104,8 +140,12 @@
     {
       "id": "RCPT-010",
       "title": "Missing record is not negative proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-missing-record-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -115,8 +155,12 @@
     {
       "id": "RCPT-011",
       "title": "Runtime completeness is separate",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-runtime-completeness-not-established-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -126,8 +170,12 @@
     {
       "id": "RCPT-012",
       "title": "InternalReference stays local",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-internal-reference-local-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -137,8 +185,12 @@
     {
       "id": "RCPT-013",
       "title": "Externality is explicit",
-      "enforcement": "direct_schema",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-reference-explicit-001",
+      "primary_enforcement": "direct_schema",
+      "enforcement_layers": [
+        "json_schema"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -148,8 +200,12 @@
     {
       "id": "RCPT-014",
       "title": "Dangling local reference is not implicit external reference",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-no-implicit-external-resolution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -159,8 +215,13 @@
     {
       "id": "RCPT-015",
       "title": "ExternalReference identifies target Receipt and object",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-reference-address-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -170,8 +231,12 @@
     {
       "id": "RCPT-016",
       "title": "Cross-Receipt address does not redefine object identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-address-vs-object-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -181,8 +246,12 @@
     {
       "id": "RCPT-017",
       "title": "Optional target type is not self-verifying",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-type-resolution-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -192,8 +261,12 @@
     {
       "id": "RCPT-018",
       "title": "Unresolved ExternalReference remains unresolved",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-unresolved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -203,8 +276,12 @@
     {
       "id": "RCPT-019",
       "title": "Unresolved does not mean nonexistent",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-unresolved-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -214,8 +291,12 @@
     {
       "id": "RCPT-020",
       "title": "Unique resolution is required",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-ambiguous-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -225,8 +306,12 @@
     {
       "id": "RCPT-021",
       "title": "Receipt ID collision is preserved as conflict",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-id-collision-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -236,8 +321,12 @@
     {
       "id": "RCPT-022",
       "title": "Unpinned resolution is not payload binding",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-unpinned-bounded-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -247,8 +336,12 @@
     {
       "id": "RCPT-023",
       "title": "Pinned reference binds target payload commitment",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-pin-match-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -258,8 +351,12 @@
     {
       "id": "RCPT-024",
       "title": "Pin mismatch blocks pinned resolution",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-pin-mismatch-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -269,8 +366,12 @@
     {
       "id": "RCPT-025",
       "title": "Pin match is not target signature validity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-pin-not-signature-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -280,8 +381,12 @@
     {
       "id": "RCPT-026",
       "title": "Resolution does not prove runtime timing",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-no-time-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -291,8 +396,12 @@
     {
       "id": "RCPT-027",
       "title": "Resolution does not create causality",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-no-causal-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -302,8 +411,12 @@
     {
       "id": "RCPT-028",
       "title": "Cross-Receipt resolver is cycle-safe",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-cycle-safe-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -313,8 +426,12 @@
     {
       "id": "RCPT-029",
       "title": "Self-contained mode has no unresolved normative targets",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-self-contained-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -324,8 +441,12 @@
     {
       "id": "RCPT-030",
       "title": "External-reference mode preserves unresolved dependencies",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-external-mode-unresolved-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -335,8 +456,12 @@
     {
       "id": "RCPT-031",
       "title": "ReceiptLink is distinct from ExternalReference",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-not-object-reference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -346,8 +471,13 @@
     {
       "id": "RCPT-032",
       "title": "Baseline ReceiptLink is digest-pinned",
-      "enforcement": "mixed_schema_semantic",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-pinned-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "enforcement_layers": [
+        "json_schema",
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -357,8 +487,12 @@
     {
       "id": "RCPT-033",
       "title": "ReceiptLink is part of current ARP",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-in-payload-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -368,8 +502,12 @@
     {
       "id": "RCPT-034",
       "title": "No self prior-link",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-no-self-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -379,8 +517,12 @@
     {
       "id": "RCPT-035",
       "title": "Resolved prior-link graph is acyclic",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -390,8 +532,12 @@
     {
       "id": "RCPT-036",
       "title": "Multiple prior links are permitted",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-multiple-priors-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -401,8 +547,12 @@
     {
       "id": "RCPT-037",
       "title": "ReceiptLink does not impose total order",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-no-total-order-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -412,8 +562,12 @@
     {
       "id": "RCPT-038",
       "title": "ReceiptLink is not immediate adjacency proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-no-adjacency-proof-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -423,8 +577,12 @@
     {
       "id": "RCPT-039",
       "title": "Linked set is not complete history",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-no-global-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -434,8 +592,12 @@
     {
       "id": "RCPT-040",
       "title": "First supplied Receipt is not genesis proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-no-genesis-inference-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -445,8 +607,12 @@
     {
       "id": "RCPT-041",
       "title": "Missing linked target is unresolved dependency",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-target-missing-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -456,8 +622,12 @@
     {
       "id": "RCPT-042",
       "title": "Timestamps do not override links",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-timestamp-conflict-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -467,8 +637,12 @@
     {
       "id": "RCPT-043",
       "title": "ReceiptLink does not establish trusted chronology",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-link-no-trusted-time-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -478,8 +652,12 @@
     {
       "id": "RCPT-044",
       "title": "Reference closure is not capture completeness",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-reference-closure-not-history-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -489,8 +667,12 @@
     {
       "id": "RCPT-045",
       "title": "Reference absence is not no-dependency proof",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-reference-absence-not-negation-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -500,8 +682,12 @@
     {
       "id": "RCPT-046",
       "title": "Privacy cannot create dangling normative references silently",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-privacy-reference-closure-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -511,8 +697,12 @@
     {
       "id": "RCPT-047",
       "title": "Resolution status is capability-relative",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-resolution-capability-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -522,8 +712,12 @@
     {
       "id": "RCPT-048",
       "title": "Receipt subset semantics survive valid linkage",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-linked-subset-not-aggregate-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -533,8 +727,12 @@
     {
       "id": "RCPT-049",
       "title": "Repeated object identity across Receipts must remain representation-consistent",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-cross-receipt-object-consistency-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -544,8 +742,12 @@
     {
       "id": "RCPT-050",
       "title": "Resolved cross-Receipt Derivation graph remains acyclic",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-cross-receipt-derivation-cycle-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
@@ -555,8 +757,12 @@
     {
       "id": "RCPT-051",
       "title": "Receipt Presentation does not define new Receipt identity",
-      "enforcement": "semantic_verifier",
-      "planned_test": null,
+      "source": "spec/PHASE-1-PART-H-INTEGRITY-RECEIPT-SEMANTICS.md",
+      "planned_test": "receipt-presentation-no-new-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/receipt.schema.json",
         "schema/v0.1/reference.schema.json",
