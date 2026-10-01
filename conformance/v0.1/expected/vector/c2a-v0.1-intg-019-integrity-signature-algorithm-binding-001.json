@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-intg-019-integrity-signature-algorithm-binding-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "integrity-signing-statement-binding-001",
+      "check": "mutation-canonicalization-profile.signature",
+      "status": "invalid"
+    },
+    {
+      "vector_id": "integrity-signing-statement-binding-001",
+      "check": "mutation-digest-algorithm.signature",
+      "status": "invalid"
+    }
+  ]
+}

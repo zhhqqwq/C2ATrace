@@ -1,0 +1,44 @@
+{
+  "layer": "deterministic_vector",
+  "wave": "02",
+  "status": "in_progress",
+  "total_requirements": 43,
+  "executable_requirements": 23,
+  "remaining_requirements": 20,
+  "newly_materialized": [
+    "c2a-v0.1-intg-002-integrity-jcs-input-validity-001",
+    "c2a-v0.1-intg-003-integrity-jcs-utf8-bytes-001",
+    "c2a-v0.1-intg-004-integrity-jcs-duplicate-name-001",
+    "c2a-v0.1-intg-005-integrity-jcs-no-unicode-normalize-001",
+    "c2a-v0.1-intg-006-integrity-jcs-array-order-001",
+    "c2a-v0.1-intg-007-integrity-sha256-profile-001",
+    "c2a-v0.1-intg-008-integrity-digest-complete-arp-001",
+    "c2a-v0.1-intg-015-integrity-ed25519-profile-001",
+    "c2a-v0.1-intg-016-integrity-signature-domain-001",
+    "c2a-v0.1-intg-017-integrity-signature-receipt-id-001",
+    "c2a-v0.1-intg-018-integrity-signature-payload-digest-001",
+    "c2a-v0.1-intg-019-integrity-signature-algorithm-binding-001",
+    "c2a-v0.1-intg-020-integrity-signature-profile-binding-001",
+    "c2a-v0.1-intg-021-integrity-signature-keyref-binding-001",
+    "c2a-v0.1-intg-022-integrity-envelope-metadata-authenticated-001",
+    "c2a-v0.1-intg-023-integrity-signature-no-recursion-001",
+    "c2a-v0.1-intg-067-integrity-signing-statement-jcs-001",
+    "c2a-v0.1-intg-068-integrity-envelope-id-binding-001"
+  ],
+  "shared_vectors": [
+    "vectors/v0.1/integrity-jcs-edge-cases.json",
+    "vectors/v0.1/integrity-signing-statement-binding.json"
+  ],
+  "independent_recompute": {
+    "non_ascii_jcs_utf8_and_sha256": true,
+    "invalid_json_rejected": true,
+    "duplicate_property_names_rejected": true,
+    "nfc_nfd_digests_distinct_without_normalization": true,
+    "array_order_digests_distinct": true,
+    "complete_arp_field_change_changes_digest": true,
+    "baseline_ed25519_signature_valid": true,
+    "signing_statement_field_mutations_invalidate_signature": true,
+    "signature_value_excluded_from_signing_statement": true
+  },
+  "note": "Wave 02 materializes JCS/UTF-8/SHA-256 and Signing Statement binding requirements using reusable public deterministic vectors. Independent runner acceptance remains pending."
+}

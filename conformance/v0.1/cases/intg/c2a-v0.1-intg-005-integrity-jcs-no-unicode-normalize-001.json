@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-005-integrity-jcs-no-unicode-normalize-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-005"
+  ],
+  "planned_test_ids": [
+    "integrity-jcs-no-unicode-normalize-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "NFC and NFD string values remain distinct when the selected profile does not normalize them.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-jcs-edge-cases.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-005-integrity-jcs-no-unicode-normalize-001.json"
+}

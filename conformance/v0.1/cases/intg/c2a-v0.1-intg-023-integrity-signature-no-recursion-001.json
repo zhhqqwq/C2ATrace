@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-023-integrity-signature-no-recursion-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-023"
+  ],
+  "planned_test_ids": [
+    "integrity-signature-no-recursion-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "The signature value is excluded from the Signing Statement used to compute that signature.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-signing-statement-binding.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-023-integrity-signature-no-recursion-001.json"
+}

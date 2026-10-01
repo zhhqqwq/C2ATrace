@@ -1,0 +1,118 @@
+{
+  "vector_id": "integrity-jcs-edge-cases-001",
+  "profile_id": "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519",
+  "canonicalization_profile": "rfc8785-jcs",
+  "digest_algorithm": "sha256",
+  "invalid_json": {
+    "raw_json_utf8": "{\"a\":",
+    "expected_baseline_canonicalization": "invalid"
+  },
+  "duplicate_names": {
+    "raw_json_utf8": "{\"a\":1,\"a\":2}",
+    "expected_baseline_canonicalization": "invalid"
+  },
+  "utf8_case": {
+    "value": {
+      "z": [
+        3,
+        2,
+        1
+      ],
+      "a": "é"
+    },
+    "expected_jcs_utf8": "{\"a\":\"é\",\"z\":[3,2,1]}",
+    "expected_jcs_utf8_hex": "7b2261223a22c3a9222c227a223a5b332c322c315d7d",
+    "expected_sha256_hex": "35ca92c06e5e44b0729f57937d5aaf7476ccbc3b6202e41ac669ed3780815988",
+    "expected_sha256_base64url": "NcqSwG5eRLByn1eTfVqvdHbMvDtiAuQaxmntN4CBWYg"
+  },
+  "unicode_no_normalization": {
+    "nfc_value": {
+      "text": "é"
+    },
+    "nfd_value": {
+      "text": "é"
+    },
+    "expected_nfc_jcs_utf8": "{\"text\":\"é\"}",
+    "expected_nfd_jcs_utf8": "{\"text\":\"é\"}",
+    "expected_nfc_sha256_hex": "42d3cbf59fdccced04e5dff14433fb52d34d58e385e9770ffd896ff517d63b92",
+    "expected_nfd_sha256_hex": "9b53287cd41955684903378d2b1b4a3ddea9d80d67dcd026319a7c5a9a8a8b42",
+    "expected_digest_equality": false
+  },
+  "array_order": {
+    "first_value": {
+      "items": [
+        1,
+        2,
+        3
+      ]
+    },
+    "second_value": {
+      "items": [
+        3,
+        2,
+        1
+      ]
+    },
+    "expected_first_jcs_utf8": "{\"items\":[1,2,3]}",
+    "expected_second_jcs_utf8": "{\"items\":[3,2,1]}",
+    "expected_first_sha256_hex": "7aff5dcbe562761bfd9d8569cdd3226d3944acad6539db5d62ad3f67d9a45d0a",
+    "expected_second_sha256_hex": "27d87096a02d69dbce3514d6528cf8384ded1e55bd4dac03e5daf2f40b72586d",
+    "expected_digest_equality": false
+  },
+  "complete_arp_scope": {
+    "base_arp": {
+      "receipt_id": "receipt-minimal-001",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-001"
+      ],
+      "records": [
+        {
+          "id": "run-001",
+          "kind": "Run",
+          "label": "minimal"
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-001"
+      }
+    },
+    "modified_arp": {
+      "receipt_id": "receipt-minimal-002",
+      "protocol_version": "0.1",
+      "profile_ids": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "reference_mode": "self_contained",
+      "inventory": [
+        "run-001"
+      ],
+      "records": [
+        {
+          "id": "run-001",
+          "kind": "Run",
+          "label": "minimal"
+        }
+      ],
+      "receipt_links": [],
+      "privacy": [],
+      "scope": {
+        "scope_kind": "run",
+        "run_id": "run-001"
+      }
+    },
+    "difference_pointer": "/receipt_id",
+    "expected_base_sha256_hex": "ac54d17f3039bff51271cd681c19bde255b6fc3d36e9a2a5779a73ef4511aecc",
+    "expected_modified_sha256_hex": "65d0d04bad0d0a540d2e660f1e73214418dffb7fc0f58410bcdb93d101366b10",
+    "expected_digest_equality": false
+  }
+}

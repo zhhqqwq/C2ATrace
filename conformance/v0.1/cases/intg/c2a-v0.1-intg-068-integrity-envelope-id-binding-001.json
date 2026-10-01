@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-068-integrity-envelope-id-binding-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-068"
+  ],
+  "planned_test_ids": [
+    "integrity-envelope-id-binding-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "Changing the protocol-represented envelope identity invalidates the baseline signature.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-signing-statement-binding.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-068-integrity-envelope-id-binding-001.json"
+}

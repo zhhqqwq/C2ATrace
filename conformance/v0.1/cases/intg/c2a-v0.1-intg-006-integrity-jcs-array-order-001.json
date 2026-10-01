@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-006-integrity-jcs-array-order-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-006"
+  ],
+  "planned_test_ids": [
+    "integrity-jcs-array-order-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "Array order is preserved before canonicalization and changes the resulting digest.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-jcs-edge-cases.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-006-integrity-jcs-array-order-001.json"
+}

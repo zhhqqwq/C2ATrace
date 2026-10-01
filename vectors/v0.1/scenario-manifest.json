@@ -1,1 +1,203 @@
-{"version":"0.1","scenarios":[{"id":"minimal-unsigned","inputs":["fixtures/v0.1/valid/minimal-unsigned-receipt.json"],"expected":["schema:valid","payload_digest:matched","signature:absent","runtime_history:unknown"]},{"id":"minimal-signed","inputs":["fixtures/v0.1/valid/minimal-signed-receipt.json","vectors/v0.1/integrity-jcs-sha256-ed25519.json"],"expected":["schema:valid","payload_digest:matched","envelope:valid","arp_binding:matched","key_identity:not_established"]},{"id":"source-to-request","inputs":["fixtures/v0.1/valid/source-to-request.json"],"expected":["references:resolved","derivation:acyclic","request_binding:representation_verified","causality:not_inferred"]},{"id":"provider-retry","inputs":["fixtures/v0.1/valid/provider-retry.json"],"expected":["attempt_count:2","retry_of:asserted","first_attempt:timeout","accepted_output:out-r2","prior_provider_work:unknown"]},{"id":"streaming-partial","inputs":["fixtures/v0.1/valid/streaming-partial.json"],"expected":["attempt:interrupted","response_termination:incomplete","capture_extent:complete","provider_completion:not_established"]},{"id":"tool-effect","inputs":["fixtures/v0.1/valid/tool-effect.json"],"expected":["tool_execution:completed_asserted","tool_result:success_reported","effect_basis:execution_result","external_effect_truth:not_established","outcome:not_established"]},{"id":"privacy-hmac","inputs":["fixtures/v0.1/valid/privacy-hmac.json","vectors/v0.1/privacy-hmac-sha256.json"],"expected":["plaintext:withheld","with_secret_candidate:matched","without_secret_candidate:unverified","privacy:no_provenance_upgrade"]},{"id":"multi-receipt-pinned","inputs":["fixtures/v0.1/valid/multi-receipt-a.json","fixtures/v0.1/valid/multi-receipt-b.json"],"expected":["external_reference:resolved","external_pin:matched","receipt_link:matched","derivation:acyclic","runtime_history:unknown"]},{"id":"invalid-dual-owner","inputs":["fixtures/v0.1/invalid/schema/request-snapshot-two-owners.json"],"expected":["schema:invalid"]},{"id":"invalid-attempt-disposition","inputs":["fixtures/v0.1/invalid/schema/provider-attempt-bad-disposition.json"],"expected":["schema:invalid"]},{"id":"invalid-dangling-reference","inputs":["fixtures/v0.1/invalid/semantic/dangling-local-reference.json"],"expected":["schema:valid","semantic:invalid","reference:unresolved"]},{"id":"invalid-derivation-cycle","inputs":["fixtures/v0.1/invalid/semantic/derivation-cycle.json"],"expected":["schema:valid","semantic:invalid","derivation:cycle"]},{"id":"invalid-inventory","inputs":["fixtures/v0.1/invalid/semantic/inventory-mismatch.json"],"expected":["schema:valid","semantic:invalid","inventory:mismatch"]},{"id":"invalid-payload-digest","inputs":["fixtures/v0.1/invalid/crypto/payload-digest-mismatch.json"],"expected":["schema:valid","payload_digest:mismatched"]}]}
+{
+  "version": "0.1",
+  "scenarios": [
+    {
+      "id": "minimal-unsigned",
+      "inputs": [
+        "fixtures/v0.1/valid/minimal-unsigned-receipt.json"
+      ],
+      "expected": [
+        "schema:valid",
+        "payload_digest:matched",
+        "signature:absent",
+        "runtime_history:unknown"
+      ]
+    },
+    {
+      "id": "minimal-signed",
+      "inputs": [
+        "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "vectors/v0.1/integrity-jcs-sha256-ed25519.json"
+      ],
+      "expected": [
+        "schema:valid",
+        "payload_digest:matched",
+        "envelope:valid",
+        "arp_binding:matched",
+        "key_identity:not_established"
+      ]
+    },
+    {
+      "id": "source-to-request",
+      "inputs": [
+        "fixtures/v0.1/valid/source-to-request.json"
+      ],
+      "expected": [
+        "references:resolved",
+        "derivation:acyclic",
+        "request_binding:representation_verified",
+        "causality:not_inferred"
+      ]
+    },
+    {
+      "id": "provider-retry",
+      "inputs": [
+        "fixtures/v0.1/valid/provider-retry.json"
+      ],
+      "expected": [
+        "attempt_count:2",
+        "retry_of:asserted",
+        "first_attempt:timeout",
+        "accepted_output:out-r2",
+        "prior_provider_work:unknown"
+      ]
+    },
+    {
+      "id": "streaming-partial",
+      "inputs": [
+        "fixtures/v0.1/valid/streaming-partial.json"
+      ],
+      "expected": [
+        "attempt:interrupted",
+        "response_termination:incomplete",
+        "capture_extent:complete",
+        "provider_completion:not_established"
+      ]
+    },
+    {
+      "id": "tool-effect",
+      "inputs": [
+        "fixtures/v0.1/valid/tool-effect.json"
+      ],
+      "expected": [
+        "tool_execution:completed_asserted",
+        "tool_result:success_reported",
+        "effect_basis:execution_result",
+        "external_effect_truth:not_established",
+        "outcome:not_established"
+      ]
+    },
+    {
+      "id": "privacy-hmac",
+      "inputs": [
+        "fixtures/v0.1/valid/privacy-hmac.json",
+        "vectors/v0.1/privacy-hmac-sha256.json"
+      ],
+      "expected": [
+        "plaintext:withheld",
+        "with_secret_candidate:matched",
+        "without_secret_candidate:unverified",
+        "privacy:no_provenance_upgrade"
+      ]
+    },
+    {
+      "id": "multi-receipt-pinned",
+      "inputs": [
+        "fixtures/v0.1/valid/multi-receipt-a.json",
+        "fixtures/v0.1/valid/multi-receipt-b.json"
+      ],
+      "expected": [
+        "external_reference:resolved",
+        "external_pin:matched",
+        "receipt_link:matched",
+        "derivation:acyclic",
+        "runtime_history:unknown"
+      ]
+    },
+    {
+      "id": "invalid-dual-owner",
+      "inputs": [
+        "fixtures/v0.1/invalid/schema/request-snapshot-two-owners.json"
+      ],
+      "expected": [
+        "schema:invalid"
+      ]
+    },
+    {
+      "id": "invalid-attempt-disposition",
+      "inputs": [
+        "fixtures/v0.1/invalid/schema/provider-attempt-bad-disposition.json"
+      ],
+      "expected": [
+        "schema:invalid"
+      ]
+    },
+    {
+      "id": "invalid-dangling-reference",
+      "inputs": [
+        "fixtures/v0.1/invalid/semantic/dangling-local-reference.json"
+      ],
+      "expected": [
+        "schema:valid",
+        "semantic:invalid",
+        "reference:unresolved"
+      ]
+    },
+    {
+      "id": "invalid-derivation-cycle",
+      "inputs": [
+        "fixtures/v0.1/invalid/semantic/derivation-cycle.json"
+      ],
+      "expected": [
+        "schema:valid",
+        "semantic:invalid",
+        "derivation:cycle"
+      ]
+    },
+    {
+      "id": "invalid-inventory",
+      "inputs": [
+        "fixtures/v0.1/invalid/semantic/inventory-mismatch.json"
+      ],
+      "expected": [
+        "schema:valid",
+        "semantic:invalid",
+        "inventory:mismatch"
+      ]
+    },
+    {
+      "id": "invalid-payload-digest",
+      "inputs": [
+        "fixtures/v0.1/invalid/crypto/payload-digest-mismatch.json"
+      ],
+      "expected": [
+        "schema:valid",
+        "payload_digest:mismatched"
+      ]
+    },
+    {
+      "id": "integrity-jcs-edge-cases",
+      "inputs": [
+        "vectors/v0.1/integrity-jcs-edge-cases.json"
+      ],
+      "expected": [
+        "invalid_json:rejected",
+        "duplicate_names:rejected",
+        "utf8_digest:matched",
+        "unicode_normalization:not_added",
+        "array_order:preserved",
+        "complete_arp_scope:committed"
+      ]
+    },
+    {
+      "id": "integrity-signing-statement-binding",
+      "inputs": [
+        "vectors/v0.1/integrity-signing-statement-binding.json"
+      ],
+      "expected": [
+        "signature_algorithm:ed25519",
+        "baseline_signature:valid",
+        "signing_statement:jcs_utf8",
+        "domain:bound",
+        "receipt_id:bound",
+        "payload_digest:bound",
+        "algorithm_metadata:bound",
+        "signature_profile:bound",
+        "key_ref:bound",
+        "signed_metadata:bound",
+        "envelope_id:bound",
+        "signature_value:not_recursive"
+      ]
+    }
+  ]
+}

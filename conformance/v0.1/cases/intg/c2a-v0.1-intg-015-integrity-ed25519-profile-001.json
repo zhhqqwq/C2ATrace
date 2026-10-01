@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-intg-015-integrity-ed25519-profile-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-015"
+  ],
+  "planned_test_ids": [
+    "integrity-ed25519-profile-001"
+  ],
+  "primary_enforcement": "deterministic_vector",
+  "status": "executable",
+  "description": "The baseline digital-signature profile uses Ed25519 and the fixed baseline signature verifies.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-signing-statement-binding.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/vector/c2a-v0.1-intg-015-integrity-ed25519-profile-001.json"
+}
