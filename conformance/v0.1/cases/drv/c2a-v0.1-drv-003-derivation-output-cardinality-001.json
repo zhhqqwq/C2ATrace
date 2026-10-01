@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-drv-003-derivation-output-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-003"
+  ],
+  "planned_test_ids": [
+    "derivation-output-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Derivation has one target scope but its target Artifact Reference resolves to Transform, not an Artifact.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/5/target/artifact/id",
+          "value": "xf-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "DRV-003"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-003",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-003"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-drv-003-derivation-output-cardinality-001.json"
+}
