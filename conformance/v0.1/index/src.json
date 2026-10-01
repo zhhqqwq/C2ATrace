@@ -1,0 +1,182 @@
+{
+  "family": "SRC",
+  "count": 22,
+  "cases": [
+    {
+      "case_id": "c2a-v0.1-src-001-source-identity-key-001",
+      "requirement_id": "SRC-001",
+      "planned_test_id": "source-identity-key-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-001-source-identity-key-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-002-source-ref-resolution-001",
+      "requirement_id": "SRC-002",
+      "planned_test_id": "source-ref-resolution-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-002-source-ref-resolution-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-003-source-locator-no-merge-001",
+      "requirement_id": "SRC-003",
+      "planned_test_id": "source-locator-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-003-source-locator-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-004-source-content-no-merge-001",
+      "requirement_id": "SRC-004",
+      "planned_test_id": "source-content-no-merge-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-004-source-content-no-merge-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-005-source-multi-locator-wording-001",
+      "requirement_id": "SRC-005",
+      "planned_test_id": "source-multi-locator-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-005-source-multi-locator-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-006-source-redirect-preservation-001",
+      "requirement_id": "SRC-006",
+      "planned_test_id": "source-redirect-preservation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-006-source-redirect-preservation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-007-source-redirect-no-alias-001",
+      "requirement_id": "SRC-007",
+      "planned_test_id": "source-redirect-no-alias-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-007-source-redirect-no-alias-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-008-source-alias-no-collapse-001",
+      "requirement_id": "SRC-008",
+      "planned_test_id": "source-alias-no-collapse-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-008-source-alias-no-collapse-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-009-source-observation-cardinality-001",
+      "requirement_id": "SRC-009",
+      "planned_test_id": "source-observation-cardinality-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-009-source-observation-cardinality-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-010-source-unknown-preservation-001",
+      "requirement_id": "SRC-010",
+      "planned_test_id": "source-unknown-preservation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-010-source-unknown-preservation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-011-source-repeat-observation-001",
+      "requirement_id": "SRC-011",
+      "planned_test_id": "source-repeat-observation-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-011-source-repeat-observation-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-012-source-observation-reuse-001",
+      "requirement_id": "SRC-012",
+      "planned_test_id": "source-observation-reuse-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-012-source-observation-reuse-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-013-source-version-hint-identity-001",
+      "requirement_id": "SRC-013",
+      "planned_test_id": "source-version-hint-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-013-source-version-hint-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-014-source-version-order-001",
+      "requirement_id": "SRC-014",
+      "planned_test_id": "source-version-order-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-014-source-version-order-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-015-source-commitment-basis-001",
+      "requirement_id": "SRC-015",
+      "planned_test_id": "source-commitment-basis-001",
+      "primary_enforcement": "mixed_schema_semantic",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-015-source-commitment-basis-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-016-source-commitment-basis-wording-001",
+      "requirement_id": "SRC-016",
+      "planned_test_id": "source-commitment-basis-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-016-source-commitment-basis-wording-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-017-source-commitment-compatibility-001",
+      "requirement_id": "SRC-017",
+      "planned_test_id": "source-commitment-compatibility-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-017-source-commitment-compatibility-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-018-source-commitment-no-identity-001",
+      "requirement_id": "SRC-018",
+      "planned_test_id": "source-commitment-no-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-018-source-commitment-no-identity-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-019-source-observation-completeness-001",
+      "requirement_id": "SRC-019",
+      "planned_test_id": "source-observation-completeness-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-019-source-observation-completeness-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-020-source-observation-extent-unknown-001",
+      "requirement_id": "SRC-020",
+      "planned_test_id": "source-observation-extent-unknown-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-020-source-observation-extent-unknown-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-021-source-origin-claim-strength-001",
+      "requirement_id": "SRC-021",
+      "planned_test_id": "source-origin-claim-strength-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-021-source-origin-claim-strength-001.json"
+    },
+    {
+      "case_id": "c2a-v0.1-src-022-source-cross-receipt-identity-001",
+      "requirement_id": "SRC-022",
+      "planned_test_id": "source-cross-receipt-identity-001",
+      "primary_enforcement": "semantic_verifier",
+      "status": "mapped",
+      "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-022-source-cross-receipt-identity-001.json"
+    }
+  ]
+}
