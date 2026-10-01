@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-drv-004-derivation-input-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-004"
+  ],
+  "planned_test_ids": [
+    "derivation-input-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "Derivation contributor array remains non-empty and Schema-valid, but its contributor resolves to a Transform instead of an Artifact.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/5/contributors/0/scope/artifact/id",
+          "value": "xf-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "DRV-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-004",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-004"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-drv-004-derivation-input-cardinality-001.json"
+}
