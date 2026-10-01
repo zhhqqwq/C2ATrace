@@ -58,3 +58,19 @@ The first materialized Receipt primitives live under `receipts/` and are shared 
 - normalized semantic expected results: 96
 
 Wave 02 uses shared primitive Receipts plus case-level normative matchers. It does not change frozen protocol semantics or JSON Schema.
+
+## Wave 03 status
+
+- executable semantic cases: 184 / 771
+- remaining semantic cases: 587
+- fully materialized primary primitive families:
+  - `prim.source.observation` — 18 / 18
+  - `prim.derivation.mapping` — 23 / 23
+  - `prim.request.binding` — 34 / 34
+  - `prim.provider.attempts` — 13 / 13
+  - `prim.model.output` — 32 / 32
+  - `prim.tool.lifecycle` — 43 / 43
+- reusable primitive Receipts: 135
+- normalized semantic expected results: 184
+
+Review rule applied during materialization: sentences that only pre-empt criticism and add no fact, inference, constraint, or action are omitted.
