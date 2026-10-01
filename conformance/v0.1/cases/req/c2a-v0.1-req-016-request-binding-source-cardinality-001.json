@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-req-016-request-binding-source-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-016"
+  ],
+  "planned_test_ids": [
+    "request-binding-source-cardinality-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "RequestBinding has one syntactic component Reference, but it resolves to ProviderAttempt rather than ModelInputComponent.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/9/component/id",
+          "value": "att-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "REQ-016"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-req-016",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "REQ-016"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-req-016-request-binding-source-cardinality-001.json"
+}
