@@ -1,0 +1,536 @@
+{
+  "family": "OUT",
+  "count": 53,
+  "requirements": [
+    {
+      "id": "OUT-001",
+      "title": "Invocation identity is occurrence-based",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-002",
+      "title": "Attempt grouping is explicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-003",
+      "title": "Attempt ownership",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-004",
+      "title": "Zero-attempt invocation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-005",
+      "title": "Invocation status is not derived from receipt completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-006",
+      "title": "Attempt starts before it exists",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-007",
+      "title": "Attempt terminal disposition is single-valued",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-008",
+      "title": "Completed is not output completeness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-009",
+      "title": "Timeout can retain partial output",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-010",
+      "title": "Interrupted can retain partial output",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-011",
+      "title": "Cancellation is not Provider-stop proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-012",
+      "title": "Attempt relationships are explicit",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-013",
+      "title": "Attempt relation preserves concurrency",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-014",
+      "title": "Multiple attempts can produce outputs",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-015",
+      "title": "Accepted output cardinality",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-016",
+      "title": "Accepted output belongs to invocation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-017",
+      "title": "Accepted output is not completeness proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-018",
+      "title": "No accepted output does not prove no acceptance",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-019",
+      "title": "Requested model is not internal model identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-020",
+      "title": "Provider-reported model is reported evidence",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-021",
+      "title": "Requested/reported mismatch is preserved",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-022",
+      "title": "Hidden routing remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-023",
+      "title": "ModelOutput attempt ownership",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-024",
+      "title": "ModelOutput cardinality per attempt",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-025",
+      "title": "ModelOutput is application-visible boundary",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-026",
+      "title": "Output identity is occurrence-based",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-027",
+      "title": "Partial output is valid",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-028",
+      "title": "Response termination is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-029",
+      "title": "Capture extent is explicit",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-030",
+      "title": "Completion axes are independent",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-031",
+      "title": "Complete capture is scope-bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-032",
+      "title": "Attempt disposition does not determine capture extent",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-033",
+      "title": "OutputItem ownership",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-034",
+      "title": "Zero or more OutputItems",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-035",
+      "title": "OutputItem occurrence identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-036",
+      "title": "Core OutputItem kind",
+      "enforcement": "mixed_schema_semantic",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-037",
+      "title": "Unknown OutputItem kind remains unknown",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-038",
+      "title": "Item order is not timestamp order",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-039",
+      "title": "Streaming does not mutate item identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-040",
+      "title": "Chunk absence is not non-streaming proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-041",
+      "title": "Partial stream preserves incompleteness",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-042",
+      "title": "Streaming assembly is application-visible representation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-043",
+      "title": "Finish reason is reported metadata",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-044",
+      "title": "ToolProposal is not execution",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-045",
+      "title": "ToolProposal occurrence identity",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-046",
+      "title": "Text output is not hidden reasoning",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-047",
+      "title": "Structured output validation is bounded",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-048",
+      "title": "Attempt-to-output relation is not Provider truth",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-049",
+      "title": "Missing ModelOutput is not no-output proof",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-050",
+      "title": "Output capture does not establish request receipt",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-051",
+      "title": "Attempt relationship stays within invocation",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-052",
+      "title": "Attempt predecessor relation is not self-referential",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    },
+    {
+      "id": "OUT-053",
+      "title": "Retry/failover predecessor graph is acyclic",
+      "enforcement": "semantic_verifier",
+      "planned_test": null,
+      "targets": [
+        "schema/v0.1/model.schema.json",
+        "schema/v0.1/semantic-checks.md"
+      ]
+    }
+  ]
+}
