@@ -5,8 +5,12 @@
     {
       "id": "CLAIM-000",
       "title": "Evidence composition",
-      "enforcement": "semantic_verifier",
+      "source": "spec/CLAIMS.md",
       "planned_test": "claim-composition-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/verifier.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -15,8 +19,12 @@
     {
       "id": "CLAIM-001",
       "title": "No evidence-basis upgrade",
-      "enforcement": "semantic_verifier",
+      "source": "spec/CLAIMS.md",
       "planned_test": "claim-no-upgrade-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/verifier.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -25,8 +33,12 @@
     {
       "id": "CLAIM-002",
       "title": "Binding verification levels",
-      "enforcement": "semantic_verifier",
+      "source": "spec/CLAIMS.md",
       "planned_test": "binding-verification-level-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/verifier.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -35,8 +47,12 @@
     {
       "id": "CLAIM-003",
       "title": "Trust-label wording",
-      "enforcement": "semantic_verifier",
+      "source": "spec/CLAIMS.md",
       "planned_test": "trust-label-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/verifier.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -45,8 +61,12 @@
     {
       "id": "CLAIM-004",
       "title": "Absence wording",
-      "enforcement": "semantic_verifier",
+      "source": "spec/CLAIMS.md",
       "planned_test": "absence-wording-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/verifier.schema.json",
         "schema/v0.1/semantic-checks.md"
@@ -55,8 +75,12 @@
     {
       "id": "CLAIM-005",
       "title": "Prohibited causal strengthening",
-      "enforcement": "semantic_verifier",
+      "source": "spec/CLAIMS.md",
       "planned_test": "claim-causality-001",
+      "primary_enforcement": "semantic_verifier",
+      "enforcement_layers": [
+        "semantic_verifier"
+      ],
       "targets": [
         "schema/v0.1/verifier.schema.json",
         "schema/v0.1/semantic-checks.md"
