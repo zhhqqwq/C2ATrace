@@ -1,0 +1,35 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:c2atrace:schema:v0.1:privacy",
+  "title":"C2ATrace v0.1 Privacy",
+  "$defs":{
+    "PrivacyScopeTreatment":{
+      "type":"object",
+      "required":["subject","profile","availability"],
+      "properties":{
+        "subject":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Subject"},
+        "profile":{"enum":["full","hash_only","hmac","redacted","mixed","unknown"]},
+        "availability":{"enum":["original_disclosed","original_withheld_with_commitment","redacted_derivative_disclosed","unavailable","unknown"]},
+        "commitments":{"type":"array","items":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"}},
+        "redacted_derivative":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"}
+      },
+      "additionalProperties":false
+    },
+    "PrivacyDescriptor":{
+      "type":"object",
+      "required":["id","kind","subject","profile","availability"],
+      "properties":{
+        "id":{"$ref":"urn:c2atrace:schema:v0.1:primitives#/$defs/Id"},
+        "kind":{"const":"PrivacyDescriptor"},
+        "subject":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Subject"},
+        "profile":{"enum":["full","hash_only","hmac","redacted","mixed","unknown"]},
+        "availability":{"enum":["original_disclosed","original_withheld_with_commitment","redacted_derivative_disclosed","unavailable","unknown"]},
+        "commitments":{"type":"array","items":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Commitment"}},
+        "redacted_derivative":{"$ref":"urn:c2atrace:schema:v0.1:reference#/$defs/Reference"},
+        "subscopes":{"type":"array","items":{"$ref":"#/$defs/PrivacyScopeTreatment"}},
+        "extensions":{"$ref":"urn:c2atrace:schema:v0.1:representation#/$defs/Extensions"}
+      },
+      "additionalProperties":false
+    }
+  }
+}
