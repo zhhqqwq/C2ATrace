@@ -1,0 +1,20 @@
+{
+  "layer": "direct_schema",
+  "status": "accepted",
+  "requirement_count": 6,
+  "requirements": [
+    "REQ-004",
+    "PAD-002",
+    "PAD-003",
+    "TAD-002",
+    "TAD-003",
+    "VFY-105"
+  ],
+  "assertions": {
+    "case_schema_valid": true,
+    "golden_schema_valid": true,
+    "positive_variants_schema_valid": true,
+    "negative_variants_schema_invalid": true
+  },
+  "note": "Acceptance covers the corrected direct_schema classification after conformance executability review."
+}
