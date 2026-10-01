@@ -1,0 +1,63 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-minimal-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-001"
+    ],
+    "records": [
+      {
+        "id": "run-001",
+        "kind": "Run",
+        "label": "minimal"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "rFTRfzA5v_UScc1oHBm94lW2_D026aKld5pz70URrsw"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": [
+    {
+      "id": "env-test-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-minimal-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "rFTRfzA5v_UScc1oHBm94lW2_D026aKld5pz70URrsw"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "CjSQwjAyNEgNefA6nUYvHsWcf03tkulAgOBDkCGXcdUmkodIGcDa8ICrZvW5wyoTyecYyhM2yPEgRODvLrr4Bw"
+      }
+    }
+  ]
+}
