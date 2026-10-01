@@ -1,0 +1,82 @@
+{
+  "case_id": "c2a-v0.1-tool-021-tool-decision-subject-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TOOL-021"
+  ],
+  "planned_test_ids": [
+    "tool-decision-subject-001"
+  ],
+  "primary_enforcement": "mixed_schema_semantic",
+  "status": "executable",
+  "description": "ToolDecision has exactly one subject Reference syntactically, but it resolves to ToolResult rather than ToolProposal or ToolInvocation.",
+  "documents": [
+    {
+      "document_id": "semantic-receipt",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "decision-bad-subject-001",
+            "kind": "ToolDecision",
+            "run_id": "run-tool-001",
+            "subject": {
+              "ref_type": "local",
+              "id": "result-001",
+              "expected_kind": "ToolResult"
+            },
+            "decision": "deny",
+            "asserted_by": {
+              "state": "unknown"
+            },
+            "policy": {
+              "state": "unknown"
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "decision-bad-subject-001"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "verifier_goals": [
+      "TOOL-021"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tool-021",
+    "primary_documents": [
+      "semantic-receipt"
+    ],
+    "resolution_set": [
+      "semantic-receipt"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TOOL-021"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/mixed/c2a-v0.1-tool-021-tool-decision-subject-001.json"
+}
