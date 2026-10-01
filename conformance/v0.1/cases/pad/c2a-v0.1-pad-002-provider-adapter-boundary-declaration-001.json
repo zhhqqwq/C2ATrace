@@ -1,0 +1,88 @@
+{
+  "case_id": "c2a-v0.1-pad-002-provider-adapter-boundary-declaration-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-002"
+  ],
+  "planned_test_ids": [
+    "provider-adapter-boundary-declaration-001"
+  ],
+  "primary_enforcement": "direct_schema",
+  "status": "executable",
+  "description": "Provider Adapter must declare invocation and ProviderAttempt boundaries.",
+  "documents": [
+    {
+      "document_id": "complete-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "pad-direct-001",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "test-provider-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "logical application model invocation",
+          "attempt_boundary": "application-observed provider attempt",
+          "request_capture_levels": [
+            "provider_payload"
+          ],
+          "output_capture": true,
+          "streaming_output": false,
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    },
+    {
+      "document_id": "missing-invocation-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "pad-direct-001",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "test-provider-adapter",
+          "adapter_version": "0.1-test",
+          "attempt_boundary": "application-observed provider attempt",
+          "request_capture_levels": [
+            "provider_payload"
+          ],
+          "output_capture": true,
+          "streaming_output": false,
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    },
+    {
+      "document_id": "missing-attempt-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "pad-direct-001",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "test-provider-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "logical application model invocation",
+          "request_capture_levels": [
+            "provider_payload"
+          ],
+          "output_capture": true,
+          "streaming_output": false,
+          "privacy_profiles": [
+            "full"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/direct/c2a-v0.1-pad-002-provider-adapter-boundary-declaration-001.json"
+}
