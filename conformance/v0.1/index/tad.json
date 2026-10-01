@@ -15,7 +15,7 @@
       "requirement_id": "TAD-002",
       "planned_test_id": "tool-adapter-boundary-declaration-001",
       "primary_enforcement": "direct_schema",
-      "status": "mapped",
+      "status": "accepted",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-002-tool-adapter-boundary-declaration-001.json"
     },
     {
@@ -23,7 +23,7 @@
       "requirement_id": "TAD-003",
       "planned_test_id": "tool-adapter-capability-declaration-001",
       "primary_enforcement": "direct_schema",
-      "status": "mapped",
+      "status": "accepted",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-003-tool-adapter-capability-declaration-001.json"
     },
     {
