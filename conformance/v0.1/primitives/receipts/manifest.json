@@ -1,0 +1,24 @@
+{
+  "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+  "wave": "semantic-primitive-01",
+  "receipt_count": 16,
+  "receipts": [
+    "conformance/v0.1/primitives/receipts/graph-activity-assertion-confusion.json",
+    "conformance/v0.1/primitives/receipts/graph-artifact-id-reuse.json",
+    "conformance/v0.1/primitives/receipts/graph-derivation-cycle.json",
+    "conformance/v0.1/primitives/receipts/graph-proposal-only.json",
+    "conformance/v0.1/primitives/receipts/graph-request-attempt-conflation.json",
+    "conformance/v0.1/primitives/receipts/graph-result-no-effect.json",
+    "conformance/v0.1/primitives/receipts/graph-timestamp-conflict.json",
+    "conformance/v0.1/primitives/receipts/ref-external-ambiguous-a.json",
+    "conformance/v0.1/primitives/receipts/ref-external-ambiguous-b.json",
+    "conformance/v0.1/primitives/receipts/ref-external-ambiguous-primary.json",
+    "conformance/v0.1/primitives/receipts/ref-external-decoy-target.json",
+    "conformance/v0.1/primitives/receipts/ref-external-unpinned.json",
+    "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json",
+    "conformance/v0.1/primitives/receipts/ref-local-dangling.json",
+    "conformance/v0.1/primitives/receipts/ref-local-external-decoy.json",
+    "conformance/v0.1/primitives/receipts/ref-privacy-dangling-local.json"
+  ],
+  "note": "Reusable materialized Receipt primitives shared across semantic-verifier cases. These are conformance scenarios, not new protocol wire types."
+}

@@ -16,3 +16,16 @@ Every numbered requirement receives a unique case ID derived from both requireme
 Cases use deterministic input documents plus optional add/remove/replace JSON-Pointer patches. Expected results are language-neutral normative matchers; free-text messages and implementation-generated finding IDs are not golden data.
 
 A case is not counted as accepted until its input, execution phases, expected result, and requirement mapping are all executable and independently checked.
+
+## Semantic primitive layer
+
+The 771 `semantic_verifier` requirements are organized through reusable scenario primitives rather than 771 isolated hand-written harnesses.
+
+Source of truth:
+
+- `primitives/manifest.json` — 21 primitive families plus primitive → requirement coverage;
+- `primitives/coverage-matrix.json` — 771/771 semantic requirements with exactly one primary primitive and optional dependency primitives;
+- `primitives/receipts/` — materialized reusable Receipt scenarios;
+- `expected/semantic/` — normalized expected-result documents for semantic cases.
+
+Primitive Wave 01 materializes the reference/graph/identity foundation and advances semantic-verifier executability to **21 / 771**. Primitive names are test infrastructure only; they do not change frozen protocol semantics or wire format.

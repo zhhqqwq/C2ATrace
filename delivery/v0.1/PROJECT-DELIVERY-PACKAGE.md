@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-01  
-状态基线提交：`55879decbe8fe3bcb98e51a5da839934544bfe6e`
+状态基线提交：`1f6fb77b68f8fc9c38b44a2e274a369ffc829731`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases   136
+executable cases   157
 accepted cases       6
 ~~~
 
@@ -476,7 +476,7 @@ accepted cases       6
 |---|---:|---|
 | direct_schema | 6 | 6 accepted |
 | mixed_schema_semantic | 87 | 87 executable，0 remaining；acceptance pending |
-| semantic_verifier | 771 | 当前尚处大规模 materialization 前期 |
+| semantic_verifier | 771 | 21 executable，750 remaining；Primitive Wave 01 in progress |
 | deterministic_vector | 43 | 43 executable，0 remaining；acceptance pending |
 
 注意：这是 Conformance executability review 后的当前责任分类，也是当前工作量规划的 source of truth。
@@ -580,15 +580,27 @@ materialization complete; runner acceptance pending
 
 ### 9.6 semantic verifier
 
-这是下一阶段最大的工作量。
+这是当前最大的 materialization 工作量。
 
-总计：
+当前：
 
 ~~~text
-771 requirements
+21 / 771 executable
+750 remaining
+21 reusable primitive families
+771 / 771 primitive coverage assignments
 ~~~
 
-主要包含：
+Primitive Wave 01 已建立：
+
+- `conformance/v0.1/primitives/manifest.json`；
+- `conformance/v0.1/primitives/coverage-matrix.json`；
+- reusable primitive Receipts；
+- semantic expected-result layer。
+
+首批已覆盖 local/external reference resolution、dangling/ambiguous/wrong-kind、graph DAG/role separation、occurrence identity、cross-Receipt resolved-material checks。
+
+主要剩余语义包含：
 
 - reference resolution；
 - graph invariants；
@@ -624,6 +636,8 @@ materialization complete; runner acceptance pending
 - 16 个 family index；
 - cases；
 - expected results；
+- semantic primitive catalog / coverage matrix；
+- reusable primitive Receipts；
 - audit files。
 
 Runner phase 顺序：
@@ -917,18 +931,18 @@ C2ATrace v0.1 不是：
 
 771 条 semantic requirements 不应变成 771 套互不相关的手写 harness。
 
-应优先抽取可复用 scenario primitives：
+Primitive Wave 01 已将全部 771 条 requirement 映射到 21 个 reusable primitive families，并允许 dependency primitives 组合。首批 materialized primitives 已覆盖：
 
-- missing/ambiguous reference；
+- local/external reference resolution；
+- dangling / ambiguous / wrong-kind；
 - duplicate ID；
-- cycle；
-- representation mismatch；
-- partial receipt；
-- conflicting assertions；
-- unsupported profile；
-- missing capability；
-- tampered payload；
-- retry uncertainty。
+- derivation cycle；
+- request-vs-attempt role separation；
+- proposal-only / result-without-effect；
+- timestamp conflict；
+- activity/assertion separation。
+
+后续继续沿用同一 primitive → requirement coverage matrix 批量生成 request/provider/model/tool/trust/taint/privacy/multi-Receipt/integrity/verifier cases。
 
 ### 16.3 cross-language canonicalization
 
@@ -1015,12 +1029,12 @@ FULLY VERIFIED
 当前最合适的执行顺序：
 
 ~~~text
-1. 建立 semantic_verifier reusable scenario primitives
-2. 批量 materialize 771 semantic_verifier cases
-3. 完成 expected VerificationFinding matcher
+1. 继续 Semantic Verifier Primitive Wave 02+
+2. 将 semantic_verifier 从 21 / 771 批量推进到 771 / 771 executable
+3. 完成 expected VerificationFinding matcher coverage audit
 4. 实现独立 conformance runner A
 5. 实现第二语言 runner B
-6. 执行 deterministic_vector / mixed acceptance
+6. 执行 deterministic_vector / mixed / semantic acceptance
 7. 907/907 acceptance audit
 8. Conformance Suite Gate
 9. 解锁 Product Independent Verifier

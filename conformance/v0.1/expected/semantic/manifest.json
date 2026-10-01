@@ -1,0 +1,29 @@
+{
+  "schema_target": "urn:c2atrace:conformance:v0.1:expected-result",
+  "wave": "semantic-primitive-01",
+  "fixture_count": 21,
+  "fixtures": [
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-001-graph-missing-reference-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-002-artifact-id-reuse-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-003-derivation-cycle-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-005-request-attempt-conflation-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-007-proposal-only-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-010-tool-result-artifact-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-011-lying-tool-result-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-013-timestamp-conflict-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-014-absence-not-negation-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-graph-016-activity-assertion-separation-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-014-receipt-no-implicit-external-resolution-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-017-receipt-external-type-resolution-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-018-receipt-external-unresolved-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-019-receipt-external-unresolved-not-negation-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-020-receipt-external-ambiguous-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-030-receipt-external-mode-unresolved-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-046-receipt-privacy-reference-closure-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-020-verifier-internal-reference-local-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-021-verifier-external-address-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-029-verifier-cross-receipt-graph-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-030-verifier-unresolved-not-valid-001.json"
+  ],
+  "note": "Normalized semantic expected-result documents. Golden comparison ignores free-text messages and implementation-generated finding IDs."
+}
