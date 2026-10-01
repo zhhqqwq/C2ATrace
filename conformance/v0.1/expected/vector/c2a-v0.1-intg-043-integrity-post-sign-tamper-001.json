@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-intg-043-integrity-post-sign-tamper-001",
+  "comparison_mode": "exact_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [],
+  "forbidden_findings": [],
+  "vector_results": [
+    {
+      "vector_id": "integrity-separation-001",
+      "check": "tampered-arp-preserve-envelope.signature",
+      "status": "valid"
+    },
+    {
+      "vector_id": "integrity-separation-001",
+      "check": "tampered-arp-preserve-envelope.arp_binding",
+      "status": "mismatched"
+    }
+  ]
+}
