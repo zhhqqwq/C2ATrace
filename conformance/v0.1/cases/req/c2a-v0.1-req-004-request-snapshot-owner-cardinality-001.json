@@ -1,0 +1,89 @@
+{
+  "case_id": "c2a-v0.1-req-004-request-snapshot-owner-cardinality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "REQ-004"
+  ],
+  "planned_test_ids": [
+    "request-snapshot-owner-cardinality-001"
+  ],
+  "primary_enforcement": "direct_schema",
+  "status": "executable",
+  "description": "RequestSnapshot must have exactly one capture-scope owner: invocation_owner xor attempt_owner.",
+  "documents": [
+    {
+      "document_id": "invocation-owner-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "snap-direct-001",
+          "kind": "RequestSnapshot",
+          "capture_level": "provider_payload",
+          "invocation_owner": {
+            "ref_type": "local",
+            "id": "inv-1",
+            "expected_kind": "ModelInvocation"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot"
+    },
+    {
+      "document_id": "attempt-owner-valid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "snap-direct-001",
+          "kind": "RequestSnapshot",
+          "capture_level": "provider_payload",
+          "attempt_owner": {
+            "ref_type": "local",
+            "id": "att-1",
+            "expected_kind": "ProviderAttempt"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot"
+    },
+    {
+      "document_id": "both-owners-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "snap-direct-001",
+          "kind": "RequestSnapshot",
+          "capture_level": "provider_payload",
+          "invocation_owner": {
+            "ref_type": "local",
+            "id": "inv-1",
+            "expected_kind": "ModelInvocation"
+          },
+          "attempt_owner": {
+            "ref_type": "local",
+            "id": "att-1",
+            "expected_kind": "ProviderAttempt"
+          }
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot"
+    },
+    {
+      "document_id": "no-owner-invalid",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "id": "snap-direct-004",
+          "kind": "RequestSnapshot",
+          "capture_level": "provider_payload"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestSnapshot"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate"
+    ]
+  },
+  "expected_result": "conformance/v0.1/expected/direct/c2a-v0.1-req-004-request-snapshot-owner-cardinality-001.json"
+}
