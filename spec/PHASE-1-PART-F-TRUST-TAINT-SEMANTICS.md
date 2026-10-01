@@ -699,6 +699,12 @@ A verifier MUST NOT expand a TrustAssertion on one Artifact Region to the entire
 
 Planned test: trust-region-no-whole-upgrade-001.
 
+### TRUST-025 — Unknown policy is not a shared policy identity
+
+A verifier MUST NOT treat two TrustAssertions with policy=unknown as belonging to one common policy context solely because both policy values are unknown.
+
+Planned test: trust-unknown-policy-no-equivalence-001.
+
 ## 17. Normative Taint requirements
 
 ### TAINT-001 — Taint subject cardinality
@@ -799,7 +805,7 @@ Planned test: taint-lattice-unknown-001.
 
 ### TAINT-017 — Absent requires bounded complete support
 
-A verifier MUST NOT derive state=absent from upstream contributor assertions unless the applicable policy rule has complete relevant contributor accounting for the claimed scope and no unresolved applicable contributor remains.
+A verifier MUST NOT derive state=absent from upstream contributor assertions unless the applicable policy rule has complete relevant accounting for the claimed scope, including applicable contributors and transform-generated content, and no unresolved applicable source remains.
 
 Planned test: taint-absent-complete-support-001.
 
@@ -1037,6 +1043,24 @@ A verifier MUST NOT replace state=unknown with present or absent without separat
 
 Planned test: taint-unknown-state-001.
 
+### TAINT-057 — Propagated basis is traceable
+
+A TaintAssertion with basis=propagated MUST identify the upstream TaintAssertion(s), the applicable policy/rule identity, and the provenance relation or mapping used for propagation.
+
+Planned test: taint-propagated-basis-traceable-001.
+
+### TAINT-058 — Unknown policy is not a propagation policy
+
+A verifier MUST NOT treat policy=unknown as a shared policy identity for taint-lattice joins, automatic propagation, sanitization discharge, or conflict resolution.
+
+Planned test: taint-unknown-policy-no-propagation-001.
+
+### TAINT-059 — Transform-generated content participates in absence accounting
+
+A verifier MUST NOT derive state=absent for an output scope when applicable transform-generated content in that scope has unresolved taint state under the policy.
+
+Planned test: taint-generated-content-absence-001.
+
 ## 18. Adversarial architecture review
 
 ### Review A — Trusted SourceRef, modified SourceObservation
@@ -1219,6 +1243,28 @@ A future provider evidence profile could establish a stronger relation, but core
 
 Result: RESOLVED by TAINT-029 and existing derivation rules.
 
+### Review Y — Two assertions both have policy=unknown
+
+They do not become comparable merely because both policy identities are unavailable.
+
+No trust conflict resolution, taint join, propagation, or sanitization rule is inferred from the shared unknown marker.
+
+Result: RESOLVED by TRUST-025 and TAINT-058.
+
+### Review Z — Concat contributors are absent but separator taint is unresolved
+
+The output cannot be derived as taint-absent while transform-generated separator/content remains unresolved under the applicable policy.
+
+Result: RESOLVED by TAINT-017 and TAINT-059.
+
+### Review AA — Propagated taint has no antecedent record
+
+A bare basis=propagated label is insufficient.
+
+The propagation must identify upstream taint assertions, policy/rule, and the provenance relation/mapping used.
+
+Result: RESOLVED by TAINT-057.
+
 ## 19. Architecture revisions caused by Part F
 
 ### 19.1 Trust becomes dimensioned and policy-scoped
@@ -1313,7 +1359,10 @@ Part F locks the following decisions:
 22. Tool success, signature validity, serialization, renaming, and partial-receipt omission do not launder taint.
 23. Missing assertions are not negative states.
 24. Conflicting trust/taint assertions remain conflicts absent explicit precedence semantics.
-25. Trust/taint never directly establish model causality, tool authorization, external Effect, or Outcome.
+25. policy=unknown is not treated as one shared policy namespace.
+26. Propagated taint remains traceable to antecedent assertions, policy rule, and provenance relation.
+27. Taint absence accounting includes applicable transform-generated content.
+28. Trust/taint never directly establish model causality, tool authorization, external Effect, or Outcome.
 
 ## 21. Open items handed to later phases
 
