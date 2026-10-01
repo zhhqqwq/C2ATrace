@@ -453,11 +453,57 @@
         "VFY-045",
         "VFY-128"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_02_materialized",
+      "executable_primary_requirement_count": 23,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "GRAPH-003"
+      ],
+      "materialized_assets": [
+        "conformance/v0.1/primitives/receipts/derivation-use-generate-no-edge.json",
+        "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
+        "conformance/v0.1/primitives/receipts/derivation-target-not-generated.json",
+        "conformance/v0.1/primitives/receipts/derivation-exact-gap.json",
+        "conformance/v0.1/primitives/receipts/derivation-control-only.json",
+        "conformance/v0.1/primitives/receipts/derivation-selection.json",
+        "conformance/v0.1/primitives/receipts/derivation-coordinate-mismatch.json",
+        "conformance/v0.1/primitives/receipts/derivation-one-to-many.json",
+        "conformance/v0.1/primitives/receipts/derivation-generated-region.json",
+        "conformance/v0.1/primitives/receipts/derivation-unknown-region.json",
+        "conformance/v0.1/primitives/receipts/derivation-transitive-exact.json",
+        "conformance/v0.1/primitives/receipts/derivation-transitive-partial.json",
+        "conformance/v0.1/primitives/receipts/derivation-transitive-unknown.json",
+        "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
+        "conformance/v0.1/primitives/receipts/derivation-template-static.json",
+        "conformance/v0.1/primitives/receipts/derivation-truncate.json",
+        "conformance/v0.1/primitives/receipts/derivation-rerank.json",
+        "conformance/v0.1/primitives/receipts/derivation-redaction.json",
+        "conformance/v0.1/primitives/receipts/derivation-partial-no-fabricated-range.json"
+      ],
+      "wave_02_primary_requirements": [
+        "DRV-001",
+        "DRV-005",
+        "DRV-006",
+        "DRV-007",
+        "DRV-008",
+        "DRV-010",
+        "DRV-011",
+        "DRV-012",
+        "DRV-014",
+        "DRV-017",
+        "DRV-018",
+        "DRV-020",
+        "DRV-021",
+        "DRV-022",
+        "DRV-023",
+        "DRV-025",
+        "DRV-026",
+        "DRV-027",
+        "DRV-028",
+        "DRV-029",
+        "DRV-030",
+        "DRV-031",
+        "DRV-032"
       ]
     },
     {
@@ -2025,7 +2071,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 39,
-  "remaining_semantic_requirements": 732,
-  "materialization_wave": "02-source"
+  "executable_semantic_requirements": 62,
+  "remaining_semantic_requirements": 709,
+  "materialization_wave": "02-derivation"
 }

@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-drv-014-transform-selection-no-derivation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-014"
+  ],
+  "planned_test_ids": [
+    "transform-selection-no-derivation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Selecting or reranking candidates does not create Derivation among selected and excluded candidates.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/derivation-rerank.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "DRV-014"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-014",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-014"
+    ]
+  },
+  "notes": [
+    "primitives: prim.derivation.mapping, prim.privacy.commitment"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-drv-014-transform-selection-no-derivation-001.json"
+}

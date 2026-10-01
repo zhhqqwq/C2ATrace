@@ -98,7 +98,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-001-derivation-use-generation-no-inference-001"
     },
     {
       "family": "drv",
@@ -111,7 +113,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-005-derivation-contributor-use-001"
     },
     {
       "family": "drv",
@@ -126,7 +130,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-006-derivation-target-generation-001"
     },
     {
       "family": "drv",
@@ -139,7 +145,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-007-derivation-binary-shorthand-001"
     },
     {
       "family": "drv",
@@ -152,7 +160,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-008-derivation-exact-coverage-001"
     },
     {
       "family": "drv",
@@ -167,7 +177,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-010-derivation-unknown-no-edge-001"
     },
     {
       "family": "drv",
@@ -180,7 +192,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-011-derivation-use-role-no-edge-001"
     },
     {
       "family": "drv",
@@ -193,7 +207,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-012-derivation-control-no-content-001"
     },
     {
       "family": "drv",
@@ -223,7 +239,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-014-transform-selection-no-derivation-001"
     },
     {
       "family": "drv",
@@ -251,7 +269,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-017-derivation-coordinate-conversion-001"
     },
     {
       "family": "drv",
@@ -266,7 +286,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-018-derivation-one-to-many-isolation-001"
     },
     {
       "family": "drv",
@@ -279,7 +301,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-020-derivation-generated-region-no-source-001"
     },
     {
       "family": "drv",
@@ -294,7 +318,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-021-derivation-unknown-region-blocks-exact-001"
     },
     {
       "family": "drv",
@@ -309,7 +335,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-022-derivation-absence-not-negation-001"
     },
     {
       "family": "drv",
@@ -322,7 +350,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-023-derivation-transitive-not-direct-001"
     },
     {
       "family": "drv",
@@ -351,7 +381,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-025-derivation-partial-composition-001"
     },
     {
       "family": "drv",
@@ -366,7 +398,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-026-derivation-unknown-composition-001"
     },
     {
       "family": "drv",
@@ -379,7 +413,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-027-derivation-concat-separator-001"
     },
     {
       "family": "drv",
@@ -392,7 +428,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-028-derivation-template-static-content-001"
     },
     {
       "family": "drv",
@@ -405,7 +443,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-029-derivation-truncate-discarded-001"
     },
     {
       "family": "drv",
@@ -420,7 +460,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-030-derivation-rerank-control-001"
     },
     {
       "family": "drv",
@@ -435,7 +477,9 @@
       "primary_primitive": "prim.derivation.mapping",
       "dependency_primitives": [
         "prim.privacy.redaction"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-031-derivation-redaction-no-equality-001"
     },
     {
       "family": "drv",
@@ -448,7 +492,9 @@
         "schema/v0.1/representation.schema.json"
       ],
       "primary_primitive": "prim.derivation.mapping",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-032-derivation-no-fabricated-range-001"
     },
     {
       "family": "graph",
@@ -11836,6 +11882,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 39,
-  "remaining_semantic_requirements": 732
+  "executable_semantic_requirements": 62,
+  "remaining_semantic_requirements": 709
 }

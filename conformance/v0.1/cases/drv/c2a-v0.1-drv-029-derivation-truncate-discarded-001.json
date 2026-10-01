@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-drv-029-derivation-truncate-discarded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-029"
+  ],
+  "planned_test_ids": [
+    "derivation-truncate-discarded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A truncation derivation maps only retained input Regions; discarded inspected content is not inferred to contribute to output representation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/derivation-truncate.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "DRV-029"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-029",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-029"
+    ]
+  },
+  "notes": [
+    "primitives: prim.derivation.mapping"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-drv-029-derivation-truncate-discarded-001.json"
+}

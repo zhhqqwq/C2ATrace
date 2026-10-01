@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-drv-005-derivation-contributor-use-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-005"
+  ],
+  "planned_test_ids": [
+    "derivation-contributor-use-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A Derivation contributor that is not recorded as an input use of its generating Transform is invalid.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "DRV-005"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-005",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-005"
+    ]
+  },
+  "notes": [
+    "primitives: prim.derivation.mapping"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-drv-005-derivation-contributor-use-001.json"
+}

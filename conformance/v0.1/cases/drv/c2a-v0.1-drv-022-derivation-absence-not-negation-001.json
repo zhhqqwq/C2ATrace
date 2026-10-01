@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-drv-022-derivation-absence-not-negation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-022"
+  ],
+  "planned_test_ids": [
+    "derivation-absence-not-negation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Absence of a Derivation assertion is not proof that no real representation derivation occurred.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/derivation-use-generate-no-edge.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "DRV-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-022",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.derivation.mapping, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-drv-022-derivation-absence-not-negation-001.json"
+}

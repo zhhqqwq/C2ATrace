@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-drv-020-derivation-generated-region-no-source-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "DRV-020"
+  ],
+  "planned_test_ids": [
+    "derivation-generated-region-no-source-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A transform-generated output Region is explicitly separated from source-derived Regions and must not be attributed upstream without another positive Derivation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/derivation-generated-region.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "DRV-020"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-drv-020",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "DRV-020"
+    ]
+  },
+  "notes": [
+    "primitives: prim.derivation.mapping"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-drv-020-derivation-generated-region-no-source-001.json"
+}
