@@ -1050,6 +1050,30 @@ A verifier MUST NOT describe hash_only, hmac, redacted, mixed, or unknown profil
 
 Planned test: privacy-no-encryption-inference-001.
 
+### PRIV-077 — Keyed tag equality without recomputation is only recorded tag equality
+
+A verifier that lacks the required keyed-commitment secret and candidate representation MUST NOT report equal HMAC/keyed tags as independently verified hidden-representation equality; it MAY report only equality of the disclosed commitment values under the recorded metadata.
+
+Planned test: privacy-hmac-tag-equality-bounded-001.
+
+### PRIV-078 — Original representation alone does not prove redaction policy correctness
+
+A verifier MUST NOT report a redaction as correctly removing all policy-sensitive content solely because it possesses the original and redacted representations; the applicable redaction/sensitivity rule or recognized verification profile is also required for that stronger judgement.
+
+Planned test: privacy-redaction-rule-required-001.
+
+### PRIV-079 — Whole-scope privacy label must reflect partial plaintext disclosure
+
+A scope MUST NOT be described as wholly hash_only, hmac, or redacted when original plaintext/bytes from a proper subregion of that scope are directly disclosed in the same package; the treatment MUST be scoped more narrowly or represented as mixed.
+
+Planned test: privacy-whole-scope-label-consistency-001.
+
+### PRIV-080 — Conflicting privacy declarations are preserved
+
+When overlapping privacy declarations are semantically incompatible and actual disclosure does not resolve the classification cleanly, a verifier MUST report the inconsistency/conflict rather than silently selecting a declaration by timestamp, insertion order, or label strength.
+
+Planned test: privacy-declaration-conflict-001.
+
 ## 23. Adversarial architecture review
 
 ### Review A — Same SourceObservation, two disclosure packages
@@ -1236,6 +1260,38 @@ A keyed commitment authenticates/compares candidates under its profile; it is no
 
 Result: RESOLVED by PRIV-076.
 
+### Review AA — Two equal HMAC tags, no key and no candidate
+
+The verifier can observe that the disclosed tag strings are equal.
+
+It cannot claim that the hidden runtime representations were independently verified equal.
+
+Result: RESOLVED by PRIV-077.
+
+### Review AB — Original and redacted text both available, but no redaction rule
+
+The verifier can compare the two representations and their lineage.
+
+It cannot decide that all sensitive information was correctly removed without a defined sensitivity/redaction rule or recognized verification profile.
+
+Result: RESOLVED by PRIV-078.
+
+### Review AC — Whole Artifact marked hmac, one child field disclosed in plaintext
+
+The whole Artifact is not accurately described as wholly HMAC-withheld.
+
+The privacy treatment must use narrower scopes or mixed.
+
+Result: RESOLVED by PRIV-079.
+
+### Review AD — Same scope says hash_only and full in overlapping declarations
+
+The actual plaintext disclosure remains visible, and the privacy declarations are inconsistent.
+
+The verifier does not use last-write-wins.
+
+Result: RESOLVED by PRIV-080 and PRIV-061.
+
 ## 24. Architecture revisions caused by Part G
 
 ### 24.1 Privacy is disclosure-package metadata, not Artifact identity
@@ -1294,8 +1350,12 @@ Part G locks the following decisions:
 22. Privacy treatment does not clear taint, create trust, or strengthen provenance.
 23. Verifier results depend on actual candidate/secret/proof capabilities.
 24. Independent keyed verification is distinct from public verification.
-25. Integrity/signature validity does not add confidentiality.
-26. Privacy profiles are not encryption unless a separate encryption profile establishes that semantic.
+25. Equal keyed tags without key/candidate capability do not independently verify hidden representation equality.
+26. Redaction correctness requires an applicable redaction/sensitivity rule or recognized verification profile, not merely both representations.
+27. Whole-scope privacy summaries must reflect any partial plaintext disclosure and use mixed/narrower scopes where necessary.
+28. Conflicting privacy declarations are preserved rather than resolved by timestamp/order.
+29. Integrity/signature validity does not add confidentiality.
+30. Privacy profiles are not encryption unless a separate encryption profile establishes that semantic.
 
 ## 26. Open items handed to later phases
 
