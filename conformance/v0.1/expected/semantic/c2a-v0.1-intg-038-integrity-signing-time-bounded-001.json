@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-intg-038-integrity-signing-time-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-038",
+      "check_id": "integrity-signing-time-bounded-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:signed_signing_time_is_trusted_time"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

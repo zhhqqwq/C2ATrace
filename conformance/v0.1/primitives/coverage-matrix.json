@@ -882,7 +882,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-032-integrity-keyref-no-real-identity-001"
     },
     {
       "family": "intg",
@@ -898,7 +900,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-033-integrity-key-no-ownership-proof-001"
     },
     {
       "family": "intg",
@@ -915,7 +919,9 @@
       "dependency_primitives": [
         "prim.ref.failure",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-034-integrity-key-unresolved-001"
     },
     {
       "family": "intg",
@@ -932,7 +938,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-036-integrity-profile-unsupported-001"
     },
     {
       "family": "intg",
@@ -948,7 +956,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-037-integrity-signature-no-key-trust-001"
     },
     {
       "family": "intg",
@@ -964,7 +974,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-038-integrity-signing-time-bounded-001"
     },
     {
       "family": "intg",
@@ -980,7 +992,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-039-integrity-signature-no-truth-001"
     },
     {
       "family": "intg",
@@ -996,7 +1010,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-040-integrity-signature-no-completeness-001"
     },
     {
       "family": "intg",
@@ -1010,7 +1026,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.integrity.composition",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-041-integrity-signed-fabrication-001"
     },
     {
       "family": "intg",
@@ -1070,7 +1088,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.integrity.composition",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-047-integrity-signature-no-freshness-001"
     },
     {
       "family": "intg",
@@ -1246,7 +1266,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.integrity.composition",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-062-integrity-invalid-signature-not-falsehood-001"
     },
     {
       "family": "intg",
@@ -1313,7 +1335,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-069-integrity-crypto-assumption-wording-001"
     },
     {
       "family": "intg",
@@ -12682,6 +12706,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 462,
-  "remaining_semantic_requirements": 309
+  "executable_semantic_requirements": 474,
+  "remaining_semantic_requirements": 297
 }

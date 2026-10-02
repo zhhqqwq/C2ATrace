@@ -1,0 +1,59 @@
+{
+  "case_id": "c2a-v0.1-intg-040-integrity-signature-no-completeness-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-040"
+  ],
+  "planned_test_ids": [
+    "integrity-signature-no-completeness-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A valid Receipt signature does not establish Run, capture, or history completeness.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [
+      "verification_keys"
+    ],
+    "verifier_goals": [
+      "INTG-040"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-040",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "INTG-040"
+    ],
+    "verification_keys": [
+      "test-ed25519-key-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-040-integrity-signature-no-completeness-001.json"
+}

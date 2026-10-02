@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-intg-036-integrity-profile-unsupported-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-036"
+  ],
+  "planned_test_ids": [
+    "integrity-profile-unsupported-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A verifier that does not support the declared integrity profile reports it unsupported rather than cryptographically verified.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-036"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-036",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-036"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition, prim.adapter.capture, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-036-integrity-profile-unsupported-001.json"
+}

@@ -1,5 +1,5 @@
 {
-  "case_id": "c2a-v0.1-intg-054-integrity-structural-vs-signature-001",
+  "case_id": "c2a-v0.1-intg-062-integrity-invalid-signature-not-falsehood-001",
   "comparison_mode": "contains_normative",
   "schema_results": [
     {
@@ -10,17 +10,8 @@
   ],
   "required_findings": [
     {
-      "requirement_id": "INTG-054",
-      "check_id": "integrity-structural-vs-signature-001",
-      "subject_selector": {
-        "receipt_id": "receipt-minimal-001"
-      },
-      "domain": "conformance",
-      "status": "valid"
-    },
-    {
-      "requirement_id": "INTG-054",
-      "check_id": "integrity-structural-vs-signature-001",
+      "requirement_id": "INTG-062",
+      "check_id": "integrity-invalid-signature-not-falsehood-001",
       "subject_selector": {
         "receipt_id": "receipt-minimal-001",
         "object_id": "env-test-001"
@@ -28,6 +19,18 @@
       "domain": "cryptographic",
       "status": "invalid",
       "reason_code": "signature_verification_failed"
+    },
+    {
+      "requirement_id": "INTG-062",
+      "check_id": "integrity-invalid-signature-not-falsehood-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "unverified",
+      "prohibited_inferences": [
+        "P1:invalid_signature_proves_record_false"
+      ]
     }
   ],
   "forbidden_findings": [],

@@ -1,0 +1,27 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-d2",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-intg-032-integrity-keyref-no-real-identity-001",
+    "c2a-v0.1-intg-033-integrity-key-no-ownership-proof-001",
+    "c2a-v0.1-intg-034-integrity-key-unresolved-001",
+    "c2a-v0.1-intg-036-integrity-profile-unsupported-001",
+    "c2a-v0.1-intg-037-integrity-signature-no-key-trust-001",
+    "c2a-v0.1-intg-038-integrity-signing-time-bounded-001",
+    "c2a-v0.1-intg-039-integrity-signature-no-truth-001",
+    "c2a-v0.1-intg-040-integrity-signature-no-completeness-001",
+    "c2a-v0.1-intg-041-integrity-signed-fabrication-001",
+    "c2a-v0.1-intg-047-integrity-signature-no-freshness-001",
+    "c2a-v0.1-intg-062-integrity-invalid-signature-not-falsehood-001",
+    "c2a-v0.1-intg-069-integrity-crypto-assumption-wording-001"
+  ],
+  "executable_semantic_requirements": 474,
+  "remaining_semantic_requirements": 297,
+  "assertions": {
+    "key_relative_signature_semantics_materialized": true,
+    "signing_time_and_freshness_boundaries_materialized": true,
+    "invalid_signature_not_falsehood_materialized": true,
+    "intg_054_domain_corrected": true
+  }
+}

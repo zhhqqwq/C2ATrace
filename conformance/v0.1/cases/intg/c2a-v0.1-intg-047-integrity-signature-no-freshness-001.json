@@ -1,0 +1,67 @@
+{
+  "case_id": "c2a-v0.1-intg-047-integrity-signature-no-freshness-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-047"
+  ],
+  "planned_test_ids": [
+    "integrity-signature-no-freshness-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The same valid signed Receipt can be presented again; signature validity is not freshness or non-replay proof.",
+  "documents": [
+    {
+      "document_id": "first",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "replay",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [
+      "verification_keys"
+    ],
+    "verifier_goals": [
+      "INTG-047"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-047",
+    "primary_documents": [
+      "first"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "INTG-047"
+    ],
+    "verification_keys": [
+      "test-ed25519-key-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-047-integrity-signature-no-freshness-001.json"
+}
