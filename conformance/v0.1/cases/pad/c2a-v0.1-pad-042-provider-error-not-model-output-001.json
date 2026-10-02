@@ -1,0 +1,70 @@
+{
+  "case_id": "c2a-v0.1-pad-042-provider-error-not-model-output-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-042"
+  ],
+  "planned_test_ids": [
+    "provider-error-not-model-output-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Provider/transport error material without an application-visible model result does not create ModelOutput.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/model-completed-no-output.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/5/metadata",
+          "value": [
+            {
+              "name": "transport_error_body",
+              "value": "503 upstream error",
+              "origin": "adapter_observed"
+            }
+          ]
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-042"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-042",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PAD-042"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.model.output"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-042-provider-error-not-model-output-001.json"
+}

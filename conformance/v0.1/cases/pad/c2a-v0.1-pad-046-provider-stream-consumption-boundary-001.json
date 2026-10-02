@@ -1,0 +1,112 @@
+{
+  "case_id": "c2a-v0.1-pad-046-provider-stream-consumption-boundary-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-046"
+  ],
+  "planned_test_ids": [
+    "provider-stream-consumption-boundary-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Streaming capability is exercised at the application-visible stream-consumption boundary, not merely iterator creation.",
+  "documents": [
+    {
+      "document_id": "cap",
+      "role": "capability",
+      "source": {
+        "inline": {
+          "id": "pad-cap-stream-05",
+          "kind": "ProviderAdapterCapability",
+          "adapter_name": "wave05-provider-stream-adapter",
+          "adapter_version": "0.1-test",
+          "invocation_boundary": "logical application model call",
+          "attempt_boundary": "provider attempt start",
+          "request_capture_levels": [
+            "provider_payload"
+          ],
+          "output_capture": true,
+          "streaming_output": true,
+          "retry_visibility": "direct",
+          "failover_visibility": "direct",
+          "hedge_visibility": "direct",
+          "privacy_profiles": [
+            "full",
+            "hash_only",
+            "hmac",
+            "redacted",
+            "mixed"
+          ]
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability"
+    },
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/model-timeout-partial.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "diag-pad-stream-observed",
+            "kind": "CaptureDiagnostic",
+            "run_id": "run-retry-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "att-timeout",
+                "expected_kind": "ProviderAttempt"
+              }
+            },
+            "slot": "provider_stream.events",
+            "status": "observed"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "diag-pad-stream-observed"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-046"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-046",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PAD-046"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.model.output, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-046-provider-stream-consumption-boundary-001.json"
+}

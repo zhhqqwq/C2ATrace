@@ -1,0 +1,33 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-e-pad-b",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-pad-040-provider-output-boundary-001",
+    "c2a-v0.1-pad-042-provider-error-not-model-output-001",
+    "c2a-v0.1-pad-044-provider-output-capture-evidence-001",
+    "c2a-v0.1-pad-045-provider-nonstream-result-boundary-001",
+    "c2a-v0.1-pad-046-provider-stream-consumption-boundary-001",
+    "c2a-v0.1-pad-047-provider-stream-event-semantics-001",
+    "c2a-v0.1-pad-048-provider-stream-unsupported-degrade-001",
+    "c2a-v0.1-pad-049-provider-stream-partial-preserve-001",
+    "c2a-v0.1-pad-050-provider-stream-app-stop-bounded-001",
+    "c2a-v0.1-pad-051-provider-stream-drop-no-complete-001",
+    "c2a-v0.1-pad-052-provider-stream-tool-fragment-001",
+    "c2a-v0.1-pad-053-provider-stream-chunks-optional-001",
+    "c2a-v0.1-pad-062-provider-metadata-origin-001",
+    "c2a-v0.1-pad-063-provider-metadata-reported-bounded-001",
+    "c2a-v0.1-pad-064-provider-metadata-normalized-origin-001",
+    "c2a-v0.1-pad-066-provider-transport-secret-not-model-input-001",
+    "c2a-v0.1-pad-067-provider-privacy-capture-separation-001",
+    "c2a-v0.1-pad-068-provider-privacy-placeholder-no-mutation-001",
+    "c2a-v0.1-pad-069-provider-privacy-commit-before-discard-001"
+  ],
+  "newly_materialized_count": 19,
+  "executable_semantic_requirements": 533,
+  "remaining_semantic_requirements": 238,
+  "assertions": {
+    "provider_output_stream_metadata_privacy_semantics_materialized": true,
+    "frozen_schema_unchanged": true
+  }
+}

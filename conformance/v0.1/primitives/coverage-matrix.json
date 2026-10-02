@@ -2721,7 +2721,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-040-provider-output-boundary-001"
     },
     {
       "family": "pad",
@@ -2737,7 +2739,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-042-provider-error-not-model-output-001"
     },
     {
       "family": "pad",
@@ -2769,7 +2773,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-044-provider-output-capture-evidence-001"
     },
     {
       "family": "pad",
@@ -2786,7 +2792,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-045-provider-nonstream-result-boundary-001"
     },
     {
       "family": "pad",
@@ -2803,7 +2811,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-046-provider-stream-consumption-boundary-001"
     },
     {
       "family": "pad",
@@ -2819,7 +2829,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-047-provider-stream-event-semantics-001"
     },
     {
       "family": "pad",
@@ -2836,7 +2848,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-048-provider-stream-unsupported-degrade-001"
     },
     {
       "family": "pad",
@@ -2852,7 +2866,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-049-provider-stream-partial-preserve-001"
     },
     {
       "family": "pad",
@@ -2868,7 +2884,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-050-provider-stream-app-stop-bounded-001"
     },
     {
       "family": "pad",
@@ -2884,7 +2902,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-051-provider-stream-drop-no-complete-001"
     },
     {
       "family": "pad",
@@ -2901,7 +2921,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-052-provider-stream-tool-fragment-001"
     },
     {
       "family": "pad",
@@ -2917,7 +2939,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-053-provider-stream-chunks-optional-001"
     },
     {
       "family": "pad",
@@ -3063,7 +3087,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-062-provider-metadata-origin-001"
     },
     {
       "family": "pad",
@@ -3079,7 +3105,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-063-provider-metadata-reported-bounded-001"
     },
     {
       "family": "pad",
@@ -3095,7 +3123,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.derivation.mapping"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-064-provider-metadata-normalized-origin-001"
     },
     {
       "family": "pad",
@@ -3127,7 +3157,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-066-provider-transport-secret-not-model-input-001"
     },
     {
       "family": "pad",
@@ -3144,7 +3176,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-067-provider-privacy-capture-separation-001"
     },
     {
       "family": "pad",
@@ -3160,7 +3194,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-068-provider-privacy-placeholder-no-mutation-001"
     },
     {
       "family": "pad",
@@ -3176,7 +3212,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-069-provider-privacy-commit-before-discard-001"
     },
     {
       "family": "pad",
@@ -12786,6 +12824,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 514,
-  "remaining_semantic_requirements": 257
+  "executable_semantic_requirements": 533,
+  "remaining_semantic_requirements": 238
 }

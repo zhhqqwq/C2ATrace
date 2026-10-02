@@ -1,0 +1,88 @@
+{
+  "case_id": "c2a-v0.1-pad-051-provider-stream-drop-no-complete-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-051"
+  ],
+  "planned_test_ids": [
+    "provider-stream-drop-no-complete-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Known dropped stream events are incompatible with capture_extent=complete.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/model-timeout-partial.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/1/capture_extent",
+          "value": "complete"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "diag-pad-stream-drop",
+            "kind": "CaptureDiagnostic",
+            "run_id": "run-retry-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "out-timeout",
+                "expected_kind": "ModelOutput"
+              }
+            },
+            "slot": "provider_stream.events",
+            "status": "partial",
+            "reason": "known dropped events"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "diag-pad-stream-drop"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-051"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-051",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PAD-051"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.model.output"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-051-provider-stream-drop-no-complete-001.json"
+}
