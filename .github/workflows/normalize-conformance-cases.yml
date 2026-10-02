@@ -1,0 +1,69 @@
+name: Normalize conformance case patches
+
+on:
+  push:
+    paths:
+      - ".github/workflows/normalize-conformance-cases.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize Document patches placement
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          changed_files = 0
+          changed_documents = 0
+          cases = sorted(Path("conformance/v0.1/cases").rglob("*.json"))
+
+          for path in cases:
+              data = json.loads(path.read_text(encoding="utf-8"))
+              changed = False
+              for doc in data.get("documents", []):
+                  source = doc.get("source")
+                  if isinstance(source, dict) and "patches" in source:
+                      if "patches" in doc:
+                          raise RuntimeError(f"{path}: patches present in both source and document")
+                      doc["patches"] = source.pop("patches")
+                      changed = True
+                      changed_documents += 1
+
+              if changed:
+                  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                  changed_files += 1
+
+          # Mechanical harness-shape assertions after rewrite.
+          for path in cases:
+              data = json.loads(path.read_text(encoding="utf-8"))
+              for doc in data.get("documents", []):
+                  source = doc.get("source")
+                  if isinstance(source, dict) and "patches" in source:
+                      raise RuntimeError(f"{path}: nested source.patches remains")
+                  if "patches" in doc and not isinstance(doc["patches"], list):
+                      raise RuntimeError(f"{path}: document patches is not an array")
+
+          print(f"normalized_files={changed_files}")
+          print(f"normalized_documents={changed_documents}")
+          PY
+
+      - name: Commit normalization
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add conformance/v0.1/cases
+          if git diff --cached --quiet; then
+            echo "No normalization changes required."
+          else
+            git commit -m "conformance: normalize case patch placement"
+            git push
+          fi
