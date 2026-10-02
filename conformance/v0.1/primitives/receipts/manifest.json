@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 247,
+  "receipt_count": 250,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -218,6 +218,7 @@
     "conformance/v0.1/primitives/receipts/tool-execution-self-loop.json",
     "conformance/v0.1/primitives/receipts/tool-executions-no-relation.json",
     "conformance/v0.1/primitives/receipts/tool-idempotency-shared.json",
+    "conformance/v0.1/primitives/receipts/tool-incomplete-execution-capture.json",
     "conformance/v0.1/primitives/receipts/tool-invocation-denied.json",
     "conformance/v0.1/primitives/receipts/tool-invocation-final-boundary.json",
     "conformance/v0.1/primitives/receipts/tool-invocation-no-execution.json",
@@ -226,6 +227,7 @@
     "conformance/v0.1/primitives/receipts/tool-metadata-origin.json",
     "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
     "conformance/v0.1/primitives/receipts/tool-orchestration-relations.json",
+    "conformance/v0.1/primitives/receipts/tool-post-boundary-unknown.json",
     "conformance/v0.1/primitives/receipts/tool-prestart-failure.json",
     "conformance/v0.1/primitives/receipts/tool-privacy-capture.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-ambiguous.json",
@@ -234,6 +236,7 @@
     "conformance/v0.1/primitives/receipts/tool-remote-client-start.json",
     "conformance/v0.1/primitives/receipts/tool-result-exception.json",
     "conformance/v0.1/primitives/receipts/tool-result-partial-capture.json",
+    "conformance/v0.1/primitives/receipts/tool-signed-diagnostic-global-coverage.json",
     "conformance/v0.1/primitives/receipts/tool-streaming-result.json",
     "conformance/v0.1/primitives/receipts/tool-timeout-no-effect.json",
     "conformance/v0.1/primitives/receipts/tool-validation-success.json",

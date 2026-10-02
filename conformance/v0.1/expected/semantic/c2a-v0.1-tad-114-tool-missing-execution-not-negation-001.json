@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-114-tool-missing-execution-not-negation-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-114",
+      "check_id": "tool-missing-execution-not-negation-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-incomplete-execution-001",
+        "object_id": "diag-tad-exec-unknown-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:missing_tool_execution_proves_no_execution"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

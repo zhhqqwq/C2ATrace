@@ -1,0 +1,66 @@
+{
+  "case_id": "c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-116"
+  ],
+  "planned_test_ids": [
+    "tool-external-metadata-not-effect-observation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "external_observed metadata is not automatically a distinct separate_observation EffectObservation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-metadata-origin.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/3/metadata/-",
+          "value": {
+            "name": "external_state_echo",
+            "value": "created",
+            "origin": "external_observed"
+          }
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-116"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-116",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-116"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001.json"
+}

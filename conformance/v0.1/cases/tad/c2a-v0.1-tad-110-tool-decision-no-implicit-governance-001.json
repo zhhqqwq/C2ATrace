@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-110"
+  ],
+  "planned_test_ids": [
+    "tool-decision-no-implicit-governance-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "ToolDecision occurrences do not automatically govern a later ToolExecution without an explicit applicable relation/order/basis.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/identity-tool-decisions.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-110"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-110",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-110"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001.json"
+}

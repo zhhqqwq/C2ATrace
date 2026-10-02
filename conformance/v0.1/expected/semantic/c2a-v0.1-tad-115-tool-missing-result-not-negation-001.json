@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-115-tool-missing-result-not-negation-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-115",
+      "check_id": "tool-missing-result-not-negation-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-capture-failures-001",
+        "object_id": "diag-tad-result-fail-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:missing_tool_result_proves_no_runtime_result"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

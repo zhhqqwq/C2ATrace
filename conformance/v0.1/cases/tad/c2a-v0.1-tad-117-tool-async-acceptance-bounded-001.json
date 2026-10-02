@@ -1,0 +1,90 @@
+{
+  "case_id": "c2a-v0.1-tad-117-tool-async-acceptance-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-117"
+  ],
+  "planned_test_ids": [
+    "tool-async-acceptance-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Tool-reported accepted/queued status does not establish asynchronous remote completion, Effect, or Outcome.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-metadata-origin.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/3/reported_status",
+          "value": "accepted"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/3/representation/value",
+          "value": {
+            "job_id": "job-123",
+            "status": "queued"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/3/metadata/0/value",
+          "value": "job-123"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/3/metadata/1/value",
+          "value": "queued"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/3/metadata/2/value",
+          "value": "accepted"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/3/metadata/2/mapping_basis",
+          "value": "map tool server_status=queued to normalized accepted"
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-117"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-117",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-117"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-117-tool-async-acceptance-bounded-001.json"
+}

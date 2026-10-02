@@ -1,0 +1,63 @@
+{
+  "case_id": "c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-106"
+  ],
+  "planned_test_ids": [
+    "tool-capture-diagnostic-no-global-completeness-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A validly signed Tool Adapter CaptureDiagnostic remains bounded evidence and does not establish global instrumentation coverage.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-signed-diagnostic-global-coverage.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-106"
+    ],
+    "capabilities": [
+      "verification_keys"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-106",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "TAD-106"
+    ],
+    "verification_keys": [
+      "test-ed25519-key-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.tool.lifecycle, prim.verifier.report, prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001.json"
+}

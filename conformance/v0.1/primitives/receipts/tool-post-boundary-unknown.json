@@ -1,0 +1,95 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-post-boundary-unknown-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-post-001",
+      "invoke-tad-post-001",
+      "tool-adapter-tad-post-001",
+      "diag-tad-post-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-post-001",
+        "kind": "Run",
+        "label": "tool-post-boundary-unknown"
+      },
+      {
+        "id": "invoke-tad-post-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-post-001",
+        "tool_name": "remote_create",
+        "executable_target": "https://tool.example.invalid/create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 1,
+            "mode": "requested"
+          }
+        }
+      },
+      {
+        "id": "tool-adapter-tad-post-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-post-001",
+        "adapter_name": "wave06-boundary-tool-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "application-visible dispatch representation before hidden transport/runtime layers",
+        "execution_boundary": "client runtime execution",
+        "result_boundary": "application-visible result",
+        "proposal_association": false,
+        "decision_capture": false,
+        "streaming_result": false,
+        "retry_visibility": "unknown",
+        "replay_visibility": "unknown",
+        "duplicate_visibility": "unknown",
+        "effect_observation": [],
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "diag-tad-post-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-post-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "invoke-tad-post-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "tool_invocation"
+        },
+        "slot": "tool_invocation.highest_visible_boundary",
+        "status": "observed",
+        "reason": "lower transport and remote runtime layers are outside adapter visibility",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-post-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-post-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

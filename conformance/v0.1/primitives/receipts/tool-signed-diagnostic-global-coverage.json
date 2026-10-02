@@ -1,0 +1,121 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-diagnostic-signed-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-signed-001",
+      "invoke-tad-signed-001",
+      "tool-adapter-tad-signed-001",
+      "diag-tad-signed-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-signed-001",
+        "kind": "Run",
+        "label": "signed-tool-diagnostic"
+      },
+      {
+        "id": "invoke-tad-signed-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-signed-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "tool-adapter-tad-signed-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-signed-001",
+        "adapter_name": "signed-tool-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "effective ToolInvocation",
+        "execution_boundary": "runtime execution",
+        "result_boundary": "application-visible ToolResult",
+        "argument_path_schemes": [
+          "json_pointer"
+        ],
+        "proposal_association": false,
+        "decision_capture": false,
+        "streaming_result": false,
+        "retry_visibility": "unknown",
+        "replay_visibility": "unknown",
+        "duplicate_visibility": "unknown",
+        "effect_observation": [],
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "diag-tad-signed-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-signed-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "invoke-tad-signed-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "tool_invocation"
+        },
+        "slot": "arguments",
+        "status": "observed",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-signed-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-signed-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "W0LNpwpGmPP_iSbqwrBgiIfB8zyplIeKDyFY1q2z2JI"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": [
+    {
+      "id": "env-tad-diag-106",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-tool-diagnostic-signed-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "W0LNpwpGmPP_iSbqwrBgiIfB8zyplIeKDyFY1q2z2JI"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "8RnvfjB7KVIc4x0ooEOs8rSG25XJgo4xxFD9_hDzvSoro2VstHWu-ZXs-rBTHQMgUulR7nijSTaiw86JktukBQ"
+      }
+    }
+  ]
+}

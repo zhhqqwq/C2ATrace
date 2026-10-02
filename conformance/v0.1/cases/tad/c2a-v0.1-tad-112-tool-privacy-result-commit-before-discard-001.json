@@ -1,0 +1,91 @@
+{
+  "case_id": "c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-112"
+  ],
+  "planned_test_ids": [
+    "tool-privacy-result-commit-before-discard-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Commitment-only ToolResult disclosure is backed by exact result observation before discard.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-privacy-capture.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/arp/records/3/representation"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/privacy/1/profile",
+          "value": "hash_only"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/privacy/1/availability",
+          "value": "original_withheld_with_commitment"
+        },
+        {
+          "op": "remove",
+          "path": "/arp/privacy/1/redacted_derivative"
+        },
+        {
+          "op": "add",
+          "path": "/arp/privacy/1/commitments",
+          "value": [
+            {
+              "method": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "representation_basis": "json-data-model"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-112"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-112",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "TAD-112"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.privacy.commitment, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001.json"
+}

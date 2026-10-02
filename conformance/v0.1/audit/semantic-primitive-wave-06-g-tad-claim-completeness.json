@@ -1,0 +1,43 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-g-tad-claim-completeness",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-102-tool-adapter-unknown-preserved-001",
+    "c2a-v0.1-tad-104-tool-representation-not-observation-proof-001",
+    "c2a-v0.1-tad-105-tool-remote-internals-unestablished-001",
+    "c2a-v0.1-tad-106-tool-capture-diagnostic-no-global-completeness-001",
+    "c2a-v0.1-tad-109-tool-invocation-post-boundary-mutation-001",
+    "c2a-v0.1-tad-110-tool-decision-no-implicit-governance-001",
+    "c2a-v0.1-tad-112-tool-privacy-result-commit-before-discard-001",
+    "c2a-v0.1-tad-113-tool-noncompleted-not-no-effect-001",
+    "c2a-v0.1-tad-114-tool-missing-execution-not-negation-001",
+    "c2a-v0.1-tad-115-tool-missing-result-not-negation-001",
+    "c2a-v0.1-tad-116-tool-external-metadata-not-effect-observation-001",
+    "c2a-v0.1-tad-117-tool-async-acceptance-bounded-001"
+  ],
+  "newly_materialized_count": 12,
+  "executable_semantic_requirements": 643,
+  "remaining_semantic_requirements": 128,
+  "remaining_tad_semantic_requirements": 0,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-signed-diagnostic-global-coverage.json",
+    "conformance/v0.1/primitives/receipts/tool-incomplete-execution-capture.json",
+    "conformance/v0.1/primitives/receipts/tool-post-boundary-unknown.json",
+    "conformance/v0.1/primitives/receipts/tool-privacy-capture.json",
+    "conformance/v0.1/primitives/receipts/tool-capture-failures.json",
+    "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+    "conformance/v0.1/primitives/receipts/tool-metadata-origin.json",
+    "conformance/v0.1/primitives/receipts/identity-tool-decisions.json"
+  ],
+  "assertions": {
+    "signed_diagnostic_not_global_completeness": true,
+    "unknown_preserved_under_incomplete_capture": true,
+    "remote_internals_unestablished": true,
+    "decision_governance_requires_explicit_relation": true,
+    "async_acceptance_bounded": true,
+    "tad_semantic_materialization_complete": true,
+    "frozen_schema_unchanged": true
+  }
+}
