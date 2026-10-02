@@ -1,0 +1,66 @@
+{
+  "case_id": "c2a-v0.1-src-022-source-cross-receipt-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-022"
+  ],
+  "planned_test_ids": [
+    "source-cross-receipt-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Equal SourceRef IDs and locators in different Receipts do not create implicit global SourceRef identity.",
+  "documents": [
+    {
+      "document_id": "a",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "decoy",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-decoy-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "decoy"
+    ],
+    "verifier_goals": [
+      "SRC-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-022",
+    "primary_documents": [
+      "a"
+    ],
+    "resolution_set": [
+      "decoy"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-src-022-source-cross-receipt-identity-001.json"
+}

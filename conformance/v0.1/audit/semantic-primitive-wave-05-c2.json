@@ -1,0 +1,12 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-c2",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-src-022-source-cross-receipt-identity-001",
+    "c2a-v0.1-taint-025-taint-exact-requires-exact-mapping-001",
+    "c2a-v0.1-taint-026-taint-partial-conservative-001"
+  ],
+  "executable_semantic_requirements": 444,
+  "remaining_semantic_requirements": 327
+}

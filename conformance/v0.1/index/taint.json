@@ -223,7 +223,7 @@
       "requirement_id": "TAINT-025",
       "planned_test_id": "taint-exact-requires-exact-mapping-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-025-taint-exact-requires-exact-mapping-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-taint-025-taint-exact-requires-exact-mapping-001.json"
     },
@@ -232,7 +232,7 @@
       "requirement_id": "TAINT-026",
       "planned_test_id": "taint-partial-conservative-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/taint/c2a-v0.1-taint-026-taint-partial-conservative-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-taint-026-taint-partial-conservative-001.json"
     },
