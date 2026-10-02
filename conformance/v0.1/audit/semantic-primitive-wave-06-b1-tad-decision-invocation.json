@@ -1,0 +1,33 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-b1-tad-decision-invocation",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001",
+    "c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001",
+    "c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001",
+    "c2a-v0.1-tad-021-tool-deny-later-execution-001",
+    "c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001",
+    "c2a-v0.1-tad-024-tool-invocation-not-wire-request-001",
+    "c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001",
+    "c2a-v0.1-tad-028-tool-preparation-lineage-positive-001"
+  ],
+  "newly_materialized_count": 8,
+  "executable_semantic_requirements": 573,
+  "remaining_semantic_requirements": 198,
+  "remaining_tad_semantic_requirements": 70,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-proposal-denied.json",
+    "conformance/v0.1/primitives/receipts/tool-invocation-denied.json",
+    "conformance/v0.1/primitives/receipts/tool-invocation-final-boundary.json",
+    "conformance/v0.1/primitives/receipts/tool-equal-invocations-distinct.json",
+    "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
+    "conformance/v0.1/primitives/receipts/identity-tool-decisions.json"
+  ],
+  "assertions": {
+    "tool_adapter_contract_unchanged": true,
+    "frozen_schema_unchanged": true,
+    "decision_occurrence_boundaries_preserved": true
+  }
+}

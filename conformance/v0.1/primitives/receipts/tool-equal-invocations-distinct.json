@@ -1,0 +1,89 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-equal-invocations-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-equal-001",
+      "invoke-tad-equal-a",
+      "invoke-tad-equal-b",
+      "exec-tad-equal-a",
+      "exec-tad-equal-b"
+    ],
+    "records": [
+      {
+        "id": "run-tad-equal-001",
+        "kind": "Run",
+        "label": "equal-tool-invocations-distinct"
+      },
+      {
+        "id": "invoke-tad-equal-a",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-equal-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "invoke-tad-equal-b",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-equal-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "exec-tad-equal-a",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-equal-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-equal-a",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      },
+      {
+        "id": "exec-tad-equal-b",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-equal-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-equal-b",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-equal-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-invocation-denied-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-deny-inv-001",
+      "invoke-tad-deny-001",
+      "decision-tad-deny-inv-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-deny-inv-001",
+        "kind": "Run",
+        "label": "tool-invocation-denied"
+      },
+      {
+        "id": "invoke-tad-deny-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-deny-inv-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "decision-tad-deny-inv-001",
+        "kind": "ToolDecision",
+        "run_id": "run-tad-deny-inv-001",
+        "subject": {
+          "ref_type": "local",
+          "id": "invoke-tad-deny-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "decision": "deny",
+        "asserted_by": {
+          "state": "known",
+          "id": "policy-engine"
+        },
+        "policy": {
+          "state": "known",
+          "id": "urn:test:tool-policy:v1"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-deny-inv-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

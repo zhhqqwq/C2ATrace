@@ -160,7 +160,7 @@
       "requirement_id": "TAD-018",
       "planned_test_id": "tool-proposal-denial-no-fake-execution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001.json"
     },
@@ -169,7 +169,7 @@
       "requirement_id": "TAD-019",
       "planned_test_id": "tool-invocation-denial-no-fake-execution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-019-tool-invocation-denial-no-fake-execution-001.json"
     },
@@ -178,7 +178,7 @@
       "requirement_id": "TAD-020",
       "planned_test_id": "tool-execution-no-implicit-allow-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-020-tool-execution-no-implicit-allow-001.json"
     },
@@ -187,7 +187,7 @@
       "requirement_id": "TAD-021",
       "planned_test_id": "tool-deny-later-execution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-021-tool-deny-later-execution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-021-tool-deny-later-execution-001.json"
     },
@@ -205,7 +205,7 @@
       "requirement_id": "TAD-023",
       "planned_test_id": "tool-effective-invocation-final-boundary-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-023-tool-effective-invocation-final-boundary-001.json"
     },
@@ -214,7 +214,7 @@
       "requirement_id": "TAD-024",
       "planned_test_id": "tool-invocation-not-wire-request-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-024-tool-invocation-not-wire-request-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-024-tool-invocation-not-wire-request-001.json"
     },
@@ -232,7 +232,7 @@
       "requirement_id": "TAD-026",
       "planned_test_id": "tool-invocation-reuse-not-equality-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001.json"
     },
@@ -250,7 +250,7 @@
       "requirement_id": "TAD-028",
       "planned_test_id": "tool-preparation-lineage-positive-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-028-tool-preparation-lineage-positive-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-028-tool-preparation-lineage-positive-001.json"
     },

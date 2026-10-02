@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-018-tool-proposal-denial-no-fake-execution-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-018",
+      "check_id": "tool-proposal-denial-no-fake-execution-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-proposal-denied-001",
+        "object_id": "decision-tad-deny-prop-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:proposal_denial_implies_tool_invocation_or_execution"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

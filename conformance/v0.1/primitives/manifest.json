@@ -2418,7 +2418,7 @@
         "VFY-149"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 77,
+      "executable_primary_requirement_count": 85,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [],
       "wave_05_primary_requirements": [
@@ -2500,7 +2500,15 @@
         "TAD-013",
         "TAD-014",
         "TAD-015",
-        "TAD-016"
+        "TAD-016",
+        "TAD-018",
+        "TAD-019",
+        "TAD-020",
+        "TAD-021",
+        "TAD-023",
+        "TAD-024",
+        "TAD-026",
+        "TAD-028"
       ]
     },
     {
@@ -2783,7 +2791,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 565,
-  "remaining_semantic_requirements": 206,
-  "materialization_wave": "06-a-tad-capability-diagnostics"
+  "executable_semantic_requirements": 573,
+  "remaining_semantic_requirements": 198,
+  "materialization_wave": "06-b1-tad-decision-invocation"
 }

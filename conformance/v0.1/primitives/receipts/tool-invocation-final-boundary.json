@@ -1,0 +1,106 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-invocation-final-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-final-001",
+      "invoke-tad-candidate-001",
+      "prep-tad-final-001",
+      "invoke-tad-effective-001",
+      "exec-tad-final-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-final-001",
+        "kind": "Run",
+        "label": "tool-effective-invocation-final"
+      },
+      {
+        "id": "invoke-tad-candidate-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-final-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "prep-tad-final-001",
+        "kind": "Transform",
+        "run_id": "run-tad-final-001",
+        "operation": "tool_preparation",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "invoke-tad-candidate-001",
+              "expected_kind": "ToolInvocation"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "invoke-tad-effective-001",
+            "expected_kind": "ToolInvocation"
+          }
+        ],
+        "selected": []
+      },
+      {
+        "id": "invoke-tad-effective-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-final-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug",
+            "repo": "org/repo"
+          }
+        },
+        "preparation_transform": {
+          "ref_type": "local",
+          "id": "prep-tad-final-001",
+          "expected_kind": "Transform"
+        }
+      },
+      {
+        "id": "exec-tad-final-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-final-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-effective-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "in_progress"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-final-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}
