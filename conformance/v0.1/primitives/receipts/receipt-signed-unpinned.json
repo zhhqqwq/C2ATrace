@@ -1,0 +1,101 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-signed-unpinned-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "external_resolution",
+    "inventory": [
+      "run-signed-unpinned-001",
+      "frag-local-001",
+      "xf-unpinned-001"
+    ],
+    "records": [
+      {
+        "id": "run-signed-unpinned-001",
+        "kind": "Run",
+        "label": "signed-unpinned"
+      },
+      {
+        "id": "frag-local-001",
+        "kind": "ContextFragment",
+        "run_id": "run-signed-unpinned-001",
+        "representation": {
+          "representation_kind": "text",
+          "text": "local",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        }
+      },
+      {
+        "id": "xf-unpinned-001",
+        "kind": "Transform",
+        "run_id": "run-signed-unpinned-001",
+        "operation": "external-use",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "external",
+              "receipt_id": "receipt-multi-a",
+              "id": "obs-multi-001",
+              "expected_kind": "SourceObservation"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "frag-local-001",
+            "expected_kind": "ContextFragment"
+          }
+        ],
+        "selected": []
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-signed-unpinned-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "ZI7EW58FMyy5-339EsWaJyk0eUCxYb8u4Pts7tuZo50"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": [
+    {
+      "id": "env-signed-unpinned-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-signed-unpinned-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "ZI7EW58FMyy5-339EsWaJyk0eUCxYb8u4Pts7tuZo50"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "Emi5bVnCiCFLAlr-BU9IWR3_Wg8F9d0VjLb0Ec172MQZHfHFrjFIQ95BW9NXN1OqosUiqzi4j8iXos_7aC2SBA"
+      }
+    }
+  ]
+}

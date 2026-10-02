@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-out-002-model-attempt-grouping-no-inference-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "OUT-002",
+      "check_id": "model-attempt-grouping-no-inference-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "att-002-grouping"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:attempt_grouping_from_request_model_or_time_similarity"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

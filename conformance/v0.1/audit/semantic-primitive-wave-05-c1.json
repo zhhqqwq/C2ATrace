@@ -1,0 +1,19 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-c1",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-drv-024-derivation-exact-composition-001",
+    "c2a-v0.1-intg-064-integrity-unpinned-external-target-001",
+    "c2a-v0.1-out-002-model-attempt-grouping-no-inference-001",
+    "c2a-v0.1-pad-037-provider-binding-positive-mapping-001",
+    "c2a-v0.1-pad-092-provider-metadata-normalization-basis-001"
+  ],
+  "executable_semantic_requirements": 441,
+  "remaining_semantic_requirements": 330,
+  "assertions": {
+    "signed_unpinned_external_scope_materialized": true,
+    "exact_mapping_and_attempt_grouping_materialized": true,
+    "provider_mapping_and_metadata_basis_materialized": true
+  }
+}

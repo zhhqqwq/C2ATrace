@@ -384,7 +384,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-drv-024-derivation-exact-composition-001"
     },
     {
       "family": "drv",
@@ -1253,7 +1255,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-064-integrity-unpinned-external-target-001"
     },
     {
       "family": "intg",
@@ -1335,7 +1339,9 @@
         "prim.claim.strength",
         "prim.provider.attempts",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-002-model-attempt-grouping-no-inference-001"
     },
     {
       "family": "out",
@@ -2535,7 +2541,9 @@
         "prim.derivation.mapping",
         "prim.ref.external",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-037-provider-binding-positive-mapping-001"
     },
     {
       "family": "pad",
@@ -3406,7 +3414,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-092-provider-metadata-normalization-basis-001"
     },
     {
       "family": "pad",
@@ -12630,6 +12640,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 436,
-  "remaining_semantic_requirements": 335
+  "executable_semantic_requirements": 441,
+  "remaining_semantic_requirements": 330
 }

@@ -1,0 +1,33 @@
+{
+  "case_id": "c2a-v0.1-intg-064-integrity-unpinned-external-target-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "target",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-064",
+      "check_id": "integrity-unpinned-external-target-001",
+      "subject_selector": {
+        "receipt_id": "receipt-signed-unpinned-001",
+        "object_id": "xf-unpinned-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:current_receipt_signature_authenticates_unpinned_external_target_payload"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,62 @@
+{
+  "case_id": "c2a-v0.1-pad-037-provider-binding-positive-mapping-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-037"
+  ],
+  "planned_test_ids": [
+    "provider-binding-positive-mapping-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A RequestBinding whose claimed target representation does not positively match the component mapping is invalid.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/arp/records/8/representation/value/messages/0/content",
+            "value": "beta"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "PAD-037"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-037",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-037"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.derivation.mapping, prim.request.binding, prim.ref.external"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-037-provider-binding-positive-mapping-001.json"
+}

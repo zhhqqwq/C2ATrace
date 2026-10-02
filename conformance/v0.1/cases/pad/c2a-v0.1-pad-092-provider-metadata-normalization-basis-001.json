@@ -1,0 +1,67 @@
+{
+  "case_id": "c2a-v0.1-pad-092-provider-metadata-normalization-basis-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-092"
+  ],
+  "planned_test_ids": [
+    "provider-metadata-normalization-basis-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Adapter-derived normalized metadata without a preserved mapping basis remains normalized/unknown rather than raw provider evidence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/provider-retry.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/5/metadata",
+            "value": [
+              {
+                "name": "normalized_finish_reason",
+                "value": "stop",
+                "origin": "adapter_derived"
+              }
+            ]
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "PAD-092"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-092",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-092"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.derivation.mapping, prim.ref.external"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-092-provider-metadata-normalization-basis-001.json"
+}
