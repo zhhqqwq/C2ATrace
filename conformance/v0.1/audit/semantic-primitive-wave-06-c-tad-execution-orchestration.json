@@ -1,0 +1,42 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-c-tad-execution-orchestration",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-039-tool-execution-start-boundary-001",
+    "c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001",
+    "c2a-v0.1-tad-041-tool-client-start-no-remote-start-001",
+    "c2a-v0.1-tad-043-tool-execution-disposition-boundary-001",
+    "c2a-v0.1-tad-044-tool-completed-not-effect-001",
+    "c2a-v0.1-tad-045-tool-timeout-not-no-effect-001",
+    "c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001",
+    "c2a-v0.1-tad-047-tool-retry-new-execution-001",
+    "c2a-v0.1-tad-048-tool-retry-changed-invocation-001",
+    "c2a-v0.1-tad-049-tool-retry-relation-positive-001",
+    "c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001",
+    "c2a-v0.1-tad-051-tool-replay-relation-positive-001",
+    "c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001",
+    "c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001",
+    "c2a-v0.1-tad-054-tool-idempotency-metadata-001",
+    "c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001",
+    "c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001"
+  ],
+  "newly_materialized_count": 17,
+  "executable_semantic_requirements": 598,
+  "remaining_semantic_requirements": 173,
+  "remaining_tad_semantic_requirements": 45,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-prestart-failure.json",
+    "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+    "conformance/v0.1/primitives/receipts/tool-remote-client-start.json",
+    "conformance/v0.1/primitives/receipts/tool-orchestration-relations.json",
+    "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json"
+  ],
+  "assertions": {
+    "execution_boundary_bounded": true,
+    "orchestration_relations_require_positive_evidence": true,
+    "idempotency_not_identity_or_exactly_once": true,
+    "frozen_schema_unchanged": true
+  }
+}

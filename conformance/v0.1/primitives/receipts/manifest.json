@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 236,
+  "receipt_count": 240,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -220,10 +220,14 @@
     "conformance/v0.1/primitives/receipts/tool-invocation-final-boundary.json",
     "conformance/v0.1/primitives/receipts/tool-invocation-no-execution.json",
     "conformance/v0.1/primitives/receipts/tool-invocation-no-proposal.json",
+    "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
     "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
+    "conformance/v0.1/primitives/receipts/tool-orchestration-relations.json",
+    "conformance/v0.1/primitives/receipts/tool-prestart-failure.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-ambiguous.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-denied.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-invocation-no-lineage.json",
+    "conformance/v0.1/primitives/receipts/tool-remote-client-start.json",
     "conformance/v0.1/primitives/receipts/tool-timeout-no-effect.json",
     "conformance/v0.1/primitives/receipts/tool-validation-success.json",
     "conformance/v0.1/primitives/receipts/trust-conflict.json",

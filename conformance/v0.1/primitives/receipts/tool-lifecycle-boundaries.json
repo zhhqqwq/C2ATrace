@@ -1,0 +1,172 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-lifecycle-boundaries-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-life-001",
+      "invoke-tad-complete-001",
+      "exec-tad-complete-001",
+      "result-tad-complete-001",
+      "invoke-tad-timeout-001",
+      "exec-tad-timeout-001",
+      "invoke-tad-cancel-001",
+      "exec-tad-cancel-001",
+      "diag-tad-life-complete-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-life-001",
+        "kind": "Run",
+        "label": "tool-lifecycle-boundaries"
+      },
+      {
+        "id": "invoke-tad-complete-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-life-001",
+        "tool_name": "remote_create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 1
+          }
+        }
+      },
+      {
+        "id": "exec-tad-complete-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-life-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-complete-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "metadata": [
+          {
+            "name": "lifecycle_basis",
+            "value": "runtime_returned",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "result-tad-complete-001",
+        "kind": "ToolResult",
+        "run_id": "run-tad-life-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-complete-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "reported_status": "success",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "status": "accepted"
+          }
+        }
+      },
+      {
+        "id": "invoke-tad-timeout-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-life-001",
+        "tool_name": "remote_create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 2
+          }
+        }
+      },
+      {
+        "id": "exec-tad-timeout-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-life-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-timeout-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "timeout",
+        "metadata": [
+          {
+            "name": "lifecycle_basis",
+            "value": "client_timeout",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "invoke-tad-cancel-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-life-001",
+        "tool_name": "remote_create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 3
+          }
+        }
+      },
+      {
+        "id": "exec-tad-cancel-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-life-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-cancel-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "cancelled",
+        "metadata": [
+          {
+            "name": "lifecycle_basis",
+            "value": "local_cancellation",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "diag-tad-life-complete-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-life-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "exec-tad-complete-001",
+            "expected_kind": "ToolExecution"
+          },
+          "representation_basis": "tool_execution"
+        },
+        "slot": "tool_execution.lifecycle",
+        "status": "observed",
+        "reason": "runtime completion observed"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-life-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

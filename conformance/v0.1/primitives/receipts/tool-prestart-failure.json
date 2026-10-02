@@ -1,0 +1,95 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-prestart-failure-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-prestart-001",
+      "invoke-tad-prestart-001",
+      "tool-adapter-tad-prestart-001",
+      "diag-tad-prestart-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-prestart-001",
+        "kind": "Run",
+        "label": "tool-prestart-failure"
+      },
+      {
+        "id": "invoke-tad-prestart-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-prestart-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "tool-adapter-tad-prestart-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-prestart-001",
+        "adapter_name": "wave06-tool-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "effective pre-execution ToolInvocation",
+        "execution_boundary": "runtime execute entry",
+        "result_boundary": "application-visible ToolResult",
+        "proposal_association": false,
+        "decision_capture": true,
+        "streaming_result": false,
+        "retry_visibility": "direct",
+        "replay_visibility": "direct",
+        "duplicate_visibility": "direct",
+        "effect_observation": [
+          "execution_result"
+        ],
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "diag-tad-prestart-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-prestart-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "invoke-tad-prestart-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "tool_invocation"
+        },
+        "slot": "tool_execution.start",
+        "status": "unavailable",
+        "reason": "credential validation failed before declared execution-start boundary",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-prestart-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-prestart-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-remote-client-start-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-remote-001",
+      "invoke-tad-remote-001",
+      "exec-tad-remote-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-remote-001",
+        "kind": "Run",
+        "label": "tool-remote-client-start"
+      },
+      {
+        "id": "invoke-tad-remote-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-remote-001",
+        "tool_name": "remote_create",
+        "executable_target": "https://tool.example.invalid/create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 1
+          }
+        }
+      },
+      {
+        "id": "exec-tad-remote-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-remote-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-remote-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "in_progress",
+        "metadata": [
+          {
+            "name": "client_dispatch_started",
+            "value": true,
+            "origin": "adapter_observed"
+          }
+        ]
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-remote-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

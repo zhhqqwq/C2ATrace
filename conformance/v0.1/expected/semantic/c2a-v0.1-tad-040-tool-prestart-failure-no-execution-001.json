@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-040",
+      "check_id": "tool-prestart-failure-no-execution-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-prestart-failure-001",
+        "object_id": "diag-tad-prestart-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:prestart_failure_implies_tool_execution"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

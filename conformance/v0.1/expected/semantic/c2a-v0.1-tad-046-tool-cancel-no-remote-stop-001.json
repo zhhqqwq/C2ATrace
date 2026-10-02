@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-046",
+      "check_id": "tool-cancel-no-remote-stop-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-lifecycle-boundaries-001",
+        "object_id": "exec-tad-cancel-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:local_tool_cancellation_proves_remote_stop"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

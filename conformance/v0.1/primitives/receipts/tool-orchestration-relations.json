@@ -1,0 +1,187 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-orchestration-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-orch-001",
+      "invoke-tad-orch-a",
+      "exec-tad-orch-a",
+      "invoke-tad-orch-b",
+      "exec-tad-orch-b",
+      "result-tad-orch-b",
+      "exec-tad-orch-c",
+      "exec-tad-orch-d"
+    ],
+    "records": [
+      {
+        "id": "run-tad-orch-001",
+        "kind": "Run",
+        "label": "tool-orchestration-relations"
+      },
+      {
+        "id": "invoke-tad-orch-a",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-orch-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        },
+        "idempotency_key": "idem-shared"
+      },
+      {
+        "id": "exec-tad-orch-a",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-orch-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-orch-a",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "timeout",
+        "metadata": [
+          {
+            "name": "orchestration_attempt",
+            "value": 1,
+            "origin": "application_observed"
+          }
+        ]
+      },
+      {
+        "id": "invoke-tad-orch-b",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-orch-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug",
+            "retry": true
+          }
+        },
+        "idempotency_key": "idem-shared"
+      },
+      {
+        "id": "exec-tad-orch-b",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-orch-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-orch-b",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "retry_of": {
+          "ref_type": "local",
+          "id": "exec-tad-orch-a",
+          "expected_kind": "ToolExecution"
+        },
+        "metadata": [
+          {
+            "name": "retry_orchestration",
+            "value": "application_retry",
+            "origin": "application_observed"
+          }
+        ]
+      },
+      {
+        "id": "result-tad-orch-b",
+        "kind": "ToolResult",
+        "run_id": "run-tad-orch-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-orch-b",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "reported_status": "deduplicated",
+        "metadata": [
+          {
+            "name": "deduplicated",
+            "value": true,
+            "origin": "tool_reported"
+          }
+        ],
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "status": "deduplicated"
+          }
+        }
+      },
+      {
+        "id": "exec-tad-orch-c",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-orch-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-orch-b",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "replay_of": {
+          "ref_type": "local",
+          "id": "exec-tad-orch-b",
+          "expected_kind": "ToolExecution"
+        },
+        "metadata": [
+          {
+            "name": "replay_orchestration",
+            "value": "operator_replay",
+            "origin": "application_observed"
+          }
+        ]
+      },
+      {
+        "id": "exec-tad-orch-d",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-orch-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-orch-b",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "duplicate_of": {
+          "ref_type": "local",
+          "id": "exec-tad-orch-c",
+          "expected_kind": "ToolExecution"
+        },
+        "metadata": [
+          {
+            "name": "duplicate_classification",
+            "value": "runtime_reported",
+            "origin": "application_observed"
+          }
+        ]
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-orch-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

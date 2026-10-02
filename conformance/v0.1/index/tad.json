@@ -349,7 +349,7 @@
       "requirement_id": "TAD-039",
       "planned_test_id": "tool-execution-start-boundary-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-039-tool-execution-start-boundary-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-039-tool-execution-start-boundary-001.json"
     },
@@ -358,7 +358,7 @@
       "requirement_id": "TAD-040",
       "planned_test_id": "tool-prestart-failure-no-execution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-040-tool-prestart-failure-no-execution-001.json"
     },
@@ -367,7 +367,7 @@
       "requirement_id": "TAD-041",
       "planned_test_id": "tool-client-start-no-remote-start-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-041-tool-client-start-no-remote-start-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-041-tool-client-start-no-remote-start-001.json"
     },
@@ -385,7 +385,7 @@
       "requirement_id": "TAD-043",
       "planned_test_id": "tool-execution-disposition-boundary-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-043-tool-execution-disposition-boundary-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-043-tool-execution-disposition-boundary-001.json"
     },
@@ -394,7 +394,7 @@
       "requirement_id": "TAD-044",
       "planned_test_id": "tool-completed-not-effect-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-044-tool-completed-not-effect-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-044-tool-completed-not-effect-001.json"
     },
@@ -403,7 +403,7 @@
       "requirement_id": "TAD-045",
       "planned_test_id": "tool-timeout-not-no-effect-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-045-tool-timeout-not-no-effect-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-045-tool-timeout-not-no-effect-001.json"
     },
@@ -412,7 +412,7 @@
       "requirement_id": "TAD-046",
       "planned_test_id": "tool-cancel-no-remote-stop-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-046-tool-cancel-no-remote-stop-001.json"
     },
@@ -421,7 +421,7 @@
       "requirement_id": "TAD-047",
       "planned_test_id": "tool-retry-new-execution-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-047-tool-retry-new-execution-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-047-tool-retry-new-execution-001.json"
     },
@@ -430,7 +430,7 @@
       "requirement_id": "TAD-048",
       "planned_test_id": "tool-retry-changed-invocation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-048-tool-retry-changed-invocation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-048-tool-retry-changed-invocation-001.json"
     },
@@ -439,7 +439,7 @@
       "requirement_id": "TAD-049",
       "planned_test_id": "tool-retry-relation-positive-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-049-tool-retry-relation-positive-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-049-tool-retry-relation-positive-001.json"
     },
@@ -448,7 +448,7 @@
       "requirement_id": "TAD-050",
       "planned_test_id": "tool-retry-no-prior-effect-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-050-tool-retry-no-prior-effect-inference-001.json"
     },
@@ -457,7 +457,7 @@
       "requirement_id": "TAD-051",
       "planned_test_id": "tool-replay-relation-positive-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-051-tool-replay-relation-positive-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-051-tool-replay-relation-positive-001.json"
     },
@@ -466,7 +466,7 @@
       "requirement_id": "TAD-052",
       "planned_test_id": "tool-duplicate-relation-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-052-tool-duplicate-relation-bounded-001.json"
     },
@@ -475,7 +475,7 @@
       "requirement_id": "TAD-053",
       "planned_test_id": "tool-hidden-retry-no-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-053-tool-hidden-retry-no-inference-001.json"
     },
@@ -484,7 +484,7 @@
       "requirement_id": "TAD-054",
       "planned_test_id": "tool-idempotency-metadata-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-054-tool-idempotency-metadata-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-054-tool-idempotency-metadata-001.json"
     },
@@ -493,7 +493,7 @@
       "requirement_id": "TAD-055",
       "planned_test_id": "tool-idempotency-no-exactly-once-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-055-tool-idempotency-no-exactly-once-001.json"
     },
@@ -502,7 +502,7 @@
       "requirement_id": "TAD-056",
       "planned_test_id": "tool-idempotency-reported-dedup-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-056-tool-idempotency-reported-dedup-001.json"
     },
