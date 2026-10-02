@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-trust-022-trust-no-last-write-wins-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TRUST-022"
+  ],
+  "planned_test_ids": [
+    "trust-no-last-write-wins-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A later-recorded trust assertion does not win solely because its timestamp is later.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/trust-conflict.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/11/recorded_at",
+            "value": "2026-10-02T10:00:10Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/12/recorded_at",
+            "value": "2026-10-02T10:00:20Z"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TRUST-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-trust-022",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TRUST-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time, prim.trust.assertion"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-trust-022-trust-no-last-write-wins-001.json"
+}

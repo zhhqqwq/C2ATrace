@@ -2579,15 +2579,32 @@
         "RCPT-037",
         "VFY-100"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 1,
+      "materialization_status": "wave_05_materialized",
+      "executable_primary_requirement_count": 14,
       "wave_01_primary_requirements": [
         "GRAPH-013"
       ],
-      "wave_01_dependency_requirements": []
+      "wave_01_dependency_requirements": [],
+      "wave_05_primary_requirements": [
+        "GRAPH-013",
+        "OUT-038",
+        "PAD-089",
+        "RCPT-042",
+        "SRC-014",
+        "TAD-073",
+        "TAD-085",
+        "TAD-108",
+        "TAINT-050",
+        "TM-011",
+        "TOOL-058",
+        "TRUST-022",
+        "VFY-033",
+        "VFY-072",
+        "VFY-094"
+      ]
     }
   ],
-  "executable_semantic_requirements": 383,
-  "remaining_semantic_requirements": 388,
-  "materialization_wave": "05-a"
+  "executable_semantic_requirements": 397,
+  "remaining_semantic_requirements": 374,
+  "materialization_wave": "05-b"
 }

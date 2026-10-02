@@ -1,0 +1,19 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-b2b",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-trust-022-trust-no-last-write-wins-001",
+    "c2a-v0.1-vfy-033-verifier-dependency-vs-time-001",
+    "c2a-v0.1-vfy-072-verifier-no-causal-upgrade-001",
+    "c2a-v0.1-vfy-094-verifier-conflict-no-timestamp-winner-001"
+  ],
+  "executable_semantic_requirements": 397,
+  "remaining_semantic_requirements": 374,
+  "assertions": {
+    "ordering_time_primary_coverage_complete": true,
+    "explicit_dependency_over_timestamp_materialized": true,
+    "conflict_no_last_write_wins_materialized": true,
+    "temporal_noncausality_materialized": true
+  }
+}

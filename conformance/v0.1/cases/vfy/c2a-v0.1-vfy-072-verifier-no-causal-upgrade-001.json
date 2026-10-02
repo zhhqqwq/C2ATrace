@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-vfy-072-verifier-no-causal-upgrade-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-072"
+  ],
+  "planned_test_ids": [
+    "verifier-no-causal-upgrade-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Reachability and temporal proximity do not authorize causal wording.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/taint-propagated-content.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-072"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-072",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-072"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time, prim.claim.strength, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-072-verifier-no-causal-upgrade-001.json"
+}
