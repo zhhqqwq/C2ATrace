@@ -1,0 +1,89 @@
+{
+  "case_id": "c2a-v0.1-rcpt-042-receipt-link-timestamp-conflict-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-042"
+  ],
+  "planned_test_ids": [
+    "receipt-link-timestamp-conflict-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "ReceiptLink prior relation remains authoritative for linkage even when record timestamps appear reversed.",
+  "documents": [
+    {
+      "document_id": "current",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "run-current-ordering",
+              "kind": "Run",
+              "label": "current",
+              "recorded_at": "2026-10-02T10:00:00Z"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "run-current-ordering"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "prior",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/0/recorded_at",
+            "value": "2026-10-02T10:00:20Z"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "prior"
+    ],
+    "verifier_goals": [
+      "RCPT-042"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-042",
+    "primary_documents": [
+      "current"
+    ],
+    "resolution_set": [
+      "prior"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-042"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time, prim.receipt.multi, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-042-receipt-link-timestamp-conflict-001.json"
+}

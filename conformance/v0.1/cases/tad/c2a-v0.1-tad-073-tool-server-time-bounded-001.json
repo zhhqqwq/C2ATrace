@@ -1,0 +1,75 @@
+{
+  "case_id": "c2a-v0.1-tad-073-tool-server-time-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-073"
+  ],
+  "planned_test_ids": [
+    "tool-server-time-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Tool/server timestamps are not trusted time evidence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/6/recorded_at",
+            "value": "2026-10-02T10:00:20Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/7/recorded_at",
+            "value": "2026-10-02T10:00:10Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/8/recorded_at",
+            "value": "2026-10-02T10:00:05Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/9/recorded_at",
+            "value": "2026-10-02T10:00:00Z"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-073"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-073",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-073"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time, prim.tool.lifecycle, prim.trust.assertion"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-073-tool-server-time-bounded-001.json"
+}

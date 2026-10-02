@@ -1,0 +1,14 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-b1",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-out-038-model-output-item-order-no-timestamp-001",
+    "c2a-v0.1-pad-089-provider-adapter-time-bounded-001",
+    "c2a-v0.1-rcpt-042-receipt-link-timestamp-conflict-001",
+    "c2a-v0.1-src-014-source-version-order-001",
+    "c2a-v0.1-tad-073-tool-server-time-bounded-001"
+  ],
+  "executable_semantic_requirements": 388,
+  "remaining_semantic_requirements": 383
+}

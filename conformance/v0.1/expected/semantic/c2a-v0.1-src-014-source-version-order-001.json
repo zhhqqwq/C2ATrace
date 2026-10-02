@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-src-014-source-version-order-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "SRC-014",
+      "check_id": "source-version-order-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "obs-002"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:source_version_order_from_timestamp_or_hint"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

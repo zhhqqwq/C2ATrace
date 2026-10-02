@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-src-014-source-version-order-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "SRC-014"
+  ],
+  "planned_test_ids": [
+    "source-version-order-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "SourceObservation timestamps and external version hints do not create implicit protocol version ordering.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/source-repeat-observations.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/2/recorded_at",
+            "value": "2026-10-02T10:00:10Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/11/recorded_at",
+            "value": "2026-10-02T10:00:00Z"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "SRC-014"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-src-014",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "SRC-014"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-src-014-source-version-order-001.json"
+}

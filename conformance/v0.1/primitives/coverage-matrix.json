@@ -1784,7 +1784,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.ordering.time",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-out-038-model-output-item-order-no-timestamp-001"
     },
     {
       "family": "out",
@@ -3352,7 +3354,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-089-provider-adapter-time-bounded-001"
     },
     {
       "family": "pad",
@@ -5238,7 +5242,9 @@
       "dependency_primitives": [
         "prim.receipt.multi",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-042-receipt-link-timestamp-conflict-001"
     },
     {
       "family": "rcpt",
@@ -6204,7 +6210,9 @@
         "schema/v0.1/reference.schema.json"
       ],
       "primary_primitive": "prim.ordering.time",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-src-014-source-version-order-001"
     },
     {
       "family": "src",
@@ -7446,7 +7454,9 @@
       "dependency_primitives": [
         "prim.tool.lifecycle",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-073-tool-server-time-bounded-001"
     },
     {
       "family": "tad",
@@ -12524,6 +12534,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 383,
-  "remaining_semantic_requirements": 388
+  "executable_semantic_requirements": 388,
+  "remaining_semantic_requirements": 383
 }

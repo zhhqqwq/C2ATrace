@@ -124,7 +124,7 @@
       "requirement_id": "SRC-014",
       "planned_test_id": "source-version-order-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/src/c2a-v0.1-src-014-source-version-order-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-src-014-source-version-order-001.json"
     },

@@ -1,0 +1,91 @@
+{
+  "case_id": "c2a-v0.1-out-038-model-output-item-order-no-timestamp-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "OUT-038"
+  ],
+  "planned_test_ids": [
+    "model-output-item-order-no-timestamp-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "OutputItem ordinal defines item order; recorded_at timestamps do not reorder items.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/provider-retry.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/3/recorded_at",
+            "value": "2026-10-02T10:00:10Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/-",
+            "value": {
+              "id": "txt-r2-2",
+              "kind": "TextOutput",
+              "run_id": "run-retry-001",
+              "output": {
+                "ref_type": "local",
+                "id": "out-r2",
+                "expected_kind": "ModelOutput"
+              },
+              "ordinal": 1,
+              "text": "second",
+              "recorded_at": "2026-10-02T10:00:00Z"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/arp/inventory/-",
+            "value": "txt-r2-2"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/2/item_refs/-",
+            "value": {
+              "ref_type": "local",
+              "id": "txt-r2-2",
+              "expected_kind": "TextOutput"
+            }
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "OUT-038"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-out-038",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "OUT-038"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-out-038-model-output-item-order-no-timestamp-001.json"
+}
