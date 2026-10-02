@@ -76,14 +76,14 @@ Wave 02 uses shared primitive Receipts plus case-level normative matchers. It do
 Review rule applied during materialization: sentences that only pre-empt criticism and add no fact, inference, constraint, or action are omitted.
 
 
-## Current status after Wave 05-E Provider Adapter B
+## Current status after Wave 05-E Provider Adapter completion
 
-- executable semantic cases: 533 / 771
-- remaining semantic cases: 238
-- remaining by family: PAD 20, TAD 90, VFY 128
-- reusable primitive Receipts registered: 223
-- normalized semantic expected results: 533
+- executable semantic cases: 553 / 771
+- remaining semantic cases: 218
+- remaining by family: TAD 90, VFY 128
+- reusable primitive Receipts registered: 228
+- normalized semantic expected results: 553
 - fully materialized primary primitive families now also include occurrence identity, Trust, Taint, privacy commitment/redaction, multi-Receipt, Integrity composition, claim strength, and ordering/time
-- adapter-capture primary requirements executable: 45 / 155; Tool Adapter and Verifier families remain the largest unresolved buckets
+- adapter-capture primary requirements executable: 65 / 155; all PAD semantic requirements are executable, while Tool Adapter and Verifier remain unresolved
 
 This status is mechanically derived from the 16 family indexes and `coverage-matrix.json`; it is a conformance-state synchronization and does not change frozen protocol semantics or JSON Schema.

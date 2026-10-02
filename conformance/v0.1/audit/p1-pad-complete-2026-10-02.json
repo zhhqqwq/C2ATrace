@@ -1,0 +1,64 @@
+{
+  "layer": "conformance_state_audit",
+  "phase": "P1",
+  "date": "2026-10-02",
+  "status": "pass",
+  "source_snapshot_commit": "6313abe9e1f865986fdee18d2f74f8352330ea4c",
+  "materialized_pad_requirements": [
+    "PAD-071",
+    "PAD-072",
+    "PAD-073",
+    "PAD-074",
+    "PAD-075",
+    "PAD-076",
+    "PAD-077",
+    "PAD-079",
+    "PAD-080",
+    "PAD-081",
+    "PAD-082",
+    "PAD-083",
+    "PAD-084",
+    "PAD-086",
+    "PAD-087",
+    "PAD-090",
+    "PAD-091",
+    "PAD-093",
+    "PAD-094",
+    "PAD-095"
+  ],
+  "recomputed": {
+    "requirements": 907,
+    "mapped_cases": 907,
+    "executable_cases": 689,
+    "accepted_cases": 6,
+    "semantic_verifier": {
+      "total": 771,
+      "executable": 553,
+      "remaining": 218
+    },
+    "pad_semantic": {
+      "total": 88,
+      "executable": 88,
+      "remaining": 0
+    },
+    "remaining_semantic_by_family": {
+      "TAD": 90,
+      "VFY": 128
+    },
+    "expected_semantic_manifest": 553,
+    "primitive_receipts_manifest": 228
+  },
+  "checks": {
+    "pad_index_coverage_matrix_mismatches": 0,
+    "newly_materialized_case_paths_present": 20,
+    "newly_materialized_expected_paths_present": 20,
+    "valid_ed25519_test_receipts_recomputed": true,
+    "github_status_checks_available": false,
+    "repository_clone_available_in_execution_environment": false
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "provider_adapter_contract_unchanged": true,
+    "coverage_assignments_unchanged": true
+  }
+}

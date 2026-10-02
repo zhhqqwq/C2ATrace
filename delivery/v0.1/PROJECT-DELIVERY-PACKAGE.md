@@ -5,7 +5,7 @@
 交付包状态：CURRENT HANDOFF BASELINE  
 项目协议版本：v0.1  
 交付状态快照日期：2026-10-02  
-状态基线提交：`d766dd6fdae5a67448ce0c757902b632713695d4`
+状态基线提交：`6313abe9e1f865986fdee18d2f74f8352330ea4c`
 
 ---
 
@@ -466,7 +466,7 @@ Case ID 同时绑定：
 
 ~~~text
 mapped cases       907 / 907
-executable cases   669
+executable cases   689
 accepted cases       6
 ~~~
 
@@ -476,7 +476,7 @@ accepted cases       6
 |---|---:|---|
 | direct_schema | 6 | 6 accepted |
 | mixed_schema_semantic | 87 | 87 executable，0 remaining；acceptance pending |
-| semantic_verifier | 771 | 533 executable，238 remaining；Primitive Waves 01-05E in progress |
+| semantic_verifier | 771 | 553 executable，218 remaining；Provider Adapter semantic materialization complete |
 | deterministic_vector | 43 | 43 executable，0 remaining；acceptance pending |
 
 注意：这是 Conformance executability review 后的当前责任分类，也是当前工作量规划的 source of truth。
@@ -585,8 +585,8 @@ materialization complete; runner acceptance pending
 当前：
 
 ~~~text
-533 / 771 executable
-238 remaining
+553 / 771 executable
+218 remaining
 21 reusable primitive families
 771 / 771 primitive coverage assignments
 ~~~
@@ -598,11 +598,10 @@ Primitive Wave 01 已建立：
 - reusable primitive Receipts；
 - semantic expected-result layer。
 
-已覆盖 reference/graph foundation，并完成 SourceRef/SourceObservation、Transform/Derivation、RequestSnapshot/RequestBinding、ProviderAttempt、ModelOutput、Tool lifecycle、occurrence identity、Trust、Taint、privacy commitment/redaction、multi-Receipt、Integrity、claim-strength 与 ordering/time primary primitive family；Provider Adapter 的 adapter-capture 语义已推进到当前 B 批次。
+已覆盖 reference/graph foundation，并完成 SourceRef/SourceObservation、Transform/Derivation、RequestSnapshot/RequestBinding、ProviderAttempt、ModelOutput、Tool lifecycle、occurrence identity、Trust、Taint、privacy commitment/redaction、multi-Receipt、Integrity、claim-strength 与 ordering/time primary primitive family；Provider Adapter（PAD）剩余 semantic requirements 已全部 materialize。
 
 主要剩余语义只集中在：
 
-- Provider Adapter（PAD）：20；
 - Tool Adapter（TAD）：90；
 - Verifier（VFY）：128。
 
@@ -1020,8 +1019,8 @@ FULLY VERIFIED
 当前最合适的执行顺序：
 
 ~~~text
-1. 完成剩余 Provider Adapter（PAD）20 条 semantic cases
-2. 完成 Tool Adapter（TAD）90 与 Verifier（VFY）128，使 semantic_verifier 达到 771 / 771 executable
+1. 完成 Tool Adapter（TAD）90 条 semantic cases
+2. 完成 Verifier（VFY）128 条 semantic cases，使 semantic_verifier 达到 771 / 771 executable
 3. 完成 expected VerificationFinding matcher coverage audit
 4. 实现独立 conformance runner A
 5. 实现第二语言 runner B
