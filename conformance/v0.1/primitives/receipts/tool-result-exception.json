@@ -1,0 +1,115 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-result-exception-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-rex-001",
+      "invoke-tad-rex-001",
+      "exec-tad-rex-001",
+      "tool-adapter-tad-rex-001",
+      "diag-tad-rex-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-rex-001",
+        "kind": "Run",
+        "label": "tool-result-exception"
+      },
+      {
+        "id": "invoke-tad-rex-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-rex-001",
+        "tool_name": "remote_create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 1
+          }
+        }
+      },
+      {
+        "id": "exec-tad-rex-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-rex-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-rex-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "failed",
+        "metadata": [
+          {
+            "name": "runtime_exception",
+            "value": "TransportError",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "tool-adapter-tad-rex-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-rex-001",
+        "adapter_name": "wave06-tool-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "effective ToolInvocation",
+        "execution_boundary": "runtime execute",
+        "result_boundary": "application-visible ToolResult",
+        "proposal_association": false,
+        "decision_capture": false,
+        "streaming_result": false,
+        "retry_visibility": "unknown",
+        "replay_visibility": "unknown",
+        "duplicate_visibility": "unknown",
+        "effect_observation": [
+          "execution_result"
+        ],
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "diag-tad-rex-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-rex-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "exec-tad-rex-001",
+            "expected_kind": "ToolExecution"
+          },
+          "representation_basis": "tool_execution"
+        },
+        "slot": "tool_result.application_visible",
+        "status": "unavailable",
+        "reason": "runtime exception occurred before an application-visible ToolResult was established",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-rex-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-rex-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

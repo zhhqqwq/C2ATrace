@@ -1,0 +1,102 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-result-partial-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-rp-001",
+      "invoke-tad-rp-001",
+      "exec-tad-rp-001",
+      "result-tad-rp-001",
+      "diag-tad-rp-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-rp-001",
+        "kind": "Run",
+        "label": "tool-result-partial-capture"
+      },
+      {
+        "id": "invoke-tad-rp-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-rp-001",
+        "tool_name": "query",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "q": "alpha"
+          }
+        }
+      },
+      {
+        "id": "exec-tad-rp-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-rp-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-rp-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      },
+      {
+        "id": "result-tad-rp-001",
+        "kind": "ToolResult",
+        "run_id": "run-tad-rp-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-rp-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "partial",
+        "reported_status": "success",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "rows": [
+              1,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "id": "diag-tad-rp-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-rp-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "result-tad-rp-001",
+            "expected_kind": "ToolResult"
+          },
+          "representation_basis": "tool_result"
+        },
+        "slot": "tool_result.application_visible",
+        "status": "partial",
+        "reason": "adapter observed only part of the application-visible result"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-rp-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

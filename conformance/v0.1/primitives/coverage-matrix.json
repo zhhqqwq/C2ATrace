@@ -7584,7 +7584,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-057-tool-result-boundary-001"
     },
     {
       "family": "tad",
@@ -7600,7 +7602,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-059-tool-exception-not-result-001"
     },
     {
       "family": "tad",
@@ -7634,7 +7638,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-061-tool-result-capture-evidence-001"
     },
     {
       "family": "tad",
@@ -7652,7 +7658,9 @@
         "prim.model.output",
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-062-tool-stream-result-consumption-001"
     },
     {
       "family": "tad",
@@ -7669,7 +7677,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-063-tool-stream-result-semantics-001"
     },
     {
       "family": "tad",
@@ -7687,7 +7697,9 @@
         "prim.model.output",
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-064-tool-stream-result-unsupported-001"
     },
     {
       "family": "tad",
@@ -7704,7 +7716,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-065-tool-stream-result-partial-preserve-001"
     },
     {
       "family": "tad",
@@ -7721,7 +7735,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-066-tool-stream-result-loss-001"
     },
     {
       "family": "tad",
@@ -7738,7 +7754,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001"
     },
     {
       "family": "tad",
@@ -7755,7 +7773,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-068-tool-stream-chunks-optional-001"
     },
     {
       "family": "tad",
@@ -7771,7 +7791,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-069-tool-metadata-origin-001"
     },
     {
       "family": "tad",
@@ -7788,7 +7810,9 @@
       "dependency_primitives": [
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-070-tool-metadata-reported-bounded-001"
     },
     {
       "family": "tad",
@@ -7823,7 +7847,9 @@
       "dependency_primitives": [
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-072-tool-transaction-id-no-commit-proof-001"
     },
     {
       "family": "tad",
@@ -7859,7 +7885,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-074-tool-metadata-normalized-origin-001"
     },
     {
       "family": "tad",
@@ -7875,7 +7903,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-075-tool-success-no-effect-proof-001"
     },
     {
       "family": "tad",
@@ -12954,6 +12984,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 598,
-  "remaining_semantic_requirements": 173
+  "executable_semantic_requirements": 613,
+  "remaining_semantic_requirements": 158
 }

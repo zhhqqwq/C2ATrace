@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-067",
+      "check_id": "tool-stream-consumer-stop-bounded-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-streaming-result-001",
+        "object_id": "exec-tad-stream-partial"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:consumer_stop_proves_remote_completion_or_effect_cardinality"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

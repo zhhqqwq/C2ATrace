@@ -1,0 +1,41 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-d-tad-result-stream-metadata",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-057-tool-result-boundary-001",
+    "c2a-v0.1-tad-059-tool-exception-not-result-001",
+    "c2a-v0.1-tad-061-tool-result-capture-evidence-001",
+    "c2a-v0.1-tad-062-tool-stream-result-consumption-001",
+    "c2a-v0.1-tad-063-tool-stream-result-semantics-001",
+    "c2a-v0.1-tad-064-tool-stream-result-unsupported-001",
+    "c2a-v0.1-tad-065-tool-stream-result-partial-preserve-001",
+    "c2a-v0.1-tad-066-tool-stream-result-loss-001",
+    "c2a-v0.1-tad-067-tool-stream-consumer-stop-bounded-001",
+    "c2a-v0.1-tad-068-tool-stream-chunks-optional-001",
+    "c2a-v0.1-tad-069-tool-metadata-origin-001",
+    "c2a-v0.1-tad-070-tool-metadata-reported-bounded-001",
+    "c2a-v0.1-tad-072-tool-transaction-id-no-commit-proof-001",
+    "c2a-v0.1-tad-074-tool-metadata-normalized-origin-001",
+    "c2a-v0.1-tad-075-tool-success-no-effect-proof-001"
+  ],
+  "newly_materialized_count": 15,
+  "executable_semantic_requirements": 613,
+  "remaining_semantic_requirements": 158,
+  "remaining_tad_semantic_requirements": 30,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-result-exception.json",
+    "conformance/v0.1/primitives/receipts/tool-result-partial-capture.json",
+    "conformance/v0.1/primitives/receipts/tool-streaming-result.json",
+    "conformance/v0.1/primitives/receipts/tool-metadata-origin.json",
+    "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json"
+  ],
+  "assertions": {
+    "application_visible_result_boundary_preserved": true,
+    "stream_loss_blocks_complete_capture": true,
+    "metadata_origin_bounded": true,
+    "tool_success_not_effect_truth": true,
+    "frozen_schema_unchanged": true
+  }
+}

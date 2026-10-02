@@ -1,0 +1,298 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-streaming-result-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-stream-001",
+      "tool-adapter-tad-stream-001",
+      "invoke-tad-stream-partial",
+      "exec-tad-stream-partial",
+      "result-tad-stream-partial",
+      "diag-tad-stream-partial",
+      "invoke-tad-stream-unsupported",
+      "exec-tad-stream-unsupported",
+      "result-tad-stream-unsupported",
+      "diag-tad-stream-unsupported",
+      "invoke-tad-stream-complete",
+      "exec-tad-stream-complete",
+      "result-tad-stream-complete",
+      "diag-tad-stream-complete"
+    ],
+    "records": [
+      {
+        "id": "run-tad-stream-001",
+        "kind": "Run",
+        "label": "tool-streaming-result"
+      },
+      {
+        "id": "tool-adapter-tad-stream-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-stream-001",
+        "adapter_name": "wave06-tool-stream-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "effective ToolInvocation",
+        "execution_boundary": "runtime execute",
+        "result_boundary": "application-visible stream consumption",
+        "proposal_association": false,
+        "decision_capture": false,
+        "streaming_result": true,
+        "retry_visibility": "unknown",
+        "replay_visibility": "unknown",
+        "duplicate_visibility": "unknown",
+        "effect_observation": [
+          "execution_result"
+        ],
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "invoke-tad-stream-partial",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-stream-001",
+        "tool_name": "stream_query",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "q": "partial"
+          }
+        }
+      },
+      {
+        "id": "exec-tad-stream-partial",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-stream-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-stream-partial",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "in_progress",
+        "metadata": [
+          {
+            "name": "stream_consumption_observed",
+            "value": true,
+            "origin": "adapter_observed"
+          },
+          {
+            "name": "event_semantics",
+            "value": "delta_events",
+            "origin": "tool_reported"
+          },
+          {
+            "name": "event_loss_detected",
+            "value": true,
+            "origin": "adapter_observed"
+          },
+          {
+            "name": "consumer_stopped",
+            "value": true,
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "result-tad-stream-partial",
+        "kind": "ToolResult",
+        "run_id": "run-tad-stream-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-stream-partial",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "partial",
+        "representation": {
+          "representation_kind": "text",
+          "text": "alpha",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        },
+        "metadata": [
+          {
+            "name": "assembly_semantics",
+            "value": "delta_events",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "diag-tad-stream-partial",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-stream-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "result-tad-stream-partial",
+            "expected_kind": "ToolResult"
+          },
+          "representation_basis": "tool_result"
+        },
+        "slot": "tool_result.stream_events",
+        "status": "partial",
+        "reason": "some application-visible events were observed but later events were lost",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-stream-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      },
+      {
+        "id": "invoke-tad-stream-unsupported",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-stream-001",
+        "tool_name": "stream_query",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "q": "unsupported"
+          }
+        }
+      },
+      {
+        "id": "exec-tad-stream-unsupported",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-stream-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-stream-unsupported",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "in_progress"
+      },
+      {
+        "id": "result-tad-stream-unsupported",
+        "kind": "ToolResult",
+        "run_id": "run-tad-stream-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-stream-unsupported",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "partial"
+      },
+      {
+        "id": "diag-tad-stream-unsupported",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-stream-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "result-tad-stream-unsupported",
+            "expected_kind": "ToolResult"
+          },
+          "representation_basis": "tool_result"
+        },
+        "slot": "tool_result.stream_assembly",
+        "status": "unsupported",
+        "reason": "tool event replacement/index semantics are unsupported",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-stream-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      },
+      {
+        "id": "invoke-tad-stream-complete",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-stream-001",
+        "tool_name": "stream_query",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "q": "complete"
+          }
+        }
+      },
+      {
+        "id": "exec-tad-stream-complete",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-stream-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-stream-complete",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "metadata": [
+          {
+            "name": "stream_consumption_observed",
+            "value": true,
+            "origin": "adapter_observed"
+          },
+          {
+            "name": "event_semantics",
+            "value": "replacement_events",
+            "origin": "tool_reported"
+          }
+        ]
+      },
+      {
+        "id": "result-tad-stream-complete",
+        "kind": "ToolResult",
+        "run_id": "run-tad-stream-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-stream-complete",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "representation": {
+          "representation_kind": "text",
+          "text": "final",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        },
+        "metadata": [
+          {
+            "name": "assembly_semantics",
+            "value": "replacement_events",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "diag-tad-stream-complete",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-stream-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "result-tad-stream-complete",
+            "expected_kind": "ToolResult"
+          },
+          "representation_basis": "tool_result"
+        },
+        "slot": "tool_result.stream_events",
+        "status": "observed",
+        "reason": "application-visible stream consumed to terminal result",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-stream-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-stream-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

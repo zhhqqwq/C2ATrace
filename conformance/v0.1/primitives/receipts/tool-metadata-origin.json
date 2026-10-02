@@ -1,0 +1,105 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-metadata-origin-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-meta-001",
+      "invoke-tad-meta-001",
+      "exec-tad-meta-001",
+      "result-tad-meta-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-meta-001",
+        "kind": "Run",
+        "label": "tool-metadata-origin"
+      },
+      {
+        "id": "invoke-tad-meta-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-meta-001",
+        "tool_name": "transactional_write",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "exec-tad-meta-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-meta-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-meta-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      },
+      {
+        "id": "result-tad-meta-001",
+        "kind": "ToolResult",
+        "run_id": "run-tad-meta-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-meta-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "reported_status": "success",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "ok": true
+          }
+        },
+        "metadata": [
+          {
+            "name": "transaction_id",
+            "value": "tx-123",
+            "origin": "tool_reported"
+          },
+          {
+            "name": "server_status",
+            "value": "committed",
+            "origin": "tool_reported"
+          },
+          {
+            "name": "normalized_status",
+            "value": "success",
+            "origin": "adapter_derived",
+            "mapping_basis": "map tool server_status=committed to normalized success"
+          },
+          {
+            "name": "observed_latency_ms",
+            "value": 12,
+            "origin": "adapter_observed"
+          }
+        ]
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-meta-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}
