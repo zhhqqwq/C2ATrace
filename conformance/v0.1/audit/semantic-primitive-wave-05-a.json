@@ -1,0 +1,34 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-a",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-claim-000-claim-composition-001",
+    "c2a-v0.1-claim-001-claim-no-upgrade-001",
+    "c2a-v0.1-claim-002-binding-verification-level-001",
+    "c2a-v0.1-claim-003-trust-label-wording-001",
+    "c2a-v0.1-claim-004-absence-wording-001",
+    "c2a-v0.1-claim-005-claim-causality-001",
+    "c2a-v0.1-tm-001-verifier-wording-001",
+    "c2a-v0.1-tm-002-causality-negative-001",
+    "c2a-v0.1-tm-003-unknown-valid-001",
+    "c2a-v0.1-tm-004-producer-assertion-001",
+    "c2a-v0.1-tm-006-tool-enrichment-001",
+    "c2a-v0.1-tm-007-tool-denied-001",
+    "c2a-v0.1-tm-008-tool-success-no-effect-001",
+    "c2a-v0.1-tm-009-chain-truncation-001",
+    "c2a-v0.1-tm-010-provider-hidden-state-001",
+    "c2a-v0.1-tm-012-capture-level-overclaim-001",
+    "c2a-v0.1-graph-009-denied-with-fake-execution-001",
+    "c2a-v0.1-vfy-144-verifier-resolver-content-binding-001"
+  ],
+  "newly_materialized_count": 18,
+  "executable_semantic_requirements": 383,
+  "remaining_semantic_requirements": 388,
+  "assertions": {
+    "claim_strength_primary_coverage_complete": true,
+    "graph_invariants_primary_coverage_complete": true,
+    "external_reference_primary_coverage_complete": true,
+    "frozen_schema_unchanged": true
+  }
+}

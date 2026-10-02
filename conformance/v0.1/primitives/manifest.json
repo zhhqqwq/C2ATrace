@@ -106,7 +106,7 @@
         "VFY-032",
         "VFY-064"
       ],
-      "materialization_status": "wave_01_materialized",
+      "materialization_status": "wave_05_materialized",
       "materialized_assets": [
         "conformance/v0.1/primitives/receipts/ref-external-unpinned.json",
         "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json",
@@ -117,7 +117,7 @@
         "fixtures/v0.1/valid/multi-receipt-a.json",
         "fixtures/v0.1/valid/multi-receipt-b.json"
       ],
-      "executable_primary_requirement_count": 4,
+      "executable_primary_requirement_count": 5,
       "wave_01_primary_requirements": [
         "RCPT-018",
         "RCPT-030",
@@ -202,7 +202,7 @@
         "GRAPH-002",
         "GRAPH-013"
       ],
-      "materialization_status": "wave_01_materialized",
+      "materialization_status": "wave_05_materialized",
       "materialized_assets": [
         "conformance/v0.1/primitives/receipts/graph-artifact-id-reuse.json",
         "conformance/v0.1/primitives/receipts/graph-derivation-cycle.json",
@@ -212,7 +212,7 @@
         "conformance/v0.1/primitives/receipts/graph-timestamp-conflict.json",
         "conformance/v0.1/primitives/receipts/graph-activity-assertion-confusion.json"
       ],
-      "executable_primary_requirement_count": 7,
+      "executable_primary_requirement_count": 8,
       "wave_01_primary_requirements": [
         "GRAPH-003",
         "GRAPH-005",
@@ -2120,8 +2120,8 @@
         "VFY-140",
         "VFY-145"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_05_materialized",
+      "executable_primary_requirement_count": 16,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [
         "GRAPH-011",
@@ -2587,7 +2587,7 @@
       "wave_01_dependency_requirements": []
     }
   ],
-  "executable_semantic_requirements": 365,
-  "remaining_semantic_requirements": 406,
-  "materialization_wave": "04-identity"
+  "executable_semantic_requirements": 383,
+  "remaining_semantic_requirements": 388,
+  "materialization_wave": "05-a"
 }

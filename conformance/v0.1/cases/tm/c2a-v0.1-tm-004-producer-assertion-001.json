@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-tm-004-producer-assertion-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TM-004"
+  ],
+  "planned_test_ids": [
+    "producer-assertion-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Producer-recorded source metadata remains a Producer assertion unless independently verified.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/source-redirect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TM-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tm-004",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TM-004"
+    ]
+  },
+  "notes": [
+    "primitives: prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tm-004-producer-assertion-001.json"
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-graph-009-denied-with-fake-execution-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "GRAPH-009"
+  ],
+  "planned_test_ids": [
+    "denied-with-fake-execution-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A deny decision without an execution record must not be represented by a fake denied ToolExecution.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-decision-deny-no-invocation.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "GRAPH-009"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-graph-009",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "GRAPH-009"
+    ]
+  },
+  "notes": [
+    "primitives: prim.graph.invariants, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-graph-009-denied-with-fake-execution-001.json"
+}

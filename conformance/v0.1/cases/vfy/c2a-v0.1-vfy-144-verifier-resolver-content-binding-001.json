@@ -1,0 +1,112 @@
+{
+  "case_id": "c2a-v0.1-vfy-144-verifier-resolver-content-binding-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-144"
+  ],
+  "planned_test_ids": [
+    "verifier-resolver-content-binding-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Resolver-produced material is bound to stable content identity so repeated verification can identify the exact resolved evidence.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-144",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [
+              "receipt-multi-a"
+            ],
+            "goals": [
+              {
+                "check_id": "verifier-resolver-content-binding-001",
+                "mandatory": true
+              }
+            ],
+            "capability_summary": {
+              "external_resolvers": [
+                {
+                  "resolver_id": "resolver-test-001",
+                  "evidence_document_id": "resolved-receipt-a",
+                  "content_digest": {
+                    "algorithm": "sha256",
+                    "value": "meMQDqpyvdActfPcoL27RJ4mkuXNmrmBdmsGPxQOx90",
+                    "representation_basis": "arp_jcs_utf8"
+                  }
+                }
+              ]
+            }
+          },
+          "findings": [],
+          "envelope_results": [],
+          "completeness": {
+            "package_inventory": "unverified",
+            "reference_closure": "unverified",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "completed"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    },
+    {
+      "document_id": "resolved-receipt-a",
+      "role": "external_evidence",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "resolved-receipt-a"
+    ],
+    "capabilities": [
+      "resolved-receipt-a"
+    ],
+    "verifier_goals": [
+      "VFY-144"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-144",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [
+      "resolved-receipt-a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-144"
+    ],
+    "external_evidence": [
+      "resolved-receipt-a"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ref.external, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-144-verifier-resolver-content-binding-001.json"
+}
