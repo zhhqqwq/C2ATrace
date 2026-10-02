@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-pad-039-provider-request-comparison-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-039"
+  ],
+  "planned_test_ids": [
+    "provider-request-comparison-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Representation equality is bounded to captured snapshots and does not imply network-delivery or provider-internal equality.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/request-semantic-equal-byte-different.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-039"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-039",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-039"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-039-provider-request-comparison-bounded-001.json"
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-pad-018-provider-attempt-boundary-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "cap",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability",
+      "status": "valid"
+    },
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-018",
+      "check_id": "provider-attempt-boundary-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "att-001"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

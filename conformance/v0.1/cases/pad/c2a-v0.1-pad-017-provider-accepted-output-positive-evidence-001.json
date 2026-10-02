@@ -1,0 +1,67 @@
+{
+  "case_id": "c2a-v0.1-pad-017-provider-accepted-output-positive-evidence-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-017"
+  ],
+  "planned_test_ids": [
+    "provider-accepted-output-positive-evidence-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "accepted_output selected only by completion/timestamp order without positive application selection evidence is not established.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/model-multiple-attempt-outputs.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/4/recorded_at",
+          "value": "2026-10-02T10:00:00Z"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/2/recorded_at",
+          "value": "2026-10-02T10:00:10Z"
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-017"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-017",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-017"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-017-provider-accepted-output-positive-evidence-001.json"
+}

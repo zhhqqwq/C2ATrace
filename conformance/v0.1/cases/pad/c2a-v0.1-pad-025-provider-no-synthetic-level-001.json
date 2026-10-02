@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-pad-025-provider-no-synthetic-level-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-025"
+  ],
+  "planned_test_ids": [
+    "provider-no-synthetic-level-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unsupported or unobserved intermediate request levels are not synthesized to fill the level sequence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-025"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-025",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-025"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.request.binding, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-025-provider-no-synthetic-level-001.json"
+}

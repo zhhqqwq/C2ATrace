@@ -1,0 +1,109 @@
+{
+  "case_id": "c2a-v0.1-pad-031-provider-effective-snapshot-positive-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-031"
+  ],
+  "planned_test_ids": [
+    "provider-effective-snapshot-positive-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Choosing one of multiple same-level candidate snapshots solely by timestamp lacks positive effective-snapshot evidence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/8/recorded_at",
+          "value": "2026-10-02T10:00:00Z"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "snap-candidate-002",
+            "kind": "RequestSnapshot",
+            "run_id": "run-sr-001",
+            "capture_level": "provider_payload",
+            "attempt_owner": {
+              "ref_type": "local",
+              "id": "att-001",
+              "expected_kind": "ProviderAttempt"
+            },
+            "representation_basis": "json-data-model",
+            "representation": {
+              "representation_kind": "json",
+              "value": {
+                "messages": [
+                  {
+                    "role": "user",
+                    "content": "beta"
+                  }
+                ]
+              }
+            },
+            "recorded_at": "2026-10-02T10:00:10Z"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "snap-candidate-002"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/7/effective_requests",
+          "value": [
+            {
+              "capture_level": "provider_payload",
+              "snapshot": {
+                "ref_type": "local",
+                "id": "snap-candidate-002",
+                "expected_kind": "RequestSnapshot"
+              }
+            }
+          ]
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-031"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-031",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "PAD-031"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.request.binding, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-031-provider-effective-snapshot-positive-001.json"
+}

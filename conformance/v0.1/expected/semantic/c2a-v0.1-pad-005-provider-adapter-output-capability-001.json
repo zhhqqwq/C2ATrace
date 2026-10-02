@@ -1,0 +1,24 @@
+{
+  "case_id": "c2a-v0.1-pad-005-provider-adapter-output-capability-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "cap",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-005",
+      "check_id": "provider-adapter-output-capability-001",
+      "subject_selector": {
+        "object_id": "pad-cap-wave05"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

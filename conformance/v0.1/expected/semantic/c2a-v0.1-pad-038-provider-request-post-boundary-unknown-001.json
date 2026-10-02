@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-pad-038-provider-request-post-boundary-unknown-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-038",
+      "check_id": "provider-request-post-boundary-unknown-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "snap-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "prohibited_inferences": [
+        "P1:no_visible_post_boundary_mutation_means_no_mutation"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-pad-006-provider-adapter-capability-not-observation-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "cap",
+      "schema_target": "urn:c2atrace:schema:v0.1:adapter#/$defs/ProviderAdapterCapability",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-006",
+      "check_id": "provider-adapter-capability-not-observation-001",
+      "subject_selector": {
+        "object_id": "pad-cap-wave05"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:capability_declaration_proves_occurrence_capture"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
