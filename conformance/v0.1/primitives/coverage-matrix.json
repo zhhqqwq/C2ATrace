@@ -7921,7 +7921,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-079-tool-effect-copy-not-independent-001"
     },
     {
       "family": "tad",
@@ -7938,7 +7940,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-081-tool-effect-basis-unknown-001"
     },
     {
       "family": "tad",
@@ -7955,7 +7959,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001"
     },
     {
       "family": "tad",
@@ -7972,7 +7978,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-083-tool-effect-claim-scope-001"
     },
     {
       "family": "tad",
@@ -7988,7 +7996,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-084-tool-effect-not-outcome-001"
     },
     {
       "family": "tad",
@@ -12984,6 +12994,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 613,
-  "remaining_semantic_requirements": 158
+  "executable_semantic_requirements": 618,
+  "remaining_semantic_requirements": 153
 }

@@ -1,0 +1,26 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-e-tad-effect-claims",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-079-tool-effect-copy-not-independent-001",
+    "c2a-v0.1-tad-081-tool-effect-basis-unknown-001",
+    "c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001",
+    "c2a-v0.1-tad-083-tool-effect-claim-scope-001",
+    "c2a-v0.1-tad-084-tool-effect-not-outcome-001"
+  ],
+  "newly_materialized_count": 5,
+  "executable_semantic_requirements": 618,
+  "remaining_semantic_requirements": 153,
+  "remaining_tad_semantic_requirements": 25,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "fixtures/v0.1/valid/tool-effect.json"
+  ],
+  "assertions": {
+    "effect_basis_bounded": true,
+    "evidence_count_not_truth": true,
+    "effect_not_outcome": true,
+    "frozen_schema_unchanged": true
+  }
+}

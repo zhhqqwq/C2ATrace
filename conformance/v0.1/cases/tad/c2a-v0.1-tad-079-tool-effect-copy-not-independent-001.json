@@ -1,0 +1,94 @@
+{
+  "case_id": "c2a-v0.1-tad-079-tool-effect-copy-not-independent-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-079"
+  ],
+  "planned_test_ids": [
+    "tool-effect-copy-not-independent-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Copied/reformatted ToolResult data is not an independent separate observation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "effect-copy-evidence-001",
+            "kind": "ContextFragment",
+            "run_id": "run-tool-001",
+            "representation": {
+              "representation_kind": "json",
+              "value": {
+                "issue_id": 123,
+                "status": "created"
+              }
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "effect-copy-evidence-001"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/9/basis",
+          "value": "separate_observation"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/9/evidence",
+          "value": [
+            {
+              "ref_type": "local",
+              "id": "effect-copy-evidence-001",
+              "expected_kind": "ContextFragment"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-079"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-079",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-079"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json"
+}

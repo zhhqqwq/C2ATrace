@@ -1,0 +1,62 @@
+{
+  "case_id": "c2a-v0.1-tad-081-tool-effect-basis-unknown-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-081"
+  ],
+  "planned_test_ids": [
+    "tool-effect-basis-unknown-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unestablished effect evidence basis remains unknown.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/9/basis",
+          "value": "unknown"
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-081"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-081",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-081"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.claim.strength, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json"
+}

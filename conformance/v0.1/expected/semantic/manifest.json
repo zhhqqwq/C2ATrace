@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:conformance:v0.1:expected-result",
-  "fixture_count": 613,
+  "fixture_count": 618,
   "fixtures": [
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-000-claim-composition-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-001-claim-no-upgrade-001.json",
@@ -453,6 +453,11 @@
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-073-tool-server-time-bounded-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-074-tool-metadata-normalized-origin-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-075-tool-success-no-effect-proof-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-083-tool-effect-claim-scope-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-084-tool-effect-not-outcome-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-091-tool-privacy-result-redacted-identity-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-101-tool-multihook-correlation-001.json",

@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-082",
+      "check_id": "tool-effect-multiple-evidence-bounded-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-effect-001",
+        "object_id": "effect-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:multiple_effect_evidence_artifacts_create_objective_truth"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-tad-081-tool-effect-basis-unknown-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-081",
+      "check_id": "tool-effect-basis-unknown-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-effect-001",
+        "object_id": "effect-001"
+      },
+      "domain": "claim",
+      "status": "unknown"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

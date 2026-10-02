@@ -709,7 +709,7 @@
       "requirement_id": "TAD-079",
       "planned_test_id": "tool-effect-copy-not-independent-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-079-tool-effect-copy-not-independent-001.json"
     },
@@ -727,7 +727,7 @@
       "requirement_id": "TAD-081",
       "planned_test_id": "tool-effect-basis-unknown-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-081-tool-effect-basis-unknown-001.json"
     },
@@ -736,7 +736,7 @@
       "requirement_id": "TAD-082",
       "planned_test_id": "tool-effect-multiple-evidence-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json"
     },
@@ -745,7 +745,7 @@
       "requirement_id": "TAD-083",
       "planned_test_id": "tool-effect-claim-scope-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-083-tool-effect-claim-scope-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-083-tool-effect-claim-scope-001.json"
     },
@@ -754,7 +754,7 @@
       "requirement_id": "TAD-084",
       "planned_test_id": "tool-effect-not-outcome-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-084-tool-effect-not-outcome-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-084-tool-effect-not-outcome-001.json"
     },

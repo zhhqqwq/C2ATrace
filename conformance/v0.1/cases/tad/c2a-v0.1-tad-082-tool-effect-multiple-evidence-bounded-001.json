@@ -1,0 +1,113 @@
+{
+  "case_id": "c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-082"
+  ],
+  "planned_test_ids": [
+    "tool-effect-multiple-evidence-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Multiple supporting Artifacts do not upgrade an EffectObservation to objective external truth.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "effect-support-a",
+            "kind": "ContextFragment",
+            "run_id": "run-tool-001",
+            "representation": {
+              "representation_kind": "text",
+              "text": "support A",
+              "charset": "utf-8",
+              "media_type": "text/plain"
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "effect-support-a"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "effect-support-b",
+            "kind": "ContextFragment",
+            "run_id": "run-tool-001",
+            "representation": {
+              "representation_kind": "text",
+              "text": "support B",
+              "charset": "utf-8",
+              "media_type": "text/plain"
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "effect-support-b"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/9/evidence",
+          "value": [
+            {
+              "ref_type": "local",
+              "id": "effect-support-a",
+              "expected_kind": "ContextFragment"
+            },
+            {
+              "ref_type": "local",
+              "id": "effect-support-b",
+              "expected_kind": "ContextFragment"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-082"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-082",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-082"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.claim.strength, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-082-tool-effect-multiple-evidence-bounded-001.json"
+}
