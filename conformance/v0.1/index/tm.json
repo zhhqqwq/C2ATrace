@@ -97,7 +97,7 @@
       "requirement_id": "TM-011",
       "planned_test_id": "timestamp-conflict-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tm/c2a-v0.1-tm-011-timestamp-conflict-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tm-011-timestamp-conflict-001.json"
     },

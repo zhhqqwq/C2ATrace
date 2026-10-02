@@ -763,7 +763,7 @@
       "requirement_id": "TAD-085",
       "planned_test_id": "tool-effect-no-causal-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json"
     },
@@ -970,7 +970,7 @@
       "requirement_id": "TAD-108",
       "planned_test_id": "tool-adapter-time-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-108-tool-adapter-time-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-108-tool-adapter-time-bounded-001.json"
     },

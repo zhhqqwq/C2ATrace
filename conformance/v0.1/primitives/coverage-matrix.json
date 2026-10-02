@@ -7589,7 +7589,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-085-tool-effect-no-causal-inference-001"
     },
     {
       "family": "tad",
@@ -7969,7 +7971,9 @@
         "prim.adapter.capture",
         "prim.tool.lifecycle",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-108-tool-adapter-time-bounded-001"
     },
     {
       "family": "tad",
@@ -8814,7 +8818,9 @@
       "primary_primitive": "prim.ordering.time",
       "dependency_primitives": [
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-taint-050-taint-no-last-write-wins-001"
     },
     {
       "family": "taint",
@@ -9116,7 +9122,9 @@
       "primary_primitive": "prim.ordering.time",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tm-011-timestamp-conflict-001"
     },
     {
       "family": "tm",
@@ -9924,7 +9932,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tool-058-tool-effect-time-no-causality-001"
     },
     {
       "family": "tool",
@@ -12534,6 +12544,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 388,
-  "remaining_semantic_requirements": 383
+  "executable_semantic_requirements": 393,
+  "remaining_semantic_requirements": 378
 }

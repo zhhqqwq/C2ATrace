@@ -1,0 +1,14 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-b2a",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-085-tool-effect-no-causal-inference-001",
+    "c2a-v0.1-tad-108-tool-adapter-time-bounded-001",
+    "c2a-v0.1-taint-050-taint-no-last-write-wins-001",
+    "c2a-v0.1-tm-011-timestamp-conflict-001",
+    "c2a-v0.1-tool-058-tool-effect-time-no-causality-001"
+  ],
+  "executable_semantic_requirements": 393,
+  "remaining_semantic_requirements": 378
+}

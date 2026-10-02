@@ -1,0 +1,75 @@
+{
+  "case_id": "c2a-v0.1-tad-085-tool-effect-no-causal-inference-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-085"
+  ],
+  "planned_test_ids": [
+    "tool-effect-no-causal-inference-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Temporal association between execution, result, and effect does not establish external causality.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/tool-effect.json",
+        "patches": [
+          {
+            "op": "add",
+            "path": "/arp/records/6/recorded_at",
+            "value": "2026-10-02T10:00:20Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/7/recorded_at",
+            "value": "2026-10-02T10:00:10Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/8/recorded_at",
+            "value": "2026-10-02T10:00:05Z"
+          },
+          {
+            "op": "add",
+            "path": "/arp/records/9/recorded_at",
+            "value": "2026-10-02T10:00:00Z"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-085"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-085",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-085"
+    ]
+  },
+  "notes": [
+    "primitives: prim.ordering.time, prim.claim.strength, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-085-tool-effect-no-causal-inference-001.json"
+}
