@@ -196,7 +196,7 @@
       "requirement_id": "VFY-022",
       "planned_test_id": "verifier-external-unpinned-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-022-verifier-external-unpinned-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-022-verifier-external-unpinned-001.json"
     },
@@ -205,7 +205,7 @@
       "requirement_id": "VFY-023",
       "planned_test_id": "verifier-external-pin-match-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-023-verifier-external-pin-match-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-023-verifier-external-pin-match-001.json"
     },
@@ -214,7 +214,7 @@
       "requirement_id": "VFY-024",
       "planned_test_id": "verifier-external-pin-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-024-verifier-external-pin-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-024-verifier-external-pin-bounded-001.json"
     },
@@ -286,7 +286,7 @@
       "requirement_id": "VFY-032",
       "planned_test_id": "verifier-receiptlink-cycle-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-032-verifier-receiptlink-cycle-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-032-verifier-receiptlink-cycle-001.json"
     },
@@ -565,7 +565,7 @@
       "requirement_id": "VFY-063",
       "planned_test_id": "verifier-receiptlink-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-063-verifier-receiptlink-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-063-verifier-receiptlink-bounded-001.json"
     },
@@ -574,7 +574,7 @@
       "requirement_id": "VFY-064",
       "planned_test_id": "verifier-receiptlink-missing-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-064-verifier-receiptlink-missing-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-064-verifier-receiptlink-missing-001.json"
     },

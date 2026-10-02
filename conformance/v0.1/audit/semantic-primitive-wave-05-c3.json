@@ -1,0 +1,20 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-c3",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-vfy-022-verifier-external-unpinned-001",
+    "c2a-v0.1-vfy-023-verifier-external-pin-match-001",
+    "c2a-v0.1-vfy-024-verifier-external-pin-bounded-001",
+    "c2a-v0.1-vfy-032-verifier-receiptlink-cycle-001",
+    "c2a-v0.1-vfy-063-verifier-receiptlink-bounded-001",
+    "c2a-v0.1-vfy-064-verifier-receiptlink-missing-001"
+  ],
+  "executable_semantic_requirements": 450,
+  "remaining_semantic_requirements": 321,
+  "assertions": {
+    "receipt_multi_primary_coverage_complete": true,
+    "unpinned_pin_link_cycle_and_missing_target_verifier_behaviors_materialized": true,
+    "frozen_schema_unchanged": true
+  }
+}

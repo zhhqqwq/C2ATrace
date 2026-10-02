@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-vfy-022-verifier-external-unpinned-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-022"
+  ],
+  "planned_test_ids": [
+    "verifier-external-unpinned-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unpinned ExternalReference resolution may identify a supplied target but is not exact cryptographic payload binding.",
+  "documents": [
+    {
+      "document_id": "b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "verifier_goals": [
+      "VFY-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-022",
+    "primary_documents": [
+      "b"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.ref.external, prim.request.binding, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-022-verifier-external-unpinned-001.json"
+}

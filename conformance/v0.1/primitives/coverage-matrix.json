@@ -10753,7 +10753,9 @@
         "prim.ref.external",
         "prim.request.binding",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-022-verifier-external-unpinned-001"
     },
     {
       "family": "vfy",
@@ -10770,7 +10772,9 @@
         "prim.integrity.composition",
         "prim.ref.external",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-023-verifier-external-pin-match-001"
     },
     {
       "family": "vfy",
@@ -10788,7 +10792,9 @@
         "prim.integrity.composition",
         "prim.ref.external",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-024-verifier-external-pin-bounded-001"
     },
     {
       "family": "vfy",
@@ -10902,7 +10908,9 @@
       "dependency_primitives": [
         "prim.ref.external",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-032-verifier-receiptlink-cycle-001"
     },
     {
       "family": "vfy",
@@ -11361,7 +11369,9 @@
       "dependency_primitives": [
         "prim.tool.lifecycle",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-063-verifier-receiptlink-bounded-001"
     },
     {
       "family": "vfy",
@@ -11378,7 +11388,9 @@
         "prim.ref.external",
         "prim.ref.failure",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-064-verifier-receiptlink-missing-001"
     },
     {
       "family": "vfy",
@@ -12646,6 +12658,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 444,
-  "remaining_semantic_requirements": 327
+  "executable_semantic_requirements": 450,
+  "remaining_semantic_requirements": 321
 }
