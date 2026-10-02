@@ -1,0 +1,63 @@
+{
+  "case_id": "c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-092"
+  ],
+  "planned_test_ids": [
+    "tool-privacy-effect-basis-stable-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Privacy withholding of ToolResult content does not upgrade execution_result EffectObservation into separate observation.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-privacy-capture.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/arp/records/3/representation"
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-092"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-092",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "TAD-092"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.claim.strength, prim.privacy.commitment, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001.json"
+}

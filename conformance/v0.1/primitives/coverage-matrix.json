@@ -8034,7 +8034,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001"
     },
     {
       "family": "tad",
@@ -8051,7 +8053,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001"
     },
     {
       "family": "tad",
@@ -8068,7 +8072,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001"
     },
     {
       "family": "tad",
@@ -8086,7 +8092,9 @@
         "prim.claim.strength",
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001"
     },
     {
       "family": "tad",
@@ -8103,7 +8111,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001"
     },
     {
       "family": "tad",
@@ -8142,7 +8152,9 @@
         "prim.claim.strength",
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001"
     },
     {
       "family": "tad",
@@ -8158,7 +8170,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001"
     },
     {
       "family": "tad",
@@ -8174,7 +8188,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001"
     },
     {
       "family": "tad",
@@ -8191,7 +8207,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001"
     },
     {
       "family": "tad",
@@ -8207,7 +8225,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-097-tool-adapter-error-origin-001"
     },
     {
       "family": "tad",
@@ -8224,7 +8244,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001"
     },
     {
       "family": "tad",
@@ -8240,7 +8262,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-099-tool-bypass-positive-evidence-001"
     },
     {
       "family": "tad",
@@ -8256,7 +8280,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-100-tool-bypass-no-fabrication-001"
     },
     {
       "family": "tad",
@@ -12994,6 +13020,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 618,
-  "remaining_semantic_requirements": 153
+  "executable_semantic_requirements": 631,
+  "remaining_semantic_requirements": 140
 }

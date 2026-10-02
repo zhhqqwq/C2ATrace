@@ -1,0 +1,38 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-f-tad-privacy-capture-failures",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001",
+    "c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001",
+    "c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001",
+    "c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001",
+    "c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001",
+    "c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001",
+    "c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001",
+    "c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001",
+    "c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001",
+    "c2a-v0.1-tad-097-tool-adapter-error-origin-001",
+    "c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001",
+    "c2a-v0.1-tad-099-tool-bypass-positive-evidence-001",
+    "c2a-v0.1-tad-100-tool-bypass-no-fabrication-001"
+  ],
+  "newly_materialized_count": 13,
+  "executable_semantic_requirements": 631,
+  "remaining_semantic_requirements": 140,
+  "remaining_tad_semantic_requirements": 12,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-privacy-capture.json",
+    "conformance/v0.1/primitives/receipts/tool-capture-failures.json",
+    "conformance/v0.1/primitives/receipts/tool-bypass-evidence.json"
+  ],
+  "assertions": {
+    "privacy_disclosure_separate_from_capture_state": true,
+    "commitment_basis_bounded_to_observed_representation": true,
+    "instrumentation_failure_separate_from_tool_failure": true,
+    "bypass_requires_positive_evidence": true,
+    "bypass_does_not_fabricate_history": true,
+    "frozen_schema_unchanged": true
+  }
+}

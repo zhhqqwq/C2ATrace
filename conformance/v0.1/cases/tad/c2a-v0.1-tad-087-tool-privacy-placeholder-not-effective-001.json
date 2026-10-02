@@ -1,0 +1,86 @@
+{
+  "case_id": "c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-087"
+  ],
+  "planned_test_ids": [
+    "tool-privacy-placeholder-not-effective-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Redaction placeholder is a disclosure derivative and not the effective executed argument value.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-privacy-capture.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/arp/records/1/arguments"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/privacy/0/profile",
+          "value": "redacted"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/privacy/0/availability",
+          "value": "redacted_derivative_disclosed"
+        },
+        {
+          "op": "remove",
+          "path": "/arp/privacy/0/commitments"
+        },
+        {
+          "op": "add",
+          "path": "/arp/privacy/0/redacted_derivative",
+          "value": {
+            "ref_type": "local",
+            "id": "redacted-args-tad-001",
+            "expected_kind": "ContextFragment"
+          }
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-087"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-087",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "TAD-087"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.privacy.commitment, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001.json"
+}

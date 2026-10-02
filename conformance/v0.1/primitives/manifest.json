@@ -2418,7 +2418,7 @@
         "VFY-149"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 130,
+      "executable_primary_requirement_count": 143,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [],
       "wave_05_primary_requirements": [
@@ -2553,7 +2553,20 @@
         "TAD-081",
         "TAD-082",
         "TAD-083",
-        "TAD-084"
+        "TAD-084",
+        "TAD-086",
+        "TAD-087",
+        "TAD-088",
+        "TAD-089",
+        "TAD-090",
+        "TAD-092",
+        "TAD-094",
+        "TAD-095",
+        "TAD-096",
+        "TAD-097",
+        "TAD-098",
+        "TAD-099",
+        "TAD-100"
       ]
     },
     {
@@ -2836,7 +2849,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 618,
-  "remaining_semantic_requirements": 153,
-  "materialization_wave": "06-e-tad-effect-claims"
+  "executable_semantic_requirements": 631,
+  "remaining_semantic_requirements": 140,
+  "materialization_wave": "06-f-tad-privacy-capture-failures"
 }

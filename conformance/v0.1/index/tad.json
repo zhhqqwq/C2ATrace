@@ -772,7 +772,7 @@
       "requirement_id": "TAD-086",
       "planned_test_id": "tool-privacy-argument-capture-separation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-086-tool-privacy-argument-capture-separation-001.json"
     },
@@ -781,7 +781,7 @@
       "requirement_id": "TAD-087",
       "planned_test_id": "tool-privacy-placeholder-not-effective-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-087-tool-privacy-placeholder-not-effective-001.json"
     },
@@ -790,7 +790,7 @@
       "requirement_id": "TAD-088",
       "planned_test_id": "tool-privacy-argument-commit-before-discard-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-088-tool-privacy-argument-commit-before-discard-001.json"
     },
@@ -799,7 +799,7 @@
       "requirement_id": "TAD-089",
       "planned_test_id": "tool-privacy-argument-no-upgrade-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-089-tool-privacy-argument-no-upgrade-001.json"
     },
@@ -808,7 +808,7 @@
       "requirement_id": "TAD-090",
       "planned_test_id": "tool-privacy-result-capture-separation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-090-tool-privacy-result-capture-separation-001.json"
     },
@@ -826,7 +826,7 @@
       "requirement_id": "TAD-092",
       "planned_test_id": "tool-privacy-effect-basis-stable-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-092-tool-privacy-effect-basis-stable-001.json"
     },
@@ -844,7 +844,7 @@
       "requirement_id": "TAD-094",
       "planned_test_id": "tool-capture-execution-failure-separation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-094-tool-capture-execution-failure-separation-001.json"
     },
@@ -853,7 +853,7 @@
       "requirement_id": "TAD-095",
       "planned_test_id": "tool-capture-result-failure-no-fabrication-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-095-tool-capture-result-failure-no-fabrication-001.json"
     },
@@ -862,7 +862,7 @@
       "requirement_id": "TAD-096",
       "planned_test_id": "tool-effect-observer-failure-not-absence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-096-tool-effect-observer-failure-not-absence-001.json"
     },
@@ -871,7 +871,7 @@
       "requirement_id": "TAD-097",
       "planned_test_id": "tool-adapter-error-origin-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-097-tool-adapter-error-origin-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-097-tool-adapter-error-origin-001.json"
     },
@@ -880,7 +880,7 @@
       "requirement_id": "TAD-098",
       "planned_test_id": "tool-privacy-no-failure-laundering-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-098-tool-privacy-no-failure-laundering-001.json"
     },
@@ -889,7 +889,7 @@
       "requirement_id": "TAD-099",
       "planned_test_id": "tool-bypass-positive-evidence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-099-tool-bypass-positive-evidence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-099-tool-bypass-positive-evidence-001.json"
     },
@@ -898,7 +898,7 @@
       "requirement_id": "TAD-100",
       "planned_test_id": "tool-bypass-no-fabrication-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-100-tool-bypass-no-fabrication-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-100-tool-bypass-no-fabrication-001.json"
     },

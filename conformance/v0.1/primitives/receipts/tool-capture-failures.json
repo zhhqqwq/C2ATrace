@@ -1,0 +1,194 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-capture-failures-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-fail-001",
+      "invoke-tad-fail-001",
+      "exec-tad-fail-001",
+      "result-tad-fail-001",
+      "tool-adapter-tad-fail-001",
+      "diag-tad-exec-fail-001",
+      "diag-tad-result-fail-001",
+      "diag-tad-effect-fail-001",
+      "diag-tad-adapter-error-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-fail-001",
+        "kind": "Run",
+        "label": "tool-capture-failures"
+      },
+      {
+        "id": "invoke-tad-fail-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-fail-001",
+        "tool_name": "remote_create",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "id": 1
+          }
+        }
+      },
+      {
+        "id": "exec-tad-fail-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-fail-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-fail-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "in_progress",
+        "metadata": [
+          {
+            "name": "client_dispatch_started",
+            "value": true,
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "result-tad-fail-001",
+        "kind": "ToolResult",
+        "run_id": "run-tad-fail-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-fail-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "partial",
+        "reported_status": "unknown"
+      },
+      {
+        "id": "tool-adapter-tad-fail-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-fail-001",
+        "adapter_name": "wave06-tool-failure-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "effective ToolInvocation",
+        "execution_boundary": "runtime execution lifecycle",
+        "result_boundary": "application-visible ToolResult",
+        "proposal_association": false,
+        "decision_capture": false,
+        "streaming_result": false,
+        "retry_visibility": "unknown",
+        "replay_visibility": "unknown",
+        "duplicate_visibility": "unknown",
+        "effect_observation": [
+          "separate_observation"
+        ],
+        "privacy_profiles": [
+          "full",
+          "hash_only"
+        ]
+      },
+      {
+        "id": "diag-tad-exec-fail-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-fail-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "exec-tad-fail-001",
+            "expected_kind": "ToolExecution"
+          },
+          "representation_basis": "tool_execution"
+        },
+        "slot": "tool_execution.terminal_lifecycle",
+        "status": "unavailable",
+        "reason": "adapter instrumentation failed after execution start; no terminal disposition observed",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-fail-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      },
+      {
+        "id": "diag-tad-result-fail-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-fail-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "exec-tad-fail-001",
+            "expected_kind": "ToolExecution"
+          },
+          "representation_basis": "tool_execution"
+        },
+        "slot": "tool_result.application_visible",
+        "status": "unavailable",
+        "reason": "result capture instrumentation failed; no complete ToolResult representation observed",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-fail-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      },
+      {
+        "id": "diag-tad-effect-fail-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-fail-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "exec-tad-fail-001",
+            "expected_kind": "ToolExecution"
+          },
+          "representation_basis": "tool_execution"
+        },
+        "slot": "effect_observation.follow_up",
+        "status": "unavailable",
+        "reason": "follow-up external observer timed out",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-fail-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      },
+      {
+        "id": "diag-tad-adapter-error-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-fail-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "exec-tad-fail-001",
+            "expected_kind": "ToolExecution"
+          },
+          "representation_basis": "tool_execution"
+        },
+        "slot": "adapter.instrumentation",
+        "status": "unavailable",
+        "reason": "adapter instrumentation exception",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "tool-adapter-tad-fail-001",
+          "expected_kind": "ToolAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-fail-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

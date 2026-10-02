@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 244,
+  "receipt_count": 247,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -197,7 +197,9 @@
     "conformance/v0.1/primitives/receipts/tool-argument-provenance.json",
     "conformance/v0.1/primitives/receipts/tool-argument-rewrite.json",
     "conformance/v0.1/primitives/receipts/tool-argument-unknown.json",
+    "conformance/v0.1/primitives/receipts/tool-bypass-evidence.json",
     "conformance/v0.1/primitives/receipts/tool-cancelled-no-effect.json",
+    "conformance/v0.1/primitives/receipts/tool-capture-failures.json",
     "conformance/v0.1/primitives/receipts/tool-completed-no-effect.json",
     "conformance/v0.1/primitives/receipts/tool-decision-allow-no-execution.json",
     "conformance/v0.1/primitives/receipts/tool-decision-deny-later-execution.json",
@@ -225,6 +227,7 @@
     "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
     "conformance/v0.1/primitives/receipts/tool-orchestration-relations.json",
     "conformance/v0.1/primitives/receipts/tool-prestart-failure.json",
+    "conformance/v0.1/primitives/receipts/tool-privacy-capture.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-ambiguous.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-denied.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-invocation-no-lineage.json",

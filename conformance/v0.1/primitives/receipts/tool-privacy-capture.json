@@ -1,0 +1,251 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-privacy-capture-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-priv-001",
+      "invoke-tad-priv-001",
+      "exec-tad-priv-001",
+      "result-tad-priv-001",
+      "effect-tad-priv-001",
+      "diag-tad-priv-args-001",
+      "diag-tad-priv-result-001",
+      "redacted-args-tad-001",
+      "redacted-result-tad-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-priv-001",
+        "kind": "Run",
+        "label": "tool-privacy-capture"
+      },
+      {
+        "id": "invoke-tad-priv-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-priv-001",
+        "tool_name": "create_secret_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug",
+            "secret": "actual-runtime-secret"
+          }
+        },
+        "argument_provenance": [
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/title"
+            },
+            "classification": "unknown"
+          },
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/secret"
+            },
+            "classification": "unknown"
+          }
+        ]
+      },
+      {
+        "id": "exec-tad-priv-001",
+        "kind": "ToolExecution",
+        "run_id": "run-tad-priv-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "invoke-tad-priv-001",
+          "expected_kind": "ToolInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed"
+      },
+      {
+        "id": "result-tad-priv-001",
+        "kind": "ToolResult",
+        "run_id": "run-tad-priv-001",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-priv-001",
+          "expected_kind": "ToolExecution"
+        },
+        "capture_extent": "complete",
+        "reported_status": "success",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "id": 123,
+            "token": "server-secret"
+          }
+        }
+      },
+      {
+        "id": "effect-tad-priv-001",
+        "kind": "EffectObservation",
+        "run_id": "run-tad-priv-001",
+        "basis": "execution_result",
+        "proposition": "ToolResult reported item 123 created",
+        "execution": {
+          "ref_type": "local",
+          "id": "exec-tad-priv-001",
+          "expected_kind": "ToolExecution"
+        },
+        "result": {
+          "ref_type": "local",
+          "id": "result-tad-priv-001",
+          "expected_kind": "ToolResult"
+        }
+      },
+      {
+        "id": "diag-tad-priv-args-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-priv-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "invoke-tad-priv-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/arguments"
+            }
+          }
+        },
+        "slot": "tool_invocation.arguments",
+        "status": "observed",
+        "reason": "exact effective argument representation observed before privacy discard"
+      },
+      {
+        "id": "diag-tad-priv-result-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-tad-priv-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "result-tad-priv-001",
+            "expected_kind": "ToolResult"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/representation"
+            }
+          }
+        },
+        "slot": "tool_result.application_visible",
+        "status": "observed",
+        "reason": "exact application-visible result observed before privacy discard"
+      },
+      {
+        "id": "redacted-args-tad-001",
+        "kind": "ContextFragment",
+        "run_id": "run-tad-priv-001",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug",
+            "secret": "[REDACTED]"
+          }
+        }
+      },
+      {
+        "id": "redacted-result-tad-001",
+        "kind": "ContextFragment",
+        "run_id": "run-tad-priv-001",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "id": 123,
+            "token": "[REDACTED]"
+          }
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [
+      {
+        "id": "privacy-tad-args-001",
+        "kind": "PrivacyDescriptor",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "invoke-tad-priv-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/arguments"
+            }
+          }
+        },
+        "profile": "hash_only",
+        "availability": "original_withheld_with_commitment",
+        "commitments": [
+          {
+            "method": "sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "representation_basis": "json-data-model"
+          }
+        ]
+      },
+      {
+        "id": "privacy-tad-result-001",
+        "kind": "PrivacyDescriptor",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "result-tad-priv-001",
+            "expected_kind": "ToolResult"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/representation"
+            }
+          }
+        },
+        "profile": "redacted",
+        "availability": "redacted_derivative_disclosed",
+        "redacted_derivative": {
+          "ref_type": "local",
+          "id": "redacted-result-tad-001",
+          "expected_kind": "ContextFragment"
+        }
+      }
+    ],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-priv-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}
