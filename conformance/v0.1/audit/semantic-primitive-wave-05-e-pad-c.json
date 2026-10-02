@@ -1,0 +1,21 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-e-pad-c",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-pad-071-provider-privacy-no-failure-laundering-001",
+    "c2a-v0.1-pad-072-provider-capture-failure-explicit-001",
+    "c2a-v0.1-pad-073-provider-capture-failure-no-fabrication-001",
+    "c2a-v0.1-pad-074-provider-capture-vs-attempt-failure-001",
+    "c2a-v0.1-pad-075-provider-adapter-error-origin-001"
+  ],
+  "newly_materialized_count": 5,
+  "executable_semantic_requirements": 538,
+  "remaining_semantic_requirements": 233,
+  "remaining_pad_semantic_requirements": 15,
+  "shared_scenario": "conformance/v0.1/primitives/receipts/provider-capture-failure.json",
+  "assertions": {
+    "provider_capture_failure_semantics_materialized": true,
+    "frozen_schema_unchanged": true
+  }
+}

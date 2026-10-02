@@ -1,0 +1,57 @@
+{
+  "case_id": "c2a-v0.1-pad-075-provider-adapter-error-origin-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "PAD-075"
+  ],
+  "planned_test_ids": [
+    "provider-adapter-error-origin-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "An adapter instrumentation exception is not upgraded to a provider-side exception.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/provider-capture-failure.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "PAD-075"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-pad-075",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:provider",
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "PAD-075"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-075-provider-adapter-error-origin-001.json"
+}

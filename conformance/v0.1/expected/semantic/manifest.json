@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:conformance:v0.1:expected-result",
-  "fixture_count": 533,
+  "fixture_count": 538,
   "fixtures": [
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-000-claim-composition-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-001-claim-no-upgrade-001.json",
@@ -191,6 +191,11 @@
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-068-provider-privacy-placeholder-no-mutation-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-069-provider-privacy-commit-before-discard-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-070-provider-privacy-redacted-identity-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-071-provider-privacy-no-failure-laundering-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-072-provider-capture-failure-explicit-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-073-provider-capture-failure-no-fabrication-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-074-provider-capture-vs-attempt-failure-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-075-provider-adapter-error-origin-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-078-provider-multihook-correlation-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-088-provider-adapter-version-no-trust-001.json",

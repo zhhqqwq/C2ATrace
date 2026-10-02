@@ -2418,7 +2418,7 @@
         "VFY-149"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 45,
+      "executable_primary_requirement_count": 50,
       "wave_01_primary_requirements": [],
       "wave_01_dependency_requirements": [],
       "wave_05_primary_requirements": [
@@ -2466,7 +2466,12 @@
         "PAD-066",
         "PAD-067",
         "PAD-068",
-        "PAD-069"
+        "PAD-069",
+        "PAD-071",
+        "PAD-072",
+        "PAD-073",
+        "PAD-074",
+        "PAD-075"
       ]
     },
     {
@@ -2749,7 +2754,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 533,
-  "remaining_semantic_requirements": 238,
-  "materialization_wave": "05-e-pad-b"
+  "executable_semantic_requirements": 538,
+  "remaining_semantic_requirements": 233,
+  "materialization_wave": "05-e-pad-c"
 }

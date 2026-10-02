@@ -3250,7 +3250,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-071-provider-privacy-no-failure-laundering-001"
     },
     {
       "family": "pad",
@@ -3264,7 +3266,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-072-provider-capture-failure-explicit-001"
     },
     {
       "family": "pad",
@@ -3278,7 +3282,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-073-provider-capture-failure-no-fabrication-001"
     },
     {
       "family": "pad",
@@ -3294,7 +3300,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.provider.attempts"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-074-provider-capture-vs-attempt-failure-001"
     },
     {
       "family": "pad",
@@ -3308,7 +3316,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-075-provider-adapter-error-origin-001"
     },
     {
       "family": "pad",
@@ -12824,6 +12834,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 533,
-  "remaining_semantic_requirements": 238
+  "executable_semantic_requirements": 538,
+  "remaining_semantic_requirements": 233
 }
