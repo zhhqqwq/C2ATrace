@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-rcpt-022-receipt-external-unpinned-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-022"
+  ],
+  "planned_test_ids": [
+    "receipt-external-unpinned-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unpinned external resolution identifies a supplied target but does not cryptographically bind the exact target payload.",
+  "documents": [
+    {
+      "document_id": "b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "verifier_goals": [
+      "RCPT-022"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-022",
+    "primary_documents": [
+      "b"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-022"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.ref.external, prim.request.binding"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-022-receipt-external-unpinned-bounded-001.json"
+}

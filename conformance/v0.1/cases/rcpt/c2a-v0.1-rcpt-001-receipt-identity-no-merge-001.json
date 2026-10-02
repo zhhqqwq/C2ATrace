@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-rcpt-001-receipt-identity-no-merge-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-001"
+  ],
+  "planned_test_ids": [
+    "receipt-identity-no-merge-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Distinct Receipt identities remain distinct even when payload digest/content evidence matches.",
+  "documents": [
+    {
+      "document_id": "a",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "decoy",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-decoy-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "decoy"
+    ],
+    "verifier_goals": [
+      "RCPT-001"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-001",
+    "primary_documents": [
+      "a"
+    ],
+    "resolution_set": [
+      "decoy"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-001-receipt-identity-no-merge-001.json"
+}

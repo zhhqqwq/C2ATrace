@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-rcpt-021-receipt-id-collision-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "conflict",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-021",
+      "check_id": "receipt-id-collision-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-a"
+      },
+      "domain": "conflict",
+      "status": "conflict",
+      "reason_code": "receipt_id_collision"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

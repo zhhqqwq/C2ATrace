@@ -1,0 +1,72 @@
+{
+  "case_id": "c2a-v0.1-rcpt-004-receipt-envelope-no-new-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-004"
+  ],
+  "planned_test_ids": [
+    "receipt-envelope-no-new-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Adding or removing IntegrityEnvelopes does not create a new Receipt identity when the ARP is unchanged.",
+  "documents": [
+    {
+      "document_id": "signed",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "unsigned-view",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/integrity_envelopes",
+            "value": []
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "unsigned-view"
+    ],
+    "verifier_goals": [
+      "RCPT-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-004",
+    "primary_documents": [
+      "signed"
+    ],
+    "resolution_set": [
+      "unsigned-view"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-004"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-004-receipt-envelope-no-new-identity-001.json"
+}

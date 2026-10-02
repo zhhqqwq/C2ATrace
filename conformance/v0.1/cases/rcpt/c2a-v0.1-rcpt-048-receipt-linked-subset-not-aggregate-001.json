@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-rcpt-048-receipt-linked-subset-not-aggregate-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-048"
+  ],
+  "planned_test_ids": [
+    "receipt-linked-subset-not-aggregate-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A linked subset Receipt remains a subset and is not a superseding aggregate.",
+  "documents": [
+    {
+      "document_id": "b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "verifier_goals": [
+      "RCPT-048"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-048",
+    "primary_documents": [
+      "b"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-048"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.ref.external"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-048-receipt-linked-subset-not-aggregate-001.json"
+}

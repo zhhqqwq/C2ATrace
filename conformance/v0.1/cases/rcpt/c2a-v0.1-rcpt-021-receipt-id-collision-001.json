@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-rcpt-021-receipt-id-collision-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-021"
+  ],
+  "planned_test_ids": [
+    "receipt-id-collision-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Two supplied ARPs with one Receipt identity and incompatible contents remain a conflict; no input-order winner is chosen.",
+  "documents": [
+    {
+      "document_id": "a",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "conflict",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "conflict"
+    ],
+    "verifier_goals": [
+      "RCPT-021"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-021",
+    "primary_documents": [
+      "a"
+    ],
+    "resolution_set": [
+      "conflict"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-021"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-021-receipt-id-collision-001.json"
+}

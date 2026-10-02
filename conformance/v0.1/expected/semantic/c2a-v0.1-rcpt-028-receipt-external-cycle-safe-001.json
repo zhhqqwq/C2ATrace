@@ -1,0 +1,32 @@
+{
+  "case_id": "c2a-v0.1-rcpt-028-receipt-external-cycle-safe-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "b",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-028",
+      "check_id": "receipt-external-cycle-safe-001",
+      "subject_selector": {
+        "receipt_id": "receipt-cycle-a"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:external_reference_cycle_implies_order"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-rcpt-041-receipt-link-target-missing-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-041"
+  ],
+  "planned_test_ids": [
+    "receipt-link-target-missing-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "An unavailable ReceiptLink target remains an unresolved dependency.",
+  "documents": [
+    {
+      "document_id": "b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "RCPT-041"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-041",
+    "primary_documents": [
+      "b"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-041"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.ref.external, prim.ref.failure"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-041-receipt-link-target-missing-001.json"
+}

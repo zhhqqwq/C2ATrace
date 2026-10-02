@@ -7,7 +7,7 @@
       "requirement_id": "RCPT-001",
       "planned_test_id": "receipt-identity-no-merge-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-001-receipt-identity-no-merge-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-001-receipt-identity-no-merge-001.json"
     },
@@ -16,7 +16,7 @@
       "requirement_id": "RCPT-002",
       "planned_test_id": "receipt-id-payload-conflict-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-002-receipt-id-payload-conflict-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-002-receipt-id-payload-conflict-001.json"
     },
@@ -25,7 +25,7 @@
       "requirement_id": "RCPT-003",
       "planned_test_id": "receipt-digest-not-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-003-receipt-digest-not-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-003-receipt-digest-not-identity-001.json"
     },
@@ -34,7 +34,7 @@
       "requirement_id": "RCPT-004",
       "planned_test_id": "receipt-envelope-no-new-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-004-receipt-envelope-no-new-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-004-receipt-envelope-no-new-identity-001.json"
     },
@@ -43,7 +43,7 @@
       "requirement_id": "RCPT-005",
       "planned_test_id": "receipt-unsigned-valid-structure-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-005-receipt-unsigned-valid-structure-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-005-receipt-unsigned-valid-structure-001.json"
     },
@@ -52,7 +52,7 @@
       "requirement_id": "RCPT-006",
       "planned_test_id": "receipt-inventory-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-006-receipt-inventory-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-006-receipt-inventory-001.json"
     },
@@ -61,7 +61,7 @@
       "requirement_id": "RCPT-007",
       "planned_test_id": "receipt-inventory-not-history-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-007-receipt-inventory-not-history-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-007-receipt-inventory-not-history-001.json"
     },
@@ -70,7 +70,7 @@
       "requirement_id": "RCPT-008",
       "planned_test_id": "receipt-scope-no-completeness-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-008-receipt-scope-no-completeness-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-008-receipt-scope-no-completeness-001.json"
     },
@@ -79,7 +79,7 @@
       "requirement_id": "RCPT-009",
       "planned_test_id": "receipt-subset-valid-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-009-receipt-subset-valid-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-009-receipt-subset-valid-001.json"
     },
@@ -88,7 +88,7 @@
       "requirement_id": "RCPT-010",
       "planned_test_id": "receipt-missing-record-not-negation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-010-receipt-missing-record-not-negation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-010-receipt-missing-record-not-negation-001.json"
     },
@@ -97,7 +97,7 @@
       "requirement_id": "RCPT-011",
       "planned_test_id": "receipt-runtime-completeness-not-established-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-011-receipt-runtime-completeness-not-established-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-011-receipt-runtime-completeness-not-established-001.json"
     },
@@ -142,7 +142,7 @@
       "requirement_id": "RCPT-016",
       "planned_test_id": "receipt-address-vs-object-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-016-receipt-address-vs-object-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-016-receipt-address-vs-object-identity-001.json"
     },
@@ -187,7 +187,7 @@
       "requirement_id": "RCPT-021",
       "planned_test_id": "receipt-id-collision-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-021-receipt-id-collision-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-021-receipt-id-collision-001.json"
     },
@@ -196,7 +196,7 @@
       "requirement_id": "RCPT-022",
       "planned_test_id": "receipt-external-unpinned-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-022-receipt-external-unpinned-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-022-receipt-external-unpinned-bounded-001.json"
     },
@@ -205,7 +205,7 @@
       "requirement_id": "RCPT-023",
       "planned_test_id": "receipt-external-pin-match-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-023-receipt-external-pin-match-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-023-receipt-external-pin-match-001.json"
     },
@@ -214,7 +214,7 @@
       "requirement_id": "RCPT-024",
       "planned_test_id": "receipt-external-pin-mismatch-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-024-receipt-external-pin-mismatch-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-024-receipt-external-pin-mismatch-001.json"
     },
@@ -223,7 +223,7 @@
       "requirement_id": "RCPT-025",
       "planned_test_id": "receipt-external-pin-not-signature-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-025-receipt-external-pin-not-signature-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-025-receipt-external-pin-not-signature-001.json"
     },
@@ -232,7 +232,7 @@
       "requirement_id": "RCPT-026",
       "planned_test_id": "receipt-external-no-time-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-026-receipt-external-no-time-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-026-receipt-external-no-time-proof-001.json"
     },
@@ -241,7 +241,7 @@
       "requirement_id": "RCPT-027",
       "planned_test_id": "receipt-external-no-causal-upgrade-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-027-receipt-external-no-causal-upgrade-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-027-receipt-external-no-causal-upgrade-001.json"
     },
@@ -250,7 +250,7 @@
       "requirement_id": "RCPT-028",
       "planned_test_id": "receipt-external-cycle-safe-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-028-receipt-external-cycle-safe-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-028-receipt-external-cycle-safe-001.json"
     },
@@ -259,7 +259,7 @@
       "requirement_id": "RCPT-029",
       "planned_test_id": "receipt-self-contained-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-029-receipt-self-contained-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-029-receipt-self-contained-001.json"
     },
@@ -277,7 +277,7 @@
       "requirement_id": "RCPT-031",
       "planned_test_id": "receipt-link-not-object-reference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-031-receipt-link-not-object-reference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-031-receipt-link-not-object-reference-001.json"
     },
@@ -295,7 +295,7 @@
       "requirement_id": "RCPT-033",
       "planned_test_id": "receipt-link-in-payload-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-033-receipt-link-in-payload-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-033-receipt-link-in-payload-001.json"
     },
@@ -304,7 +304,7 @@
       "requirement_id": "RCPT-034",
       "planned_test_id": "receipt-link-no-self-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-034-receipt-link-no-self-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-034-receipt-link-no-self-001.json"
     },
@@ -313,7 +313,7 @@
       "requirement_id": "RCPT-035",
       "planned_test_id": "receipt-link-cycle-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-035-receipt-link-cycle-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-035-receipt-link-cycle-001.json"
     },
@@ -322,7 +322,7 @@
       "requirement_id": "RCPT-036",
       "planned_test_id": "receipt-link-multiple-priors-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-036-receipt-link-multiple-priors-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-036-receipt-link-multiple-priors-001.json"
     },
@@ -331,7 +331,7 @@
       "requirement_id": "RCPT-037",
       "planned_test_id": "receipt-link-no-total-order-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-037-receipt-link-no-total-order-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-037-receipt-link-no-total-order-001.json"
     },
@@ -340,7 +340,7 @@
       "requirement_id": "RCPT-038",
       "planned_test_id": "receipt-link-no-adjacency-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-038-receipt-link-no-adjacency-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-038-receipt-link-no-adjacency-proof-001.json"
     },
@@ -349,7 +349,7 @@
       "requirement_id": "RCPT-039",
       "planned_test_id": "receipt-link-no-global-completeness-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-039-receipt-link-no-global-completeness-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-039-receipt-link-no-global-completeness-001.json"
     },
@@ -358,7 +358,7 @@
       "requirement_id": "RCPT-040",
       "planned_test_id": "receipt-no-genesis-inference-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-040-receipt-no-genesis-inference-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-040-receipt-no-genesis-inference-001.json"
     },
@@ -367,7 +367,7 @@
       "requirement_id": "RCPT-041",
       "planned_test_id": "receipt-link-target-missing-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-041-receipt-link-target-missing-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-041-receipt-link-target-missing-001.json"
     },
@@ -385,7 +385,7 @@
       "requirement_id": "RCPT-043",
       "planned_test_id": "receipt-link-no-trusted-time-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-043-receipt-link-no-trusted-time-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-043-receipt-link-no-trusted-time-001.json"
     },
@@ -394,7 +394,7 @@
       "requirement_id": "RCPT-044",
       "planned_test_id": "receipt-reference-closure-not-history-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-044-receipt-reference-closure-not-history-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-044-receipt-reference-closure-not-history-001.json"
     },
@@ -403,7 +403,7 @@
       "requirement_id": "RCPT-045",
       "planned_test_id": "receipt-reference-absence-not-negation-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-045-receipt-reference-absence-not-negation-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-045-receipt-reference-absence-not-negation-001.json"
     },
@@ -421,7 +421,7 @@
       "requirement_id": "RCPT-047",
       "planned_test_id": "receipt-resolution-capability-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-047-receipt-resolution-capability-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-047-receipt-resolution-capability-001.json"
     },
@@ -430,7 +430,7 @@
       "requirement_id": "RCPT-048",
       "planned_test_id": "receipt-linked-subset-not-aggregate-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-048-receipt-linked-subset-not-aggregate-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-048-receipt-linked-subset-not-aggregate-001.json"
     },
@@ -439,7 +439,7 @@
       "requirement_id": "RCPT-049",
       "planned_test_id": "receipt-cross-receipt-object-consistency-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-049-receipt-cross-receipt-object-consistency-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-049-receipt-cross-receipt-object-consistency-001.json"
     },
@@ -448,7 +448,7 @@
       "requirement_id": "RCPT-050",
       "planned_test_id": "receipt-cross-receipt-derivation-cycle-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-050-receipt-cross-receipt-derivation-cycle-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-050-receipt-cross-receipt-derivation-cycle-001.json"
     },
@@ -457,7 +457,7 @@
       "requirement_id": "RCPT-051",
       "planned_test_id": "receipt-presentation-no-new-identity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/rcpt/c2a-v0.1-rcpt-051-receipt-presentation-no-new-identity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-051-receipt-presentation-no-new-identity-001.json"
     }

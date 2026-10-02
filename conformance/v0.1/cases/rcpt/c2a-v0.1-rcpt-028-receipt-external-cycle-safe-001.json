@@ -1,0 +1,279 @@
+{
+  "case_id": "c2a-v0.1-rcpt-028-receipt-external-cycle-safe-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-028"
+  ],
+  "planned_test_ids": [
+    "receipt-external-cycle-safe-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Cyclic ExternalReference package dependencies terminate as a bounded resolution graph rather than recursive ordering.",
+  "documents": [
+    {
+      "document_id": "a",
+      "role": "primary_receipt",
+      "source": {
+        "inline": {
+          "kind": "ReceiptPresentation",
+          "arp": {
+            "receipt_id": "receipt-cycle-a",
+            "protocol_version": "0.1",
+            "profile_ids": [
+              "urn:c2atrace:profile:v0.1:core"
+            ],
+            "reference_mode": "external_resolution",
+            "inventory": [
+              "run-cycle-a",
+              "frag-cycle-a",
+              "xf-cycle-a",
+              "drv-cycle-a"
+            ],
+            "records": [
+              {
+                "id": "run-cycle-a",
+                "kind": "Run",
+                "label": "cycle-a"
+              },
+              {
+                "id": "frag-cycle-a",
+                "kind": "ContextFragment",
+                "run_id": "run-cycle-a",
+                "representation": {
+                  "representation_kind": "text",
+                  "text": "A",
+                  "charset": "utf-8",
+                  "media_type": "text/plain"
+                }
+              },
+              {
+                "id": "xf-cycle-a",
+                "kind": "Transform",
+                "run_id": "run-cycle-a",
+                "operation": "cross-copy",
+                "inputs": [
+                  {
+                    "artifact": {
+                      "ref_type": "external",
+                      "receipt_id": "receipt-cycle-b",
+                      "id": "frag-cycle-b",
+                      "expected_kind": "ContextFragment"
+                    },
+                    "usage_role": "data"
+                  }
+                ],
+                "generated": [
+                  {
+                    "ref_type": "local",
+                    "id": "frag-cycle-a",
+                    "expected_kind": "ContextFragment"
+                  }
+                ],
+                "selected": []
+              },
+              {
+                "id": "drv-cycle-a",
+                "kind": "Derivation",
+                "run_id": "run-cycle-a",
+                "transform": {
+                  "ref_type": "local",
+                  "id": "xf-cycle-a",
+                  "expected_kind": "Transform"
+                },
+                "target": {
+                  "artifact": {
+                    "ref_type": "local",
+                    "id": "frag-cycle-a",
+                    "expected_kind": "ContextFragment"
+                  },
+                  "representation_basis": "decoded_text_utf8"
+                },
+                "contributors": [
+                  {
+                    "scope": {
+                      "artifact": {
+                        "ref_type": "external",
+                        "receipt_id": "receipt-cycle-b",
+                        "id": "frag-cycle-b",
+                        "expected_kind": "ContextFragment"
+                      },
+                      "representation_basis": "decoded_text_utf8"
+                    }
+                  }
+                ],
+                "precision": "exact"
+              }
+            ],
+            "receipt_links": [],
+            "privacy": [],
+            "scope": {
+              "scope_kind": "run",
+              "run_id": "run-cycle-a"
+            }
+          },
+          "payload_digest": {
+            "algorithm": "sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "representation_basis": "arp_jcs_utf8",
+            "canonicalization_profile": "rfc8785-jcs"
+          },
+          "integrity_envelopes": []
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "b",
+      "role": "resolution_receipt",
+      "source": {
+        "inline": {
+          "kind": "ReceiptPresentation",
+          "arp": {
+            "receipt_id": "receipt-cycle-b",
+            "protocol_version": "0.1",
+            "profile_ids": [
+              "urn:c2atrace:profile:v0.1:core"
+            ],
+            "reference_mode": "external_resolution",
+            "inventory": [
+              "run-cycle-b",
+              "frag-cycle-b",
+              "xf-cycle-b",
+              "drv-cycle-b"
+            ],
+            "records": [
+              {
+                "id": "run-cycle-b",
+                "kind": "Run",
+                "label": "cycle-b"
+              },
+              {
+                "id": "frag-cycle-b",
+                "kind": "ContextFragment",
+                "run_id": "run-cycle-b",
+                "representation": {
+                  "representation_kind": "text",
+                  "text": "B",
+                  "charset": "utf-8",
+                  "media_type": "text/plain"
+                }
+              },
+              {
+                "id": "xf-cycle-b",
+                "kind": "Transform",
+                "run_id": "run-cycle-b",
+                "operation": "cross-copy",
+                "inputs": [
+                  {
+                    "artifact": {
+                      "ref_type": "external",
+                      "receipt_id": "receipt-cycle-a",
+                      "id": "frag-cycle-a",
+                      "expected_kind": "ContextFragment"
+                    },
+                    "usage_role": "data"
+                  }
+                ],
+                "generated": [
+                  {
+                    "ref_type": "local",
+                    "id": "frag-cycle-b",
+                    "expected_kind": "ContextFragment"
+                  }
+                ],
+                "selected": []
+              },
+              {
+                "id": "drv-cycle-b",
+                "kind": "Derivation",
+                "run_id": "run-cycle-b",
+                "transform": {
+                  "ref_type": "local",
+                  "id": "xf-cycle-b",
+                  "expected_kind": "Transform"
+                },
+                "target": {
+                  "artifact": {
+                    "ref_type": "local",
+                    "id": "frag-cycle-b",
+                    "expected_kind": "ContextFragment"
+                  },
+                  "representation_basis": "decoded_text_utf8"
+                },
+                "contributors": [
+                  {
+                    "scope": {
+                      "artifact": {
+                        "ref_type": "external",
+                        "receipt_id": "receipt-cycle-a",
+                        "id": "frag-cycle-a",
+                        "expected_kind": "ContextFragment"
+                      },
+                      "representation_basis": "decoded_text_utf8"
+                    }
+                  }
+                ],
+                "precision": "exact"
+              }
+            ],
+            "receipt_links": [],
+            "privacy": [],
+            "scope": {
+              "scope_kind": "run",
+              "run_id": "run-cycle-b"
+            }
+          },
+          "payload_digest": {
+            "algorithm": "sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+            },
+            "representation_basis": "arp_jcs_utf8",
+            "canonicalization_profile": "rfc8785-jcs"
+          },
+          "integrity_envelopes": []
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "b"
+    ],
+    "verifier_goals": [
+      "RCPT-028"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-028",
+    "primary_documents": [
+      "a"
+    ],
+    "resolution_set": [
+      "b"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-028"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.ref.external, prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-028-receipt-external-cycle-safe-001.json"
+}

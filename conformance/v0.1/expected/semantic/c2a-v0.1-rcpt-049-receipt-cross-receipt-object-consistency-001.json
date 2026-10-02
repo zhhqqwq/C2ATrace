@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-rcpt-049-receipt-cross-receipt-object-consistency-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "other",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-049",
+      "check_id": "receipt-cross-receipt-object-consistency-001",
+      "subject_selector": {
+        "object_id": "obs-multi-001"
+      },
+      "domain": "conflict",
+      "status": "conflict",
+      "reason_code": "cross_receipt_object_identity_conflict"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

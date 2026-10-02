@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-rcpt-023-receipt-external-pin-match-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-023"
+  ],
+  "planned_test_ids": [
+    "receipt-external-pin-match-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A pinned ExternalReference resolves only when the supplied target matches the recorded target payload digest.",
+  "documents": [
+    {
+      "document_id": "b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "verifier_goals": [
+      "RCPT-023"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-023",
+    "primary_documents": [
+      "b"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-023"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.privacy.commitment, prim.ref.external"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-023-receipt-external-pin-match-001.json"
+}

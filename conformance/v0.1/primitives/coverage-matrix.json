@@ -4646,7 +4646,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-001-receipt-identity-no-merge-001"
     },
     {
       "family": "rcpt",
@@ -4662,7 +4664,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-002-receipt-id-payload-conflict-001"
     },
     {
       "family": "rcpt",
@@ -4678,7 +4682,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-003-receipt-digest-not-identity-001"
     },
     {
       "family": "rcpt",
@@ -4694,7 +4700,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-004-receipt-envelope-no-new-identity-001"
     },
     {
       "family": "rcpt",
@@ -4708,7 +4716,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-005-receipt-unsigned-valid-structure-001"
     },
     {
       "family": "rcpt",
@@ -4722,7 +4732,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-006-receipt-inventory-001"
     },
     {
       "family": "rcpt",
@@ -4738,7 +4750,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-007-receipt-inventory-not-history-001"
     },
     {
       "family": "rcpt",
@@ -4754,7 +4768,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-008-receipt-scope-no-completeness-001"
     },
     {
       "family": "rcpt",
@@ -4768,7 +4784,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-009-receipt-subset-valid-001"
     },
     {
       "family": "rcpt",
@@ -4782,7 +4800,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-010-receipt-missing-record-not-negation-001"
     },
     {
       "family": "rcpt",
@@ -4798,7 +4818,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-011-receipt-runtime-completeness-not-established-001"
     },
     {
       "family": "rcpt",
@@ -4831,7 +4853,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-016-receipt-address-vs-object-identity-001"
     },
     {
       "family": "rcpt",
@@ -4921,7 +4945,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-021-receipt-id-collision-001"
     },
     {
       "family": "rcpt",
@@ -4938,7 +4964,9 @@
       "dependency_primitives": [
         "prim.ref.external",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-022-receipt-external-unpinned-bounded-001"
     },
     {
       "family": "rcpt",
@@ -4955,7 +4983,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-023-receipt-external-pin-match-001"
     },
     {
       "family": "rcpt",
@@ -4971,7 +5001,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-024-receipt-external-pin-mismatch-001"
     },
     {
       "family": "rcpt",
@@ -4988,7 +5020,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-025-receipt-external-pin-not-signature-001"
     },
     {
       "family": "rcpt",
@@ -5002,7 +5036,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-026-receipt-external-no-time-proof-001"
     },
     {
       "family": "rcpt",
@@ -5018,7 +5054,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-027-receipt-external-no-causal-upgrade-001"
     },
     {
       "family": "rcpt",
@@ -5035,7 +5073,9 @@
       "dependency_primitives": [
         "prim.ref.external",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-028-receipt-external-cycle-safe-001"
     },
     {
       "family": "rcpt",
@@ -5052,7 +5092,9 @@
       "dependency_primitives": [
         "prim.ref.failure",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-029-receipt-self-contained-001"
     },
     {
       "family": "rcpt",
@@ -5087,7 +5129,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-031-receipt-link-not-object-reference-001"
     },
     {
       "family": "rcpt",
@@ -5101,7 +5145,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-033-receipt-link-in-payload-001"
     },
     {
       "family": "rcpt",
@@ -5115,7 +5161,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-034-receipt-link-no-self-001"
     },
     {
       "family": "rcpt",
@@ -5131,7 +5179,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-035-receipt-link-cycle-001"
     },
     {
       "family": "rcpt",
@@ -5145,7 +5195,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-036-receipt-link-multiple-priors-001"
     },
     {
       "family": "rcpt",
@@ -5161,7 +5213,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ordering.time"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-037-receipt-link-no-total-order-001"
     },
     {
       "family": "rcpt",
@@ -5175,7 +5229,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-038-receipt-link-no-adjacency-proof-001"
     },
     {
       "family": "rcpt",
@@ -5192,7 +5248,9 @@
       "dependency_primitives": [
         "prim.ref.external",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-039-receipt-link-no-global-completeness-001"
     },
     {
       "family": "rcpt",
@@ -5208,7 +5266,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-040-receipt-no-genesis-inference-001"
     },
     {
       "family": "rcpt",
@@ -5225,7 +5285,9 @@
       "dependency_primitives": [
         "prim.ref.external",
         "prim.ref.failure"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-041-receipt-link-target-missing-001"
     },
     {
       "family": "rcpt",
@@ -5260,7 +5322,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-043-receipt-link-no-trusted-time-001"
     },
     {
       "family": "rcpt",
@@ -5277,7 +5341,9 @@
       "dependency_primitives": [
         "prim.ref.local",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-044-receipt-reference-closure-not-history-001"
     },
     {
       "family": "rcpt",
@@ -5294,7 +5360,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-045-receipt-reference-absence-not-negation-001"
     },
     {
       "family": "rcpt",
@@ -5330,7 +5398,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.adapter.capture"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-047-receipt-resolution-capability-001"
     },
     {
       "family": "rcpt",
@@ -5346,7 +5416,9 @@
       "primary_primitive": "prim.receipt.multi",
       "dependency_primitives": [
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-048-receipt-linked-subset-not-aggregate-001"
     },
     {
       "family": "rcpt",
@@ -5360,7 +5432,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-049-receipt-cross-receipt-object-consistency-001"
     },
     {
       "family": "rcpt",
@@ -5377,7 +5451,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.ref.external"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-050-receipt-cross-receipt-derivation-cycle-001"
     },
     {
       "family": "rcpt",
@@ -5391,7 +5467,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.receipt.multi",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-rcpt-051-receipt-presentation-no-new-identity-001"
     },
     {
       "family": "req",
@@ -12552,6 +12630,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 397,
-  "remaining_semantic_requirements": 374
+  "executable_semantic_requirements": 436,
+  "remaining_semantic_requirements": 335
 }

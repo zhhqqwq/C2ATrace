@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-rcpt-010-receipt-missing-record-not-negation-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-010"
+  ],
+  "planned_test_ids": [
+    "receipt-missing-record-not-negation-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A record omitted from the supplied Receipt is not proven never to have existed.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/graph-proposal-only.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "RCPT-010"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-010",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-010"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-010-receipt-missing-record-not-negation-001.json"
+}

@@ -1,0 +1,72 @@
+{
+  "case_id": "c2a-v0.1-rcpt-049-receipt-cross-receipt-object-consistency-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-049"
+  ],
+  "planned_test_ids": [
+    "receipt-cross-receipt-object-consistency-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Repeated immutable object identity with incompatible representations across Receipts is an identity conflict.",
+  "documents": [
+    {
+      "document_id": "a",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "other",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/arp/receipt_id",
+            "value": "receipt-other"
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "other"
+    ],
+    "verifier_goals": [
+      "RCPT-049"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-049",
+    "primary_documents": [
+      "a"
+    ],
+    "resolution_set": [
+      "other"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-049"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-049-receipt-cross-receipt-object-consistency-001.json"
+}

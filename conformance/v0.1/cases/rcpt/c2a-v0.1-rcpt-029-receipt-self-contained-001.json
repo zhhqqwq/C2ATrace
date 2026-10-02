@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-rcpt-029-receipt-self-contained-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-029"
+  ],
+  "planned_test_ids": [
+    "receipt-self-contained-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A self-contained Receipt resolves all normative local object references inside its own ARP.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "RCPT-029"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-029",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-029"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi, prim.ref.local"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-029-receipt-self-contained-001.json"
+}

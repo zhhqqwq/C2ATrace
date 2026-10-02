@@ -1,0 +1,33 @@
+{
+  "case_id": "c2a-v0.1-rcpt-016-receipt-address-vs-object-identity-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "b",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "RCPT-016",
+      "check_id": "receipt-address-vs-object-identity-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "xf-multi-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:external_address_creates_new_object_identity"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

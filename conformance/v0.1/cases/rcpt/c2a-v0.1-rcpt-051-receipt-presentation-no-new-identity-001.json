@@ -1,0 +1,72 @@
+{
+  "case_id": "c2a-v0.1-rcpt-051-receipt-presentation-no-new-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "RCPT-051"
+  ],
+  "planned_test_ids": [
+    "receipt-presentation-no-new-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Different presentation/envelope wrappers around the same ARP do not create a new Receipt identity.",
+  "documents": [
+    {
+      "document_id": "signed",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "unsigned-view",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "patches": [
+          {
+            "op": "replace",
+            "path": "/integrity_envelopes",
+            "value": []
+          }
+        ]
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "unsigned-view"
+    ],
+    "verifier_goals": [
+      "RCPT-051"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-rcpt-051",
+    "primary_documents": [
+      "signed"
+    ],
+    "resolution_set": [
+      "unsigned-view"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "RCPT-051"
+    ]
+  },
+  "notes": [
+    "primitives: prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-rcpt-051-receipt-presentation-no-new-identity-001.json"
+}

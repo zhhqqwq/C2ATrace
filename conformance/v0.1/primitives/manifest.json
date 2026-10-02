@@ -1851,8 +1851,8 @@
         "VFY-130",
         "VFY-135"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 3,
+      "materialization_status": "wave_05_in_progress",
+      "executable_primary_requirement_count": 42,
       "wave_01_primary_requirements": [
         "RCPT-017",
         "RCPT-019",
@@ -2604,7 +2604,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 397,
-  "remaining_semantic_requirements": 374,
-  "materialization_wave": "05-b"
+  "executable_semantic_requirements": 436,
+  "remaining_semantic_requirements": 335,
+  "materialization_wave": "05-c-rcpt"
 }
