@@ -2418,9 +2418,56 @@
         "VFY-149"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "executable_primary_requirement_count": 45,
       "wave_01_primary_requirements": [],
-      "wave_01_dependency_requirements": []
+      "wave_01_dependency_requirements": [],
+      "wave_05_primary_requirements": [
+        "PAD-001",
+        "PAD-005",
+        "PAD-006",
+        "PAD-007",
+        "PAD-008",
+        "PAD-011",
+        "PAD-012",
+        "PAD-013",
+        "PAD-014",
+        "PAD-016",
+        "PAD-017",
+        "PAD-018",
+        "PAD-021",
+        "PAD-025",
+        "PAD-026",
+        "PAD-027",
+        "PAD-028",
+        "PAD-029",
+        "PAD-030",
+        "PAD-031",
+        "PAD-032",
+        "PAD-033",
+        "PAD-035",
+        "PAD-036",
+        "PAD-038",
+        "PAD-039",
+        "PAD-040",
+        "PAD-042",
+        "PAD-044",
+        "PAD-045",
+        "PAD-046",
+        "PAD-047",
+        "PAD-048",
+        "PAD-049",
+        "PAD-050",
+        "PAD-051",
+        "PAD-052",
+        "PAD-053",
+        "PAD-062",
+        "PAD-063",
+        "PAD-064",
+        "PAD-066",
+        "PAD-067",
+        "PAD-068",
+        "PAD-069"
+      ]
     },
     {
       "id": "prim.verifier.report",
@@ -2678,7 +2725,7 @@
         "VFY-100"
       ],
       "materialization_status": "wave_05_materialized",
-      "executable_primary_requirement_count": 14,
+      "executable_primary_requirement_count": 15,
       "wave_01_primary_requirements": [
         "GRAPH-013"
       ],
@@ -2702,7 +2749,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 488,
-  "remaining_semantic_requirements": 283,
-  "materialization_wave": "05-d"
+  "executable_semantic_requirements": 533,
+  "remaining_semantic_requirements": 238,
+  "materialization_wave": "05-e-pad-b"
 }

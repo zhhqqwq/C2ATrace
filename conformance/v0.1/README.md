@@ -28,4 +28,4 @@ Source of truth:
 - `primitives/receipts/` — materialized reusable Receipt scenarios;
 - `expected/semantic/` — normalized expected-result documents for semantic cases.
 
-Primitive Waves 01-04 materialize the reference/graph foundation plus complete Source, Derivation, Request, ProviderAttempt, ModelOutput, ToolLifecycle, occurrence identity, Trust, Taint, privacy commitment, and privacy redaction primary primitive families, advancing semantic-verifier executability to **365 / 771**. Primitive names are test infrastructure only; they do not change frozen protocol semantics or wire format.
+Primitive Waves 01-05E materialize the reference/graph foundation plus complete Source, Derivation, Request, ProviderAttempt, ModelOutput, ToolLifecycle, occurrence identity, Trust, Taint, privacy commitment/redaction, multi-Receipt, Integrity, claim-strength, and ordering/time primary primitive families, plus the current Provider Adapter tranche. Semantic-verifier executability is **533 / 771**, with **238** remaining (`PAD 20 / TAD 90 / VFY 128`). Primitive names are test infrastructure only; they do not change frozen protocol semantics or wire format.

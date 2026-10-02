@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 221,
+  "receipt_count": 223,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -106,6 +106,8 @@
     "conformance/v0.1/primitives/receipts/provider-single-attempt.json",
     "conformance/v0.1/primitives/receipts/provider-visible-failover.json",
     "conformance/v0.1/primitives/receipts/provider-visible-retry.json",
+    "conformance/v0.1/primitives/receipts/receipt-signed-link.json",
+    "conformance/v0.1/primitives/receipts/receipt-signed-unpinned.json",
     "conformance/v0.1/primitives/receipts/ref-external-ambiguous-a.json",
     "conformance/v0.1/primitives/receipts/ref-external-ambiguous-b.json",
     "conformance/v0.1/primitives/receipts/ref-external-ambiguous-primary.json",

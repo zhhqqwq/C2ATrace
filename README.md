@@ -40,7 +40,7 @@ C2ATrace records provenance and execution linkage. It does not claim model-inter
 
 ## Current status
 
-Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The Conformance Suite is now active: 907/907 requirements have mapped case IDs, 501 cases are executable, all 43 deterministic-vector and all 87 mixed schema-semantic requirements are materialized, 365/771 semantic-verifier requirements are executable through the reusable primitive layer, and 6 direct-schema cases are accepted. Product Independent Verifier and SDK implementation remain blocked until the complete conformance gate passes.
+Specification-first. Phase 0, Phase 1 Parts A-H, Provider Adapter Contract, Tool Adapter Contract, Verifier Contract, and the v0.1 JSON Schema freeze are complete. The Conformance Suite is now active: 907/907 requirements have mapped case IDs, 669 cases are executable, all 43 deterministic-vector and all 87 mixed schema-semantic requirements are materialized, 533/771 semantic-verifier requirements are executable through the reusable primitive layer, and 6 direct-schema cases are accepted. The remaining semantic cases are PAD 20, TAD 90, and VFY 128. Product Independent Verifier and SDK implementation remain blocked until the complete conformance gate passes.
 
 See:
 
@@ -140,4 +140,4 @@ C2ATrace v0.1 is not an agent runtime, dashboard, security gateway, prompt-injec
 
 ## Next specification gate
 
-All pre-Schema semantic/contract gates and the v0.1 JSON Schema freeze are complete. The active gate is the complete language-neutral Conformance Suite: all 907 requirements are mapped, with direct-schema acceptance complete and mixed/deterministic/semantic layers still being materialized. Independent verifier implementation and SDK implementation remain blocked until the suite reaches 907/907 accepted cases with cross-language normalized equivalence.
+All pre-Schema semantic/contract gates and the v0.1 JSON Schema freeze are complete. The active gate is the complete language-neutral Conformance Suite: all 907 requirements are mapped, direct-schema acceptance is complete, mixed and deterministic materialization is complete, and semantic materialization remains in progress at 533/771. Independent verifier implementation and SDK implementation remain blocked until the suite reaches 907/907 accepted cases with cross-language normalized equivalence.

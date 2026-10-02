@@ -1,0 +1,71 @@
+{
+  "layer": "conformance_state_sync",
+  "phase": "P0",
+  "date": "2026-10-02",
+  "status": "pass",
+  "baseline_commit": "d766dd6fdae5a67448ce0c757902b632713695d4",
+  "source_of_truth": [
+    "conformance/v0.1/index/*.json",
+    "conformance/v0.1/primitives/coverage-matrix.json",
+    "conformance/v0.1/manifest.json"
+  ],
+  "recomputed": {
+    "family_indexes": 16,
+    "requirements": 907,
+    "mapped_cases": 907,
+    "status_counts": {
+      "executable": 663,
+      "accepted": 6,
+      "mapped": 238
+    },
+    "enforcement_counts": {
+      "direct_schema": 6,
+      "mixed_schema_semantic": 87,
+      "semantic_verifier": 771,
+      "deterministic_vector": 43
+    },
+    "executable_cases": 669,
+    "accepted_cases": 6,
+    "semantic_verifier": {
+      "total": 771,
+      "executable": 533,
+      "remaining": 238,
+      "coverage_matrix_status_mismatches": 0
+    },
+    "semantic_remaining_by_family": {
+      "PAD": 20,
+      "TAD": 90,
+      "VFY": 128
+    }
+  },
+  "synchronized_assets": {
+    "semantic_expected_manifest": {
+      "fixture_count": 533
+    },
+    "primitive_receipt_manifest": {
+      "receipt_count": 223,
+      "newly_registered_existing_receipts": [
+        "conformance/v0.1/primitives/receipts/receipt-signed-link.json",
+        "conformance/v0.1/primitives/receipts/receipt-signed-unpinned.json"
+      ]
+    },
+    "primitive_manifest": {
+      "executable_semantic_requirements": 533,
+      "remaining_semantic_requirements": 238,
+      "materialization_wave": "05-e-pad-b"
+    },
+    "public_delivery": {
+      "source_snapshot_commit": "d766dd6fdae5a67448ce0c757902b632713695d4",
+      "executable_cases": 669,
+      "semantic_executable": 533
+    }
+  },
+  "assertions": {
+    "protocol_semantics_unchanged": true,
+    "frozen_schema_unchanged": true,
+    "case_files_unchanged": true,
+    "expected_matcher_files_unchanged": true,
+    "coverage_assignments_unchanged": true,
+    "sync_only": true
+  }
+}
