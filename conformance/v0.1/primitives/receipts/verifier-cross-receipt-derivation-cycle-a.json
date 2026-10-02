@@ -1,0 +1,108 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-vfy-cycle-a",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "external_references_allowed",
+    "inventory": [
+      "run-vfy-cycle-001",
+      "frag-vfy-cycle-a",
+      "xf-vfy-cycle-a",
+      "drv-vfy-cycle-a"
+    ],
+    "records": [
+      {
+        "id": "run-vfy-cycle-001",
+        "kind": "Run",
+        "label": "verifier-cross-receipt-derivation-cycle"
+      },
+      {
+        "id": "frag-vfy-cycle-a",
+        "kind": "ContextFragment",
+        "run_id": "run-vfy-cycle-001",
+        "representation": {
+          "representation_kind": "text",
+          "text": "A",
+          "charset": "utf-8",
+          "media_type": "text/plain"
+        }
+      },
+      {
+        "id": "xf-vfy-cycle-a",
+        "kind": "Transform",
+        "run_id": "run-vfy-cycle-001",
+        "operation": "derive-a-from-b",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "external",
+              "receipt_id": "receipt-vfy-cycle-b",
+              "id": "frag-vfy-cycle-b",
+              "expected_kind": "ContextFragment"
+            },
+            "usage_role": "data"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "frag-vfy-cycle-a",
+            "expected_kind": "ContextFragment"
+          }
+        ],
+        "selected": []
+      },
+      {
+        "id": "drv-vfy-cycle-a",
+        "kind": "Derivation",
+        "run_id": "run-vfy-cycle-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "xf-vfy-cycle-a",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "frag-vfy-cycle-a",
+            "expected_kind": "ContextFragment"
+          },
+          "representation_basis": "decoded_text_utf8"
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "external",
+                "receipt_id": "receipt-vfy-cycle-b",
+                "id": "frag-vfy-cycle-b",
+                "expected_kind": "ContextFragment"
+              },
+              "representation_basis": "decoded_text_utf8"
+            }
+          }
+        ],
+        "precision": "exact"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-vfy-cycle-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

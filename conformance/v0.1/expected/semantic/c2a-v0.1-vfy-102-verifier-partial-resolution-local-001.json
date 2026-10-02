@@ -1,0 +1,34 @@
+{
+  "case_id": "c2a-v0.1-vfy-102-verifier-partial-resolution-local-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-102",
+      "check_id": "verifier-partial-resolution-local-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "drv-multi-001"
+      },
+      "domain": "resolution",
+      "status": "unresolved"
+    },
+    {
+      "requirement_id": "VFY-102",
+      "check_id": "independent-local-schema-check",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

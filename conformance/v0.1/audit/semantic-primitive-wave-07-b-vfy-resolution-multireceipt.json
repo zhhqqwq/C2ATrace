@@ -1,0 +1,42 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-07-b-vfy-resolution-multireceipt",
+  "status": "complete",
+  "clustering_basis": "resolution and multi-Receipt graph semantics",
+  "newly_materialized": [
+    "c2a-v0.1-vfy-025-verifier-external-unresolved-001",
+    "c2a-v0.1-vfy-026-verifier-external-ambiguous-001",
+    "c2a-v0.1-vfy-027-verifier-no-implicit-io-001",
+    "c2a-v0.1-vfy-031-verifier-cross-receipt-derivation-cycle-001",
+    "c2a-v0.1-vfy-088-verifier-inventory-not-history-001",
+    "c2a-v0.1-vfy-089-verifier-reference-closure-not-history-001",
+    "c2a-v0.1-vfy-100-verifier-resolution-set-order-001",
+    "c2a-v0.1-vfy-102-verifier-partial-resolution-local-001",
+    "c2a-v0.1-vfy-103-verifier-resolved-set-not-history-001",
+    "c2a-v0.1-vfy-124-verifier-provider-receipt-unestablished-001",
+    "c2a-v0.1-vfy-125-verifier-tool-remote-unestablished-001",
+    "c2a-v0.1-vfy-130-verifier-linkage-no-history-001"
+  ],
+  "newly_materialized_count": 12,
+  "executable_semantic_requirements": 669,
+  "remaining_semantic_requirements": 102,
+  "remaining_vfy_semantic_requirements": 102,
+  "shared_evidence": [
+    "conformance/v0.1/primitives/receipts/ref-external-unpinned.json",
+    "conformance/v0.1/primitives/receipts/ref-external-ambiguous-primary.json",
+    "conformance/v0.1/primitives/receipts/ref-external-ambiguous-a.json",
+    "conformance/v0.1/primitives/receipts/ref-external-ambiguous-b.json",
+    "fixtures/v0.1/valid/multi-receipt-a.json",
+    "fixtures/v0.1/valid/multi-receipt-b.json",
+    "conformance/v0.1/primitives/receipts/verifier-cross-receipt-derivation-cycle-a.json",
+    "conformance/v0.1/primitives/receipts/verifier-cross-receipt-derivation-cycle-b.json"
+  ],
+  "assertions": {
+    "external_unresolved_preserved": true,
+    "external_ambiguous_preserved": true,
+    "no_implicit_io": true,
+    "cross_receipt_cycle_detected": true,
+    "resolution_order_not_provenance_order": true,
+    "linkage_not_history": true
+  }
+}

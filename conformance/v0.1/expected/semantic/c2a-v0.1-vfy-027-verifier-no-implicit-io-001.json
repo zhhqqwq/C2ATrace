@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-027-verifier-no-implicit-io-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-027",
+      "check_id": "verifier-no-implicit-io-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "drv-multi-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:unresolved_external_reference_authorizes_implicit_io"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

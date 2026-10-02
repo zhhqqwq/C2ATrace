@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-vfy-088-verifier-inventory-not-history-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-088"
+  ],
+  "planned_test_ids": [
+    "verifier-inventory-not-history-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Complete accounting of the supplied package inventory remains package-local and does not establish complete runtime history.",
+  "documents": [
+    {
+      "document_id": "b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "verifier_goals": [
+      "VFY-088"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-088",
+    "primary_documents": [
+      "b"
+    ],
+    "resolution_set": [
+      "a"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-088"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-088-verifier-inventory-not-history-001.json"
+}

@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 250,
+  "receipt_count": 252,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -251,7 +251,9 @@
     "conformance/v0.1/primitives/receipts/trust-taint-independent.json",
     "conformance/v0.1/primitives/receipts/trust-tool-proposal-only.json",
     "conformance/v0.1/primitives/receipts/trust-unknown.json",
-    "conformance/v0.1/primitives/receipts/trust-upstream-only.json"
+    "conformance/v0.1/primitives/receipts/trust-upstream-only.json",
+    "conformance/v0.1/primitives/receipts/verifier-cross-receipt-derivation-cycle-a.json",
+    "conformance/v0.1/primitives/receipts/verifier-cross-receipt-derivation-cycle-b.json"
   ],
   "note": "Reusable materialized Receipt primitives shared across semantic-verifier cases. These are conformance scenarios, not new protocol wire types."
 }

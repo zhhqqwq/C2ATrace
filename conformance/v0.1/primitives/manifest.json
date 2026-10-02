@@ -2796,7 +2796,7 @@
         "VFY-144"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 16,
+      "executable_primary_requirement_count": 28,
       "wave_01_primary_requirements": [
         "VFY-020",
         "VFY-030"
@@ -2820,7 +2820,19 @@
         "VFY-013",
         "VFY-014",
         "VFY-015",
-        "VFY-018"
+        "VFY-018",
+        "VFY-025",
+        "VFY-026",
+        "VFY-027",
+        "VFY-031",
+        "VFY-088",
+        "VFY-089",
+        "VFY-100",
+        "VFY-102",
+        "VFY-103",
+        "VFY-124",
+        "VFY-125",
+        "VFY-130"
       ]
     },
     {
@@ -2877,7 +2889,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 657,
-  "remaining_semantic_requirements": 114,
-  "materialization_wave": "07-a-vfy-input-authority-pipeline"
+  "executable_semantic_requirements": 669,
+  "remaining_semantic_requirements": 102,
+  "materialization_wave": "07-b-vfy-resolution-multireceipt"
 }

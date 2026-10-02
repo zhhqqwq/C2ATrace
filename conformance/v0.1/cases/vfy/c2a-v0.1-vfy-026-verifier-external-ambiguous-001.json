@@ -1,0 +1,75 @@
+{
+  "case_id": "c2a-v0.1-vfy-026-verifier-external-ambiguous-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-026"
+  ],
+  "planned_test_ids": [
+    "verifier-external-ambiguous-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Multiple incompatible candidates for the explicitly addressed external target remain ambiguous.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-ambiguous-primary.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "candidate-a",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-ambiguous-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "candidate-b",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-ambiguous-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [
+      "candidate-a",
+      "candidate-b"
+    ],
+    "verifier_goals": [
+      "VFY-026"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-026",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [
+      "candidate-a",
+      "candidate-b"
+    ],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-026"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.ref.external, prim.ref.failure"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-026-verifier-external-ambiguous-001.json"
+}
