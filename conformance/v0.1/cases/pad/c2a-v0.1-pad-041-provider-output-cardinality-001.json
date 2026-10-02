@@ -15,33 +15,33 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/provider-retry.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "out-r2-duplicate",
-              "kind": "ModelOutput",
-              "run_id": "run-retry-001",
-              "attempt": {
-                "ref_type": "local",
-                "id": "att-r2",
-                "expected_kind": "ProviderAttempt"
-              },
-              "item_refs": [],
-              "response_termination": "complete",
-              "capture_extent": "complete"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "out-r2-duplicate"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/provider-retry.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "out-r2-duplicate",
+            "kind": "ModelOutput",
+            "run_id": "run-retry-001",
+            "attempt": {
+              "ref_type": "local",
+              "id": "att-r2",
+              "expected_kind": "ProviderAttempt"
+            },
+            "item_refs": [],
+            "response_termination": "complete",
+            "capture_extent": "complete"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "out-r2-duplicate"
+        }
+      ]
     }
   ],
   "execution": {

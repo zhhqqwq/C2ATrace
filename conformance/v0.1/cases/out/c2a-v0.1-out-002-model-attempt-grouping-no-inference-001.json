@@ -15,104 +15,104 @@
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "remove",
-            "path": "/arp/records/8/attempt_owner"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/8/invocation_owner",
-            "value": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/arp/records/8/attempt_owner"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/8/invocation_owner",
+          "value": {
+            "ref_type": "local",
+            "id": "inv-001",
+            "expected_kind": "ModelInvocation"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "inv-002-grouping",
+            "kind": "ModelInvocation",
+            "run_id": "run-sr-001",
+            "lifecycle_state": "active",
+            "requested_model": "example-model"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "inv-002-grouping"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "snap-002-grouping",
+            "kind": "RequestSnapshot",
+            "run_id": "run-sr-001",
+            "capture_level": "provider_payload",
+            "invocation_owner": {
               "ref_type": "local",
-              "id": "inv-001",
-              "expected_kind": "ModelInvocation"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
               "id": "inv-002-grouping",
-              "kind": "ModelInvocation",
-              "run_id": "run-sr-001",
-              "lifecycle_state": "active",
-              "requested_model": "example-model"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "inv-002-grouping"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "snap-002-grouping",
-              "kind": "RequestSnapshot",
-              "run_id": "run-sr-001",
-              "capture_level": "provider_payload",
-              "invocation_owner": {
-                "ref_type": "local",
-                "id": "inv-002-grouping",
-                "expected_kind": "ModelInvocation"
-              },
-              "representation_basis": "json-data-model",
-              "representation": {
-                "representation_kind": "json",
-                "value": {
-                  "messages": [
-                    {
-                      "role": "user",
-                      "content": "alpha"
-                    }
-                  ]
-                }
+              "expected_kind": "ModelInvocation"
+            },
+            "representation_basis": "json-data-model",
+            "representation": {
+              "representation_kind": "json",
+              "value": {
+                "messages": [
+                  {
+                    "role": "user",
+                    "content": "alpha"
+                  }
+                ]
               }
             }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "snap-002-grouping"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "att-002-grouping",
-              "kind": "ProviderAttempt",
-              "run_id": "run-sr-001",
-              "invocation": {
-                "ref_type": "local",
-                "id": "inv-002-grouping",
-                "expected_kind": "ModelInvocation"
-              },
-              "lifecycle_state": "in_progress",
-              "provider": "example-provider",
-              "effective_requested_model": "example-model",
-              "effective_requests": [
-                {
-                  "capture_level": "provider_payload",
-                  "snapshot": {
-                    "ref_type": "local",
-                    "id": "snap-002-grouping",
-                    "expected_kind": "RequestSnapshot"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "att-002-grouping"
           }
-        ]
-      },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "snap-002-grouping"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "att-002-grouping",
+            "kind": "ProviderAttempt",
+            "run_id": "run-sr-001",
+            "invocation": {
+              "ref_type": "local",
+              "id": "inv-002-grouping",
+              "expected_kind": "ModelInvocation"
+            },
+            "lifecycle_state": "in_progress",
+            "provider": "example-provider",
+            "effective_requested_model": "example-model",
+            "effective_requests": [
+              {
+                "capture_level": "provider_payload",
+                "snapshot": {
+                  "ref_type": "local",
+                  "id": "snap-002-grouping",
+                  "expected_kind": "RequestSnapshot"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "att-002-grouping"
+        }
+      ]
     }
   ],
   "execution": {

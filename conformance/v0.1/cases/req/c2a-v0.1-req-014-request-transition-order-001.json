@@ -15,98 +15,98 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "snap-prepared-001",
-              "kind": "RequestSnapshot",
-              "run_id": "run-sr-001",
-              "capture_level": "prepared_http_body",
-              "attempt_owner": {
-                "ref_type": "local",
-                "id": "att-001",
-                "expected_kind": "ProviderAttempt"
-              },
-              "representation_basis": "json-data-model",
-              "representation": {
-                "representation_kind": "json",
-                "value": {
-                  "body": "prepared"
-                }
-              }
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "snap-prepared-001"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "snap-sdk-backward-001",
-              "kind": "RequestSnapshot",
-              "run_id": "run-sr-001",
-              "capture_level": "sdk_arguments",
-              "attempt_owner": {
-                "ref_type": "local",
-                "id": "att-001",
-                "expected_kind": "ProviderAttempt"
-              },
-              "representation_basis": "json-data-model",
-              "representation": {
-                "representation_kind": "json",
-                "value": {
-                  "messages": []
-                }
-              }
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "snap-sdk-backward-001"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "xf-request-backward-001",
-              "kind": "Transform",
-              "run_id": "run-sr-001",
-              "operation": "request_preparation",
-              "inputs": [
-                {
-                  "artifact": {
-                    "ref_type": "local",
-                    "id": "snap-prepared-001",
-                    "expected_kind": "RequestSnapshot"
-                  },
-                  "usage_role": "data"
-                }
-              ],
-              "generated": [
-                {
-                  "ref_type": "local",
-                  "id": "snap-sdk-backward-001",
-                  "expected_kind": "RequestSnapshot"
-                }
-              ],
-              "selected": []
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "xf-request-backward-001"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "snap-prepared-001",
+            "kind": "RequestSnapshot",
+            "run_id": "run-sr-001",
+            "capture_level": "prepared_http_body",
+            "attempt_owner": {
+              "ref_type": "local",
+              "id": "att-001",
+              "expected_kind": "ProviderAttempt"
+            },
+            "representation_basis": "json-data-model",
+            "representation": {
+              "representation_kind": "json",
+              "value": {
+                "body": "prepared"
+              }
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "snap-prepared-001"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "snap-sdk-backward-001",
+            "kind": "RequestSnapshot",
+            "run_id": "run-sr-001",
+            "capture_level": "sdk_arguments",
+            "attempt_owner": {
+              "ref_type": "local",
+              "id": "att-001",
+              "expected_kind": "ProviderAttempt"
+            },
+            "representation_basis": "json-data-model",
+            "representation": {
+              "representation_kind": "json",
+              "value": {
+                "messages": []
+              }
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "snap-sdk-backward-001"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "xf-request-backward-001",
+            "kind": "Transform",
+            "run_id": "run-sr-001",
+            "operation": "request_preparation",
+            "inputs": [
+              {
+                "artifact": {
+                  "ref_type": "local",
+                  "id": "snap-prepared-001",
+                  "expected_kind": "RequestSnapshot"
+                },
+                "usage_role": "data"
+              }
+            ],
+            "generated": [
+              {
+                "ref_type": "local",
+                "id": "snap-sdk-backward-001",
+                "expected_kind": "RequestSnapshot"
+              }
+            ],
+            "selected": []
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "xf-request-backward-001"
+        }
+      ]
     }
   ],
   "execution": {

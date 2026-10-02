@@ -23,28 +23,28 @@
       "document_id": "a",
       "role": "resolution_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/multi-receipt-a.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/receipt_links/-",
-            "value": {
-              "linked_receipt_id": "receipt-multi-b",
-              "linked_payload_digest": {
-                "algorithm": "sha256",
-                "value": {
-                  "encoding": "base64url",
-                  "value": "cAh_dsw-nWkinS0ZcX9HZvBfdl_ZJ9W2O_tF5cOmB_w"
-                },
-                "representation_basis": "arp_jcs_utf8",
-                "canonicalization_profile": "rfc8785-jcs"
-              },
-              "relation": "prior"
-            }
-          }
-        ]
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/receipt_links/-",
+          "value": {
+            "linked_receipt_id": "receipt-multi-b",
+            "linked_payload_digest": {
+              "algorithm": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "cAh_dsw-nWkinS0ZcX9HZvBfdl_ZJ9W2O_tF5cOmB_w"
+              },
+              "representation_basis": "arp_jcs_utf8",
+              "canonicalization_profile": "rfc8785-jcs"
+            },
+            "relation": "prior"
+          }
+        }
+      ]
     }
   ],
   "execution": {

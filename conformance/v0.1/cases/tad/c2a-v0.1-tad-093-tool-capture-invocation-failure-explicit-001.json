@@ -15,50 +15,50 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/tool-effect.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "invoke-capture-failed-001",
-              "kind": "ToolInvocation",
-              "run_id": "run-tool-001",
-              "tool_name": "create_issue"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "invoke-capture-failed-001"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "diag-tad-093",
-              "kind": "CaptureDiagnostic",
-              "run_id": "run-tool-001",
-              "subject": {
-                "ref": {
-                  "ref_type": "local",
-                  "id": "invoke-capture-failed-001",
-                  "expected_kind": "ToolInvocation"
-                }
-              },
-              "slot": "tool_invocation.arguments",
-              "status": "unavailable",
-              "reason": "effective argument capture failed"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "diag-tad-093"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/tool-effect.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "invoke-capture-failed-001",
+            "kind": "ToolInvocation",
+            "run_id": "run-tool-001",
+            "tool_name": "create_issue"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "invoke-capture-failed-001"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "diag-tad-093",
+            "kind": "CaptureDiagnostic",
+            "run_id": "run-tool-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "invoke-capture-failed-001",
+                "expected_kind": "ToolInvocation"
+              }
+            },
+            "slot": "tool_invocation.arguments",
+            "status": "unavailable",
+            "reason": "effective argument capture failed"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "diag-tad-093"
+        }
+      ]
     }
   ],
   "execution": {

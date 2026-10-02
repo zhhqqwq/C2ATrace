@@ -15,54 +15,54 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "frag-redacted-001",
-              "kind": "ContextFragment",
-              "run_id": "run-sr-001",
-              "representation": {
-                "representation_kind": "text",
-                "text": "[REDACTED]",
-                "charset": "utf-8",
-                "media_type": "text/plain"
-              }
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "frag-redacted-001"
-          },
-          {
-            "op": "add",
-            "path": "/arp/privacy/-",
-            "value": {
-              "id": "privacy-redaction-lineage-001",
-              "kind": "PrivacyDescriptor",
-              "subject": {
-                "ref": {
-                  "ref_type": "local",
-                  "id": "frag-001",
-                  "expected_kind": "ContextFragment"
-                },
-                "representation_basis": "decoded_text_utf8"
-              },
-              "profile": "redacted",
-              "availability": "redacted_derivative_disclosed",
-              "redacted_derivative": {
-                "ref_type": "local",
-                "id": "frag-redacted-001",
-                "expected_kind": "ContextFragment"
-              }
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "frag-redacted-001",
+            "kind": "ContextFragment",
+            "run_id": "run-sr-001",
+            "representation": {
+              "representation_kind": "text",
+              "text": "[REDACTED]",
+              "charset": "utf-8",
+              "media_type": "text/plain"
             }
           }
-        ]
-      },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "frag-redacted-001"
+        },
+        {
+          "op": "add",
+          "path": "/arp/privacy/-",
+          "value": {
+            "id": "privacy-redaction-lineage-001",
+            "kind": "PrivacyDescriptor",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "frag-001",
+                "expected_kind": "ContextFragment"
+              },
+              "representation_basis": "decoded_text_utf8"
+            },
+            "profile": "redacted",
+            "availability": "redacted_derivative_disclosed",
+            "redacted_derivative": {
+              "ref_type": "local",
+              "id": "frag-redacted-001",
+              "expected_kind": "ContextFragment"
+            }
+          }
+        }
+      ]
     }
   ],
   "execution": {

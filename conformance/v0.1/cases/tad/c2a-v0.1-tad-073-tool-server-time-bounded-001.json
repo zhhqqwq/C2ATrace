@@ -15,31 +15,31 @@
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/tool-effect.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/6/recorded_at",
-            "value": "2026-10-02T10:00:20Z"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/7/recorded_at",
-            "value": "2026-10-02T10:00:10Z"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/8/recorded_at",
-            "value": "2026-10-02T10:00:05Z"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/9/recorded_at",
-            "value": "2026-10-02T10:00:00Z"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/tool-effect.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/6/recorded_at",
+          "value": "2026-10-02T10:00:20Z"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/7/recorded_at",
+          "value": "2026-10-02T10:00:10Z"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/8/recorded_at",
+          "value": "2026-10-02T10:00:05Z"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/9/recorded_at",
+          "value": "2026-10-02T10:00:00Z"
+        }
+      ]
     }
   ],
   "execution": {

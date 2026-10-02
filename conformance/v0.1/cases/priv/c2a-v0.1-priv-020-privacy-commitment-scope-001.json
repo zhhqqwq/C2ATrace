@@ -16,15 +16,15 @@
       "role": "raw_object",
       "source": {
         "path": "fixtures/v0.1/valid/privacy-hmac.json",
-        "extract_pointer": "/arp/privacy/0",
-        "patches": [
-          {
-            "op": "remove",
-            "path": "/subject"
-          }
-        ]
+        "extract_pointer": "/arp/privacy/0"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:privacy#/$defs/PrivacyDescriptor"
+      "schema_target": "urn:c2atrace:schema:v0.1:privacy#/$defs/PrivacyDescriptor",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/subject"
+        }
+      ]
     },
     {
       "document_id": "semantic-receipt",

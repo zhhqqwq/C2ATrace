@@ -23,16 +23,16 @@
       "document_id": "unsigned-view",
       "role": "resolution_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/integrity_envelopes",
-            "value": []
-          }
-        ]
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/integrity_envelopes",
+          "value": []
+        }
+      ]
     }
   ],
   "execution": {

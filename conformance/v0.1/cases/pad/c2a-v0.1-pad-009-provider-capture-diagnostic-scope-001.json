@@ -34,35 +34,35 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/provider-retry.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "diag-pad-009",
-              "kind": "CaptureDiagnostic",
-              "run_id": "run-retry-001",
-              "subject": {
-                "ref": {
-                  "ref_type": "local",
-                  "id": "missing-attempt",
-                  "expected_kind": "ProviderAttempt"
-                }
-              },
-              "slot": "provider_attempt.request",
-              "status": "unavailable",
-              "reason": "capture target unavailable"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "diag-pad-009"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/provider-retry.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "diag-pad-009",
+            "kind": "CaptureDiagnostic",
+            "run_id": "run-retry-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "missing-attempt",
+                "expected_kind": "ProviderAttempt"
+              }
+            },
+            "slot": "provider_attempt.request",
+            "status": "unavailable",
+            "reason": "capture target unavailable"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "diag-pad-009"
+        }
+      ]
     }
   ],
   "execution": {

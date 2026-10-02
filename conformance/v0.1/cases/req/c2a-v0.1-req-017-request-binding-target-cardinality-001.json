@@ -16,15 +16,15 @@
       "role": "raw_object",
       "source": {
         "path": "fixtures/v0.1/valid/source-to-request.json",
-        "extract_pointer": "/arp/records/9",
-        "patches": [
-          {
-            "op": "remove",
-            "path": "/location"
-          }
-        ]
+        "extract_pointer": "/arp/records/9"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding"
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/location"
+        }
+      ]
     },
     {
       "document_id": "semantic-receipt",

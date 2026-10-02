@@ -15,26 +15,26 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/tool-effect.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/arp/records/4/arguments/value/title",
-            "value": " BUG "
-          },
-          {
-            "op": "replace",
-            "path": "/arp/records/5/operation",
-            "value": "normalize_arguments"
-          },
-          {
-            "op": "replace",
-            "path": "/arp/records/6/arguments/value/title",
-            "value": "bug"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/tool-effect.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/4/arguments/value/title",
+          "value": " BUG "
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/5/operation",
+          "value": "normalize_arguments"
+        },
+        {
+          "op": "replace",
+          "path": "/arp/records/6/arguments/value/title",
+          "value": "bug"
+        }
+      ]
     }
   ],
   "execution": {

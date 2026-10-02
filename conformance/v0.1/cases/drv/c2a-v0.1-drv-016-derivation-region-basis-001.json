@@ -16,15 +16,15 @@
       "role": "raw_object",
       "source": {
         "path": "fixtures/v0.1/valid/source-to-request.json",
-        "extract_pointer": "/arp/records/5/contributors/0/scope",
-        "patches": [
-          {
-            "op": "remove",
-            "path": "/representation_basis"
-          }
-        ]
+        "extract_pointer": "/arp/records/5/contributors/0/scope"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:representation#/$defs/ArtifactScope"
+      "schema_target": "urn:c2atrace:schema:v0.1:representation#/$defs/ArtifactScope",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/representation_basis"
+        }
+      ]
     },
     {
       "document_id": "semantic-receipt",

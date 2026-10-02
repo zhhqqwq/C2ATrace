@@ -16,36 +16,36 @@
       "role": "raw_object",
       "source": {
         "path": "fixtures/v0.1/valid/source-to-request.json",
-        "extract_pointer": "/arp/records/5",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/precision",
-            "value": "partial"
-          },
-          {
-            "op": "replace",
-            "path": "/contributors",
-            "value": []
-          }
-        ]
+        "extract_pointer": "/arp/records/5"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:transform#/$defs/Derivation"
+      "schema_target": "urn:c2atrace:schema:v0.1:transform#/$defs/Derivation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/precision",
+          "value": "partial"
+        },
+        {
+          "op": "replace",
+          "path": "/contributors",
+          "value": []
+        }
+      ]
     },
     {
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/arp/records/5/precision",
-            "value": "partial"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/5/precision",
+          "value": "partial"
+        }
+      ]
     }
   ],
   "execution": {

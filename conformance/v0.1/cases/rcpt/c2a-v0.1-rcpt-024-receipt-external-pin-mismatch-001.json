@@ -23,16 +23,16 @@
       "document_id": "a",
       "role": "resolution_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/multi-receipt-a.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/payload_digest/value/value",
-            "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/payload_digest/value/value",
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ]
     }
   ],
   "execution": {

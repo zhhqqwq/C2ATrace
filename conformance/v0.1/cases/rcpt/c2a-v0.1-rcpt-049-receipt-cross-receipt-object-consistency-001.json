@@ -23,16 +23,16 @@
       "document_id": "other",
       "role": "resolution_receipt",
       "source": {
-        "path": "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/arp/receipt_id",
-            "value": "receipt-other"
-          }
-        ]
+        "path": "conformance/v0.1/primitives/receipts/ref-external-wrong-kind-target.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/receipt_id",
+          "value": "receipt-other"
+        }
+      ]
     }
   ],
   "execution": {

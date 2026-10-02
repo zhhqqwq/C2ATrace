@@ -15,16 +15,16 @@
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "conformance/v0.1/primitives/receipts/taint-propagated-content.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/arp/records/5/precision",
-            "value": "partial"
-          }
-        ]
+        "path": "conformance/v0.1/primitives/receipts/taint-propagated-content.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/5/precision",
+          "value": "partial"
+        }
+      ]
     }
   ],
   "execution": {

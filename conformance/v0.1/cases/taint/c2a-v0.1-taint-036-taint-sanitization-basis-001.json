@@ -15,45 +15,45 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "taint-sanitization-invalid-001",
-              "kind": "TaintAssertion",
-              "run_id": "run-sr-001",
-              "subject": {
-                "ref": {
-                  "ref_type": "local",
-                  "id": "frag-001",
-                  "expected_kind": "ContextFragment"
-                }
-              },
-              "taint_kind": "untrusted_input",
-              "state": "absent",
-              "channel": "content",
-              "precision": "exact",
-              "basis_kind": "sanitization",
-              "asserted_by": {
-                "state": "known",
-                "id": "sanitizer-001"
-              },
-              "policy": {
-                "state": "known",
-                "id": "urn:c2atrace:policy:test:sanitize"
-              }
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "taint-sanitization-invalid-001"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "taint-sanitization-invalid-001",
+            "kind": "TaintAssertion",
+            "run_id": "run-sr-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "frag-001",
+                "expected_kind": "ContextFragment"
+              }
+            },
+            "taint_kind": "untrusted_input",
+            "state": "absent",
+            "channel": "content",
+            "precision": "exact",
+            "basis_kind": "sanitization",
+            "asserted_by": {
+              "state": "known",
+              "id": "sanitizer-001"
+            },
+            "policy": {
+              "state": "known",
+              "id": "urn:c2atrace:policy:test:sanitize"
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "taint-sanitization-invalid-001"
+        }
+      ]
     }
   ],
   "execution": {

@@ -15,47 +15,47 @@
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/provider-retry.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/3/recorded_at",
-            "value": "2026-10-02T10:00:10Z"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "txt-r2-2",
-              "kind": "TextOutput",
-              "run_id": "run-retry-001",
-              "output": {
-                "ref_type": "local",
-                "id": "out-r2",
-                "expected_kind": "ModelOutput"
-              },
-              "ordinal": 1,
-              "text": "second",
-              "recorded_at": "2026-10-02T10:00:00Z"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "txt-r2-2"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/2/item_refs/-",
-            "value": {
-              "ref_type": "local",
-              "id": "txt-r2-2",
-              "expected_kind": "TextOutput"
-            }
-          }
-        ]
+        "path": "fixtures/v0.1/valid/provider-retry.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/3/recorded_at",
+          "value": "2026-10-02T10:00:10Z"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "txt-r2-2",
+            "kind": "TextOutput",
+            "run_id": "run-retry-001",
+            "output": {
+              "ref_type": "local",
+              "id": "out-r2",
+              "expected_kind": "ModelOutput"
+            },
+            "ordinal": 1,
+            "text": "second",
+            "recorded_at": "2026-10-02T10:00:00Z"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "txt-r2-2"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/2/item_refs/-",
+          "value": {
+            "ref_type": "local",
+            "id": "txt-r2-2",
+            "expected_kind": "TextOutput"
+          }
+        }
+      ]
     }
   ],
   "execution": {

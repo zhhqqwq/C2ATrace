@@ -15,42 +15,42 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "att-002",
-              "kind": "ProviderAttempt",
-              "run_id": "run-sr-001",
-              "invocation": {
-                "ref_type": "local",
-                "id": "inv-001",
-                "expected_kind": "ModelInvocation"
-              },
-              "lifecycle_state": "active",
-              "effective_requests": [
-                {
-                  "capture_level": "provider_payload",
-                  "snapshot": {
-                    "ref_type": "local",
-                    "id": "snap-001",
-                    "expected_kind": "RequestSnapshot"
-                  }
-                }
-              ],
-              "provider": "example-provider"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "att-002"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "att-002",
+            "kind": "ProviderAttempt",
+            "run_id": "run-sr-001",
+            "invocation": {
+              "ref_type": "local",
+              "id": "inv-001",
+              "expected_kind": "ModelInvocation"
+            },
+            "lifecycle_state": "active",
+            "effective_requests": [
+              {
+                "capture_level": "provider_payload",
+                "snapshot": {
+                  "ref_type": "local",
+                  "id": "snap-001",
+                  "expected_kind": "RequestSnapshot"
+                }
+              }
+            ],
+            "provider": "example-provider"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "att-002"
+        }
+      ]
     }
   ],
   "execution": {

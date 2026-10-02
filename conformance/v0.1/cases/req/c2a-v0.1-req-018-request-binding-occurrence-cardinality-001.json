@@ -16,72 +16,72 @@
       "role": "raw_object",
       "source": {
         "path": "fixtures/v0.1/valid/source-to-request.json",
-        "extract_pointer": "/arp/records/9",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/location",
-            "value": [
-              {
-                "location_kind": "structured_value",
-                "path": {
-                  "scheme": "json_pointer",
-                  "value": "/messages/0/content"
-                }
-              },
-              {
-                "location_kind": "structured_value",
-                "path": {
-                  "scheme": "json_pointer",
-                  "value": "/messages/0/role"
-                }
-              }
-            ]
-          }
-        ]
+        "extract_pointer": "/arp/records/9"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding"
+      "schema_target": "urn:c2atrace:schema:v0.1:request#/$defs/RequestBinding",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/location",
+          "value": [
+            {
+              "location_kind": "structured_value",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/messages/0/content"
+              }
+            },
+            {
+              "location_kind": "structured_value",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/messages/0/role"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "bind-002",
-              "kind": "RequestBinding",
-              "run_id": "run-sr-001",
-              "component": {
-                "ref_type": "local",
-                "id": "frag-001",
-                "expected_kind": "ContextFragment"
-              },
-              "snapshot": {
-                "ref_type": "local",
-                "id": "snap-001",
-                "expected_kind": "RequestSnapshot"
-              },
-              "location": {
-                "location_kind": "structured_value",
-                "path": {
-                  "scheme": "json_pointer",
-                  "value": "/messages/0/role"
-                }
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "bind-002",
+            "kind": "RequestBinding",
+            "run_id": "run-sr-001",
+            "component": {
+              "ref_type": "local",
+              "id": "frag-001",
+              "expected_kind": "ContextFragment"
+            },
+            "snapshot": {
+              "ref_type": "local",
+              "id": "snap-001",
+              "expected_kind": "RequestSnapshot"
+            },
+            "location": {
+              "location_kind": "structured_value",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/messages/0/role"
               }
             }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "bind-002"
           }
-        ]
-      },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "bind-002"
+        }
+      ]
     }
   ],
   "execution": {

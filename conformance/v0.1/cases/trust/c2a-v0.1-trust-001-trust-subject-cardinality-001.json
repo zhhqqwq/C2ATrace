@@ -34,40 +34,40 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "trust-subject-001",
-              "kind": "TrustAssertion",
-              "run_id": "run-sr-001",
-              "subject": {
-                "ref": {
-                  "ref_type": "local",
-                  "id": "frag-001",
-                  "expected_kind": "ContextFragment"
-                }
-              },
-              "dimension": "source_reliability",
-              "state": "trusted",
-              "asserted_by": {
-                "state": "unknown"
-              },
-              "policy": {
-                "state": "unknown"
-              }
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "trust-subject-001"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "trust-subject-001",
+            "kind": "TrustAssertion",
+            "run_id": "run-sr-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "frag-001",
+                "expected_kind": "ContextFragment"
+              }
+            },
+            "dimension": "source_reliability",
+            "state": "trusted",
+            "asserted_by": {
+              "state": "unknown"
+            },
+            "policy": {
+              "state": "unknown"
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "trust-subject-001"
+        }
+      ]
     }
   ],
   "execution": {

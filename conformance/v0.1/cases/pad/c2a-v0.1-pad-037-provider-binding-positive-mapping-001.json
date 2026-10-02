@@ -15,16 +15,16 @@
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/arp/records/8/representation/value/messages/0/content",
-            "value": "beta"
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/8/representation/value/messages/0/content",
+          "value": "beta"
+        }
+      ]
     }
   ],
   "execution": {

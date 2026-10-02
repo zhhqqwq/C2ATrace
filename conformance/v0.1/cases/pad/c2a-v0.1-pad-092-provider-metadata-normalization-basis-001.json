@@ -15,22 +15,22 @@
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/provider-retry.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/5/metadata",
-            "value": [
-              {
-                "name": "normalized_finish_reason",
-                "value": "stop",
-                "origin": "adapter_derived"
-              }
-            ]
-          }
-        ]
+        "path": "fixtures/v0.1/valid/provider-retry.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/5/metadata",
+          "value": [
+            {
+              "name": "normalized_finish_reason",
+              "value": "stop",
+              "origin": "adapter_derived"
+            }
+          ]
+        }
+      ]
     }
   ],
   "execution": {

@@ -16,15 +16,15 @@
       "role": "raw_object",
       "source": {
         "path": "fixtures/v0.1/valid/tool-effect.json",
-        "extract_pointer": "/arp/records/6/argument_provenance/0",
-        "patches": [
-          {
-            "op": "remove",
-            "path": "/path/scheme"
-          }
-        ]
+        "extract_pointer": "/arp/records/6/argument_provenance/0"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:tool#/$defs/ArgumentProvenance"
+      "schema_target": "urn:c2atrace:schema:v0.1:tool#/$defs/ArgumentProvenance",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/path/scheme"
+        }
+      ]
     },
     {
       "document_id": "semantic-receipt",

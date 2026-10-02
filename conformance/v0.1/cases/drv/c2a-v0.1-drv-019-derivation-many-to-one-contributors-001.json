@@ -15,49 +15,49 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/-",
-            "value": {
-              "id": "obs-002",
-              "kind": "SourceObservation",
-              "run_id": "run-sr-001",
-              "source_ref": {
-                "ref_type": "local",
-                "id": "src-001",
-                "expected_kind": "SourceRef"
-              },
-              "representation": {
-                "representation_kind": "text",
-                "text": "gamma",
-                "charset": "utf-8",
-                "media_type": "text/plain"
-              },
-              "observation_extent": "complete"
-            }
-          },
-          {
-            "op": "add",
-            "path": "/arp/inventory/-",
-            "value": "obs-002"
-          },
-          {
-            "op": "add",
-            "path": "/arp/records/3/inputs/-",
-            "value": {
-              "artifact": {
-                "ref_type": "local",
-                "id": "obs-002",
-                "expected_kind": "SourceObservation"
-              },
-              "usage_role": "data"
-            }
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "obs-002",
+            "kind": "SourceObservation",
+            "run_id": "run-sr-001",
+            "source_ref": {
+              "ref_type": "local",
+              "id": "src-001",
+              "expected_kind": "SourceRef"
+            },
+            "representation": {
+              "representation_kind": "text",
+              "text": "gamma",
+              "charset": "utf-8",
+              "media_type": "text/plain"
+            },
+            "observation_extent": "complete"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "obs-002"
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/3/inputs/-",
+          "value": {
+            "artifact": {
+              "ref_type": "local",
+              "id": "obs-002",
+              "expected_kind": "SourceObservation"
+            },
+            "usage_role": "data"
+          }
+        }
+      ]
     }
   ],
   "execution": {

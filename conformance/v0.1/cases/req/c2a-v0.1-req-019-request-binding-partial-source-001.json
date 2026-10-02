@@ -15,27 +15,27 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "replace",
-            "path": "/arp/records/9/location",
-            "value": {
-              "location_kind": "structured_text_region",
-              "path": {
-                "scheme": "json_pointer",
-                "value": "/messages/0/content"
-              },
-              "text": {
-                "unit": "unicode_scalar",
-                "start": 0,
-                "end": 3
-              }
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/records/9/location",
+          "value": {
+            "location_kind": "structured_text_region",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/messages/0/content"
+            },
+            "text": {
+              "unit": "unicode_scalar",
+              "start": 0,
+              "end": 3
             }
           }
-        ]
-      },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+        }
+      ]
     }
   ],
   "execution": {

@@ -30,24 +30,24 @@
       "document_id": "semantic-receipt",
       "role": "primary_receipt",
       "source": {
-        "path": "fixtures/v0.1/valid/source-to-request.json",
-        "patches": [
-          {
-            "op": "add",
-            "path": "/arp/records/8/semantic_digest",
-            "value": {
-              "algorithm": "sha256",
-              "value": {
-                "encoding": "base64url",
-                "value": "Vo_rEq4gZ7Tqpfz32HUij5xPd6e6Q9cV6AOHcqpuaQ4"
-              },
-              "representation_basis": "json-data-model",
-              "canonicalization_profile": "rfc8785-jcs"
-            }
-          }
-        ]
+        "path": "fixtures/v0.1/valid/source-to-request.json"
       },
-      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/8/semantic_digest",
+          "value": {
+            "algorithm": "sha256",
+            "value": {
+              "encoding": "base64url",
+              "value": "Vo_rEq4gZ7Tqpfz32HUij5xPd6e6Q9cV6AOHcqpuaQ4"
+            },
+            "representation_basis": "json-data-model",
+            "canonicalization_profile": "rfc8785-jcs"
+          }
+        }
+      ]
     }
   ],
   "execution": {
