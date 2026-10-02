@@ -2013,10 +2013,50 @@
         "VFY-137",
         "VFY-138"
       ],
-      "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 0,
+      "materialization_status": "wave_05_materialized",
+      "executable_primary_requirement_count": 38,
       "wave_01_primary_requirements": [],
-      "wave_01_dependency_requirements": []
+      "wave_01_dependency_requirements": [],
+      "wave_05_primary_requirements": [
+        "INTG-009",
+        "INTG-010",
+        "INTG-011",
+        "INTG-012",
+        "INTG-013",
+        "INTG-014",
+        "INTG-027",
+        "INTG-028",
+        "INTG-029",
+        "INTG-030",
+        "INTG-032",
+        "INTG-033",
+        "INTG-034",
+        "INTG-036",
+        "INTG-037",
+        "INTG-038",
+        "INTG-039",
+        "INTG-040",
+        "INTG-041",
+        "INTG-042",
+        "INTG-045",
+        "INTG-046",
+        "INTG-047",
+        "INTG-052",
+        "INTG-053",
+        "INTG-054",
+        "INTG-055",
+        "INTG-056",
+        "INTG-057",
+        "INTG-058",
+        "INTG-059",
+        "INTG-060",
+        "INTG-061",
+        "INTG-062",
+        "INTG-063",
+        "INTG-066",
+        "INTG-069",
+        "INTG-070"
+      ]
     },
     {
       "id": "prim.claim.strength",
@@ -2662,7 +2702,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 450,
-  "remaining_semantic_requirements": 321,
-  "materialization_wave": "05-c"
+  "executable_semantic_requirements": 488,
+  "remaining_semantic_requirements": 283,
+  "materialization_wave": "05-d"
 }

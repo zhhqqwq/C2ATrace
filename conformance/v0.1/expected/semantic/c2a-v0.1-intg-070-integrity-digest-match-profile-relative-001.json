@@ -1,0 +1,36 @@
+{
+  "case_id": "c2a-v0.1-intg-070-integrity-digest-match-profile-relative-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-070",
+      "check_id": "integrity-digest-match-profile-relative-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "comparison",
+      "status": "matched"
+    },
+    {
+      "requirement_id": "INTG-070",
+      "check_id": "integrity-digest-match-profile-relative-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:digest_match_profile_relative_upgraded_to_truth_or_completeness"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

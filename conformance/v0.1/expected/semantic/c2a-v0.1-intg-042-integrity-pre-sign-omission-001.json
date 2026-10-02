@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-intg-042-integrity-pre-sign-omission-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-042",
+      "check_id": "integrity-pre-sign-omission-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "completeness",
+      "status": "unverified",
+      "prohibited_inferences": [
+        "P1:valid_signature_detects_pre_sign_omission"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

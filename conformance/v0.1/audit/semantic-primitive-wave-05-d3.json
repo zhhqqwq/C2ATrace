@@ -1,0 +1,29 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-d3",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-intg-042-integrity-pre-sign-omission-001",
+    "c2a-v0.1-intg-045-integrity-whole-receipt-omission-001",
+    "c2a-v0.1-intg-046-integrity-linkage-no-omission-proof-001",
+    "c2a-v0.1-intg-052-integrity-signature-no-redaction-proof-001",
+    "c2a-v0.1-intg-053-integrity-no-privacy-upgrade-001",
+    "c2a-v0.1-intg-055-integrity-per-envelope-status-001",
+    "c2a-v0.1-intg-056-integrity-invalid-vs-unresolved-key-001",
+    "c2a-v0.1-intg-057-integrity-unsupported-vs-invalid-001",
+    "c2a-v0.1-intg-058-integrity-verifier-completeness-dimension-001",
+    "c2a-v0.1-intg-059-integrity-per-claim-evidence-001",
+    "c2a-v0.1-intg-060-integrity-no-fully-verified-shorthand-001",
+    "c2a-v0.1-intg-061-integrity-composed-claim-bounded-001",
+    "c2a-v0.1-intg-066-integrity-signed-linkage-not-history-001",
+    "c2a-v0.1-intg-070-integrity-digest-match-profile-relative-001"
+  ],
+  "executable_semantic_requirements": 488,
+  "remaining_semantic_requirements": 283,
+  "assertions": {
+    "integrity_composition_primary_coverage_complete": true,
+    "omission_privacy_linkage_and_composed_claim_boundaries_materialized": true,
+    "per_envelope_key_resolution_and_support_statuses_materialized": true,
+    "frozen_schema_unchanged": true
+  }
+}

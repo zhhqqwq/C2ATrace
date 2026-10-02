@@ -376,7 +376,7 @@
       "requirement_id": "INTG-042",
       "planned_test_id": "integrity-pre-sign-omission-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-042-integrity-pre-sign-omission-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-042-integrity-pre-sign-omission-001.json"
     },
@@ -403,7 +403,7 @@
       "requirement_id": "INTG-045",
       "planned_test_id": "integrity-whole-receipt-omission-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-045-integrity-whole-receipt-omission-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-045-integrity-whole-receipt-omission-001.json"
     },
@@ -412,7 +412,7 @@
       "requirement_id": "INTG-046",
       "planned_test_id": "integrity-linkage-no-omission-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-046-integrity-linkage-no-omission-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-046-integrity-linkage-no-omission-proof-001.json"
     },
@@ -466,7 +466,7 @@
       "requirement_id": "INTG-052",
       "planned_test_id": "integrity-signature-no-redaction-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-052-integrity-signature-no-redaction-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-052-integrity-signature-no-redaction-proof-001.json"
     },
@@ -475,7 +475,7 @@
       "requirement_id": "INTG-053",
       "planned_test_id": "integrity-no-privacy-upgrade-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-053-integrity-no-privacy-upgrade-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-053-integrity-no-privacy-upgrade-001.json"
     },
@@ -493,7 +493,7 @@
       "requirement_id": "INTG-055",
       "planned_test_id": "integrity-per-envelope-status-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-055-integrity-per-envelope-status-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-055-integrity-per-envelope-status-001.json"
     },
@@ -502,7 +502,7 @@
       "requirement_id": "INTG-056",
       "planned_test_id": "integrity-invalid-vs-unresolved-key-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-056-integrity-invalid-vs-unresolved-key-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-056-integrity-invalid-vs-unresolved-key-001.json"
     },
@@ -511,7 +511,7 @@
       "requirement_id": "INTG-057",
       "planned_test_id": "integrity-unsupported-vs-invalid-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-057-integrity-unsupported-vs-invalid-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-057-integrity-unsupported-vs-invalid-001.json"
     },
@@ -520,7 +520,7 @@
       "requirement_id": "INTG-058",
       "planned_test_id": "integrity-verifier-completeness-dimension-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-058-integrity-verifier-completeness-dimension-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-058-integrity-verifier-completeness-dimension-001.json"
     },
@@ -529,7 +529,7 @@
       "requirement_id": "INTG-059",
       "planned_test_id": "integrity-per-claim-evidence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-059-integrity-per-claim-evidence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-059-integrity-per-claim-evidence-001.json"
     },
@@ -538,7 +538,7 @@
       "requirement_id": "INTG-060",
       "planned_test_id": "integrity-no-fully-verified-shorthand-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-060-integrity-no-fully-verified-shorthand-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-060-integrity-no-fully-verified-shorthand-001.json"
     },
@@ -547,7 +547,7 @@
       "requirement_id": "INTG-061",
       "planned_test_id": "integrity-composed-claim-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-061-integrity-composed-claim-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-061-integrity-composed-claim-bounded-001.json"
     },
@@ -592,7 +592,7 @@
       "requirement_id": "INTG-066",
       "planned_test_id": "integrity-signed-linkage-not-history-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-066-integrity-signed-linkage-not-history-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-066-integrity-signed-linkage-not-history-001.json"
     },
@@ -628,7 +628,7 @@
       "requirement_id": "INTG-070",
       "planned_test_id": "integrity-digest-match-profile-relative-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/intg/c2a-v0.1-intg-070-integrity-digest-match-profile-relative-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-070-integrity-digest-match-profile-relative-001.json"
     }

@@ -1042,7 +1042,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.integrity.composition",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-042-integrity-pre-sign-omission-001"
     },
     {
       "family": "intg",
@@ -1058,7 +1060,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-045-integrity-whole-receipt-omission-001"
     },
     {
       "family": "intg",
@@ -1074,7 +1078,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-046-integrity-linkage-no-omission-proof-001"
     },
     {
       "family": "intg",
@@ -1107,7 +1113,9 @@
       "dependency_primitives": [
         "prim.privacy.redaction",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-052-integrity-signature-no-redaction-proof-001"
     },
     {
       "family": "intg",
@@ -1124,7 +1132,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-053-integrity-no-privacy-upgrade-001"
     },
     {
       "family": "intg",
@@ -1154,7 +1164,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.integrity.composition",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-055-integrity-per-envelope-status-001"
     },
     {
       "family": "intg",
@@ -1171,7 +1183,9 @@
       "dependency_primitives": [
         "prim.ref.failure",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-056-integrity-invalid-vs-unresolved-key-001"
     },
     {
       "family": "intg",
@@ -1188,7 +1202,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-057-integrity-unsupported-vs-invalid-001"
     },
     {
       "family": "intg",
@@ -1204,7 +1220,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-058-integrity-verifier-completeness-dimension-001"
     },
     {
       "family": "intg",
@@ -1220,7 +1238,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-059-integrity-per-claim-evidence-001"
     },
     {
       "family": "intg",
@@ -1234,7 +1254,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.integrity.composition",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-060-integrity-no-fully-verified-shorthand-001"
     },
     {
       "family": "intg",
@@ -1252,7 +1274,9 @@
         "prim.claim.strength",
         "prim.ref.failure",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-061-integrity-composed-claim-bounded-001"
     },
     {
       "family": "intg",
@@ -1319,7 +1343,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-066-integrity-signed-linkage-not-history-001"
     },
     {
       "family": "intg",
@@ -1353,7 +1379,9 @@
       "primary_primitive": "prim.integrity.composition",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-intg-070-integrity-digest-match-profile-relative-001"
     },
     {
       "family": "out",
@@ -12706,6 +12734,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 474,
-  "remaining_semantic_requirements": 297
+  "executable_semantic_requirements": 488,
+  "remaining_semantic_requirements": 283
 }

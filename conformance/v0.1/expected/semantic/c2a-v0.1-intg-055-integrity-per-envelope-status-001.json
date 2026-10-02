@@ -1,0 +1,35 @@
+{
+  "case_id": "c2a-v0.1-intg-055-integrity-per-envelope-status-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-055",
+      "check_id": "integrity-per-envelope-status-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-001"
+      },
+      "domain": "cryptographic",
+      "status": "valid"
+    },
+    {
+      "requirement_id": "INTG-055",
+      "check_id": "integrity-per-envelope-status-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-002"
+      },
+      "domain": "cryptographic",
+      "status": "invalid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

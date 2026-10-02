@@ -1,0 +1,32 @@
+{
+  "case_id": "c2a-v0.1-intg-066-integrity-signed-linkage-not-history-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "current",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "prior",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-066",
+      "check_id": "integrity-signed-linkage-not-history-001",
+      "subject_selector": {
+        "receipt_id": "receipt-signed-link-001"
+      },
+      "domain": "completeness",
+      "status": "unverified",
+      "prohibited_inferences": [
+        "P1:signed_link_graph_is_complete_global_history"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

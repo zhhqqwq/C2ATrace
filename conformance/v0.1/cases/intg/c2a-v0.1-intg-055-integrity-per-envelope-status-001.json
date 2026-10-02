@@ -1,0 +1,90 @@
+{
+  "case_id": "c2a-v0.1-intg-055-integrity-per-envelope-status-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-055"
+  ],
+  "planned_test_ids": [
+    "integrity-per-envelope-status-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Multiple envelopes are evaluated separately; one valid envelope does not overwrite another envelope's invalid status.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/integrity_envelopes/-",
+          "value": {
+            "id": "env-test-002",
+            "kind": "IntegrityEnvelope",
+            "placement": "embedded",
+            "receipt_id": "receipt-minimal-001",
+            "payload_digest": {
+              "algorithm": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "rFTRfzA5v_UScc1oHBm94lW2_D026aKld5pz70URrsw"
+              },
+              "representation_basis": "arp_jcs_utf8",
+              "canonicalization_profile": "rfc8785-jcs"
+            },
+            "canonicalization_profile": "rfc8785-jcs",
+            "digest_algorithm": "sha256",
+            "signature_profile": "ed25519",
+            "key_ref": "test-ed25519-key-001",
+            "signed_metadata": {},
+            "signature": {
+              "encoding": "base64url",
+              "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            }
+          }
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [
+      "verification_keys"
+    ],
+    "verifier_goals": [
+      "INTG-055"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-055",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "INTG-055"
+    ],
+    "verification_keys": [
+      "test-ed25519-key-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-055-integrity-per-envelope-status-001.json"
+}
