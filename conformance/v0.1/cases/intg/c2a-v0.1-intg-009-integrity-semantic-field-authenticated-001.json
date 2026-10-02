@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-intg-009-integrity-semantic-field-authenticated-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-009"
+  ],
+  "planned_test_ids": [
+    "integrity-semantic-field-authenticated-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Semantics-bearing ReceiptLink and privacy/reference fields live inside the authenticated ARP.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-b.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-009"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-009",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-009"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-009-integrity-semantic-field-authenticated-001.json"
+}

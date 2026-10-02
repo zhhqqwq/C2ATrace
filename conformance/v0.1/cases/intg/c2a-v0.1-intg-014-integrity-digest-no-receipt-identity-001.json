@@ -1,0 +1,61 @@
+{
+  "case_id": "c2a-v0.1-intg-014-integrity-digest-no-receipt-identity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-014"
+  ],
+  "planned_test_ids": [
+    "integrity-digest-no-receipt-identity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Equal payload digests do not merge distinct Receipt identities.",
+  "documents": [
+    {
+      "document_id": "a",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/multi-receipt-a.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "decoy",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/ref-external-decoy-target.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-014"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-014",
+    "primary_documents": [
+      "a"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-014"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-014-integrity-digest-no-receipt-identity-001.json"
+}

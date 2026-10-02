@@ -1,0 +1,68 @@
+{
+  "case_id": "c2a-v0.1-intg-030-integrity-envelope-removal-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-030"
+  ],
+  "planned_test_ids": [
+    "integrity-envelope-removal-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Removing an IntegrityEnvelope removes authentication evidence without mutating the unchanged ARP identity.",
+  "documents": [
+    {
+      "document_id": "signed",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "unsigned-view",
+      "role": "resolution_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/integrity_envelopes",
+          "value": []
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-030"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-030",
+    "primary_documents": [
+      "signed"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-030"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-030-integrity-envelope-removal-001.json"
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-intg-010-integrity-no-self-signature-recursion-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-010"
+  ],
+  "planned_test_ids": [
+    "integrity-no-self-signature-recursion-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "IntegrityEnvelope signature bytes are outside the ARP they authenticate, avoiding self-signature recursion.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-010"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-010",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-010"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-010-integrity-no-self-signature-recursion-001.json"
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-intg-063-integrity-unsigned-structure-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-063",
+      "check_id": "integrity-unsigned-structure-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:unsigned_means_structurally_invalid"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

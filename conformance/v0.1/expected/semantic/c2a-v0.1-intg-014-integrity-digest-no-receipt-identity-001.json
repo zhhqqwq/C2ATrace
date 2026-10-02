@@ -1,0 +1,32 @@
+{
+  "case_id": "c2a-v0.1-intg-014-integrity-digest-no-receipt-identity-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "a",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "decoy",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "INTG-014",
+      "check_id": "integrity-digest-no-receipt-identity-001",
+      "subject_selector": {
+        "receipt_id": "receipt-decoy"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:digest_match_is_receipt_identity_equality"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

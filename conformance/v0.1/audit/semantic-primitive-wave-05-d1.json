@@ -1,0 +1,26 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-d1",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-intg-009-integrity-semantic-field-authenticated-001",
+    "c2a-v0.1-intg-010-integrity-no-self-signature-recursion-001",
+    "c2a-v0.1-intg-011-integrity-transport-metadata-bounded-001",
+    "c2a-v0.1-intg-012-integrity-transport-no-override-001",
+    "c2a-v0.1-intg-013-integrity-digest-no-truth-001",
+    "c2a-v0.1-intg-014-integrity-digest-no-receipt-identity-001",
+    "c2a-v0.1-intg-027-integrity-multiple-envelopes-001",
+    "c2a-v0.1-intg-028-integrity-envelope-no-merge-001",
+    "c2a-v0.1-intg-029-integrity-multisig-no-truth-upgrade-001",
+    "c2a-v0.1-intg-030-integrity-envelope-removal-001",
+    "c2a-v0.1-intg-054-integrity-structural-vs-signature-001",
+    "c2a-v0.1-intg-063-integrity-unsigned-structure-001"
+  ],
+  "executable_semantic_requirements": 462,
+  "remaining_semantic_requirements": 309,
+  "assertions": {
+    "arp_envelope_presentation_separation_materialized": true,
+    "multiple_envelope_identity_materialized": true,
+    "structural_vs_signature_status_materialized": true
+  }
+}

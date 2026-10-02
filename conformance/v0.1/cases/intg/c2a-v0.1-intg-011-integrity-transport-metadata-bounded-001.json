@@ -1,0 +1,63 @@
+{
+  "case_id": "c2a-v0.1-intg-011-integrity-transport-metadata-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-011"
+  ],
+  "planned_test_ids": [
+    "integrity-transport-metadata-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Envelope transport_metadata is outside the ARP and is not authenticated by the ARP payload signature.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/integrity_envelopes/0/transport_metadata",
+          "value": {
+            "route": "edge-a",
+            "trusted": true
+          }
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-011"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-011",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-011"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-011-integrity-transport-metadata-bounded-001.json"
+}

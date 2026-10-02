@@ -1,0 +1,63 @@
+{
+  "case_id": "c2a-v0.1-intg-012-integrity-transport-no-override-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "INTG-012"
+  ],
+  "planned_test_ids": [
+    "integrity-transport-no-override-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unauthenticated transport metadata cannot override authenticated ARP semantics.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/integrity_envelopes/0/transport_metadata",
+          "value": {
+            "receipt_id_override": "receipt-other",
+            "scope_override": "complete-history"
+          }
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "capabilities": [],
+    "verifier_goals": [
+      "INTG-012"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-intg-012",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "INTG-012"
+    ]
+  },
+  "notes": [
+    "primitives: prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-intg-012-integrity-transport-no-override-001.json"
+}
