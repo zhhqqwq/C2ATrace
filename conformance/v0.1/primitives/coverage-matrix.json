@@ -7103,7 +7103,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001"
     },
     {
       "family": "tad",
@@ -7120,7 +7122,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001"
     },
     {
       "family": "tad",
@@ -7137,7 +7141,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-032-tool-argument-mixed-positive-001"
     },
     {
       "family": "tad",
@@ -7154,7 +7160,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-033-tool-argument-provenance-unknown-001"
     },
     {
       "family": "tad",
@@ -7170,7 +7178,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-034-tool-argument-control-not-content-001"
     },
     {
       "family": "tad",
@@ -7186,7 +7196,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001"
     },
     {
       "family": "tad",
@@ -7202,7 +7214,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-037-tool-argument-enrichment-origin-001"
     },
     {
       "family": "tad",
@@ -7219,7 +7233,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.tool.lifecycle"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001"
     },
     {
       "family": "tad",
@@ -12904,6 +12920,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 573,
-  "remaining_semantic_requirements": 198
+  "executable_semantic_requirements": 581,
+  "remaining_semantic_requirements": 190
 }

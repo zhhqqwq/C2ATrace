@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "TAD-030"
+  ],
+  "planned_test_ids": [
+    "tool-argument-model-supplied-positive-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "model_supplied argument classification is backed by proposal-side Derivation evidence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-argument-provenance.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "representation_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "TAD-030"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-tad-030",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:adapter:tool",
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "TAD-030"
+    ]
+  },
+  "notes": [
+    "primitives: prim.adapter.capture, prim.derivation.mapping, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001.json"
+}

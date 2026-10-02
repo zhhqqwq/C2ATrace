@@ -1,0 +1,29 @@
+{
+  "case_id": "c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-036",
+      "check_id": "tool-argument-dropped-not-effective-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-argument-provenance-001",
+        "object_id": "invoke-tad-arg-001",
+        "dropped_path": "/priority"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:dropped_proposal_argument_remains_effective_argument"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

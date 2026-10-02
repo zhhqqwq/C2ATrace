@@ -1,0 +1,29 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-b2-tad-argument-provenance",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001",
+    "c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001",
+    "c2a-v0.1-tad-032-tool-argument-mixed-positive-001",
+    "c2a-v0.1-tad-033-tool-argument-provenance-unknown-001",
+    "c2a-v0.1-tad-034-tool-argument-control-not-content-001",
+    "c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001",
+    "c2a-v0.1-tad-037-tool-argument-enrichment-origin-001",
+    "c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001"
+  ],
+  "newly_materialized_count": 8,
+  "executable_semantic_requirements": 581,
+  "remaining_semantic_requirements": 190,
+  "remaining_tad_semantic_requirements": 62,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-argument-provenance.json"
+  ],
+  "assertions": {
+    "positive_model_and_application_lineage_recorded": true,
+    "mixed_requires_both_contributor_classes": true,
+    "control_only_input_not_content": true,
+    "frozen_schema_unchanged": true
+  }
+}

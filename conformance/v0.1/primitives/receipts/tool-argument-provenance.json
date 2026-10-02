@@ -1,0 +1,503 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-argument-provenance-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-arg-001",
+      "inv-model-tad-arg-001",
+      "att-tad-arg-001",
+      "out-tad-arg-001",
+      "proposal-tad-arg-001",
+      "app-args-tad-001",
+      "control-tad-001",
+      "prep-tad-arg-001",
+      "invoke-tad-arg-001",
+      "drv-tad-title-001",
+      "drv-tad-repo-001",
+      "drv-tad-mixed-001",
+      "drv-tad-secret-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-arg-001",
+        "kind": "Run",
+        "label": "tool-argument-provenance"
+      },
+      {
+        "id": "inv-model-tad-arg-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-tad-arg-001",
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "output_accepted",
+        "accepted_output": {
+          "ref_type": "local",
+          "id": "out-tad-arg-001",
+          "expected_kind": "ModelOutput"
+        }
+      },
+      {
+        "id": "att-tad-arg-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-tad-arg-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-model-tad-arg-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "provider": "example-provider"
+      },
+      {
+        "id": "out-tad-arg-001",
+        "kind": "ModelOutput",
+        "run_id": "run-tad-arg-001",
+        "attempt": {
+          "ref_type": "local",
+          "id": "att-tad-arg-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "item_refs": [
+          {
+            "ref_type": "local",
+            "id": "proposal-tad-arg-001",
+            "expected_kind": "ToolProposal"
+          }
+        ],
+        "response_termination": "complete",
+        "capture_extent": "complete"
+      },
+      {
+        "id": "proposal-tad-arg-001",
+        "kind": "ToolProposal",
+        "run_id": "run-tad-arg-001",
+        "output": {
+          "ref_type": "local",
+          "id": "out-tad-arg-001",
+          "expected_kind": "ModelOutput"
+        },
+        "ordinal": 0,
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug",
+            "priority": "high",
+            "mixed_note": "bug"
+          }
+        }
+      },
+      {
+        "id": "app-args-tad-001",
+        "kind": "ContextFragment",
+        "run_id": "run-tad-arg-001",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "repo": "org/repo",
+            "secret_ref": "secret://runtime",
+            "mixed_note": "org/repo"
+          }
+        }
+      },
+      {
+        "id": "control-tad-001",
+        "kind": "ContextFragment",
+        "run_id": "run-tad-arg-001",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "max_retries": 2,
+            "policy": "standard"
+          }
+        }
+      },
+      {
+        "id": "prep-tad-arg-001",
+        "kind": "Transform",
+        "run_id": "run-tad-arg-001",
+        "operation": "tool_preparation",
+        "inputs": [
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "proposal-tad-arg-001",
+              "expected_kind": "ToolProposal"
+            },
+            "usage_role": "data"
+          },
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "app-args-tad-001",
+              "expected_kind": "ContextFragment"
+            },
+            "usage_role": "data"
+          },
+          {
+            "artifact": {
+              "ref_type": "local",
+              "id": "control-tad-001",
+              "expected_kind": "ContextFragment"
+            },
+            "usage_role": "control"
+          }
+        ],
+        "generated": [
+          {
+            "ref_type": "local",
+            "id": "invoke-tad-arg-001",
+            "expected_kind": "ToolInvocation"
+          }
+        ],
+        "selected": []
+      },
+      {
+        "id": "invoke-tad-arg-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-arg-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug",
+            "repo": "org/repo",
+            "secret_ref": "secret://runtime",
+            "mixed_note": "bug|org/repo",
+            "unclassified": "x"
+          }
+        },
+        "argument_provenance": [
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/title"
+            },
+            "classification": "model_supplied",
+            "derivations": [
+              {
+                "ref_type": "local",
+                "id": "drv-tad-title-001",
+                "expected_kind": "Derivation"
+              }
+            ]
+          },
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/repo"
+            },
+            "classification": "application_supplied",
+            "derivations": [
+              {
+                "ref_type": "local",
+                "id": "drv-tad-repo-001",
+                "expected_kind": "Derivation"
+              }
+            ]
+          },
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/mixed_note"
+            },
+            "classification": "mixed",
+            "derivations": [
+              {
+                "ref_type": "local",
+                "id": "drv-tad-mixed-001",
+                "expected_kind": "Derivation"
+              }
+            ]
+          },
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/secret_ref"
+            },
+            "classification": "application_supplied",
+            "derivations": [
+              {
+                "ref_type": "local",
+                "id": "drv-tad-secret-001",
+                "expected_kind": "Derivation"
+              }
+            ]
+          },
+          {
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/unclassified"
+            },
+            "classification": "unknown"
+          }
+        ],
+        "preparation_transform": {
+          "ref_type": "local",
+          "id": "prep-tad-arg-001",
+          "expected_kind": "Transform"
+        },
+        "metadata": [
+          {
+            "name": "Authorization",
+            "value": "Bearer redacted",
+            "origin": "runtime_transport"
+          }
+        ]
+      },
+      {
+        "id": "drv-tad-title-001",
+        "kind": "Derivation",
+        "run_id": "run-tad-arg-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "prep-tad-arg-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "invoke-tad-arg-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/title"
+            }
+          }
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "proposal-tad-arg-001",
+                "expected_kind": "ToolProposal"
+              },
+              "representation_basis": "json-data-model",
+              "region": {
+                "region_kind": "structured",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/title"
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "structured",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/title"
+              }
+            }
+          }
+        ],
+        "precision": "exact"
+      },
+      {
+        "id": "drv-tad-repo-001",
+        "kind": "Derivation",
+        "run_id": "run-tad-arg-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "prep-tad-arg-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "invoke-tad-arg-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/repo"
+            }
+          }
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "app-args-tad-001",
+                "expected_kind": "ContextFragment"
+              },
+              "representation_basis": "json-data-model",
+              "region": {
+                "region_kind": "structured",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/repo"
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "structured",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/repo"
+              }
+            }
+          }
+        ],
+        "precision": "exact"
+      },
+      {
+        "id": "drv-tad-mixed-001",
+        "kind": "Derivation",
+        "run_id": "run-tad-arg-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "prep-tad-arg-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "invoke-tad-arg-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/mixed_note"
+            }
+          }
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "proposal-tad-arg-001",
+                "expected_kind": "ToolProposal"
+              },
+              "representation_basis": "json-data-model",
+              "region": {
+                "region_kind": "structured",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/mixed_note"
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "structured",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/mixed_note"
+              }
+            }
+          },
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "app-args-tad-001",
+                "expected_kind": "ContextFragment"
+              },
+              "representation_basis": "json-data-model",
+              "region": {
+                "region_kind": "structured",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/mixed_note"
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "structured",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/mixed_note"
+              }
+            }
+          }
+        ],
+        "precision": "partial"
+      },
+      {
+        "id": "drv-tad-secret-001",
+        "kind": "Derivation",
+        "run_id": "run-tad-arg-001",
+        "transform": {
+          "ref_type": "local",
+          "id": "prep-tad-arg-001",
+          "expected_kind": "Transform"
+        },
+        "target": {
+          "artifact": {
+            "ref_type": "local",
+            "id": "invoke-tad-arg-001",
+            "expected_kind": "ToolInvocation"
+          },
+          "representation_basis": "json-data-model",
+          "region": {
+            "region_kind": "structured",
+            "path": {
+              "scheme": "json_pointer",
+              "value": "/secret_ref"
+            }
+          }
+        },
+        "contributors": [
+          {
+            "scope": {
+              "artifact": {
+                "ref_type": "local",
+                "id": "app-args-tad-001",
+                "expected_kind": "ContextFragment"
+              },
+              "representation_basis": "json-data-model",
+              "region": {
+                "region_kind": "structured",
+                "path": {
+                  "scheme": "json_pointer",
+                  "value": "/secret_ref"
+                }
+              }
+            },
+            "output_region": {
+              "region_kind": "structured",
+              "path": {
+                "scheme": "json_pointer",
+                "value": "/secret_ref"
+              }
+            }
+          }
+        ],
+        "precision": "exact"
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-arg-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

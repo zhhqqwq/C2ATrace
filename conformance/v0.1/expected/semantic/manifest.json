@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:conformance:v0.1:expected-result",
-  "fixture_count": 573,
+  "fixture_count": 581,
   "fixtures": [
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-000-claim-composition-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-001-claim-no-upgrade-001.json",
@@ -409,6 +409,14 @@
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-026-tool-invocation-reuse-not-equality-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-027-tool-logical-vs-executable-identity-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-028-tool-preparation-lineage-positive-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-030-tool-argument-model-supplied-positive-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-031-tool-argument-app-supplied-positive-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-032-tool-argument-mixed-positive-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-033-tool-argument-provenance-unknown-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-034-tool-argument-control-not-content-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-036-tool-argument-dropped-not-effective-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-037-tool-argument-enrichment-origin-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-tad-038-tool-transport-metadata-no-proposal-ancestry-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-042-tool-execution-distinct-identity-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-060-tool-result-no-merge-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-tad-071-tool-remote-id-not-c2a-identity-001.json",

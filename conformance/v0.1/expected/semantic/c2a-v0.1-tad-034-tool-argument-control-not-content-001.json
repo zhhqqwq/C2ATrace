@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-034-tool-argument-control-not-content-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-034",
+      "check_id": "tool-argument-control-not-content-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-argument-provenance-001",
+        "object_id": "control-tad-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:control_input_is_argument_content_contributor"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

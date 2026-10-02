@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 235,
+  "receipt_count": 236,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -194,6 +194,7 @@
     "conformance/v0.1/primitives/receipts/tool-argument-dropped.json",
     "conformance/v0.1/primitives/receipts/tool-argument-mixed-positive.json",
     "conformance/v0.1/primitives/receipts/tool-argument-model-positive.json",
+    "conformance/v0.1/primitives/receipts/tool-argument-provenance.json",
     "conformance/v0.1/primitives/receipts/tool-argument-rewrite.json",
     "conformance/v0.1/primitives/receipts/tool-argument-unknown.json",
     "conformance/v0.1/primitives/receipts/tool-cancelled-no-effect.json",
