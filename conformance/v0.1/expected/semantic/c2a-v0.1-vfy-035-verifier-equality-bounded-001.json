@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-vfy-035-verifier-equality-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-035",
+      "check_id": "verifier-equality-bounded-001",
+      "subject_selector": {
+        "vector_id": "privacy-commitment-semantics-001"
+      },
+      "domain": "comparison",
+      "status": "matched",
+      "prohibited_inferences": [
+        "P1:representation_equality_implies_identity_external_truth_or_other_scope"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

@@ -1,0 +1,52 @@
+{
+  "case_id": "c2a-v0.1-vfy-036-verifier-mismatch-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-036"
+  ],
+  "planned_test_ids": [
+    "verifier-mismatch-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A failed representation comparison remains check-local and does not prove deception or unrelated factual falsehood.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/privacy-commitment-semantics.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-036"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-036",
+    "primary_documents": [
+      "vector"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "VFY-036"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-036-verifier-mismatch-bounded-001.json"
+}

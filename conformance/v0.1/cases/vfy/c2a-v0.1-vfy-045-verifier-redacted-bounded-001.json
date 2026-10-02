@@ -1,0 +1,55 @@
+{
+  "case_id": "c2a-v0.1-vfy-045-verifier-redacted-bounded-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-045"
+  ],
+  "planned_test_ids": [
+    "verifier-redacted-bounded-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Verification of redacted evidence remains bounded to the derivative unless original/rule/proof evidence supports more.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/derivation-redaction.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-045"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-045",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "VFY-045"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-045-verifier-redacted-bounded-001.json"
+}

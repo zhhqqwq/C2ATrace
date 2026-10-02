@@ -1,0 +1,29 @@
+{
+  "case_id": "c2a-v0.1-vfy-044-verifier-hmac-tag-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-044",
+      "check_id": "verifier-hmac-tag-bounded-001",
+      "subject_selector": {
+        "receipt_id": "receipt-privacy-001",
+        "object_id": "privacy-001"
+      },
+      "domain": "comparison",
+      "status": "unverified",
+      "prohibited_inferences": [
+        "P1:recorded_hmac_tag_presence_is_candidate_verification"
+      ],
+      "reason_code": "candidate_representation_unavailable"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

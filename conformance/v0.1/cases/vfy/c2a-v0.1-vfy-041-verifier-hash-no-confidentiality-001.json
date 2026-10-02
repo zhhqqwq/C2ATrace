@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-vfy-041-verifier-hash-no-confidentiality-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-041"
+  ],
+  "planned_test_ids": [
+    "verifier-hash-no-confidentiality-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Hash commitment matching is computational evidence and not proof of confidentiality.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-hash-withheld.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "representation_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-041"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-041",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "VFY-041"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-041-verifier-hash-no-confidentiality-001.json"
+}

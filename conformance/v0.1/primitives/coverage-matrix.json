@@ -11362,7 +11362,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-034-verifier-representation-basis-001"
     },
     {
       "family": "vfy",
@@ -11375,7 +11377,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-035-verifier-equality-bounded-001"
     },
     {
       "family": "vfy",
@@ -11388,7 +11392,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-036-verifier-mismatch-bounded-001"
     },
     {
       "family": "vfy",
@@ -11403,7 +11409,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-037-verifier-binding-levels-001"
     },
     {
       "family": "vfy",
@@ -11419,7 +11427,9 @@
       "dependency_primitives": [
         "prim.privacy.commitment",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-038-verifier-binding-whole-commitment-001"
     },
     {
       "family": "vfy",
@@ -11436,7 +11446,9 @@
         "prim.derivation.mapping",
         "prim.privacy.redaction",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-039-verifier-binding-redacted-original-001"
     },
     {
       "family": "vfy",
@@ -11452,7 +11464,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-040-verifier-privacy-capability-001"
     },
     {
       "family": "vfy",
@@ -11465,7 +11479,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-041-verifier-hash-no-confidentiality-001"
     },
     {
       "family": "vfy",
@@ -11481,7 +11497,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-042-verifier-hmac-secret-required-001"
     },
     {
       "family": "vfy",
@@ -11496,7 +11514,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-043-verifier-hmac-secret-nondisclosure-001"
     },
     {
       "family": "vfy",
@@ -11511,7 +11531,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-044-verifier-hmac-tag-bounded-001"
     },
     {
       "family": "vfy",
@@ -11527,7 +11549,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.privacy.redaction"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-045-verifier-redacted-bounded-001"
     },
     {
       "family": "vfy",
@@ -11543,7 +11567,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-046-verifier-privacy-no-upgrade-001"
     },
     {
       "family": "vfy",
@@ -13096,6 +13122,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 669,
-  "remaining_semantic_requirements": 102
+  "executable_semantic_requirements": 682,
+  "remaining_semantic_requirements": 89
 }
