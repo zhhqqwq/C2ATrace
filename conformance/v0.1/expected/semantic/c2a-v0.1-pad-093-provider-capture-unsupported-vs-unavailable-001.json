@@ -1,0 +1,29 @@
+{
+  "case_id": "c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-093",
+      "check_id": "provider-capture-unsupported-vs-unavailable-001",
+      "subject_selector": {
+        "receipt_id": "receipt-provider-diagnostic-states-001",
+        "object_id": "diag-pad-unsupported-001",
+        "compared_object_id": "diag-pad-output-unavailable-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:unsupported_and_unavailable_are_collapsed"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

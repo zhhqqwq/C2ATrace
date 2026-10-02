@@ -1,0 +1,113 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-provider-response-capture-failure-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-pad-response-001",
+      "inv-pad-response-001",
+      "att-pad-response-001",
+      "provider-adapter-pad-response-001",
+      "diag-pad-response-001"
+    ],
+    "records": [
+      {
+        "id": "run-pad-response-001",
+        "kind": "Run",
+        "label": "provider-response-capture-failure"
+      },
+      {
+        "id": "inv-pad-response-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-pad-response-001",
+        "lifecycle_state": "active",
+        "requested_model": "model-A"
+      },
+      {
+        "id": "att-pad-response-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-pad-response-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-pad-response-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "in_progress",
+        "provider": "example-provider",
+        "metadata": [
+          {
+            "name": "transport_status",
+            "value": "200",
+            "origin": "adapter_observed"
+          },
+          {
+            "name": "raw_response_observed",
+            "value": "true",
+            "origin": "adapter_observed"
+          }
+        ]
+      },
+      {
+        "id": "provider-adapter-pad-response-001",
+        "kind": "ProviderAdapterCapability",
+        "run_id": "run-pad-response-001",
+        "adapter_name": "wave05-pad-response-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "logical application model call",
+        "attempt_boundary": "provider attempt start",
+        "request_capture_levels": [
+          "provider_payload"
+        ],
+        "output_capture": true,
+        "streaming_output": false,
+        "retry_visibility": "unknown",
+        "failover_visibility": "unknown",
+        "hedge_visibility": "unknown",
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "diag-pad-response-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-pad-response-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "att-pad-response-001",
+            "expected_kind": "ProviderAttempt"
+          },
+          "representation_basis": "provider_attempt"
+        },
+        "slot": "provider_result",
+        "status": "unavailable",
+        "reason": "application-visible response parsing failed after raw response observation",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "provider-adapter-pad-response-001",
+          "expected_kind": "ProviderAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-pad-response-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-084",
+      "check_id": "provider-capture-diagnostic-no-global-completeness-001",
+      "subject_selector": {
+        "receipt_id": "receipt-provider-diagnostic-states-001",
+        "object_id": "diag-pad-observed-001"
+      },
+      "domain": "completeness",
+      "status": "unknown",
+      "prohibited_inferences": [
+        "P1:signed_capture_diagnostic_proves_global_coverage"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed",
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "envelope_results": [
+    {
+      "envelope_id": "env-pad-diag-001",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "test-ed25519-key-001"
+    }
+  ]
+}

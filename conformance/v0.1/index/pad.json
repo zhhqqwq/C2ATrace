@@ -754,7 +754,7 @@
       "requirement_id": "PAD-084",
       "planned_test_id": "provider-capture-diagnostic-no-global-completeness-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001.json"
     },
@@ -772,7 +772,7 @@
       "requirement_id": "PAD-086",
       "planned_test_id": "provider-capture-diagnostic-absence-not-success-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-086-provider-capture-diagnostic-absence-not-success-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-086-provider-capture-diagnostic-absence-not-success-001.json"
     },
@@ -781,7 +781,7 @@
       "requirement_id": "PAD-087",
       "planned_test_id": "provider-capture-diagnostic-conflict-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-087-provider-capture-diagnostic-conflict-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-087-provider-capture-diagnostic-conflict-001.json"
     },
@@ -808,7 +808,7 @@
       "requirement_id": "PAD-090",
       "planned_test_id": "provider-response-parse-failure-no-output-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-090-provider-response-parse-failure-no-output-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-090-provider-response-parse-failure-no-output-001.json"
     },
@@ -817,7 +817,7 @@
       "requirement_id": "PAD-091",
       "planned_test_id": "provider-stream-unsupported-explicit-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001.json"
     },
@@ -835,7 +835,7 @@
       "requirement_id": "PAD-093",
       "planned_test_id": "provider-capture-unsupported-vs-unavailable-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001.json"
     },
@@ -844,7 +844,7 @@
       "requirement_id": "PAD-094",
       "planned_test_id": "provider-capture-privacy-reason-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-094-provider-capture-privacy-reason-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-094-provider-capture-privacy-reason-bounded-001.json"
     },
@@ -853,7 +853,7 @@
       "requirement_id": "PAD-095",
       "planned_test_id": "provider-response-capture-lifecycle-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-095-provider-response-capture-lifecycle-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-095-provider-response-capture-lifecycle-001.json"
     }

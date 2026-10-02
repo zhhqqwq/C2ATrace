@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 226,
+  "receipt_count": 228,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -103,8 +103,10 @@
     "conformance/v0.1/primitives/receipts/provider-attempt-self-loop.json",
     "conformance/v0.1/primitives/receipts/provider-bypass-evidence.json",
     "conformance/v0.1/primitives/receipts/provider-capture-failure.json",
+    "conformance/v0.1/primitives/receipts/provider-diagnostic-states.json",
     "conformance/v0.1/primitives/receipts/provider-different-targets-no-failover.json",
     "conformance/v0.1/primitives/receipts/provider-hedged-attempts.json",
+    "conformance/v0.1/primitives/receipts/provider-response-capture-failure.json",
     "conformance/v0.1/primitives/receipts/provider-signed-assertions.json",
     "conformance/v0.1/primitives/receipts/provider-single-attempt.json",
     "conformance/v0.1/primitives/receipts/provider-visible-failover.json",

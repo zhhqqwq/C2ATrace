@@ -3468,7 +3468,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001"
     },
     {
       "family": "pad",
@@ -3500,7 +3502,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-086-provider-capture-diagnostic-absence-not-success-001"
     },
     {
       "family": "pad",
@@ -3516,7 +3520,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-087-provider-capture-diagnostic-conflict-001"
     },
     {
       "family": "pad",
@@ -3570,7 +3576,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.model.output"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-090-provider-response-parse-failure-no-output-001"
     },
     {
       "family": "pad",
@@ -3587,7 +3595,9 @@
       "dependency_primitives": [
         "prim.model.output",
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001"
     },
     {
       "family": "pad",
@@ -3622,7 +3632,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.verifier.report"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001"
     },
     {
       "family": "pad",
@@ -3638,7 +3650,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-094-provider-capture-privacy-reason-bounded-001"
     },
     {
       "family": "pad",
@@ -3655,7 +3669,9 @@
       "dependency_primitives": [
         "prim.provider.attempts",
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-095-provider-response-capture-lifecycle-001"
     },
     {
       "family": "priv",
@@ -12848,6 +12864,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 545,
-  "remaining_semantic_requirements": 226
+  "executable_semantic_requirements": 553,
+  "remaining_semantic_requirements": 218
 }

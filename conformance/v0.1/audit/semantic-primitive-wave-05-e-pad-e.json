@@ -1,0 +1,28 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-e-pad-e",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-pad-084-provider-capture-diagnostic-no-global-completeness-001",
+    "c2a-v0.1-pad-086-provider-capture-diagnostic-absence-not-success-001",
+    "c2a-v0.1-pad-087-provider-capture-diagnostic-conflict-001",
+    "c2a-v0.1-pad-090-provider-response-parse-failure-no-output-001",
+    "c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001",
+    "c2a-v0.1-pad-093-provider-capture-unsupported-vs-unavailable-001",
+    "c2a-v0.1-pad-094-provider-capture-privacy-reason-bounded-001",
+    "c2a-v0.1-pad-095-provider-response-capture-lifecycle-001"
+  ],
+  "newly_materialized_count": 8,
+  "executable_semantic_requirements": 553,
+  "remaining_semantic_requirements": 218,
+  "remaining_pad_semantic_requirements": 0,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/provider-diagnostic-states.json",
+    "conformance/v0.1/primitives/receipts/provider-response-capture-failure.json"
+  ],
+  "assertions": {
+    "provider_diagnostic_and_response_capture_semantics_materialized": true,
+    "valid_ed25519_diagnostic_receipt_used": true,
+    "frozen_schema_unchanged": true
+  }
+}

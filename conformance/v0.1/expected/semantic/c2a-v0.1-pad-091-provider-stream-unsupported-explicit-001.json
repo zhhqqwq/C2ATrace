@@ -1,0 +1,25 @@
+{
+  "case_id": "c2a-v0.1-pad-091-provider-stream-unsupported-explicit-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-091",
+      "check_id": "provider-stream-unsupported-explicit-001",
+      "subject_selector": {
+        "receipt_id": "receipt-provider-diagnostic-states-001",
+        "object_id": "diag-pad-unsupported-001"
+      },
+      "domain": "support",
+      "status": "unsupported"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
