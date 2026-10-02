@@ -1,0 +1,24 @@
+{
+  "case_id": "c2a-v0.1-vfy-014-verifier-jcs-input-constraints-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-014",
+      "check_id": "verifier-jcs-input-constraints-001",
+      "subject_selector": {
+        "vector_id": "integrity-jcs-edge-cases-001"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

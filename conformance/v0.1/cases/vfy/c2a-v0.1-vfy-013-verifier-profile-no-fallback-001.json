@@ -1,0 +1,58 @@
+{
+  "case_id": "c2a-v0.1-vfy-013-verifier-profile-no-fallback-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-013"
+  ],
+  "planned_test_ids": [
+    "verifier-profile-no-fallback-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "A recognizable but unsupported profile is reported unsupported and is not silently reinterpreted as the baseline profile.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/profile_ids/-",
+          "value": "urn:c2atrace:profile:test:unsupported"
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-013"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-013",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-013"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.adapter.capture"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-013-verifier-profile-no-fallback-001.json"
+}

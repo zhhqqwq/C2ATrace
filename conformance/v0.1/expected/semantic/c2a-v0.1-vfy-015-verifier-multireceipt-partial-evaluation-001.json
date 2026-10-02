@@ -1,0 +1,38 @@
+{
+  "case_id": "c2a-v0.1-vfy-015-verifier-multireceipt-partial-evaluation-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "valid",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    },
+    {
+      "document_id": "invalid",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "invalid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-015",
+      "check_id": "verifier-multireceipt-partial-evaluation-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    },
+    {
+      "requirement_id": "VFY-015",
+      "check_id": "malformed-member-visible",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "invalid"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

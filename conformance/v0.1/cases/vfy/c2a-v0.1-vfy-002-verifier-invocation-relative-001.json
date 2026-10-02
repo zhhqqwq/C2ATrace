@@ -1,0 +1,62 @@
+{
+  "case_id": "c2a-v0.1-vfy-002-verifier-invocation-relative-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-002"
+  ],
+  "planned_test_ids": [
+    "verifier-invocation-relative-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "The same Receipt can yield stronger verification under a later invocation with stronger capabilities without changing historical Receipt content.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-002"
+    ],
+    "capabilities": [
+      "verification_keys"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-002",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-002"
+    ],
+    "verification_keys": [
+      {
+        "key_ref": "test-ed25519-key-001",
+        "algorithm": "ed25519",
+        "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg"
+      }
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.tool.lifecycle"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-002-verifier-invocation-relative-001.json"
+}

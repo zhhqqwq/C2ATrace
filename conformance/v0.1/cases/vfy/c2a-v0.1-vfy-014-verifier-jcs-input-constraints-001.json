@@ -1,0 +1,52 @@
+{
+  "case_id": "c2a-v0.1-vfy-014-verifier-jcs-input-constraints-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-014"
+  ],
+  "planned_test_ids": [
+    "verifier-jcs-input-constraints-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Verifier applies baseline JCS/I-JSON input constraints rather than claiming canonicalization success for incompatible input.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-jcs-edge-cases.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-014"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-014",
+    "primary_documents": [
+      "vector"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-014"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-014-verifier-jcs-input-constraints-001.json"
+}

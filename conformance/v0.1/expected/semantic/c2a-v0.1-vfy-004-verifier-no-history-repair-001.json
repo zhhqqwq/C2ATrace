@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-004-verifier-no-history-repair-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-004",
+      "check_id": "verifier-no-history-repair-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-capture-failures-001",
+        "object_id": "diag-tad-result-fail-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:verifier_repairs_history_by_inventing_missing_records"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

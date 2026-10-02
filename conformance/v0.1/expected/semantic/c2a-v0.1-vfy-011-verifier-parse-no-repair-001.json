@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-vfy-011-verifier-parse-no-repair-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "invalid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-011",
+      "check_id": "verifier-parse-no-repair-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "prohibited_inferences": [
+        "P1:verifier_silently_repairs_invalid_protocol_data"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

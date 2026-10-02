@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-008-verifier-policy-no-history-rewrite-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-008"
+  ],
+  "planned_test_ids": [
+    "verifier-policy-no-history-rewrite-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Caller-selected verification policy changes operational requirements, not the strength or content of historical evidence.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-008"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-008",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-008"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-008-verifier-policy-no-history-rewrite-001.json"
+}

@@ -1,0 +1,61 @@
+{
+  "case_id": "c2a-v0.1-vfy-018-verifier-presentation-no-new-receipt-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-018"
+  ],
+  "planned_test_ids": [
+    "verifier-presentation-no-new-receipt-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Repeated Presentations of the same unchanged Receipt ARP do not create a new Receipt occurrence.",
+  "documents": [
+    {
+      "document_id": "presentation-a",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "presentation-b",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-018"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-018",
+    "primary_documents": [
+      "presentation-a",
+      "presentation-b"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-018"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.receipt.multi"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-018-verifier-presentation-no-new-receipt-001.json"
+}

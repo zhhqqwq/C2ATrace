@@ -1,0 +1,63 @@
+{
+  "case_id": "c2a-v0.1-vfy-004-verifier-no-history-repair-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-004"
+  ],
+  "planned_test_ids": [
+    "verifier-no-history-repair-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Verifier preserves missing result/history evidence instead of inventing records or edges to repair the supplied history.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/tool-capture-failures.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "remove",
+          "path": "/arp/records/3"
+        },
+        {
+          "op": "remove",
+          "path": "/arp/inventory/3"
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-004"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-004",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-004"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-004-verifier-no-history-repair-001.json"
+}
