@@ -1,0 +1,140 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-tool-proposal-ambiguous-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-tad-prop-001",
+      "inv-model-tad-prop-001",
+      "att-tad-prop-001",
+      "out-tad-prop-001",
+      "proposal-tad-a",
+      "proposal-tad-b",
+      "invoke-tad-prop-001"
+    ],
+    "records": [
+      {
+        "id": "run-tad-prop-001",
+        "kind": "Run",
+        "label": "tool-proposal-ambiguity"
+      },
+      {
+        "id": "inv-model-tad-prop-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-tad-prop-001",
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "output_accepted",
+        "accepted_output": {
+          "ref_type": "local",
+          "id": "out-tad-prop-001",
+          "expected_kind": "ModelOutput"
+        }
+      },
+      {
+        "id": "att-tad-prop-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-tad-prop-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-model-tad-prop-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "terminal",
+        "terminal_disposition": "completed",
+        "provider": "example-provider"
+      },
+      {
+        "id": "out-tad-prop-001",
+        "kind": "ModelOutput",
+        "run_id": "run-tad-prop-001",
+        "attempt": {
+          "ref_type": "local",
+          "id": "att-tad-prop-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "item_refs": [
+          {
+            "ref_type": "local",
+            "id": "proposal-tad-a",
+            "expected_kind": "ToolProposal"
+          },
+          {
+            "ref_type": "local",
+            "id": "proposal-tad-b",
+            "expected_kind": "ToolProposal"
+          }
+        ],
+        "response_termination": "complete",
+        "capture_extent": "complete"
+      },
+      {
+        "id": "proposal-tad-a",
+        "kind": "ToolProposal",
+        "run_id": "run-tad-prop-001",
+        "output": {
+          "ref_type": "local",
+          "id": "out-tad-prop-001",
+          "expected_kind": "ModelOutput"
+        },
+        "ordinal": 0,
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "proposal-tad-b",
+        "kind": "ToolProposal",
+        "run_id": "run-tad-prop-001",
+        "output": {
+          "ref_type": "local",
+          "id": "out-tad-prop-001",
+          "expected_kind": "ModelOutput"
+        },
+        "ordinal": 1,
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      },
+      {
+        "id": "invoke-tad-prop-001",
+        "kind": "ToolInvocation",
+        "run_id": "run-tad-prop-001",
+        "tool_name": "create_issue",
+        "arguments": {
+          "representation_kind": "json",
+          "value": {
+            "title": "bug"
+          }
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-tad-prop-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": []
+}

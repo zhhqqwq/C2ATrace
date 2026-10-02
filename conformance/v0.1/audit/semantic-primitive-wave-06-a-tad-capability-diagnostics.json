@@ -1,0 +1,36 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-06-a-tad-capability-diagnostics",
+  "status": "complete",
+  "clustering_basis": "primary/dependency primitives plus shared scenario behavior; not legacy wave numbering",
+  "newly_materialized": [
+    "c2a-v0.1-tad-001-tool-adapter-visibility-boundary-001",
+    "c2a-v0.1-tad-004-tool-adapter-effective-invocation-capability-001",
+    "c2a-v0.1-tad-005-tool-adapter-execution-capability-001",
+    "c2a-v0.1-tad-006-tool-adapter-result-capability-001",
+    "c2a-v0.1-tad-008-tool-adapter-no-remote-receipt-001",
+    "c2a-v0.1-tad-010-tool-capture-diagnostic-reuse-001",
+    "c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001",
+    "c2a-v0.1-tad-012-tool-capture-no-bypass-inference-001",
+    "c2a-v0.1-tad-013-tool-capture-diagnostic-conflict-001",
+    "c2a-v0.1-tad-014-tool-proposal-capability-optional-001",
+    "c2a-v0.1-tad-015-tool-proposal-link-positive-001",
+    "c2a-v0.1-tad-016-tool-proposal-link-ambiguous-001"
+  ],
+  "newly_materialized_count": 12,
+  "executable_semantic_requirements": 565,
+  "remaining_semantic_requirements": 206,
+  "remaining_tad_semantic_requirements": 78,
+  "remaining_vfy_semantic_requirements": 128,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
+    "conformance/v0.1/primitives/receipts/tool-diagnostic-conflict.json",
+    "conformance/v0.1/primitives/receipts/tool-proposal-ambiguous.json",
+    "conformance/v0.1/primitives/receipts/identity-tool-decisions.json"
+  ],
+  "assertions": {
+    "tool_adapter_contract_unchanged": true,
+    "frozen_schema_unchanged": true,
+    "tool_lifecycle_reused": true
+  }
+}

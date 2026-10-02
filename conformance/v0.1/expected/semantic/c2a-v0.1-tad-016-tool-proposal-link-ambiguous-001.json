@@ -1,0 +1,26 @@
+{
+  "case_id": "c2a-v0.1-tad-016-tool-proposal-link-ambiguous-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-016",
+      "check_id": "tool-proposal-link-ambiguous-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-proposal-ambiguous-001",
+        "object_id": "invoke-tad-prop-001"
+      },
+      "domain": "resolution",
+      "status": "ambiguous",
+      "reason_code": "ambiguous_tool_proposal_lineage"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

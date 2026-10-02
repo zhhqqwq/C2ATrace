@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "TAD-011",
+      "check_id": "tool-capture-diagnostic-absence-not-success-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-adapter-baseline-001",
+        "object_id": "result-tad-base-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "prohibited_inferences": [
+        "P1:missing_tool_capture_diagnostic_proves_capture_success"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

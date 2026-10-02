@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
-  "receipt_count": 228,
+  "receipt_count": 231,
   "receipts": [
     "conformance/v0.1/primitives/receipts/derivation-concat-exact.json",
     "conformance/v0.1/primitives/receipts/derivation-contributor-not-used.json",
@@ -188,6 +188,7 @@
     "conformance/v0.1/primitives/receipts/taint-unknown-state.json",
     "conformance/v0.1/primitives/receipts/taint-use-no-derivation.json",
     "conformance/v0.1/primitives/receipts/taint-whole-present.json",
+    "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
     "conformance/v0.1/primitives/receipts/tool-argument-application-positive.json",
     "conformance/v0.1/primitives/receipts/tool-argument-control-only.json",
     "conformance/v0.1/primitives/receipts/tool-argument-dropped.json",
@@ -201,6 +202,7 @@
     "conformance/v0.1/primitives/receipts/tool-decision-deny-later-execution.json",
     "conformance/v0.1/primitives/receipts/tool-decision-deny-no-invocation.json",
     "conformance/v0.1/primitives/receipts/tool-decision-unknown-basis.json",
+    "conformance/v0.1/primitives/receipts/tool-diagnostic-conflict.json",
     "conformance/v0.1/primitives/receipts/tool-effect-external-attestation.json",
     "conformance/v0.1/primitives/receipts/tool-effect-multiple-evidence.json",
     "conformance/v0.1/primitives/receipts/tool-effect-separate-observation.json",
@@ -215,6 +217,7 @@
     "conformance/v0.1/primitives/receipts/tool-invocation-no-execution.json",
     "conformance/v0.1/primitives/receipts/tool-invocation-no-proposal.json",
     "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
+    "conformance/v0.1/primitives/receipts/tool-proposal-ambiguous.json",
     "conformance/v0.1/primitives/receipts/tool-proposal-invocation-no-lineage.json",
     "conformance/v0.1/primitives/receipts/tool-timeout-no-effect.json",
     "conformance/v0.1/primitives/receipts/tool-validation-success.json",
