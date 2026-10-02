@@ -13,8 +13,8 @@
       "requirement_id": "PAD-071",
       "check_id": "provider-privacy-no-failure-laundering-001",
       "subject_selector": {
-        "receipt_id": "receipt-provider-capture-failure-001",
-        "object_id": "diag-pad-capture-001"
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "diag-pad-privacy-failure-071"
       },
       "domain": "claim",
       "status": "asserted",

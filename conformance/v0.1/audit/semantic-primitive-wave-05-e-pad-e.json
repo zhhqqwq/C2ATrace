@@ -18,11 +18,14 @@
   "remaining_pad_semantic_requirements": 0,
   "shared_scenarios": [
     "conformance/v0.1/primitives/receipts/provider-diagnostic-states.json",
-    "conformance/v0.1/primitives/receipts/provider-response-capture-failure.json"
+    "conformance/v0.1/primitives/receipts/provider-response-capture-failure.json",
+    "conformance/v0.1/primitives/receipts/privacy-request-commitment-only.json"
   ],
   "assertions": {
     "provider_diagnostic_and_response_capture_semantics_materialized": true,
     "valid_ed25519_diagnostic_receipt_used": true,
+    "streaming_use_explicitly_recorded": true,
+    "privacy_capture_state_uses_existing_valid_privacy_scenario": true,
     "frozen_schema_unchanged": true
   }
 }

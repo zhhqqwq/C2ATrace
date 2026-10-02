@@ -9,14 +9,75 @@
   ],
   "primary_enforcement": "semantic_verifier",
   "status": "executable",
-  "description": "Privacy treatment does not replace an explicit known capture failure.",
+  "description": "Privacy treatment coexists with, and does not replace, an explicit known capture failure.",
   "documents": [
     {
       "document_id": "primary",
       "role": "primary_receipt",
       "source": {
-        "path": "conformance/v0.1/primitives/receipts/provider-capture-failure.json"
+        "path": "conformance/v0.1/primitives/receipts/privacy-request-commitment-only.json"
       },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "provider-adapter-pad-privacy-071",
+            "kind": "ProviderAdapterCapability",
+            "run_id": "run-sr-001",
+            "adapter_name": "wave05-pad-privacy-adapter",
+            "adapter_version": "0.1-test",
+            "invocation_boundary": "logical application model call",
+            "attempt_boundary": "provider attempt start",
+            "request_capture_levels": [
+              "provider_payload"
+            ],
+            "output_capture": true,
+            "streaming_output": false,
+            "retry_visibility": "unknown",
+            "failover_visibility": "unknown",
+            "hedge_visibility": "unknown",
+            "privacy_profiles": [
+              "hash_only"
+            ]
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/records/-",
+          "value": {
+            "id": "diag-pad-privacy-failure-071",
+            "kind": "CaptureDiagnostic",
+            "run_id": "run-sr-001",
+            "subject": {
+              "ref": {
+                "ref_type": "local",
+                "id": "att-001",
+                "expected_kind": "ProviderAttempt"
+              },
+              "representation_basis": "provider_attempt"
+            },
+            "slot": "provider_result",
+            "status": "unavailable",
+            "reason": "known capture failure; privacy treatment applies independently",
+            "adapter_declaration": {
+              "ref_type": "local",
+              "id": "provider-adapter-pad-privacy-071",
+              "expected_kind": "ProviderAdapterCapability"
+            }
+          }
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "provider-adapter-pad-privacy-071"
+        },
+        {
+          "op": "add",
+          "path": "/arp/inventory/-",
+          "value": "diag-pad-privacy-failure-071"
+        }
+      ],
       "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
     }
   ],

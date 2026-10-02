@@ -5,7 +5,6 @@
     "protocol_version": "0.1",
     "profile_ids": [
       "urn:c2atrace:profile:v0.1:core",
-      "urn:c2atrace:profile:v0.1:privacy:core",
       "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
     ],
     "reference_mode": "self_contained",
@@ -42,7 +41,14 @@
           "expected_kind": "ModelInvocation"
         },
         "lifecycle_state": "in_progress",
-        "provider": "example-provider"
+        "provider": "example-provider",
+        "metadata": [
+          {
+            "name": "streaming_requested",
+            "value": "true",
+            "origin": "adapter_observed"
+          }
+        ]
       },
       {
         "id": "provider-adapter-pad-diag-001",
@@ -79,7 +85,6 @@
         },
         "slot": "provider_payload",
         "status": "observed",
-        "reason": "runtime slot observed; plaintext withheld by privacy treatment",
         "adapter_declaration": {
           "ref_type": "local",
           "id": "provider-adapter-pad-diag-001",
@@ -151,32 +156,7 @@
       }
     ],
     "receipt_links": [],
-    "privacy": [
-      {
-        "id": "privacy-diag-pad-observed-001",
-        "kind": "PrivacyDescriptor",
-        "subject": {
-          "ref": {
-            "ref_type": "local",
-            "id": "diag-pad-observed-001",
-            "expected_kind": "CaptureDiagnostic"
-          },
-          "representation_basis": "capture_diagnostic"
-        },
-        "profile": "hash_only",
-        "availability": "original_withheld_with_commitment",
-        "commitments": [
-          {
-            "method": "sha256",
-            "value": {
-              "encoding": "base64url",
-              "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-            },
-            "representation_basis": "capture_diagnostic"
-          }
-        ]
-      }
-    ],
+    "privacy": [],
     "scope": {
       "scope_kind": "run",
       "run_id": "run-pad-diag-001"
@@ -186,7 +166,7 @@
     "algorithm": "sha256",
     "value": {
       "encoding": "base64url",
-      "value": "8A8ln8JrfJDo2b4zFkoInKHu_CGOX_vk-gKpUJGM5OE"
+      "value": "oXTJ8rxivumgLAqwAvFAM9Xn3VhNGM61YcoIm2ktKcM"
     },
     "representation_basis": "arp_jcs_utf8",
     "canonicalization_profile": "rfc8785-jcs"
@@ -201,7 +181,7 @@
         "algorithm": "sha256",
         "value": {
           "encoding": "base64url",
-          "value": "8A8ln8JrfJDo2b4zFkoInKHu_CGOX_vk-gKpUJGM5OE"
+          "value": "oXTJ8rxivumgLAqwAvFAM9Xn3VhNGM61YcoIm2ktKcM"
         },
         "representation_basis": "arp_jcs_utf8",
         "canonicalization_profile": "rfc8785-jcs"
@@ -213,7 +193,7 @@
       "signed_metadata": {},
       "signature": {
         "encoding": "base64url",
-        "value": "Pq8SJjehnSXFUQE-hiJdfNpi_NTU3gYCeyGAdOvs224a1dIsz6DJTlUfaEKWAHHaIjlqX9GijVVTiIkU23ePAw"
+        "value": "dFbpT8DbjdA9psQVBDPiGm7SBypEsEJ2gqQVuVFPDnGh11LAYezFVCACvh66eIxh58-1q3LPRHy02PZXX7sCAw"
       }
     }
   ]

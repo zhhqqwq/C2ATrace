@@ -13,8 +13,8 @@
       "requirement_id": "PAD-094",
       "check_id": "provider-capture-privacy-reason-bounded-001",
       "subject_selector": {
-        "receipt_id": "receipt-provider-diagnostic-states-001",
-        "object_id": "diag-pad-observed-001"
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "diag-pad-privacy-observed-094"
       },
       "domain": "claim",
       "status": "asserted",

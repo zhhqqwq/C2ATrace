@@ -4,8 +4,7 @@
     "receipt_id": "receipt-provider-capture-failure-001",
     "protocol_version": "0.1",
     "profile_ids": [
-      "urn:c2atrace:profile:v0.1:core",
-      "urn:c2atrace:profile:v0.1:privacy:core"
+      "urn:c2atrace:profile:v0.1:core"
     ],
     "reference_mode": "self_contained",
     "inventory": [
@@ -86,32 +85,7 @@
       }
     ],
     "receipt_links": [],
-    "privacy": [
-      {
-        "id": "privacy-diag-pad-capture-001",
-        "kind": "PrivacyDescriptor",
-        "subject": {
-          "ref": {
-            "ref_type": "local",
-            "id": "diag-pad-capture-001",
-            "expected_kind": "CaptureDiagnostic"
-          },
-          "representation_basis": "capture_diagnostic"
-        },
-        "profile": "hash_only",
-        "availability": "original_withheld_with_commitment",
-        "commitments": [
-          {
-            "method": "sha256",
-            "value": {
-              "encoding": "base64url",
-              "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-            },
-            "representation_basis": "capture_diagnostic"
-          }
-        ]
-      }
-    ],
+    "privacy": [],
     "scope": {
       "scope_kind": "run",
       "run_id": "run-pad-capture-001"
