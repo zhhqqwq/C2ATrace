@@ -1,0 +1,27 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-05-e-pad-d",
+  "status": "complete",
+  "newly_materialized": [
+    "c2a-v0.1-pad-076-provider-bypass-positive-evidence-001",
+    "c2a-v0.1-pad-077-provider-bypass-no-fabrication-001",
+    "c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001",
+    "c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001",
+    "c2a-v0.1-pad-081-provider-representation-not-observation-proof-001",
+    "c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001",
+    "c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001"
+  ],
+  "newly_materialized_count": 7,
+  "executable_semantic_requirements": 545,
+  "remaining_semantic_requirements": 226,
+  "remaining_pad_semantic_requirements": 8,
+  "shared_scenarios": [
+    "conformance/v0.1/primitives/receipts/provider-signed-assertions.json",
+    "conformance/v0.1/primitives/receipts/provider-bypass-evidence.json"
+  ],
+  "assertions": {
+    "provider_bypass_and_claim_boundary_semantics_materialized": true,
+    "valid_ed25519_adapter_receipt_used": true,
+    "frozen_schema_unchanged": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "PAD-079",
+      "check_id": "provider-adapter-unknown-preserved-001",
+      "subject_selector": {
+        "receipt_id": "receipt-provider-signed-assertions-001",
+        "object_id": "diag-pad-signed-unknown-001"
+      },
+      "domain": "claim",
+      "status": "unknown"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed",
+  "envelope_results": [
+    {
+      "envelope_id": "env-pad-signed-001",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "test-ed25519-key-001"
+    }
+  ]
+}

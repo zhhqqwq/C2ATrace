@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:conformance:v0.1:expected-result",
-  "fixture_count": 538,
+  "fixture_count": 545,
   "fixtures": [
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-000-claim-composition-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-001-claim-no-upgrade-001.json",
@@ -196,7 +196,14 @@
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-073-provider-capture-failure-no-fabrication-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-074-provider-capture-vs-attempt-failure-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-075-provider-adapter-error-origin-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-076-provider-bypass-positive-evidence-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-077-provider-bypass-no-fabrication-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-078-provider-multihook-correlation-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-081-provider-representation-not-observation-proof-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-085-provider-capture-diagnostic-no-merge-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-088-provider-adapter-version-no-trust-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-pad-089-provider-adapter-time-bounded-001.json",

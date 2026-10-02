@@ -3332,7 +3332,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-076-provider-bypass-positive-evidence-001"
     },
     {
       "family": "pad",
@@ -3346,7 +3348,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-077-provider-bypass-no-fabrication-001"
     },
     {
       "family": "pad",
@@ -3378,7 +3382,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001"
     },
     {
       "family": "pad",
@@ -3392,7 +3398,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001"
     },
     {
       "family": "pad",
@@ -3408,7 +3416,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-081-provider-representation-not-observation-proof-001"
     },
     {
       "family": "pad",
@@ -3424,7 +3434,9 @@
       "primary_primitive": "prim.adapter.capture",
       "dependency_primitives": [
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001"
     },
     {
       "family": "pad",
@@ -3438,7 +3450,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.adapter.capture",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001"
     },
     {
       "family": "pad",
@@ -12834,6 +12848,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 538,
-  "remaining_semantic_requirements": 233
+  "executable_semantic_requirements": 545,
+  "remaining_semantic_requirements": 226
 }

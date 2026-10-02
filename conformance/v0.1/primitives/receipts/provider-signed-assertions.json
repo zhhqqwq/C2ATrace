@@ -1,0 +1,182 @@
+{
+  "kind": "ReceiptPresentation",
+  "arp": {
+    "receipt_id": "receipt-provider-signed-assertions-001",
+    "protocol_version": "0.1",
+    "profile_ids": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "reference_mode": "self_contained",
+    "inventory": [
+      "run-pad-signed-001",
+      "inv-pad-signed-001",
+      "att-pad-signed-001",
+      "snap-pad-signed-001",
+      "provider-adapter-pad-signed-001",
+      "diag-pad-signed-observed-001",
+      "diag-pad-signed-unknown-001"
+    ],
+    "records": [
+      {
+        "id": "run-pad-signed-001",
+        "kind": "Run",
+        "label": "provider-signed-assertions"
+      },
+      {
+        "id": "inv-pad-signed-001",
+        "kind": "ModelInvocation",
+        "run_id": "run-pad-signed-001",
+        "lifecycle_state": "active",
+        "requested_model": "model-A"
+      },
+      {
+        "id": "att-pad-signed-001",
+        "kind": "ProviderAttempt",
+        "run_id": "run-pad-signed-001",
+        "invocation": {
+          "ref_type": "local",
+          "id": "inv-pad-signed-001",
+          "expected_kind": "ModelInvocation"
+        },
+        "lifecycle_state": "in_progress",
+        "provider": "example-provider",
+        "effective_requests": [
+          {
+            "capture_level": "provider_payload",
+            "snapshot": {
+              "ref_type": "local",
+              "id": "snap-pad-signed-001",
+              "expected_kind": "RequestSnapshot"
+            }
+          }
+        ]
+      },
+      {
+        "id": "snap-pad-signed-001",
+        "kind": "RequestSnapshot",
+        "run_id": "run-pad-signed-001",
+        "capture_level": "provider_payload",
+        "attempt_owner": {
+          "ref_type": "local",
+          "id": "att-pad-signed-001",
+          "expected_kind": "ProviderAttempt"
+        },
+        "representation_basis": "json-data-model",
+        "representation": {
+          "representation_kind": "json",
+          "value": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "alpha"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "provider-adapter-pad-signed-001",
+        "kind": "ProviderAdapterCapability",
+        "run_id": "run-pad-signed-001",
+        "adapter_name": "wave05-pad-signed-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "logical application model call",
+        "attempt_boundary": "provider attempt start",
+        "request_capture_levels": [
+          "provider_payload"
+        ],
+        "output_capture": true,
+        "streaming_output": false,
+        "retry_visibility": "unknown",
+        "failover_visibility": "unknown",
+        "hedge_visibility": "unknown",
+        "privacy_profiles": [
+          "full"
+        ]
+      },
+      {
+        "id": "diag-pad-signed-observed-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-pad-signed-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "att-pad-signed-001",
+            "expected_kind": "ProviderAttempt"
+          },
+          "representation_basis": "provider_attempt"
+        },
+        "slot": "provider_payload",
+        "status": "observed",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "provider-adapter-pad-signed-001",
+          "expected_kind": "ProviderAdapterCapability"
+        }
+      },
+      {
+        "id": "diag-pad-signed-unknown-001",
+        "kind": "CaptureDiagnostic",
+        "run_id": "run-pad-signed-001",
+        "subject": {
+          "ref": {
+            "ref_type": "local",
+            "id": "att-pad-signed-001",
+            "expected_kind": "ProviderAttempt"
+          },
+          "representation_basis": "provider_attempt"
+        },
+        "slot": "provider_internal.hidden_retries",
+        "status": "unknown",
+        "reason": "provider-internal retry visibility unavailable",
+        "adapter_declaration": {
+          "ref_type": "local",
+          "id": "provider-adapter-pad-signed-001",
+          "expected_kind": "ProviderAdapterCapability"
+        }
+      }
+    ],
+    "receipt_links": [],
+    "privacy": [],
+    "scope": {
+      "scope_kind": "run",
+      "run_id": "run-pad-signed-001"
+    }
+  },
+  "payload_digest": {
+    "algorithm": "sha256",
+    "value": {
+      "encoding": "base64url",
+      "value": "LKNLjg5465E1p1clTPEMWbXNWtWirb_E8i6BIW6PHwM"
+    },
+    "representation_basis": "arp_jcs_utf8",
+    "canonicalization_profile": "rfc8785-jcs"
+  },
+  "integrity_envelopes": [
+    {
+      "id": "env-pad-signed-001",
+      "kind": "IntegrityEnvelope",
+      "placement": "embedded",
+      "receipt_id": "receipt-provider-signed-assertions-001",
+      "payload_digest": {
+        "algorithm": "sha256",
+        "value": {
+          "encoding": "base64url",
+          "value": "LKNLjg5465E1p1clTPEMWbXNWtWirb_E8i6BIW6PHwM"
+        },
+        "representation_basis": "arp_jcs_utf8",
+        "canonicalization_profile": "rfc8785-jcs"
+      },
+      "canonicalization_profile": "rfc8785-jcs",
+      "digest_algorithm": "sha256",
+      "signature_profile": "ed25519",
+      "key_ref": "test-ed25519-key-001",
+      "signed_metadata": {},
+      "signature": {
+        "encoding": "base64url",
+        "value": "aiv0LzP2q8XMi7ZdaJMV1g0Bp3lnwzB5YlvZHyhzOehfU0I4YKG_j9HGkJeAhG0h5CaQ3JXPA1z6laMnwiRlCw"
+      }
+    }
+  ]
+}

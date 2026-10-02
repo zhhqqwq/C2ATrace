@@ -682,7 +682,7 @@
       "requirement_id": "PAD-076",
       "planned_test_id": "provider-bypass-positive-evidence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-076-provider-bypass-positive-evidence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-076-provider-bypass-positive-evidence-001.json"
     },
@@ -691,7 +691,7 @@
       "requirement_id": "PAD-077",
       "planned_test_id": "provider-bypass-no-fabrication-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-077-provider-bypass-no-fabrication-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-077-provider-bypass-no-fabrication-001.json"
     },
@@ -709,7 +709,7 @@
       "requirement_id": "PAD-079",
       "planned_test_id": "provider-adapter-unknown-preserved-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-079-provider-adapter-unknown-preserved-001.json"
     },
@@ -718,7 +718,7 @@
       "requirement_id": "PAD-080",
       "planned_test_id": "provider-adapter-assertion-bounded-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-080-provider-adapter-assertion-bounded-001.json"
     },
@@ -727,7 +727,7 @@
       "requirement_id": "PAD-081",
       "planned_test_id": "provider-representation-not-observation-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-081-provider-representation-not-observation-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-081-provider-representation-not-observation-proof-001.json"
     },
@@ -736,7 +736,7 @@
       "requirement_id": "PAD-082",
       "planned_test_id": "provider-adapter-provider-receipt-unestablished-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-082-provider-adapter-provider-receipt-unestablished-001.json"
     },
@@ -745,7 +745,7 @@
       "requirement_id": "PAD-083",
       "planned_test_id": "provider-adapter-internals-unestablished-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/pad/c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-pad-083-provider-adapter-internals-unestablished-001.json"
     },
