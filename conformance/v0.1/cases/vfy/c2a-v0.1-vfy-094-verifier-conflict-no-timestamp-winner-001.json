@@ -21,12 +21,12 @@
       "patches": [
         {
           "op": "add",
-          "path": "/arp/records/11/recorded_at",
+          "path": "/arp/records/10/recorded_at",
           "value": "2026-10-02T10:00:10Z"
         },
         {
           "op": "add",
-          "path": "/arp/records/12/recorded_at",
+          "path": "/arp/records/11/recorded_at",
           "value": "2026-10-02T10:00:20Z"
         }
       ]

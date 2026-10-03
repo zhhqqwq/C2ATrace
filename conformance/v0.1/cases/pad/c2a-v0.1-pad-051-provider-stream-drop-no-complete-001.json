@@ -20,7 +20,7 @@
       "patches": [
         {
           "op": "replace",
-          "path": "/arp/records/1/capture_extent",
+          "path": "/arp/records/3/capture_extent",
           "value": "complete"
         },
         {

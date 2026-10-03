@@ -16,7 +16,7 @@
         "receipt_id": "receipt-minimal-001",
         "object_id": "env-test-001"
       },
-      "domain": "cryptographic",
+      "domain": "resolution",
       "status": "unresolved",
       "reason_code": "verification_key_unresolved"
     }

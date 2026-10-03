@@ -24,8 +24,8 @@
     "phases": [
       "schema_validate",
       "resolve_references",
-      "privacy_checks",
       "graph_checks",
+      "privacy_checks",
       "aggregate_report"
     ],
     "resolution_set": [],

@@ -39,8 +39,8 @@
     "phases": [
       "schema_validate",
       "resolve_references",
-      "representation_checks",
       "graph_checks",
+      "representation_checks",
       "aggregate_report"
     ],
     "resolution_set": [

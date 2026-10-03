@@ -20,7 +20,7 @@
       "patches": [
         {
           "op": "add",
-          "path": "/arp/records/5/metadata",
+          "path": "/arp/records/3/metadata",
           "value": [
             {
               "name": "transport_error_body",

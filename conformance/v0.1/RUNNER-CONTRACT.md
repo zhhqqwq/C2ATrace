@@ -71,6 +71,30 @@ Private HMAC material is harness input and must not appear in ordinary Verificat
 
 Expected-result files are comparison specifications, not literal full verifier reports.
 
+### 6.1 Normalized finding comparison view
+
+A runner compares finding matchers against a conformance-normalized finding view. This view is runner infrastructure; it does not add fields to the protocol `VerificationFinding`.
+
+The normalized view carries the case's unique `requirement_id` as conformance attribution. `check_id`, `domain`, `status`, `reason_code`, `evidence_bases`, and `prohibited_inferences` come from the applicable machine check result and must not be inferred from human-readable text.
+
+`subject_selector` is a recursive subset match against a normalized `subject_scope` object. Protocol subject coordinates are copied without semantic change from `VerificationFinding.subject` when applicable. Check-local conformance coordinates may additionally use only these keys:
+
+```text
+report_id
+vector_id
+linked_receipt_id
+path
+dropped_path
+slot
+compared_object_id
+metadata_name
+event_semantics
+capture_extent
+origin
+```
+
+These extension coordinates identify deterministic case-local evaluation scope. They are comparison metadata, not protocol fields. A runner must obtain them from the machine check that produced the normalized finding; it must not derive them from free-text messages. Extension coordinates must not overwrite or reinterpret protocol subject coordinates.
+
 `schema_results` are keyed by `document_id`.
 
 For `required_findings`, every matcher must match at least one actual VerificationFinding.

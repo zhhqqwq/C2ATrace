@@ -48,7 +48,7 @@
         },
         {
           "op": "add",
-          "path": "/arp/records/2/item_refs/-",
+          "path": "/arp/records/4/item_refs/-",
           "value": {
             "ref_type": "local",
             "id": "txt-r2-2",
