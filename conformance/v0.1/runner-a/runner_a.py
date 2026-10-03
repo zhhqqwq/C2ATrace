@@ -9,6 +9,8 @@ from urllib.parse import unquote
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
+from vector_executor import execute_case_vector
+
 ROOT = Path(__file__).resolve().parents[3]
 CONF = ROOT / "conformance" / "v0.1"
 
@@ -23,8 +25,10 @@ PHASE_ORDER = [
     "aggregate_report",
 ]
 
+
 def load_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
 
 def pointer_tokens(pointer):
     if pointer == "":
@@ -32,6 +36,7 @@ def pointer_tokens(pointer):
     if not isinstance(pointer, str) or not pointer.startswith("/"):
         raise ValueError("invalid JSON Pointer")
     return [unquote(x).replace("~1", "/").replace("~0", "~") for x in pointer[1:].split("/")]
+
 
 def resolve_pointer(document, pointer):
     value = document
@@ -45,6 +50,7 @@ def resolve_pointer(document, pointer):
         else:
             raise KeyError(token)
     return value
+
 
 def apply_patches(document, patches):
     value = copy.deepcopy(document)
@@ -87,6 +93,7 @@ def apply_patches(document, patches):
             raise TypeError("patch parent is scalar")
     return value
 
+
 class SchemaRegistry:
     def __init__(self):
         resources = []
@@ -122,6 +129,7 @@ class SchemaRegistry:
             ],
         }
 
+
 def load_suite_rows():
     manifest = load_json(CONF / "manifest.json")
     rows = []
@@ -129,6 +137,7 @@ def load_suite_rows():
         index = load_json(ROOT / rel)
         rows.extend(index["cases"])
     return rows
+
 
 def materialize_case(case):
     materialized = {}
@@ -145,6 +154,7 @@ def materialize_case(case):
         materialized[document["document_id"]] = value
     return materialized
 
+
 def recursive_subset(expected, actual):
     if isinstance(expected, dict):
         if not isinstance(actual, dict):
@@ -155,6 +165,7 @@ def recursive_subset(expected, actual):
             return False
         return all(any(recursive_subset(e, a) for a in actual) for e in expected)
     return expected == actual
+
 
 def finding_matches(matcher, finding):
     for key, expected in matcher.items():
@@ -168,6 +179,7 @@ def finding_matches(matcher, finding):
         elif finding.get(key) != expected:
             return False
     return True
+
 
 def compare_schema_results(expected, actual):
     failures = []
@@ -202,6 +214,7 @@ def compare_schema_results(expected, actual):
             })
     return failures
 
+
 def compare_findings(expected, actual):
     failures = []
     required = expected.get("required_findings", [])
@@ -221,12 +234,50 @@ def compare_findings(expected, actual):
             failures.append({"code": "unexpected_normative_findings", "findings": unmatched})
     return failures
 
+
+def compare_vector_results(expected, actual):
+    failures = []
+    expected_results = expected.get("vector_results", [])
+    exp = {(x["vector_id"], x["check"]): x["status"] for x in expected_results}
+    act = {(x["vector_id"], x["check"]): x["status"] for x in actual}
+
+    if len(act) != len(actual):
+        failures.append({"code": "duplicate_actual_vector_result"})
+        return failures
+
+    for key, expected_status in exp.items():
+        if key not in act:
+            failures.append({
+                "code": "required_vector_result_missing",
+                "vector_id": key[0],
+                "check": key[1],
+            })
+        elif act[key] != expected_status:
+            failures.append({
+                "code": "vector_status_mismatch",
+                "vector_id": key[0],
+                "check": key[1],
+                "expected": expected_status,
+                "actual": act[key],
+            })
+
+    if expected.get("comparison_mode") == "exact_normative":
+        extra = sorted(set(act) - set(exp))
+        if extra:
+            failures.append({
+                "code": "unexpected_vector_results",
+                "results": [{"vector_id": v, "check": c} for v, c in extra],
+            })
+    return failures
+
+
 def run_case(row, schemas):
     case = load_json(ROOT / row["case_path"])
     expected = load_json(ROOT / row["expected_result_path"])
     result = {
         "case_id": row["case_id"],
         "requirement_id": row["requirement_id"],
+        "planned_test_id": row["planned_test_id"],
         "primary_enforcement": row["primary_enforcement"],
         "status": "fail",
         "failures": [],
@@ -269,7 +320,35 @@ def run_case(row, schemas):
     if enforcement == "direct_schema":
         result["failures"].extend(compare_findings(expected, []))
     elif enforcement == "deterministic_vector":
-        result["failures"].append({"code": "vector_executor_not_implemented"})
+        vector_documents = [
+            materialized[d["document_id"]]
+            for d in case["documents"]
+            if d["schema_target"] == "urn:c2atrace:conformance:v0.1:deterministic-vector"
+        ]
+        if len(vector_documents) != 1:
+            result["failures"].append({
+                "code": "vector_document_cardinality",
+                "actual": len(vector_documents),
+            })
+        elif case.get("planned_test_ids") != [row["planned_test_id"]]:
+            result["failures"].append({"code": "planned_test_join_mismatch"})
+        else:
+            try:
+                result["actual"]["vector_results"] = execute_case_vector(
+                    vector_documents[0],
+                    row["planned_test_id"],
+                    ROOT,
+                )
+            except Exception as exc:
+                result["failures"].append({
+                    "code": "vector_execution_error",
+                    "detail": f"{type(exc).__name__}: {exc}",
+                })
+            result["failures"].extend(compare_vector_results(
+                expected,
+                result["actual"]["vector_results"],
+            ))
+            result["failures"].extend(compare_findings(expected, []))
     elif enforcement in {"semantic_verifier", "mixed_schema_semantic"}:
         result["failures"].append({"code": "semantic_executor_not_implemented"})
     else:
@@ -278,6 +357,7 @@ def run_case(row, schemas):
     if not result["failures"]:
         result["status"] = "pass"
     return result
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -299,6 +379,15 @@ def main():
     results = [run_case(row, schemas) for row in selected]
     passed = [r for r in results if r["status"] == "pass"]
     failed = [r for r in results if r["status"] == "fail"]
+    by_enforcement = {}
+    for result in results:
+        bucket = by_enforcement.setdefault(
+            result["primary_enforcement"],
+            {"total": 0, "pass": 0, "fail": 0},
+        )
+        bucket["total"] += 1
+        bucket[result["status"]] += 1
+
     report = {
         "runner": "C2ATrace v0.1 runner A",
         "implementation": "python-independent",
@@ -309,6 +398,7 @@ def main():
         "aggregate": {
             "pass": len(passed),
             "fail": len(failed),
+            "by_enforcement": by_enforcement,
         },
         "failed_cases": [
             {"case_id": r["case_id"], "failures": r["failures"]}
@@ -325,6 +415,7 @@ def main():
     if args.require_complete and failed:
         return 2
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())

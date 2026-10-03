@@ -30,10 +30,7 @@ jobs:
         id: runner
         run: |
           set +e
-          python conformance/v0.1/runner-a/runner_a.py \
-            --enforcement direct_schema \
-            --require-complete \
-            --output /tmp/runner-a-direct-schema.json
+          python conformance/v0.1/runner-a/runner_a.py             --enforcement direct_schema             --require-complete             --output /tmp/runner-a-direct-schema.json
           code=$?
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
@@ -45,5 +42,30 @@ jobs:
           path: /tmp/runner-a-direct-schema.json
           if-no-files-found: error
       - name: Enforce runner A direct-schema gate
+        if: steps.runner.outputs.exit_code != '0'
+        run: exit 1
+
+  deterministic-vector:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install runner A dependencies
+        run: python -m pip install --disable-pip-version-check -r conformance/v0.1/runner-a/requirements.txt
+      - name: Run independent deterministic-vector gate
+        id: runner
+        run: |
+          set +e
+          python conformance/v0.1/runner-a/runner_a.py             --enforcement deterministic_vector             --require-complete             --output /tmp/runner-a-deterministic-vector.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload runner A vector evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-a-deterministic-vector
+          path: /tmp/runner-a-deterministic-vector.json
+          if-no-files-found: error
+      - name: Enforce runner A deterministic-vector gate
         if: steps.runner.outputs.exit_code != '0'
         run: exit 1

@@ -13,16 +13,28 @@ Wave 01 implements:
 - language-neutral Schema-result comparison;
 - normalized finding matcher/comparator primitives.
 
-It intentionally fails closed for `semantic_verifier`, `mixed_schema_semantic`, and `deterministic_vector` execution until their independent executors are implemented. Expected-result files are never used as actual execution output.
+Wave 02 adds an independent deterministic-vector executor for all 43 vector cases:
 
-Current Wave 01 gate:
+- RFC 8785 JCS canonicalization;
+- SHA-256 and unpadded base64url;
+- HMAC-SHA256 candidate verification;
+- Ed25519 key derivation, signing, and verification;
+- Signing Statement field binding;
+- embedded/detached envelope binding;
+- post-sign tamper and record-deletion separation;
+- hash/HMAC/redaction privacy-commitment checks;
+- integrity/privacy composition checks;
+- normalized vector-result comparison.
+
+Vector execution is selected from the case's `planned_test_id`. The executor never reads an expected-result file when producing actual vector results.
+
+Runner A still fails closed for `semantic_verifier` and `mixed_schema_semantic` until their independent semantic executor is implemented.
+
+Current gates:
 
 ```text
-6 direct_schema cases
-→ independently materialized
-→ independently Schema-validated
-→ golden schema_results compared
-→ 6/6 pass
+direct_schema          6 / 6
+deterministic_vector  43 / 43 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
