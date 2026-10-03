@@ -1,0 +1,27 @@
+{
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-052",
+      "check_id": "verifier-signing-statement-binding-001",
+      "subject_selector": {
+        "vector_id": "integrity-signing-statement-binding-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:semantically_interpreted_signed_metadata_is_unauthenticated"
+      ]
+    }
+  ],
+  "process_outcome": "completed",
+  "case_id": "c2a-v0.1-vfy-052-verifier-signing-statement-binding-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}

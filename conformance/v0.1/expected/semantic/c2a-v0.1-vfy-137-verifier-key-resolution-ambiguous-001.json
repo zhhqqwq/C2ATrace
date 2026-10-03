@@ -1,0 +1,35 @@
+{
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-137",
+      "check_id": "verifier-key-resolution-ambiguous-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-001"
+      },
+      "domain": "resolution",
+      "status": "ambiguous",
+      "reason_code": "verification_key_ambiguous"
+    }
+  ],
+  "envelope_results": [
+    {
+      "envelope_id": "env-test-001",
+      "key_resolution": "ambiguous",
+      "signature_status": "unverified",
+      "arp_binding": "unverified",
+      "key_ref": "test-ed25519-key-001"
+    }
+  ],
+  "process_outcome": "incomplete_evaluation",
+  "case_id": "c2a-v0.1-vfy-137-verifier-key-resolution-ambiguous-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}

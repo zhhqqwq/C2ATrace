@@ -1,0 +1,27 @@
+{
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-135",
+      "check_id": "verifier-unsigned-not-invalid-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:unsigned_receipt_is_invalid_solely_for_signature_absence"
+      ]
+    }
+  ],
+  "process_outcome": "completed",
+  "case_id": "c2a-v0.1-vfy-135-verifier-unsigned-not-invalid-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}

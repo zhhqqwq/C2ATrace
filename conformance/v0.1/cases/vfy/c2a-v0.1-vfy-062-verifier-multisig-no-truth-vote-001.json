@@ -1,0 +1,93 @@
+{
+  "case_id": "c2a-v0.1-vfy-062-verifier-multisig-no-truth-vote-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-062"
+  ],
+  "planned_test_ids": [
+    "verifier-multisig-no-truth-vote-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Multiple valid signatures do not act as votes that upgrade recorded assertions into factual truth.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "patches": [
+        {
+          "op": "add",
+          "path": "/integrity_envelopes/-",
+          "value": {
+            "id": "env-test-002",
+            "kind": "IntegrityEnvelope",
+            "placement": "embedded",
+            "receipt_id": "receipt-minimal-001",
+            "payload_digest": {
+              "algorithm": "sha256",
+              "value": {
+                "encoding": "base64url",
+                "value": "rFTRfzA5v_UScc1oHBm94lW2_D026aKld5pz70URrsw"
+              },
+              "representation_basis": "arp_jcs_utf8",
+              "canonicalization_profile": "rfc8785-jcs"
+            },
+            "canonicalization_profile": "rfc8785-jcs",
+            "digest_algorithm": "sha256",
+            "signature_profile": "ed25519",
+            "key_ref": "test-ed25519-key-001",
+            "signed_metadata": {},
+            "signature": {
+              "encoding": "base64url",
+              "value": "CjSQwjAyNEgNefA6nUYvHsWcf03tkulAgOBDkCGXcdUmkodIGcDa8ICrZvW5wyoTyecYyhM2yPEgRODvLrr4Bw"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-062"
+    ],
+    "capabilities": [
+      "verification_keys"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-062",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "VFY-062"
+    ],
+    "verification_keys": [
+      {
+        "key_ref": "test-ed25519-key-001",
+        "algorithm": "ed25519",
+        "public_key_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg"
+      }
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-062-verifier-multisig-no-truth-vote-001.json"
+}

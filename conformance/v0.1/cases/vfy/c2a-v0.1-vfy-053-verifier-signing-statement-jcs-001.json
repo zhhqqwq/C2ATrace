@@ -1,0 +1,52 @@
+{
+  "case_id": "c2a-v0.1-vfy-053-verifier-signing-statement-jcs-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-053"
+  ],
+  "planned_test_ids": [
+    "verifier-signing-statement-jcs-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Baseline Signing Statement verification uses its RFC 8785 JCS UTF-8 byte representation.",
+  "documents": [
+    {
+      "document_id": "vector",
+      "role": "raw_object",
+      "source": {
+        "path": "vectors/v0.1/integrity-signing-statement-binding.json"
+      },
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "vector_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-053"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-053",
+    "primary_documents": [
+      "vector"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "VFY-053"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-053-verifier-signing-statement-jcs-001.json"
+}

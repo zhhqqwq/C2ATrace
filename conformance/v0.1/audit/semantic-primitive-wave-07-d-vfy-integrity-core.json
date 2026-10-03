@@ -1,0 +1,46 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-07-d-vfy-integrity-core",
+  "status": "complete",
+  "clustering_basis": "canonicalization, digest, envelope, key resolution, signature validity, ARP binding, and bounded integrity claims",
+  "newly_materialized": [
+    "VFY-047",
+    "VFY-048",
+    "VFY-049",
+    "VFY-050",
+    "VFY-051",
+    "VFY-052",
+    "VFY-053",
+    "VFY-054",
+    "VFY-055",
+    "VFY-057",
+    "VFY-058",
+    "VFY-059",
+    "VFY-060",
+    "VFY-061",
+    "VFY-062",
+    "VFY-135",
+    "VFY-136",
+    "VFY-137"
+  ],
+  "newly_materialized_count": 18,
+  "executable_semantic_requirements": 700,
+  "remaining_semantic_requirements": 71,
+  "remaining_vfy_semantic_requirements": 71,
+  "shared_evidence": [
+    "vectors/v0.1/integrity-jcs-sha256-ed25519.json",
+    "vectors/v0.1/integrity-signing-statement-binding.json",
+    "fixtures/v0.1/valid/minimal-signed-receipt.json",
+    "fixtures/v0.1/valid/source-to-request.json",
+    "conformance/v0.1/primitives/receipts/trust-signed-valid.json"
+  ],
+  "assertions": {
+    "digest_recomputed_independently": true,
+    "per_envelope_status_preserved": true,
+    "key_resolution_separate_from_signature_validity": true,
+    "signature_validity_separate_from_arp_binding": true,
+    "integrity_does_not_upgrade_truth_or_completeness": true,
+    "unsigned_distinct_from_invalid": true,
+    "frozen_schema_unchanged": true
+  }
+}

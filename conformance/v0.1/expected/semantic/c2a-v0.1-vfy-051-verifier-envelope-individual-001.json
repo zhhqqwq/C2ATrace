@@ -1,0 +1,51 @@
+{
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-051",
+      "check_id": "verifier-envelope-individual-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-001"
+      },
+      "domain": "cryptographic",
+      "status": "valid"
+    },
+    {
+      "requirement_id": "VFY-051",
+      "check_id": "verifier-envelope-individual-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-002"
+      },
+      "domain": "cryptographic",
+      "status": "invalid"
+    }
+  ],
+  "envelope_results": [
+    {
+      "envelope_id": "env-test-001",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "test-ed25519-key-001"
+    },
+    {
+      "envelope_id": "env-test-002",
+      "key_resolution": "resolved",
+      "signature_status": "invalid",
+      "arp_binding": "matched",
+      "key_ref": "test-ed25519-key-001"
+    }
+  ],
+  "process_outcome": "invalidity_detected",
+  "case_id": "c2a-v0.1-vfy-051-verifier-envelope-individual-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}

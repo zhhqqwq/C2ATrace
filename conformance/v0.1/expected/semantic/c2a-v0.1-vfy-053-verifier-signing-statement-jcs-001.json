@@ -1,0 +1,25 @@
+{
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-053",
+      "check_id": "verifier-signing-statement-jcs-001",
+      "subject_selector": {
+        "vector_id": "integrity-signing-statement-binding-001"
+      },
+      "domain": "comparison",
+      "status": "matched",
+      "reason_code": "signing_statement_jcs_utf8_matched"
+    }
+  ],
+  "process_outcome": "completed",
+  "case_id": "c2a-v0.1-vfy-053-verifier-signing-statement-jcs-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}

@@ -11584,7 +11584,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-047-verifier-arp-jcs-001"
     },
     {
       "family": "vfy",
@@ -11599,7 +11601,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-048-verifier-digest-recompute-001"
     },
     {
       "family": "vfy",
@@ -11615,7 +11619,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-049-verifier-digest-bounded-001"
     },
     {
       "family": "vfy",
@@ -11631,7 +11637,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-050-verifier-digest-mismatch-001"
     },
     {
       "family": "vfy",
@@ -11646,7 +11654,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-051-verifier-envelope-individual-001"
     },
     {
       "family": "vfy",
@@ -11661,7 +11671,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-052-verifier-signing-statement-binding-001"
     },
     {
       "family": "vfy",
@@ -11674,7 +11686,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-053-verifier-signing-statement-jcs-001"
     },
     {
       "family": "vfy",
@@ -11691,7 +11705,9 @@
         "prim.integrity.composition",
         "prim.ref.failure",
         "prim.ref.local"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-054-verifier-key-unresolved-vs-invalid-001"
     },
     {
       "family": "vfy",
@@ -11707,7 +11723,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-055-verifier-signature-unsupported-vs-invalid-001"
     },
     {
       "family": "vfy",
@@ -11723,7 +11741,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-057-verifier-signature-no-key-trust-001"
     },
     {
       "family": "vfy",
@@ -11739,7 +11759,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.request.binding"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-058-verifier-signature-vs-arp-binding-001"
     },
     {
       "family": "vfy",
@@ -11755,7 +11777,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-059-verifier-signature-no-truth-001"
     },
     {
       "family": "vfy",
@@ -11770,7 +11794,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-060-verifier-signature-no-completeness-001"
     },
     {
       "family": "vfy",
@@ -11785,7 +11811,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-061-verifier-invalid-signature-bounded-001"
     },
     {
       "family": "vfy",
@@ -11801,7 +11829,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-062-verifier-multisig-no-truth-vote-001"
     },
     {
       "family": "vfy",
@@ -12856,7 +12886,9 @@
         "prim.claim.strength",
         "prim.integrity.composition",
         "prim.receipt.multi"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-135-verifier-unsigned-not-invalid-001"
     },
     {
       "family": "vfy",
@@ -12872,7 +12904,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-136-verifier-signature-absence-001"
     },
     {
       "family": "vfy",
@@ -12888,7 +12922,9 @@
       "dependency_primitives": [
         "prim.integrity.composition",
         "prim.ref.failure"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-137-verifier-key-resolution-ambiguous-001"
     },
     {
       "family": "vfy",
@@ -13122,6 +13158,6 @@
       "dependency_primitives": []
     }
   ],
-  "executable_semantic_requirements": 682,
-  "remaining_semantic_requirements": 89
+  "executable_semantic_requirements": 700,
+  "remaining_semantic_requirements": 71
 }

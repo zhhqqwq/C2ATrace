@@ -1,0 +1,128 @@
+{
+  "case_id": "c2a-v0.1-vfy-055-verifier-signature-unsupported-vs-invalid-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-055"
+  ],
+  "planned_test_ids": [
+    "verifier-signature-unsupported-vs-invalid-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unsupported signature-check implementation is distinct from a supported Ed25519 check that executes and fails.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "inline": {
+          "kind": "VerificationReport",
+          "report_id": "report-vfy-055",
+          "verifier": {
+            "name": "test-verifier",
+            "version": "0.1-test",
+            "profiles": [
+              "urn:c2atrace:profile:v0.1:verifier"
+            ]
+          },
+          "invocation": {
+            "receipt_ids": [
+              "receipt-minimal-001"
+            ],
+            "goals": [
+              {
+                "check_id": "verifier-signature-unsupported-vs-invalid-001",
+                "mandatory": true
+              }
+            ],
+            "capability_summary": {
+              "supported_profiles": [
+                "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+              ],
+              "unsupported_checks": [
+                "urn:c2atrace:profile:test:signature-v2"
+              ]
+            }
+          },
+          "findings": [
+            {
+              "finding_id": "finding-vfy-055-unsupported",
+              "check_id": "signature-profile-dispatch",
+              "subject": {
+                "subject_kind": "profile",
+                "profile_id": "urn:c2atrace:profile:test:signature-v2"
+              },
+              "domain": "support",
+              "status": "unsupported",
+              "evidence_bases": [
+                "profile:urn:c2atrace:profile:test:signature-v2"
+              ],
+              "mandatory": false,
+              "reason_code": "signature_profile_not_implemented"
+            },
+            {
+              "finding_id": "finding-vfy-055-invalid",
+              "check_id": "ed25519-signature-check",
+              "subject": {
+                "subject_kind": "integrity_envelope",
+                "receipt_id": "receipt-minimal-001",
+                "envelope_id": "env-test-001"
+              },
+              "domain": "cryptographic",
+              "status": "invalid",
+              "evidence_bases": [
+                "E2"
+              ],
+              "mandatory": true,
+              "reason_code": "signature_verification_failed"
+            }
+          ],
+          "envelope_results": [
+            {
+              "envelope_id": "env-test-001",
+              "key_resolution": "resolved",
+              "signature_status": "invalid",
+              "arp_binding": "matched",
+              "key_ref": "test-ed25519-key-001"
+            }
+          ],
+          "completeness": {
+            "package_inventory": "established",
+            "reference_closure": "established",
+            "runtime_history": "unknown"
+          },
+          "process_outcome": "invalidity_detected"
+        }
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-055"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-055",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-055"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.integrity.composition"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-055-verifier-signature-unsupported-vs-invalid-001.json"
+}

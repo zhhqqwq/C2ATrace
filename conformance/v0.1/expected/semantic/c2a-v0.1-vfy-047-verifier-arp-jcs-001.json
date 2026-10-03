@@ -1,0 +1,24 @@
+{
+  "schema_results": [
+    {
+      "document_id": "vector",
+      "schema_target": "urn:c2atrace:conformance:v0.1:deterministic-vector",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-047",
+      "check_id": "verifier-arp-jcs-001",
+      "subject_selector": {
+        "vector_id": "integrity-jcs-sha256-ed25519-001"
+      },
+      "domain": "conformance",
+      "status": "valid"
+    }
+  ],
+  "process_outcome": "completed",
+  "case_id": "c2a-v0.1-vfy-047-verifier-arp-jcs-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}

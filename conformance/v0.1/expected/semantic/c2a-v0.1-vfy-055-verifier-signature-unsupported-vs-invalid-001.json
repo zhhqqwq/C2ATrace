@@ -1,0 +1,36 @@
+{
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-055",
+      "check_id": "signature-profile-dispatch",
+      "subject_selector": {
+        "profile_id": "urn:c2atrace:profile:test:signature-v2"
+      },
+      "domain": "support",
+      "status": "unsupported",
+      "reason_code": "signature_profile_not_implemented"
+    },
+    {
+      "requirement_id": "VFY-055",
+      "check_id": "ed25519-signature-check",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001",
+        "object_id": "env-test-001"
+      },
+      "domain": "cryptographic",
+      "status": "invalid",
+      "reason_code": "signature_verification_failed"
+    }
+  ],
+  "process_outcome": "invalidity_detected",
+  "case_id": "c2a-v0.1-vfy-055-verifier-signature-unsupported-vs-invalid-001",
+  "comparison_mode": "contains_normative",
+  "forbidden_findings": []
+}
