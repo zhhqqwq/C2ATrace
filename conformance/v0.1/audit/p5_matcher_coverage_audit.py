@@ -6,7 +6,8 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[3]
 CONF = ROOT / "conformance" / "v0.1"
 FAMILIES = ["tm","claim","graph","src","drv","req","out","tool","trust","taint","priv","rcpt","intg","pad","tad","vfy"]
-PHASE_ORDER = {k:i for i,k in enumerate(["schema_validate","resolve_references","graph_checks","representation_checks","privacy_checks","integrity_checks","claim_checks","aggregate_report"])}\nRUNNER_SCOPE_KEYS = {"subject_kind","receipt_id","object_id","expected_kind","envelope_id","profile_id","report_id","vector_id","linked_receipt_id","path","dropped_path","slot","compared_object_id","metadata_name","event_semantics","capture_extent","origin"}
+PHASE_ORDER = {k:i for i,k in enumerate(["schema_validate","resolve_references","graph_checks","representation_checks","privacy_checks","integrity_checks","claim_checks","aggregate_report"])}
+RUNNER_SCOPE_KEYS = {"subject_kind","receipt_id","object_id","expected_kind","envelope_id","profile_id","report_id","vector_id","linked_receipt_id","path","dropped_path","slot","compared_object_id","metadata_name","event_semantics","capture_extent","origin"}
 EXPECTED_TOP = {"case_id","comparison_mode","schema_results","required_findings","forbidden_findings","envelope_results","process_outcome","completeness","notes","vector_results"}
 MATCHER_KEYS = {"requirement_id","check_id","subject_selector","domain","status","evidence_bases","prohibited_inferences","reason_code"}
 SCHEMA_RESULT_KEYS = {"document_id","schema_target","status","error_classes"}
