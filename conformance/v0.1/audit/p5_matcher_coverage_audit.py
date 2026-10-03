@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-import argparse, copy, json, re, sys
+import argparse, copy, json, os, re, sys
 from pathlib import Path
 from urllib.parse import unquote
+
+from jsonschema import Draft202012Validator
+from referencing import Registry, Resource
 
 ROOT = Path(__file__).resolve().parents[3]
 CONF = ROOT / "conformance" / "v0.1"
@@ -97,6 +100,20 @@ def schema_registry():
                 pass
     return reg
 
+def conformance_validators():
+    schemas = {}
+    resources = []
+    for p in (CONF/"schema").glob("*.json"):
+        j = load(p)
+        if isinstance(j, dict) and isinstance(j.get("$id"), str):
+            schemas[p.name] = j
+            resources.append((j["$id"], Resource.from_contents(j)))
+    registry = Registry().with_resources(resources)
+    return (
+        Draft202012Validator(schemas["case.schema.json"], registry=registry),
+        Draft202012Validator(schemas["expected-result.schema.json"], registry=registry),
+    )
+
 def resolve_schema_target(target, reg):
     base, sep, frag = target.partition("#")
     if base not in reg: raise KeyError(base)
@@ -184,6 +201,7 @@ def expected_shape(e, rec, ds, variants, ev_re, pi_re):
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--output", required=True); args=ap.parse_args()
     reg=schema_registry(); ds,variants,ev_re,pi_re=verifier_rules()
+    case_validator, expected_validator = conformance_validators()
     rows=[]; meta=[]
     for fam in FAMILIES:
         idx=load(CONF/"index"/f"{fam}.json"); tx=load(ROOT/"traceability"/"v0.1"/f"{fam}.json")
@@ -203,7 +221,7 @@ def main():
 
     results=[]
     for r in rows:
-        rec={"case_id":r["case_id"],"requirement_id":r["requirement_id"],"planned_test_id":r["planned_test_id"],"primary_enforcement":r["primary_enforcement"],"failures":[],"warnings":[]}
+        rec={"case_id":r["case_id"],"requirement_id":r["requirement_id"],"planned_test_id":r["planned_test_id"],"primary_enforcement":r["primary_enforcement"],"case_path":r["case_path"],"expected_result_path":r["expected_result_path"],"failures":[],"warnings":[]}
         cp=ROOT/r["case_path"]; ep=ROOT/r["expected_result_path"]
         if not cp.is_file(): fail(rec,"case_file_missing",path=r["case_path"]); results.append(rec); continue
         if not ep.is_file(): fail(rec,"expected_file_missing",path=r["expected_result_path"]); results.append(rec); continue
@@ -211,6 +229,10 @@ def main():
         except Exception as ex: fail(rec,"case_json_parse",detail=str(ex)); results.append(rec); continue
         try: e=load(ep)
         except Exception as ex: fail(rec,"expected_json_parse",detail=str(ex)); results.append(rec); continue
+        for err in sorted(case_validator.iter_errors(c), key=lambda x: str(list(x.absolute_path)))[:10]:
+            fail(rec,"case_schema_invalid",path=list(err.absolute_path),validator=err.validator)
+        for err in sorted(expected_validator.iter_errors(e), key=lambda x: str(list(x.absolute_path)))[:10]:
+            fail(rec,"expected_result_schema_invalid",path=list(err.absolute_path),validator=err.validator)
         if c.get("case_id") != r["case_id"]: fail(rec,"case_id_join")
         if c.get("requirement_ids") != [r["requirement_id"]]: fail(rec,"requirement_join",actual=c.get("requirement_ids"))
         if c.get("planned_test_ids") != [r["planned_test_id"]]: fail(rec,"planned_test_join",actual=c.get("planned_test_ids"))
@@ -221,6 +243,18 @@ def main():
         expected_shape(e,rec,ds,variants,ev_re,pi_re)
 
         docs=c.get("documents",[]) if isinstance(c.get("documents"),list) else []
+        rec["input_documents"] = [
+            {
+                "document_id": d.get("document_id"),
+                "role": d.get("role"),
+                "source_kind": "path" if isinstance(d.get("source"),dict) and "path" in d["source"] else "inline",
+                "source_path": d.get("source",{}).get("path") if isinstance(d.get("source"),dict) else None,
+                "extract_pointer": d.get("source",{}).get("extract_pointer") if isinstance(d.get("source"),dict) else None,
+                "patch_count": len(d.get("patches",[]) or []),
+                "schema_target": d.get("schema_target"),
+            }
+            for d in docs if isinstance(d,dict)
+        ]
         ids=[d.get("document_id") for d in docs if isinstance(d,dict)]
         if len(ids)!=len(set(ids)): fail(rec,"duplicate_document_id")
         material={}; receipt_ids=set(); object_ids=set(); envelope_ids=set(); profile_ids=set(); secrets=set()
@@ -253,7 +287,14 @@ def main():
         if any(x not in PHASE_ORDER and x != "vector_checks" for x in phases): fail(rec,"phase_unknown")
         ordered=[x for x in phases if x in PHASE_ORDER]
         if any(PHASE_ORDER[ordered[i]]>PHASE_ORDER[ordered[i+1]] for i in range(len(ordered)-1)): fail(rec,"phase_order")
+        rec["phases"] = phases
         h=c.get("harness")
+        rec["harness"] = {
+            "present": isinstance(h,dict),
+            "primary_documents": list((h or {}).get("primary_documents",[]) or []) if isinstance(h,dict) else [],
+            "resolution_set": list((h or {}).get("resolution_set",[]) or []) if isinstance(h,dict) else [],
+            "external_evidence": list((h or {}).get("external_evidence",[]) or []) if isinstance(h,dict) else [],
+        }
         if r["primary_enforcement"] in {"semantic_verifier","mixed_schema_semantic"} and not isinstance(h,dict): fail(rec,"harness_missing")
         if isinstance(h,dict):
             for key in ["primary_documents","resolution_set","external_evidence"]:
@@ -287,6 +328,8 @@ def main():
         for s in secrets:
             if s and s in et: fail(rec,"secret_leaked_to_expected")
         rec["matcher_count"] = len(allm)
+        rec["required_matcher_count"] = len(e.get("required_findings",[]) or [])
+        rec["forbidden_matcher_count"] = len(e.get("forbidden_findings",[]) or [])
         rec["target_matcher_count"] = len(target)
         rec["comparison_mode"] = e.get("comparison_mode")
         rec["status"] = "pass" if not rec["failures"] else "fail"
@@ -300,16 +343,35 @@ def main():
     for r in results:
         x=counts.setdefault(r["primary_enforcement"],{"total":0,"pass":0,"fail":0})
         x["total"]+=1; x[r["status"]]+=1
+    comparison_modes={}
+    for r in results:
+        m=r.get("comparison_mode")
+        comparison_modes[m]=comparison_modes.get(m,0)+1
+    matcher_counts={
+        "total":sum(r.get("matcher_count",0) or 0 for r in results),
+        "required":sum(r.get("required_matcher_count",0) or 0 for r in results),
+        "forbidden":sum(r.get("forbidden_matcher_count",0) or 0 for r in results),
+        "target_requirement":sum(r.get("target_matcher_count",0) or 0 for r in results),
+    }
+    materialization_counts={
+        "documents":sum(len(r.get("input_documents",[])) for r in results),
+        "path_sources":sum(1 for r in results for d in r.get("input_documents",[]) if d.get("source_kind")=="path"),
+        "inline_sources":sum(1 for r in results for d in r.get("input_documents",[]) if d.get("source_kind")=="inline"),
+        "extract_pointers":sum(1 for r in results for d in r.get("input_documents",[]) if d.get("extract_pointer") is not None),
+        "patched_documents":sum(1 for r in results for d in r.get("input_documents",[]) if d.get("patch_count",0)>0),
+        "patch_operations":sum(d.get("patch_count",0) for r in results for d in r.get("input_documents",[])),
+    }
     report={
       "audit":"C2ATrace v0.1 P5 expected VerificationFinding matcher coverage audit",
-      "source_commit":"f0ecc83f9adce66f77860173b34dc0ddaca5af82",
+      "baseline_commit":"f0ecc83f9adce66f77860173b34dc0ddaca5af82",
+      "audited_commit":os.environ.get("GITHUB_SHA"),
       "scope":{"requirements":907,"cases":907},
-      "checks":["index_trace_case_expected_join","deterministic_source_materialization","json_pointer_resolution","ordered_patch_application","schema_target_resolution","phase_legality_and_order","harness_document_reference_closure","expected_result_machine_shape","domain_status_legality","normalized_subject_scope_key_boundedness","evidence_basis_and_prohibited_inference_bounds","enforcement_layer_coverage","required_forbidden_noncontradiction","secret_nonleakage"],
-      "aggregate":{"meta_failures":len(meta),"case_pass":len(results)-len(fails),"case_fail":len(fails),"case_warn":len(warns),"by_enforcement":counts},
+      "checks":["case_schema_validation","expected_result_schema_validation","index_trace_case_expected_join","deterministic_source_materialization","json_pointer_resolution","ordered_patch_application","schema_target_resolution","phase_legality_and_order","harness_document_reference_closure","expected_result_machine_shape","domain_status_legality","normalized_subject_scope_key_boundedness","evidence_basis_and_prohibited_inference_bounds","enforcement_layer_coverage","required_forbidden_noncontradiction","secret_nonleakage"],
+      "aggregate":{"meta_failures":len(meta),"case_pass":len(results)-len(fails),"case_fail":len(fails),"case_warn":len(warns),"by_enforcement":counts,"comparison_modes":comparison_modes,"matchers":matcher_counts,"materialization":materialization_counts},
       "meta_failures":meta,
       "failed_cases":[{"case_id":r["case_id"],"failures":r["failures"]} for r in fails],
       "warning_cases":[{"case_id":r["case_id"],"warnings":r["warnings"]} for r in warns],
-      "case_results":[{"case_id":r["case_id"],"requirement_id":r["requirement_id"],"planned_test_id":r["planned_test_id"],"primary_enforcement":r["primary_enforcement"],"status":r["status"],"matcher_count":r.get("matcher_count"),"target_matcher_count":r.get("target_matcher_count"),"comparison_mode":r.get("comparison_mode")} for r in results]
+      "case_results":[{"case_id":r["case_id"],"requirement_id":r["requirement_id"],"planned_test_id":r["planned_test_id"],"primary_enforcement":r["primary_enforcement"],"case_path":r.get("case_path"),"expected_result_path":r.get("expected_result_path"),"status":r["status"],"comparison_mode":r.get("comparison_mode"),"matcher_count":r.get("matcher_count"),"required_matcher_count":r.get("required_matcher_count"),"forbidden_matcher_count":r.get("forbidden_matcher_count"),"target_matcher_count":r.get("target_matcher_count"),"input_documents":r.get("input_documents",[]),"phases":r.get("phases",[]),"harness":r.get("harness")} for r in results]
     }
     Path(args.output).write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps(report["aggregate"],sort_keys=True))
