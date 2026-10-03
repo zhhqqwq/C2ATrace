@@ -1,0 +1,46 @@
+name: Runner A wave 01
+
+on:
+  push:
+    branches:
+      - p6-runner-a-20261003
+    paths:
+      - "conformance/v0.1/runner-a/**"
+      - "conformance/v0.1/cases/**"
+      - "conformance/v0.1/expected/**"
+      - "conformance/v0.1/index/**"
+      - "conformance/v0.1/manifest.json"
+      - "conformance/v0.1/schema/**"
+      - "schema/v0.1/**"
+      - "fixtures/v0.1/**"
+      - "vectors/v0.1/**"
+      - ".github/workflows/runner-a-wave-01.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  runner-a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Runner A dependencies
+        run: python -m pip install --disable-pip-version-check -r conformance/v0.1/runner-a/requirements.txt
+      - name: Execute Runner A
+        id: runner
+        run: |
+          set +e
+          python conformance/v0.1/runner-a/runner.py --output /tmp/runner-a-wave-01.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload Runner A evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-a-wave-01
+          path: /tmp/runner-a-wave-01.json
+          if-no-files-found: error
+      - name: Enforce Runner A wave gate
+        if: steps.runner.outputs.exit_code != '0'
+        run: exit 1
