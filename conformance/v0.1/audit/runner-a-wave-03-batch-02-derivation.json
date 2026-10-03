@@ -1,0 +1,64 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "02-derivation",
+  "status": "complete",
+  "implementation_commit": "9907bff7925a6972bbe2d8c21cc08ec343602621",
+  "selection": {
+    "primary_primitives": [
+      "prim.derivation.mapping"
+    ],
+    "additional_mixed_requirements": [
+      "DRV-002",
+      "DRV-003",
+      "DRV-004",
+      "DRV-009",
+      "DRV-016",
+      "DRV-019"
+    ],
+    "expected_cases": 29,
+    "selected_cases": 29
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 23,
+      "pass": 23,
+      "fail": 0
+    },
+    "mixed_schema_semantic": {
+      "total": 6,
+      "pass": 6,
+      "fail": 0
+    },
+    "total": {
+      "cases": 29,
+      "pass": 29,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 29,
+    "process_outcomes": {
+      "completed": 21,
+      "invalidity_detected": 7,
+      "incomplete_evaluation": 1
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37133314382,
+    "artifact_name": "runner-a-semantic-derivation",
+    "artifact_sha256": "49984bc0ee8ade179e9dcb637801bfa1610d7f95c34d90fe92bfdca713704e4f"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "batch_selected_from_coverage_matrix_plus_explicit_adjacent_mixed_requirements": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}

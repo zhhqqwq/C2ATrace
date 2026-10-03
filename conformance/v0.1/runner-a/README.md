@@ -38,7 +38,7 @@ Current gates:
 direct_schema           6 / 6
 deterministic_vector    43 / 43
 semantic foundation     16 / 16
-semantic derivation     29 / 29 target
+semantic derivation     29 / 29
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
