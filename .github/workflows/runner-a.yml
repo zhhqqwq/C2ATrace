@@ -69,3 +69,34 @@ jobs:
       - name: Enforce runner A deterministic-vector gate
         if: steps.runner.outputs.exit_code != '0'
         run: exit 1
+
+  semantic-foundation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install runner A dependencies
+        run: python -m pip install --disable-pip-version-check -r conformance/v0.1/runner-a/requirements.txt
+      - name: Run independent semantic foundation gate
+        id: runner
+        run: |
+          set +e
+          python conformance/v0.1/runner-a/runner_a.py \
+            --primary-primitive prim.ref.local \
+            --primary-primitive prim.ref.external \
+            --primary-primitive prim.ref.failure \
+            --primary-primitive prim.graph.invariants \
+            --require-complete \
+            --output /tmp/runner-a-semantic-foundation.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload runner A semantic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-a-semantic-foundation
+          path: /tmp/runner-a-semantic-foundation.json
+          if-no-files-found: error
+      - name: Enforce runner A semantic foundation gate
+        if: steps.runner.outputs.exit_code != '0'
+        run: exit 1

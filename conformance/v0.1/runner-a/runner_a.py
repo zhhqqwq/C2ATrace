@@ -9,6 +9,7 @@ from urllib.parse import unquote
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
+from semantic_executor import SUPPORTED_PLANNED_TESTS, execute_semantic_case
 from vector_executor import execute_case_vector
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -235,6 +236,25 @@ def compare_findings(expected, actual):
     return failures
 
 
+def compare_process_and_completeness(expected, actual):
+    failures = []
+    if "process_outcome" in expected and actual.get("process_outcome") != expected["process_outcome"]:
+        failures.append({
+            "code": "process_outcome_mismatch",
+            "expected": expected["process_outcome"],
+            "actual": actual.get("process_outcome"),
+        })
+    for key, value in (expected.get("completeness") or {}).items():
+        if (actual.get("completeness") or {}).get(key) != value:
+            failures.append({
+                "code": "completeness_mismatch",
+                "dimension": key,
+                "expected": value,
+                "actual": (actual.get("completeness") or {}).get(key),
+            })
+    return failures
+
+
 def compare_vector_results(expected, actual):
     failures = []
     expected_results = expected.get("vector_results", [])
@@ -286,6 +306,7 @@ def run_case(row, schemas):
             "findings": [],
             "vector_results": [],
             "process_outcome": None,
+            "completeness": {},
         },
     }
     try:
@@ -350,7 +371,27 @@ def run_case(row, schemas):
             ))
             result["failures"].extend(compare_findings(expected, []))
     elif enforcement in {"semantic_verifier", "mixed_schema_semantic"}:
-        result["failures"].append({"code": "semantic_executor_not_implemented"})
+        if row["planned_test_id"] not in SUPPORTED_PLANNED_TESTS:
+            result["failures"].append({"code": "semantic_executor_not_implemented"})
+        else:
+            try:
+                semantic = execute_semantic_case(row, case, materialized)
+                result["actual"]["findings"] = semantic["findings"]
+                result["actual"]["process_outcome"] = semantic["process_outcome"]
+                result["actual"]["completeness"] = semantic["completeness"]
+            except Exception as exc:
+                result["failures"].append({
+                    "code": "semantic_execution_error",
+                    "detail": f"{type(exc).__name__}: {exc}",
+                })
+            result["failures"].extend(compare_findings(
+                expected,
+                result["actual"]["findings"],
+            ))
+            result["failures"].extend(compare_process_and_completeness(
+                expected,
+                result["actual"],
+            ))
     else:
         result["failures"].append({"code": "unknown_enforcement", "value": enforcement})
 
@@ -366,6 +407,7 @@ def main():
         "direct_schema", "mixed_schema_semantic", "semantic_verifier", "deterministic_vector"
     ])
     parser.add_argument("--case-id", action="append")
+    parser.add_argument("--primary-primitive", action="append")
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
 
@@ -374,6 +416,14 @@ def main():
         selected = [x for x in selected if x["primary_enforcement"] in set(args.enforcement)]
     if args.case_id:
         selected = [x for x in selected if x["case_id"] in set(args.case_id)]
+    if args.primary_primitive:
+        coverage = load_json(CONF / "primitives" / "coverage-matrix.json")
+        wanted_requirements = {
+            entry["requirement_id"]
+            for entry in coverage["entries"]
+            if entry["primary_primitive"] in set(args.primary_primitive)
+        }
+        selected = [x for x in selected if x["requirement_id"] in wanted_requirements]
 
     schemas = SchemaRegistry()
     results = [run_case(row, schemas) for row in selected]
