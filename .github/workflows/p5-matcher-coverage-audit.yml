@@ -1,0 +1,30 @@
+name: P5 matcher coverage audit
+on:
+  push:
+    branches:
+      - p5-matcher-audit-20261003
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run P5 audit
+        id: audit
+        continue-on-error: true
+        run: |
+          python conformance/v0.1/audit/p5_matcher_coverage_audit.py --output /tmp/p5-matcher-coverage-audit.json
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+      - name: Upload P5 audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p5-matcher-coverage-audit
+          path: /tmp/p5-matcher-coverage-audit.json
+          if-no-files-found: error
+      - name: Enforce audit result
+        if: steps.audit.outputs.exit_code != '0'
+        run: exit 1
