@@ -212,28 +212,6 @@
         }
       },
       {
-        "id": "provider-adapter-001",
-        "kind": "ProviderAdapterCapability",
-        "run_id": "run-sr-001",
-        "adapter_name": "test-provider-adapter",
-        "adapter_version": "1.0",
-        "invocation_boundary": "application call",
-        "attempt_boundary": "transport attempt",
-        "request_capture_levels": [
-          "provider_payload"
-        ],
-        "output_capture": true,
-        "streaming_output": true,
-        "retry_visibility": "direct",
-        "failover_visibility": "direct",
-        "hedge_visibility": "direct",
-        "privacy_profiles": [
-          "full",
-          "hash_only",
-          "redacted"
-        ]
-      },
-      {
         "id": "diag-provider-001",
         "kind": "CaptureDiagnostic",
         "run_id": "run-sr-001",
@@ -279,7 +257,31 @@
     "scope": {
       "scope_kind": "run",
       "run_id": "run-sr-001"
-    }
+    },
+    "adapter_declarations": [
+      {
+        "id": "provider-adapter-001",
+        "kind": "ProviderAdapterCapability",
+        "run_id": "run-sr-001",
+        "adapter_name": "test-provider-adapter",
+        "adapter_version": "1.0",
+        "invocation_boundary": "application call",
+        "attempt_boundary": "transport attempt",
+        "request_capture_levels": [
+          "provider_payload"
+        ],
+        "output_capture": true,
+        "streaming_output": true,
+        "retry_visibility": "direct",
+        "failover_visibility": "direct",
+        "hedge_visibility": "direct",
+        "privacy_profiles": [
+          "full",
+          "hash_only",
+          "redacted"
+        ]
+      }
+    ]
   },
   "payload_digest": {
     "algorithm": "sha256",
