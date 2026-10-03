@@ -43,7 +43,7 @@ request binding          47 / 47
 identity core              8 / 8
 provider occurrence         3 / 3
 model/output core            2 / 2
-provider retry core           5 / 5 target
+provider retry core           5 / 5
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.

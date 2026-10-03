@@ -1,0 +1,129 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "07-provider-attempt-retry-core",
+  "status": "complete",
+  "implementation_commit": "63f353a51a87e116e824e1772dacff4984cc2a39",
+  "blocker_selection": {
+    "remaining_semantic_executable_before_batch": 685,
+    "candidate_primitives": {
+      "prim.model.output": {
+        "single_step_unlock_count": 20,
+        "unlocked_families": {
+          "out": 12,
+          "pad": 8
+        },
+        "dependency_closed_primary_core_cases": 10,
+        "dependency_closed_primary_core_distinct_receipts": 8,
+        "max_primary_shared_receipt_cluster": 3
+      },
+      "prim.provider.attempts": {
+        "single_step_unlock_count": 19,
+        "unlocked_families": {
+          "out": 4,
+          "pad": 13,
+          "tm": 1,
+          "tool": 1
+        },
+        "dependency_closed_primary_core_cases": 10,
+        "dependency_closed_primary_core_distinct_receipts": 6,
+        "max_primary_shared_receipt_cluster": 4
+      },
+      "prim.verifier.report": {
+        "single_step_unlock_count": 93,
+        "unlocked_family_count": 11,
+        "primary_surface_cases_in_unlock_set": 59,
+        "deferred_reason": "High unlock count but broad reporting/completeness/conflict surface across eleven families; not a tight Batch 07 execution cluster."
+      }
+    },
+    "selected_primitive": "prim.provider.attempts",
+    "selection_reason": "Provider-attempt semantics had nearly the same unlock count as model.output but denser shared scenarios and an existing reusable retry occurrence predicate. The visible-retry receipt supports four provider-attempt-primary rules plus one identity rule whose only blocker is provider.attempts."
+  },
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "requirement_ids": [
+      "PAD-020",
+      "PAD-054",
+      "PAD-055",
+      "PAD-056",
+      "TM-005"
+    ],
+    "expected_cases": 5,
+    "selected_cases": 5,
+    "shared_receipt": "conformance/v0.1/primitives/receipts/provider-visible-retry.json",
+    "excluded_adjacent_surfaces": [
+      "attempt predecessor self-loop/cycle",
+      "failover",
+      "hedge",
+      "adapter capture",
+      "model output"
+    ]
+  },
+  "actual_capabilities": [
+    "visible retry preserves distinct ProviderAttempt occurrence identity",
+    "retry_of is accepted only with positive non-provider orchestration evidence",
+    "retry relation stays within one logical ModelInvocation",
+    "retry does not negate or disprove prior provider receipt/processing"
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/provider_attempt_executor.py",
+    "reusable_helper": "retry_attempt_pair",
+    "helper_reused_by_identity_executor": true,
+    "unselected_provider_attempt_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0
+    },
+    "total": {
+      "cases": 5,
+      "pass": 5,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "unique_cases": 5,
+    "unique_requirements": 5,
+    "actual_findings": 5,
+    "finding_domains": {
+      "conformance": 4,
+      "claim": 1
+    },
+    "finding_statuses": {
+      "valid": 4,
+      "asserted": 1
+    },
+    "process_outcomes": {
+      "completed": 5
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37149494226,
+    "artifact_name": "runner-a-semantic-provider-retry-core",
+    "artifact_sha256": "d1a1ad1766ea63481c6bc1f349653b4cb21dd928b65177106fe431bacc805816"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "predecessor_cycle_not_implemented": true,
+    "failover_not_implemented": true,
+    "hedge_not_implemented": true,
+    "verifier_report_not_started_as_batch": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
