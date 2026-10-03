@@ -2796,7 +2796,7 @@
         "VFY-144"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 80,
+      "executable_primary_requirement_count": 95,
       "wave_01_primary_requirements": [
         "VFY-020",
         "VFY-030"
@@ -2874,8 +2874,18 @@
         "VFY-084",
         "VFY-085",
         "VFY-086",
+        "VFY-087",
         "VFY-088",
         "VFY-089",
+        "VFY-090",
+        "VFY-091",
+        "VFY-092",
+        "VFY-093",
+        "VFY-095",
+        "VFY-096",
+        "VFY-097",
+        "VFY-098",
+        "VFY-099",
         "VFY-100",
         "VFY-102",
         "VFY-103",
@@ -2884,7 +2894,12 @@
         "VFY-130",
         "VFY-135",
         "VFY-136",
-        "VFY-137"
+        "VFY-137",
+        "VFY-140",
+        "VFY-151",
+        "VFY-152",
+        "VFY-153",
+        "VFY-154"
       ]
     },
     {
@@ -2941,7 +2956,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 721,
-  "remaining_semantic_requirements": 50,
-  "materialization_wave": "07-e-vfy-claim-vocabulary"
+  "executable_semantic_requirements": 736,
+  "remaining_semantic_requirements": 35,
+  "materialization_wave": "07-f-vfy-completeness-conflict-profile"
 }

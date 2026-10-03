@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-096-verifier-conflict-independent-checks-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-096"
+  ],
+  "planned_test_ids": [
+    "verifier-conflict-independent-checks-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unrelated independent checks continue and retain their own results when another scope is in conflict.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-096"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-096",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-096"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-096-verifier-conflict-independent-checks-001.json"
+}

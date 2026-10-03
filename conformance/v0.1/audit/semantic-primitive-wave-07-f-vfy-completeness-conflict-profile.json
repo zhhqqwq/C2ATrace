@@ -1,0 +1,43 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-07-f-vfy-completeness-conflict-profile",
+  "status": "complete",
+  "newly_materialized": [
+    "VFY-087",
+    "VFY-090",
+    "VFY-091",
+    "VFY-092",
+    "VFY-093",
+    "VFY-095",
+    "VFY-096",
+    "VFY-097",
+    "VFY-098",
+    "VFY-099",
+    "VFY-140",
+    "VFY-151",
+    "VFY-152",
+    "VFY-153",
+    "VFY-154"
+  ],
+  "newly_materialized_count": 15,
+  "executable_semantic_requirements": 736,
+  "remaining_semantic_requirements": 35,
+  "remaining_vfy_semantic_requirements": 35,
+  "shared_evidence": [
+    "conformance/v0.1/primitives/verifier/conflict-completeness-report.json",
+    "conformance/v0.1/primitives/receipts/trust-conflict.json",
+    "conformance/v0.1/primitives/receipts/tool-signed-diagnostic-global-coverage.json",
+    "conformance/v0.1/primitives/receipts/tool-completed-no-effect.json",
+    "conformance/v0.1/primitives/receipts/ref-external-unpinned.json"
+  ],
+  "assertions": {
+    "conflict_preserved": true,
+    "conflict_distinct_from_unknown": true,
+    "conflict_not_signature_vote": true,
+    "conflict_and_invalid_can_coexist": true,
+    "consistent_scope_bounded": true,
+    "runtime_history_default_unknown": true,
+    "unsupported_distinct_from_invalid": true,
+    "profile_ids_inert": true
+  }
+}

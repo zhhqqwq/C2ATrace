@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-098-verifier-malformed-supported-invalid-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "invalid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-098",
+      "check_id": "verifier-malformed-supported-invalid-001",
+      "subject_selector": {
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "reason_code": "supported_profile_malformed",
+      "prohibited_inferences": [
+        "P1:malformed_supported_profile_reclassified_as_unsupported"
+      ]
+    }
+  ],
+  "process_outcome": "invalidity_detected",
+  "forbidden_findings": []
+}

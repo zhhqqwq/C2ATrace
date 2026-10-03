@@ -1,0 +1,150 @@
+{
+  "kind": "VerificationReport",
+  "report_id": "report-vfy-conflict-completeness-001",
+  "verifier": {
+    "name": "test-verifier",
+    "version": "0.1-test",
+    "profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ]
+  },
+  "invocation": {
+    "receipt_ids": [
+      "receipt-source-request-001",
+      "receipt-independent-001"
+    ],
+    "goals": [
+      {
+        "check_id": "conflict-completeness-semantics",
+        "mandatory": false
+      }
+    ],
+    "capability_summary": {
+      "supported_profiles": [
+        "urn:c2atrace:profile:v0.1:core"
+      ],
+      "signature_evidence_count": 3
+    }
+  },
+  "findings": [
+    {
+      "finding_id": "finding-conflict",
+      "check_id": "contradictory-external-evidence",
+      "subject": {
+        "subject_kind": "object",
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "frag-001"
+      },
+      "domain": "conflict",
+      "status": "conflict",
+      "evidence_bases": [
+        "E4"
+      ],
+      "mandatory": false,
+      "reason_code": "contradictory_external_evidence"
+    },
+    {
+      "finding_id": "finding-independent-valid",
+      "check_id": "independent-structural-check",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-independent-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false
+    },
+    {
+      "finding_id": "finding-local-invalid",
+      "check_id": "local-invalidity",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-source-request-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "reason_code": "local_structural_invalidity"
+    },
+    {
+      "finding_id": "finding-unsupported-profile",
+      "check_id": "optional-profile-support",
+      "subject": {
+        "subject_kind": "profile",
+        "profile_id": "urn:c2atrace:profile:test:unsupported"
+      },
+      "domain": "support",
+      "status": "unsupported",
+      "evidence_bases": [
+        "profile:urn:c2atrace:profile:test:unsupported"
+      ],
+      "mandatory": false,
+      "reason_code": "profile_not_implemented"
+    },
+    {
+      "finding_id": "finding-consistent-local",
+      "check_id": "independent-consistency",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-independent-001"
+      },
+      "domain": "conflict",
+      "status": "consistent",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "message": "Consistent only over the stated supplied scope."
+    },
+    {
+      "finding_id": "finding-runtime-completeness",
+      "check_id": "runtime-history-completeness",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-source-request-001"
+      },
+      "domain": "completeness",
+      "status": "unknown",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "reason_code": "runtime_history_not_established"
+    }
+  ],
+  "envelope_results": [
+    {
+      "envelope_id": "env-conflict-a-1",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "key-a"
+    },
+    {
+      "envelope_id": "env-conflict-a-2",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "key-a-2"
+    },
+    {
+      "envelope_id": "env-conflict-b-1",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "key-b"
+    }
+  ],
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "process_outcome": "completed"
+}

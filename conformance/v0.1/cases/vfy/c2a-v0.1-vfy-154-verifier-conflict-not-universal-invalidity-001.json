@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-154-verifier-conflict-not-universal-invalidity-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-154"
+  ],
+  "planned_test_ids": [
+    "verifier-conflict-not-universal-invalidity-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Conflict alone does not make all supplied material universally invalid.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-154"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-154",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-154"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-154-verifier-conflict-not-universal-invalidity-001.json"
+}

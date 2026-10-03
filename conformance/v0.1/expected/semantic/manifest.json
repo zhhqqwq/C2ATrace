@@ -1,6 +1,6 @@
 {
   "schema_target": "urn:c2atrace:conformance:v0.1:expected-result",
-  "fixture_count": 721,
+  "fixture_count": 736,
   "fixtures": [
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-000-claim-composition-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-claim-001-claim-no-upgrade-001.json",
@@ -708,9 +708,19 @@
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-084-verifier-typed-status-domains-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-085-verifier-valid-not-true-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-086-verifier-invalid-vs-uncertain-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-087-verifier-external-conflict-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-088-verifier-inventory-not-history-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-089-verifier-reference-closure-not-history-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-090-verifier-history-completeness-default-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-091-verifier-adapter-completeness-bounded-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-092-verifier-absence-no-completeness-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-093-verifier-conflict-preservation-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-094-verifier-conflict-no-timestamp-winner-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-095-verifier-conflict-no-signature-vote-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-096-verifier-conflict-independent-checks-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-097-verifier-unsupported-no-downgrade-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-098-verifier-malformed-supported-invalid-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-099-verifier-profile-no-code-execution-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-100-verifier-resolution-set-order-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-101-verifier-presentation-envelope-union-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-102-verifier-partial-resolution-local-001.json",
@@ -722,7 +732,12 @@
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-136-verifier-signature-absence-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-137-verifier-key-resolution-ambiguous-001.json",
     "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-138-verifier-key-success-no-identity-resolution-001.json",
-    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-144-verifier-resolver-content-binding-001.json"
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-140-verifier-conflict-not-unknown-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-144-verifier-resolver-content-binding-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-151-verifier-consistent-bounded-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-152-verifier-consistent-prerequisites-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-153-verifier-conflict-and-invalid-001.json",
+    "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-154-verifier-conflict-not-universal-invalidity-001.json"
   ],
   "note": "Normalized semantic expected-result documents. Golden comparison ignores free-text messages and implementation-generated finding IDs."
 }

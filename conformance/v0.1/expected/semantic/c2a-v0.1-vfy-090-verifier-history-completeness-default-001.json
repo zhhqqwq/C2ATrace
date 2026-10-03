@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-vfy-090-verifier-history-completeness-default-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-090",
+      "check_id": "verifier-history-completeness-default-001",
+      "subject_selector": {
+        "report_id": "report-vfy-conflict-completeness-001"
+      },
+      "domain": "completeness",
+      "status": "unknown",
+      "reason_code": "runtime_history_not_established"
+    }
+  ],
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "process_outcome": "completed",
+  "forbidden_findings": []
+}

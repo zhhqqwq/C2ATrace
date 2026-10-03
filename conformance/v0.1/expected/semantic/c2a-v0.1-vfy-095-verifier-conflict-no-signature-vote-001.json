@@ -1,0 +1,50 @@
+{
+  "case_id": "c2a-v0.1-vfy-095-verifier-conflict-no-signature-vote-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-095",
+      "check_id": "verifier-conflict-no-signature-vote-001",
+      "subject_selector": {
+        "report_id": "report-vfy-conflict-completeness-001"
+      },
+      "domain": "conflict",
+      "status": "conflict",
+      "prohibited_inferences": [
+        "P1:signature_count_resolves_conflict_by_vote"
+      ]
+    }
+  ],
+  "envelope_results": [
+    {
+      "envelope_id": "env-conflict-a-1",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "key-a"
+    },
+    {
+      "envelope_id": "env-conflict-a-2",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "key-a-2"
+    },
+    {
+      "envelope_id": "env-conflict-b-1",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "key-b"
+    }
+  ],
+  "process_outcome": "completed",
+  "forbidden_findings": []
+}

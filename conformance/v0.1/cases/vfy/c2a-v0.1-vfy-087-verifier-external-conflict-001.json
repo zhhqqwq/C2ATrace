@@ -1,0 +1,54 @@
+{
+  "case_id": "c2a-v0.1-vfy-087-verifier-external-conflict-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-087"
+  ],
+  "planned_test_ids": [
+    "verifier-external-conflict-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Contradictory supplied external/policy evidence is preserved as conflict rather than selecting an unsupported winner.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/trust-conflict.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "resolve_references",
+      "graph_checks",
+      "integrity_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-087"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-087",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-087"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-087-verifier-external-conflict-001.json"
+}

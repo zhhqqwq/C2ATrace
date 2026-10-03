@@ -1,0 +1,39 @@
+{
+  "case_id": "c2a-v0.1-vfy-152-verifier-consistent-prerequisites-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-152",
+      "check_id": "verifier-consistent-prerequisites-resolution-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "drv-multi-001"
+      },
+      "domain": "resolution",
+      "status": "unresolved"
+    },
+    {
+      "requirement_id": "VFY-152",
+      "check_id": "verifier-consistent-prerequisites-001",
+      "subject_selector": {
+        "receipt_id": "receipt-multi-b",
+        "object_id": "drv-multi-001"
+      },
+      "domain": "conflict",
+      "status": "unverified",
+      "reason_code": "prerequisite_unresolved",
+      "prohibited_inferences": [
+        "P1:unresolved_prerequisite_allows_positive_consistency"
+      ]
+    }
+  ],
+  "process_outcome": "incomplete_evaluation",
+  "forbidden_findings": []
+}

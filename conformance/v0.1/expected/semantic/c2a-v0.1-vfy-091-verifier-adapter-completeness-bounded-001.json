@@ -1,0 +1,42 @@
+{
+  "case_id": "c2a-v0.1-vfy-091-verifier-adapter-completeness-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-091",
+      "check_id": "verifier-adapter-completeness-bounded-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-diagnostic-signed-001",
+        "object_id": "diag-tad-signed-001"
+      },
+      "domain": "completeness",
+      "status": "unknown",
+      "prohibited_inferences": [
+        "P1:adapter_capture_completeness_is_global_runtime_history"
+      ]
+    }
+  ],
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "envelope_results": [
+    {
+      "envelope_id": "env-tad-diag-106",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "test-ed25519-key-001"
+    }
+  ],
+  "process_outcome": "completed",
+  "forbidden_findings": []
+}

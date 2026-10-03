@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-140-verifier-conflict-not-unknown-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-140"
+  ],
+  "planned_test_ids": [
+    "verifier-conflict-not-unknown-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Conflict is preserved as a typed conflict result and is not collapsed into unknown.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-140"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-140",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-140"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-140-verifier-conflict-not-unknown-001.json"
+}
