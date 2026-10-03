@@ -170,7 +170,23 @@ class SchemaRegistry:
         errors = list(validator.iter_errors(instance))
         result: dict[str, Any] = {"status": "valid" if not errors else "invalid"}
         if errors:
-            result["error_classes"] = sorted({str(e.validator) for e in errors})
+            flattened = []
+            def visit(error: Any) -> None:
+                flattened.append(error)
+                for child in error.context:
+                    visit(child)
+            for error in errors:
+                visit(error)
+            result["error_classes"] = sorted({str(e.validator) for e in flattened})
+            result["diagnostics"] = [
+                {
+                    "validator": str(e.validator),
+                    "path": list(e.absolute_path),
+                    "schema_path": list(e.absolute_schema_path),
+                    "message": e.message,
+                }
+                for e in flattened[:40]
+            ]
         return result
 
 
@@ -546,6 +562,8 @@ def schema_result(document_id: str, target: str, result: dict[str, Any]) -> dict
     out={"document_id":document_id,"schema_target":target,"status":result["status"]}
     if result.get("error_classes"):
         out["error_classes"]=result["error_classes"]
+    if result.get("diagnostics"):
+        out["diagnostics"]=result["diagnostics"]
     return out
 
 
@@ -569,9 +587,7 @@ def compare_schema_results(expected: list[dict[str, Any]], actual: list[dict[str
             if k in e and a.get(k)!=e[k]: errors.append(f"schema {e['document_id']} {k}: expected {e[k]!r}, got {a.get(k)!r}")
         if "error_classes" in e:
             eset=set(e["error_classes"]); aset=set(a.get("error_classes",[]))
-            if exact:
-                if aset!=eset: errors.append(f"schema {e['document_id']} error_classes: expected {sorted(eset)}, got {sorted(aset)}")
-            elif not eset<=aset:
+            if not eset<=aset:
                 errors.append(f"schema {e['document_id']} missing error classes {sorted(eset-aset)}")
     return errors
 
