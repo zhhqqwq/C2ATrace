@@ -1,0 +1,139 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "04-identity-core",
+  "status": "complete",
+  "implementation_commit": "154d895c15a304de90acfbf8023c2765d247b07c",
+  "recluster_input": {
+    "identity_primary_requirements": 60,
+    "enforcement": {
+      "semantic_verifier": 60
+    },
+    "materialization_status": {
+      "executable": 60
+    },
+    "by_family": {
+      "drv": 2,
+      "graph": 1,
+      "out": 7,
+      "pad": 11,
+      "priv": 4,
+      "req": 4,
+      "tad": 13,
+      "taint": 1,
+      "tool": 9,
+      "trust": 2,
+      "vfy": 6
+    },
+    "join_dimensions": [
+      "primary primitive",
+      "dependency primitives",
+      "suite enforcement",
+      "case source/shared receipt",
+      "required actual finding capability"
+    ]
+  },
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "primary_primitive": "prim.identity.occurrence",
+    "requirement_ids": [
+      "DRV-013",
+      "DRV-015",
+      "GRAPH-002",
+      "REQ-002",
+      "REQ-009",
+      "REQ-010",
+      "REQ-036",
+      "PAD-034"
+    ],
+    "expected_cases": 8,
+    "selected_cases": 8,
+    "remaining_identity_primary_requirements": 52,
+    "shared_scenarios": {
+      "identity-selection-aggregate.json": [
+        "DRV-013",
+        "DRV-015"
+      ],
+      "identity-request-mutation.json": [
+        "REQ-010",
+        "PAD-034"
+      ],
+      "graph-artifact-id-reuse.json": [
+        "GRAPH-002"
+      ],
+      "provider-visible-retry.json": [
+        "REQ-002"
+      ],
+      "request-adjacent-no-transition.json": [
+        "REQ-009"
+      ],
+      "request-semantic-equal-byte-different.json": [
+        "REQ-036"
+      ]
+    },
+    "dependency_boundary": [
+      "graph/derivation/request predicates already executable",
+      "provider-attempt identity beyond basic retry occurrence deferred with prim.provider.attempts",
+      "tool/TAD occurrence identity deferred with prim.tool.lifecycle",
+      "privacy derivative identity deferred with privacy primitives",
+      "verifier receipt/key identity deferred with receipt.multi/verifier.report"
+    ]
+  },
+  "actual_capabilities": [
+    "selection preserves existing artifact identity",
+    "generated aggregate receives fresh artifact identity",
+    "immutable artifact ID representation conflict",
+    "retry attempt occurrence identity remains distinct",
+    "capture-level snapshot identity separation",
+    "request mutation requires distinct snapshot identity",
+    "semantic digest equality does not merge snapshot identity"
+  ],
+  "execution": {
+    "semantic_verifier": {
+      "total": 8,
+      "pass": 8,
+      "fail": 0
+    },
+    "total": {
+      "cases": 8,
+      "pass": 8,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 8,
+    "finding_domains": {
+      "conformance": 7,
+      "conflict": 1
+    },
+    "finding_statuses": {
+      "valid": 7,
+      "conflict": 1
+    },
+    "process_outcomes": {
+      "completed": 7,
+      "invalidity_detected": 1
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37147062840,
+    "artifact_name": "runner-a-semantic-identity-core",
+    "artifact_sha256": "cbf42b2bacc517cce6506801902183769b33e1dfac11bf577b0b32ac625eaf46"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "unselected_identity_requirements_remain_fail_closed": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}

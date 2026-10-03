@@ -40,7 +40,7 @@ deterministic_vector    43 / 43
 semantic foundation     16 / 16
 semantic derivation     29 / 29
 request binding          47 / 47
-identity core              8 / 8 target
+identity core              8 / 8
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
