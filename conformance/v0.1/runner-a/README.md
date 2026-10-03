@@ -39,7 +39,7 @@ direct_schema           6 / 6
 deterministic_vector    43 / 43
 semantic foundation     16 / 16
 semantic derivation     29 / 29
-request binding          47 / 47 target
+request binding          47 / 47
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.

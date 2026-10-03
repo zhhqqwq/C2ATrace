@@ -1,0 +1,98 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "03-request-binding",
+  "status": "complete",
+  "implementation_commit": "79789dacfefb14d22a06318041e3b68fade6c017",
+  "selection": {
+    "primary_primitives": [
+      "prim.request.binding"
+    ],
+    "additional_mixed_requirements": [
+      "REQ-001",
+      "REQ-003",
+      "REQ-005",
+      "REQ-006",
+      "REQ-007",
+      "REQ-014",
+      "REQ-016",
+      "REQ-017",
+      "REQ-018",
+      "REQ-019",
+      "REQ-020",
+      "REQ-032",
+      "REQ-049"
+    ],
+    "expected_cases": 47,
+    "selected_cases": 47
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 34,
+      "pass": 34,
+      "fail": 0
+    },
+    "mixed_schema_semantic": {
+      "total": 13,
+      "pass": 13,
+      "fail": 0
+    },
+    "total": {
+      "cases": 47,
+      "pass": 47,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 55,
+    "process_outcomes": {
+      "completed": 37,
+      "invalidity_detected": 9,
+      "incomplete_evaluation": 1
+    }
+  },
+  "repairs_during_execution": [
+    {
+      "scope": [
+        "REQ-005",
+        "REQ-006"
+      ],
+      "type": "case_materialization",
+      "detail": "ProviderAttempt lifecycle_state corrected from non-schema value active to frozen-schema value in_progress; normative semantic intent unchanged."
+    },
+    {
+      "scope": [
+        "REQ-020",
+        "REQ-049"
+      ],
+      "type": "runner_schema_error_normalization",
+      "detail": "Nested JSON Schema validation contexts are flattened so branch-local required errors remain observable beneath top-level oneOf."
+    },
+    {
+      "scope": [
+        "REQ-037"
+      ],
+      "type": "request_location_resolution",
+      "detail": "Structured location against an unavailable snapshot representation normalizes to unverified rather than unresolved."
+    }
+  ],
+  "ci": {
+    "workflow_run_id": 37144367056,
+    "artifact_name": "runner-a-semantic-request-binding",
+    "artifact_sha256": "aeeb9ed18d3de02e3b9196ef794e08931200c8199c5a77b03003b2265a17c236"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "semantic_digest_and_byte_digest_checks_recomputed_from_materialized_input": true,
+    "batch_selected_from_coverage_matrix_plus_explicit_adjacent_mixed_requirements": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
