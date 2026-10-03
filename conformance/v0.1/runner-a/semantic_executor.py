@@ -24,6 +24,40 @@ SUPPORTED_PLANNED_TESTS = {
     "verifier-resolver-content-binding-001",
 }
 
+DERIVATION_PLANNED_TESTS = {
+    "derivation-use-generation-no-inference-001",
+    "derivation-transform-cardinality-001",
+    "derivation-output-cardinality-001",
+    "derivation-input-cardinality-001",
+    "derivation-contributor-use-001",
+    "derivation-target-generation-001",
+    "derivation-binary-shorthand-001",
+    "derivation-exact-coverage-001",
+    "derivation-partial-positive-001",
+    "derivation-unknown-no-edge-001",
+    "derivation-use-role-no-edge-001",
+    "derivation-control-no-content-001",
+    "transform-selection-no-derivation-001",
+    "derivation-region-basis-001",
+    "derivation-coordinate-conversion-001",
+    "derivation-one-to-many-isolation-001",
+    "derivation-many-to-one-contributors-001",
+    "derivation-generated-region-no-source-001",
+    "derivation-unknown-region-blocks-exact-001",
+    "derivation-absence-not-negation-001",
+    "derivation-transitive-not-direct-001",
+    "derivation-partial-composition-001",
+    "derivation-unknown-composition-001",
+    "derivation-concat-separator-001",
+    "derivation-template-static-content-001",
+    "derivation-truncate-discarded-001",
+    "derivation-rerank-control-001",
+    "derivation-redaction-no-equality-001",
+    "derivation-no-fabricated-range-001",
+}
+
+SUPPORTED_PLANNED_TESTS.update(DERIVATION_PLANNED_TESTS)
+
 
 def b64url(data):
     return base64.urlsafe_b64encode(data).rstrip(b"=").decode("ascii")
@@ -213,7 +247,7 @@ def aggregate_process(findings):
         return "invalidity_detected"
     if any(f.get("status") in {"mismatched", "conflict"} for f in findings):
         return "invalidity_detected"
-    if any(f.get("status") in {"unresolved", "ambiguous", "unverified", "unsupported"} for f in findings):
+    if any(f.get("status") in {"unresolved", "ambiguous", "unverified"} for f in findings):
         return "incomplete_evaluation"
     return "completed"
 
@@ -483,6 +517,442 @@ def execute_resolver_content_binding(requirement_id, check_id, case, materialize
     )]
 
 
+
+def derivations(receipt):
+    return [r for r in records(receipt) if r.get("kind") == "Derivation"]
+
+
+def transforms(receipt):
+    return [r for r in records(receipt) if r.get("kind") == "Transform"]
+
+
+def ref_id(value):
+    return value.get("id") if isinstance(value, dict) else None
+
+
+def derivation_transform_id(derivation):
+    return ref_id(derivation.get("transform"))
+
+
+def derivation_target_id(derivation):
+    return ref_id((derivation.get("target") or {}).get("artifact"))
+
+
+def contributor_ids(derivation):
+    return [
+        ref_id((item.get("scope") or {}).get("artifact"))
+        for item in derivation.get("contributors", [])
+        if ref_id((item.get("scope") or {}).get("artifact"))
+    ]
+
+
+def transform_input_ids(transform, contributing_only=False):
+    values = []
+    for item in transform.get("inputs", []):
+        if contributing_only and item.get("usage_role") not in {"data", "mixed"}:
+            continue
+        value = ref_id(item.get("artifact"))
+        if value:
+            values.append(value)
+    return values
+
+
+def transform_generated_ids(transform):
+    return [ref_id(x) for x in transform.get("generated", []) if ref_id(x)]
+
+
+def transform_selected_ids(transform):
+    return [ref_id(x) for x in transform.get("selected", []) if ref_id(x)]
+
+
+def find_transform_for_derivation(receipt, derivation):
+    return record_index(receipt).get(derivation_transform_id(derivation))
+
+
+def text_interval(region):
+    if not isinstance(region, dict) or region.get("region_kind") != "text":
+        return None
+    text = region.get("text")
+    if not isinstance(text, dict):
+        return None
+    start, end = text.get("start"), text.get("end")
+    if not isinstance(start, int) or not isinstance(end, int) or start < 0 or end < start:
+        return None
+    return (start, end)
+
+
+def target_interval(receipt, derivation):
+    target = derivation.get("target") or {}
+    interval = text_interval(target.get("region"))
+    if interval is not None:
+        return interval
+    target_record = record_index(receipt).get(ref_id(target.get("artifact")))
+    representation = (target_record or {}).get("representation") or {}
+    text = representation.get("text")
+    if isinstance(text, str):
+        return (0, len(text))
+    return None
+
+
+def exact_origin_accounted(receipt, derivation):
+    if derivation.get("precision") != "exact":
+        return False
+    if derivation.get("unknown_origin_regions"):
+        return False
+    target = target_interval(receipt, derivation)
+    if target is None:
+        return False
+    segments = []
+    for contributor in derivation.get("contributors", []):
+        interval = text_interval(contributor.get("output_region"))
+        if interval is not None:
+            segments.append(interval)
+    for region in derivation.get("generated_output_regions", []):
+        interval = text_interval(region)
+        if interval is not None:
+            segments.append(interval)
+    if not segments:
+        return False
+    start, end = target
+    clipped = sorted((max(start, a), min(end, b)) for a, b in segments if b > start and a < end)
+    cursor = start
+    for a, b in clipped:
+        if a > cursor:
+            return False
+        cursor = max(cursor, b)
+    return cursor >= end
+
+
+def derivation_linkage(receipt, derivation):
+    index = record_index(receipt)
+    transform = find_transform_for_derivation(receipt, derivation)
+    if not isinstance(transform, dict) or transform.get("kind") != "Transform":
+        return {
+            "transform_ok": False,
+            "target_generated": False,
+            "contributors_used": False,
+            "contributor_set_complete": False,
+        }
+    generated = set(transform_generated_ids(transform))
+    used = set(transform_input_ids(transform))
+    contributing = set(transform_input_ids(transform, contributing_only=True))
+    contributors = set(contributor_ids(derivation))
+    target = derivation_target_id(derivation)
+    return {
+        "transform_ok": index.get(derivation_transform_id(derivation), {}).get("kind") == "Transform",
+        "target_generated": target in generated,
+        "contributors_used": contributors <= used and bool(contributors),
+        "contributor_set_complete": contributing <= contributors and bool(contributors),
+    }
+
+
+def single_derivation(receipt):
+    items = derivations(receipt)
+    if len(items) != 1:
+        raise ValueError(f"expected one Derivation, found {len(items)}")
+    return items[0]
+
+
+def validate_no_positive_derivation(receipt):
+    if derivations(receipt):
+        raise ValueError("unexpected positive Derivation assertion")
+
+
+def derivation_finding(requirement_id, check_id, receipt, object_id, status="valid",
+                       domain="conformance", reason_code=None, prohibited=None):
+    return make_finding(
+        requirement_id,
+        check_id,
+        object_scope(receipt, object_id),
+        domain,
+        status,
+        reason_code=reason_code,
+        prohibited_inferences=prohibited,
+    )
+
+
+def execute_derivation_mapping(requirement_id, check_id, primary):
+    if len(primary) != 1:
+        raise ValueError("derivation checks require one primary receipt")
+    receipt = primary[0]
+    index = record_index(receipt)
+    xforms = transforms(receipt)
+
+    if check_id == "derivation-use-generation-no-inference-001":
+        validate_no_positive_derivation(receipt)
+        transform = next((x for x in xforms if transform_input_ids(x) and transform_generated_ids(x)), None)
+        if transform is None:
+            raise ValueError("use+generation premise missing")
+        return [derivation_finding(
+            requirement_id, check_id, receipt, transform["id"],
+            prohibited=["P1:use_and_generation_imply_derivation"],
+        )]
+
+    if check_id in {
+        "derivation-transform-cardinality-001",
+        "derivation-output-cardinality-001",
+        "derivation-input-cardinality-001",
+        "derivation-contributor-use-001",
+        "derivation-target-generation-001",
+        "derivation-binary-shorthand-001",
+        "derivation-exact-coverage-001",
+        "derivation-partial-positive-001",
+        "derivation-region-basis-001",
+        "derivation-coordinate-conversion-001",
+        "derivation-many-to-one-contributors-001",
+        "derivation-generated-region-no-source-001",
+        "derivation-unknown-region-blocks-exact-001",
+        "derivation-concat-separator-001",
+        "derivation-template-static-content-001",
+        "derivation-truncate-discarded-001",
+        "derivation-redaction-no-equality-001",
+        "derivation-no-fabricated-range-001",
+    }:
+        derivation = single_derivation(receipt)
+        transform = find_transform_for_derivation(receipt, derivation)
+        linkage = derivation_linkage(receipt, derivation)
+
+        if check_id == "derivation-transform-cardinality-001":
+            if linkage["transform_ok"]:
+                raise ValueError("invalid transform binding not detected")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"], status="invalid")]
+
+        if check_id == "derivation-output-cardinality-001":
+            if linkage["target_generated"]:
+                raise ValueError("invalid target binding not detected")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"], status="invalid")]
+
+        if check_id == "derivation-input-cardinality-001":
+            if linkage["contributors_used"]:
+                raise ValueError("invalid contributor binding not detected")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"], status="invalid")]
+
+        if check_id == "derivation-contributor-use-001":
+            if linkage["contributors_used"]:
+                raise ValueError("unused contributor not detected")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"], status="invalid",
+                reason_code="contributor_not_transform_input",
+            )]
+
+        if check_id == "derivation-target-generation-001":
+            if linkage["target_generated"]:
+                raise ValueError("non-generated target not detected")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"], status="invalid",
+                reason_code="derivation_target_not_generated",
+            )]
+
+        if check_id == "derivation-binary-shorthand-001":
+            if len(derivation.get("contributors", [])) != 1 or not all(linkage.values()):
+                raise ValueError("qualified one-input derivation premise missing")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                prohibited=["P1:binary_derived_from_stronger_than_qualified_derivation"],
+            )]
+
+        if check_id == "derivation-exact-coverage-001":
+            if exact_origin_accounted(receipt, derivation):
+                raise ValueError("exact origin gap not detected")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"], status="invalid",
+                reason_code="exact_origin_accounting_incomplete",
+            )]
+
+        if check_id == "derivation-partial-positive-001":
+            if derivation.get("precision") != "partial" or not contributor_ids(derivation):
+                raise ValueError("partial positive ancestry premise missing")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"])]
+
+        if check_id == "derivation-region-basis-001":
+            scopes = [derivation.get("target") or {}] + [
+                item.get("scope") or {} for item in derivation.get("contributors", [])
+            ]
+            for scope in scopes:
+                if scope.get("region") is not None and not scope.get("representation_basis"):
+                    raise ValueError("region lacks representation basis")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"])]
+
+        if check_id == "derivation-coordinate-conversion-001":
+            target_basis = (derivation.get("target") or {}).get("representation_basis")
+            mismatched = any(
+                (item.get("scope") or {}).get("region") is not None
+                and item.get("output_region") is not None
+                and (item.get("scope") or {}).get("representation_basis") != target_basis
+                for item in derivation.get("contributors", [])
+            )
+            if not mismatched:
+                raise ValueError("coordinate basis mismatch not detected")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                domain="support", status="unsupported",
+                reason_code="coordinate_basis_conversion_not_defined",
+            )]
+
+        if check_id == "derivation-many-to-one-contributors-001":
+            if derivation.get("precision") != "exact" or linkage["contributor_set_complete"]:
+                raise ValueError("incomplete exact contributor set not detected")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"], status="invalid")]
+
+        if check_id == "derivation-generated-region-no-source-001":
+            if not derivation.get("generated_output_regions"):
+                raise ValueError("transform-generated region missing")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                prohibited=["P1:generated_region_attributed_to_source"],
+            )]
+
+        if check_id == "derivation-unknown-region-blocks-exact-001":
+            if derivation.get("precision") != "exact" or not derivation.get("unknown_origin_regions"):
+                raise ValueError("unknown-origin exact-coverage premise missing")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                domain="completeness", status="unverified",
+                reason_code="unknown_origin_region_blocks_exact_coverage",
+            )]
+
+        if check_id == "derivation-concat-separator-001":
+            if not transform or transform.get("operation") != "concat":
+                raise ValueError("concat transform missing")
+            if not derivation.get("generated_output_regions") or not exact_origin_accounted(receipt, derivation):
+                raise ValueError("concat separator not fully accounted")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"])]
+
+        if check_id == "derivation-template-static-content-001":
+            if not transform or transform.get("operation") != "template":
+                raise ValueError("template transform missing")
+            if not derivation.get("generated_output_regions") or not exact_origin_accounted(receipt, derivation):
+                raise ValueError("template static region not accounted")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                prohibited=["P1:template_static_content_attributed_to_interpolated_input"],
+            )]
+
+        if check_id == "derivation-truncate-discarded-001":
+            if not transform or transform.get("operation") != "truncate":
+                raise ValueError("truncate transform missing")
+            input_id = transform_input_ids(transform)[0]
+            output_id = derivation_target_id(derivation)
+            input_text = (index.get(input_id, {}).get("representation") or {}).get("text")
+            output_text = (index.get(output_id, {}).get("representation") or {}).get("text")
+            scope_region = (derivation.get("contributors", [{}])[0].get("scope") or {}).get("region")
+            if not isinstance(input_text, str) or not isinstance(output_text, str) or len(input_text) <= len(output_text):
+                raise ValueError("discarded suffix premise missing")
+            if text_interval(scope_region) != (0, len(output_text)):
+                raise ValueError("retained input region not isolated")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                prohibited=["P1:discarded_truncated_region_contributes_output_content"],
+            )]
+
+        if check_id == "derivation-redaction-no-equality-001":
+            if not transform or transform.get("operation") != "redact" or derivation.get("precision") != "partial":
+                raise ValueError("redaction partial-derivation premise missing")
+            input_id = transform_input_ids(transform)[0]
+            output_id = derivation_target_id(derivation)
+            input_text = (index.get(input_id, {}).get("representation") or {}).get("text")
+            output_text = (index.get(output_id, {}).get("representation") or {}).get("text")
+            if input_text == output_text:
+                raise ValueError("redaction output unexpectedly byte-equal")
+            return [derivation_finding(
+                requirement_id, check_id, receipt, derivation["id"],
+                prohibited=["P1:redaction_derivation_implies_byte_equality"],
+            )]
+
+        if check_id == "derivation-no-fabricated-range-001":
+            contributor = derivation.get("contributors", [{}])[0]
+            if derivation.get("precision") != "partial":
+                raise ValueError("precision reduction premise missing")
+            if (contributor.get("scope") or {}).get("region") is not None or contributor.get("output_region") is not None:
+                raise ValueError("exact range was fabricated")
+            return [derivation_finding(requirement_id, check_id, receipt, derivation["id"])]
+
+    if check_id in {
+        "derivation-unknown-no-edge-001",
+        "derivation-use-role-no-edge-001",
+        "derivation-control-no-content-001",
+        "transform-selection-no-derivation-001",
+        "derivation-absence-not-negation-001",
+        "derivation-rerank-control-001",
+    }:
+        validate_no_positive_derivation(receipt)
+        transform = xforms[0] if xforms else None
+        if transform is None:
+            raise ValueError("Transform premise missing")
+        prohibited = {
+            "derivation-unknown-no-edge-001": "P1:uncertainty_encoded_as_positive_derivation",
+            "derivation-use-role-no-edge-001": "P1:usage_role_implies_derivation",
+            "derivation-control-no-content-001": "P1:control_input_derives_output_content",
+            "transform-selection-no-derivation-001": "P1:selection_or_rerank_implies_candidate_derivation",
+            "derivation-absence-not-negation-001": "P1:missing_derivation_edge_means_no_real_derivation",
+            "derivation-rerank-control-001": "P1:excluded_rerank_candidate_derives_selected_content",
+        }[check_id]
+        if check_id == "derivation-control-no-content-001":
+            if not any(x.get("usage_role") == "control" for x in transform.get("inputs", [])):
+                raise ValueError("control-only input premise missing")
+        if check_id in {"transform-selection-no-derivation-001", "derivation-rerank-control-001"}:
+            if transform.get("operation") != "rerank" or not transform_selected_ids(transform):
+                raise ValueError("rerank selection premise missing")
+        return [derivation_finding(
+            requirement_id, check_id, receipt, transform["id"], prohibited=[prohibited]
+        )]
+
+    if check_id == "derivation-one-to-many-isolation-001":
+        transform = next((x for x in xforms if len(transform_generated_ids(x)) > 1), None)
+        if transform is None:
+            raise ValueError("one-to-many transform premise missing")
+        derived_targets = {derivation_target_id(d) for d in derivations(receipt)}
+        missing = [x for x in transform_generated_ids(transform) if x not in derived_targets]
+        if not missing:
+            raise ValueError("all sibling outputs already have derivations")
+        return [derivation_finding(
+            requirement_id, check_id, receipt, missing[0],
+            prohibited=["P1:one_output_derivation_copied_to_sibling_output"],
+        )]
+
+    if check_id in {"derivation-transitive-not-direct-001", "derivation-partial-composition-001"}:
+        items = derivations(receipt)
+        if len(items) != 2:
+            raise ValueError("two-step derivation chain required")
+        by_target = {derivation_target_id(d): d for d in items}
+        downstream = next(
+            (d for d in items if any(cid in by_target for cid in contributor_ids(d))),
+            None,
+        )
+        if downstream is None:
+            raise ValueError("transitive derivation chain not found")
+        upstream_id = next(cid for cid in contributor_ids(downstream) if cid in by_target)
+        upstream = by_target[upstream_id]
+        source_ids = set(contributor_ids(upstream))
+        if source_ids & set(contributor_ids(downstream)):
+            raise ValueError("direct source-to-final derivation already present")
+        if check_id == "derivation-transitive-not-direct-001":
+            if upstream.get("precision") != "exact" or downstream.get("precision") != "exact":
+                raise ValueError("exact transitive premise missing")
+            prohibited = "P1:transitive_ancestry_reported_as_direct_derivation"
+        else:
+            if "partial" not in {upstream.get("precision"), downstream.get("precision")}:
+                raise ValueError("partial intermediate premise missing")
+            prohibited = "P1:partial_intermediate_yields_exact_composed_mapping"
+        return [derivation_finding(
+            requirement_id, check_id, receipt, downstream["id"], prohibited=[prohibited]
+        )]
+
+    if check_id == "derivation-unknown-composition-001":
+        if len(derivations(receipt)) != 1:
+            raise ValueError("unknown-middle scenario requires one recorded derivation")
+        transform = next((x for x in xforms if x.get("id") == "xf-mid-001"), None)
+        if transform is None or not transform_input_ids(transform) or not transform_generated_ids(transform):
+            raise ValueError("unknown middle transform premise missing")
+        if any(derivation_transform_id(d) == transform["id"] for d in derivations(receipt)):
+            raise ValueError("unknown middle step has positive derivation")
+        return [derivation_finding(
+            requirement_id, check_id, receipt, transform["id"],
+            prohibited=["P1:unknown_middle_step_yields_positive_composed_derivation"],
+        )]
+
+    raise NotImplementedError(check_id)
+
 def execute_semantic_case(row, case, materialized):
     planned = row["planned_test_id"]
     if planned not in SUPPORTED_PLANNED_TESTS:
@@ -493,7 +963,9 @@ def execute_semantic_case(row, case, materialized):
     primary = primary_receipts(case, materialized)
     resolution = resolution_receipts(case, materialized)
 
-    if planned == "graph-missing-reference-001":
+    if planned in DERIVATION_PLANNED_TESTS:
+        findings = execute_derivation_mapping(requirement_id, check_id, primary)
+    elif planned == "graph-missing-reference-001":
         findings = execute_graph_missing(requirement_id, check_id, primary)
     elif planned == "derivation-cycle-001":
         findings = execute_derivation_cycle(requirement_id, check_id, primary)

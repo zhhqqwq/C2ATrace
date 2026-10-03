@@ -1,0 +1,19 @@
+{
+  "batch_id": "runner-a-wave-03-batch-02-derivation",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "02",
+  "primary_primitives": [
+    "prim.derivation.mapping"
+  ],
+  "additional_requirement_ids": [
+    "DRV-002",
+    "DRV-003",
+    "DRV-004",
+    "DRV-009",
+    "DRV-016",
+    "DRV-019"
+  ],
+  "expected_case_count": 29,
+  "intent": "Mechanically select all semantic requirements whose primary primitive is derivation.mapping, plus adjacent DRV mixed-schema-semantic boundaries."
+}

@@ -408,6 +408,7 @@ def main():
     ])
     parser.add_argument("--case-id", action="append")
     parser.add_argument("--primary-primitive", action="append")
+    parser.add_argument("--batch-manifest")
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
 
@@ -416,6 +417,8 @@ def main():
         selected = [x for x in selected if x["primary_enforcement"] in set(args.enforcement)]
     if args.case_id:
         selected = [x for x in selected if x["case_id"] in set(args.case_id)]
+    batch_id = None
+    selection_failures = []
     if args.primary_primitive:
         coverage = load_json(CONF / "primitives" / "coverage-matrix.json")
         wanted_requirements = {
@@ -424,6 +427,25 @@ def main():
             if entry["primary_primitive"] in set(args.primary_primitive)
         }
         selected = [x for x in selected if x["requirement_id"] in wanted_requirements]
+    if args.batch_manifest:
+        batch = load_json(ROOT / args.batch_manifest)
+        batch_id = batch.get("batch_id")
+        coverage = load_json(CONF / "primitives" / "coverage-matrix.json")
+        primitive_requirements = {
+            entry["requirement_id"]
+            for entry in coverage["entries"]
+            if entry["primary_primitive"] in set(batch.get("primary_primitives", []))
+        }
+        wanted_requirements = primitive_requirements | set(batch.get("additional_requirement_ids", []))
+        selected = [x for x in selected if x["requirement_id"] in wanted_requirements]
+        expected_count = batch.get("expected_case_count")
+        if expected_count is not None and len(selected) != expected_count:
+            selection_failures.append({
+                "code": "batch_case_count_mismatch",
+                "batch_id": batch_id,
+                "expected": expected_count,
+                "actual": len(selected),
+            })
 
     schemas = SchemaRegistry()
     results = [run_case(row, schemas) for row in selected]
@@ -444,12 +466,15 @@ def main():
         "scope": {
             "selected_cases": len(results),
             "enforcements": sorted({r["primary_enforcement"] for r in results}),
+            "batch_id": batch_id,
         },
         "aggregate": {
             "pass": len(passed),
             "fail": len(failed),
+            "selection_failures": len(selection_failures),
             "by_enforcement": by_enforcement,
         },
+        "selection_failures": selection_failures,
         "failed_cases": [
             {"case_id": r["case_id"], "failures": r["failures"]}
             for r in failed
@@ -462,7 +487,7 @@ def main():
     )
     print(json.dumps(report["aggregate"], sort_keys=True))
 
-    if args.require_complete and failed:
+    if args.require_complete and (failed or selection_failures):
         return 2
     return 0
 
