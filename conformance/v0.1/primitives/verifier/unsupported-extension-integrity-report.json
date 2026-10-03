@@ -1,0 +1,88 @@
+{
+  "kind": "VerificationReport",
+  "report_id": "report-vfy-extension-integrity-001",
+  "verifier": {
+    "name": "test-verifier",
+    "version": "0.1-test",
+    "profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ]
+  },
+  "invocation": {
+    "receipt_ids": [
+      "receipt-minimal-001"
+    ],
+    "goals": [
+      {
+        "check_id": "integrity-envelope",
+        "mandatory": true
+      },
+      {
+        "check_id": "optional-extension",
+        "mandatory": false
+      }
+    ],
+    "capability_summary": {
+      "supported_profiles": [
+        "urn:c2atrace:profile:v0.1:core",
+        "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+      ],
+      "unsupported_profiles": [
+        "urn:c2atrace:profile:test:optional-extension"
+      ],
+      "verification_keys": [
+        "test-ed25519-key-001"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "finding_id": "finding-integrity-independent",
+      "check_id": "integrity-envelope",
+      "subject": {
+        "subject_kind": "integrity_envelope",
+        "receipt_id": "receipt-minimal-001",
+        "envelope_id": "env-test-001"
+      },
+      "domain": "cryptographic",
+      "status": "valid",
+      "evidence_bases": [
+        "E2"
+      ],
+      "mandatory": true
+    },
+    {
+      "finding_id": "finding-extension-unsupported",
+      "check_id": "optional-extension",
+      "subject": {
+        "subject_kind": "profile",
+        "profile_id": "urn:c2atrace:profile:test:optional-extension"
+      },
+      "domain": "support",
+      "status": "unsupported",
+      "evidence_bases": [
+        "profile:urn:c2atrace:profile:test:optional-extension"
+      ],
+      "mandatory": false,
+      "reason_code": "profile_not_implemented"
+    }
+  ],
+  "envelope_results": [
+    {
+      "envelope_id": "env-test-001",
+      "key_resolution": "resolved",
+      "signature_status": "valid",
+      "arp_binding": "matched",
+      "key_ref": "test-ed25519-key-001",
+      "finding_refs": [
+        "finding-integrity-independent"
+      ]
+    }
+  ],
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "process_outcome": "completed"
+}

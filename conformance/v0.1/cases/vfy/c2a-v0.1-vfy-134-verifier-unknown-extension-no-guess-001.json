@@ -1,0 +1,65 @@
+{
+  "case_id": "c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-134"
+  ],
+  "planned_test_ids": [
+    "verifier-unknown-extension-no-guess-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Unknown extension JSON is not silently interpreted as a known protocol object merely because its shape resembles one.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/source-to-request.json"
+      },
+      "patches": [
+        {
+          "op": "add",
+          "path": "/arp/extensions",
+          "value": {
+            "urn:test:extension:unknown-shape": {
+              "kind": "TrustAssertion",
+              "state": "trusted",
+              "dimension": "content_reliability",
+              "mystery": true
+            }
+          }
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-134"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-134",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-134"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001.json"
+}

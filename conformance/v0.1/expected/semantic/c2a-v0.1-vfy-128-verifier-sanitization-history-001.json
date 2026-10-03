@@ -1,0 +1,29 @@
+{
+  "case_id": "c2a-v0.1-vfy-128-verifier-sanitization-history-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-128",
+      "check_id": "verifier-sanitization-history-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001",
+        "object_id": "taint-upstream-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:sanitization_erases_taint_ancestry",
+        "P1:sanitization_creates_trust"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

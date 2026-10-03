@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-134",
+      "check_id": "verifier-unknown-extension-no-guess-001",
+      "subject_selector": {
+        "receipt_id": "receipt-source-request-001"
+      },
+      "domain": "support",
+      "status": "unsupported",
+      "reason_code": "unknown_extension_semantics",
+      "prohibited_inferences": [
+        "P1:unknown_extension_shape_interpreted_as_known_protocol_object"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

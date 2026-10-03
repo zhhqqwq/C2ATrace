@@ -1,0 +1,46 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-07-h-vfy-final-edges",
+  "status": "complete",
+  "clustering_basis": "trust/taint wording, private signed evidence, schema-vs-semantic separation, extensions, withheld presence, and trusted-time boundaries",
+  "newly_materialized": [
+    "VFY-126",
+    "VFY-127",
+    "VFY-128",
+    "VFY-129",
+    "VFY-131",
+    "VFY-132",
+    "VFY-133",
+    "VFY-134",
+    "VFY-139",
+    "VFY-145",
+    "VFY-149"
+  ],
+  "newly_materialized_count": 11,
+  "executable_semantic_requirements": 771,
+  "remaining_semantic_requirements": 0,
+  "remaining_vfy_semantic_requirements": 0,
+  "shared_evidence": [
+    "conformance/v0.1/primitives/receipts/trust-signed-valid.json",
+    "conformance/v0.1/primitives/receipts/taint-sanitized-assertion.json",
+    "conformance/v0.1/primitives/receipts/privacy-signed-hash-only.json",
+    "conformance/v0.1/primitives/receipts/verifier-cross-receipt-derivation-cycle-a.json",
+    "conformance/v0.1/primitives/receipts/verifier-cross-receipt-derivation-cycle-b.json",
+    "conformance/v0.1/primitives/verifier/unsupported-extension-integrity-report.json",
+    "conformance/v0.1/primitives/verifier/process-completed-report.json",
+    "conformance/v0.1/primitives/receipts/graph-timestamp-conflict.json"
+  ],
+  "assertions": {
+    "trust_taint_policy_scoped": true,
+    "sanitization_preserves_ancestry": true,
+    "signed_private_evidence_disclosure_bounded": true,
+    "schema_success_not_semantic_proof": true,
+    "schema_failure_visible": true,
+    "unsupported_extension_preserves_independent_integrity": true,
+    "unknown_extension_not_guessed": true,
+    "withheld_distinct_from_not_present": true,
+    "trusted_time_requires_recognized_evidence": true,
+    "optional_extension_does_not_force_incomplete": true,
+    "vfy_semantic_materialization_complete": true
+  }
+}

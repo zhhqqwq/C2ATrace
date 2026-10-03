@@ -1,0 +1,53 @@
+{
+  "case_id": "c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-139"
+  ],
+  "planned_test_ids": [
+    "verifier-withheld-not-not-present-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Privacy-withheld representation is reported withheld, not not_present.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-signed-hash-only.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-139"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-139",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core"
+    ],
+    "goals": [
+      "VFY-139"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.privacy.commitment"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001.json"
+}

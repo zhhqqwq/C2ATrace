@@ -1,0 +1,61 @@
+{
+  "case_id": "c2a-v0.1-vfy-129-verifier-signed-private-evidence-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-129"
+  ],
+  "planned_test_ids": [
+    "verifier-signed-private-evidence-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Valid signature over hash-only evidence authenticates the commitment-bearing ARP, not unavailable original plaintext.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/privacy-signed-hash-only.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "integrity_checks",
+      "privacy_checks",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-129"
+    ],
+    "capabilities": [
+      "verification_keys"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-129",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core",
+      "urn:c2atrace:profile:v0.1:privacy:core",
+      "urn:c2atrace:profile:v0.1:integrity:jcs-sha256-ed25519"
+    ],
+    "goals": [
+      "VFY-129"
+    ],
+    "verification_keys": [
+      "test-ed25519-key-001"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.integrity.composition, prim.privacy.commitment"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-129-verifier-signed-private-evidence-001.json"
+}

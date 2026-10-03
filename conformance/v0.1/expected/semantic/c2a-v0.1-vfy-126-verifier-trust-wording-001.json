@@ -1,0 +1,29 @@
+{
+  "case_id": "c2a-v0.1-vfy-126-verifier-trust-wording-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-126",
+      "check_id": "verifier-trust-wording-001",
+      "subject_selector": {
+        "receipt_id": "receipt-trust-signed-001",
+        "object_id": "trust-signed-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "reason_code": "policy_scoped_trust_assertion",
+      "prohibited_inferences": [
+        "P1:trusted_state_is_objective_trustworthiness"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

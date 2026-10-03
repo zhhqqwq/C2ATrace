@@ -12848,7 +12848,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-126-verifier-trust-wording-001"
     },
     {
       "family": "vfy",
@@ -12864,7 +12866,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-127-verifier-taint-wording-001"
     },
     {
       "family": "vfy",
@@ -12880,7 +12884,9 @@
       "dependency_primitives": [
         "prim.derivation.mapping",
         "prim.taint.flow"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-128-verifier-sanitization-history-001"
     },
     {
       "family": "vfy",
@@ -12893,7 +12899,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-129-verifier-signed-private-evidence-001"
     },
     {
       "family": "vfy",
@@ -12923,7 +12931,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-131-verifier-schema-not-semantic-proof-001"
     },
     {
       "family": "vfy",
@@ -12936,7 +12946,9 @@
         "schema/v0.1/semantic-checks.md"
       ],
       "primary_primitive": "prim.verifier.report",
-      "dependency_primitives": []
+      "dependency_primitives": [],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-132-verifier-schema-failure-001"
     },
     {
       "family": "vfy",
@@ -12952,7 +12964,9 @@
       "dependency_primitives": [
         "prim.adapter.capture",
         "prim.integrity.composition"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-133-verifier-unsupported-extension-integrity-001"
     },
     {
       "family": "vfy",
@@ -12967,7 +12981,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.claim.strength"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001"
     },
     {
       "family": "vfy",
@@ -13056,7 +13072,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.privacy.commitment"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001"
     },
     {
       "family": "vfy",
@@ -13137,7 +13155,9 @@
       "dependency_primitives": [
         "prim.claim.strength",
         "prim.trust.assertion"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-145-verifier-trusted-time-required-001"
     },
     {
       "family": "vfy",
@@ -13197,7 +13217,9 @@
       "primary_primitive": "prim.verifier.report",
       "dependency_primitives": [
         "prim.adapter.capture"
-      ]
+      ],
+      "materialization_status": "executable",
+      "case_id": "c2a-v0.1-vfy-149-verifier-optional-extension-exit-001"
     },
     {
       "family": "vfy",
@@ -13278,6 +13300,6 @@
       "case_id": "c2a-v0.1-vfy-154-verifier-conflict-not-universal-invalidity-001"
     }
   ],
-  "executable_semantic_requirements": 760,
-  "remaining_semantic_requirements": 11
+  "executable_semantic_requirements": 771,
+  "remaining_semantic_requirements": 0
 }

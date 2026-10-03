@@ -1132,7 +1132,7 @@
       "requirement_id": "VFY-126",
       "planned_test_id": "verifier-trust-wording-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-126-verifier-trust-wording-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-126-verifier-trust-wording-001.json"
     },
@@ -1141,7 +1141,7 @@
       "requirement_id": "VFY-127",
       "planned_test_id": "verifier-taint-wording-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-127-verifier-taint-wording-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-127-verifier-taint-wording-001.json"
     },
@@ -1150,7 +1150,7 @@
       "requirement_id": "VFY-128",
       "planned_test_id": "verifier-sanitization-history-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-128-verifier-sanitization-history-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-128-verifier-sanitization-history-001.json"
     },
@@ -1159,7 +1159,7 @@
       "requirement_id": "VFY-129",
       "planned_test_id": "verifier-signed-private-evidence-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-129-verifier-signed-private-evidence-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-129-verifier-signed-private-evidence-001.json"
     },
@@ -1177,7 +1177,7 @@
       "requirement_id": "VFY-131",
       "planned_test_id": "verifier-schema-not-semantic-proof-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-131-verifier-schema-not-semantic-proof-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-131-verifier-schema-not-semantic-proof-001.json"
     },
@@ -1186,7 +1186,7 @@
       "requirement_id": "VFY-132",
       "planned_test_id": "verifier-schema-failure-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-132-verifier-schema-failure-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-132-verifier-schema-failure-001.json"
     },
@@ -1195,7 +1195,7 @@
       "requirement_id": "VFY-133",
       "planned_test_id": "verifier-unsupported-extension-integrity-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-133-verifier-unsupported-extension-integrity-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-133-verifier-unsupported-extension-integrity-001.json"
     },
@@ -1204,7 +1204,7 @@
       "requirement_id": "VFY-134",
       "planned_test_id": "verifier-unknown-extension-no-guess-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-134-verifier-unknown-extension-no-guess-001.json"
     },
@@ -1249,7 +1249,7 @@
       "requirement_id": "VFY-139",
       "planned_test_id": "verifier-withheld-not-not-present-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001.json"
     },
@@ -1303,7 +1303,7 @@
       "requirement_id": "VFY-145",
       "planned_test_id": "verifier-trusted-time-required-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-145-verifier-trusted-time-required-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-145-verifier-trusted-time-required-001.json"
     },
@@ -1339,7 +1339,7 @@
       "requirement_id": "VFY-149",
       "planned_test_id": "verifier-optional-extension-exit-001",
       "primary_enforcement": "semantic_verifier",
-      "status": "mapped",
+      "status": "executable",
       "case_path": "conformance/v0.1/cases/vfy/c2a-v0.1-vfy-149-verifier-optional-extension-exit-001.json",
       "expected_result_path": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-149-verifier-optional-extension-exit-001.json"
     },

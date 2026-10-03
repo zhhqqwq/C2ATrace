@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-139-verifier-withheld-not-not-present-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-139",
+      "check_id": "verifier-withheld-not-not-present-001",
+      "subject_selector": {
+        "receipt_id": "receipt-signed-hash-001",
+        "object_id": "frag-signed-hash-001"
+      },
+      "domain": "presence",
+      "status": "withheld",
+      "prohibited_inferences": [
+        "P1:withheld_representation_is_not_present"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

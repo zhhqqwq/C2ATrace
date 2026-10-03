@@ -1,0 +1,67 @@
+{
+  "case_id": "c2a-v0.1-vfy-132-verifier-schema-failure-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-132"
+  ],
+  "planned_test_ids": [
+    "verifier-schema-failure-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Applicable schema failure is structural invalidity while independent safely evaluable checks remain available.",
+  "documents": [
+    {
+      "document_id": "invalid",
+      "role": "primary_receipt",
+      "source": {
+        "path": "fixtures/v0.1/valid/minimal-signed-receipt.json"
+      },
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/arp/protocol_version",
+          "value": 1
+        }
+      ],
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    },
+    {
+      "document_id": "independent-report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-completed-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-132"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-132",
+    "primary_documents": [
+      "invalid",
+      "independent-report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-132"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-132-verifier-schema-failure-001.json"
+}

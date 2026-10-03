@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-127-verifier-taint-wording-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-127"
+  ],
+  "planned_test_ids": [
+    "verifier-taint-wording-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "TaintAssertion remains policy/kind/channel/precision/state scoped; present is not malicious and absent is not objectively clean.",
+  "documents": [
+    {
+      "document_id": "primary",
+      "role": "primary_receipt",
+      "source": {
+        "path": "conformance/v0.1/primitives/receipts/taint-sanitized-assertion.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-127"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-127",
+    "primary_documents": [
+      "primary"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:core"
+    ],
+    "goals": [
+      "VFY-127"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.claim.strength, prim.taint.flow"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-127-verifier-taint-wording-001.json"
+}
