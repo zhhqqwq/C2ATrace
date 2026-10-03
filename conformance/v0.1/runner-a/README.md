@@ -42,6 +42,7 @@ semantic derivation     29 / 29
 request binding          47 / 47
 identity core              8 / 8
 provider occurrence         3 / 3
+model/output core            2 / 2 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -53,3 +54,5 @@ Batch manifests are machine-readable runner selection specifications. A batch ma
 Batch 04 starts `prim.identity.occurrence` using explicit requirement selection because the 60 identity-primary requirements span eleven families and multiple not-yet-executed dependency primitives. The first 8-case core batch is limited to identity invariants whose dependencies are already implemented by the graph, derivation, and request-binding foundations.
 
 Batch 05 selects the dependency-closed provider occurrence identity core after comparing the remaining model/output and provider identity clusters. It covers PAD-023, PAD-078, and PAD-085 only: provider-reported remote IDs do not replace C2ATrace occurrence IDs, and semantically matching CaptureDiagnostic observations remain distinct occurrences. Provider retry/failover/hedge semantics, adapter capture, and model-output primitives remain outside this batch.
+
+Batch 06 selects the only two identity-primary requirements whose dependency closure is complete after Batch 05 without introducing a new major primitive: OUT-019 and OUT-026. Shared-receipt neighbors OUT-021/PAD-065 remain blocked on `prim.verifier.report`, and PAD-022 remains blocked on `prim.provider.attempts`.

@@ -13,6 +13,8 @@ IDENTITY_PLANNED_TESTS = {
     "provider-id-not-c2a-identity-001",
     "provider-multihook-correlation-001",
     "provider-capture-diagnostic-no-merge-001",
+    "model-requested-not-internal-001",
+    "model-output-no-content-merge-001",
 }
 
 CAPTURE_ORDER = {
@@ -242,6 +244,44 @@ def duplicate_diagnostic_occurrence_pair(receipt):
             return left, right
     raise ValueError("semantically matching diagnostic occurrence pair not found")
 
+
+def output_item_value(record):
+    kind = record.get("kind")
+    if kind == "TextOutput":
+        return ("text", record.get("text"))
+    if kind == "StructuredOutput":
+        return ("structured", record.get("value"))
+    if kind == "UnknownOutput":
+        return ("unknown", record.get("representation"))
+    return (kind, None)
+
+
+def model_output_content_signature(receipt, output):
+    index = record_index(receipt)
+    values = []
+    for ref in output.get("item_refs", []):
+        item = index.get(ref_id(ref))
+        if not isinstance(item, dict):
+            raise ValueError("ModelOutput item reference is unresolved")
+        if ref_id(item.get("output")) != output.get("id"):
+            raise ValueError("OutputItem ownership does not match ModelOutput")
+        values.append(output_item_value(item))
+    return tuple(values)
+
+
+def equal_content_model_output_pair(receipt):
+    outputs = by_kind(receipt, "ModelOutput")
+    for i, left in enumerate(outputs):
+        left_sig = model_output_content_signature(receipt, left)
+        for right in outputs[i + 1:]:
+            right_sig = model_output_content_signature(receipt, right)
+            if left_sig != right_sig:
+                continue
+            if left.get("id") == right.get("id"):
+                raise ValueError("equal output content collapsed ModelOutput identity")
+            return left, right
+    raise ValueError("equal-content distinct ModelOutput occurrence pair not found")
+
 def execute_identity_case(row, case, materialized):
     requirement_id = row["requirement_id"]
     check_id = row["planned_test_id"]
@@ -352,6 +392,45 @@ def execute_identity_case(row, case, materialized):
         _left, right = duplicate_diagnostic_occurrence_pair(receipt)
         findings = [
             finding(requirement_id, check_id, receipt, right["id"])
+        ]
+        outcome = "completed"
+
+    elif check_id == "model-requested-not-internal-001":
+        invocations = by_kind(receipt, "ModelInvocation")
+        if len(invocations) != 1:
+            raise ValueError("requested-model identity scenario requires one ModelInvocation")
+        invocation = invocations[0]
+        requested_model = invocation.get("requested_model")
+        if not isinstance(requested_model, str) or not requested_model:
+            raise ValueError("requested_model evidence missing")
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:requested_model_is_internal_model_identity"],
+            )
+        ]
+        outcome = "completed"
+
+    elif check_id == "model-output-no-content-merge-001":
+        left, right = equal_content_model_output_pair(receipt)
+        # Use the earlier occurrence as the subject so occurrence identity is
+        # tested independently of accepted-output selection.
+        subject = left
+        if right.get("id") < left.get("id"):
+            subject = right
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                subject["id"],
+                prohibited=["P1:equal_output_content_merges_modeloutput_occurrences"],
+            )
         ]
         outcome = "completed"
 

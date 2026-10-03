@@ -1,0 +1,16 @@
+{
+  "batch_id": "runner-a-wave-03-batch-06-model-output-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "06",
+  "selection_mode": "explicit_requirements",
+  "primary_primitives": [
+    "prim.identity.occurrence"
+  ],
+  "requirement_ids": [
+    "OUT-019",
+    "OUT-026"
+  ],
+  "expected_case_count": 2,
+  "intent": "Dependency-closed model/output identity core from the remaining identity requirements. OUT-019 bounds requested_model as request metadata rather than internal model identity; OUT-026 preserves distinct ModelOutput occurrence identity when output contents are equal. Cases sharing these receipts but requiring verifier.report or provider.attempts remain excluded."
+}
