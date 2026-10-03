@@ -42,7 +42,7 @@ semantic derivation     29 / 29
 request binding          47 / 47
 identity core              8 / 8
 provider occurrence         3 / 3
-model/output core            2 / 2 target
+model/output core            2 / 2
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.

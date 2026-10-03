@@ -1,0 +1,124 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "06-model-output-core",
+  "status": "complete",
+  "implementation_commit": "5f4052ca6b5ae0468f9b735c8ae5499573f776e2",
+  "refinement_commit": "a66addab4388f1514c45ed81d65f1d2d37bd6247",
+  "recluster_input": {
+    "remaining_identity_requirements_before_batch": 49,
+    "dependency_closed_without_new_major_primitive": [
+      {
+        "requirement_id": "OUT-019",
+        "dependencies": [
+          "prim.request.binding"
+        ],
+        "shared_receipt": "identity-model-mismatch.json"
+      },
+      {
+        "requirement_id": "OUT-026",
+        "dependencies": [],
+        "shared_receipt": "identity-model-outputs.json"
+      }
+    ],
+    "blocked_shared_receipt_neighbors": [
+      {
+        "requirement_id": "OUT-021",
+        "shared_receipt": "identity-model-mismatch.json",
+        "blocked_by": [
+          "prim.verifier.report"
+        ]
+      },
+      {
+        "requirement_id": "PAD-065",
+        "shared_receipt": "identity-model-mismatch.json",
+        "blocked_by": [
+          "prim.verifier.report"
+        ]
+      },
+      {
+        "requirement_id": "PAD-022",
+        "shared_receipt": "identity-model-outputs.json",
+        "blocked_by": [
+          "prim.provider.attempts"
+        ]
+      }
+    ],
+    "selection_reason": "OUT-019 and OUT-026 were the only remaining identity-primary requirements with complete dependency closure under already executed primitives."
+  },
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "primary_primitive": "prim.identity.occurrence",
+    "requirement_ids": [
+      "OUT-019",
+      "OUT-026"
+    ],
+    "expected_cases": 2,
+    "selected_cases": 2,
+    "remaining_identity_primary_requirements": 47
+  },
+  "actual_capabilities": [
+    "requested_model remains bounded request metadata and is not elevated to provider/model internal identity",
+    "equal ModelOutput contents do not merge occurrence identity",
+    "ModelOutput subject occurrence ordering is derived from ProviderAttempt retry_of when available, otherwise local receipt occurrence order"
+  ],
+  "refinement": {
+    "issue": "Initial passing implementation selected the OUT-026 subject by lexical object ID.",
+    "correction": "Subject selection now derives the earlier output occurrence from ProviderAttempt.retry_of; lexical ID ordering is not used.",
+    "expected_results_changed": false
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 2,
+      "pass": 2,
+      "fail": 0
+    },
+    "total": {
+      "cases": 2,
+      "pass": 2,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "unique_cases": 2,
+    "unique_requirements": 2,
+    "actual_findings": 2,
+    "finding_domains": {
+      "claim": 1,
+      "conformance": 1
+    },
+    "finding_statuses": {
+      "asserted": 1,
+      "valid": 1
+    },
+    "process_outcomes": {
+      "completed": 2
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37148816257,
+    "artifact_name": "runner-a-semantic-model-output-core",
+    "artifact_sha256": "482ff3d0105a7af7d425d8831a267bc835bc04e433b98d1e5c44127accdcaeeb"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "prim_model_output_not_implemented_by_this_batch": true,
+    "prim_verifier_report_not_implemented_by_this_batch": true,
+    "prim_tool_lifecycle_not_implemented_by_this_batch": true,
+    "unselected_identity_requirements_remain_fail_closed": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
