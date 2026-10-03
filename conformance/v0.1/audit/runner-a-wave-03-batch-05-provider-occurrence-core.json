@@ -1,0 +1,119 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "05-provider-occurrence-core",
+  "status": "complete",
+  "implementation_commit": "9d158eddaa9324c75bb0f116de689061a8e8817e",
+  "repair_commit": "9ff9d94635b2eeff3684d9d19b02ce1ccdb07e4c",
+  "recluster_input": {
+    "remaining_identity_requirements_before_batch": 52,
+    "compared_clusters": {
+      "model_output": {
+        "total": 7,
+        "dependency_closed_without_new_major_primitive": [
+          "OUT-019",
+          "OUT-026"
+        ],
+        "blocked_by": [
+          "prim.tool.lifecycle",
+          "prim.model.output",
+          "prim.verifier.report"
+        ]
+      },
+      "provider_occurrence": {
+        "total": 10,
+        "dependency_closed_without_new_major_primitive": [
+          "PAD-023",
+          "PAD-078",
+          "PAD-085"
+        ],
+        "blocked_by": [
+          "prim.provider.attempts",
+          "prim.model.output",
+          "prim.verifier.report",
+          "prim.privacy.commitment",
+          "prim.privacy.redaction",
+          "prim.adapter.capture",
+          "prim.trust.assertion",
+          "prim.tool.lifecycle"
+        ]
+      }
+    },
+    "selection_reason": "Provider occurrence core had three dependency-closed cases, with PAD-078 and PAD-085 sharing one receipt and one diagnostic-occurrence invariant; model/output had only two dependency-closed cases with no shared receipt."
+  },
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "primary_primitive": "prim.identity.occurrence",
+    "requirement_ids": [
+      "PAD-023",
+      "PAD-078",
+      "PAD-085"
+    ],
+    "expected_cases": 3,
+    "selected_cases": 3,
+    "remaining_identity_primary_requirements": 49,
+    "shared_scenarios": {
+      "identity-provider-remote-id.json": [
+        "PAD-023"
+      ],
+      "identity-provider-diagnostics.json": [
+        "PAD-078",
+        "PAD-085"
+      ]
+    }
+  },
+  "actual_capabilities": [
+    "provider-reported remote identifier equality does not replace C2ATrace ProviderAttempt occurrence identity",
+    "semantically matching CaptureDiagnostic observations preserve distinct occurrence identities",
+    "multi-hook observations require occurrence correlation rather than content-based identity merging"
+  ],
+  "repair_during_execution": {
+    "type": "fixture_schema_placement",
+    "file": "conformance/v0.1/primitives/receipts/identity-provider-diagnostics.json",
+    "detail": "ProviderAdapterCapability was moved from arp.records to the frozen-schema adapter_declarations collection; inventory identity and CaptureDiagnostic references were preserved.",
+    "schema_changed": false,
+    "cases_changed": false,
+    "expected_results_changed": false
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "total": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "unique_cases": 3,
+    "unique_requirements": 3,
+    "actual_findings": 3,
+    "process_outcomes": {
+      "completed": 3
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37148222653,
+    "artifact_name": "runner-a-semantic-provider-occurrence",
+    "artifact_sha256": "1ee1eb869df8f52f01bc0437763f41697472753cf62adbc7cafcc23db47b7acf"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "provider_attempt_orchestration_not_implemented_in_this_batch": true,
+    "adapter_capture_semantics_not_implemented_in_this_batch": true,
+    "unselected_identity_requirements_remain_fail_closed": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
