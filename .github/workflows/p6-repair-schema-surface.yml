@@ -1,0 +1,181 @@
+name: P6 repair Runner A schema surface
+
+on:
+  push:
+    branches:
+      - p6-runner-a-20261003
+    paths:
+      - .github/workflows/p6-repair-schema-surface.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p6-runner-a-20261003
+      - name: Install conformance dependencies
+        run: python -m pip install --disable-pip-version-check -r conformance/v0.1/runner-a/requirements.txt
+      - name: Repair materialized Schema surface
+        run: |
+          python - <<'PY'
+          import base64
+          import importlib.util
+          import json
+          from pathlib import Path
+
+          from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+
+          root = Path(".")
+          runner_path = root / "conformance" / "v0.1" / "runner-a" / "runner.py"
+          spec = importlib.util.spec_from_file_location("runner_a", runner_path)
+          runner = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(runner)
+
+          TEST_SEED = bytes.fromhex("000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f")
+          TEST_KEY_REF = "test-ed25519-key-001"
+          private_key = Ed25519PrivateKey.from_private_bytes(TEST_SEED)
+          CAP_KINDS = {"ProviderAdapterCapability", "ToolAdapterCapability"}
+
+          counts = {
+              "primitive_receipts_changed": 0,
+              "inline_receipts_changed": 0,
+              "capabilities_moved": 0,
+              "reference_modes_fixed": 0,
+              "provider_attempt_lifecycle_fixed": 0,
+              "digests_recomputed": 0,
+              "signatures_recomputed": 0,
+          }
+          changed_paths = set()
+
+          def sign_b64u(message):
+              return runner.b64u(private_key.sign(message))
+
+          def normalize_receipt(doc):
+              if not isinstance(doc, dict) or doc.get("kind") != "ReceiptPresentation":
+                  return False
+              arp = doc.get("arp")
+              if not isinstance(arp, dict):
+                  return False
+
+              changed = False
+              records = arp.get("records")
+              if isinstance(records, list):
+                  caps = [x for x in records if isinstance(x, dict) and x.get("kind") in CAP_KINDS]
+                  if caps:
+                      existing = arp.setdefault("adapter_declarations", [])
+                      existing_ids = {x.get("id") for x in existing if isinstance(x, dict)}
+                      for cap in caps:
+                          if cap.get("id") in existing_ids:
+                              raise SystemExit(f"duplicate adapter declaration id {cap.get('id')}")
+                          existing.append(cap)
+                          existing_ids.add(cap.get("id"))
+                      arp["records"] = [x for x in records if x not in caps]
+                      cap_ids = {x.get("id") for x in caps}
+                      if isinstance(arp.get("inventory"), list):
+                          arp["inventory"] = [x for x in arp["inventory"] if x not in cap_ids]
+                      counts["capabilities_moved"] += len(caps)
+                      changed = True
+
+              if arp.get("reference_mode") == "external_resolution":
+                  arp["reference_mode"] = "external_references_allowed"
+                  counts["reference_modes_fixed"] += 1
+                  changed = True
+
+              if not changed:
+                  return False
+
+              digest_value = runner.b64u(runner.sha256(runner.jcs_bytes(arp)))
+              if not isinstance(doc.get("payload_digest"), dict):
+                  raise SystemExit(f"Receipt {arp.get('receipt_id')} has no payload_digest object")
+              doc["payload_digest"]["value"]["value"] = digest_value
+              counts["digests_recomputed"] += 1
+
+              for env in doc.get("integrity_envelopes", []):
+                  if env.get("signature_profile") != "ed25519":
+                      continue
+                  if env.get("key_ref") != TEST_KEY_REF:
+                      raise SystemExit(f"unsupported signing key {env.get('key_ref')} in {arp.get('receipt_id')}")
+                  env["payload_digest"]["value"]["value"] = digest_value
+                  statement = runner.signing_statement(env)
+                  env["signature"]["value"] = sign_b64u(runner.jcs_bytes(statement))
+                  counts["signatures_recomputed"] += 1
+              return True
+
+          primitive_dir = root / "conformance" / "v0.1" / "primitives" / "receipts"
+          for path in sorted(primitive_dir.glob("*.json")):
+              doc = json.loads(path.read_text())
+              if normalize_receipt(doc):
+                  path.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+                  changed_paths.add(str(path))
+                  counts["primitive_receipts_changed"] += 1
+
+          case_dir = root / "conformance" / "v0.1" / "cases"
+          for path in sorted(case_dir.rglob("*.json")):
+              case = json.loads(path.read_text())
+              changed = False
+              for document in case.get("documents", []):
+                  source = document.get("source", {})
+                  inline = source.get("inline")
+                  if isinstance(inline, dict) and normalize_receipt(inline):
+                      counts["inline_receipts_changed"] += 1
+                      changed = True
+                  for patch in document.get("patches", []):
+                      value = patch.get("value")
+                      if (
+                          isinstance(value, dict)
+                          and value.get("kind") == "ProviderAttempt"
+                          and value.get("lifecycle_state") == "active"
+                      ):
+                          value["lifecycle_state"] = "in_progress"
+                          counts["provider_attempt_lifecycle_fixed"] += 1
+                          changed = True
+              if changed:
+                  path.write_text(json.dumps(case, indent=2, ensure_ascii=False) + "\n")
+                  changed_paths.add(str(path))
+
+          if counts["capabilities_moved"] == 0:
+              raise SystemExit("expected adapter capabilities to move")
+          if counts["reference_modes_fixed"] != 6:
+              raise SystemExit(f"expected 6 reference_mode repairs, got {counts['reference_modes_fixed']}")
+          if counts["provider_attempt_lifecycle_fixed"] != 2:
+              raise SystemExit(f"expected 2 ProviderAttempt lifecycle repairs, got {counts['provider_attempt_lifecycle_fixed']}")
+
+          print(json.dumps(counts, sort_keys=True))
+          print("\n".join(sorted(changed_paths)))
+          PY
+      - name: Run P5 preflight
+        run: python conformance/v0.1/audit/p5_matcher_coverage_audit.py --output /tmp/p5-after-p6-repair.json
+      - name: Execute Runner A
+        run: python conformance/v0.1/runner-a/runner.py --output /tmp/runner-a-after-schema-repair.json
+      - name: Enforce complete blocked-case Schema surface
+        run: |
+          python - <<'PY'
+          import json
+          p="/tmp/runner-a-after-schema-repair.json"
+          report=json.load(open(p))
+          s=report["summary"]
+          assert s["total"] == 907, s
+          assert s["status_counts"] == {"blocked_semantic_checker": 858, "passed": 49}, s
+          assert s["schema_surface_matches_on_blocked"] == 858, s
+          print(json.dumps(s, sort_keys=True))
+          PY
+      - name: Upload repair evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p6-schema-surface-repair
+          path: |
+            /tmp/p5-after-p6-repair.json
+            /tmp/runner-a-after-schema-repair.json
+          if-no-files-found: error
+      - name: Commit repaired conformance inputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add conformance/v0.1/primitives/receipts conformance/v0.1/cases
+          git diff --cached --quiet && { echo "expected repair diff is empty"; exit 1; }
+          git commit -m "conformance: repair Runner A schema surface"
+          git push origin HEAD:p6-runner-a-20261003
