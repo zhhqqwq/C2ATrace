@@ -230,9 +230,9 @@ def main():
         try: e=load(ep)
         except Exception as ex: fail(rec,"expected_json_parse",detail=str(ex)); results.append(rec); continue
         for err in sorted(case_validator.iter_errors(c), key=lambda x: str(list(x.absolute_path)))[:10]:
-            fail(rec,"case_schema_invalid",path=list(err.absolute_path),validator=err.validator)
+            fail(rec,"case_schema_invalid",path=list(err.absolute_path),schema_path=list(err.absolute_schema_path),validator=err.validator,message=err.message)
         for err in sorted(expected_validator.iter_errors(e), key=lambda x: str(list(x.absolute_path)))[:10]:
-            fail(rec,"expected_result_schema_invalid",path=list(err.absolute_path),validator=err.validator)
+            fail(rec,"expected_result_schema_invalid",path=list(err.absolute_path),schema_path=list(err.absolute_schema_path),validator=err.validator,message=err.message)
         if c.get("case_id") != r["case_id"]: fail(rec,"case_id_join")
         if c.get("requirement_ids") != [r["requirement_id"]]: fail(rec,"requirement_join",actual=c.get("requirement_ids"))
         if c.get("planned_test_ids") != [r["planned_test_id"]]: fail(rec,"planned_test_join",actual=c.get("planned_test_ids"))
