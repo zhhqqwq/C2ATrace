@@ -1,0 +1,25 @@
+{
+  "batch_id": "runner-a-wave-03-batch-07-provider-attempt-retry-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "07",
+  "selection_mode": "explicit_requirements",
+  "selected_unlock_primitive": "prim.provider.attempts",
+  "requirement_ids": [
+    "PAD-020",
+    "PAD-054",
+    "PAD-055",
+    "PAD-056",
+    "TM-005"
+  ],
+  "expected_case_count": 5,
+  "selection_analysis": {
+    "candidate_unlock_counts": {
+      "prim.model.output": 20,
+      "prim.provider.attempts": 19,
+      "prim.verifier.report": 93
+    },
+    "rationale": "Verifier-report unlock is broad across eleven families and not a tight batch. Provider-attempt primary core has denser shared scenarios than model-output primary core: 10 closed provider-attempt primary cases across 6 receipts versus 10 closed model-output primary cases across 8 receipts. The selected retry subcluster puts four provider-attempt-primary requirements plus one identity requirement on the same provider-visible-retry receipt and reuses the existing retry occurrence predicate."
+  },
+  "intent": "Execute only the visible-retry occurrence core: distinct attempt identity, positive retry orchestration basis, and retry non-negation. Predecessor cycle, failover, hedge, adapter-capture, and model-output semantics remain unimplemented."
+}

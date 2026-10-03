@@ -43,6 +43,7 @@ request binding          47 / 47
 identity core              8 / 8
 provider occurrence         3 / 3
 model/output core            2 / 2
+provider retry core           5 / 5 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -56,3 +57,5 @@ Batch 04 starts `prim.identity.occurrence` using explicit requirement selection 
 Batch 05 selects the dependency-closed provider occurrence identity core after comparing the remaining model/output and provider identity clusters. It covers PAD-023, PAD-078, and PAD-085 only: provider-reported remote IDs do not replace C2ATrace occurrence IDs, and semantically matching CaptureDiagnostic observations remain distinct occurrences. Provider retry/failover/hedge semantics, adapter capture, and model-output primitives remain outside this batch.
 
 Batch 06 selects the only two identity-primary requirements whose dependency closure is complete after Batch 05 without introducing a new major primitive: OUT-019 and OUT-026. Shared-receipt neighbors OUT-021/PAD-065 remain blocked on `prim.verifier.report`, and PAD-022 remains blocked on `prim.provider.attempts`.
+
+Batch 07 ranks the next blocker primitives by single-step unlock impact: `prim.verifier.report` 93, `prim.model.output` 20, and `prim.provider.attempts` 19. The verifier surface is intentionally deferred because it spans eleven families and a much larger reporting/completeness/conflict surface. Between the two compact candidates, provider-attempt semantics have denser shared scenarios. The selected 5-case retry core uses one `provider-visible-retry.json` receipt for PAD-020, PAD-054, PAD-055, PAD-056, and TM-005. Cycle, failover, hedge, and adapter-capture cases remain fail-closed.

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from provider_attempt_executor import retry_attempt_pair
+
 
 IDENTITY_PLANNED_TESTS = {
     "transform-selection-identity-001",
@@ -111,23 +113,6 @@ def duplicate_representation_conflict(receipt):
         ):
             return record_id
     return None
-
-
-def retry_attempt_pair(receipt):
-    index = record_index(receipt)
-    for attempt in by_kind(receipt, "ProviderAttempt"):
-        parent_id = ref_id(attempt.get("retry_of"))
-        if not parent_id:
-            continue
-        parent = index.get(parent_id)
-        if not isinstance(parent, dict) or parent.get("kind") != "ProviderAttempt":
-            continue
-        if attempt.get("id") == parent.get("id"):
-            raise ValueError("retry attempt reuses parent identity")
-        if ref_id(attempt.get("invocation")) != ref_id(parent.get("invocation")):
-            raise ValueError("retry identity scenario changed invocation")
-        return parent, attempt
-    raise ValueError("retry occurrence pair not found")
 
 
 def different_level_snapshot_pair(receipt):
