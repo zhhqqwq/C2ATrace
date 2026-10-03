@@ -282,6 +282,22 @@ def equal_content_model_output_pair(receipt):
             return left, right
     raise ValueError("equal-content distinct ModelOutput occurrence pair not found")
 
+
+def earlier_model_output_occurrence(receipt, left, right):
+    index = record_index(receipt)
+    left_attempt = index.get(ref_id(left.get("attempt")))
+    right_attempt = index.get(ref_id(right.get("attempt")))
+    if isinstance(left_attempt, dict) and isinstance(right_attempt, dict):
+        if ref_id(right_attempt.get("retry_of")) == left_attempt.get("id"):
+            return left
+        if ref_id(left_attempt.get("retry_of")) == right_attempt.get("id"):
+            return right
+    # When orchestration does not order the pair, receipt occurrence order is
+    # the only local ordering evidence available.
+    outputs = by_kind(receipt, "ModelOutput")
+    positions = {output.get("id"): i for i, output in enumerate(outputs)}
+    return min((left, right), key=lambda output: positions.get(output.get("id"), 10**9))
+
 def execute_identity_case(row, case, materialized):
     requirement_id = row["requirement_id"]
     check_id = row["planned_test_id"]
@@ -418,11 +434,7 @@ def execute_identity_case(row, case, materialized):
 
     elif check_id == "model-output-no-content-merge-001":
         left, right = equal_content_model_output_pair(receipt)
-        # Use the earlier occurrence as the subject so occurrence identity is
-        # tested independently of accepted-output selection.
-        subject = left
-        if right.get("id") < left.get("id"):
-            subject = right
+        subject = earlier_model_output_occurrence(receipt, left, right)
         findings = [
             finding(
                 requirement_id,
