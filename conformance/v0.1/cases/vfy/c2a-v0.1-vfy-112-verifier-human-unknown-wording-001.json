@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-112-verifier-human-unknown-wording-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-112"
+  ],
+  "planned_test_ids": [
+    "verifier-human-unknown-wording-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Human rendering preserves unknown rather than converting it to false, absent, failed, safe, or invalid.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-completed-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-112"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-112",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-112"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-112-verifier-human-unknown-wording-001.json"
+}

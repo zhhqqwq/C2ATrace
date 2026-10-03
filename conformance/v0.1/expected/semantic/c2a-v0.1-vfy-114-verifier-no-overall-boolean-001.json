@@ -1,0 +1,35 @@
+{
+  "case_id": "c2a-v0.1-vfy-114-verifier-no-overall-boolean-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    },
+    {
+      "document_id": "report-with-overall-boolean",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "invalid",
+      "error_classes": [
+        "additionalProperties"
+      ]
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-114",
+      "check_id": "verifier-no-overall-boolean-001",
+      "subject_selector": {
+        "report_id": "report-vfy-process-completed-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:unqualified_overall_fully_verified_boolean"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

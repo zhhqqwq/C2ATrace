@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-121-verifier-resource-limit-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-121",
+      "check_id": "verifier-resource-limit-bounded-001",
+      "subject_selector": {
+        "report_id": "report-vfy-process-incomplete-001"
+      },
+      "domain": "conformance",
+      "status": "unverified",
+      "prohibited_inferences": [
+        "P1:resource_limited_unevaluated_claim_marked_invalid_or_false"
+      ],
+      "reason_code": "resource_limit"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "incomplete_evaluation"
+}

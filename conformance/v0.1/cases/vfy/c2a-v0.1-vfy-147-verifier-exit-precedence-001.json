@@ -1,0 +1,59 @@
+{
+  "case_id": "c2a-v0.1-vfy-147-verifier-exit-precedence-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-147"
+  ],
+  "planned_test_ids": [
+    "verifier-exit-precedence-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "When a trustworthy report exists, invalidity_detected deterministically takes precedence over incomplete_evaluation.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    },
+    {
+      "document_id": "report-incomplete",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-incomplete-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-147"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-147",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-147"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-147-verifier-exit-precedence-001.json"
+}

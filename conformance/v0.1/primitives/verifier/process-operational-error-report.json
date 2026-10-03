@@ -1,0 +1,62 @@
+{
+  "kind": "VerificationReport",
+  "verifier": {
+    "name": "test-verifier",
+    "version": "0.1-test",
+    "profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ]
+  },
+  "invocation": {
+    "receipt_ids": [
+      "receipt-minimal-001"
+    ],
+    "goals": [
+      {
+        "check_id": "mandatory-structural",
+        "mandatory": true
+      },
+      {
+        "check_id": "mandatory-candidate",
+        "mandatory": true
+      },
+      {
+        "check_id": "resource-bound-check",
+        "mandatory": true
+      },
+      {
+        "check_id": "optional-profile",
+        "mandatory": false
+      },
+      {
+        "check_id": "runtime-assertion",
+        "mandatory": false
+      },
+      {
+        "check_id": "external-unknown",
+        "mandatory": false
+      },
+      {
+        "check_id": "private-candidate-match",
+        "mandatory": false
+      }
+    ],
+    "capability_summary": {
+      "supported_profiles": [
+        "urn:c2atrace:profile:v0.1:core"
+      ],
+      "keyed_secret_capability": "available-withheld",
+      "candidate_comparison": "performed-private",
+      "private_evidence_echo": "suppressed"
+    }
+  },
+  "envelope_results": [],
+  "completeness": {
+    "package_inventory": "unverified",
+    "reference_closure": "unverified",
+    "runtime_history": "unknown"
+  },
+  "report_id": "report-vfy-process-operational-error-001",
+  "findings": [],
+  "process_outcome": "operational_error"
+}

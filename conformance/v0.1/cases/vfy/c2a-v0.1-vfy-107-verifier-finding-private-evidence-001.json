@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-107-verifier-finding-private-evidence-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-107"
+  ],
+  "planned_test_ids": [
+    "verifier-finding-private-evidence-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Private evidence can remain un-echoed when bounded identifiers/comparison results suffice.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-completed-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-107"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-107",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-107"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-107-verifier-finding-private-evidence-001.json"
+}

@@ -2796,7 +2796,7 @@
         "VFY-144"
       ],
       "materialization_status": "catalogued",
-      "executable_primary_requirement_count": 95,
+      "executable_primary_requirement_count": 119,
       "wave_01_primary_requirements": [
         "VFY-020",
         "VFY-030"
@@ -2889,6 +2889,24 @@
         "VFY-100",
         "VFY-102",
         "VFY-103",
+        "VFY-104",
+        "VFY-106",
+        "VFY-107",
+        "VFY-108",
+        "VFY-109",
+        "VFY-110",
+        "VFY-111",
+        "VFY-112",
+        "VFY-113",
+        "VFY-114",
+        "VFY-115",
+        "VFY-116",
+        "VFY-117",
+        "VFY-118",
+        "VFY-119",
+        "VFY-120",
+        "VFY-121",
+        "VFY-122",
         "VFY-124",
         "VFY-125",
         "VFY-130",
@@ -2896,6 +2914,12 @@
         "VFY-136",
         "VFY-137",
         "VFY-140",
+        "VFY-142",
+        "VFY-143",
+        "VFY-146",
+        "VFY-147",
+        "VFY-148",
+        "VFY-150",
         "VFY-151",
         "VFY-152",
         "VFY-153",
@@ -2956,7 +2980,7 @@
       ]
     }
   ],
-  "executable_semantic_requirements": 736,
-  "remaining_semantic_requirements": 35,
-  "materialization_wave": "07-f-vfy-completeness-conflict-profile"
+  "executable_semantic_requirements": 760,
+  "remaining_semantic_requirements": 11,
+  "materialization_wave": "07-g-vfy-report-human-process"
 }

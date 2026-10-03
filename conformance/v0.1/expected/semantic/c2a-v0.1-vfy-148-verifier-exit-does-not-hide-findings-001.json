@@ -1,0 +1,37 @@
+{
+  "case_id": "c2a-v0.1-vfy-148-verifier-exit-does-not-hide-findings-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-148",
+      "check_id": "verifier-exit-does-not-hide-findings-001",
+      "subject_selector": {
+        "report_id": "report-vfy-process-invalidity-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "prohibited_inferences": [
+        "P1:process_outcome_erases_detailed_findings"
+      ],
+      "reason_code": "detailed_findings_preserved"
+    },
+    {
+      "requirement_id": "VFY-148",
+      "check_id": "blocked-detail-preserved",
+      "subject_selector": {
+        "report_id": "report-vfy-process-invalidity-001"
+      },
+      "domain": "comparison",
+      "status": "unverified"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

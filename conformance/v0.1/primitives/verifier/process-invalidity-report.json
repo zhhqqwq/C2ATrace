@@ -1,0 +1,174 @@
+{
+  "kind": "VerificationReport",
+  "verifier": {
+    "name": "test-verifier",
+    "version": "0.1-test",
+    "profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ]
+  },
+  "invocation": {
+    "receipt_ids": [
+      "receipt-minimal-001"
+    ],
+    "goals": [
+      {
+        "check_id": "mandatory-structural",
+        "mandatory": true
+      },
+      {
+        "check_id": "mandatory-candidate",
+        "mandatory": true
+      },
+      {
+        "check_id": "resource-bound-check",
+        "mandatory": true
+      },
+      {
+        "check_id": "optional-profile",
+        "mandatory": false
+      },
+      {
+        "check_id": "runtime-assertion",
+        "mandatory": false
+      },
+      {
+        "check_id": "external-unknown",
+        "mandatory": false
+      },
+      {
+        "check_id": "private-candidate-match",
+        "mandatory": false
+      }
+    ],
+    "capability_summary": {
+      "supported_profiles": [
+        "urn:c2atrace:profile:v0.1:core"
+      ],
+      "keyed_secret_capability": "available-withheld",
+      "candidate_comparison": "performed-private",
+      "private_evidence_echo": "suppressed"
+    }
+  },
+  "envelope_results": [],
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "report_id": "report-vfy-process-invalidity-001",
+  "findings": [
+    {
+      "finding_id": "finding-mandatory-invalid",
+      "check_id": "mandatory-structural",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": true,
+      "reason_code": "mandatory_check_failed"
+    },
+    {
+      "finding_id": "finding-mandatory-unverified",
+      "check_id": "mandatory-candidate",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "comparison",
+      "status": "unverified",
+      "evidence_bases": [
+        "E2"
+      ],
+      "mandatory": true,
+      "reason_code": "required_capability_unavailable",
+      "capability": "candidate-secret"
+    },
+    {
+      "finding_id": "finding-asserted",
+      "check_id": "runtime-assertion",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "evidence_bases": [
+        "E4"
+      ],
+      "mandatory": false,
+      "message": "Runtime proposition is recorded as asserted, not independently established.",
+      "prohibited_inferences": [
+        "P1:asserted_is_not_established"
+      ]
+    },
+    {
+      "finding_id": "finding-unknown",
+      "check_id": "external-unknown",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "evidence_bases": [
+        "E4"
+      ],
+      "mandatory": false,
+      "message": "External proposition remains unknown; no false/absent inference is made.",
+      "prohibited_inferences": [
+        "P1:unknown_is_not_false"
+      ]
+    },
+    {
+      "finding_id": "finding-private-match",
+      "check_id": "private-candidate-match",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "comparison",
+      "status": "matched",
+      "evidence_bases": [
+        "E2"
+      ],
+      "mandatory": false,
+      "message": "Private candidate matched the declared commitment; candidate bytes are not echoed."
+    },
+    {
+      "finding_id": "finding-optional-unsupported",
+      "check_id": "optional-profile",
+      "subject": {
+        "subject_kind": "profile",
+        "profile_id": "urn:c2atrace:profile:test:optional"
+      },
+      "domain": "support",
+      "status": "unsupported",
+      "evidence_bases": [
+        "profile:urn:c2atrace:profile:test:optional"
+      ],
+      "mandatory": false,
+      "reason_code": "profile_not_implemented"
+    },
+    {
+      "finding_id": "finding-resource-blocked",
+      "check_id": "resource-bound-check",
+      "subject": {
+        "subject_kind": "verification_invocation"
+      },
+      "domain": "conformance",
+      "status": "unverified",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": true,
+      "reason_code": "resource_limit"
+    }
+  ],
+  "process_outcome": "invalidity_detected"
+}

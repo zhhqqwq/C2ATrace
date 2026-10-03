@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-143-verifier-report-failure-visibility-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-143"
+  ],
+  "planned_test_ids": [
+    "verifier-report-failure-visibility-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Detected mandatory invalid findings remain visible in the machine-readable report.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-143"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-143",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-143"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-143-verifier-report-failure-visibility-001.json"
+}

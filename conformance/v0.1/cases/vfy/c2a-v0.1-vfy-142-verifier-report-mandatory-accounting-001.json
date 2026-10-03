@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-142-verifier-report-mandatory-accounting-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-142"
+  ],
+  "planned_test_ids": [
+    "verifier-report-mandatory-accounting-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Every requested mandatory check is explicitly represented in the machine report.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-142"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-142",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-142"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-142-verifier-report-mandatory-accounting-001.json"
+}

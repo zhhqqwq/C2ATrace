@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-148-verifier-exit-does-not-hide-findings-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-148"
+  ],
+  "planned_test_ids": [
+    "verifier-exit-does-not-hide-findings-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Coarse process outcome does not erase or semantically override detailed findings.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-148"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-148",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-148"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-148-verifier-exit-does-not-hide-findings-001.json"
+}

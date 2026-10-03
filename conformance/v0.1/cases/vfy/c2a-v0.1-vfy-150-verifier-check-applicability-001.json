@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-150-verifier-check-applicability-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-150"
+  ],
+  "planned_test_ids": [
+    "verifier-check-applicability-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Optional unsupported checks remain explicitly applicable/optional and do not become mandatory baseline failure.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-completed-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-150"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-150",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-150"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-150-verifier-check-applicability-001.json"
+}

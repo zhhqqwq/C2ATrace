@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-vfy-120-verifier-determinism-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-120"
+  ],
+  "planned_test_ids": [
+    "verifier-determinism-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Semantically identical findings remain equivalent under non-semantic findings-array permutation.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    },
+    {
+      "document_id": "report-permuted",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report-permuted.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-120"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-120",
+    "primary_documents": [
+      "report",
+      "report-permuted"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-120"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-120-verifier-determinism-001.json"
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "c2a-v0.1-vfy-120-verifier-determinism-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    },
+    {
+      "document_id": "report-permuted",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-120",
+      "check_id": "verifier-determinism-001",
+      "subject_selector": {
+        "report_id": "report-vfy-process-invalidity-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "reason_code": "semantically_equivalent_under_nonsemantic_order"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}

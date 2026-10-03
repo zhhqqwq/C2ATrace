@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-146-verifier-invalid-and-incomplete-coexist-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-146"
+  ],
+  "planned_test_ids": [
+    "verifier-invalid-and-incomplete-coexist-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "Mandatory invalidity and blocked/unverified findings coexist in one report.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/process-invalidity-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-146"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-146",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-146"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-146-verifier-invalid-and-incomplete-coexist-001.json"
+}

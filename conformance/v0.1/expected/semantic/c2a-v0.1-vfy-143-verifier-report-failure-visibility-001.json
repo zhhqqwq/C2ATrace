@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-143-verifier-report-failure-visibility-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-143",
+      "check_id": "verifier-report-failure-visibility-001",
+      "subject_selector": {
+        "report_id": "report-vfy-process-invalidity-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "prohibited_inferences": [
+        "P1:mandatory_failure_hidden_by_summary"
+      ],
+      "reason_code": "mandatory_invalid_finding_visible"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "invalidity_detected"
+}
