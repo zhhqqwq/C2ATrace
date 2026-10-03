@@ -403,16 +403,27 @@ def execute_privacy_dangling(requirement_id, check_id, primary):
     receipt = primary[0]
     if not receipt.get("arp", {}).get("privacy"):
         raise ValueError("privacy export marker missing")
+    index = record_index(receipt)
+    dangling = []
     for occurrence in receipt_refs(receipt):
         if occurrence["ref"].get("ref_type") != "local":
             continue
         if local_resolution(receipt, occurrence["ref"])["status"] == "unresolved":
-            return [make_finding(
-                requirement_id, check_id, object_scope(receipt, occurrence["owner_id"]),
-                "conformance", "invalid",
-                reason_code="privacy_export_created_dangling_local_reference",
-            )]
-    raise ValueError("privacy-created dangling local reference not detected")
+            dangling.append(occurrence)
+    if not dangling:
+        raise ValueError("privacy-created dangling local reference not detected")
+
+    binding = next(
+        (occurrence for occurrence in dangling
+         if index.get(occurrence["owner_id"], {}).get("kind") == "RequestBinding"),
+        None,
+    )
+    occurrence = binding or dangling[0]
+    return [make_finding(
+        requirement_id, check_id, object_scope(receipt, occurrence["owner_id"]),
+        "conformance", "invalid",
+        reason_code="privacy_export_created_dangling_local_reference",
+    )]
 
 
 def execute_external_address(requirement_id, check_id, primary, resolution):
