@@ -1,0 +1,17 @@
+{
+  "batch_id": "runner-a-wave-03-batch-05-provider-occurrence-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "05",
+  "selection_mode": "explicit_requirements",
+  "primary_primitives": [
+    "prim.identity.occurrence"
+  ],
+  "requirement_ids": [
+    "PAD-023",
+    "PAD-078",
+    "PAD-085"
+  ],
+  "expected_case_count": 3,
+  "intent": "Dependency-closed provider occurrence identity cluster selected from the remaining identity requirements. It validates provider-reported IDs as non-C2ATrace identity and preserves distinct CaptureDiagnostic occurrences across semantically matching hook observations without implementing provider-attempt orchestration or adapter-capture primitives."
+}

@@ -41,6 +41,7 @@ semantic foundation     16 / 16
 semantic derivation     29 / 29
 request binding          47 / 47
 identity core              8 / 8
+provider occurrence         3 / 3 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -50,3 +51,5 @@ Batch 03 adds the request-binding cluster: all 34 semantic requirements whose pr
 Batch manifests are machine-readable runner selection specifications. A batch manifest may select semantic requirements by primary primitive and explicitly add adjacent mixed-schema-semantic requirement IDs. Runner A verifies the declared expected case count before treating the batch as complete.
 
 Batch 04 starts `prim.identity.occurrence` using explicit requirement selection because the 60 identity-primary requirements span eleven families and multiple not-yet-executed dependency primitives. The first 8-case core batch is limited to identity invariants whose dependencies are already implemented by the graph, derivation, and request-binding foundations.
+
+Batch 05 selects the dependency-closed provider occurrence identity core after comparing the remaining model/output and provider identity clusters. It covers PAD-023, PAD-078, and PAD-085 only: provider-reported remote IDs do not replace C2ATrace occurrence IDs, and semantically matching CaptureDiagnostic observations remain distinct occurrences. Provider retry/failover/hedge semantics, adapter capture, and model-output primitives remain outside this batch.

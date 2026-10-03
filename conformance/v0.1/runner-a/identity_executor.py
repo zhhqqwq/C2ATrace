@@ -10,6 +10,9 @@ IDENTITY_PLANNED_TESTS = {
     "request-mutation-new-snapshot-001",
     "provider-request-mutation-new-snapshot-001",
     "request-digest-no-identity-001",
+    "provider-id-not-c2a-identity-001",
+    "provider-multihook-correlation-001",
+    "provider-capture-diagnostic-no-merge-001",
 }
 
 CAPTURE_ORDER = {
@@ -194,6 +197,51 @@ def equal_semantic_digest_pair(receipt):
     raise ValueError("equal semantic digest snapshot pair not found")
 
 
+
+def provider_remote_id_pair(receipt):
+    attempts = by_kind(receipt, "ProviderAttempt")
+    values = []
+    for attempt in attempts:
+        for item in attempt.get("metadata", []):
+            if item.get("origin") != "provider_reported":
+                continue
+            name = item.get("name")
+            if name not in {"provider_request_id", "provider_response_id", "provider_attempt_id"}:
+                continue
+            values.append((name, item.get("value"), attempt))
+    for i, (name, value, left) in enumerate(values):
+        for other_name, other_value, right in values[i + 1:]:
+            if name != other_name or value != other_value:
+                continue
+            if left.get("id") == right.get("id"):
+                raise ValueError("provider-reported identifier collapsed C2ATrace attempt identity")
+            return left, right
+    raise ValueError("shared provider-reported identifier across distinct attempts not found")
+
+
+def diagnostic_semantic_key(diagnostic):
+    subject = diagnostic.get("subject") or {}
+    return (
+        ref_id(subject.get("ref")),
+        subject.get("representation_basis"),
+        diagnostic.get("slot"),
+        diagnostic.get("status"),
+        ref_id(diagnostic.get("adapter_declaration")),
+    )
+
+
+def duplicate_diagnostic_occurrence_pair(receipt):
+    diagnostics = by_kind(receipt, "CaptureDiagnostic")
+    for i, left in enumerate(diagnostics):
+        left_key = diagnostic_semantic_key(left)
+        for right in diagnostics[i + 1:]:
+            if diagnostic_semantic_key(right) != left_key:
+                continue
+            if left.get("id") == right.get("id"):
+                raise ValueError("duplicate diagnostic occurrence reused C2ATrace identity")
+            return left, right
+    raise ValueError("semantically matching diagnostic occurrence pair not found")
+
 def execute_identity_case(row, case, materialized):
     requirement_id = row["requirement_id"]
     check_id = row["planned_test_id"]
@@ -281,6 +329,29 @@ def execute_identity_case(row, case, materialized):
                 right["id"],
                 prohibited=["P1:digest_equality_merges_snapshot_identity"],
             )
+        ]
+        outcome = "completed"
+
+    elif check_id == "provider-id-not-c2a-identity-001":
+        _left, right = provider_remote_id_pair(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                right["id"],
+                prohibited=["P1:provider_id_is_c2atrace_identity"],
+            )
+        ]
+        outcome = "completed"
+
+    elif check_id in {
+        "provider-multihook-correlation-001",
+        "provider-capture-diagnostic-no-merge-001",
+    }:
+        _left, right = duplicate_diagnostic_occurrence_pair(receipt)
+        findings = [
+            finding(requirement_id, check_id, receipt, right["id"])
         ]
         outcome = "completed"
 
