@@ -4,6 +4,8 @@ import hashlib
 
 import rfc8785
 
+from request_executor import REQUEST_PLANNED_TESTS, execute_request_case
+
 
 SUPPORTED_PLANNED_TESTS = {
     "graph-missing-reference-001",
@@ -57,6 +59,7 @@ DERIVATION_PLANNED_TESTS = {
 }
 
 SUPPORTED_PLANNED_TESTS.update(DERIVATION_PLANNED_TESTS)
+SUPPORTED_PLANNED_TESTS.update(REQUEST_PLANNED_TESTS)
 
 
 def b64url(data):
@@ -957,6 +960,9 @@ def execute_semantic_case(row, case, materialized):
     planned = row["planned_test_id"]
     if planned not in SUPPORTED_PLANNED_TESTS:
         raise NotImplementedError(planned)
+
+    if planned in REQUEST_PLANNED_TESTS:
+        return execute_request_case(row, case, materialized)
 
     requirement_id = row["requirement_id"]
     check_id = planned

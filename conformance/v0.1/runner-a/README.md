@@ -39,8 +39,11 @@ direct_schema           6 / 6
 deterministic_vector    43 / 43
 semantic foundation     16 / 16
 semantic derivation     29 / 29
+request binding          47 / 47 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
+
+Batch 03 adds the request-binding cluster: all 34 semantic requirements whose primary primitive is `prim.request.binding`, plus 13 adjacent REQ mixed-schema-semantic boundaries. It independently evaluates request ownership, snapshot reuse/isolation, effective-request cardinality, transition ordering and propagation, source/target occurrence binding, JSON Pointer/location resolution, text/byte Region bounds, semantic/byte digests, commitment comparison, redaction/HMAC capability limits, and prepared-body claim bounds.
 
 Batch manifests are machine-readable runner selection specifications. A batch manifest may select semantic requirements by primary primitive and explicitly add adjacent mixed-schema-semantic requirement IDs. Runner A verifies the declared expected case count before treating the batch as complete.

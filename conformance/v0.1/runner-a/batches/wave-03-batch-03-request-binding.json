@@ -1,0 +1,26 @@
+{
+  "batch_id": "runner-a-wave-03-batch-03-request-binding",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "03",
+  "primary_primitives": [
+    "prim.request.binding"
+  ],
+  "additional_requirement_ids": [
+    "REQ-001",
+    "REQ-003",
+    "REQ-005",
+    "REQ-006",
+    "REQ-007",
+    "REQ-014",
+    "REQ-016",
+    "REQ-017",
+    "REQ-018",
+    "REQ-019",
+    "REQ-020",
+    "REQ-032",
+    "REQ-049"
+  ],
+  "expected_case_count": 47,
+  "intent": "Mechanically select all semantic requirements whose primary primitive is request.binding, plus adjacent REQ mixed-schema-semantic boundaries for request ownership, snapshot reuse, transition, binding, location, and digest semantics."
+}
