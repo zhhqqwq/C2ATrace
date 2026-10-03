@@ -1,0 +1,50 @@
+{
+  "layer": "semantic_verifier",
+  "wave": "primitive-07-e-vfy-claim-vocabulary",
+  "status": "complete",
+  "newly_materialized": [
+    "VFY-065",
+    "VFY-066",
+    "VFY-067",
+    "VFY-068",
+    "VFY-069",
+    "VFY-070",
+    "VFY-071",
+    "VFY-073",
+    "VFY-074",
+    "VFY-075",
+    "VFY-076",
+    "VFY-077",
+    "VFY-078",
+    "VFY-079",
+    "VFY-080",
+    "VFY-081",
+    "VFY-082",
+    "VFY-083",
+    "VFY-084",
+    "VFY-085",
+    "VFY-086"
+  ],
+  "newly_materialized_count": 21,
+  "executable_semantic_requirements": 721,
+  "remaining_semantic_requirements": 50,
+  "remaining_vfy_semantic_requirements": 50,
+  "shared_evidence": [
+    "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+    "conformance/v0.1/primitives/receipts/provider-signed-assertions.json",
+    "conformance/v0.1/primitives/receipts/tool-signed-diagnostic-global-coverage.json",
+    "conformance/v0.1/primitives/receipts/tool-completed-no-effect.json",
+    "conformance/v0.1/primitives/receipts/tool-timeout-no-effect.json",
+    "fixtures/v0.1/valid/tool-effect.json",
+    "conformance/v0.1/primitives/receipts/tool-effect-multiple-evidence.json"
+  ],
+  "assertions": {
+    "record_vs_fact_separated": true,
+    "premises_traceable": true,
+    "weakest_premise_bounds_composition": true,
+    "status_domains_typed": true,
+    "unknown_not_false": true,
+    "not_present_scope_bounded": true,
+    "tool_effect_claims_not_upgraded": true
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "kind": "VerificationReport",
+  "report_id": "report-vfy-typed-status-001",
+  "verifier": {
+    "name": "test-verifier",
+    "version": "0.1-test",
+    "profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ]
+  },
+  "invocation": {
+    "receipt_ids": [
+      "receipt-minimal-001"
+    ],
+    "goals": [
+      {
+        "check_id": "typed-status-semantics",
+        "mandatory": false
+      }
+    ],
+    "capability_summary": {
+      "supported_profiles": [
+        "urn:c2atrace:profile:v0.1:core"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "finding_id": "finding-established",
+      "check_id": "scope-established",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "established",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "message": "Established only for the precisely supplied receipt-scoped proposition."
+    },
+    {
+      "finding_id": "finding-matched",
+      "check_id": "scope-matched",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "comparison",
+      "status": "matched",
+      "evidence_bases": [
+        "E2"
+      ],
+      "mandatory": false,
+      "message": "A defined comparison matched; no external truth is implied."
+    },
+    {
+      "finding_id": "finding-asserted",
+      "check_id": "runtime-asserted",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "asserted",
+      "evidence_bases": [
+        "E4"
+      ],
+      "mandatory": false,
+      "message": "Recorded runtime/external proposition remains asserted."
+    },
+    {
+      "finding_id": "finding-unknown",
+      "check_id": "fact-unknown",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "evidence_bases": [
+        "E4"
+      ],
+      "mandatory": false,
+      "message": "Available evidence does not justify true or false."
+    },
+    {
+      "finding_id": "finding-unverified",
+      "check_id": "candidate-check-unverified",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "comparison",
+      "status": "unverified",
+      "evidence_bases": [
+        "E2"
+      ],
+      "mandatory": false,
+      "reason_code": "required_capability_unavailable",
+      "capability": "example-secret-capability"
+    },
+    {
+      "finding_id": "finding-unsupported",
+      "check_id": "profile-check-unsupported",
+      "subject": {
+        "subject_kind": "profile",
+        "profile_id": "urn:c2atrace:profile:test:unsupported"
+      },
+      "domain": "support",
+      "status": "unsupported",
+      "evidence_bases": [
+        "profile:urn:c2atrace:profile:test:unsupported"
+      ],
+      "mandatory": false,
+      "reason_code": "profile_not_implemented"
+    },
+    {
+      "finding_id": "finding-invalid",
+      "check_id": "check-local-invalid",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "invalid",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "reason_code": "local_check_failed"
+    },
+    {
+      "finding_id": "finding-mismatched",
+      "check_id": "actual-comparison-mismatch",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "comparison",
+      "status": "mismatched",
+      "evidence_bases": [
+        "E2"
+      ],
+      "mandatory": false,
+      "reason_code": "comparison_performed_and_failed"
+    },
+    {
+      "finding_id": "finding-not-present",
+      "check_id": "supplied-scope-absence",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "presence",
+      "status": "not_present",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "message": "Requested item was not found in supplied verification scope."
+    },
+    {
+      "finding_id": "finding-valid",
+      "check_id": "structural-valid",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false
+    },
+    {
+      "finding_id": "finding-resolved",
+      "check_id": "local-resolution",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "resolution",
+      "status": "resolved",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false
+    },
+    {
+      "finding_id": "finding-weak-premise",
+      "check_id": "required-premise",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "resolution",
+      "status": "unresolved",
+      "evidence_bases": [
+        "E1"
+      ],
+      "mandatory": false,
+      "reason_code": "prerequisite_unresolved"
+    },
+    {
+      "finding_id": "finding-composed",
+      "check_id": "composed-conclusion",
+      "subject": {
+        "subject_kind": "receipt",
+        "receipt_id": "receipt-minimal-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "evidence_bases": [
+        "E1",
+        "E4"
+      ],
+      "premises": [
+        "finding-weak-premise"
+      ],
+      "mandatory": false,
+      "reason_code": "weakest_premise_unresolved"
+    }
+  ],
+  "envelope_results": [],
+  "completeness": {
+    "package_inventory": "established",
+    "reference_closure": "established",
+    "runtime_history": "unknown"
+  },
+  "process_outcome": "completed"
+}

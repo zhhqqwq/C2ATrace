@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-074-verifier-composition-weakest-premise-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-074",
+      "check_id": "verifier-composition-weakest-premise-001",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "reason_code": "weakest_premise_unresolved",
+      "prohibited_inferences": [
+        "P1:unresolved_premise_is_silently_upgraded_in_composed_claim"
+      ]
+    }
+  ],
+  "process_outcome": "completed",
+  "forbidden_findings": []
+}

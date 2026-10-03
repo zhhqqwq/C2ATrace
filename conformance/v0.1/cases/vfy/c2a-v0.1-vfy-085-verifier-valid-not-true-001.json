@@ -1,0 +1,51 @@
+{
+  "case_id": "c2a-v0.1-vfy-085-verifier-valid-not-true-001",
+  "protocol_version": "0.1",
+  "requirement_ids": [
+    "VFY-085"
+  ],
+  "planned_test_ids": [
+    "verifier-valid-not-true-001"
+  ],
+  "primary_enforcement": "semantic_verifier",
+  "status": "executable",
+  "description": "valid means a defined check succeeded and is not synonymous with factual truth.",
+  "documents": [
+    {
+      "document_id": "report",
+      "role": "raw_object",
+      "source": {
+        "path": "conformance/v0.1/primitives/verifier/typed-findings-report.json"
+      },
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport"
+    }
+  ],
+  "execution": {
+    "phases": [
+      "schema_validate",
+      "claim_checks",
+      "aggregate_report"
+    ],
+    "resolution_set": [],
+    "verifier_goals": [
+      "VFY-085"
+    ]
+  },
+  "harness": {
+    "verification_invocation_id": "ci-vfy-085",
+    "primary_documents": [
+      "report"
+    ],
+    "resolution_set": [],
+    "supported_profiles": [
+      "urn:c2atrace:profile:v0.1:verifier"
+    ],
+    "goals": [
+      "VFY-085"
+    ]
+  },
+  "notes": [
+    "primitives: prim.verifier.report, prim.claim.strength"
+  ],
+  "expected_result": "conformance/v0.1/expected/semantic/c2a-v0.1-vfy-085-verifier-valid-not-true-001.json"
+}

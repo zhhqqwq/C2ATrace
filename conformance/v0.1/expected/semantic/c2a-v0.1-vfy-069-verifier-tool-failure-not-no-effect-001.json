@@ -1,0 +1,28 @@
+{
+  "case_id": "c2a-v0.1-vfy-069-verifier-tool-failure-not-no-effect-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "primary",
+      "schema_target": "urn:c2atrace:schema:v0.1:receipt#/$defs/ReceiptPresentation",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-069",
+      "check_id": "verifier-tool-failure-not-no-effect-001",
+      "subject_selector": {
+        "receipt_id": "receipt-tool-effect-001",
+        "object_id": "exec-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "prohibited_inferences": [
+        "P1:noncompleted_tool_execution_proves_no_effect"
+      ]
+    }
+  ],
+  "process_outcome": "completed",
+  "forbidden_findings": []
+}

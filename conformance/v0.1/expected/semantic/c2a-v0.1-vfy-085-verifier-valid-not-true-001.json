@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-vfy-085-verifier-valid-not-true-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-085",
+      "check_id": "verifier-valid-not-true-001",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "conformance",
+      "status": "valid",
+      "prohibited_inferences": [
+        "P1:valid_check_result_means_factual_truth"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

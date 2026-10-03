@@ -1,0 +1,60 @@
+{
+  "case_id": "c2a-v0.1-vfy-084-verifier-typed-status-domains-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-084",
+      "check_id": "typed-claim",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "claim",
+      "status": "asserted"
+    },
+    {
+      "requirement_id": "VFY-084",
+      "check_id": "typed-comparison",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "comparison",
+      "status": "matched"
+    },
+    {
+      "requirement_id": "VFY-084",
+      "check_id": "typed-resolution",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "resolution",
+      "status": "resolved"
+    },
+    {
+      "requirement_id": "VFY-084",
+      "check_id": "typed-support",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "support",
+      "status": "unsupported"
+    },
+    {
+      "requirement_id": "VFY-084",
+      "check_id": "typed-presence",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "presence",
+      "status": "not_present"
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

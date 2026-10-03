@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-vfy-078-verifier-unknown-not-false-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-078",
+      "check_id": "verifier-unknown-not-false-001",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "claim",
+      "status": "unknown",
+      "prohibited_inferences": [
+        "P1:unknown_is_rendered_or_interpreted_as_false"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}

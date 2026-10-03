@@ -1,0 +1,27 @@
+{
+  "case_id": "c2a-v0.1-vfy-083-verifier-not-present-bounded-001",
+  "comparison_mode": "contains_normative",
+  "schema_results": [
+    {
+      "document_id": "report",
+      "schema_target": "urn:c2atrace:schema:v0.1:verifier#/$defs/VerificationReport",
+      "status": "valid"
+    }
+  ],
+  "required_findings": [
+    {
+      "requirement_id": "VFY-083",
+      "check_id": "verifier-not-present-bounded-001",
+      "subject_selector": {
+        "report_id": "report-vfy-typed-status-001"
+      },
+      "domain": "presence",
+      "status": "not_present",
+      "prohibited_inferences": [
+        "P1:not_present_in_supplied_scope_proves_event_never_occurred"
+      ]
+    }
+  ],
+  "forbidden_findings": [],
+  "process_outcome": "completed"
+}
