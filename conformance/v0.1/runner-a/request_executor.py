@@ -196,6 +196,8 @@ def resolve_binding_location(receipt, binding):
         return {"status": "resolved", "snapshot": snapshot, "selected": rep, "reason": None}
 
     if kind in {"structured_value", "structured_text_region"}:
+        if snapshot.get("representation") is None:
+            return {"status": "unverified", "snapshot": snapshot, "selected": None, "reason": "representation_unavailable"}
         path = location.get("path") or {}
         if path.get("scheme") != "json_pointer":
             return {"status": "unsupported", "snapshot": snapshot, "selected": None, "reason": "path_scheme_unsupported"}

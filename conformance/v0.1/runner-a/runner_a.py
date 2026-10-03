@@ -116,9 +116,20 @@ class SchemaRegistry:
             validator.iter_errors(instance),
             key=lambda e: (list(e.absolute_path), list(e.absolute_schema_path), e.message),
         )
+
+        def walk_errors(error):
+            yield error
+            for child in error.context:
+                yield from walk_errors(child)
+
+        expanded_errors = [
+            nested
+            for error in errors
+            for nested in walk_errors(error)
+        ]
         return {
             "status": "valid" if not errors else "invalid",
-            "error_classes": sorted({str(e.validator) for e in errors}),
+            "error_classes": sorted({str(e.validator) for e in expanded_errors}),
             "errors": [
                 {
                     "path": list(e.absolute_path),

@@ -60,7 +60,7 @@
               "id": "inv-002",
               "expected_kind": "ModelInvocation"
             },
-            "lifecycle_state": "active",
+            "lifecycle_state": "in_progress",
             "effective_requests": [
               {
                 "capture_level": "provider_payload",
