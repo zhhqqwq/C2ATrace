@@ -1,0 +1,22 @@
+{
+  "batch_id": "runner-a-wave-03-batch-04-identity-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "04",
+  "selection_mode": "explicit_requirements",
+  "primary_primitives": [
+    "prim.identity.occurrence"
+  ],
+  "requirement_ids": [
+    "DRV-013",
+    "DRV-015",
+    "GRAPH-002",
+    "REQ-002",
+    "REQ-009",
+    "REQ-010",
+    "REQ-036",
+    "PAD-034"
+  ],
+  "expected_case_count": 8,
+  "intent": "First mechanically re-clustered identity/occurrence execution batch. It uses only already-established graph, derivation, request-binding, and basic attempt predicates, and covers selection identity, generated aggregate identity, immutable artifact conflicts, retry occurrence identity, capture-level separation, request mutation identity, and digest-nonidentity."
+}

@@ -442,13 +442,26 @@ def main():
         batch = load_json(ROOT / args.batch_manifest)
         batch_id = batch.get("batch_id")
         coverage = load_json(CONF / "primitives" / "coverage-matrix.json")
-        primitive_requirements = {
-            entry["requirement_id"]
-            for entry in coverage["entries"]
-            if entry["primary_primitive"] in set(batch.get("primary_primitives", []))
-        }
-        wanted_requirements = primitive_requirements | set(batch.get("additional_requirement_ids", []))
+        explicit_requirements = set(batch.get("requirement_ids", []))
+        if explicit_requirements:
+            wanted_requirements = explicit_requirements
+        else:
+            primitive_requirements = {
+                entry["requirement_id"]
+                for entry in coverage["entries"]
+                if entry["primary_primitive"] in set(batch.get("primary_primitives", []))
+            }
+            wanted_requirements = primitive_requirements | set(batch.get("additional_requirement_ids", []))
         selected = [x for x in selected if x["requirement_id"] in wanted_requirements]
+        if explicit_requirements:
+            selected_requirements = {x["requirement_id"] for x in selected}
+            if selected_requirements != explicit_requirements:
+                selection_failures.append({
+                    "code": "batch_requirement_set_mismatch",
+                    "batch_id": batch_id,
+                    "missing": sorted(explicit_requirements - selected_requirements),
+                    "unexpected": sorted(selected_requirements - explicit_requirements),
+                })
         expected_count = batch.get("expected_case_count")
         if expected_count is not None and len(selected) != expected_count:
             selection_failures.append({
