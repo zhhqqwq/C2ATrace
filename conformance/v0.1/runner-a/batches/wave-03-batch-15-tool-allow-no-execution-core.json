@@ -1,0 +1,235 @@
+{
+  "batch_id": "runner-a-wave-03-batch-15-tool-allow-no-execution-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "15",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.tool.lifecycle",
+  "requirement_ids": [
+    "TOOL-025"
+  ],
+  "expected_case_count": 1,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 174,
+      "semantic_supported_planned_test_ids": 125,
+      "supported_coverage_rows": 107,
+      "remaining_semantic_executable_rows": 664
+    },
+    "global_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 111,
+        "dependency_closed_primary_core": 17
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 93,
+        "dependency_closed_primary_core": 59
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 82,
+        "dependency_closed_primary_core": 10
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 47,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 44,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 39,
+        "dependency_closed_primary_core": 19
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 35,
+        "dependency_closed_primary_core": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 27,
+        "dependency_closed_primary_core": 18
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 17,
+        "dependency_closed_primary_core": 7
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 15,
+        "dependency_closed_primary_core": 6
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 12,
+        "dependency_closed_primary_core": 4
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9,
+        "dependency_closed_primary_core": 9
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 5,
+        "dependency_closed_primary_core": 2
+      }
+    ],
+    "batch14_adjacency_recheck": {
+      "newly_dependency_satisfied": [],
+      "retained_dependency_satisfied": [
+        {
+          "requirement_id": "OUT-044",
+          "planned_test_id": "model-tool-proposal-no-execution-001",
+          "primary_primitive": "prim.model.output",
+          "reason": "Batch 12 already established ToolProposal↔ModelOutput ownership plus no-invocation/no-execution."
+        },
+        {
+          "requirement_id": "TAD-030",
+          "planned_test_id": "tool-argument-model-supplied-positive-001",
+          "primary_primitive": "prim.adapter.capture",
+          "reason": "Batch 13 established model_supplied path-scoped positive proposal ancestry; adapter-capture primary semantics remain unimplemented."
+        },
+        {
+          "requirement_id": "TAINT-031",
+          "planned_test_id": "taint-tool-argument-lineage-001",
+          "primary_primitive": "prim.taint.flow",
+          "reason": "Batch 13 established the explicit ToolProposal→ToolInvocation Derivation chain; taint propagation remains unimplemented."
+        }
+      ],
+      "near_matches": [
+        {
+          "requirement_ids": [
+            "PRIV-055",
+            "PRIV-057",
+            "PRIV-059"
+          ],
+          "reason": "TOOL-011 adds path interpretation but not withholding, privacy commitment, verification downgrade, or privacy-bounded provenance semantics."
+        },
+        {
+          "requirement_ids": [
+            "TAD-031",
+            "TAD-034",
+            "TAD-036",
+            "TAD-037",
+            "TAD-100"
+          ],
+          "reason": "JSON Pointer validity is reusable but does not establish positive non-proposal ancestry, control-input exclusion, dropped/effective argument semantics, application enrichment origin, or bypass non-fabrication."
+        }
+      ],
+      "conclusion": "TOOL-011 adds reusable JSON Pointer path-validity capability but does not by itself fully satisfy any additional tool-lifecycle dependency surface."
+    },
+    "remaining_tool_cluster_state": {
+      "dependency_closed_primary_count": 17,
+      "maximum_shared_receipt_cluster_cases": 1,
+      "note": "All remaining dependency-closed prim.tool.lifecycle primary cases are one-case/one-receipt clusters; reuse density and new semantic surface decide the tie."
+    },
+    "selected_cluster": {
+      "requirement_id": "TOOL-025",
+      "planned_test_id": "tool-allow-no-execution-001",
+      "cases": 1,
+      "distinct_receipts": 1,
+      "shared_receipt": "conformance/v0.1/primitives/receipts/tool-decision-allow-no-execution.json",
+      "reusable_foundations": [
+        "Batch 11 already independently resolves ToolDecision.subject to ToolProposal and validates same-run ownership",
+        "Batch 11 already provides require_no_tool_execution()",
+        "The deny-specific decision resolver can be refactored into a decision-parameterized resolver while keeping deny behavior as a wrapper"
+      ],
+      "incremental_surface": [
+        "resolve a ToolDecision with decision=allow over a ToolProposal",
+        "establish that allow does not imply ToolExecution existence",
+        "prohibit P1:allow_decision_implies_execution"
+      ]
+    },
+    "same_primitive_comparison": {
+      "tool_no_phantom_execution": {
+        "requirement_id": "TOOL-029",
+        "cases": 1,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Reuses require_no_tool_execution but not the established ToolDecision subject-resolution predicate; TOOL-025 has higher predicate reuse density."
+      },
+      "tool_invocation_without_proposal": {
+        "requirement_id": "TOOL-006",
+        "cases": 1,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Requires opening a no-proposal-ancestry invocation scenario rather than extending the existing ToolDecision boundary."
+      },
+      "tool_completed_no_effect": {
+        "requirement_id": "TOOL-033",
+        "cases": 1,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Requires a new completed-execution/effect boundary claim."
+      },
+      "tool_cancel_no_remote_stop": {
+        "requirement_id": "TOOL-035",
+        "cases": 1,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Requires a new ToolExecution cancellation/remote-stop bounded claim."
+      }
+    },
+    "cross_primitive_comparison": {
+      "verifier_typed_findings": {
+        "primitive": "prim.verifier.report",
+        "leverage": 93,
+        "cases": 7,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Denser cluster but lower primitive leverage than prim.tool.lifecycle and opens VerificationReport-native report/status/premise semantics."
+      },
+      "claim_strength": {
+        "primitive": "prim.claim.strength",
+        "leverage": 82,
+        "reason_not_selected": "Lower leverage and opens claim-strength composition semantics."
+      },
+      "privacy_receipt_integrity_adapter_taint": {
+        "primitives": [
+          "prim.privacy.commitment",
+          "prim.receipt.multi",
+          "prim.integrity.composition",
+          "prim.adapter.capture",
+          "prim.taint.flow"
+        ],
+        "leverage": [
+          47,
+          44,
+          39,
+          35,
+          27
+        ],
+        "reason_not_selected": "All rank below prim.tool.lifecycle on the first criterion."
+      },
+      "model_output_adjacent": {
+        "primitive": "prim.model.output",
+        "leverage": 17,
+        "requirements": [
+          "OUT-044"
+        ],
+        "reason_not_selected": "Previously dependency-satisfied and highly reusable, but lower primary leverage."
+      },
+      "provider_source_trust_ordering": {
+        "primitives": [
+          "prim.provider.attempts",
+          "prim.source.observation",
+          "prim.trust.assertion",
+          "prim.ordering.time"
+        ],
+        "leverage": [
+          12,
+          9,
+          15,
+          5
+        ],
+        "reason_not_selected": "All rank below prim.tool.lifecycle on the first criterion."
+      }
+    },
+    "selection_reason": "From the 174-case state, prim.tool.lifecycle remains the highest-leverage residual primitive at 111. All remaining closed-primary tool clusters are one case on one receipt. TOOL-025 wins the reuse tie-break because Batch 11 already provides both ToolDecision→ToolProposal ownership semantics and the no-ToolExecution predicate. The only incremental semantic surface is parameterizing decision resolution for allow and bounding allow against execution inference. This is smaller than opening new invocation-without-proposal, execution-state, cancellation, validation, verifier, claim-strength, privacy, adapter, taint, model-output, or provider surfaces."
+  },
+  "intent": "Select only TOOL-025 for Batch 15. This selection commit does not register the planned test, does not modify Runner A executors, and does not increase the current 174-case independent evidence count. OUT-044, TAD-030, and TAINT-031 remain unregistered adjacent candidates. Runner B and Product Verifier/SDK remain not started."
+}
