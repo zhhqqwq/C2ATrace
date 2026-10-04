@@ -45,6 +45,7 @@ provider occurrence         3 / 3
 model/output core            2 / 2
 provider retry core           5 / 5
 provider hedge core           2 / 2
+provider predecessor core     2 / 2 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -62,3 +63,5 @@ Batch 06 selects the only two identity-primary requirements whose dependency clo
 Batch 07 ranks the next blocker primitives by single-step unlock impact: `prim.verifier.report` 93, `prim.model.output` 20, and `prim.provider.attempts` 19. The verifier surface is intentionally deferred because it spans eleven families and a much larger reporting/completeness/conflict surface. Between the two compact candidates, provider-attempt semantics have denser shared scenarios. The selected 5-case retry core uses one `provider-visible-retry.json` receipt for PAD-020, PAD-054, PAD-055, PAD-056, and TM-005. Cycle, failover, hedge, and adapter-capture cases remain fail-closed.
 
 Batch 08 re-ranks residual provider-attempt subclusters against the dependency-closed model-output core. The selected PAD-059/PAD-061 hedge core is the tightest incremental surface: both cases use one `provider-hedged-attempts.json` receipt and reuse ProviderAttempt occurrence/lifecycle predicates. PAD-060 and OUT-013 remain blocked on `prim.ordering.time`; predecessor graph, failover, and model-output primary clusters remain fail-closed.
+
+Batch 09 re-ranks the post-hedge residual surface and selects OUT-052/OUT-053. Both cases are dependency-closed and share one reusable predecessor-graph predicate over `retry_of` and `failover_from`: self-reference is invalid, and multi-attempt predecessor cycles are invalid. The cases use two receipts, but the new semantic surface is smaller than failover metadata/orchestration and smaller than the three-predicate model-output cluster. Failover remains fail-closed; PAD-060/OUT-013 remain blocked on `prim.ordering.time`, and PAD-019 remains blocked on `prim.claim.strength`.

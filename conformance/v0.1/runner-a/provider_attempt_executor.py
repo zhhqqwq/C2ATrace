@@ -11,6 +11,8 @@ PROVIDER_ATTEMPT_PLANNED_TESTS = {
     "provider-retry-001",
     "provider-hedge-distinct-attempts-001",
     "provider-hedge-cancel-bounded-001",
+    "model-attempt-relation-no-self-loop-001",
+    "model-attempt-predecessor-cycle-001",
 }
 
 
@@ -169,6 +171,68 @@ def application_cancelled_hedge(receipt):
         return left, right, loser
     raise ValueError("cancelled hedge lacks application-side cancellation evidence")
 
+
+def provider_attempt_index(receipt):
+    return {
+        attempt["id"]: attempt
+        for attempt in by_kind(receipt, "ProviderAttempt")
+        if isinstance(attempt, dict) and attempt.get("id")
+    }
+
+
+def attempt_predecessor_graph(receipt):
+    attempts = provider_attempt_index(receipt)
+    graph = {}
+    for attempt_id, attempt in attempts.items():
+        predecessors = []
+        for field in ("retry_of", "failover_from"):
+            predecessor_id = ref_id(attempt.get(field))
+            predecessor = attempts.get(predecessor_id)
+            if (
+                predecessor_id
+                and isinstance(predecessor, dict)
+                and predecessor.get("kind") == "ProviderAttempt"
+            ):
+                predecessors.append(predecessor_id)
+        graph[attempt_id] = tuple(dict.fromkeys(predecessors))
+    return attempts, graph
+
+
+def graph_can_reach(graph, current, target, seen):
+    if current == target:
+        return True
+    if current in seen:
+        return False
+    next_seen = set(seen)
+    next_seen.add(current)
+    return any(
+        graph_can_reach(graph, predecessor, target, next_seen)
+        for predecessor in graph.get(current, ())
+    )
+
+
+def predecessor_self_loops(receipt):
+    attempts, graph = attempt_predecessor_graph(receipt)
+    return [
+        attempts[attempt_id]
+        for attempt_id, predecessors in graph.items()
+        if attempt_id in predecessors
+    ]
+
+
+def predecessor_cycle_members(receipt):
+    attempts, graph = attempt_predecessor_graph(receipt)
+    members = []
+    for attempt_id, attempt in attempts.items():
+        for predecessor_id in graph.get(attempt_id, ()):
+            if predecessor_id == attempt_id:
+                continue
+            if graph_can_reach(graph, predecessor_id, attempt_id, set()):
+                members.append(attempt)
+                break
+    return members
+
+
 def execute_provider_attempt_case(row, case, materialized):
     requirement_id = row["requirement_id"]
     check_id = row["planned_test_id"]
@@ -176,6 +240,7 @@ def execute_provider_attempt_case(row, case, materialized):
         raise NotImplementedError(check_id)
 
     receipt = primary_receipt(case, materialized)
+    process_outcome = "completed"
 
     if check_id in {
         "provider-attempt-distinct-identity-001",
@@ -230,11 +295,46 @@ def execute_provider_attempt_case(row, case, materialized):
             )
         ]
 
+
+    elif check_id == "model-attempt-relation-no-self-loop-001":
+        invalid = predecessor_self_loops(receipt)
+        if not invalid:
+            raise ValueError("provider-attempt predecessor self-loop not found")
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                attempt["id"],
+                status="invalid",
+                reason_code="attempt_predecessor_self_loop",
+            )
+            for attempt in invalid
+        ]
+        process_outcome = "invalidity_detected"
+
+    elif check_id == "model-attempt-predecessor-cycle-001":
+        invalid = predecessor_cycle_members(receipt)
+        if not invalid:
+            raise ValueError("provider-attempt predecessor cycle not found")
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                attempt["id"],
+                status="invalid",
+                reason_code="attempt_predecessor_cycle",
+            )
+            for attempt in invalid
+        ]
+        process_outcome = "invalidity_detected"
+
     else:
         raise NotImplementedError(check_id)
 
     return {
         "findings": findings,
-        "process_outcome": "completed",
+        "process_outcome": process_outcome,
         "completeness": {},
     }
