@@ -49,7 +49,7 @@ model output bounded claims    3 / 3
 tool result/effect bounded      3 / 3
 tool deny/no-execution            2 / 2
 tool proposal boundary              2 / 2
-tool model argument provenance       2 / 2 target
+tool model argument provenance       2 / 2
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.

@@ -1,0 +1,138 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "13-tool-model-argument-provenance-core",
+  "status": "complete",
+  "selection_commit": "ef111f6da38c43004e5d9dc065a36de0005ced5a",
+  "implementation_commit": "a274f8eca977cc74a4a6b4120fee385e982f3464",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.tool.lifecycle",
+    "requirement_ids": [
+      "TOOL-012",
+      "TOOL-013"
+    ],
+    "expected_cases": 2,
+    "selected_cases": 2,
+    "shared_receipt": "conformance/v0.1/primitives/receipts/tool-argument-model-positive.json"
+  },
+  "actual_capabilities": [
+    "ToolInvocation argument_provenance is independently located by JSON Pointer path /title",
+    "selected provenance entry must declare classification=model_supplied",
+    "selected provenance entry must contain exactly one local Derivation reference",
+    "Derivation target must resolve to the same ToolInvocation with representation_basis=tool_arguments_json and structured region /title",
+    "Derivation contributor must resolve to the ToolProposal with representation_basis=tool_proposal_arguments_json and structured region /title",
+    "Derivation contributor output_region must be /title and precision must be exact without unknown origin regions",
+    "Derivation transform must equal ToolInvocation.preparation_transform",
+    "Transform must contain one contributing ToolProposal input and generate the selected ToolInvocation",
+    "ToolProposal output ownership and ModelOutput back-reference must remain valid",
+    "ToolProposal, ToolInvocation, Derivation, and Transform must remain in one run occurrence",
+    "proposal /title and invocation /title JSON values must both resolve and match",
+    "model_supplied is bounded to proposal-boundary representation ancestry and does not establish hidden model origin or causal responsibility"
+  ],
+  "implementation": {
+    "shared_module": "conformance/v0.1/runner-a/tool_predicates.py",
+    "executor": "conformance/v0.1/runner-a/tool_lifecycle_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "helper": "tool_argument_model_provenance",
+    "registered_planned_tests_added": [
+      "tool-argument-provenance-positive-001",
+      "tool-argument-model-supplied-bounded-001"
+    ],
+    "registered_planned_test_count_added": 2,
+    "semantic_supported_planned_test_ids_after_batch": 124,
+    "supported_coverage_rows_after_batch": 106,
+    "remaining_semantic_executable_rows_after_batch": 665,
+    "tool_lifecycle_primary_supported_after_batch": 9,
+    "tool_lifecycle_primary_requirements": [
+      "TOOL-003",
+      "TOOL-004",
+      "TOOL-012",
+      "TOOL-013",
+      "TOOL-023",
+      "TOOL-024",
+      "TOOL-040",
+      "TOOL-043",
+      "TOOL-048"
+    ],
+    "out_044_registered": false,
+    "unselected_tool_lifecycle_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 2,
+      "pass": 2,
+      "fail": 0
+    },
+    "total": {
+      "cases": 2,
+      "pass": 2,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 2,
+    "finding_domains": {
+      "conformance": 1,
+      "claim": 1
+    },
+    "finding_statuses": {
+      "valid": 1,
+      "asserted": 1
+    },
+    "process_outcomes": {
+      "completed": 2
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37208472868,
+    "p5_workflow_run_id": 37208472883,
+    "artifact_id": 11305723052,
+    "artifact_name": "runner-a-semantic-tool-model-argument-provenance",
+    "artifact_sha256": "45e8c07cfc444e274d7cf9f4d66d12f0a9ee08a680712bb181b4934462d9bc69"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 173,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 105
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "semantic_tool_result_effect_bounded": "3/3 pass",
+    "semantic_tool_deny_no_execution": "2/2 pass",
+    "semantic_tool_proposal_boundary": "2/2 pass",
+    "semantic_tool_model_argument_provenance": "2/2 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "out_044_not_implemented": true,
+    "tool_014_tool_015_not_implemented": true,
+    "tool_017_tool_018_tool_019_tool_020_not_implemented": true,
+    "other_tool_lifecycle_cases_not_registered": true,
+    "verifier_typed_findings_not_implemented": true,
+    "claim_strength_not_implemented": true,
+    "privacy_receipt_integrity_not_implemented_by_this_batch": true,
+    "adapter_taint_not_implemented_by_this_batch": true,
+    "provider_predecessor_not_implemented": true,
+    "provider_failover_not_implemented": true,
+    "source_trust_ordering_not_implemented_by_this_batch": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
