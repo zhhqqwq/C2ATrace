@@ -1,0 +1,136 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "14-tool-argument-json-pointer-core",
+  "status": "complete",
+  "selection_commit": "efedc8b715068e007dac914e9fe1ed948f08a15c",
+  "implementation_commit": "2dfe05bbab3298b43d9d4d70b07625527cfbe13f",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.tool.lifecycle",
+    "requirement_ids": [
+      "TOOL-011"
+    ],
+    "expected_cases": 1,
+    "selected_cases": 1,
+    "shared_receipt": "fixtures/v0.1/valid/tool-effect.json"
+  },
+  "actual_capabilities": [
+    "Runner A independently locates the ToolInvocation carrying argument_provenance",
+    "ToolInvocation arguments must use representation_kind=json",
+    "every argument_provenance entry must contain a path object",
+    "every argument_provenance path must declare scheme=json_pointer",
+    "every JSON Pointer path value must be a string",
+    "every JSON Pointer must resolve against ToolInvocation.arguments.value",
+    "classification is preserved independently and is not used to determine path validity"
+  ],
+  "implementation": {
+    "shared_module": "conformance/v0.1/runner-a/tool_predicates.py",
+    "executor": "conformance/v0.1/runner-a/tool_lifecycle_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "helper": "tool_argument_json_pointer_paths",
+    "reused_helper": "resolve_json_pointer",
+    "registered_planned_tests_added": [
+      "tool-argument-json-pointer-001"
+    ],
+    "registered_planned_test_count_added": 1,
+    "semantic_supported_planned_test_ids_after_batch": 125,
+    "supported_coverage_rows_after_batch": 107,
+    "remaining_semantic_executable_rows_after_batch": 664,
+    "tool_lifecycle_primary_supported_after_batch": 10,
+    "tool_lifecycle_primary_requirements": [
+      "TOOL-003",
+      "TOOL-004",
+      "TOOL-011",
+      "TOOL-012",
+      "TOOL-013",
+      "TOOL-023",
+      "TOOL-024",
+      "TOOL-040",
+      "TOOL-043",
+      "TOOL-048"
+    ],
+    "adjacent_candidates_registered": false,
+    "unselected_tool_lifecycle_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "total": {
+      "cases": 1,
+      "pass": 1,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 1,
+    "finding_domains": {
+      "conformance": 1
+    },
+    "finding_statuses": {
+      "valid": 1
+    },
+    "process_outcomes": {
+      "completed": 1
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37210674530,
+    "p5_workflow_run_id": 37210674443,
+    "artifact_id": 11306277449,
+    "artifact_name": "runner-a-semantic-tool-argument-json-pointer",
+    "artifact_sha256": "b3642f130ef5dfc1f4ef81f40312f5797c775fe7f8625d3d9d0b8d6a434d3fb2"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 174,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 106
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "semantic_tool_result_effect_bounded": "3/3 pass",
+    "semantic_tool_deny_no_execution": "2/2 pass",
+    "semantic_tool_proposal_boundary": "2/2 pass",
+    "semantic_tool_model_argument_provenance": "2/2 pass",
+    "semantic_tool_argument_json_pointer": "1/1 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "out_044_not_implemented": true,
+    "tad_030_not_implemented": true,
+    "taint_031_not_implemented": true,
+    "tm_006_not_implemented": true,
+    "tool_014_tool_015_not_implemented": true,
+    "tool_017_tool_018_tool_019_tool_020_not_implemented": true,
+    "tool_029_tool_033_not_implemented": true,
+    "other_tool_lifecycle_cases_not_registered": true,
+    "verifier_typed_findings_not_implemented": true,
+    "claim_strength_not_implemented": true,
+    "privacy_receipt_integrity_not_implemented_by_this_batch": true,
+    "adapter_taint_executors_not_implemented_by_this_batch": true,
+    "provider_predecessor_not_implemented": true,
+    "provider_failover_not_implemented": true,
+    "source_trust_ordering_not_implemented_by_this_batch": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
