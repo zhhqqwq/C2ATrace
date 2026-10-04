@@ -52,6 +52,7 @@ tool proposal boundary              2 / 2
 tool model argument provenance       2 / 2
 tool argument JSON Pointer             1 / 1
 tool allow/no-execution                  1 / 1
+tool deny/later-execution                 1 / 1 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -83,3 +84,5 @@ Batch 13 selects TOOL-012/TOOL-013 only on `conformance/v0.1/primitives/receipts
 Batch 14 selects TOOL-011 only on `fixtures/v0.1/valid/tool-effect.json`. Runner A independently locates the ToolInvocation carrying argument_provenance, requires JSON arguments, validates every provenance path as `scheme=json_pointer`, and resolves every pointer against the ToolInvocation argument value. Classification is preserved as an independent field and is not used to decide path validity. The batch adds no ancestry, validation, authorization, execution, effect, adapter, taint, or model-output semantics.
 
 Batch 15 selects TOOL-025 only on `conformance/v0.1/primitives/receipts/tool-decision-allow-no-execution.json`. The shared ToolDecision resolver is generalized to resolve a requested decision value over a local ToolProposal while preserving the existing deny wrapper. TOOL-025 resolves exactly one `allow` decision, validates same-run ownership, independently requires absence of ToolExecution, and prohibits treating allow as execution evidence. No invocation-without-proposal, execution-state, cancellation, verifier, claim, privacy, adapter, taint, model-output, provider, source, trust, or ordering cases are registered.
+
+Batch 16 selects TOOL-026 only on `conformance/v0.1/primitives/receipts/tool-decision-deny-later-execution.json`. Runner A resolves the deny ToolDecision over its ToolProposal, independently locates exactly one ToolExecution, resolves that execution to its ToolInvocation, and requires decision/proposal/invocation/execution to remain in the same run occurrence. The finding preserves both the denial occurrence and the separately recorded execution occurrence without inventing a direct governance or causal edge between them. Record order and lexical IDs are not used as semantic evidence. No other Tool lifecycle, verifier, claim, privacy, adapter, taint, model-output, provider, source, trust, or ordering cases are registered.

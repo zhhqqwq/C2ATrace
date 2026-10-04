@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from tool_predicates import (
+    decision_with_recorded_execution,
     deny_decision_on_proposal,
     proposal_output_boundary,
     require_no_tool_execution,
@@ -23,6 +24,7 @@ TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-argument-model-supplied-bounded-001",
     "tool-argument-json-pointer-001",
     "tool-allow-no-execution-001",
+    "tool-deny-later-execution-001",
 }
 
 
@@ -323,6 +325,21 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 domain="conformance",
                 status="valid",
                 prohibited=["P1:allow_decision_implies_execution"],
+            )
+        ]
+
+    elif check_id == "tool-deny-later-execution-001":
+        _decision, _proposal, _invocation, execution = decision_with_recorded_execution(
+            receipt, "deny"
+        )
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                execution["id"],
+                domain="conformance",
+                status="valid",
             )
         ]
 

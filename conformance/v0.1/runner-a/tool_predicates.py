@@ -308,3 +308,34 @@ def tool_argument_json_pointer_paths(receipt):
     if not checked:
         raise ValueError("ToolInvocation has no argument_provenance entries")
     return invocation, checked
+
+
+def decision_with_recorded_execution(receipt, expected_decision):
+    index = record_index(receipt)
+    decision, proposal = tool_decision_on_proposal(receipt, expected_decision)
+
+    executions = [
+        record
+        for record in records(receipt)
+        if isinstance(record, dict) and record.get("kind") == "ToolExecution"
+    ]
+    if len(executions) != 1:
+        raise ValueError(
+            f"{expected_decision} decision/execution scenario requires one ToolExecution, found {len(executions)}"
+        )
+
+    execution = executions[0]
+    invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+
+    run_ids = {
+        decision.get("run_id"),
+        proposal.get("run_id"),
+        invocation.get("run_id"),
+        execution.get("run_id"),
+    }
+    if None in run_ids or len(run_ids) != 1:
+        raise ValueError(
+            f"{expected_decision} decision and recorded execution changed run occurrence"
+        )
+
+    return decision, proposal, invocation, execution
