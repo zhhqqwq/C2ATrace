@@ -1,0 +1,158 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "16-tool-deny-later-execution-core",
+  "status": "complete",
+  "selection_commit": "4698cd5d2ef79c7bbc6c971e968487b701a7f8eb",
+  "implementation_commit": "cc90ec6ca81f6a0479afea39a9c1076bb6706bc1",
+  "implementation_hardening_commit": "47ec5436a1edf45bc7bfa706304d79412f37e783",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.tool.lifecycle",
+    "requirement_ids": [
+      "TOOL-026"
+    ],
+    "expected_cases": 1,
+    "selected_cases": 1,
+    "shared_receipt": "conformance/v0.1/primitives/receipts/tool-decision-deny-later-execution.json"
+  },
+  "actual_capabilities": [
+    "Runner A independently resolves a deny ToolDecision over a local ToolProposal",
+    "Runner A independently locates exactly one ToolExecution in the selected scenario",
+    "ToolExecution.invocation must resolve locally to ToolInvocation",
+    "ToolDecision, ToolProposal, ToolInvocation, and ToolExecution must remain in one run occurrence",
+    "deny decision occurrence and separately recorded ToolExecution occurrence are both preserved",
+    "no direct governance, causal, temporal-order, lexical-ID, or record-order inference is fabricated between the deny decision and execution"
+  ],
+  "implementation": {
+    "shared_module": "conformance/v0.1/runner-a/tool_predicates.py",
+    "executor": "conformance/v0.1/runner-a/tool_lifecycle_executor.py",
+    "helper": "decision_with_recorded_execution",
+    "reused_helpers": [
+      "tool_decision_on_proposal",
+      "deny_decision_on_proposal",
+      "resolve_local"
+    ],
+    "registered_planned_tests_added": [
+      "tool-deny-later-execution-001"
+    ],
+    "registered_planned_test_count_added": 1,
+    "registered_semantic_planned_test_ids_after_batch": 127,
+    "registered_id_matched_coverage_rows_after_batch": 110,
+    "independently_evidenced_semantic_cases_after_batch": 108,
+    "remaining_semantic_requirements_after_batch": 663,
+    "tool_lifecycle_primary_independently_supported_after_batch": 12,
+    "tool_lifecycle_primary_requirements": [
+      "TOOL-003",
+      "TOOL-004",
+      "TOOL-011",
+      "TOOL-012",
+      "TOOL-013",
+      "TOOL-023",
+      "TOOL-024",
+      "TOOL-025",
+      "TOOL-026",
+      "TOOL-040",
+      "TOOL-043",
+      "TOOL-048"
+    ],
+    "shared_planned_test_id_guard": {
+      "planned_test_id": "tool-deny-later-execution-001",
+      "selected_requirement": "TOOL-026",
+      "unselected_requirement": "TAD-021",
+      "reason": "The coverage matrix reuses the same planned_test_id, but TAD-021 has prim.adapter.capture primary semantics and expects a ToolDecision-scoped finding while TOOL-026 expects a ToolExecution-scoped finding.",
+      "behavior": "TAD-021 remains fail-closed through an explicit requirement-level guard."
+    },
+    "unselected_tool_lifecycle_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "total": {
+      "cases": 1,
+      "pass": 1,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 1,
+    "finding_domains": {
+      "conformance": 1
+    },
+    "finding_statuses": {
+      "valid": 1
+    },
+    "process_outcomes": {
+      "completed": 1
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37215782761,
+    "p5_workflow_run_id": 37215782815,
+    "artifact_id": 11308755705,
+    "artifact_name": "runner-a-semantic-tool-deny-later-execution",
+    "artifact_sha256": "ae22df073aee9cef7a1d3d4b9d92233e8e5d46a20b625442fe0467e949a7ca41"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 176,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 108
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "semantic_tool_result_effect_bounded": "3/3 pass",
+    "semantic_tool_deny_no_execution": "2/2 pass",
+    "semantic_tool_proposal_boundary": "2/2 pass",
+    "semantic_tool_model_argument_provenance": "2/2 pass",
+    "semantic_tool_argument_json_pointer": "1/1 pass",
+    "semantic_tool_allow_no_execution": "1/1 pass",
+    "semantic_tool_deny_later_execution": "1/1 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "accounting_note": {
+    "rule": "Registered planned_test_id membership is routing metadata, not independent conformance evidence.",
+    "observation": "tool-deny-later-execution-001 matches both TOOL-026 and TAD-021 coverage rows.",
+    "consequence": "The 110 ID-matched coverage rows must not be reported as 110 independently evidenced semantic requirements. Requirement-level independent semantic evidence is 108; TAD-021 remains unimplemented."
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "tad_021_not_implemented": true,
+    "out_044_not_implemented": true,
+    "tad_030_not_implemented": true,
+    "taint_031_not_implemented": true,
+    "tool_006_not_implemented": true,
+    "tool_029_not_implemented": true,
+    "tool_033_tool_035_not_implemented": true,
+    "tool_044_tool_045_not_implemented": true,
+    "tool_050_tool_051_not_implemented": true,
+    "other_tool_lifecycle_cases_not_registered": true,
+    "verifier_typed_findings_not_implemented": true,
+    "claim_strength_not_implemented": true,
+    "privacy_receipt_integrity_not_implemented_by_this_batch": true,
+    "adapter_taint_executors_not_implemented_by_this_batch": true,
+    "remaining_model_output_not_implemented_by_this_batch": true,
+    "provider_predecessor_not_implemented": true,
+    "provider_failover_not_implemented": true,
+    "source_trust_ordering_not_implemented_by_this_batch": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
