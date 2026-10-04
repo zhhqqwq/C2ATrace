@@ -1,0 +1,180 @@
+{
+  "batch_id": "runner-a-wave-03-batch-11-model-output-partial-lifecycle-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "11",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.model.output",
+  "requirement_ids": [
+    "OUT-009",
+    "OUT-010",
+    "OUT-027"
+  ],
+  "expected_case_count": 3,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 166,
+      "semantic_supported_planned_test_ids": 117,
+      "remaining_semantic_cases": 673
+    },
+    "current_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 122,
+        "dependency_closed_primary_core": 27
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 93,
+        "dependency_closed_primary_core": 59
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 82,
+        "dependency_closed_primary_core": 10
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 47,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 44,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 39,
+        "dependency_closed_primary_core": 19
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 35,
+        "dependency_closed_primary_core": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 27,
+        "dependency_closed_primary_core": 18
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 17,
+        "dependency_closed_primary_core": 7
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 15,
+        "dependency_closed_primary_core": 6
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 10,
+        "dependency_closed_primary_core": 2
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9,
+        "dependency_closed_primary_core": 9
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 5,
+        "dependency_closed_primary_core": 2
+      }
+    ],
+    "remaining_model_output_dependency_closed_primary": [
+      "OUT-009",
+      "OUT-010",
+      "OUT-011",
+      "OUT-027",
+      "OUT-030",
+      "OUT-034",
+      "OUT-047"
+    ],
+    "batch10_adjacent_recheck": {
+      "only_model_output_unmet_requirements": [
+        "OUT-035",
+        "OUT-039",
+        "PAD-042",
+        "PAD-043",
+        "PAD-047",
+        "PAD-049",
+        "PAD-050",
+        "PAD-051",
+        "PAD-053",
+        "PAD-090"
+      ],
+      "newly_closed_requirements": [],
+      "reason": "Batch 10 implemented accepted-output ownership, bounded complete-capture scope, and one-TextOutput ownership/back-reference checks only. It did not implement multi-item occurrence semantics, streaming event/drop/app-stop semantics, error-to-output mapping, parse-failure handling, or chunk-retention semantics. Partial prim.model.output support therefore does not satisfy these dependency surfaces."
+    },
+    "compared_tight_clusters": {
+      "model_partial_lifecycle": {
+        "requirements": [
+          "OUT-009",
+          "OUT-010",
+          "OUT-027"
+        ],
+        "cases": 3,
+        "distinct_receipt_files": 3,
+        "scenario_families": 1,
+        "receipts": [
+          "conformance/v0.1/primitives/receipts/model-timeout-partial.json",
+          "conformance/v0.1/primitives/receipts/model-interrupted-partial.json",
+          "conformance/v0.1/primitives/receipts/model-partial-output.json"
+        ],
+        "reusable_existing_helpers": [
+          "accepted_model_output",
+          "record_index",
+          "resolve_local"
+        ],
+        "new_surface": "one partial-output lifecycle predicate family: an accepted application-visible ModelOutput with incomplete response and partial capture remains valid across timeout/interruption; partial capture itself is a valid core representation"
+      },
+      "model_completion_axes": {
+        "requirements": [
+          "OUT-030"
+        ],
+        "cases": 1,
+        "distinct_receipt_files": 1,
+        "reason_separate": "Requires a two-ModelOutput cross-occurrence predicate proving response_termination and capture_extent are independent; not the same predicate as partial-output retention."
+      },
+      "provider_failover": {
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ],
+        "cases": 2,
+        "distinct_receipt_files": 2,
+        "reusable_existing_helpers": [
+          "provider_attempt_index",
+          "record_index",
+          "ref_id"
+        ],
+        "new_surface": "positive failover orchestration plus per-attempt provider/effective-model/effective-request metadata correlation and no-inference behavior"
+      },
+      "source_redirect": {
+        "requirements": [
+          "SRC-006",
+          "SRC-007"
+        ],
+        "cases": 2,
+        "distinct_receipt_files": 1,
+        "shared_receipt": "conformance/v0.1/primitives/receipts/source-redirect.json",
+        "new_surface": "redirect preservation and redirect-not-alias on a not-yet-started prim.source.observation executor"
+      },
+      "source_occurrence_version": {
+        "requirements": [
+          "SRC-011",
+          "SRC-013"
+        ],
+        "cases": 2,
+        "distinct_receipt_files": 1,
+        "shared_receipt": "conformance/v0.1/primitives/receipts/source-repeat-observations.json",
+        "new_surface": "repeat-observation occurrence identity and external-version-hint non-identity on a not-yet-started prim.source.observation executor"
+      }
+    },
+    "selection_reason": "The selected three-case model-output cluster has the strongest combined leverage and implementation reuse after Batch 10. It extends the existing model_output_executor with one coherent partial-output lifecycle predicate family. Provider failover is only two cases across two receipts and requires two broader orchestration/metadata surfaces. Source clusters have better file density but would open a new primitive executor. OUT-030 and the other remaining model-output cases are deliberately excluded because they require separate predicates."
+  },
+  "intent": "Select only OUT-009, OUT-010, and OUT-027 for Batch 11. Do not register or execute them in this selection commit. OUT-011, OUT-030, OUT-034, OUT-047, provider failover, source observation, ordering/time, and all Batch-10-adjacent cases remain fail-closed."
+}
