@@ -1,0 +1,120 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "10-tool-result-effect-bounded-claims-core",
+  "status": "complete",
+  "selection_commit": "ab0b29d5ff72b87955876b7aab0bc68c952b31bd",
+  "implementation_commit": "ab581db10db87d14c9ad2ff099733cf2f891bf14",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.tool.lifecycle",
+    "requirement_ids": [
+      "TOOL-040",
+      "TOOL-043",
+      "TOOL-048"
+    ],
+    "expected_cases": 3,
+    "selected_cases": 3,
+    "shared_receipt": "fixtures/v0.1/valid/tool-effect.json"
+  },
+  "actual_capabilities": [
+    "ToolExecution is independently resolved to its ToolInvocation through a local reference",
+    "ToolResult is independently resolved to its owning ToolExecution",
+    "EffectObservation is independently resolved to both its ToolExecution and ToolResult",
+    "ToolInvocation, ToolExecution, ToolResult, and EffectObservation are required to remain in one run occurrence",
+    "ToolResult capture_extent=complete is bounded to captured-result completeness and does not establish complete remote state or objective truth",
+    "EffectObservation basis=execution_result is result-supported evidence and not independent external-state verification",
+    "EffectObservation does not establish that an application-desired Outcome was achieved"
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/tool_lifecycle_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "registered_planned_tests": [
+      "tool-result-capture-bounded-001",
+      "tool-effect-result-basis-bounded-001",
+      "tool-effect-not-outcome-001"
+    ],
+    "registered_planned_test_count": 3,
+    "semantic_supported_planned_test_ids_after_batch": 118,
+    "tool_lifecycle_primary_supported_after_batch": 3,
+    "reusable_helpers": [
+      "record_index",
+      "resolve_local",
+      "tool_result_effect_chain",
+      "complete_tool_result",
+      "execution_result_effect"
+    ],
+    "unselected_tool_lifecycle_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "total": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 3,
+    "finding_domains": {
+      "completeness": 1,
+      "claim": 2
+    },
+    "finding_statuses": {
+      "established": 1,
+      "asserted": 2
+    },
+    "process_outcomes": {
+      "completed": 3
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37196432709,
+    "p5_workflow_run_id": 37196432755,
+    "artifact_id": 11300707773,
+    "artifact_name": "runner-a-semantic-tool-result-effect-bounded",
+    "artifact_sha256": "fcd63e0ba60037db06062025893e384216dce4de9b63c8f34ee3c226363d387c"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 167,
+    "semantic_supported_planned_test_ids_after_batch": 118,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 99
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "semantic_tool_result_effect_bounded": "3/3 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "tool_011_not_implemented": true,
+    "other_tool_lifecycle_cases_not_registered": true,
+    "verifier_typed_findings_not_implemented": true,
+    "claim_strength_not_implemented": true,
+    "provider_predecessor_not_implemented": true,
+    "provider_failover_not_implemented": true,
+    "source_observation_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
