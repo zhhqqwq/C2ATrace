@@ -7,6 +7,7 @@ from tool_predicates import (
     require_no_tool_invocation,
     tool_argument_json_pointer_paths,
     tool_argument_model_provenance,
+    tool_decision_on_proposal,
 )
 
 
@@ -21,6 +22,7 @@ TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-argument-provenance-positive-001",
     "tool-argument-model-supplied-bounded-001",
     "tool-argument-json-pointer-001",
+    "tool-allow-no-execution-001",
 }
 
 
@@ -306,6 +308,21 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 invocation["id"],
                 domain="conformance",
                 status="valid",
+            )
+        ]
+
+    elif check_id == "tool-allow-no-execution-001":
+        decision, _proposal = tool_decision_on_proposal(receipt, "allow")
+        require_no_tool_execution(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                decision["id"],
+                domain="conformance",
+                status="valid",
+                prohibited=["P1:allow_decision_implies_execution"],
             )
         ]
 

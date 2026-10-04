@@ -28,24 +28,32 @@ def resolve_local(index, reference, expected_kind):
     return target
 
 
-def deny_decision_on_proposal(receipt):
+def tool_decision_on_proposal(receipt, expected_decision):
     index = record_index(receipt)
     candidates = []
     for decision in records(receipt):
         if not isinstance(decision, dict):
             continue
-        if decision.get("kind") != "ToolDecision" or decision.get("decision") != "deny":
+        if decision.get("kind") != "ToolDecision":
+            continue
+        if decision.get("decision") != expected_decision:
             continue
         proposal = resolve_local(index, decision.get("subject"), "ToolProposal")
         if decision.get("run_id") != proposal.get("run_id"):
-            raise ValueError("deny ToolDecision and ToolProposal changed run occurrence")
+            raise ValueError(
+                f"{expected_decision} ToolDecision and ToolProposal changed run occurrence"
+            )
         candidates.append((decision, proposal))
 
     if len(candidates) != 1:
         raise ValueError(
-            f"deny scenario requires one ToolDecision on ToolProposal, found {len(candidates)}"
+            f"{expected_decision} scenario requires one ToolDecision on ToolProposal, found {len(candidates)}"
         )
     return candidates[0]
+
+
+def deny_decision_on_proposal(receipt):
+    return tool_decision_on_proposal(receipt, "deny")
 
 
 def require_no_tool_invocation(receipt):
