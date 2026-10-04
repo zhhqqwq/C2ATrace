@@ -1,0 +1,161 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "09-provider-attempt-predecessor-core",
+  "status": "complete",
+  "implementation_commit": "6200f7aee0e764c06a97e0c60a7aedddd27cb6c8",
+  "rerank_input": {
+    "remaining_semantic_executable_before_batch": 678,
+    "provider_attempt_primary_remaining_before_batch": 7,
+    "residual_clusters": {
+      "predecessor_graph": {
+        "requirements": [
+          "OUT-052",
+          "OUT-053"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "required_findings": [
+          "conformance:invalid/self-loop",
+          "conformance:invalid/cycle"
+        ],
+        "incremental_surface": "one generic ProviderAttempt predecessor graph over retry_of and failover_from"
+      },
+      "failover": {
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "required_findings": [
+          "conformance:valid metadata preservation",
+          "conformance:valid + prohibited inference"
+        ],
+        "incremental_surface": "positive failover orchestration plus per-attempt request/model/provider metadata"
+      },
+      "model_output_shared_cluster": {
+        "requirements": [
+          "OUT-025",
+          "OUT-031",
+          "OUT-046"
+        ],
+        "cases": 3,
+        "distinct_receipts": 1,
+        "receipt": "fixtures/v0.1/valid/provider-retry.json",
+        "required_findings": [
+          "output-boundary claim",
+          "capture completeness",
+          "text-vs-hidden-reasoning claim"
+        ],
+        "incremental_surface": "three separate model-output predicates"
+      }
+    },
+    "selection_reason": "Predecessor graph reuses existing ProviderAttempt indexing/reference helpers and adds one graph predicate shared by both selected cases. Failover has the same case/receipt count but a broader orchestration/metadata surface. The model-output cluster has higher fixture density but requires three distinct semantic predicates."
+  },
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.provider.attempts",
+    "requirement_ids": [
+      "OUT-052",
+      "OUT-053"
+    ],
+    "expected_cases": 2,
+    "selected_cases": 2,
+    "excluded_due_unmet_dependency": [
+      {
+        "requirement_id": "PAD-060",
+        "planned_test_id": "provider-hedge-no-total-order-001",
+        "unmet_dependency": "prim.ordering.time"
+      },
+      {
+        "requirement_id": "OUT-013",
+        "planned_test_id": "model-hedge-no-total-order-001",
+        "unmet_dependency": "prim.ordering.time"
+      },
+      {
+        "requirement_id": "PAD-019",
+        "planned_test_id": "provider-hidden-retry-no-inference-001",
+        "unmet_dependency": "prim.claim.strength"
+      }
+    ]
+  },
+  "actual_capabilities": [
+    "ProviderAttempt predecessor edges are resolved from retry_of and failover_from local occurrence references",
+    "a ProviderAttempt that names itself as predecessor is detected as a self-loop invalidity",
+    "multi-attempt directed predecessor cycles are detected without relying on lexical ID ordering",
+    "cycle findings are emitted for each participating occurrence so subject selection is evidence-derived rather than matcher-derived"
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/provider_attempt_executor.py",
+    "reusable_helpers": [
+      "provider_attempt_index",
+      "attempt_predecessor_graph",
+      "graph_can_reach",
+      "predecessor_self_loops",
+      "predecessor_cycle_members"
+    ],
+    "provider_attempt_primary_completed_after_batch": 8,
+    "provider_attempt_primary_total": 13,
+    "ordering_time_not_implemented": true,
+    "failover_not_implemented": true,
+    "claim_strength_not_implemented": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 2,
+      "pass": 2,
+      "fail": 0
+    },
+    "total": {
+      "cases": 2,
+      "pass": 2,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "unique_cases": 2,
+    "unique_requirements": 2,
+    "actual_findings": 3,
+    "finding_domains": {
+      "conformance": 3
+    },
+    "finding_statuses": {
+      "invalid": 3
+    },
+    "process_outcomes": {
+      "invalidity_detected": 2
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37175278175,
+    "artifact_id": 11292129148,
+    "artifact_name": "runner-a-semantic-provider-predecessor-core",
+    "artifact_sha256": "d504a34c3222ffc8f549437af780084d4aa8355c3454f9a70f7d9adf1e0fd5bf"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_provider_predecessor_core": "2/2 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "provider_failover_not_implemented": true,
+    "provider_ordering_time_not_implemented": true,
+    "provider_claim_strength_not_implemented": true,
+    "unselected_provider_attempt_tests_remain_fail_closed": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
