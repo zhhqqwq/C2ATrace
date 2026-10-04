@@ -1,0 +1,168 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "08-provider-attempt-hedge-core",
+  "status": "complete",
+  "implementation_commit": "31cb92fb1fbe15f26e83d69c0d20c8e3beaf8060",
+  "rerank_input": {
+    "remaining_semantic_executable_before_batch": 680,
+    "provider_attempt_primary_remaining_before_batch": 9,
+    "provider_residual_clusters": {
+      "predecessor_graph": {
+        "requirements": [
+          "OUT-052",
+          "OUT-053"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "required_findings": [
+          "conformance:invalid/self-loop",
+          "conformance:invalid/cycle"
+        ],
+        "incremental_surface": "generic ProviderAttempt predecessor graph self-loop/cycle detection"
+      },
+      "failover": {
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "required_findings": [
+          "conformance:valid metadata preservation",
+          "conformance:valid + prohibited inference"
+        ],
+        "incremental_surface": "positive failover orchestration plus per-attempt request/model/provider metadata"
+      },
+      "hedge": {
+        "requirements": [
+          "PAD-059",
+          "PAD-061"
+        ],
+        "cases": 2,
+        "distinct_receipts": 1,
+        "shared_receipt": "conformance/v0.1/primitives/receipts/provider-hedged-attempts.json",
+        "required_findings": [
+          "conformance:valid",
+          "claim:asserted + prohibited inference"
+        ],
+        "incremental_surface": "one overlapping hedge occurrence relation plus bounded application-side loser cancellation"
+      }
+    },
+    "model_output_dependency_closed_core": {
+      "primary_cases": 10,
+      "distinct_receipts": 8,
+      "largest_shared_cluster": {
+        "requirements": [
+          "OUT-025",
+          "OUT-031",
+          "OUT-046"
+        ],
+        "cases": 3,
+        "receipt": "fixtures/v0.1/valid/provider-retry.json",
+        "required_findings": [
+          "output-boundary claim",
+          "capture completeness",
+          "text-vs-hidden-reasoning claim"
+        ],
+        "incremental_surface": "three separate model-output predicates"
+      }
+    },
+    "selection_reason": "Hedge core had the smallest coherent incremental semantic surface, one shared receipt, and direct reuse of ProviderAttempt indexing/identity/lifecycle helpers. The model-output three-case cluster was denser by count but required three different semantic predicates; predecessor graph and failover each required two receipts and broader new logic."
+  },
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.provider.attempts",
+    "requirement_ids": [
+      "PAD-059",
+      "PAD-061"
+    ],
+    "expected_cases": 2,
+    "selected_cases": 2,
+    "excluded_due_unmet_dependency": [
+      {
+        "requirement_id": "PAD-060",
+        "planned_test_id": "provider-hedge-no-total-order-001",
+        "unmet_dependency": "prim.ordering.time"
+      },
+      {
+        "requirement_id": "OUT-013",
+        "planned_test_id": "model-hedge-no-total-order-001",
+        "unmet_dependency": "prim.ordering.time"
+      }
+    ]
+  },
+  "actual_capabilities": [
+    "reciprocal hedged_with relation resolves to distinct ProviderAttempt occurrences within one ModelInvocation",
+    "observed attempt time intervals overlap for the hedge pair",
+    "application-side loser cancellation is recognized from terminal_disposition plus cancellation_source metadata",
+    "local application cancellation does not prove remote provider processing stopped"
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/provider_attempt_executor.py",
+    "reusable_helpers": [
+      "hedged_attempt_pair",
+      "application_cancelled_hedge",
+      "attempts_overlap"
+    ],
+    "provider_attempt_primary_completed_after_batch": 6,
+    "provider_attempt_primary_total": 13,
+    "ordering_time_not_implemented": true,
+    "predecessor_graph_not_implemented": true,
+    "failover_not_implemented": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 2,
+      "pass": 2,
+      "fail": 0
+    },
+    "total": {
+      "cases": 2,
+      "pass": 2,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "unique_cases": 2,
+    "unique_requirements": 2,
+    "actual_findings": 2,
+    "finding_domains": {
+      "conformance": 1,
+      "claim": 1
+    },
+    "finding_statuses": {
+      "valid": 1,
+      "asserted": 1
+    },
+    "process_outcomes": {
+      "completed": 2
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37170998466,
+    "artifact_name": "runner-a-semantic-provider-hedge-core",
+    "artifact_sha256": "5996df8d2fb3724386db7ccd821cfa1988168a9a4d9ae85e161d0bd36fefd4b6"
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "provider_hedge_total_order_not_implemented": true,
+    "unselected_provider_attempt_tests_remain_fail_closed": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}

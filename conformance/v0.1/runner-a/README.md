@@ -44,7 +44,7 @@ identity core              8 / 8
 provider occurrence         3 / 3
 model/output core            2 / 2
 provider retry core           5 / 5
-provider hedge core           2 / 2 target
+provider hedge core           2 / 2
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
