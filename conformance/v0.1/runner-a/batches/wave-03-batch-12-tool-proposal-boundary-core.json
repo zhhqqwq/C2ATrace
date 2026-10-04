@@ -1,0 +1,204 @@
+{
+  "batch_id": "runner-a-wave-03-batch-12-tool-proposal-boundary-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "12",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.tool.lifecycle",
+  "requirement_ids": [
+    "TOOL-003",
+    "TOOL-004"
+  ],
+  "expected_case_count": 2,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 169,
+      "semantic_supported_planned_test_ids": 120,
+      "supported_coverage_rows": 102,
+      "remaining_semantic_executable_rows": 669
+    },
+    "global_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 116,
+        "dependency_closed_primary_core": 22
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 93,
+        "dependency_closed_primary_core": 59
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 82,
+        "dependency_closed_primary_core": 10
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 47,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 44,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 39,
+        "dependency_closed_primary_core": 19
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 35,
+        "dependency_closed_primary_core": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 27,
+        "dependency_closed_primary_core": 18
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 17,
+        "dependency_closed_primary_core": 7
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 15,
+        "dependency_closed_primary_core": 6
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 12,
+        "dependency_closed_primary_core": 4
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9,
+        "dependency_closed_primary_core": 9
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 5,
+        "dependency_closed_primary_core": 2
+      }
+    ],
+    "batch11_adjacency_recheck": {
+      "newly_executable_requirements": [],
+      "near_matches": [
+        {
+          "requirement_id": "TAD-017",
+          "reason": "Batch 11 establishes deny ToolDecision subject resolution, but TAD-017 requires ToolDecision occurrence semantics in prim.identity.occurrence and its planned test is not implemented by the identity executor."
+        },
+        {
+          "requirement_ids": [
+            "TAD-018",
+            "TAD-019",
+            "TAD-021",
+            "TAD-110"
+          ],
+          "reason": "All require prim.adapter.capture primary semantics that remain unimplemented even where deny/no-fake-execution evidence overlaps Batch 11."
+        },
+        {
+          "requirement_id": "TOOL-061",
+          "reason": "Requires multiple ToolDecision occurrence identity; Batch 11 implemented one deny decision occurrence only."
+        },
+        {
+          "requirement_id": "TRUST-020",
+          "reason": "Requires prim.trust.assertion primary semantics, not supplied by Batch 11."
+        },
+        {
+          "requirement_id": "VFY-069",
+          "reason": "Requires prim.verifier.report primary semantics, not supplied by Batch 11."
+        }
+      ],
+      "conclusion": "The Batch 11 deny/no-invocation/no-execution capabilities do not make any dependent case independently executable."
+    },
+    "remaining_tool_tight_clusters": {
+      "proposal_boundary": {
+        "requirements": [
+          "TOOL-003",
+          "TOOL-004"
+        ],
+        "cases": 2,
+        "distinct_receipts": 1,
+        "shared_receipt": "conformance/v0.1/primitives/receipts/graph-proposal-only.json",
+        "existing_reuse": {
+          "planned_test_id": "proposal-only-001",
+          "helper": "execute_proposal_only",
+          "same_receipt": true,
+          "already_established_predicate": "ToolProposal exists without ToolInvocation or ToolExecution; proposal presence does not imply execution"
+        },
+        "incremental_surface": [
+          "ToolProposal presence does not create ToolInvocation",
+          "ToolProposal presence does not establish authorization, approval, or execution permission"
+        ]
+      },
+      "model_argument_provenance": {
+        "requirements": [
+          "TOOL-012",
+          "TOOL-013"
+        ],
+        "cases": 2,
+        "distinct_receipts": 1,
+        "shared_receipt": "conformance/v0.1/primitives/receipts/tool-argument-model-positive.json",
+        "incremental_surface": [
+          "positive path-scoped Derivation from ToolProposal argument representation",
+          "model_supplied is proposal-boundary ancestry, not hidden model origin or causal responsibility"
+        ],
+        "reason_larger": "Requires path-scoped derivation and effective ToolInvocation argument-provenance evaluation beyond existing proposal-only graph predicates."
+      }
+    },
+    "cross_primitive_comparison": {
+      "verifier_typed_findings": {
+        "primitive": "prim.verifier.report",
+        "leverage": 93,
+        "cases": 7,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Denser fixture cluster but lower primitive leverage than prim.tool.lifecycle, and it opens VerificationReport-native status/premise/report semantics."
+      },
+      "claim_strength": {
+        "primitive": "prim.claim.strength",
+        "leverage": 82,
+        "strongest_shared_cluster_cases": 2,
+        "distinct_receipts": 1,
+        "reason_not_selected": "Lower primitive leverage and opens claim-strength composition semantics."
+      },
+      "privacy_receipt_integrity_adapter_taint": {
+        "primitives": [
+          "prim.privacy.commitment",
+          "prim.receipt.multi",
+          "prim.integrity.composition",
+          "prim.adapter.capture",
+          "prim.taint.flow"
+        ],
+        "leverage": [
+          47,
+          44,
+          39,
+          35,
+          27
+        ],
+        "reason_not_selected": "All rank below prim.tool.lifecycle on the first criterion."
+      },
+      "model_provider_source_trust": {
+        "primitives": [
+          "prim.model.output",
+          "prim.provider.attempts",
+          "prim.source.observation",
+          "prim.trust.assertion"
+        ],
+        "leverage": [
+          17,
+          12,
+          9,
+          15
+        ],
+        "reason_not_selected": "All rank below prim.tool.lifecycle on the first criterion."
+      }
+    },
+    "selection_reason": "From the 169-case corrected state, prim.tool.lifecycle remains the highest-leverage residual surface at 116. Its largest remaining tight clusters are TOOL-003/TOOL-004 and TOOL-012/TOOL-013, each two cases on one receipt. TOOL-003/TOOL-004 wins the reuse and semantic-surface tie-breakers because the already-supported proposal-only foundation check uses the exact same graph-proposal-only.json receipt and existing execute_proposal_only predicate skeleton. The selected batch only sharpens the proposal boundary into no-invocation and no-authorization conclusions."
+  },
+  "intent": "Select only TOOL-003 and TOOL-004 for Batch 12. This selection commit does not register either planned test, does not modify Runner A executors, and does not increase the current 169-case independent evidence count. Runner B and Product Verifier/SDK remain not started."
+}
