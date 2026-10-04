@@ -48,6 +48,7 @@ provider hedge core           2 / 2
 model output bounded claims    3 / 3
 tool result/effect bounded      3 / 3
 tool deny/no-execution            2 / 2
+tool proposal boundary              2 / 2 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -71,3 +72,5 @@ Batch 09 re-ranks the post-hedge residual surface from the 161-case Runner A sup
 Batch 10 selects TOOL-040/TOOL-043/TOOL-048 only on the shared `fixtures/v0.1/valid/tool-effect.json` fixture. Runner A independently resolves the ToolInvocation → ToolExecution → ToolResult → EffectObservation chain through local references and same-run ownership. It bounds complete ToolResult capture to the captured result, treats `basis=execution_result` as result-supported rather than independent external verification, and prevents EffectObservation from being upgraded to desired-outcome proof. TOOL-011 and all other tool-lifecycle cases remain fail-closed.
 
 Batch 11 selects TOOL-023/TOOL-024 only on `conformance/v0.1/primitives/receipts/tool-decision-deny-no-invocation.json`. A shared deny predicate resolves ToolDecision.subject to a local ToolProposal, requires the same run occurrence, and provides explicit absence checks for ToolInvocation and ToolExecution. The same predicate is reused by the already-supported GRAPH-009 deny/fake-execution check. No other ToolDecision, ToolProposal, argument-provenance, or execution cases are registered by this batch.
+
+Batch 12 selects TOOL-003/TOOL-004 only on `conformance/v0.1/primitives/receipts/graph-proposal-only.json`. A shared proposal predicate independently resolves ToolProposal.output to ModelOutput, verifies the reciprocal ModelOutput.item_refs back-reference and same-run ownership, and requires absence of ToolInvocation and ToolExecution. The already-supported proposal-only foundation check reuses the same predicate. The batch then bounds proposal presence against invocation and authorization inferences; no argument-provenance or other tool cases are registered.

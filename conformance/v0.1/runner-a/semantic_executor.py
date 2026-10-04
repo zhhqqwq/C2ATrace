@@ -15,7 +15,12 @@ from tool_lifecycle_executor import (
     TOOL_LIFECYCLE_PLANNED_TESTS,
     execute_tool_lifecycle_case,
 )
-from tool_predicates import deny_decision_on_proposal, require_no_tool_execution
+from tool_predicates import (
+    deny_decision_on_proposal,
+    proposal_output_boundary,
+    require_no_tool_execution,
+    require_no_tool_invocation,
+)
 
 
 SUPPORTED_PLANNED_TESTS = {
@@ -318,9 +323,9 @@ def execute_request_attempt_conflation(requirement_id, check_id, primary):
 
 def execute_proposal_only(requirement_id, check_id, primary):
     receipt = primary[0]
-    proposal = find_record(receipt, "ToolProposal")
-    if proposal is None:
-        raise ValueError("ToolProposal missing")
+    proposal, _output = proposal_output_boundary(receipt)
+    require_no_tool_invocation(receipt)
+    require_no_tool_execution(receipt)
     return [make_finding(
         requirement_id, check_id, object_scope(receipt, proposal["id"]),
         "conformance", "valid",

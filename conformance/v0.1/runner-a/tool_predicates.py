@@ -66,3 +66,39 @@ def require_no_tool_execution(receipt):
     ]
     if executions:
         raise ValueError("ToolExecution present in deny-without-execution scenario")
+
+
+def proposal_output_boundary(receipt):
+    index = record_index(receipt)
+    proposals = [
+        record
+        for record in records(receipt)
+        if isinstance(record, dict) and record.get("kind") == "ToolProposal"
+    ]
+    if len(proposals) != 1:
+        raise ValueError(
+            f"proposal-only scenario requires one ToolProposal, found {len(proposals)}"
+        )
+
+    proposal = proposals[0]
+    output = resolve_local(index, proposal.get("output"), "ModelOutput")
+
+    if proposal.get("run_id") != output.get("run_id"):
+        raise ValueError("ToolProposal and ModelOutput changed run occurrence")
+
+    backrefs = []
+    for reference in output.get("item_refs", []):
+        if not isinstance(reference, dict) or reference.get("ref_type") != "local":
+            continue
+        if reference.get("id") != proposal.get("id"):
+            continue
+        if reference.get("expected_kind") not in {None, "ToolProposal"}:
+            raise ValueError("ModelOutput proposal back-reference declares wrong expected_kind")
+        backrefs.append(reference)
+
+    if len(backrefs) != 1:
+        raise ValueError(
+            f"ModelOutput must contain one back-reference to ToolProposal, found {len(backrefs)}"
+        )
+
+    return proposal, output

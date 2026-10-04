@@ -2,6 +2,7 @@
 
 from tool_predicates import (
     deny_decision_on_proposal,
+    proposal_output_boundary,
     require_no_tool_execution,
     require_no_tool_invocation,
 )
@@ -13,6 +14,8 @@ TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-effect-not-outcome-001",
     "tool-deny-proposal-no-invocation-001",
     "tool-deny-no-execution-001",
+    "tool-proposal-no-invocation-001",
+    "tool-proposal-no-authorization-001",
 }
 
 
@@ -220,6 +223,38 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 domain="conformance",
                 status="valid",
                 prohibited=["P1:deny_decision_creates_execution"],
+            )
+        ]
+
+    elif check_id == "tool-proposal-no-invocation-001":
+        proposal, _output = proposal_output_boundary(receipt)
+        require_no_tool_invocation(receipt)
+        require_no_tool_execution(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                proposal["id"],
+                domain="conformance",
+                status="valid",
+                prohibited=["P1:tool_proposal_implies_invocation"],
+            )
+        ]
+
+    elif check_id == "tool-proposal-no-authorization-001":
+        proposal, _output = proposal_output_boundary(receipt)
+        require_no_tool_invocation(receipt)
+        require_no_tool_execution(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                proposal["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:tool_proposal_implies_authorization"],
             )
         ]
 
