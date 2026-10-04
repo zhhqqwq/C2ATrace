@@ -11,6 +11,10 @@ from provider_attempt_executor import (
     execute_provider_attempt_case,
 )
 from request_executor import REQUEST_PLANNED_TESTS, execute_request_case
+from tool_lifecycle_executor import (
+    TOOL_LIFECYCLE_PLANNED_TESTS,
+    execute_tool_lifecycle_case,
+)
 
 
 SUPPORTED_PLANNED_TESTS = {
@@ -69,6 +73,7 @@ SUPPORTED_PLANNED_TESTS.update(REQUEST_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(IDENTITY_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(MODEL_OUTPUT_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(PROVIDER_ATTEMPT_PLANNED_TESTS)
+SUPPORTED_PLANNED_TESTS.update(TOOL_LIFECYCLE_PLANNED_TESTS)
 
 
 def b64url(data):
@@ -978,6 +983,8 @@ def execute_semantic_case(row, case, materialized):
         return execute_provider_attempt_case(row, case, materialized)
     if planned in MODEL_OUTPUT_PLANNED_TESTS:
         return execute_model_output_case(row, case, materialized)
+    if planned in TOOL_LIFECYCLE_PLANNED_TESTS:
+        return execute_tool_lifecycle_case(row, case, materialized)
 
     requirement_id = row["requirement_id"]
     check_id = planned

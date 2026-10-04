@@ -46,6 +46,7 @@ model/output core            2 / 2
 provider retry core           5 / 5
 provider hedge core           2 / 2
 model output bounded claims    3 / 3
+tool result/effect bounded      3 / 3 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -65,3 +66,5 @@ Batch 07 ranks the next blocker primitives by single-step unlock impact: `prim.v
 Batch 08 re-ranks residual provider-attempt subclusters against the dependency-closed model-output core. The selected PAD-059/PAD-061 hedge core is the tightest incremental surface: both cases use one `provider-hedged-attempts.json` receipt and reuse ProviderAttempt occurrence/lifecycle predicates. PAD-060 and OUT-013 remain blocked on `prim.ordering.time`; predecessor graph, failover, and model-output primary clusters remain fail-closed.
 
 Batch 09 re-ranks the post-hedge residual surface from the 161-case Runner A support baseline. The selected OUT-025/OUT-031/OUT-046 cluster has 20-case single-step `prim.model.output` leverage, a 10-case dependency-closed model-output primary core, and three selected cases on one shared `fixtures/v0.1/valid/provider-retry.json` fixture. All three reuse one accepted-ModelOutput ownership resolver; the batch then bounds ModelOutput identity, complete capture scope, and TextOutput claims without upgrading them to provider-wire identity, hidden-output absence, hidden reasoning, or token history. Provider predecessor/failover cases remain fail-closed.
+
+Batch 10 selects TOOL-040/TOOL-043/TOOL-048 only on the shared `fixtures/v0.1/valid/tool-effect.json` fixture. Runner A independently resolves the ToolInvocation → ToolExecution → ToolResult → EffectObservation chain through local references and same-run ownership. It bounds complete ToolResult capture to the captured result, treats `basis=execution_result` as result-supported rather than independent external verification, and prevents EffectObservation from being upgraded to desired-outcome proof. TOOL-011 and all other tool-lifecycle cases remain fail-closed.
