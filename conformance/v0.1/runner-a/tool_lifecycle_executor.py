@@ -158,6 +158,12 @@ def execute_tool_lifecycle_case(row, case, materialized):
 
     receipt = primary_receipt(case, materialized)
 
+    if (
+        check_id == "tool-deny-later-execution-001"
+        and requirement_id != "TOOL-026"
+    ):
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
     if check_id == "tool-result-capture-bounded-001":
         result = complete_tool_result(receipt)
         findings = [
