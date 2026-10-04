@@ -50,6 +50,7 @@ tool result/effect bounded      3 / 3
 tool deny/no-execution            2 / 2
 tool proposal boundary              2 / 2
 tool model argument provenance       2 / 2
+tool argument JSON Pointer             1 / 1 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -77,3 +78,5 @@ Batch 11 selects TOOL-023/TOOL-024 only on `conformance/v0.1/primitives/receipts
 Batch 12 selects TOOL-003/TOOL-004 only on `conformance/v0.1/primitives/receipts/graph-proposal-only.json`. A shared proposal predicate independently resolves ToolProposal.output to ModelOutput, verifies the reciprocal ModelOutput.item_refs back-reference and same-run ownership, and requires absence of ToolInvocation and ToolExecution. The already-supported proposal-only foundation check reuses the same predicate. The batch then bounds proposal presence against invocation and authorization inferences; no argument-provenance or other tool cases are registered.
 
 Batch 13 selects TOOL-012/TOOL-013 only on `conformance/v0.1/primitives/receipts/tool-argument-model-positive.json`. Runner A starts from ToolInvocation.argument_provenance at JSON Pointer `/title`, requires `classification=model_supplied`, resolves exactly one Derivation, validates the ToolInvocation target and ToolProposal contributor representation bases and structured regions, requires exact Transform linkage from proposal input to invocation generation, checks proposal/output ownership and same-run identity, and confirms the selected proposal/invocation argument values match. The positive finding is bounded to path-scoped proposal ancestry; `model_supplied` does not establish hidden model-internal origin or causal responsibility. No application-supplied, mixed, dropped, rewritten, validation, adapter, taint, or model-output-adjacent cases are registered.
+
+Batch 14 selects TOOL-011 only on `fixtures/v0.1/valid/tool-effect.json`. Runner A independently locates the ToolInvocation carrying argument_provenance, requires JSON arguments, validates every provenance path as `scheme=json_pointer`, and resolves every pointer against the ToolInvocation argument value. Classification is preserved as an independent field and is not used to decide path validity. The batch adds no ancestry, validation, authorization, execution, effect, adapter, taint, or model-output semantics.

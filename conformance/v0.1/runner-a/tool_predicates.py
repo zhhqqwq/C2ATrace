@@ -253,3 +253,50 @@ def tool_argument_model_provenance(receipt, pointer="/title"):
             f"expected one model_supplied provenance chain at {pointer}, found {len(candidates)}"
         )
     return candidates[0]
+
+
+def tool_argument_json_pointer_paths(receipt):
+    invocations = [
+        record
+        for record in records(receipt)
+        if isinstance(record, dict)
+        and record.get("kind") == "ToolInvocation"
+        and isinstance(record.get("argument_provenance"), list)
+        and record.get("argument_provenance")
+    ]
+    if len(invocations) != 1:
+        raise ValueError(
+            f"argument-path scenario requires one ToolInvocation with provenance, found {len(invocations)}"
+        )
+
+    invocation = invocations[0]
+    arguments = invocation.get("arguments") or {}
+    if arguments.get("representation_kind") != "json":
+        raise ValueError("ToolInvocation arguments are not JSON")
+
+    value = arguments.get("value")
+    checked = []
+    for provenance in invocation.get("argument_provenance", []):
+        if not isinstance(provenance, dict):
+            raise ValueError("argument_provenance entry is not an object")
+        path = provenance.get("path")
+        if not isinstance(path, dict):
+            raise ValueError("argument_provenance path is missing")
+        if path.get("scheme") != "json_pointer":
+            raise ValueError("argument_provenance path scheme is not json_pointer")
+        pointer = path.get("value")
+        if not isinstance(pointer, str):
+            raise ValueError("argument_provenance JSON Pointer is not a string")
+
+        resolved_value = resolve_json_pointer(value, pointer)
+        checked.append(
+            {
+                "path": pointer,
+                "classification": provenance.get("classification"),
+                "resolved_value": resolved_value,
+            }
+        )
+
+    if not checked:
+        raise ValueError("ToolInvocation has no argument_provenance entries")
+    return invocation, checked

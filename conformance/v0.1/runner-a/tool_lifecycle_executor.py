@@ -5,6 +5,7 @@ from tool_predicates import (
     proposal_output_boundary,
     require_no_tool_execution,
     require_no_tool_invocation,
+    tool_argument_json_pointer_paths,
     tool_argument_model_provenance,
 )
 
@@ -19,6 +20,7 @@ TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-proposal-no-authorization-001",
     "tool-argument-provenance-positive-001",
     "tool-argument-model-supplied-bounded-001",
+    "tool-argument-json-pointer-001",
 }
 
 
@@ -291,6 +293,19 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 prohibited=[
                     "P1:model_supplied_means_hidden_model_origin_or_causal_responsibility"
                 ],
+            )
+        ]
+
+    elif check_id == "tool-argument-json-pointer-001":
+        invocation, _checked_paths = tool_argument_json_pointer_paths(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="conformance",
+                status="valid",
             )
         ]
 
