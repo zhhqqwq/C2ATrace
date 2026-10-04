@@ -1,0 +1,118 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "10-model-output-bounded-claims-core",
+  "status": "complete",
+  "implementation_commit": "e1da4afee3023879f97cffd640b1df1be0fc085b",
+  "selection_commit": "76765b554d26d2b62fb46b05f76f2249b411fbda",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.model.output",
+    "requirement_ids": [
+      "OUT-025",
+      "OUT-031",
+      "OUT-046"
+    ],
+    "expected_cases": 3,
+    "selected_cases": 3,
+    "shared_receipt": "fixtures/v0.1/valid/provider-retry.json"
+  },
+  "actual_capabilities": [
+    "accepted ModelOutput is independently resolved from ModelInvocation.accepted_output",
+    "ModelOutput.attempt resolves to ProviderAttempt and the attempt invocation resolves back to the same ModelInvocation occurrence",
+    "capture_extent=complete establishes only application-visible capture completeness",
+    "TextOutput is independently resolved from ModelOutput.item_refs and must point back to the same ModelOutput",
+    "captured text does not establish hidden reasoning or token-level generation history"
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/model_output_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "registered_planned_tests": [
+      "model-output-boundary-001",
+      "model-capture-complete-scope-001",
+      "model-text-no-hidden-reasoning-001"
+    ],
+    "reusable_helpers": [
+      "record_index",
+      "resolve_local",
+      "accepted_model_output",
+      "complete_capture_output",
+      "captured_text_output"
+    ],
+    "registered_planned_test_count": 3,
+    "semantic_supported_planned_test_ids_after_batch": 117,
+    "prim_model_output_primary_completed_after_batch": 3,
+    "prim_model_output_primary_total": 32,
+    "unselected_model_output_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "total": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "unique_cases": 3,
+    "unique_requirements": 3,
+    "actual_findings": 3,
+    "finding_domains": {
+      "claim": 2,
+      "completeness": 1
+    },
+    "finding_statuses": {
+      "asserted": 2,
+      "established": 1
+    },
+    "process_outcomes": {
+      "completed": 3
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37178073734,
+    "p5_workflow_run_id": 37178073633,
+    "artifact_id": 11293619800,
+    "artifact_name": "runner-a-semantic-model-output-bounded-claims",
+    "artifact_sha256": "4e2d5e11d708791f95d6de47b0f05947da81cf5806c74f33b405d1e594dea5a1"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 166,
+    "semantic_supported_cases_after_batch": 117,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 98
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_provider_predecessor_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "only_three_model_output_planned_tests_registered": true,
+    "provider_failover_not_implemented": true,
+    "source_observation_not_implemented": true,
+    "ordering_time_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
