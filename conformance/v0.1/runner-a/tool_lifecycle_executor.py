@@ -5,6 +5,7 @@ from tool_predicates import (
     proposal_output_boundary,
     require_no_tool_execution,
     require_no_tool_invocation,
+    tool_argument_model_provenance,
 )
 
 
@@ -16,6 +17,8 @@ TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-deny-no-execution-001",
     "tool-proposal-no-invocation-001",
     "tool-proposal-no-authorization-001",
+    "tool-argument-provenance-positive-001",
+    "tool-argument-model-supplied-bounded-001",
 }
 
 
@@ -255,6 +258,39 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 domain="claim",
                 status="asserted",
                 prohibited=["P1:tool_proposal_implies_authorization"],
+            )
+        ]
+
+    elif check_id == "tool-argument-provenance-positive-001":
+        _proposal, invocation, _derivation, _transform = tool_argument_model_provenance(
+            receipt, pointer="/title"
+        )
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="conformance",
+                status="valid",
+            )
+        ]
+
+    elif check_id == "tool-argument-model-supplied-bounded-001":
+        _proposal, invocation, _derivation, _transform = tool_argument_model_provenance(
+            receipt, pointer="/title"
+        )
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=[
+                    "P1:model_supplied_means_hidden_model_origin_or_causal_responsibility"
+                ],
             )
         ]
 

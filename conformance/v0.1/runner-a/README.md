@@ -49,6 +49,7 @@ model output bounded claims    3 / 3
 tool result/effect bounded      3 / 3
 tool deny/no-execution            2 / 2
 tool proposal boundary              2 / 2
+tool model argument provenance       2 / 2 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -74,3 +75,5 @@ Batch 10 selects TOOL-040/TOOL-043/TOOL-048 only on the shared `fixtures/v0.1/va
 Batch 11 selects TOOL-023/TOOL-024 only on `conformance/v0.1/primitives/receipts/tool-decision-deny-no-invocation.json`. A shared deny predicate resolves ToolDecision.subject to a local ToolProposal, requires the same run occurrence, and provides explicit absence checks for ToolInvocation and ToolExecution. The same predicate is reused by the already-supported GRAPH-009 deny/fake-execution check. No other ToolDecision, ToolProposal, argument-provenance, or execution cases are registered by this batch.
 
 Batch 12 selects TOOL-003/TOOL-004 only on `conformance/v0.1/primitives/receipts/graph-proposal-only.json`. A shared proposal predicate independently resolves ToolProposal.output to ModelOutput, verifies the reciprocal ModelOutput.item_refs back-reference and same-run ownership, and requires absence of ToolInvocation and ToolExecution. The already-supported proposal-only foundation check reuses the same predicate. The batch then bounds proposal presence against invocation and authorization inferences; no argument-provenance or other tool cases are registered.
+
+Batch 13 selects TOOL-012/TOOL-013 only on `conformance/v0.1/primitives/receipts/tool-argument-model-positive.json`. Runner A starts from ToolInvocation.argument_provenance at JSON Pointer `/title`, requires `classification=model_supplied`, resolves exactly one Derivation, validates the ToolInvocation target and ToolProposal contributor representation bases and structured regions, requires exact Transform linkage from proposal input to invocation generation, checks proposal/output ownership and same-run identity, and confirms the selected proposal/invocation argument values match. The positive finding is bounded to path-scoped proposal ancestry; `model_supplied` does not establish hidden model-internal origin or causal responsibility. No application-supplied, mixed, dropped, rewritten, validation, adapter, taint, or model-output-adjacent cases are registered.
