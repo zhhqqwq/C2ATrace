@@ -1,0 +1,206 @@
+{
+  "batch_id": "runner-a-wave-03-batch-10-tool-result-effect-bounded-claims-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "10",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.tool.lifecycle",
+  "requirement_ids": [
+    "TOOL-040",
+    "TOOL-043",
+    "TOOL-048"
+  ],
+  "expected_case_count": 3,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 164,
+      "semantic_supported_planned_test_ids": 115,
+      "remaining_semantic_cases": 675
+    },
+    "global_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 122,
+        "dependency_closed_primary_core": 27
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 93,
+        "dependency_closed_primary_core": 59
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 82,
+        "dependency_closed_primary_core": 10
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 47,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 44,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 39,
+        "dependency_closed_primary_core": 19
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 35,
+        "dependency_closed_primary_core": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 27,
+        "dependency_closed_primary_core": 18
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 17,
+        "dependency_closed_primary_core": 7
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 15,
+        "dependency_closed_primary_core": 6
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 12,
+        "dependency_closed_primary_core": 4
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9,
+        "dependency_closed_primary_core": 9
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 5,
+        "dependency_closed_primary_core": 2
+      },
+      {
+        "primitive": "prim.privacy.redaction",
+        "count": 2,
+        "dependency_closed_primary_core": 0
+      }
+    ],
+    "batch09_adjacent_recheck": {
+      "newly_dependency_closed_requirements": [],
+      "reason": "Corrected Batch 09 implemented only accepted-ModelOutput ownership, bounded complete-capture scope, and single TextOutput ownership/back-reference claims. Residual cases that name prim.model.output as a dependency still require additional multi-item, streaming, adapter-capture, parse-failure, or other model-output sub-capabilities and therefore remain fail-closed."
+    },
+    "compared_tight_clusters": {
+      "tool_result_effect_bounded_claims": {
+        "primitive": "prim.tool.lifecycle",
+        "primitive_leverage": 122,
+        "requirements": [
+          "TOOL-040",
+          "TOOL-043",
+          "TOOL-048"
+        ],
+        "cases": 3,
+        "distinct_receipts": 1,
+        "shared_receipt": "fixtures/v0.1/valid/tool-effect.json",
+        "shared_chain": "ToolExecution -> ToolResult -> EffectObservation",
+        "predicates": [
+          "ToolResult capture_extent=complete is bounded to captured result scope and does not establish remote-state completeness or objective truth",
+          "EffectObservation basis=execution_result is result-supported evidence, not independent external-state verification",
+          "EffectObservation does not establish that the application's desired Outcome was achieved"
+        ],
+        "reusable_predicate_surface": "one result/effect evidence-boundary family over one receipt graph"
+      },
+      "verifier_typed_findings": {
+        "primitive": "prim.verifier.report",
+        "primitive_leverage": 93,
+        "requirements": [
+          "VFY-073",
+          "VFY-074",
+          "VFY-075",
+          "VFY-076",
+          "VFY-081",
+          "VFY-082",
+          "VFY-085"
+        ],
+        "cases": 7,
+        "distinct_receipts": 1,
+        "shared_receipt": "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+        "new_surface": "opens VerificationReport-native typed-status, premise-composition, and report semantics rather than extending ReceiptPresentation graph execution"
+      },
+      "claim_strength_examples": {
+        "primitive": "prim.claim.strength",
+        "primitive_leverage": 82,
+        "strongest_observed_shared_clusters": [
+          [
+            "CLAIM-000",
+            "CLAIM-002"
+          ],
+          [
+            "CLAIM-001",
+            "TM-003"
+          ],
+          [
+            "CLAIM-005",
+            "TM-002"
+          ]
+        ],
+        "cases_per_cluster": 2,
+        "distinct_receipts_per_cluster": 1,
+        "new_surface": "opens claim-strength/prohibited-inference composition as a new executor surface"
+      },
+      "model_partial_lifecycle": {
+        "primitive": "prim.model.output",
+        "primitive_leverage": 17,
+        "requirements": [
+          "OUT-009",
+          "OUT-010",
+          "OUT-027"
+        ],
+        "cases": 3,
+        "distinct_receipt_files": 3,
+        "distinct_evidence_blobs": 2,
+        "scenario_families": 1,
+        "new_surface": "extends existing ModelOutput executor with partial-output lifecycle semantics"
+      },
+      "provider_predecessor": {
+        "primitive": "prim.provider.attempts",
+        "primitive_leverage": 12,
+        "requirements": [
+          "OUT-052",
+          "OUT-053"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "new_surface": "self-loop and predecessor-cycle invalidity"
+      },
+      "provider_failover": {
+        "primitive": "prim.provider.attempts",
+        "primitive_leverage": 12,
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "new_surface": "failover orchestration plus per-attempt request/model/provider metadata and prohibited inference"
+      },
+      "source_redirect": {
+        "primitive": "prim.source.observation",
+        "primitive_leverage": 9,
+        "requirements": [
+          "SRC-006",
+          "SRC-007"
+        ],
+        "cases": 2,
+        "distinct_receipts": 1,
+        "shared_receipt": "conformance/v0.1/primitives/receipts/source-redirect.json",
+        "new_surface": "opens a new source-observation executor"
+      }
+    },
+    "selection_reason": "The residual surface is re-ranked globally from the corrected 164-case state. prim.tool.lifecycle has the highest single-step unlock leverage at 122 and already contains a compact three-case, one-receipt result/effect bounded-claims cluster. The selected cases share one ToolExecution -> ToolResult -> EffectObservation evidence chain and one bounded-evidence predicate family. The verifier typed-findings cluster is denser at seven cases on one report fixture but has lower leverage and would open a broader VerificationReport-native execution surface. Claim, model, provider, and source candidates have lower leverage or weaker scenario density. TOOL-011 is deliberately excluded even though it shares tool-effect.json because its JSON Pointer argument-path semantics are not part of the result/effect bounded-claims cluster."
+  },
+  "intent": "Select only TOOL-040, TOOL-043, and TOOL-048 for Batch 10. This selection commit does not implement prim.tool.lifecycle, does not register these planned tests, and does not change the current 164-case Runner A evidence count. All unselected tool-lifecycle cases and all other unsupported planned tests remain fail-closed."
+}
