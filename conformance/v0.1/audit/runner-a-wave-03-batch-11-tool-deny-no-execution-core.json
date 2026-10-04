@@ -1,0 +1,133 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "11-tool-deny-no-execution-core",
+  "status": "complete",
+  "selection_commit": "ef85054c29c77fd904574af620419b495d14cdc9",
+  "implementation_commit": "eb687ce33cd054f3dceb14aa7d60d432ef6b1f58",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.tool.lifecycle",
+    "requirement_ids": [
+      "TOOL-023",
+      "TOOL-024"
+    ],
+    "expected_cases": 2,
+    "selected_cases": 2,
+    "shared_receipt": "conformance/v0.1/primitives/receipts/tool-decision-deny-no-invocation.json"
+  },
+  "actual_capabilities": [
+    "ToolDecision with decision=deny is independently located from materialized receipt records",
+    "ToolDecision.subject must be a local reference resolving to ToolProposal",
+    "ToolDecision and its ToolProposal subject must remain in the same run occurrence",
+    "TOOL-023 independently establishes absence of ToolInvocation in the selected deny scenario",
+    "TOOL-024 independently establishes absence of ToolExecution in the selected deny scenario",
+    "deny decision does not create a ToolExecution occurrence"
+  ],
+  "refactor": {
+    "shared_module": "conformance/v0.1/runner-a/tool_predicates.py",
+    "helpers": [
+      "deny_decision_on_proposal",
+      "require_no_tool_invocation",
+      "require_no_tool_execution"
+    ],
+    "reused_by_existing_case": {
+      "requirement_id": "GRAPH-009",
+      "planned_test_id": "denied-with-fake-execution-001",
+      "effect": "existing foundation deny/fake-execution check now reuses the same subject-resolution and no-execution predicate"
+    },
+    "foundation_regression": "semantic-foundation 16/16 pass"
+  },
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/tool_lifecycle_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "registered_planned_tests_added": [
+      "tool-deny-proposal-no-invocation-001",
+      "tool-deny-no-execution-001"
+    ],
+    "registered_planned_test_count_added": 2,
+    "semantic_supported_planned_test_ids_after_batch": 120,
+    "supported_coverage_rows_after_batch": 102,
+    "remaining_semantic_executable_rows_after_batch": 669,
+    "tool_lifecycle_primary_supported_after_batch": 5,
+    "tool_lifecycle_primary_requirements": [
+      "TOOL-023",
+      "TOOL-024",
+      "TOOL-040",
+      "TOOL-043",
+      "TOOL-048"
+    ],
+    "unselected_tool_lifecycle_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 2,
+      "pass": 2,
+      "fail": 0
+    },
+    "total": {
+      "cases": 2,
+      "pass": 2,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 2,
+    "finding_domains": {
+      "conformance": 2
+    },
+    "finding_statuses": {
+      "valid": 2
+    },
+    "process_outcomes": {
+      "completed": 2
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37199603256,
+    "p5_workflow_run_id": 37199603244,
+    "artifact_id": 11301787408,
+    "artifact_name": "runner-a-semantic-tool-deny-no-execution",
+    "artifact_sha256": "048fe3b4d85ef970c71c030b6b98447157f5c532f702d5c59e9d31762ffbdb81"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 169,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 101
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "semantic_tool_result_effect_bounded": "3/3 pass",
+    "semantic_tool_deny_no_execution": "2/2 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "tool_003_tool_004_not_implemented": true,
+    "tool_012_tool_013_not_implemented": true,
+    "tool_025_tool_026_not_implemented": true,
+    "other_tool_lifecycle_cases_not_registered": true,
+    "verifier_typed_findings_not_implemented": true,
+    "claim_strength_not_implemented": true,
+    "provider_predecessor_not_implemented": true,
+    "provider_failover_not_implemented": true,
+    "source_observation_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}

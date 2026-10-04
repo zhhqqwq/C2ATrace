@@ -47,7 +47,7 @@ provider retry core           5 / 5
 provider hedge core           2 / 2
 model output bounded claims    3 / 3
 tool result/effect bounded      3 / 3
-tool deny/no-execution            2 / 2 target
+tool deny/no-execution            2 / 2
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
