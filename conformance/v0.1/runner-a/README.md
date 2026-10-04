@@ -45,8 +45,7 @@ provider occurrence         3 / 3
 model/output core            2 / 2
 provider retry core           5 / 5
 provider hedge core           2 / 2
-provider predecessor core     2 / 2
-model output bounded claims    3 / 3
+model output bounded claims    3 / 3 target
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
@@ -65,6 +64,4 @@ Batch 07 ranks the next blocker primitives by single-step unlock impact: `prim.v
 
 Batch 08 re-ranks residual provider-attempt subclusters against the dependency-closed model-output core. The selected PAD-059/PAD-061 hedge core is the tightest incremental surface: both cases use one `provider-hedged-attempts.json` receipt and reuse ProviderAttempt occurrence/lifecycle predicates. PAD-060 and OUT-013 remain blocked on `prim.ordering.time`; predecessor graph, failover, and model-output primary clusters remain fail-closed.
 
-Batch 09 re-ranks the post-hedge residual surface and selects OUT-052/OUT-053. Both cases are dependency-closed and share one reusable predecessor-graph predicate over `retry_of` and `failover_from`: self-reference is invalid, and multi-attempt predecessor cycles are invalid. The cases use two receipts, but the new semantic surface is smaller than failover metadata/orchestration and smaller than the three-predicate model-output cluster. Failover remains fail-closed; PAD-060/OUT-013 remain blocked on `prim.ordering.time`, and PAD-019 remains blocked on `prim.claim.strength`.
-
-Batch 10 selects OUT-025/OUT-031/OUT-046 on the shared `fixtures/v0.1/valid/provider-retry.json` fixture. Runner A independently resolves the accepted ModelOutput through ModelInvocation → ModelOutput → ProviderAttempt → ModelInvocation ownership, bounds `capture_extent=complete` to the application-visible capture scope, and resolves TextOutput through ModelOutput item references and back-reference ownership. The batch emits only bounded claim/completeness findings; it does not infer raw provider wire identity, absence of hidden provider output, hidden reasoning, or token history. Other model-output primary cases remain fail-closed.
+Batch 09 re-ranks the post-hedge residual surface from the 161-case Runner A support baseline. The selected OUT-025/OUT-031/OUT-046 cluster has 20-case single-step `prim.model.output` leverage, a 10-case dependency-closed model-output primary core, and three selected cases on one shared `fixtures/v0.1/valid/provider-retry.json` fixture. All three reuse one accepted-ModelOutput ownership resolver; the batch then bounds ModelOutput identity, complete capture scope, and TextOutput claims without upgrading them to provider-wire identity, hidden-output absence, hidden reasoning, or token history. Provider predecessor/failover cases remain fail-closed.

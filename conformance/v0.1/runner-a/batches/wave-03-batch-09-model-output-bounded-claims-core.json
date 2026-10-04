@@ -1,0 +1,77 @@
+{
+  "batch_id": "runner-a-wave-03-batch-09-model-output-bounded-claims-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "09",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.model.output",
+  "requirement_ids": [
+    "OUT-025",
+    "OUT-031",
+    "OUT-046"
+  ],
+  "expected_case_count": 3,
+  "selection_analysis": {
+    "baseline_commit": "32141a09152a02a6fdbee70bf79f7cf64bcdd161",
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 161,
+      "semantic_supported_planned_test_ids": 112,
+      "remaining_semantic_cases": 678
+    },
+    "single_step_unlock_leverage": {
+      "prim.model.output": {
+        "count": 20,
+        "dependency_closed_primary_core": 10
+      },
+      "prim.provider.attempts": {
+        "count": 12,
+        "dependency_closed_primary_core": 4
+      }
+    },
+    "compared_clusters": {
+      "model_output_bounded_claims": {
+        "requirements": [
+          "OUT-025",
+          "OUT-031",
+          "OUT-046"
+        ],
+        "cases": 3,
+        "distinct_receipts": 1,
+        "shared_receipt": "fixtures/v0.1/valid/provider-retry.json",
+        "reusable_predicates": [
+          "accepted ModelOutput ownership chain",
+          "local record/reference resolution"
+        ],
+        "incremental_surface": "three bounded findings sharing one accepted-output resolver"
+      },
+      "provider_predecessor_graph": {
+        "requirements": [
+          "OUT-052",
+          "OUT-053"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "reusable_predicates": [
+          "ProviderAttempt predecessor adjacency",
+          "directed-cycle detection"
+        ],
+        "incremental_surface": "self-loop and predecessor-cycle invalidity"
+      },
+      "provider_failover": {
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "reusable_predicates": [
+          "ProviderAttempt indexing",
+          "request-binding foundation"
+        ],
+        "incremental_surface": "positive failover orchestration plus per-attempt provider/model/request metadata and prohibited inference"
+      }
+    },
+    "selection_reason": "Using the original ranking order, model output wins the first two criteria: 20-case single-step leverage versus 12 for provider attempts, and 3 selected cases on one shared receipt versus 2 cases on 2 receipts for either provider cluster. Its predicate surface is also more reusable than previously assessed because all three checks share one accepted-ModelOutput ownership resolver. The earlier predecessor-first choice over-weighted incremental surface size relative to the stated ranking order."
+  },
+  "intent": "Execute only OUT-025, OUT-031, and OUT-046. OUT-052/OUT-053, PAD-057/PAD-058, all other model-output tests, ordering/time, claim-strength, source-observation, Runner B, and product work remain fail-closed."
+}
