@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from datetime import datetime
+
 
 PROVIDER_ATTEMPT_PLANNED_TESTS = {
     "provider-attempt-distinct-identity-001",
@@ -7,6 +9,8 @@ PROVIDER_ATTEMPT_PLANNED_TESTS = {
     "provider-retry-relation-positive-001",
     "provider-retry-no-prior-negation-001",
     "provider-retry-001",
+    "provider-hedge-distinct-attempts-001",
+    "provider-hedge-cancel-bounded-001",
 }
 
 
@@ -106,6 +110,65 @@ def require_visible_retry(receipt):
     return predecessor, retry, basis
 
 
+
+def parse_timestamp(value):
+    if not isinstance(value, str) or not value:
+        raise ValueError("attempt timestamp missing")
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def attempts_overlap(left, right):
+    left_start = parse_timestamp(left.get("started_at"))
+    left_end = parse_timestamp(left.get("ended_at"))
+    right_start = parse_timestamp(right.get("started_at"))
+    right_end = parse_timestamp(right.get("ended_at"))
+    return max(left_start, right_start) < min(left_end, right_end)
+
+
+def hedged_attempt_pair(receipt):
+    index = record_index(receipt)
+    for left in by_kind(receipt, "ProviderAttempt"):
+        for ref in left.get("hedged_with", []):
+            right = index.get(ref_id(ref))
+            if not isinstance(right, dict) or right.get("kind") != "ProviderAttempt":
+                continue
+            if left.get("id") == right.get("id"):
+                raise ValueError("hedged attempt relation reuses one occurrence identity")
+            if ref_id(left.get("invocation")) != ref_id(right.get("invocation")):
+                raise ValueError("hedged attempts do not share the logical invocation")
+            reciprocal = {
+                ref_id(item)
+                for item in right.get("hedged_with", [])
+                if ref_id(item)
+            }
+            if left.get("id") not in reciprocal:
+                raise ValueError("hedged_with relation is not reciprocal")
+            if not attempts_overlap(left, right):
+                raise ValueError("hedged attempts do not overlap in observed lifecycle")
+            return left, right
+    raise ValueError("hedged attempt pair not found")
+
+
+def application_cancelled_hedge(receipt):
+    left, right = hedged_attempt_pair(receipt)
+    cancelled = [
+        attempt
+        for attempt in (left, right)
+        if attempt.get("terminal_disposition") == "cancelled"
+    ]
+    if len(cancelled) != 1:
+        raise ValueError("expected exactly one locally cancelled hedge")
+    loser = cancelled[0]
+    for item in loser.get("metadata", []):
+        if item.get("name") != "cancellation_source":
+            continue
+        if item.get("value") != "application":
+            continue
+        if item.get("origin") not in {"adapter_observed", "application_supplied"}:
+            continue
+        return left, right, loser
+    raise ValueError("cancelled hedge lacks application-side cancellation evidence")
+
 def execute_provider_attempt_case(row, case, materialized):
     requirement_id = row["requirement_id"]
     check_id = row["planned_test_id"]
@@ -141,6 +204,29 @@ def execute_provider_attempt_case(row, case, materialized):
                 domain="claim",
                 status="asserted",
                 prohibited=["P1:retry_negates_prior_provider_work"],
+            )
+        ]
+
+    elif check_id == "provider-hedge-distinct-attempts-001":
+        left, right = hedged_attempt_pair(receipt)
+        subject = right
+        if right.get("terminal_disposition") != "cancelled" and left.get("terminal_disposition") == "cancelled":
+            subject = left
+        findings = [
+            finding(requirement_id, check_id, receipt, subject["id"])
+        ]
+
+    elif check_id == "provider-hedge-cancel-bounded-001":
+        _left, _right, loser = application_cancelled_hedge(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                loser["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:application_cancellation_proves_remote_provider_stop"],
             )
         ]
 

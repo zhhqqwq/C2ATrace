@@ -1,0 +1,64 @@
+{
+  "batch_id": "runner-a-wave-03-batch-08-provider-attempt-hedge-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "08",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.provider.attempts",
+  "requirement_ids": [
+    "PAD-059",
+    "PAD-061"
+  ],
+  "expected_case_count": 2,
+  "rerank_analysis": {
+    "provider_residual_clusters": {
+      "predecessor_graph": {
+        "requirements": [
+          "OUT-052",
+          "OUT-053"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "new_surface": "self-loop and directed predecessor cycle detection"
+      },
+      "failover": {
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ],
+        "cases": 2,
+        "distinct_receipts": 2,
+        "new_surface": "positive failover orchestration and per-attempt request/model/provider metadata"
+      },
+      "hedge": {
+        "requirements": [
+          "PAD-059",
+          "PAD-061"
+        ],
+        "cases": 2,
+        "distinct_receipts": 1,
+        "new_surface": "overlapping hedge occurrence identity and application-side loser cancellation bound"
+      }
+    },
+    "model_output_dependency_closed_core": {
+      "cases": 10,
+      "distinct_receipts": 8,
+      "largest_shared_cluster": {
+        "requirements": [
+          "OUT-025",
+          "OUT-031",
+          "OUT-046"
+        ],
+        "receipt": "fixtures/v0.1/valid/provider-retry.json",
+        "cases": 3,
+        "finding_surfaces": [
+          "output boundary claim",
+          "capture completeness",
+          "text-vs-hidden-reasoning claim"
+        ]
+      }
+    },
+    "rationale": "Hedge core has one shared receipt, directly reuses ProviderAttempt indexing/identity/lifecycle helpers, and adds one coherent semantic surface. The three-case model-output shared cluster has more cases but three distinct semantic predicates; predecessor and failover each require two receipts and broader new logic."
+  },
+  "intent": "Execute only provider hedge occurrence identity and bounded application-side cancellation. Hedging total-order semantics remain blocked on prim.ordering.time; predecessor graph, failover, and model-output primary semantics remain fail-closed."
+}
