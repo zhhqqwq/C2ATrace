@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 
+from tool_predicates import (
+    deny_decision_on_proposal,
+    require_no_tool_execution,
+    require_no_tool_invocation,
+)
+
 
 TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-result-capture-bounded-001",
     "tool-effect-result-basis-bounded-001",
     "tool-effect-not-outcome-001",
+    "tool-deny-proposal-no-invocation-001",
+    "tool-deny-no-execution-001",
 }
 
 
@@ -47,8 +55,8 @@ def resolve_local(index, reference, expected_kind):
     return target
 
 
-def finding(requirement_id, check_id, receipt, object_id, domain, status, prohibited):
-    return {
+def finding(requirement_id, check_id, receipt, object_id, domain, status, prohibited=None):
+    out = {
         "requirement_id": requirement_id,
         "check_id": check_id,
         "subject_scope": {
@@ -57,8 +65,10 @@ def finding(requirement_id, check_id, receipt, object_id, domain, status, prohib
         },
         "domain": domain,
         "status": status,
-        "prohibited_inferences": list(prohibited),
     }
+    if prohibited:
+        out["prohibited_inferences"] = list(prohibited)
+    return out
 
 
 def primary_receipt(case, materialized):
@@ -181,6 +191,35 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 prohibited=[
                     "P1:effect_observation_implies_desired_outcome_achieved"
                 ],
+            )
+        ]
+
+    elif check_id == "tool-deny-proposal-no-invocation-001":
+        decision, _proposal = deny_decision_on_proposal(receipt)
+        require_no_tool_invocation(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                decision["id"],
+                domain="conformance",
+                status="valid",
+            )
+        ]
+
+    elif check_id == "tool-deny-no-execution-001":
+        decision, _proposal = deny_decision_on_proposal(receipt)
+        require_no_tool_execution(receipt)
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                decision["id"],
+                domain="conformance",
+                status="valid",
+                prohibited=["P1:deny_decision_creates_execution"],
             )
         ]
 

@@ -15,6 +15,7 @@ from tool_lifecycle_executor import (
     TOOL_LIFECYCLE_PLANNED_TESTS,
     execute_tool_lifecycle_case,
 )
+from tool_predicates import deny_decision_on_proposal, require_no_tool_execution
 
 
 SUPPORTED_PLANNED_TESTS = {
@@ -329,15 +330,8 @@ def execute_proposal_only(requirement_id, check_id, primary):
 
 def execute_denied_without_fake_execution(requirement_id, check_id, primary):
     receipt = primary[0]
-    decision = next(
-        (r for r in records(receipt)
-         if r.get("kind") == "ToolDecision" and r.get("decision") == "deny"),
-        None,
-    )
-    if decision is None:
-        raise ValueError("denied ToolDecision missing")
-    if any(r.get("kind") == "ToolExecution" for r in records(receipt)):
-        raise ValueError("fake ToolExecution present for denied decision")
+    decision, _proposal = deny_decision_on_proposal(receipt)
+    require_no_tool_execution(receipt)
     return [make_finding(
         requirement_id, check_id, object_scope(receipt, decision["id"]),
         "conformance", "valid",

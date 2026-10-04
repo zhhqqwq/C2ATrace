@@ -352,3 +352,31 @@ jobs:
       - name: Enforce runner A tool result/effect bounded gate
         if: steps.runner.outputs.exit_code != '0'
         run: exit 1
+
+  semantic-tool-deny-no-execution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install runner A dependencies
+        run: python -m pip install --disable-pip-version-check -r conformance/v0.1/runner-a/requirements.txt
+      - name: Run independent tool deny/no-execution gate
+        id: runner
+        run: |
+          set +e
+          python conformance/v0.1/runner-a/runner_a.py \
+            --batch-manifest conformance/v0.1/runner-a/batches/wave-03-batch-11-tool-deny-no-execution-core.json \
+            --require-complete \
+            --output /tmp/runner-a-semantic-tool-deny-no-execution.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload runner A tool deny/no-execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-a-semantic-tool-deny-no-execution
+          path: /tmp/runner-a-semantic-tool-deny-no-execution.json
+          if-no-files-found: error
+      - name: Enforce runner A tool deny/no-execution gate
+        if: steps.runner.outputs.exit_code != '0'
+        run: exit 1
