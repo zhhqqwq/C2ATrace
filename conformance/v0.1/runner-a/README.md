@@ -51,7 +51,7 @@ tool deny/no-execution            2 / 2
 tool proposal boundary              2 / 2
 tool model argument provenance       2 / 2
 tool argument JSON Pointer             1 / 1
-tool allow/no-execution                  1 / 1 target
+tool allow/no-execution                  1 / 1
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.
