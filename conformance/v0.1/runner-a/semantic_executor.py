@@ -5,6 +5,7 @@ import hashlib
 import rfc8785
 
 from identity_executor import IDENTITY_PLANNED_TESTS, execute_identity_case
+from model_output_executor import MODEL_OUTPUT_PLANNED_TESTS, execute_model_output_case
 from provider_attempt_executor import (
     PROVIDER_ATTEMPT_PLANNED_TESTS,
     execute_provider_attempt_case,
@@ -66,6 +67,7 @@ DERIVATION_PLANNED_TESTS = {
 SUPPORTED_PLANNED_TESTS.update(DERIVATION_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(REQUEST_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(IDENTITY_PLANNED_TESTS)
+SUPPORTED_PLANNED_TESTS.update(MODEL_OUTPUT_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(PROVIDER_ATTEMPT_PLANNED_TESTS)
 
 
@@ -974,6 +976,8 @@ def execute_semantic_case(row, case, materialized):
         return execute_identity_case(row, case, materialized)
     if planned in PROVIDER_ATTEMPT_PLANNED_TESTS:
         return execute_provider_attempt_case(row, case, materialized)
+    if planned in MODEL_OUTPUT_PLANNED_TESTS:
+        return execute_model_output_case(row, case, materialized)
 
     requirement_id = row["requirement_id"]
     check_id = planned
