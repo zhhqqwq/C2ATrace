@@ -45,7 +45,7 @@ provider occurrence         3 / 3
 model/output core            2 / 2
 provider retry core           5 / 5
 provider hedge core           2 / 2
-model output bounded claims    3 / 3 target
+model output bounded claims    3 / 3
 ```
 
 Runner A must not import or call the P5 matcher coverage auditor.

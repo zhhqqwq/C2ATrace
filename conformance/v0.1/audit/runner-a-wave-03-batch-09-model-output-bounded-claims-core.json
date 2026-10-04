@@ -1,0 +1,156 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "09-model-output-bounded-claims-core",
+  "status": "complete",
+  "baseline_commit": "32141a09152a02a6fdbee70bf79f7cf64bcdd161",
+  "correction_commit": "28c28b50e0521c4f1e8b31ea9d3f7c8ac72e7ec6",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.model.output",
+    "requirement_ids": [
+      "OUT-025",
+      "OUT-031",
+      "OUT-046"
+    ],
+    "expected_cases": 3,
+    "selected_cases": 3,
+    "shared_receipt": "fixtures/v0.1/valid/provider-retry.json"
+  },
+  "rerank": {
+    "runner_a_support_before_batch": 161,
+    "semantic_supported_cases_before_batch": 112,
+    "remaining_semantic_cases_before_batch": 678,
+    "candidate_leverage": {
+      "prim.model.output": {
+        "single_step_unlock_count": 20,
+        "dependency_closed_primary_core_cases": 10
+      },
+      "prim.provider.attempts": {
+        "single_step_unlock_count": 12,
+        "dependency_closed_primary_core_cases": 4
+      }
+    },
+    "compared_clusters": {
+      "model_output_bounded_claims": {
+        "cases": 3,
+        "distinct_receipts": 1,
+        "requirements": [
+          "OUT-025",
+          "OUT-031",
+          "OUT-046"
+        ]
+      },
+      "provider_predecessor_graph": {
+        "cases": 2,
+        "distinct_receipts": 2,
+        "requirements": [
+          "OUT-052",
+          "OUT-053"
+        ]
+      },
+      "provider_failover": {
+        "cases": 2,
+        "distinct_receipts": 2,
+        "requirements": [
+          "PAD-057",
+          "PAD-058"
+        ]
+      }
+    },
+    "selection_reason": "The original ranking order prioritizes unlocked case count and shared receipt density before incremental semantic surface size. Model output leads provider attempts 20 to 12 in single-step leverage and the selected cluster is 3 cases on one receipt versus 2 cases on 2 receipts for either provider cluster. All three selected checks share one accepted-ModelOutput ownership resolver. The predecessor-first decision was therefore retired from the current tree."
+  },
+  "actual_capabilities": [
+    "accepted ModelOutput is independently resolved from ModelInvocation.accepted_output",
+    "ModelOutput.attempt resolves to ProviderAttempt and back to the same ModelInvocation occurrence",
+    "ModelOutput identity is bounded to application-visible capture and does not imply raw provider wire or internal representation",
+    "capture_extent=complete is bounded to application-visible capture scope and does not establish absence of hidden provider output",
+    "TextOutput is independently resolved from ModelOutput item_refs and back-reference ownership",
+    "captured text does not establish hidden reasoning or token-level generation history"
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/model_output_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "registered_planned_tests": [
+      "model-output-boundary-001",
+      "model-capture-complete-scope-001",
+      "model-text-no-hidden-reasoning-001"
+    ],
+    "registered_planned_test_count": 3,
+    "semantic_supported_cases_after_batch": 115,
+    "provider_predecessor_tests_registered": false,
+    "provider_failover_tests_registered": false,
+    "unselected_model_output_tests_fail_closed": true
+  },
+  "execution": {
+    "semantic_verifier": {
+      "total": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "total": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 3,
+    "finding_domains": {
+      "claim": 2,
+      "completeness": 1
+    },
+    "finding_statuses": {
+      "asserted": 2,
+      "established": 1
+    },
+    "process_outcomes": {
+      "completed": 3
+    }
+  },
+  "ci": {
+    "workflow_run_id": 37180482262,
+    "p5_workflow_run_id": 37180482257,
+    "artifact_id": 11294462679,
+    "artifact_name": "runner-a-semantic-model-output-bounded-claims",
+    "artifact_sha256": "18b61ef7125be25da01f711bcc9bcede254a6e0e5969971bc18a2ac5c8cf90f1"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 164,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 96
+  },
+  "regression": {
+    "direct_schema": "6/6 pass",
+    "deterministic_vector": "43/43 pass",
+    "semantic_foundation": "16/16 pass",
+    "semantic_derivation": "29/29 pass",
+    "semantic_request_binding": "47/47 pass",
+    "semantic_identity_core": "8/8 pass",
+    "semantic_provider_occurrence": "3/3 pass",
+    "semantic_model_output_core": "2/2 pass",
+    "semantic_provider_retry_core": "5/5 pass",
+    "semantic_provider_hedge_core": "2/2 pass",
+    "semantic_model_output_bounded_claims": "3/3 pass",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "retired_current_tree_artifacts": [
+    "wave-03-batch-09-provider-attempt-predecessor-core",
+    "wave-03-batch-10-model-output-bounded-claims-core",
+    "wave-03-batch-11-model-output-partial-lifecycle-core"
+  ],
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "fixture_unchanged": true,
+    "expected_results_not_used_to_generate_actual_findings": true,
+    "provider_predecessor_graph_not_implemented_in_current_tree": true,
+    "provider_failover_not_implemented": true,
+    "ordering_time_not_implemented": true,
+    "claim_strength_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
