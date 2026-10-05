@@ -1,0 +1,343 @@
+{
+  "batch_id": "runner-a-wave-03-batch-19-tool-adapter-baseline-boundary-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "19",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.adapter.capture",
+  "requirement_ids": [
+    "TAD-001",
+    "TAD-004",
+    "TAD-005",
+    "TAD-006",
+    "TAD-010",
+    "TAD-014",
+    "TAD-020",
+    "TAD-039",
+    "TAD-057",
+    "TAD-075"
+  ],
+  "expected_case_count": 10,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 187,
+      "registered_semantic_planned_test_ids": 138,
+      "registered_id_matched_coverage_rows": 121,
+      "independently_evidenced_semantic_requirements": 119,
+      "remaining_semantic_executable_rows": 652,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        }
+      ]
+    },
+    "ranking_method": {
+      "stage_1": "Subtract exact requirement-level support and recompute corrected single-step primitive leverage.",
+      "stage_2": "Recheck coarse primitive closure against actual implemented predicate/capability surfaces; primitive-name presence alone is insufficient.",
+      "stage_3": "Regroup actual closable rows by shared receipt/scenario and rank by unlocked case count, shared receipt density, reusable predicate density, then new semantic surface size.",
+      "routing_rule": "planned_test_id membership remains routing metadata and is not requirement-level support."
+    },
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 97
+      },
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 96
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 94
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 52
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 44
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 34
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 31
+      },
+      {
+        "primitive": "prim.identity.occurrence",
+        "count": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 26
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 21
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 18
+      },
+      {
+        "primitive": "prim.request.binding",
+        "count": 12
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 11
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 4
+      },
+      {
+        "primitive": "prim.derivation.mapping",
+        "count": 3
+      },
+      {
+        "primitive": "prim.ref.local",
+        "count": 2
+      }
+    ],
+    "broad_zero_unmet_state": {
+      "total_rows": 150,
+      "by_primary": {
+        "prim.adapter.capture": 95,
+        "prim.identity.occurrence": 26,
+        "prim.model.output": 13,
+        "prim.tool.lifecycle": 12,
+        "prim.provider.attempts": 4
+      },
+      "rule": "The 95 adapter-primary rows are not treated as fully implemented. Batch 17 established argument-provenance adapter semantics only, so every candidate cluster is rechecked against actual receipt evidence and existing Runner-A predicates."
+    },
+    "adapter_cluster_comparison": [
+      {
+        "name": "tool_adapter_baseline_boundary",
+        "receipt": "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
+        "requirement_ids": [
+          "TAD-001",
+          "TAD-004",
+          "TAD-005",
+          "TAD-006",
+          "TAD-010",
+          "TAD-014",
+          "TAD-020",
+          "TAD-039",
+          "TAD-057",
+          "TAD-075"
+        ],
+        "cases": 10,
+        "distinct_receipts": 1,
+        "status": "selected"
+      },
+      {
+        "name": "provider_source_to_request_adapter",
+        "receipt": "fixtures/v0.1/valid/source-to-request.json",
+        "requirement_ids": [
+          "PAD-001",
+          "PAD-013",
+          "PAD-018",
+          "PAD-021",
+          "PAD-031",
+          "PAD-032",
+          "PAD-035"
+        ],
+        "cases": 7,
+        "distinct_receipts": 1,
+        "status": "unselected"
+      },
+      {
+        "name": "tool_decision_identity_and_lineage",
+        "receipt": "conformance/v0.1/primitives/receipts/identity-tool-decisions.json",
+        "requirement_ids": [
+          "TAD-017",
+          "TAD-021",
+          "TAD-028",
+          "TAD-110",
+          "TOOL-061"
+        ],
+        "cases": 5,
+        "distinct_receipts": 1,
+        "status": "unselected"
+      },
+      {
+        "name": "tool_execution_lifecycle_boundaries",
+        "receipt": "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+        "requirement_ids": [
+          "TAD-043",
+          "TAD-044",
+          "TAD-045",
+          "TAD-046",
+          "TAD-113"
+        ],
+        "cases": 5,
+        "distinct_receipts": 1,
+        "status": "unselected"
+      },
+      {
+        "name": "provider_retry_adapter",
+        "receipt": "fixtures/v0.1/valid/provider-retry.json",
+        "requirement_ids": [
+          "PAD-014",
+          "PAD-040",
+          "PAD-045",
+          "PAD-053",
+          "PAD-062",
+          "PAD-064"
+        ],
+        "cases": 6,
+        "distinct_receipts": 1,
+        "note": "The receipt has six relevant remaining adapter rows; they span invocation/output/streaming/metadata surfaces and are less semantically tight than the selected baseline boundary core.",
+        "status": "unselected"
+      },
+      {
+        "name": "provider_capture_failure",
+        "receipt": "conformance/v0.1/primitives/receipts/provider-capture-failure.json",
+        "requirement_ids": [
+          "PAD-072",
+          "PAD-073",
+          "PAD-074",
+          "PAD-075"
+        ],
+        "cases": 4,
+        "distinct_receipts": 1,
+        "status": "unselected"
+      }
+    ],
+    "selected_receipt_evidence": {
+      "receipt": "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
+      "record_shape": {
+        "Run": 1,
+        "ToolInvocation": 1,
+        "ToolExecution": 1,
+        "ToolResult": 1,
+        "ToolAdapterCapability": 1,
+        "CaptureDiagnostic": 3
+      },
+      "capability_fields": [
+        "invocation_boundary",
+        "execution_boundary",
+        "result_boundary",
+        "argument_path_schemes",
+        "proposal_association",
+        "decision_capture",
+        "streaming_result",
+        "retry_visibility",
+        "replay_visibility",
+        "duplicate_visibility",
+        "effect_observation",
+        "privacy_profiles"
+      ],
+      "diagnostic_slots": [
+        "tool_invocation.effective",
+        "tool_execution.lifecycle",
+        "tool_result.application_visible"
+      ]
+    },
+    "same_receipt_exclusions": [
+      {
+        "requirement_id": "TAD-008",
+        "reason": "Still depends on prim.receipt.multi in addition to prim.adapter.capture and prim.tool.lifecycle."
+      },
+      {
+        "requirement_id": "TAD-011",
+        "reason": "Still depends on prim.claim.strength."
+      },
+      {
+        "requirement_id": "TAD-012",
+        "reason": "Still depends on prim.claim.strength."
+      }
+    ],
+    "reusable_foundations": [
+      "Existing ToolInvocation → ToolExecution → ToolResult local-reference and same-run validation.",
+      "Existing Tool lifecycle absence checks for ToolDecision/ToolProposal/EffectObservation boundaries.",
+      "Existing complete ToolResult capture and bounded effect/outcome predicates.",
+      "Batch 17/18 adapter and tool argument-context infrastructure establishes the pattern for requirement-level adapter executors and fail-closed guards.",
+      "Core local-reference resolution and occurrence ownership predicates."
+    ],
+    "incremental_surface": [
+      "Interpret ToolAdapterCapability boundary declarations as bounded capability evidence.",
+      "Bind CaptureDiagnostic observed assertions to their declared ToolInvocation, ToolExecution, and ToolResult slots.",
+      "Require baseline invocation/execution/result objects to agree with the declared adapter-visible boundaries.",
+      "Preserve proposal optionality and absence of implicit allow decision.",
+      "Keep completed/success lifecycle and result evidence separate from external Effect truth."
+    ],
+    "cross_primitive_comparison": {
+      "tool_lifecycle": {
+        "corrected_leverage": 96,
+        "best_known_tight_cluster": {
+          "requirement_ids": [
+            "TOOL-030",
+            "TOOL-031",
+            "TAD-042"
+          ],
+          "cases": 3,
+          "distinct_receipts": 1
+        },
+        "reason_not_selected": "Lower primitive leverage and smaller tight cluster."
+      },
+      "verifier_report": {
+        "corrected_leverage": 94,
+        "known_dense_core": {
+          "evidence": "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+          "cases": 7,
+          "distinct_evidence_documents": 1
+        },
+        "reason_not_selected": "Lower primitive leverage and smaller tight core than the selected 10-case baseline adapter cluster."
+      },
+      "claim_privacy_receipt_taint_integrity": {
+        "primitives": [
+          "prim.claim.strength",
+          "prim.privacy.commitment",
+          "prim.receipt.multi",
+          "prim.taint.flow",
+          "prim.integrity.composition"
+        ],
+        "corrected_leverage": [
+          52,
+          44,
+          34,
+          26,
+          21
+        ],
+        "reason_not_selected": "Lower primitive leverage."
+      }
+    },
+    "selected_cluster": {
+      "primitive": "prim.adapter.capture",
+      "semantic_family": "Tool Adapter baseline visibility/capability boundaries",
+      "receipt": "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
+      "requirement_ids": [
+        "TAD-001",
+        "TAD-004",
+        "TAD-005",
+        "TAD-006",
+        "TAD-010",
+        "TAD-014",
+        "TAD-020",
+        "TAD-039",
+        "TAD-057",
+        "TAD-075"
+      ],
+      "cases": 10,
+      "distinct_receipts": 1,
+      "selection_reason": "prim.adapter.capture has the highest corrected single-step leverage at 97. After actual-capability recheck, tool-adapter-baseline.json provides the largest dependency-closed tight cluster: ten requirements on one receipt. The receipt explicitly carries one ToolAdapterCapability, one invocation/execution/result chain, and three slot-bound CaptureDiagnostics. Existing lifecycle/reference predicates cover the object relationships, while the new surface is concentrated in bounded adapter capability/diagnostic interpretation. Same-receipt rows requiring receipt.multi or claim.strength are excluded."
+    }
+  },
+  "intent": "Select only TAD-001, TAD-004, TAD-005, TAD-006, TAD-010, TAD-014, TAD-020, TAD-039, TAD-057, and TAD-075 for Batch 19. This selection commit does not register new planned tests, modify Runner A executors, or increase the 187-case / 119-requirement evidence baseline. TAD-008, TAD-011, TAD-012, TAD-021, TAD-084, TAD-033, OUT-044, and TAINT-031 remain unimplemented. Runner B and Product Verifier/SDK remain not started."
+}
