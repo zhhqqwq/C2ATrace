@@ -1,0 +1,191 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "20-verifier-typed-findings-core",
+  "status": "complete",
+  "selection_commit": "1fb94029b0c38aa0ee94c108f22b2beced110b9b",
+  "implementation_commits": [
+    "801c5ae428510f172cb53fde51a59a531d069af1"
+  ],
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.verifier.report",
+    "requirement_ids": [
+      "VFY-073",
+      "VFY-074",
+      "VFY-075",
+      "VFY-076",
+      "VFY-079",
+      "VFY-080",
+      "VFY-081",
+      "VFY-082",
+      "VFY-084",
+      "VFY-085"
+    ],
+    "expected_cases": 10,
+    "selected_cases": 10,
+    "shared_report": "conformance/v0.1/primitives/verifier/typed-findings-report.json"
+  },
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/verifier_report_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "planned_tests_added": [
+      "verifier-finding-premises-001",
+      "verifier-composition-weakest-premise-001",
+      "verifier-established-scope-001",
+      "verifier-matched-scope-001",
+      "verifier-unverified-semantics-001",
+      "verifier-unsupported-semantics-001",
+      "verifier-invalid-bounded-001",
+      "verifier-mismatch-semantics-001",
+      "verifier-typed-status-domains-001",
+      "verifier-valid-not-true-001"
+    ],
+    "requirement_level_guards": {
+      "verifier-finding-premises-001": "VFY-073",
+      "verifier-composition-weakest-premise-001": "VFY-074",
+      "verifier-established-scope-001": "VFY-075",
+      "verifier-matched-scope-001": "VFY-076",
+      "verifier-unverified-semantics-001": "VFY-079",
+      "verifier-unsupported-semantics-001": "VFY-080",
+      "verifier-invalid-bounded-001": "VFY-081",
+      "verifier-mismatch-semantics-001": "VFY-082",
+      "verifier-typed-status-domains-001": "VFY-084",
+      "verifier-valid-not-true-001": "VFY-085"
+    },
+    "rules": [
+      "Require exactly one primary VerificationReport.",
+      "Index report findings by unique finding_id.",
+      "Resolve composed premises by finding_id.",
+      "Use typed machine fields rather than human message text for normative status interpretation.",
+      "Preserve VerificationReport process_outcome instead of deriving report-process failure from individual finding statuses.",
+      "VFY-084 emits five typed domain/status findings while VFY-077, VFY-078, and VFY-083 remain unimplemented."
+    ]
+  },
+  "actual_capabilities": [
+    "VFY-073 resolves every explicit premise reference on the composed finding.",
+    "VFY-074 requires an unresolved prerequisite premise and keeps the composed conclusion claim/unknown.",
+    "VFY-075 validates a receipt-scoped claim/established without upgrading it to global truth.",
+    "VFY-076 validates comparison/matched without upgrading the comparison to factual truth.",
+    "VFY-079 requires comparison/unverified with required_capability_unavailable and an identified capability.",
+    "VFY-080 requires support/unsupported with profile_not_implemented on a profile not declared implemented.",
+    "VFY-081 keeps conformance/invalid scoped to local_check_failed.",
+    "VFY-082 requires comparison/mismatched with comparison_performed_and_failed.",
+    "VFY-084 independently validates claim, comparison, resolution, support, and presence domain/status pairs.",
+    "VFY-085 validates conformance/valid without upgrading valid to factual truth."
+  ],
+  "execution": {
+    "head": "801c5ae428510f172cb53fde51a59a531d069af1",
+    "semantic_verifier": {
+      "total": 10,
+      "pass": 10,
+      "fail": 0
+    },
+    "total": {
+      "cases": 10,
+      "pass": 10,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 14,
+    "process_outcomes": {
+      "completed": 10
+    },
+    "finding_domains": {
+      "conformance": 3,
+      "claim": 3,
+      "comparison": 4,
+      "support": 2,
+      "resolution": 1,
+      "presence": 1
+    },
+    "finding_statuses": {
+      "valid": 2,
+      "unknown": 1,
+      "established": 1,
+      "matched": 2,
+      "unverified": 1,
+      "unsupported": 2,
+      "invalid": 1,
+      "mismatched": 1,
+      "asserted": 1,
+      "resolved": 1,
+      "not_present": 1
+    },
+    "first_matcher_pass": true
+  },
+  "ci": {
+    "runner_a_workflow_run_id": 37352940999,
+    "p5_workflow_run_id": 37352941023,
+    "artifact_id": 11362938096,
+    "artifact_name": "runner-a-semantic-verifier-typed-findings-core",
+    "artifact_sha256": "f0bf8afcd51a52fa902d3b82a5fbbabf72cc2fd574ab064699561543f720ab84",
+    "p5_artifact_id": 11363541934,
+    "p5_artifact_sha256": "bee0b65641ea77fa35288d334919c5ce32c861d01b7a91d16d48e3e2f66974c7"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 207,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 139
+  },
+  "accounting": {
+    "registered_semantic_planned_test_ids": 158,
+    "registered_id_matched_coverage_rows": 141,
+    "independently_evidenced_semantic_requirements": 139,
+    "remaining_semantic_requirements": 632,
+    "shared_planned_test_id_exclusions": [
+      {
+        "planned_test_id": "tool-deny-later-execution-001",
+        "implemented_requirement": "TOOL-026",
+        "excluded_requirement": "TAD-021"
+      },
+      {
+        "planned_test_id": "tool-effect-not-outcome-001",
+        "implemented_requirement": "TOOL-048",
+        "excluded_requirement": "TAD-084"
+      }
+    ]
+  },
+  "regression": {
+    "runner_a_jobs": "22/22 success",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures",
+    "batch20_verifier_typed_findings": "10/10 pass; 14 normalized findings"
+  },
+  "fail_closed": {
+    "same_report_unimplemented": [
+      {
+        "requirement_id": "VFY-077",
+        "reason": "prim.claim.strength remains unmet."
+      },
+      {
+        "requirement_id": "VFY-078",
+        "reason": "prim.claim.strength remains unmet."
+      },
+      {
+        "requirement_id": "VFY-083",
+        "reason": "prim.claim.strength remains unmet."
+      }
+    ],
+    "shared_planned_test_id_exclusions": [
+      "TAD-021",
+      "TAD-084"
+    ]
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "specification_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "golden_results_not_used_to_derive_verification_report_facts": true,
+    "human_message_text_not_used_to_strengthen_machine_findings": true,
+    "vfy_077_not_implemented": true,
+    "vfy_078_not_implemented": true,
+    "vfy_083_not_implemented": true,
+    "tad_021_not_implemented": true,
+    "tad_084_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
