@@ -1,0 +1,409 @@
+{
+  "batch_id": "runner-a-wave-03-batch-20-verifier-typed-findings-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "20",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.verifier.report",
+  "requirement_ids": [
+    "VFY-073",
+    "VFY-074",
+    "VFY-075",
+    "VFY-076",
+    "VFY-079",
+    "VFY-080",
+    "VFY-081",
+    "VFY-082",
+    "VFY-084",
+    "VFY-085"
+  ],
+  "expected_case_count": 10,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 197,
+      "registered_semantic_planned_test_ids": 148,
+      "registered_id_matched_coverage_rows": 131,
+      "independently_evidenced_semantic_requirements": 129,
+      "remaining_semantic_executable_rows": 642,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        }
+      ]
+    },
+    "ranking_method": {
+      "stage_1": "Subtract exact requirement-level support and recompute corrected single-step primitive leverage.",
+      "stage_2": "Recheck coarse primitive closure against actual implemented capability surfaces and materialized evidence.",
+      "stage_3": "Regroup closable rows by shared report/receipt and rank by unlocked case count, shared-evidence density, reusable predicate density, then new semantic surface size.",
+      "routing_rule": "planned_test_id membership is routing metadata, not requirement-level independent support."
+    },
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.verifier.report",
+        "count": 94
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 87
+      },
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 86
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 52
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 44
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 34
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 31
+      },
+      {
+        "primitive": "prim.identity.occurrence",
+        "count": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 26
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 21
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 18
+      },
+      {
+        "primitive": "prim.request.binding",
+        "count": 12
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 11
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 4
+      },
+      {
+        "primitive": "prim.derivation.mapping",
+        "count": 3
+      },
+      {
+        "primitive": "prim.ref.local",
+        "count": 2
+      }
+    ],
+    "broad_zero_unmet_state": {
+      "total_rows": 140,
+      "by_primary": {
+        "prim.adapter.capture": 85,
+        "prim.identity.occurrence": 26,
+        "prim.model.output": 13,
+        "prim.tool.lifecycle": 12,
+        "prim.provider.attempts": 4
+      },
+      "note": "Verifier-report rows are not part of zero-unmet because prim.verifier.report itself is the next missing primitive; their dependency-closed primary core contains 73 rows."
+    },
+    "verifier_primary_core": {
+      "dependency_closed_rows": 73,
+      "family": "vfy",
+      "materialization_source": "conformance/v0.1/audit/semantic-primitive-wave-07-*",
+      "actual_cluster_recheck": [
+        {
+          "name": "typed_findings",
+          "evidence": "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+          "requirement_ids": [
+            "VFY-073",
+            "VFY-074",
+            "VFY-075",
+            "VFY-076",
+            "VFY-079",
+            "VFY-080",
+            "VFY-081",
+            "VFY-082",
+            "VFY-084",
+            "VFY-085"
+          ],
+          "cases": 10,
+          "distinct_evidence_documents": 1,
+          "status": "selected"
+        },
+        {
+          "name": "conflict_completeness",
+          "evidence": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json",
+          "requirement_ids": [
+            "VFY-090",
+            "VFY-096",
+            "VFY-097",
+            "VFY-099",
+            "VFY-151",
+            "VFY-153",
+            "VFY-154"
+          ],
+          "cases": 7,
+          "distinct_evidence_documents": 1,
+          "status": "unselected"
+        },
+        {
+          "name": "process_invalidity",
+          "evidence": "conformance/v0.1/primitives/verifier/process-invalidity-report.json",
+          "requirement_ids": [
+            "VFY-115",
+            "VFY-116",
+            "VFY-142",
+            "VFY-143",
+            "VFY-146",
+            "VFY-148"
+          ],
+          "cases": 6,
+          "distinct_evidence_documents": 1,
+          "status": "unselected"
+        }
+      ]
+    },
+    "selected_report_evidence": {
+      "path": "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+      "kind": "VerificationReport",
+      "report_id": "report-vfy-typed-status-001",
+      "process_outcome": "completed",
+      "completeness": {
+        "package_inventory": "established",
+        "reference_closure": "established",
+        "runtime_history": "unknown"
+      },
+      "relevant_findings": [
+        {
+          "finding_id": "finding-established",
+          "domain": "claim",
+          "status": "established"
+        },
+        {
+          "finding_id": "finding-matched",
+          "domain": "comparison",
+          "status": "matched"
+        },
+        {
+          "finding_id": "finding-unverified",
+          "domain": "comparison",
+          "status": "unverified",
+          "reason_code": "required_capability_unavailable"
+        },
+        {
+          "finding_id": "finding-unsupported",
+          "domain": "support",
+          "status": "unsupported",
+          "reason_code": "profile_not_implemented"
+        },
+        {
+          "finding_id": "finding-invalid",
+          "domain": "conformance",
+          "status": "invalid",
+          "reason_code": "local_check_failed"
+        },
+        {
+          "finding_id": "finding-mismatched",
+          "domain": "comparison",
+          "status": "mismatched",
+          "reason_code": "comparison_performed_and_failed"
+        },
+        {
+          "finding_id": "finding-valid",
+          "domain": "conformance",
+          "status": "valid"
+        },
+        {
+          "finding_id": "finding-weak-premise",
+          "domain": "resolution",
+          "status": "unresolved",
+          "reason_code": "prerequisite_unresolved"
+        },
+        {
+          "finding_id": "finding-composed",
+          "domain": "claim",
+          "status": "unknown",
+          "premises": [
+            "finding-weak-premise"
+          ],
+          "reason_code": "weakest_premise_unresolved"
+        }
+      ]
+    },
+    "selected_semantic_core": [
+      {
+        "requirement_id": "VFY-073",
+        "planned_test_id": "verifier-finding-premises-001",
+        "role": "Resolve finding-composed.premises to finding-weak-premise and preserve explicit premise traceability."
+      },
+      {
+        "requirement_id": "VFY-074",
+        "planned_test_id": "verifier-composition-weakest-premise-001",
+        "role": "Require unresolved prerequisite evidence to bound the composed conclusion to unknown."
+      },
+      {
+        "requirement_id": "VFY-075",
+        "planned_test_id": "verifier-established-scope-001",
+        "role": "Keep established scoped to the supplied receipt proposition."
+      },
+      {
+        "requirement_id": "VFY-076",
+        "planned_test_id": "verifier-matched-scope-001",
+        "role": "Keep matched in comparison domain rather than external truth."
+      },
+      {
+        "requirement_id": "VFY-079",
+        "planned_test_id": "verifier-unverified-semantics-001",
+        "role": "Bind unverified to an unavailable required capability/prerequisite."
+      },
+      {
+        "requirement_id": "VFY-080",
+        "planned_test_id": "verifier-unsupported-semantics-001",
+        "role": "Bind unsupported to implementation/profile support limitation."
+      },
+      {
+        "requirement_id": "VFY-081",
+        "planned_test_id": "verifier-invalid-bounded-001",
+        "role": "Keep invalid bounded to the failed conformance check."
+      },
+      {
+        "requirement_id": "VFY-082",
+        "planned_test_id": "verifier-mismatch-semantics-001",
+        "role": "Require mismatched to represent a performed comparison that failed."
+      },
+      {
+        "requirement_id": "VFY-084",
+        "planned_test_id": "verifier-typed-status-domains-001",
+        "role": "Validate domain/status typing across claim, comparison, support, conformance, resolution, and presence semantics."
+      },
+      {
+        "requirement_id": "VFY-085",
+        "planned_test_id": "verifier-valid-not-true-001",
+        "role": "Keep conformance valid distinct from external factual truth."
+      }
+    ],
+    "same_report_exclusions": [
+      {
+        "requirement_id": "VFY-077",
+        "reason": "asserted wording remains blocked on prim.claim.strength."
+      },
+      {
+        "requirement_id": "VFY-078",
+        "reason": "unknown-not-false wording remains blocked on prim.claim.strength."
+      },
+      {
+        "requirement_id": "VFY-083",
+        "reason": "not_present wording remains blocked on prim.claim.strength."
+      }
+    ],
+    "batch19_adjacency": {
+      "newly_relevant": [
+        {
+          "requirement_id": "VFY-079",
+          "reason": "Batch 19 established a concrete adapter capability/declaration surface; the typed report's required_capability_unavailable state can now be evaluated without inventing adapter state."
+        },
+        {
+          "requirement_id": "VFY-080",
+          "reason": "Batch 19 established bounded adapter capability semantics; unsupported remains a report support-status distinction rather than an adapter occurrence inference."
+        }
+      ],
+      "retained_outside_batch": [
+        "VFY-065",
+        "VFY-091",
+        "VFY-097",
+        "VFY-098"
+      ]
+    },
+    "cross_primitive_comparison": {
+      "adapter_capture": {
+        "corrected_leverage": 87,
+        "best_tight_cluster": {
+          "evidence": "fixtures/v0.1/valid/source-to-request.json",
+          "requirement_ids": [
+            "PAD-001",
+            "PAD-013",
+            "PAD-018",
+            "PAD-021",
+            "PAD-031",
+            "PAD-032",
+            "PAD-035"
+          ],
+          "cases": 7,
+          "distinct_evidence_documents": 1
+        },
+        "reason_not_selected": "Lower corrected leverage and smaller tight cluster."
+      },
+      "tool_lifecycle": {
+        "corrected_leverage": 86,
+        "best_tight_cluster": {
+          "evidence": "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
+          "requirement_ids": [
+            "TOOL-030",
+            "TOOL-031",
+            "TAD-042"
+          ],
+          "cases": 3,
+          "distinct_evidence_documents": 1
+        },
+        "reason_not_selected": "Lower corrected leverage and smaller tight cluster."
+      },
+      "claim_privacy_receipt_taint_integrity": {
+        "primitives": [
+          "prim.claim.strength",
+          "prim.privacy.commitment",
+          "prim.receipt.multi",
+          "prim.taint.flow",
+          "prim.integrity.composition"
+        ],
+        "corrected_leverage": [
+          52,
+          44,
+          34,
+          26,
+          21
+        ],
+        "reason_not_selected": "Lower corrected single-step leverage."
+      }
+    },
+    "selected_cluster": {
+      "primitive": "prim.verifier.report",
+      "semantic_family": "VerificationReport typed finding status/domain/premise semantics",
+      "evidence": "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+      "requirement_ids": [
+        "VFY-073",
+        "VFY-074",
+        "VFY-075",
+        "VFY-076",
+        "VFY-079",
+        "VFY-080",
+        "VFY-081",
+        "VFY-082",
+        "VFY-084",
+        "VFY-085"
+      ],
+      "cases": 10,
+      "distinct_evidence_documents": 1,
+      "selection_reason": "prim.verifier.report has the highest corrected single-step leverage at 94. The typed-findings report is the largest verified dependency-closed single-evidence cluster: ten requirements on one VerificationReport. The rows share one status/domain/premise interpretation surface, while claim-strength-dependent asserted/unknown/not_present wording rows remain excluded."
+    }
+  },
+  "intent": "Select only VFY-073, VFY-074, VFY-075, VFY-076, VFY-079, VFY-080, VFY-081, VFY-082, VFY-084, and VFY-085 for Batch 20. This selection commit does not register new planned tests, modify Runner A executors, or increase the 197-case / 129-requirement evidence baseline. VFY-077/VFY-078/VFY-083 remain blocked on prim.claim.strength. TAD-021 and TAD-084 remain excluded shared-ID rows. Runner B and Product Verifier/SDK remain not started."
+}
