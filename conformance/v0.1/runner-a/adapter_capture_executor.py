@@ -86,6 +86,15 @@ def structured_path(region, pointer):
     )
 
 
+def argument_representation_basis(kind, basis):
+    allowed = {
+        "ToolInvocation": {"json-data-model", "tool_arguments_json"},
+        "ToolProposal": {"json-data-model", "tool_proposal_arguments_json"},
+        "ContextFragment": {"json-data-model"},
+    }
+    return basis in allowed.get(kind, {"json-data-model"})
+
+
 def primary_receipt(case, materialized):
     ids = (case.get("harness") or {}).get("primary_documents", [])
     receipts = [
@@ -245,8 +254,10 @@ def path_derivation(context, pointer, classification):
     )
     if target_invocation.get("id") != context["invocation"].get("id"):
         raise ValueError("Derivation target is not the selected ToolInvocation")
-    if target.get("representation_basis") != "json-data-model":
-        raise ValueError("Derivation target basis is not json-data-model")
+    if not argument_representation_basis(
+        "ToolInvocation", target.get("representation_basis")
+    ):
+        raise ValueError("Derivation target basis is not a ToolInvocation argument basis")
     if not structured_path(target.get("region"), pointer):
         raise ValueError("Derivation target region does not match argument path")
 
@@ -262,8 +273,10 @@ def path_derivation(context, pointer, classification):
             raise ValueError("Derivation contributor is not an object")
         scope = contributor.get("scope") or {}
         artifact = resolve_local(context["index"], scope.get("artifact"))
-        if scope.get("representation_basis") != "json-data-model":
-            raise ValueError("contributor basis is not json-data-model")
+        if not argument_representation_basis(
+            artifact.get("kind"), scope.get("representation_basis")
+        ):
+            raise ValueError("contributor basis is not valid for argument provenance")
         if not structured_path(scope.get("region"), pointer):
             raise ValueError("contributor region does not match argument path")
         if not structured_path(contributor.get("output_region"), pointer):
