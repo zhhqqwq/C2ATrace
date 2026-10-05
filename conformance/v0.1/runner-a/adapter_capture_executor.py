@@ -25,6 +25,10 @@ def records(receipt):
     return (receipt.get("arp") or {}).get("records", [])
 
 
+def adapter_declarations(receipt):
+    return (receipt.get("arp") or {}).get("adapter_declarations", [])
+
+
 def receipt_id(receipt):
     return (receipt.get("arp") or {}).get("receipt_id")
 
@@ -35,7 +39,7 @@ def ref_id(value):
 
 def record_index(receipt):
     index = {}
-    for record in records(receipt):
+    for record in [*records(receipt), *adapter_declarations(receipt)]:
         if not isinstance(record, dict) or not isinstance(record.get("id"), str):
             raise ValueError("receipt contains record without string id")
         if record["id"] in index:
@@ -466,7 +470,12 @@ def by_kind(receipt, kind):
 def tool_adapter_baseline_context(receipt):
     index = record_index(receipt)
 
-    capabilities = by_kind(receipt, "ToolAdapterCapability")
+    capabilities = [
+        declaration
+        for declaration in adapter_declarations(receipt)
+        if isinstance(declaration, dict)
+        and declaration.get("kind") == "ToolAdapterCapability"
+    ]
     invocations = by_kind(receipt, "ToolInvocation")
     executions = by_kind(receipt, "ToolExecution")
     results = by_kind(receipt, "ToolResult")
