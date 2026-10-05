@@ -21,7 +21,7 @@
       "patches": [
         {
           "op": "remove",
-          "path": "/arp/records/7"
+          "path": "/arp/records/6"
         },
         {
           "op": "remove",
