@@ -640,8 +640,6 @@ def execute_adapter_capture_case(row, case, materialized):
         raise NotImplementedError(f"{requirement_id}:{check_id}")
 
     receipt = primary_receipt(case, materialized)
-    context = argument_context(receipt)
-    invocation = context["invocation"]
 
     if check_id in batch19_requirements:
         context = tool_adapter_baseline_context(receipt)
@@ -726,21 +724,29 @@ def execute_adapter_capture_case(row, case, materialized):
             raise NotImplementedError(check_id)
 
     elif check_id == "tool-argument-model-supplied-positive-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         require_model_supplied(context, "/title")
         actual_finding = finding(
             requirement_id, check_id, receipt, invocation["id"], {"path": "/title"}
         )
     elif check_id == "tool-argument-app-supplied-positive-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         require_application_supplied(context, "/repo")
         actual_finding = finding(
             requirement_id, check_id, receipt, invocation["id"], {"path": "/repo"}
         )
     elif check_id == "tool-argument-mixed-positive-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         require_mixed(context, "/mixed_note")
         actual_finding = finding(
             requirement_id, check_id, receipt, invocation["id"], {"path": "/mixed_note"}
         )
     elif check_id == "tool-argument-control-not-content-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         control = require_control_not_content(context)
         actual_finding = finding(
             requirement_id,
@@ -752,6 +758,8 @@ def execute_adapter_capture_case(row, case, materialized):
             prohibited=["P1:control_input_is_argument_content_contributor"],
         )
     elif check_id == "tool-argument-dropped-not-effective-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         require_dropped_proposal_argument(context, "/priority")
         actual_finding = finding(
             requirement_id,
@@ -764,6 +772,8 @@ def execute_adapter_capture_case(row, case, materialized):
             prohibited=["P1:dropped_proposal_argument_remains_effective_argument"],
         )
     elif check_id == "tool-argument-enrichment-origin-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         require_application_supplied(context, "/secret_ref")
         try:
             resolve_json_pointer(context["proposal_value"], "/secret_ref")
@@ -782,6 +792,8 @@ def execute_adapter_capture_case(row, case, materialized):
             prohibited=["P1:application_enrichment_is_model_supplied_by_proximity"],
         )
     elif check_id == "tool-transport-metadata-no-proposal-ancestry-001":
+        context = argument_context(receipt)
+        invocation = context["invocation"]
         runtime = require_transport_metadata_separation(context)
         if len(runtime) != 1 or runtime[0].get("name") != "Authorization":
             raise ValueError("transport metadata scenario requires one Authorization entry")
