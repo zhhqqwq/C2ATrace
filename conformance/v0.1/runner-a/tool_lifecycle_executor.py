@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+from adapter_capture_executor import (
+    argument_context,
+    require_application_supplied,
+    require_control_not_content,
+    require_dropped_proposal_argument,
+    require_mixed,
+)
 from tool_predicates import (
     decision_with_recorded_execution,
     deny_decision_on_proposal,
@@ -25,6 +32,10 @@ TOOL_LIFECYCLE_PLANNED_TESTS = {
     "tool-argument-json-pointer-001",
     "tool-allow-no-execution-001",
     "tool-deny-later-execution-001",
+    "tool-argument-application-supplied-001",
+    "tool-argument-mixed-001",
+    "tool-argument-control-no-content-001",
+    "tool-argument-dropped-001",
 }
 
 
@@ -161,6 +172,18 @@ def execute_tool_lifecycle_case(row, case, materialized):
     if (
         check_id == "tool-deny-later-execution-001"
         and requirement_id != "TOOL-026"
+    ):
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    batch18_requirements = {
+        "tool-argument-application-supplied-001": "TOOL-014",
+        "tool-argument-mixed-001": "TOOL-015",
+        "tool-argument-control-no-content-001": "TOOL-017",
+        "tool-argument-dropped-001": "TOOL-018",
+    }
+    if (
+        check_id in batch18_requirements
+        and requirement_id != batch18_requirements[check_id]
     ):
         raise NotImplementedError(f"{requirement_id}:{check_id}")
 
@@ -346,6 +369,68 @@ def execute_tool_lifecycle_case(row, case, materialized):
                 execution["id"],
                 domain="conformance",
                 status="valid",
+            )
+        ]
+
+    elif check_id == "tool-argument-application-supplied-001":
+        context = argument_context(receipt)
+        require_application_supplied(context, "/repo")
+        invocation = context["invocation"]
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="conformance",
+                status="valid",
+            )
+        ]
+
+    elif check_id == "tool-argument-mixed-001":
+        context = argument_context(receipt)
+        require_mixed(context, "/title")
+        invocation = context["invocation"]
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="conformance",
+                status="valid",
+            )
+        ]
+
+    elif check_id == "tool-argument-control-no-content-001":
+        context = argument_context(receipt)
+        require_control_not_content(context)
+        invocation = context["invocation"]
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="conformance",
+                status="valid",
+                prohibited=["P1:control_input_contributes_argument_content"],
+            )
+        ]
+
+    elif check_id == "tool-argument-dropped-001":
+        context = argument_context(receipt)
+        require_dropped_proposal_argument(context, "/debug")
+        invocation = context["invocation"]
+        findings = [
+            finding(
+                requirement_id,
+                check_id,
+                receipt,
+                invocation["id"],
+                domain="conformance",
+                status="valid",
+                prohibited=["P1:dropped_proposal_argument_is_effective_argument"],
             )
         ]
 
