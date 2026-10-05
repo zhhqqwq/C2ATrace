@@ -103,17 +103,32 @@ def primary_receipt(case, materialized):
     return receipts[0]
 
 
-def finding(requirement_id, check_id, receipt, object_id):
-    return {
+def finding(
+    requirement_id,
+    check_id,
+    receipt,
+    object_id,
+    selector=None,
+    domain="conformance",
+    status="valid",
+    prohibited=None,
+):
+    subject_scope = {
+        "receipt_id": receipt_id(receipt),
+        "object_id": object_id,
+    }
+    if selector:
+        subject_scope.update(selector)
+    out = {
         "requirement_id": requirement_id,
         "check_id": check_id,
-        "subject_scope": {
-            "receipt_id": receipt_id(receipt),
-            "object_id": object_id,
-        },
-        "domain": "conformance",
-        "status": "valid",
+        "subject_scope": subject_scope,
+        "domain": domain,
+        "status": status,
     }
+    if prohibited:
+        out["prohibited_inferences"] = list(prohibited)
+    return out
 
 
 def argument_context(receipt):
@@ -428,14 +443,42 @@ def execute_adapter_capture_case(row, case, materialized):
 
     if check_id == "tool-argument-model-supplied-positive-001":
         require_model_supplied(context, "/title")
+        actual_finding = finding(
+            requirement_id, check_id, receipt, invocation["id"], {"path": "/title"}
+        )
     elif check_id == "tool-argument-app-supplied-positive-001":
         require_application_supplied(context, "/repo")
+        actual_finding = finding(
+            requirement_id, check_id, receipt, invocation["id"], {"path": "/repo"}
+        )
     elif check_id == "tool-argument-mixed-positive-001":
         require_mixed(context, "/mixed_note")
+        actual_finding = finding(
+            requirement_id, check_id, receipt, invocation["id"], {"path": "/mixed_note"}
+        )
     elif check_id == "tool-argument-control-not-content-001":
-        require_control_not_content(context)
+        control = require_control_not_content(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            control["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:control_input_is_argument_content_contributor"],
+        )
     elif check_id == "tool-argument-dropped-not-effective-001":
         require_dropped_proposal_argument(context, "/priority")
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            invocation["id"],
+            {"dropped_path": "/priority"},
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:dropped_proposal_argument_remains_effective_argument"],
+        )
     elif check_id == "tool-argument-enrichment-origin-001":
         require_application_supplied(context, "/secret_ref")
         try:
@@ -444,13 +487,35 @@ def execute_adapter_capture_case(row, case, materialized):
             pass
         else:
             raise ValueError("runtime enrichment already exists in ToolProposal arguments")
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            invocation["id"],
+            {"path": "/secret_ref"},
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:application_enrichment_is_model_supplied_by_proximity"],
+        )
     elif check_id == "tool-transport-metadata-no-proposal-ancestry-001":
-        require_transport_metadata_separation(context)
+        runtime = require_transport_metadata_separation(context)
+        if len(runtime) != 1 or runtime[0].get("name") != "Authorization":
+            raise ValueError("transport metadata scenario requires one Authorization entry")
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            invocation["id"],
+            {"metadata_name": "Authorization"},
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:transport_metadata_inherits_tool_proposal_ancestry"],
+        )
     else:
         raise NotImplementedError(check_id)
 
     return {
-        "findings": [finding(requirement_id, check_id, receipt, invocation["id"])],
+        "findings": [actual_finding],
         "process_outcome": "completed",
         "completeness": {},
     }
