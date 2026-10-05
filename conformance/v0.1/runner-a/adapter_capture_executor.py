@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 
 ADAPTER_CAPTURE_PLANNED_TESTS = {
+    "tool-adapter-visibility-boundary-001",
+    "tool-adapter-effective-invocation-capability-001",
+    "tool-adapter-execution-capability-001",
+    "tool-adapter-result-capability-001",
+    "tool-capture-diagnostic-reuse-001",
+    "tool-proposal-capability-optional-001",
+    "tool-execution-no-implicit-allow-001",
+    "tool-execution-start-boundary-001",
+    "tool-result-boundary-001",
+    "tool-success-no-effect-proof-001",
     "tool-argument-model-supplied-positive-001",
     "tool-argument-app-supplied-positive-001",
     "tool-argument-mixed-positive-001",
@@ -445,10 +455,177 @@ def require_transport_metadata_separation(context):
     return runtime
 
 
+def by_kind(receipt, kind):
+    return [
+        record
+        for record in records(receipt)
+        if isinstance(record, dict) and record.get("kind") == kind
+    ]
+
+
+def tool_adapter_baseline_context(receipt):
+    index = record_index(receipt)
+
+    capabilities = by_kind(receipt, "ToolAdapterCapability")
+    invocations = by_kind(receipt, "ToolInvocation")
+    executions = by_kind(receipt, "ToolExecution")
+    results = by_kind(receipt, "ToolResult")
+    diagnostics = by_kind(receipt, "CaptureDiagnostic")
+
+    if len(capabilities) != 1:
+        raise ValueError(
+            f"tool-adapter baseline requires one ToolAdapterCapability, found {len(capabilities)}"
+        )
+    if len(invocations) != 1:
+        raise ValueError(
+            f"tool-adapter baseline requires one ToolInvocation, found {len(invocations)}"
+        )
+    if len(executions) != 1:
+        raise ValueError(
+            f"tool-adapter baseline requires one ToolExecution, found {len(executions)}"
+        )
+    if len(results) != 1:
+        raise ValueError(
+            f"tool-adapter baseline requires one ToolResult, found {len(results)}"
+        )
+    if len(diagnostics) != 3:
+        raise ValueError(
+            f"tool-adapter baseline requires three CaptureDiagnostics, found {len(diagnostics)}"
+        )
+
+    capability = capabilities[0]
+    invocation = invocations[0]
+    execution = executions[0]
+    result = results[0]
+
+    resolved_invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+    if resolved_invocation.get("id") != invocation.get("id"):
+        raise ValueError("ToolExecution does not reference the baseline ToolInvocation")
+
+    resolved_execution = resolve_local(index, result.get("execution"), "ToolExecution")
+    if resolved_execution.get("id") != execution.get("id"):
+        raise ValueError("ToolResult does not reference the baseline ToolExecution")
+
+    run_ids = {
+        capability.get("run_id"),
+        invocation.get("run_id"),
+        execution.get("run_id"),
+        result.get("run_id"),
+        *[diagnostic.get("run_id") for diagnostic in diagnostics],
+    }
+    if None in run_ids or len(run_ids) != 1:
+        raise ValueError("tool-adapter baseline records changed run occurrence")
+
+    expected_slots = {
+        "tool_invocation.effective": ("ToolInvocation", invocation.get("id")),
+        "tool_execution.lifecycle": ("ToolExecution", execution.get("id")),
+        "tool_result.application_visible": ("ToolResult", result.get("id")),
+    }
+    resolved_diagnostics = {}
+
+    for diagnostic in diagnostics:
+        slot = diagnostic.get("slot")
+        if slot not in expected_slots:
+            raise ValueError(f"unexpected CaptureDiagnostic slot: {slot!r}")
+        if slot in resolved_diagnostics:
+            raise ValueError(f"duplicate CaptureDiagnostic slot: {slot}")
+        if diagnostic.get("status") != "observed":
+            raise ValueError(f"CaptureDiagnostic {slot} is not observed")
+
+        declaration = resolve_local(
+            index, diagnostic.get("adapter_declaration"), "ToolAdapterCapability"
+        )
+        if declaration.get("id") != capability.get("id"):
+            raise ValueError("CaptureDiagnostic references a different adapter declaration")
+
+        subject = diagnostic.get("subject") or {}
+        expected_kind, expected_id = expected_slots[slot]
+        subject_record = resolve_local(index, subject.get("ref"), expected_kind)
+        if subject_record.get("id") != expected_id:
+            raise ValueError(f"CaptureDiagnostic {slot} references wrong subject")
+
+        expected_basis = {
+            "ToolInvocation": "tool_invocation",
+            "ToolExecution": "tool_execution",
+            "ToolResult": "tool_result",
+        }[expected_kind]
+        if subject.get("representation_basis") != expected_basis:
+            raise ValueError(f"CaptureDiagnostic {slot} has wrong representation_basis")
+
+        resolved_diagnostics[slot] = diagnostic
+
+    if set(resolved_diagnostics) != set(expected_slots):
+        raise ValueError("tool-adapter baseline diagnostic slots are incomplete")
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "capability": capability,
+        "invocation": invocation,
+        "execution": execution,
+        "result": result,
+        "diagnostics": resolved_diagnostics,
+    }
+
+
+def require_baseline_capability_boundaries(context):
+    capability = context["capability"]
+    if capability.get("invocation_boundary") != "effective pre-execution ToolInvocation":
+        raise ValueError("adapter invocation_boundary does not match baseline contract")
+    if (
+        capability.get("execution_boundary")
+        != "application-visible execution start through terminal runtime lifecycle"
+    ):
+        raise ValueError("adapter execution_boundary does not match baseline contract")
+    if capability.get("result_boundary") != "application-visible ToolResult":
+        raise ValueError("adapter result_boundary does not match baseline contract")
+    return capability
+
+
+def require_no_proposal_ancestry(context):
+    capability = context["capability"]
+    if capability.get("proposal_association") is not False:
+        raise ValueError("baseline adapter unexpectedly declares proposal association")
+    if by_kind(context["receipt"], "ToolProposal"):
+        raise ValueError("baseline receipt invents ToolProposal occurrence")
+    invocation = context["invocation"]
+    if invocation.get("proposal") is not None:
+        raise ValueError("baseline ToolInvocation invents proposal linkage")
+    return invocation
+
+
+def require_no_implicit_allow(context):
+    if any(
+        decision.get("decision") == "allow"
+        for decision in by_kind(context["receipt"], "ToolDecision")
+    ):
+        raise ValueError("baseline receipt contains explicit allow decision")
+    return context["execution"]
+
+
 def execute_adapter_capture_case(row, case, materialized):
     check_id = row["planned_test_id"]
     if check_id not in ADAPTER_CAPTURE_PLANNED_TESTS:
         raise NotImplementedError(check_id)
+
+    batch19_requirements = {
+        "tool-adapter-visibility-boundary-001": "TAD-001",
+        "tool-adapter-effective-invocation-capability-001": "TAD-004",
+        "tool-adapter-execution-capability-001": "TAD-005",
+        "tool-adapter-result-capability-001": "TAD-006",
+        "tool-capture-diagnostic-reuse-001": "TAD-010",
+        "tool-proposal-capability-optional-001": "TAD-014",
+        "tool-execution-no-implicit-allow-001": "TAD-020",
+        "tool-execution-start-boundary-001": "TAD-039",
+        "tool-result-boundary-001": "TAD-057",
+        "tool-success-no-effect-proof-001": "TAD-075",
+    }
+    requirement_id = row["requirement_id"]
+    if (
+        check_id in batch19_requirements
+        and requirement_id != batch19_requirements[check_id]
+    ):
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
 
     allowed_requirements = {
         "TAD-030",
@@ -459,15 +636,96 @@ def execute_adapter_capture_case(row, case, materialized):
         "TAD-037",
         "TAD-038",
     }
-    requirement_id = row["requirement_id"]
-    if requirement_id not in allowed_requirements:
+    if check_id not in batch19_requirements and requirement_id not in allowed_requirements:
         raise NotImplementedError(f"{requirement_id}:{check_id}")
 
     receipt = primary_receipt(case, materialized)
     context = argument_context(receipt)
     invocation = context["invocation"]
 
-    if check_id == "tool-argument-model-supplied-positive-001":
+    if check_id in batch19_requirements:
+        context = tool_adapter_baseline_context(receipt)
+        capability = require_baseline_capability_boundaries(context)
+        invocation = context["invocation"]
+        execution = context["execution"]
+        result = context["result"]
+
+        if check_id == "tool-adapter-visibility-boundary-001":
+            actual_finding = finding(
+                requirement_id,
+                check_id,
+                receipt,
+                capability["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:tool_adapter_visible_evidence_proves_hidden_remote_state"],
+            )
+        elif check_id == "tool-adapter-effective-invocation-capability-001":
+            context["diagnostics"]["tool_invocation.effective"]
+            actual_finding = finding(
+                requirement_id, check_id, receipt, invocation["id"]
+            )
+        elif check_id == "tool-adapter-execution-capability-001":
+            context["diagnostics"]["tool_execution.lifecycle"]
+            actual_finding = finding(
+                requirement_id, check_id, receipt, execution["id"]
+            )
+        elif check_id == "tool-adapter-result-capability-001":
+            context["diagnostics"]["tool_result.application_visible"]
+            actual_finding = finding(
+                requirement_id, check_id, receipt, result["id"]
+            )
+        elif check_id == "tool-capture-diagnostic-reuse-001":
+            diagnostic = context["diagnostics"]["tool_result.application_visible"]
+            actual_finding = finding(
+                requirement_id, check_id, receipt, diagnostic["id"]
+            )
+        elif check_id == "tool-proposal-capability-optional-001":
+            require_no_proposal_ancestry(context)
+            actual_finding = finding(
+                requirement_id, check_id, receipt, invocation["id"]
+            )
+        elif check_id == "tool-execution-no-implicit-allow-001":
+            require_no_implicit_allow(context)
+            actual_finding = finding(
+                requirement_id,
+                check_id,
+                receipt,
+                execution["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:tool_execution_implies_allow_decision"],
+            )
+        elif check_id == "tool-execution-start-boundary-001":
+            context["diagnostics"]["tool_execution.lifecycle"]
+            if execution.get("lifecycle_state") != "terminal":
+                raise ValueError("baseline ToolExecution does not preserve terminal lifecycle")
+            actual_finding = finding(
+                requirement_id, check_id, receipt, execution["id"]
+            )
+        elif check_id == "tool-result-boundary-001":
+            context["diagnostics"]["tool_result.application_visible"]
+            actual_finding = finding(
+                requirement_id, check_id, receipt, result["id"]
+            )
+        elif check_id == "tool-success-no-effect-proof-001":
+            if result.get("reported_status") != "success":
+                raise ValueError("baseline ToolResult is not reported success")
+            if by_kind(receipt, "EffectObservation"):
+                raise ValueError("baseline receipt contains separate EffectObservation evidence")
+            actual_finding = finding(
+                requirement_id,
+                check_id,
+                receipt,
+                result["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:tool_result_success_proves_external_effect_truth"],
+            )
+        else:
+            raise NotImplementedError(check_id)
+
+    elif check_id == "tool-argument-model-supplied-positive-001":
         require_model_supplied(context, "/title")
         actual_finding = finding(
             requirement_id, check_id, receipt, invocation["id"], {"path": "/title"}
