@@ -4,6 +4,7 @@ import hashlib
 
 import rfc8785
 
+from adapter_capture_executor import ADAPTER_CAPTURE_PLANNED_TESTS, execute_adapter_capture_case
 from identity_executor import IDENTITY_PLANNED_TESTS, execute_identity_case
 from model_output_executor import MODEL_OUTPUT_PLANNED_TESTS, execute_model_output_case
 from provider_attempt_executor import (
@@ -80,6 +81,7 @@ SUPPORTED_PLANNED_TESTS.update(IDENTITY_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(MODEL_OUTPUT_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(PROVIDER_ATTEMPT_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(TOOL_LIFECYCLE_PLANNED_TESTS)
+SUPPORTED_PLANNED_TESTS.update(ADAPTER_CAPTURE_PLANNED_TESTS)
 
 
 def b64url(data):
@@ -984,6 +986,8 @@ def execute_semantic_case(row, case, materialized):
         return execute_model_output_case(row, case, materialized)
     if planned in TOOL_LIFECYCLE_PLANNED_TESTS:
         return execute_tool_lifecycle_case(row, case, materialized)
+    if planned in ADAPTER_CAPTURE_PLANNED_TESTS:
+        return execute_adapter_capture_case(row, case, materialized)
 
     requirement_id = row["requirement_id"]
     check_id = planned
