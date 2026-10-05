@@ -1,0 +1,309 @@
+{
+  "batch_id": "runner-a-wave-03-batch-17-tool-adapter-argument-provenance-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "17",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.adapter.capture",
+  "requirement_ids": [
+    "TAD-030",
+    "TAD-031",
+    "TAD-032",
+    "TAD-034",
+    "TAD-036",
+    "TAD-037",
+    "TAD-038"
+  ],
+  "expected_case_count": 7,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 176,
+      "registered_semantic_planned_test_ids": 127,
+      "registered_id_matched_coverage_rows": 110,
+      "independently_evidenced_semantic_requirements": 108,
+      "remaining_semantic_executable_rows": 663,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        }
+      ]
+    },
+    "leverage_method": {
+      "subtraction_basis": "requirement-level independent support",
+      "rule": "For each candidate primitive, treat that primitive as the one remaining step while preserving only currently implemented dependency capabilities; count rows whose resulting unmet primitive set is exactly that candidate.",
+      "partial_primitive_rule": "Primitive-name presence alone does not satisfy a dependency; candidate clusters are rechecked against actual implemented predicates and scenario evidence."
+    },
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 104,
+        "dependency_closed_primary_core": 102
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 70,
+        "dependency_closed_primary_core": 65
+      },
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 40,
+        "dependency_closed_primary_core": 16
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 35,
+        "dependency_closed_primary_core": 13
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 34,
+        "dependency_closed_primary_core": 32
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 29,
+        "dependency_closed_primary_core": 28
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 25,
+        "dependency_closed_primary_core": 24
+      },
+      {
+        "primitive": "prim.identity.occurrence",
+        "count": 24,
+        "dependency_closed_primary_core": 24
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 20,
+        "dependency_closed_primary_core": 19
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 16,
+        "dependency_closed_primary_core": 13
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 11,
+        "dependency_closed_primary_core": 4
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9,
+        "dependency_closed_primary_core": 9
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 9,
+        "dependency_closed_primary_core": 8
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 4,
+        "dependency_closed_primary_core": 2
+      },
+      {
+        "primitive": "prim.derivation.mapping",
+        "count": 3,
+        "dependency_closed_primary_core": 0
+      },
+      {
+        "primitive": "prim.request.binding",
+        "count": 2,
+        "dependency_closed_primary_core": 0
+      },
+      {
+        "primitive": "prim.ref.local",
+        "count": 2,
+        "dependency_closed_primary_core": 0
+      }
+    ],
+    "existing_surface_zero_unmet": {
+      "total_rows": 57,
+      "by_primary": {
+        "prim.identity.occurrence": 24,
+        "prim.tool.lifecycle": 16,
+        "prim.model.output": 13,
+        "prim.provider.attempts": 4
+      },
+      "tight_clusters": [
+        {
+          "receipt": "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
+          "requirement_ids": [
+            "TAD-042",
+            "TOOL-030",
+            "TOOL-031"
+          ],
+          "cases": 3,
+          "note": "Self-closes ToolExecution lifecycle cardinality plus occurrence identity on one receipt."
+        },
+        {
+          "receipt": "conformance/v0.1/primitives/receipts/identity-tool-invocation-mutation.json",
+          "requirement_ids": [
+            "TAD-025",
+            "TOOL-005",
+            "TOOL-010"
+          ],
+          "cases": 3,
+          "note": "Dense identity cluster, but all rows depend on tool-lifecycle semantics not closed by a lifecycle-primary row in the same cluster."
+        },
+        {
+          "receipt": "conformance/v0.1/primitives/receipts/graph-proposal-only.json",
+          "requirement_ids": [
+            "OUT-044"
+          ],
+          "cases": 1,
+          "note": "Highly reusable adjacency from Batch 12 but lower unlocked-case count."
+        }
+      ]
+    },
+    "adapter_cluster_comparison": {
+      "tad_argument_provenance": {
+        "materialization_wave": "semantic-primitive-wave-06-b2-tad-argument-provenance",
+        "shared_receipt": "conformance/v0.1/primitives/receipts/tool-argument-provenance.json",
+        "materialized_rows": 8,
+        "dependency_closed_rows": 7,
+        "selected_requirement_ids": [
+          "TAD-030",
+          "TAD-031",
+          "TAD-032",
+          "TAD-034",
+          "TAD-036",
+          "TAD-037",
+          "TAD-038"
+        ],
+        "excluded_requirement": {
+          "requirement_id": "TAD-033",
+          "reason": "Still requires prim.claim.strength in addition to prim.adapter.capture and prim.tool.lifecycle."
+        }
+      },
+      "tad_effect_claims": {
+        "shared_receipt": "fixtures/v0.1/valid/tool-effect.json",
+        "materialized_rows": 5,
+        "dependency_closed_rows": 2,
+        "note": "TAD-081/TAD-082/TAD-083 remain blocked on prim.claim.strength."
+      },
+      "pad_capture_failure": {
+        "materialized_rows": 5,
+        "distinct_shared_scenarios": 2,
+        "note": "Lower shared-receipt density than the selected TAD argument-provenance core."
+      },
+      "pad_bypass_claim_boundary": {
+        "materialized_rows": 7,
+        "distinct_shared_scenarios": 2,
+        "note": "Lower shared-receipt density and broader assertion/capture surface."
+      }
+    },
+    "retained_adjacency": {
+      "OUT_044": {
+        "requirement_id": "OUT-044",
+        "status": "unselected",
+        "reason": "Dependency-satisfied and highly reusable, but one case versus the selected seven-case adapter cluster."
+      },
+      "TAD_030": {
+        "requirement_id": "TAD-030",
+        "status": "selected",
+        "reason": "Batch 13 already established proposal-side argument Derivation patterns; this row anchors the adapter-capture argument-provenance cluster."
+      },
+      "TAINT_031": {
+        "requirement_id": "TAINT-031",
+        "status": "unselected",
+        "reason": "Dependencies are satisfied, but opening prim.taint.flow yields lower corrected leverage and a new propagation surface."
+      }
+    },
+    "selected_cluster": {
+      "primitive": "prim.adapter.capture",
+      "requirement_ids": [
+        "TAD-030",
+        "TAD-031",
+        "TAD-032",
+        "TAD-034",
+        "TAD-036",
+        "TAD-037",
+        "TAD-038"
+      ],
+      "cases": 7,
+      "distinct_receipts": 1,
+      "shared_receipt": "conformance/v0.1/primitives/receipts/tool-argument-provenance.json",
+      "reusable_foundations": [
+        "Existing tool argument predicates already implement local-reference resolution, ToolProposal/ToolInvocation ownership checks, JSON Pointer resolution, and proposal-side Derivation walking.",
+        "Existing derivation execution already distinguishes contributor use, control-only inputs, exact/partial mapping, and positive ancestry.",
+        "The selected receipt contains one ToolProposal, application-side ContextFragments, one control ContextFragment, one ToolPreparation Transform, one ToolInvocation, and path-scoped Derivations for model, application, mixed, and runtime-enrichment argument provenance."
+      ],
+      "incremental_surface": [
+        "Adapter-level classification of model_supplied, application_supplied, and mixed from positive ancestry evidence.",
+        "Adapter-level exclusion of control-only input from argument-content ancestry without positive Derivation evidence.",
+        "Adapter-level preservation of dropped proposal arguments as absent from effective ToolInvocation content.",
+        "Adapter-level separation of application/runtime enrichment and transport metadata from ToolProposal ancestry."
+      ]
+    },
+    "cross_primitive_comparison": {
+      "verifier_report": {
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 70,
+        "dense_cluster_cases": 7,
+        "dense_cluster_receipts": 1,
+        "reason_not_selected": "Lower corrected leverage and opens the typed report/completeness/conflict execution surface."
+      },
+      "tool_lifecycle": {
+        "primitive": "prim.tool.lifecycle",
+        "corrected_leverage": 40,
+        "best_tight_cluster_cases": 3,
+        "best_tight_cluster_receipts": 1,
+        "reason_not_selected": "Lower corrected leverage and smaller tight cluster."
+      },
+      "claim_strength": {
+        "primitive": "prim.claim.strength",
+        "corrected_leverage": 35,
+        "reason_not_selected": "Lower corrected leverage and opens evidence-composition/wording semantics."
+      },
+      "privacy_receipt_integrity": {
+        "primitives": [
+          "prim.privacy.commitment",
+          "prim.receipt.multi",
+          "prim.integrity.composition"
+        ],
+        "corrected_leverage": [
+          34,
+          29,
+          20
+        ],
+        "reason_not_selected": "Lower corrected leverage."
+      },
+      "taint_flow": {
+        "primitive": "prim.taint.flow",
+        "corrected_leverage": 25,
+        "retained_requirement": "TAINT-031",
+        "reason_not_selected": "Lower corrected leverage and opens taint propagation semantics."
+      },
+      "model_provider_source_trust_ordering": {
+        "primitives": [
+          "prim.model.output",
+          "prim.provider.attempts",
+          "prim.source.observation",
+          "prim.trust.assertion",
+          "prim.ordering.time"
+        ],
+        "corrected_leverage": [
+          16,
+          11,
+          9,
+          9,
+          4
+        ],
+        "reason_not_selected": "Lower corrected leverage."
+      }
+    },
+    "selection_reason": "After requirement-level subtraction, prim.adapter.capture has the highest corrected single-step leverage at 104. Its TAD argument-provenance materialization cluster contains seven dependency-closed rows on one receipt. The cluster reuses established ToolProposal→ToolInvocation Derivation, local-reference, JSON Pointer, and argument-provenance machinery while confining new semantics to adapter capture/classification. TAD-033 is excluded because prim.claim.strength remains unmet."
+  },
+  "intent": "Select only TAD-030, TAD-031, TAD-032, TAD-034, TAD-036, TAD-037, and TAD-038 for Batch 17. This selection commit does not register new planned tests, does not modify Runner A executors, and does not increase the 176-case / 108-requirement independent evidence baseline. TAD-021 and TAD-084 remain fail-closed despite shared planned_test_ids. Runner B and Product Verifier/SDK remain not started."
+}
