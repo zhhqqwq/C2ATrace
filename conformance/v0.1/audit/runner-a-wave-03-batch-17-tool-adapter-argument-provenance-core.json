@@ -1,0 +1,194 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "17-tool-adapter-argument-provenance-core",
+  "status": "complete",
+  "selection_commit": "743340dd40e56caeb9221697affa29d5b565965c",
+  "implementation_commits": [
+    "0c0ea08cf566babc657c8a7bba56df5612deaecb",
+    "413f27e1cff549e71329ca4124f5924c27bbf9c7",
+    "630cd6b8f73780857fcb4326104fbfea8f492086",
+    "a4285eaadedf7d84c0289571dc9278516bf25c18"
+  ],
+  "implementation_hardening_commit": "0755a9a8e6a2a4e60eaf79ce222629d1e03ea5e4",
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.adapter.capture",
+    "requirement_ids": [
+      "TAD-030",
+      "TAD-031",
+      "TAD-032",
+      "TAD-034",
+      "TAD-036",
+      "TAD-037",
+      "TAD-038"
+    ],
+    "expected_cases": 7,
+    "selected_cases": 7,
+    "shared_receipt": "conformance/v0.1/primitives/receipts/tool-argument-provenance.json"
+  },
+  "actual_capabilities": [
+    "Runner A independently resolves one same-run ToolProposal, ToolPreparation Transform, and effective ToolInvocation from the materialized receipt.",
+    "Runner A independently validates path-scoped model_supplied ancestry from ToolProposal to ToolInvocation.",
+    "Runner A independently validates path-scoped application_supplied ancestry from a non-proposal ContextFragment to ToolInvocation.",
+    "Runner A independently validates mixed argument provenance only when ToolProposal and application-side contributor classes are both present.",
+    "Runner A independently confirms the control-only preparation input is not a positive content contributor to ToolInvocation arguments.",
+    "Runner A independently confirms a proposal-only argument dropped during preparation is absent from effective ToolInvocation content and positive effective Derivation.",
+    "Runner A independently validates runtime/application enrichment from application-side ancestry rather than ToolProposal proximity.",
+    "Runner A independently keeps runtime_transport metadata outside ToolProposal argument ancestry."
+  ],
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/adapter_capture_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "planned_tests_added": [
+      "tool-argument-model-supplied-positive-001",
+      "tool-argument-app-supplied-positive-001",
+      "tool-argument-mixed-positive-001",
+      "tool-argument-control-not-content-001",
+      "tool-argument-dropped-not-effective-001",
+      "tool-argument-enrichment-origin-001",
+      "tool-transport-metadata-no-proposal-ancestry-001"
+    ],
+    "registered_semantic_planned_test_ids_after_batch": 134,
+    "registered_id_matched_coverage_rows_after_batch": 117,
+    "independently_evidenced_semantic_requirements_after_batch": 115,
+    "remaining_semantic_requirements_after_batch": 656,
+    "requirement_level_guards": {
+      "selected_requirements": [
+        "TAD-030",
+        "TAD-031",
+        "TAD-032",
+        "TAD-034",
+        "TAD-036",
+        "TAD-037",
+        "TAD-038"
+      ],
+      "excluded_same_cluster_requirement": "TAD-033",
+      "excluded_reason": "TAD-033 still depends on prim.claim.strength and its planned_test_id is not registered by the Batch 17 executor.",
+      "shared_planned_test_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        }
+      ]
+    }
+  },
+  "first_execution": {
+    "head": "a4285eaadedf7d84c0289571dc9278516bf25c18",
+    "runner_a_workflow_run_id": 37258486741,
+    "p5_workflow_run_id": 37258486647,
+    "batch17": {
+      "selected": 7,
+      "pass": 0,
+      "fail": 7,
+      "selection_failures": 0,
+      "failure_class": "golden finding selector/domain/status mismatch",
+      "semantic_execution_errors": 0
+    },
+    "p5": "907/907 pass",
+    "artifact_id": 11323821564,
+    "artifact_sha256": "5c96e83ba3503cb1fa9af9a459b8335789d4bf03d2eb49ef99bed81b206f8139"
+  },
+  "hardening": {
+    "change": "Align actual finding subject selectors and claim-domain/status/prohibited-inference fields with the golden matcher after independent semantic predicates had completed successfully.",
+    "predicates_unchanged": true,
+    "fixtures_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true
+  },
+  "execution": {
+    "head": "0755a9a8e6a2a4e60eaf79ce222629d1e03ea5e4",
+    "semantic_verifier": {
+      "total": 7,
+      "pass": 7,
+      "fail": 0
+    },
+    "total": {
+      "cases": 7,
+      "pass": 7,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 7,
+    "process_outcomes": {
+      "completed": 7
+    },
+    "finding_domains": {
+      "conformance": 3,
+      "claim": 4
+    },
+    "finding_statuses": {
+      "valid": 3,
+      "asserted": 4
+    }
+  },
+  "ci": {
+    "runner_a_workflow_run_id": 37258593651,
+    "p5_workflow_run_id": 37258593633,
+    "artifact_id": 11323757026,
+    "artifact_name": "runner-a-semantic-tool-adapter-argument-provenance",
+    "artifact_sha256": "beabb801f9ffc819821b091eb443c163942093d34668b5285c1b43bca42e759f",
+    "p5_artifact_id": 11323891593,
+    "p5_artifact_sha256": "d9c7d1d8fdc290c1906448509a876cd2bbb5e6e050af1a27640d433951dae030"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 183,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 115
+  },
+  "regression": {
+    "direct_schema": "pass",
+    "deterministic_vector": "pass",
+    "semantic_foundation": "pass",
+    "semantic_derivation": "pass",
+    "semantic_request_binding": "pass",
+    "semantic_identity_core": "pass",
+    "semantic_provider_occurrence": "pass",
+    "semantic_model_output_core": "pass",
+    "semantic_provider_retry_core": "pass",
+    "semantic_provider_hedge_core": "pass",
+    "semantic_model_output_bounded_claims": "pass",
+    "semantic_tool_result_effect_bounded": "pass",
+    "semantic_tool_deny_no_execution": "pass",
+    "semantic_tool_proposal_boundary": "pass",
+    "semantic_tool_model_argument_provenance": "pass",
+    "semantic_tool_argument_json_pointer": "pass",
+    "semantic_tool_allow_no_execution": "pass",
+    "semantic_tool_deny_later_execution": "pass",
+    "semantic_tool_adapter_argument_provenance": "7/7 pass",
+    "runner_a_jobs": "19/19 success",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures"
+  },
+  "accounting_note": {
+    "rule": "Registered planned_test_id membership is routing metadata, not requirement-level independent conformance evidence.",
+    "registered_ids": 134,
+    "id_matched_rows": 117,
+    "independently_evidenced_requirements": 115,
+    "excluded_shared_id_rows": [
+      "TAD-021",
+      "TAD-084"
+    ]
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "shared_receipt_unchanged": true,
+    "expected_results_not_used_to_derive_provenance_facts": true,
+    "tad_033_not_implemented": true,
+    "tad_021_not_implemented": true,
+    "tad_084_not_implemented": true,
+    "out_044_not_implemented": true,
+    "taint_031_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
