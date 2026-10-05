@@ -16,6 +16,10 @@ from tool_lifecycle_executor import (
     TOOL_LIFECYCLE_PLANNED_TESTS,
     execute_tool_lifecycle_case,
 )
+from verifier_report_executor import (
+    VERIFIER_REPORT_PLANNED_TESTS,
+    execute_verifier_report_case,
+)
 from tool_predicates import (
     deny_decision_on_proposal,
     proposal_output_boundary,
@@ -82,6 +86,7 @@ SUPPORTED_PLANNED_TESTS.update(MODEL_OUTPUT_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(PROVIDER_ATTEMPT_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(TOOL_LIFECYCLE_PLANNED_TESTS)
 SUPPORTED_PLANNED_TESTS.update(ADAPTER_CAPTURE_PLANNED_TESTS)
+SUPPORTED_PLANNED_TESTS.update(VERIFIER_REPORT_PLANNED_TESTS)
 
 
 def b64url(data):
@@ -988,6 +993,8 @@ def execute_semantic_case(row, case, materialized):
         return execute_tool_lifecycle_case(row, case, materialized)
     if planned in ADAPTER_CAPTURE_PLANNED_TESTS:
         return execute_adapter_capture_case(row, case, materialized)
+    if planned in VERIFIER_REPORT_PLANNED_TESTS:
+        return execute_verifier_report_case(row, case, materialized)
 
     requirement_id = row["requirement_id"]
     check_id = planned

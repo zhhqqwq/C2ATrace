@@ -604,3 +604,31 @@ jobs:
       - name: Enforce runner A tool adapter baseline-boundary gate
         if: steps.runner.outputs.exit_code != '0'
         run: exit 1
+
+  semantic-verifier-typed-findings-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install runner A dependencies
+        run: python -m pip install --disable-pip-version-check -r conformance/v0.1/runner-a/requirements.txt
+      - name: Run independent verifier typed-findings gate
+        id: runner
+        run: |
+          set +e
+          python conformance/v0.1/runner-a/runner_a.py \
+            --batch-manifest conformance/v0.1/runner-a/batches/wave-03-batch-20-verifier-typed-findings-core.json \
+            --require-complete \
+            --output /tmp/runner-a-semantic-verifier-typed-findings-core.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload runner A verifier typed-findings evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-a-semantic-verifier-typed-findings-core
+          path: /tmp/runner-a-semantic-verifier-typed-findings-core.json
+          if-no-files-found: error
+      - name: Enforce runner A verifier typed-findings gate
+        if: steps.runner.outputs.exit_code != '0'
+        run: exit 1
