@@ -95,6 +95,19 @@ def argument_representation_basis(kind, basis):
     return basis in allowed.get(kind, {"json-data-model"})
 
 
+def structured_json_pointer(region):
+    if not isinstance(region, dict) or region.get("region_kind") != "structured":
+        return None
+    path = region.get("path")
+    if not (
+        isinstance(path, dict)
+        and path.get("scheme") == "json_pointer"
+        and isinstance(path.get("value"), str)
+    ):
+        return None
+    return path["value"]
+
+
 def primary_receipt(case, materialized):
     ids = (case.get("harness") or {}).get("primary_documents", [])
     receipts = [
@@ -277,8 +290,8 @@ def path_derivation(context, pointer, classification):
             artifact.get("kind"), scope.get("representation_basis")
         ):
             raise ValueError("contributor basis is not valid for argument provenance")
-        if not structured_path(scope.get("region"), pointer):
-            raise ValueError("contributor region does not match argument path")
+        if structured_json_pointer(scope.get("region")) is None:
+            raise ValueError("contributor region is not a structured JSON Pointer")
         if not structured_path(contributor.get("output_region"), pointer):
             raise ValueError("contributor output_region does not match argument path")
         if artifact.get("id") not in context["input_records"]:
