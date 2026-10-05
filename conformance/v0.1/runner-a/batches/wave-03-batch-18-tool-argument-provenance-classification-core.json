@@ -1,0 +1,300 @@
+{
+  "batch_id": "runner-a-wave-03-batch-18-tool-argument-provenance-classification-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "18",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.tool.lifecycle",
+  "requirement_ids": [
+    "TOOL-014",
+    "TOOL-015",
+    "TOOL-017",
+    "TOOL-018"
+  ],
+  "expected_case_count": 4,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 183,
+      "registered_semantic_planned_test_ids": 134,
+      "registered_id_matched_coverage_rows": 117,
+      "independently_evidenced_semantic_requirements": 115,
+      "remaining_semantic_executable_rows": 656,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        }
+      ]
+    },
+    "ranking_method": {
+      "stage_1": "Recompute corrected single-step primitive leverage after exact 115-requirement subtraction.",
+      "stage_2": "For the highest-leverage primitive, reject rows whose coarse primitive dependencies are not actually satisfied by implemented predicate/scenario capability.",
+      "stage_3": "Regroup the actually closable residual rows into tight semantic clusters and rank by unlocked case count, shared receipt density, reusable predicate density, then new semantic surface size.",
+      "routing_rule": "planned_test_id membership is routing metadata and is not requirement-level support."
+    },
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 100
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 97
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 94
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 52
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 44
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 34
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 31
+      },
+      {
+        "primitive": "prim.identity.occurrence",
+        "count": 26
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 26
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 21
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 18
+      },
+      {
+        "primitive": "prim.request.binding",
+        "count": 12
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 11
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 9
+      },
+      {
+        "primitive": "prim.derivation.mapping",
+        "count": 6
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 4
+      },
+      {
+        "primitive": "prim.ref.local",
+        "count": 2
+      }
+    ],
+    "broad_zero_unmet_state": {
+      "total_rows": 154,
+      "by_primary": {
+        "prim.adapter.capture": 95,
+        "prim.identity.occurrence": 26,
+        "prim.tool.lifecycle": 16,
+        "prim.model.output": 13,
+        "prim.provider.attempts": 4
+      },
+      "warning": "The 95 adapter-primary rows are not treated as fully implemented merely because Batch 17 added one adapter-capture sub-surface; each candidate is rechecked against actual predicates and scenario evidence."
+    },
+    "batch17_adjacency_recheck": {
+      "newly_reusable_tool_rows": [
+        {
+          "requirement_id": "TOOL-014",
+          "planned_test_id": "tool-argument-application-supplied-001",
+          "reason": "Batch 17 implemented positive non-proposal application ancestry classification and path-scoped Derivation checks."
+        },
+        {
+          "requirement_id": "TOOL-015",
+          "planned_test_id": "tool-argument-mixed-001",
+          "reason": "Batch 17 implemented mixed classification requiring ToolProposal plus application-side contributor classes."
+        },
+        {
+          "requirement_id": "TOOL-017",
+          "planned_test_id": "tool-argument-control-no-content-001",
+          "reason": "Batch 17 implemented control-only input exclusion from positive argument-content ancestry."
+        },
+        {
+          "requirement_id": "TOOL-018",
+          "planned_test_id": "tool-argument-dropped-001",
+          "reason": "Batch 17 implemented effective-argument absence and no-positive-Derivation checks for a dropped proposal argument."
+        }
+      ],
+      "retained_unselected": [
+        {
+          "requirement_id": "TAD-033",
+          "reason": "Still requires prim.claim.strength; Batch 17 deliberately left tool-argument-provenance-unknown-001 unregistered."
+        },
+        {
+          "requirement_id": "OUT-044",
+          "reason": "Dependency-satisfied and reusable but remains a one-case model-output adjacency."
+        },
+        {
+          "requirement_id": "TAINT-031",
+          "reason": "Dependency-satisfied but opens prim.taint.flow propagation semantics."
+        }
+      ]
+    },
+    "actual_capability_recheck": {
+      "rejected_false_one_step_cluster": {
+        "receipt": "conformance/v0.1/primitives/receipts/tool-orchestration-relations.json",
+        "apparent_rows": [
+          "TAD-047",
+          "TAD-048",
+          "TAD-049",
+          "TAD-051",
+          "TAD-052",
+          "TAD-055"
+        ],
+        "reason": "These rows are adapter-primary orchestration semantics. Batch 17 implemented adapter argument provenance, not retry/replay/duplicate/idempotency capture semantics, so they are not actually one-step tool-lifecycle closures."
+      },
+      "actual_tight_clusters": [
+        {
+          "name": "tool_argument_provenance_classification",
+          "requirement_ids": [
+            "TOOL-014",
+            "TOOL-015",
+            "TOOL-017",
+            "TOOL-018"
+          ],
+          "cases": 4,
+          "distinct_receipts": 4,
+          "receipts": [
+            "conformance/v0.1/primitives/receipts/tool-argument-application-positive.json",
+            "conformance/v0.1/primitives/receipts/tool-argument-mixed-positive.json",
+            "conformance/v0.1/primitives/receipts/tool-argument-control-only.json",
+            "conformance/v0.1/primitives/receipts/tool-argument-dropped.json"
+          ],
+          "reusable_foundations": [
+            "Batch 17 argument-context resolution over ToolProposal, ToolPreparation Transform, and effective ToolInvocation.",
+            "Batch 17 path-scoped positive Derivation ancestry classification.",
+            "Batch 17 application_supplied and mixed contributor-domain predicates.",
+            "Batch 17 control-only input exclusion and dropped-effective-argument predicates.",
+            "Existing Tool-side local-reference, JSON Pointer, and proposal/invocation ownership machinery."
+          ],
+          "incremental_surface": [
+            "Normalize the equivalent TOOL-specific representation_basis labels used by the four specialized receipts.",
+            "Emit TOOL requirement-level findings without introducing a new provenance category or object family."
+          ]
+        },
+        {
+          "name": "multiple_execution_identity",
+          "requirement_ids": [
+            "TOOL-030",
+            "TOOL-031",
+            "TAD-042"
+          ],
+          "cases": 3,
+          "distinct_receipts": 1,
+          "receipt": "conformance/v0.1/primitives/receipts/tool-multiple-executions.json",
+          "incremental_surface": [
+            "Multiple ToolExecution cardinality for one ToolInvocation.",
+            "Distinct execution occurrence identity across same-invocation executions."
+          ]
+        },
+        {
+          "name": "invocation_mutation_identity",
+          "requirement_ids": [
+            "TOOL-005",
+            "TOOL-010",
+            "TAD-025"
+          ],
+          "cases": 3,
+          "distinct_receipts": 1,
+          "receipt": "conformance/v0.1/primitives/receipts/identity-tool-invocation-mutation.json",
+          "note": "Dense identity cluster but less directly adjacent to Batch 17 and requires identity/mutation-specific predicates."
+        }
+      ]
+    },
+    "cross_primitive_comparison": {
+      "adapter_capture": {
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 97,
+        "reason_not_selected": "Second in primitive-level leverage. Many apparent zero-unmet rows are outside the implemented argument-provenance adapter sub-surface and fail actual-capability recheck."
+      },
+      "verifier_report": {
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 94,
+        "known_dense_core": {
+          "evidence": "conformance/v0.1/primitives/verifier/typed-findings-report.json",
+          "cases": 7,
+          "distinct_evidence_documents": 1
+        },
+        "reason_not_selected": "Lower primitive-level leverage and opens a new VerificationReport execution surface."
+      },
+      "claim_strength": {
+        "primitive": "prim.claim.strength",
+        "corrected_leverage": 52,
+        "reason_not_selected": "Lower leverage and opens claim-composition/wording semantics."
+      },
+      "privacy_receipt_integrity_taint": {
+        "primitives": [
+          "prim.privacy.commitment",
+          "prim.receipt.multi",
+          "prim.taint.flow",
+          "prim.integrity.composition"
+        ],
+        "corrected_leverage": [
+          44,
+          34,
+          26,
+          21
+        ],
+        "reason_not_selected": "Lower primitive-level leverage."
+      },
+      "model_provider_source_trust_ordering": {
+        "primitives": [
+          "prim.model.output",
+          "prim.provider.attempts",
+          "prim.source.observation",
+          "prim.trust.assertion",
+          "prim.ordering.time"
+        ],
+        "corrected_leverage": [
+          31,
+          18,
+          9,
+          11,
+          4
+        ],
+        "reason_not_selected": "Lower primitive-level leverage."
+      }
+    },
+    "selected_cluster": {
+      "primitive": "prim.tool.lifecycle",
+      "requirement_ids": [
+        "TOOL-014",
+        "TOOL-015",
+        "TOOL-017",
+        "TOOL-018"
+      ],
+      "cases": 4,
+      "distinct_receipts": 4,
+      "semantic_family": "Tool argument provenance classification/effective-argument boundary",
+      "selection_reason": "prim.tool.lifecycle is the highest corrected single-step primitive at 100. After actual-capability recheck removes adapter-orchestration false closures, the four TOOL argument-provenance rows form the largest directly closable tight cluster. They reuse Batch 17's application/mixed/control/dropped provenance predicates and existing Tool reference/JSON-Pointer machinery. The four specialized receipts are distinct, but predicate reuse is maximal and the only new implementation surface is representation-basis normalization plus TOOL-specific finding emission."
+    }
+  },
+  "intent": "Select only TOOL-014, TOOL-015, TOOL-017, and TOOL-018 for Batch 18. This selection commit does not register new planned tests, does not modify Runner A executors, and does not increase the 183-case / 115-requirement independent evidence baseline. TAD-033, TAD-021, TAD-084, OUT-044, and TAINT-031 remain unimplemented. Runner B and Product Verifier/SDK remain not started."
+}
