@@ -1,0 +1,248 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "19-tool-adapter-baseline-boundary-core",
+  "status": "complete",
+  "selection_commit": "9eaf2311a8970dcff640a2848da04d5fd9e37718",
+  "implementation_commits": [
+    "8fabf65f8e2cfe88ade7aa9150e070e8f16b8aea",
+    "6b32a9ec42408f41f90af7044ee2cda093afe0b7",
+    "6412aa8085f769f1b7518bddb1ffe4132bc405ea",
+    "b2b5169a3f4e4d34076b63348d428b11a77d9bd4"
+  ],
+  "materialization_hardening_commits": [
+    "44c08a1a53e75e5444929bc51f1ce22a06ac09cf",
+    "deeecab035dd28d0abba56de5bb50c57bc6e44e8",
+    "efb2f43b63fd1291cd21858d74da13a09d01e186"
+  ],
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.adapter.capture",
+    "requirement_ids": [
+      "TAD-001",
+      "TAD-004",
+      "TAD-005",
+      "TAD-006",
+      "TAD-010",
+      "TAD-014",
+      "TAD-020",
+      "TAD-039",
+      "TAD-057",
+      "TAD-075"
+    ],
+    "expected_cases": 10,
+    "selected_cases": 10,
+    "shared_receipt": "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json"
+  },
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/adapter_capture_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "planned_tests_added": [
+      "tool-adapter-visibility-boundary-001",
+      "tool-adapter-effective-invocation-capability-001",
+      "tool-adapter-execution-capability-001",
+      "tool-adapter-result-capability-001",
+      "tool-capture-diagnostic-reuse-001",
+      "tool-proposal-capability-optional-001",
+      "tool-execution-no-implicit-allow-001",
+      "tool-execution-start-boundary-001",
+      "tool-result-boundary-001",
+      "tool-success-no-effect-proof-001"
+    ],
+    "baseline_context": {
+      "capability_count": 1,
+      "invocation_count": 1,
+      "execution_count": 1,
+      "result_count": 1,
+      "diagnostic_count": 3,
+      "diagnostic_slots": [
+        "tool_invocation.effective",
+        "tool_execution.lifecycle",
+        "tool_result.application_visible"
+      ],
+      "rules": [
+        "ToolExecution.invocation resolves to the selected ToolInvocation.",
+        "ToolResult.execution resolves to the selected ToolExecution.",
+        "ToolAdapterCapability, ToolInvocation, ToolExecution, ToolResult, and all three CaptureDiagnostics share one run occurrence.",
+        "Each CaptureDiagnostic.adapter_declaration resolves to the selected ToolAdapterCapability.",
+        "Each CaptureDiagnostic.subject.ref resolves to the object kind and occurrence required by its slot.",
+        "Observed diagnostic representation_basis matches ToolInvocation, ToolExecution, or ToolResult semantics."
+      ]
+    },
+    "requirement_level_guards": {
+      "tool-adapter-visibility-boundary-001": "TAD-001",
+      "tool-adapter-effective-invocation-capability-001": "TAD-004",
+      "tool-adapter-execution-capability-001": "TAD-005",
+      "tool-adapter-result-capability-001": "TAD-006",
+      "tool-capture-diagnostic-reuse-001": "TAD-010",
+      "tool-proposal-capability-optional-001": "TAD-014",
+      "tool-execution-no-implicit-allow-001": "TAD-020",
+      "tool-execution-start-boundary-001": "TAD-039",
+      "tool-result-boundary-001": "TAD-057",
+      "tool-success-no-effect-proof-001": "TAD-075"
+    }
+  },
+  "materialization_hardening": {
+    "receipt_correction": {
+      "path": "conformance/v0.1/primitives/receipts/tool-adapter-baseline.json",
+      "issue": "ToolAdapterCapability was materialized inside arp.records even though the frozen receipt schema places adapter capability declarations in arp.adapter_declarations.",
+      "change": "Moved the unchanged ToolAdapterCapability object from arp.records to arp.adapter_declarations.",
+      "semantic_content_changed": false,
+      "frozen_schema_changed": false,
+      "expected_results_changed": false
+    },
+    "executor_reference_space": {
+      "change": "Adapter baseline local-reference indexing now covers runtime records plus arp.adapter_declarations, while runtime by-kind checks continue to inspect records only."
+    },
+    "dependent_case_patch_alignment": {
+      "case_id": "c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001",
+      "path": "conformance/v0.1/cases/tad/c2a-v0.1-tad-011-tool-capture-diagnostic-absence-not-success-001.json",
+      "change": "Updated the diagnostic-removal patch from /arp/records/7 to /arp/records/6 after the declaration moved out of records; /arp/inventory/7 remains unchanged.",
+      "intended_removed_object": "diag-tad-result-001",
+      "requirement_or_expected_semantics_changed": false
+    }
+  },
+  "actual_capabilities": [
+    "TAD-001 validates the adapter-visible evidence ceiling from the declared ToolAdapterCapability without upgrading it to hidden remote state.",
+    "TAD-004 binds the effective ToolInvocation diagnostic to the declared pre-execution invocation boundary.",
+    "TAD-005 binds ToolExecution lifecycle observation to the declared execution boundary.",
+    "TAD-006 binds the observed ToolResult to the declared application-visible result boundary.",
+    "TAD-010 resolves the bounded result CaptureDiagnostic and its adapter declaration/subject reference.",
+    "TAD-014 requires proposal_association=false and absence of invented ToolProposal occurrence/linkage.",
+    "TAD-020 preserves observed ToolExecution without inventing an allow ToolDecision.",
+    "TAD-039 binds the ToolExecution occurrence to the observed execution lifecycle slot and declared execution boundary.",
+    "TAD-057 preserves ToolResult as the declared application-visible result representation.",
+    "TAD-075 preserves reported_status=success while requiring absence of separate EffectObservation evidence before prohibiting external-effect truth inference."
+  ],
+  "first_execution": {
+    "head": "b2b5169a3f4e4d34076b63348d428b11a77d9bd4",
+    "runner_a_workflow_run_id": 37262595418,
+    "artifact_id": 11325327941,
+    "artifact_sha256": "a037aa583021e8a0ce31b02a728c5249128f1ae118388f841e9196a20ca17cec",
+    "selected": 10,
+    "semantic_findings_produced": 10,
+    "process_completed": 10,
+    "matcher_pass": 0,
+    "matcher_fail": 10,
+    "failure_class": "schema_status_mismatch",
+    "cause": "ToolAdapterCapability occupied arp.records instead of arp.adapter_declarations."
+  },
+  "intermediate_validation": {
+    "head": "deeecab035dd28d0abba56de5bb50c57bc6e44e8",
+    "runner_a_workflow_run_id": 37262860308,
+    "runner_a_jobs": "21/21 success",
+    "batch19": "10/10 pass",
+    "p5_workflow_run_id": 37262860468,
+    "p5": "906/907 pass",
+    "p5_failure": {
+      "requirement_id": "TAD-011",
+      "code": "materialization_failed",
+      "detail": "stale record-array patch index after adapter declaration slot correction"
+    }
+  },
+  "execution": {
+    "head": "efb2f43b63fd1291cd21858d74da13a09d01e186",
+    "semantic_verifier": {
+      "total": 10,
+      "pass": 10,
+      "fail": 0
+    },
+    "total": {
+      "cases": 10,
+      "pass": 10,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 10,
+    "process_outcomes": {
+      "completed": 10
+    },
+    "finding_domains": {
+      "conformance": 7,
+      "claim": 3
+    },
+    "finding_statuses": {
+      "valid": 7,
+      "asserted": 3
+    }
+  },
+  "ci": {
+    "runner_a_workflow_run_id": 37262986355,
+    "p5_workflow_run_id": 37262986331,
+    "artifact_id": 11325328494,
+    "artifact_name": "runner-a-semantic-tool-adapter-baseline-boundary",
+    "artifact_sha256": "d312b6f29e16940e1416362ad7e4aef11b69856679b5e39e716053af48fdb74e",
+    "p5_artifact_id": 11324264769,
+    "p5_artifact_sha256": "2ae9b5cb5814418dd1f7d23cf58a0fda09ff48ba4cb52c64f3e63bccd12a3201"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 197,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 129
+  },
+  "accounting": {
+    "registered_semantic_planned_test_ids": 148,
+    "registered_id_matched_coverage_rows": 131,
+    "independently_evidenced_semantic_requirements": 129,
+    "remaining_semantic_requirements": 642,
+    "shared_planned_test_id_exclusions": [
+      {
+        "planned_test_id": "tool-deny-later-execution-001",
+        "implemented_requirement": "TOOL-026",
+        "excluded_requirement": "TAD-021"
+      },
+      {
+        "planned_test_id": "tool-effect-not-outcome-001",
+        "implemented_requirement": "TOOL-048",
+        "excluded_requirement": "TAD-084"
+      }
+    ]
+  },
+  "regression": {
+    "runner_a_jobs": "21/21 success",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures",
+    "batch17_adapter_argument_provenance": "success",
+    "batch18_tool_argument_provenance_classification": "success",
+    "batch19_tool_adapter_baseline_boundary": "10/10 pass"
+  },
+  "fail_closed": {
+    "same_receipt_unimplemented": [
+      {
+        "requirement_id": "TAD-008",
+        "reason": "prim.receipt.multi remains unmet."
+      },
+      {
+        "requirement_id": "TAD-011",
+        "reason": "prim.claim.strength remains unmet; only its materialization patch index was realigned."
+      },
+      {
+        "requirement_id": "TAD-012",
+        "reason": "prim.claim.strength remains unmet."
+      }
+    ],
+    "other_unimplemented": [
+      "TAD-021",
+      "TAD-033",
+      "TAD-084",
+      "OUT-044",
+      "TAINT-031"
+    ]
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "specification_unchanged": true,
+    "expected_results_unchanged": true,
+    "baseline_receipt_wire_shape_corrected_to_frozen_schema": true,
+    "tad_011_patch_pointer_realigned_without_requirement_semantic_change": true,
+    "expected_results_not_used_to_derive_adapter_facts": true,
+    "tad_008_not_implemented": true,
+    "tad_011_not_implemented": true,
+    "tad_012_not_implemented": true,
+    "tad_021_not_implemented": true,
+    "tad_084_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
