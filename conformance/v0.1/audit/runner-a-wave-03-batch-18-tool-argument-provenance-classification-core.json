@@ -1,0 +1,160 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "18-tool-argument-provenance-classification-core",
+  "status": "complete",
+  "selection_commit": "a06c2089fb8543cfbe6bea2eb35c4da20a8ad38b",
+  "implementation_commits": [
+    "d8f7b0b2bd0f2cfa357055867e1944586a703c1b",
+    "7f8e9c066321dcce93d7b1bb83fa214a12372140",
+    "e4d5a35f0196a22bc20245eee9764d7a943feb0b",
+    "6010918b39da57c10eb50ddb48a4f4822e990fae",
+    "2f543a12bef5ade4be144cb8afd50e8f6f6ce546"
+  ],
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.tool.lifecycle",
+    "requirement_ids": [
+      "TOOL-014",
+      "TOOL-015",
+      "TOOL-017",
+      "TOOL-018"
+    ],
+    "expected_cases": 4,
+    "selected_cases": 4,
+    "receipts": [
+      "conformance/v0.1/primitives/receipts/tool-argument-application-positive.json",
+      "conformance/v0.1/primitives/receipts/tool-argument-mixed-positive.json",
+      "conformance/v0.1/primitives/receipts/tool-argument-control-only.json",
+      "conformance/v0.1/primitives/receipts/tool-argument-dropped.json"
+    ]
+  },
+  "implementation": {
+    "reused_executor": "conformance/v0.1/runner-a/adapter_capture_executor.py",
+    "extended_executor": "conformance/v0.1/runner-a/tool_lifecycle_executor.py",
+    "dispatcher": "conformance/v0.1/runner-a/semantic_executor.py",
+    "representation_basis_normalization": {
+      "ToolInvocation": [
+        "json-data-model",
+        "tool_arguments_json"
+      ],
+      "ToolProposal": [
+        "json-data-model",
+        "tool_proposal_arguments_json"
+      ],
+      "ContextFragment": [
+        "json-data-model"
+      ]
+    },
+    "contributor_region_rule": "Contributor source scope must be a structured JSON Pointer but need not equal the target/output path; output_region remains bound to the effective ToolInvocation target path.",
+    "reused_predicates": [
+      "argument_context",
+      "require_application_supplied",
+      "require_mixed",
+      "require_control_not_content",
+      "require_dropped_proposal_argument"
+    ],
+    "planned_tests_added": [
+      "tool-argument-application-supplied-001",
+      "tool-argument-mixed-001",
+      "tool-argument-control-no-content-001",
+      "tool-argument-dropped-001"
+    ],
+    "requirement_level_guards": {
+      "tool-argument-application-supplied-001": "TOOL-014",
+      "tool-argument-mixed-001": "TOOL-015",
+      "tool-argument-control-no-content-001": "TOOL-017",
+      "tool-argument-dropped-001": "TOOL-018"
+    }
+  },
+  "actual_capabilities": [
+    "TOOL-014 independently resolves ToolInvocation preparation lineage and requires application_supplied /repo ancestry from a non-ToolProposal ContextFragment.",
+    "TOOL-015 independently requires mixed /title provenance with both ToolProposal-side and application-side positive contributors, allowing source-region /suffix to map into output-region /title.",
+    "TOOL-017 independently verifies a control-only preparation input is not a positive argument-content contributor.",
+    "TOOL-018 independently verifies proposed /debug is absent from effective ToolInvocation arguments, absent from effective argument_provenance, and absent from positive effective Derivation."
+  ],
+  "execution": {
+    "head": "2f543a12bef5ade4be144cb8afd50e8f6f6ce546",
+    "semantic_verifier": {
+      "total": 4,
+      "pass": 4,
+      "fail": 0
+    },
+    "total": {
+      "cases": 4,
+      "pass": 4,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 4,
+    "process_outcomes": {
+      "completed": 4
+    },
+    "finding_domains": {
+      "conformance": 4
+    },
+    "finding_statuses": {
+      "valid": 4
+    },
+    "first_matcher_pass": true
+  },
+  "ci": {
+    "runner_a_workflow_run_id": 37259673730,
+    "p5_workflow_run_id": 37259673728,
+    "artifact_id": 11324390313,
+    "artifact_name": "runner-a-semantic-tool-argument-provenance-classification",
+    "artifact_sha256": "137f5476e4b1bbb59082457e29bf2bdedb2c8272cbdfb455d8e635eaabb0e546",
+    "p5_artifact_id": 11324232296,
+    "p5_artifact_sha256": "e562cfd9fe2f1105cc125685f9fa2acc0bf66fe3c296639a8234e8795c5d8659"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 187,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 119
+  },
+  "accounting": {
+    "registered_semantic_planned_test_ids": 138,
+    "registered_id_matched_coverage_rows": 121,
+    "independently_evidenced_semantic_requirements": 119,
+    "remaining_semantic_requirements": 652,
+    "shared_planned_test_id_exclusions": [
+      {
+        "planned_test_id": "tool-deny-later-execution-001",
+        "implemented_requirement": "TOOL-026",
+        "excluded_requirement": "TAD-021"
+      },
+      {
+        "planned_test_id": "tool-effect-not-outcome-001",
+        "implemented_requirement": "TOOL-048",
+        "excluded_requirement": "TAD-084"
+      }
+    ]
+  },
+  "regression": {
+    "runner_a_jobs": "20/20 success",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures",
+    "batch17_adapter_argument_provenance": "success",
+    "batch18_tool_argument_provenance_classification": "4/4 pass"
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "receipts_unchanged": true,
+    "semantic_predicates_derived_from_materialized_receipt_evidence": true,
+    "expected_results_used_only_for_golden_output_contract_and_comparison": true,
+    "tool_019_not_implemented": true,
+    "tool_020_not_implemented": true,
+    "tool_030_not_implemented": true,
+    "tool_031_not_implemented": true,
+    "tad_033_not_implemented": true,
+    "tad_021_not_implemented": true,
+    "tad_084_not_implemented": true,
+    "out_044_not_implemented": true,
+    "taint_031_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
