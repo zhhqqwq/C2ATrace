@@ -824,3 +824,377 @@ def execute_adapter_capture_case(row, case, materialized):
         "process_outcome": "completed",
         "completeness": {},
     }
+
+# Runner A Wave 03 Batch 21: provider-adapter request/attempt capture core.
+_BATCH21_PROVIDER_REQUIREMENTS = {
+    "provider-adapter-visibility-boundary-001": "PAD-001",
+    "provider-capture-observed-bounded-001": "PAD-011",
+    "provider-capture-diagnostic-asserted-001": "PAD-013",
+    "provider-attempt-boundary-001": "PAD-018",
+    "provider-attempt-disposition-boundary-001": "PAD-021",
+    "provider-no-synthetic-level-001": "PAD-025",
+    "provider-effective-snapshot-positive-001": "PAD-031",
+    "provider-missing-level-valid-001": "PAD-032",
+    "provider-request-reuse-not-equality-001": "PAD-035",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH21_PROVIDER_REQUIREMENTS)
+
+
+def provider_finding(
+    requirement_id,
+    check_id,
+    receipt,
+    object_id,
+    *,
+    domain="conformance",
+    status="valid",
+    reason_code=None,
+    prohibited=None,
+):
+    out = {
+        "requirement_id": requirement_id,
+        "check_id": check_id,
+        "subject_scope": {
+            "receipt_id": receipt_id(receipt),
+            "object_id": object_id,
+        },
+        "domain": domain,
+        "status": status,
+    }
+    if reason_code is not None:
+        out["reason_code"] = reason_code
+    if prohibited:
+        out["prohibited_inferences"] = list(prohibited)
+    return out
+
+
+def provider_adapter_capability(materialized):
+    capabilities = []
+    for value in materialized.values():
+        if not isinstance(value, dict):
+            continue
+        if value.get("kind") == "ProviderAdapterCapability":
+            capabilities.append(value)
+        elif value.get("kind") == "ReceiptPresentation":
+            capabilities.extend(
+                declaration
+                for declaration in adapter_declarations(value)
+                if isinstance(declaration, dict)
+                and declaration.get("kind") == "ProviderAdapterCapability"
+            )
+    if len(capabilities) != 1:
+        raise ValueError(
+            f"provider-adapter case requires one ProviderAdapterCapability, found {len(capabilities)}"
+        )
+    capability = capabilities[0]
+    levels = capability.get("request_capture_levels")
+    if not isinstance(levels, list) or not levels:
+        raise ValueError("ProviderAdapterCapability has no request capture levels")
+    core_levels = {"sdk_arguments", "provider_payload", "prepared_http_body"}
+    if any(level not in core_levels for level in levels):
+        raise ValueError("ProviderAdapterCapability declares non-core request capture level")
+    return capability
+
+
+def require_application_visible_provider_boundaries(capability):
+    if capability.get("invocation_boundary") != "observed logical application model call":
+        raise ValueError("provider invocation boundary is not the declared application-visible baseline")
+    if capability.get("attempt_boundary") != "application-visible provider attempt start":
+        raise ValueError("provider attempt boundary is not the declared application-visible baseline")
+    return capability
+
+
+def provider_request_context(receipt):
+    index = record_index(receipt)
+    attempts = by_kind(receipt, "ProviderAttempt")
+    snapshots = by_kind(receipt, "RequestSnapshot")
+    bindings = by_kind(receipt, "RequestBinding")
+    invocations = by_kind(receipt, "ModelInvocation")
+    if not attempts:
+        raise ValueError("provider request scenario has no ProviderAttempt")
+    if not snapshots:
+        raise ValueError("provider request scenario has no RequestSnapshot")
+    if not invocations:
+        raise ValueError("provider request scenario has no ModelInvocation")
+
+    for attempt in attempts:
+        invocation = resolve_local(index, attempt.get("invocation"), "ModelInvocation")
+        if attempt.get("run_id") != invocation.get("run_id"):
+            raise ValueError("ProviderAttempt and ModelInvocation changed run occurrence")
+        seen_levels = set()
+        for effective in attempt.get("effective_requests", []):
+            if not isinstance(effective, dict):
+                raise ValueError("ProviderAttempt effective request is not an object")
+            level = effective.get("capture_level")
+            if level in seen_levels:
+                raise ValueError("ProviderAttempt has duplicate effective request capture level")
+            seen_levels.add(level)
+            snapshot = resolve_local(index, effective.get("snapshot"), "RequestSnapshot")
+            if snapshot.get("capture_level") != level:
+                raise ValueError("effective request capture level disagrees with RequestSnapshot")
+            if snapshot.get("attempt_owner") is not None:
+                owner = resolve_local(index, snapshot.get("attempt_owner"), "ProviderAttempt")
+                if owner.get("id") != attempt.get("id"):
+                    raise ValueError("attempt-scoped RequestSnapshot is used by a different ProviderAttempt")
+            elif snapshot.get("invocation_owner") is not None:
+                owner = resolve_local(index, snapshot.get("invocation_owner"), "ModelInvocation")
+                if owner.get("id") != invocation.get("id"):
+                    raise ValueError("invocation-scoped RequestSnapshot is used by another invocation")
+            else:
+                raise ValueError("RequestSnapshot has no occurrence owner")
+
+    for binding in bindings:
+        resolve_local(index, binding.get("snapshot"), "RequestSnapshot")
+        resolve_local(index, binding.get("component"))
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "attempts": attempts,
+        "snapshots": snapshots,
+        "bindings": bindings,
+        "invocations": invocations,
+    }
+
+
+def single_provider_attempt(context):
+    if len(context["attempts"]) != 1:
+        raise ValueError(
+            f"provider adapter scenario requires one ProviderAttempt, found {len(context['attempts'])}"
+        )
+    return context["attempts"][0]
+
+
+def provider_capture_diagnostic(receipt):
+    index = record_index(receipt)
+    diagnostics = [
+        diagnostic
+        for diagnostic in by_kind(receipt, "CaptureDiagnostic")
+        if diagnostic.get("slot") == "provider_attempt.request"
+    ]
+    if len(diagnostics) != 1:
+        raise ValueError(
+            f"provider capture scenario requires one provider_attempt.request diagnostic, found {len(diagnostics)}"
+        )
+    diagnostic = diagnostics[0]
+    if diagnostic.get("status") != "observed":
+        raise ValueError("provider request CaptureDiagnostic is not observed")
+    subject = diagnostic.get("subject") or {}
+    attempt = resolve_local(index, subject.get("ref"), "ProviderAttempt")
+    if diagnostic.get("run_id") != attempt.get("run_id"):
+        raise ValueError("CaptureDiagnostic subject changed run occurrence")
+    return diagnostic, attempt
+
+
+def require_attempt_boundary(capability, context):
+    require_application_visible_provider_boundaries(capability)
+    attempt = single_provider_attempt(context)
+    if attempt.get("lifecycle_state") not in {"in_progress", "terminal"}:
+        raise ValueError("ProviderAttempt does not represent an observed attempt occurrence")
+    resolve_local(context["index"], attempt.get("invocation"), "ModelInvocation")
+    return attempt
+
+
+def require_lifecycle_not_provider_status(context):
+    attempt = single_provider_attempt(context)
+    provider_status = [
+        item
+        for item in attempt.get("metadata", [])
+        if isinstance(item, dict)
+        and item.get("name") == "provider_status"
+        and item.get("origin") == "provider_reported"
+    ]
+    if len(provider_status) != 1 or provider_status[0].get("value") != "success":
+        raise ValueError("provider-reported success metadata premise is missing")
+    if attempt.get("lifecycle_state") != "in_progress":
+        raise ValueError("provider-reported metadata changed observed lifecycle state")
+    if attempt.get("terminal_disposition") is not None:
+        raise ValueError("provider-reported metadata synthesized terminal disposition")
+    return attempt
+
+
+def require_no_synthetic_intermediate_levels(context):
+    attempt = single_provider_attempt(context)
+    snapshot_levels = [snapshot.get("capture_level") for snapshot in context["snapshots"]]
+    effective_levels = [
+        effective.get("capture_level")
+        for effective in attempt.get("effective_requests", [])
+    ]
+    if snapshot_levels != ["provider_payload"]:
+        raise ValueError("request-level baseline contains synthesized or unexpected RequestSnapshot levels")
+    if effective_levels != ["provider_payload"]:
+        raise ValueError("request-level baseline contains synthesized or unexpected effective levels")
+    snapshot = resolve_local(
+        context["index"], attempt["effective_requests"][0].get("snapshot"), "RequestSnapshot"
+    )
+    return attempt, snapshot
+
+
+def require_effective_snapshot_basis_missing(context):
+    attempt = single_provider_attempt(context)
+    effective = attempt.get("effective_requests", [])
+    if len(effective) != 1 or effective[0].get("capture_level") != "provider_payload":
+        raise ValueError("effective-snapshot scenario lacks one provider_payload designation")
+    selected = resolve_local(context["index"], effective[0].get("snapshot"), "RequestSnapshot")
+    candidates = [
+        snapshot
+        for snapshot in context["snapshots"]
+        if snapshot.get("capture_level") == "provider_payload"
+        and ref_id(snapshot.get("attempt_owner")) == attempt.get("id")
+    ]
+    if len(candidates) < 2:
+        raise ValueError("effective-snapshot scenario has fewer than two same-level candidates")
+    if selected.get("id") not in {snapshot.get("id") for snapshot in candidates}:
+        raise ValueError("effective RequestSnapshot is not one of the same-level candidates")
+    timestamps = [snapshot.get("recorded_at") for snapshot in candidates]
+    if any(not isinstance(value, str) or not value for value in timestamps):
+        raise ValueError("effective-snapshot timestamp premise is missing")
+    if len(set(timestamps)) != len(timestamps):
+        raise ValueError("effective-snapshot candidates do not have distinct timestamps")
+    for diagnostic in by_kind(context["receipt"], "CaptureDiagnostic"):
+        subject = diagnostic.get("subject") or {}
+        if (
+            ref_id(subject.get("ref")) == selected.get("id")
+            and diagnostic.get("status") == "observed"
+            and diagnostic.get("basis")
+        ):
+            raise ValueError("effective-snapshot scenario unexpectedly contains positive selection basis")
+    return attempt
+
+
+def require_actual_invocation_snapshot_reuse(context):
+    usage = {}
+    for attempt in context["attempts"]:
+        invocation_id = ref_id(attempt.get("invocation"))
+        for effective in attempt.get("effective_requests", []):
+            snapshot = resolve_local(context["index"], effective.get("snapshot"), "RequestSnapshot")
+            usage.setdefault(snapshot.get("id"), []).append((attempt, invocation_id, snapshot))
+
+    candidates = []
+    for uses in usage.values():
+        if len(uses) < 2:
+            continue
+        snapshot = uses[0][2]
+        owner_id = ref_id(snapshot.get("invocation_owner"))
+        if not owner_id:
+            continue
+        owner = resolve_local(context["index"], snapshot.get("invocation_owner"), "ModelInvocation")
+        if any(invocation_id != owner.get("id") for _attempt, invocation_id, _snapshot in uses):
+            raise ValueError("reused RequestSnapshot crosses invocation ownership")
+        if snapshot.get("attempt_owner") is not None:
+            raise ValueError("reused invocation-scoped RequestSnapshot also has attempt_owner")
+        candidates.append(snapshot)
+    if len(candidates) != 1:
+        raise ValueError(
+            f"request-reuse scenario requires one actually reused invocation snapshot, found {len(candidates)}"
+        )
+    return candidates[0]
+
+
+_execute_adapter_capture_case_before_batch21 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH21_PROVIDER_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch21(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    process_outcome = "completed"
+
+    if check_id == "provider-adapter-visibility-boundary-001":
+        capability = provider_adapter_capability(materialized)
+        require_application_visible_provider_boundaries(capability)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            capability["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:provider_adapter_has_provider_internal_visibility"],
+        )
+    elif check_id in {
+        "provider-capture-observed-bounded-001",
+        "provider-capture-diagnostic-asserted-001",
+    }:
+        diagnostic, _attempt = provider_capture_diagnostic(receipt)
+        if check_id == "provider-capture-observed-bounded-001":
+            actual_finding = provider_finding(
+                requirement_id,
+                check_id,
+                receipt,
+                diagnostic["id"],
+                domain="completeness",
+                status="unverified",
+                prohibited=["P1:observed_slot_means_global_capture_complete"],
+            )
+        else:
+            actual_finding = provider_finding(
+                requirement_id,
+                check_id,
+                receipt,
+                diagnostic["id"],
+                domain="claim",
+                status="asserted",
+                prohibited=["P1:capture_diagnostic_is_independent_completeness_verification"],
+            )
+    elif check_id == "provider-attempt-boundary-001":
+        capability = provider_adapter_capability(materialized)
+        context = provider_request_context(receipt)
+        attempt = require_attempt_boundary(capability, context)
+        actual_finding = provider_finding(requirement_id, check_id, receipt, attempt["id"])
+    elif check_id == "provider-attempt-disposition-boundary-001":
+        context = provider_request_context(receipt)
+        attempt = require_lifecycle_not_provider_status(context)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            attempt["id"],
+            prohibited=["P1:provider_reported_status_determines_attempt_disposition"],
+        )
+    elif check_id == "provider-no-synthetic-level-001":
+        context = provider_request_context(receipt)
+        attempt, _snapshot = require_no_synthetic_intermediate_levels(context)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            attempt["id"],
+            prohibited=["P1:missing_request_levels_are_synthesized"],
+        )
+    elif check_id == "provider-effective-snapshot-positive-001":
+        context = provider_request_context(receipt)
+        attempt = require_effective_snapshot_basis_missing(context)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            attempt["id"],
+            domain="claim",
+            status="unverified",
+            reason_code="effective_snapshot_selection_basis_missing",
+        )
+        process_outcome = "incomplete_evaluation"
+    elif check_id == "provider-missing-level-valid-001":
+        context = provider_request_context(receipt)
+        attempt, _snapshot = require_no_synthetic_intermediate_levels(context)
+        actual_finding = provider_finding(requirement_id, check_id, receipt, attempt["id"])
+    elif check_id == "provider-request-reuse-not-equality-001":
+        context = provider_request_context(receipt)
+        snapshot = require_actual_invocation_snapshot_reuse(context)
+        actual_finding = provider_finding(requirement_id, check_id, receipt, snapshot["id"])
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": process_outcome,
+        "completeness": {},
+    }
