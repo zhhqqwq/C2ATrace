@@ -1,0 +1,197 @@
+{
+  "batch_id": "runner-a-wave-03-batch-21-provider-adapter-request-attempt-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "21",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.adapter.capture",
+  "requirement_ids": [
+    "PAD-001",
+    "PAD-011",
+    "PAD-013",
+    "PAD-018",
+    "PAD-021",
+    "PAD-025",
+    "PAD-031",
+    "PAD-032",
+    "PAD-035"
+  ],
+  "expected_case_count": 9,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 207,
+      "registered_semantic_planned_test_ids": 158,
+      "registered_id_matched_coverage_rows": 141,
+      "independently_evidenced_semantic_requirements": 139,
+      "remaining_semantic_executable_rows": 632,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        }
+      ]
+    },
+    "ranking_method": {
+      "stage_1": "Subtract exact 139-requirement support; planned_test_id membership remains routing metadata only.",
+      "stage_2": "Treat a primitive as an existing dependency surface only when Runner A has independent primary support for that primitive; recompute dependency-closed primary cores and single-dependency unlocks.",
+      "stage_3": "Regroup dependency-closed rows by shared evidence and semantic sub-surface; reject same-file groups that mix unopened evaluator families or unrelated semantics.",
+      "stage_4": "Rank tight clusters by corrected primitive leverage, unlocked case count, shared-evidence density, reusable predicate density, then incremental semantic surface size."
+    },
+    "existing_dependency_surfaces": [
+      "prim.adapter.capture",
+      "prim.derivation.mapping",
+      "prim.graph.invariants",
+      "prim.identity.occurrence",
+      "prim.model.output",
+      "prim.provider.attempts",
+      "prim.ref.external",
+      "prim.ref.failure",
+      "prim.ref.local",
+      "prim.request.binding",
+      "prim.tool.lifecycle",
+      "prim.verifier.report"
+    ],
+    "corrected_single_step_unlock_leverage": [
+      {"primitive":"prim.adapter.capture","count":109,"dependency_closed_primary_core":101,"dependency_unlock":8},
+      {"primitive":"prim.tool.lifecycle","count":99,"dependency_closed_primary_core":12,"dependency_unlock":87},
+      {"primitive":"prim.verifier.report","count":84,"dependency_closed_primary_core":63,"dependency_unlock":21},
+      {"primitive":"prim.claim.strength","count":68,"dependency_closed_primary_core":13,"dependency_unlock":55},
+      {"primitive":"prim.privacy.commitment","count":56,"dependency_closed_primary_core":35,"dependency_unlock":21},
+      {"primitive":"prim.receipt.multi","count":55,"dependency_closed_primary_core":41,"dependency_unlock":14},
+      {"primitive":"prim.integrity.composition","count":41,"dependency_closed_primary_core":23,"dependency_unlock":18},
+      {"primitive":"prim.model.output","count":38,"dependency_closed_primary_core":15,"dependency_unlock":23},
+      {"primitive":"prim.taint.flow","count":32,"dependency_closed_primary_core":28,"dependency_unlock":4},
+      {"primitive":"prim.identity.occurrence","count":29,"dependency_closed_primary_core":29,"dependency_unlock":0},
+      {"primitive":"prim.provider.attempts","count":18,"dependency_closed_primary_core":4,"dependency_unlock":14},
+      {"primitive":"prim.request.binding","count":16,"dependency_closed_primary_core":0,"dependency_unlock":16},
+      {"primitive":"prim.trust.assertion","count":13,"dependency_closed_primary_core":9,"dependency_unlock":4},
+      {"primitive":"prim.source.observation","count":10,"dependency_closed_primary_core":10,"dependency_unlock":0},
+      {"primitive":"prim.ordering.time","count":8,"dependency_closed_primary_core":6,"dependency_unlock":2},
+      {"primitive":"prim.ref.local","count":7,"dependency_closed_primary_core":0,"dependency_unlock":7},
+      {"primitive":"prim.ref.failure","count":4,"dependency_closed_primary_core":0,"dependency_unlock":4},
+      {"primitive":"prim.derivation.mapping","count":3,"dependency_closed_primary_core":0,"dependency_unlock":3},
+      {"primitive":"prim.privacy.redaction","count":2,"dependency_closed_primary_core":0,"dependency_unlock":2},
+      {"primitive":"prim.ref.external","count":2,"dependency_closed_primary_core":0,"dependency_unlock":2}
+    ],
+    "broad_zero_unmet_state": {
+      "total_rows": 224,
+      "by_primary": {
+        "prim.adapter.capture": 101,
+        "prim.verifier.report": 63,
+        "prim.identity.occurrence": 29,
+        "prim.model.output": 15,
+        "prim.tool.lifecycle": 12,
+        "prim.provider.attempts": 4
+      },
+      "note": "Only primaries with an existing Runner-A surface are counted here. Newly dependency-closed unopened primaries remain candidates for future evaluator families rather than being treated as implemented."
+    },
+    "batch20_dependency_closure": {
+      "newly_dependency_closed_rows_with_verifier_report": 50,
+      "by_primary": {
+        "prim.adapter.capture": 16,
+        "prim.receipt.multi": 12,
+        "prim.ordering.time": 4,
+        "prim.integrity.composition": 4,
+        "prim.taint.flow": 4,
+        "prim.identity.occurrence": 3,
+        "prim.privacy.commitment": 3,
+        "prim.model.output": 2,
+        "prim.source.observation": 1,
+        "prim.trust.assertion": 1
+      },
+      "selected_cluster_newly_closed_rows": ["PAD-011","PAD-025"]
+    },
+    "tight_cluster_comparison": [
+      {
+        "name": "provider_adapter_request_attempt_baseline",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 109,
+        "shared_base_evidence": "fixtures/v0.1/valid/source-to-request.json",
+        "requirement_ids": ["PAD-001","PAD-011","PAD-013","PAD-018","PAD-021","PAD-025","PAD-031","PAD-032","PAD-035"],
+        "cases": 9,
+        "shared_base_evidence_documents": 1,
+        "actual_capability_density": "high",
+        "reusable_predicates": [
+          "existing adapter record/declaration indexing and local-reference resolution",
+          "existing CaptureDiagnostic subject/slot machinery from tool-adapter support",
+          "existing ProviderAttempt occurrence/lifecycle machinery",
+          "existing RequestSnapshot/RequestBinding indexing and request transition machinery",
+          "Batch 20 typed finding/completeness status semantics"
+        ],
+        "incremental_surface": [
+          "ProviderAdapterCapability application-visible invocation/attempt/request boundaries",
+          "provider-side CaptureDiagnostic bounded interpretation",
+          "provider request-level absence/effective-snapshot/reuse checks"
+        ],
+        "status": "selected"
+      },
+      {
+        "name": "verifier_conflict_completeness",
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 84,
+        "shared_base_evidence": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json",
+        "requirement_ids": ["VFY-090","VFY-096","VFY-097","VFY-099","VFY-151","VFY-153","VFY-154"],
+        "cases": 7,
+        "shared_base_evidence_documents": 1,
+        "actual_capability_density": "very_high",
+        "new_semantic_surface": "small",
+        "status": "unselected",
+        "reason_not_selected": "Lower corrected primitive leverage and smaller tight cluster than the provider adapter request/attempt baseline."
+      },
+      {
+        "name": "provider_streaming_boundary",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 109,
+        "shared_base_evidence": "conformance/v0.1/primitives/receipts/model-timeout-partial.json",
+        "requirement_ids": ["PAD-046","PAD-047","PAD-048","PAD-049","PAD-050","PAD-051","PAD-052"],
+        "cases": 7,
+        "shared_base_evidence_documents": 1,
+        "actual_capability_density": "medium",
+        "new_semantic_surface": "provider streaming consumption/event/partial-output capture semantics",
+        "status": "unselected",
+        "reason_not_selected": "Same primitive leverage but fewer cases and a broader streaming-output surface than the selected request/attempt core."
+      },
+      {
+        "name": "mixed_minimal_signed_receipt",
+        "shared_base_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "cases": 25,
+        "primary_mix": {"prim.integrity.composition":18,"prim.verifier.report":7},
+        "status": "rejected_as_not_tight",
+        "reason": "The same-file group mixes an unopened integrity-composition evaluator family with verifier-report rows; file co-location is not a semantic cluster."
+      },
+      {
+        "name": "mixed_source_to_request_all_closed_rows",
+        "shared_base_evidence": "fixtures/v0.1/valid/source-to-request.json",
+        "cases": 18,
+        "primary_mix": {"prim.adapter.capture":10,"prim.receipt.multi":7,"prim.integrity.composition":1},
+        "status": "rejected_as_not_tight",
+        "reason": "Receipt-multi and integrity rows are separate unopened primary surfaces. PAD-066 is also kept outside the selected provider request/attempt sub-surface because it is a transport-metadata proximity rule."
+      },
+      {
+        "name": "receipt_multi_linkage",
+        "primitive": "prim.receipt.multi",
+        "corrected_leverage": 55,
+        "shared_evidence": ["fixtures/v0.1/valid/multi-receipt-a.json","fixtures/v0.1/valid/multi-receipt-b.json"],
+        "cases": 10,
+        "status": "unselected",
+        "reason_not_selected": "Lower primitive leverage and requires opening the receipt-multi evaluator surface."
+      }
+    ],
+    "selected_cluster": {
+      "primitive": "prim.adapter.capture",
+      "semantic_family": "ProviderAdapter application-visible request/attempt capture boundary",
+      "shared_base_evidence": "fixtures/v0.1/valid/source-to-request.json",
+      "requirement_ids": ["PAD-001","PAD-011","PAD-013","PAD-018","PAD-021","PAD-025","PAD-031","PAD-032","PAD-035"],
+      "cases": 9,
+      "shared_base_evidence_documents": 1,
+      "selection_reason": "prim.adapter.capture has the highest corrected single-step leverage at 109. The source-to-request provider adapter baseline is the largest semantically tight dependency-closed cluster on that top-ranked primitive after excluding the unrelated PAD-066 transport-metadata rule. It reuses existing adapter reference/diagnostic machinery, ProviderAttempt predicates, RequestSnapshot/RequestBinding machinery, and Batch 20 verifier status semantics while adding one bounded provider request/attempt adapter sub-surface."
+    }
+  },
+  "intent": "Select only PAD-001, PAD-011, PAD-013, PAD-018, PAD-021, PAD-025, PAD-031, PAD-032, and PAD-035 for Batch 21. This selection commit does not register new planned tests, modify Runner A executors, or increase the 207-case / 139-requirement evidence baseline. PAD-066 remains outside this cluster as transport-metadata semantics. TAD-021 and TAD-084 remain excluded shared-ID rows. Runner B and Product Verifier/SDK remain not started."
+}
