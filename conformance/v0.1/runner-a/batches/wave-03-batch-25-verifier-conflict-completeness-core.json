@@ -1,0 +1,363 @@
+{
+  "batch_id": "runner-a-wave-03-batch-25-verifier-conflict-completeness-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "25",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.verifier.report",
+  "requirement_ids": [
+    "VFY-090",
+    "VFY-096",
+    "VFY-097",
+    "VFY-099",
+    "VFY-151",
+    "VFY-153",
+    "VFY-154"
+  ],
+  "expected_case_count": 7,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 237,
+      "registered_planned_test_ids": 188,
+      "registered_semantic_planned_test_ids": 169,
+      "registered_id_matched_coverage_rows": 172,
+      "independently_evidenced_semantic_requirements": 169,
+      "remaining_semantic_executable_rows": 602,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        },
+        {
+          "planned_test_id": "tool-idempotency-no-exactly-once-001",
+          "implemented_requirement": "TAD-055",
+          "excluded_requirement": "TOOL-054"
+        }
+      ]
+    },
+    "support_rebuild": {
+      "method": "Extract live Runner-A semantic planned-test registrations, join to the coverage matrix, and subtract the three exact shared-ID exclusions by requirement identity.",
+      "semantic_registered_ids": 169,
+      "id_matched_rows": 172,
+      "excluded_rows": 3,
+      "exact_support": 169
+    },
+    "existing_dependency_surfaces": [
+      "prim.adapter.capture",
+      "prim.derivation.mapping",
+      "prim.graph.invariants",
+      "prim.identity.occurrence",
+      "prim.model.output",
+      "prim.provider.attempts",
+      "prim.ref.external",
+      "prim.ref.failure",
+      "prim.ref.local",
+      "prim.request.binding",
+      "prim.tool.lifecycle",
+      "prim.verifier.report"
+    ],
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 83,
+        "dependency_closed_primary_core": 12,
+        "dependency_unlock": 71
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 79,
+        "dependency_closed_primary_core": 71,
+        "dependency_unlock": 8
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 77,
+        "dependency_closed_primary_core": 63,
+        "dependency_unlock": 14
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 68,
+        "dependency_closed_primary_core": 13,
+        "dependency_unlock": 55
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 56,
+        "dependency_closed_primary_core": 35,
+        "dependency_unlock": 21
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 55,
+        "dependency_closed_primary_core": 41,
+        "dependency_unlock": 14
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 41,
+        "dependency_closed_primary_core": 23,
+        "dependency_unlock": 18
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 32,
+        "dependency_closed_primary_core": 28,
+        "dependency_unlock": 4
+      },
+      {
+        "primitive": "prim.identity.occurrence",
+        "count": 29,
+        "dependency_closed_primary_core": 29,
+        "dependency_unlock": 0
+      },
+      {
+        "primitive": "prim.model.output",
+        "count": 24,
+        "dependency_closed_primary_core": 15,
+        "dependency_unlock": 9
+      },
+      {
+        "primitive": "prim.provider.attempts",
+        "count": 13,
+        "dependency_closed_primary_core": 4,
+        "dependency_unlock": 9
+      },
+      {
+        "primitive": "prim.request.binding",
+        "count": 13,
+        "dependency_closed_primary_core": 0,
+        "dependency_unlock": 13
+      },
+      {
+        "primitive": "prim.trust.assertion",
+        "count": 13,
+        "dependency_closed_primary_core": 9,
+        "dependency_unlock": 4
+      },
+      {
+        "primitive": "prim.source.observation",
+        "count": 10,
+        "dependency_closed_primary_core": 10,
+        "dependency_unlock": 0
+      },
+      {
+        "primitive": "prim.ordering.time",
+        "count": 8,
+        "dependency_closed_primary_core": 6,
+        "dependency_unlock": 2
+      },
+      {
+        "primitive": "prim.ref.local",
+        "count": 7,
+        "dependency_closed_primary_core": 0,
+        "dependency_unlock": 7
+      },
+      {
+        "primitive": "prim.ref.failure",
+        "count": 4,
+        "dependency_closed_primary_core": 0,
+        "dependency_unlock": 4
+      },
+      {
+        "primitive": "prim.derivation.mapping",
+        "count": 3,
+        "dependency_closed_primary_core": 0,
+        "dependency_unlock": 3
+      },
+      {
+        "primitive": "prim.privacy.redaction",
+        "count": 2,
+        "dependency_closed_primary_core": 0,
+        "dependency_unlock": 2
+      },
+      {
+        "primitive": "prim.ref.external",
+        "count": 2,
+        "dependency_closed_primary_core": 0,
+        "dependency_unlock": 2
+      }
+    ],
+    "dependency_closed_existing_primary_state": {
+      "total_rows": 194,
+      "by_primary": {
+        "prim.identity.occurrence": 29,
+        "prim.model.output": 15,
+        "prim.provider.attempts": 4,
+        "prim.adapter.capture": 71,
+        "prim.tool.lifecycle": 12,
+        "prim.verifier.report": 63
+      },
+      "batch24_surface_change": "none"
+    },
+    "same_file_mixed_primary_rejections": [
+      {
+        "shared_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "dependency_closed_rows": 25,
+        "primary_mix": {
+          "prim.integrity.composition": 18,
+          "prim.verifier.report": 7
+        },
+        "reason": "Same-file co-location mixes an unopened integrity-composition evaluator family with verifier-report semantics."
+      },
+      {
+        "shared_evidence": [
+          "fixtures/v0.1/valid/multi-receipt-a.json",
+          "fixtures/v0.1/valid/multi-receipt-b.json"
+        ],
+        "dependency_closed_rows": 12,
+        "primary_mix": {
+          "prim.receipt.multi": 10,
+          "prim.verifier.report": 2
+        },
+        "reason": "Receipt-multi and verifier-report remain separate primary evaluator surfaces."
+      },
+      {
+        "shared_evidence": "fixtures/v0.1/valid/source-to-request.json",
+        "dependency_closed_rows": 9,
+        "primary_mix": {
+          "prim.receipt.multi": 7,
+          "prim.integrity.composition": 1,
+          "prim.adapter.capture": 1
+        },
+        "reason": "The remaining same-file rows span three independent primary surfaces."
+      }
+    ],
+    "tight_cluster_comparison": [
+      {
+        "name": "tool_execution_relation_graph",
+        "primitive": "prim.tool.lifecycle",
+        "corrected_leverage": 83,
+        "requirement_ids": [
+          "TOOL-050",
+          "TOOL-051",
+          "TOOL-052"
+        ],
+        "cases": 3,
+        "shared_evidence_documents": 3,
+        "evidence": [
+          "conformance/v0.1/primitives/receipts/tool-execution-retry-different-invocation.json",
+          "conformance/v0.1/primitives/receipts/tool-execution-self-loop.json",
+          "conformance/v0.1/primitives/receipts/tool-execution-cycle.json"
+        ],
+        "actual_capability_density": "very_high",
+        "reusable_predicates": [
+          "Batch 22 retry/replay execution-relation resolution",
+          "existing ToolInvocation/ToolExecution local-reference and same-run predicates",
+          "provider-attempt occurrence predicates for predecessor-cycle closure"
+        ],
+        "incremental_surface": "execution predecessor identity, self-loop rejection, and acyclicity",
+        "status": "unselected",
+        "reason_not_selected": "Highest global primitive leverage, but its tight relation sub-cluster is only three cases across three independent receipts."
+      },
+      {
+        "name": "tool_metadata_origin",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 79,
+        "shared_evidence": "conformance/v0.1/primitives/receipts/tool-metadata-origin.json",
+        "requirement_ids": [
+          "TAD-069",
+          "TAD-070",
+          "TAD-072",
+          "TAD-074",
+          "TAD-116",
+          "TAD-117"
+        ],
+        "cases": 6,
+        "shared_evidence_documents": 1,
+        "total_case_patches": 7,
+        "actual_capability_density": "high",
+        "reusable_predicates": [
+          "existing ToolResult/ToolExecution occurrence validation",
+          "Batch 22 tool-reported metadata handling",
+          "derivation-mapping and verifier bounded-claim machinery"
+        ],
+        "incremental_surface": "tool metadata origin, normalized metadata provenance, external_observed boundedness, and async acceptance",
+        "status": "unselected",
+        "reason_not_selected": "One fewer case and seven case patch operations compared with the selected zero-patch verifier cluster."
+      },
+      {
+        "name": "verifier_conflict_completeness",
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 77,
+        "shared_evidence": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json",
+        "requirement_ids": [
+          "VFY-090",
+          "VFY-096",
+          "VFY-097",
+          "VFY-099",
+          "VFY-151",
+          "VFY-153",
+          "VFY-154"
+        ],
+        "cases": 7,
+        "shared_evidence_documents": 1,
+        "total_case_patches": 0,
+        "inline_documents": 0,
+        "actual_capability_density": "very_high",
+        "reusable_predicates": [
+          "Batch 20 primary VerificationReport materialization",
+          "finding_index and one_finding typed lookup",
+          "normalized_finding output",
+          "typed support/conformance/conflict/completeness statuses",
+          "bounded prohibited-inference output"
+        ],
+        "incremental_surface": [
+          "runtime-history completeness remains unknown unless established",
+          "conflict does not stop independent checks",
+          "unsupported profile remains unsupported",
+          "profile identifiers do not authorize code execution",
+          "consistent is supplied-scope bounded",
+          "conflict can coexist with local structural invalidity",
+          "conflict alone is not universal invalidity"
+        ],
+        "status": "selected"
+      },
+      {
+        "name": "verifier_minimal_signed_receipt",
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 77,
+        "shared_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "requirement_ids": [
+          "VFY-001",
+          "VFY-002",
+          "VFY-003",
+          "VFY-008",
+          "VFY-011",
+          "VFY-013",
+          "VFY-098"
+        ],
+        "cases": 7,
+        "actual_capability_density": "medium",
+        "incremental_surface": "receipt-driven verifier invocation/parsing/profile execution rather than direct VerificationReport evaluation",
+        "status": "unselected",
+        "reason_not_selected": "Same case count and primitive leverage, but it opens a broader receipt-driven verifier execution surface instead of reusing the existing report evaluator."
+      }
+    ],
+    "selected_cluster": {
+      "primitive": "prim.verifier.report",
+      "semantic_family": "VerificationReport conflict, completeness, support, and supplied-scope boundedness",
+      "shared_evidence": "conformance/v0.1/primitives/verifier/conflict-completeness-report.json",
+      "requirement_ids": [
+        "VFY-090",
+        "VFY-096",
+        "VFY-097",
+        "VFY-099",
+        "VFY-151",
+        "VFY-153",
+        "VFY-154"
+      ],
+      "cases": 7,
+      "shared_evidence_documents": 1,
+      "total_case_patches": 0,
+      "selection_reason": "After support subtraction, prim.tool.lifecycle has the highest global leverage but no dense shared-evidence primary cluster. The selected verifier cluster yields seven dependency-closed cases from one unpatched report, directly reuses the existing Batch 20 VerificationReport evaluator surface, and adds a smaller semantic increment than the competing receipt-driven verifier cluster."
+    }
+  },
+  "intent": "Select only VFY-090, VFY-096, VFY-097, VFY-099, VFY-151, VFY-153, and VFY-154 for Batch 25. This selection commit does not register new planned tests, modify Runner A executors, or increase the 237-case / 169-requirement evidence baseline. The shared-ID exclusions TAD-021, TAD-084, and TOOL-054 remain excluded. Runner B and Product Verifier/SDK remain not started."
+}
