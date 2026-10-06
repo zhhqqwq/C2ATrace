@@ -1424,3 +1424,360 @@ def execute_adapter_capture_case(row, case, materialized):
         "process_outcome": "completed",
         "completeness": {},
     }
+
+# Runner A Wave 03 Batch 23: tool streaming result core.
+_BATCH23_STREAMING_REQUIREMENTS = {
+    "tool-stream-result-consumption-001": "TAD-062",
+    "tool-stream-result-semantics-001": "TAD-063",
+    "tool-stream-result-unsupported-001": "TAD-064",
+    "tool-stream-result-partial-preserve-001": "TAD-065",
+    "tool-stream-result-loss-001": "TAD-066",
+    "tool-stream-consumer-stop-bounded-001": "TAD-067",
+    "tool-stream-chunks-optional-001": "TAD-068",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH23_STREAMING_REQUIREMENTS)
+
+
+def stream_metadata_items(record, name, origin=None, value_marker=None):
+    items = [
+        item
+        for item in record.get("metadata", [])
+        if isinstance(item, dict)
+        and item.get("name") == name
+        and (origin is None or item.get("origin") == origin)
+    ]
+    if value_marker is not None:
+        items = [item for item in items if item.get("value") == value_marker]
+    return items
+
+
+def tool_streaming_context(receipt):
+    index = record_index(receipt)
+    capabilities = by_kind(receipt, "ToolAdapterCapability")
+    invocations = by_kind(receipt, "ToolInvocation")
+    executions = by_kind(receipt, "ToolExecution")
+    results = by_kind(receipt, "ToolResult")
+    diagnostics = by_kind(receipt, "CaptureDiagnostic")
+
+    if len(capabilities) != 1:
+        raise ValueError(
+            f"tool streaming scenario requires one ToolAdapterCapability, found {len(capabilities)}"
+        )
+    capability = capabilities[0]
+    if capability.get("result_boundary") != "application-visible stream consumption":
+        raise ValueError("ToolAdapterCapability result boundary is not application-visible stream consumption")
+    if capability.get("streaming_result") is not True:
+        raise ValueError("ToolAdapterCapability does not positively declare streaming result support")
+
+    if len(invocations) < 3 or len(executions) < 3 or len(results) < 3 or len(diagnostics) < 3:
+        raise ValueError("tool streaming scenario is missing invocation/execution/result/diagnostic evidence")
+
+    run_ids = {
+        record.get("run_id")
+        for record in [capability, *invocations, *executions, *results, *diagnostics]
+        if isinstance(record, dict)
+    }
+    if len(run_ids) != 1 or None in run_ids:
+        raise ValueError("tool streaming evidence crosses run ownership")
+
+    for execution in executions:
+        invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+        if invocation.get("run_id") != execution.get("run_id"):
+            raise ValueError("ToolExecution invocation crosses run ownership")
+
+    for result in results:
+        execution = resolve_local(index, result.get("execution"), "ToolExecution")
+        if execution.get("run_id") != result.get("run_id"):
+            raise ValueError("ToolResult execution crosses run ownership")
+
+    for diagnostic in diagnostics:
+        subject = resolve_local(index, (diagnostic.get("subject") or {}).get("ref"), "ToolResult")
+        declaration = resolve_local(
+            index, diagnostic.get("adapter_declaration"), "ToolAdapterCapability"
+        )
+        if subject.get("run_id") != diagnostic.get("run_id"):
+            raise ValueError("CaptureDiagnostic subject crosses run ownership")
+        if declaration.get("id") != capability.get("id"):
+            raise ValueError("CaptureDiagnostic references a different ToolAdapterCapability")
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "capability": capability,
+        "invocations": invocations,
+        "executions": executions,
+        "results": results,
+        "diagnostics": diagnostics,
+    }
+
+
+def stream_result_for_execution(context, execution):
+    matches = [
+        result
+        for result in context["results"]
+        if ref_id(result.get("execution")) == execution.get("id")
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"streaming ToolExecution {execution.get('id')} requires one ToolResult, found {len(matches)}"
+        )
+    return matches[0]
+
+
+def stream_diagnostic_for_result(context, result, slot=None):
+    matches = [
+        diagnostic
+        for diagnostic in context["diagnostics"]
+        if ref_id((diagnostic.get("subject") or {}).get("ref")) == result.get("id")
+        and (slot is None or diagnostic.get("slot") == slot)
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"streaming ToolResult {result.get('id')} requires one matching CaptureDiagnostic, found {len(matches)}"
+        )
+    return matches[0]
+
+
+def require_stream_consumption_observation(context):
+    candidates = []
+    for execution in context["executions"]:
+        observed = stream_metadata_items(
+            execution, "stream_consumption_observed", "adapter_observed", True
+        )
+        result = stream_result_for_execution(context, execution)
+        if len(observed) == 1 and result.get("capture_extent") == "partial":
+            candidates.append(execution)
+    if len(candidates) != 1:
+        raise ValueError(
+            f"expected one partially captured execution with positive stream consumption observation, found {len(candidates)}"
+        )
+    return candidates[0]
+
+
+def require_supported_stream_semantics(context):
+    candidates = []
+    for result in context["results"]:
+        if result.get("capture_extent") != "complete":
+            continue
+        execution = resolve_local(context["index"], result.get("execution"), "ToolExecution")
+        tool_semantics = stream_metadata_items(execution, "event_semantics", "tool_reported")
+        assembly_semantics = stream_metadata_items(
+            result, "assembly_semantics", "adapter_observed"
+        )
+        if (
+            len(tool_semantics) == 1
+            and len(assembly_semantics) == 1
+            and tool_semantics[0].get("value") == assembly_semantics[0].get("value")
+        ):
+            candidates.append((result, tool_semantics[0].get("value")))
+    if len(candidates) != 1:
+        raise ValueError(
+            f"expected one complete ToolResult with supported matching event semantics, found {len(candidates)}"
+        )
+    result, event_semantics = candidates[0]
+    if event_semantics != "replacement_events":
+        raise ValueError("streaming semantics scenario does not preserve replacement-event semantics")
+    return result, event_semantics
+
+
+def require_unsupported_stream_semantics(context):
+    candidates = [
+        diagnostic
+        for diagnostic in context["diagnostics"]
+        if diagnostic.get("slot") == "tool_result.stream_assembly"
+        and diagnostic.get("status") == "unsupported"
+    ]
+    if len(candidates) != 1:
+        raise ValueError(
+            f"expected one unsupported stream-assembly diagnostic, found {len(candidates)}"
+        )
+    diagnostic = candidates[0]
+    result = resolve_local(
+        context["index"], (diagnostic.get("subject") or {}).get("ref"), "ToolResult"
+    )
+    if result.get("capture_extent") not in {"partial", "unknown"}:
+        raise ValueError("unsupported stream semantics fabricated complete ToolResult capture")
+    return diagnostic, result
+
+
+def require_partial_stream_result_preserved(context):
+    candidates = [
+        result
+        for result in context["results"]
+        if result.get("capture_extent") == "partial"
+        and isinstance(result.get("representation"), dict)
+    ]
+    if len(candidates) != 1:
+        raise ValueError(
+            f"expected one preserved partial ToolResult representation, found {len(candidates)}"
+        )
+    result = candidates[0]
+    execution = resolve_local(context["index"], result.get("execution"), "ToolExecution")
+    if len(
+        stream_metadata_items(
+            execution, "stream_consumption_observed", "adapter_observed", True
+        )
+    ) != 1:
+        raise ValueError("partial ToolResult lacks positive application-visible consumption evidence")
+    diagnostic = stream_diagnostic_for_result(
+        context, result, "tool_result.stream_events"
+    )
+    if diagnostic.get("status") != "partial":
+        raise ValueError("preserved partial ToolResult is not bounded by partial capture diagnostic")
+    return result
+
+
+def require_lost_events_bound_capture(context):
+    candidates = [
+        execution
+        for execution in context["executions"]
+        if len(
+            stream_metadata_items(
+                execution, "event_loss_detected", "adapter_observed", True
+            )
+        ) == 1
+    ]
+    if len(candidates) != 1:
+        raise ValueError(f"expected one positive lost-event observation, found {len(candidates)}")
+    execution = candidates[0]
+    result = stream_result_for_execution(context, execution)
+    if result.get("capture_extent") != "partial":
+        raise ValueError("known lost result events were reported as complete capture")
+    diagnostic = stream_diagnostic_for_result(
+        context, result, "tool_result.stream_events"
+    )
+    if diagnostic.get("status") != "partial":
+        raise ValueError("known lost result events are not bounded by partial capture diagnostic")
+    return result
+
+
+def require_consumer_stop_bounded(context):
+    candidates = [
+        execution
+        for execution in context["executions"]
+        if len(
+            stream_metadata_items(
+                execution, "consumer_stopped", "adapter_observed", True
+            )
+        ) == 1
+    ]
+    if len(candidates) != 1:
+        raise ValueError(f"expected one consumer-stop observation, found {len(candidates)}")
+    execution = candidates[0]
+    if execution.get("lifecycle_state") == "terminal":
+        raise ValueError("consumer stop was upgraded to terminal ToolExecution lifecycle")
+    if execution.get("terminal_disposition") is not None:
+        raise ValueError("consumer stop synthesized remote terminal disposition")
+    return execution
+
+
+def require_chunk_retention_optional(context):
+    candidates = [
+        result
+        for result in context["results"]
+        if result.get("capture_extent") == "complete"
+        and isinstance(result.get("representation"), dict)
+    ]
+    if len(candidates) != 1:
+        raise ValueError(
+            f"expected one complete terminal ToolResult representation, found {len(candidates)}"
+        )
+    result = candidates[0]
+    execution = resolve_local(context["index"], result.get("execution"), "ToolExecution")
+    if execution.get("lifecycle_state") != "terminal":
+        raise ValueError("complete stream result is not attached to terminal ToolExecution")
+    if execution.get("terminal_disposition") != "completed":
+        raise ValueError("complete stream result lacks completed terminal disposition")
+    if len(
+        stream_metadata_items(
+            execution, "stream_consumption_observed", "adapter_observed", True
+        )
+    ) != 1:
+        raise ValueError("complete stream result lacks positive consumption observation")
+    diagnostic = stream_diagnostic_for_result(
+        context, result, "tool_result.stream_events"
+    )
+    if diagnostic.get("status") != "observed":
+        raise ValueError("complete stream result lacks observed capture diagnostic")
+    if any(
+        isinstance(record.get("kind"), str)
+        and "chunk" in record.get("kind", "").lower()
+        for record in records(context["receipt"])
+        if isinstance(record, dict)
+    ):
+        raise ValueError("chunk-optional scenario unexpectedly persists result-chunk records")
+    return result
+
+
+_execute_adapter_capture_case_before_batch23 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH23_STREAMING_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch23(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    context = tool_streaming_context(receipt)
+
+    if check_id == "tool-stream-result-consumption-001":
+        execution = require_stream_consumption_observation(context)
+        actual_finding = finding(requirement_id, check_id, receipt, execution["id"])
+    elif check_id == "tool-stream-result-semantics-001":
+        result, event_semantics = require_supported_stream_semantics(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            selector={"event_semantics": event_semantics},
+        )
+    elif check_id == "tool-stream-result-unsupported-001":
+        diagnostic, _result = require_unsupported_stream_semantics(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            diagnostic["id"],
+            domain="support",
+            status="unsupported",
+        )
+    elif check_id == "tool-stream-result-partial-preserve-001":
+        result = require_partial_stream_result_preserved(context)
+        actual_finding = finding(requirement_id, check_id, receipt, result["id"])
+    elif check_id == "tool-stream-result-loss-001":
+        result = require_lost_events_bound_capture(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            selector={"capture_extent": result["capture_extent"]},
+        )
+    elif check_id == "tool-stream-consumer-stop-bounded-001":
+        execution = require_consumer_stop_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            execution["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:consumer_stop_proves_remote_completion_or_effect_cardinality"],
+        )
+    elif check_id == "tool-stream-chunks-optional-001":
+        result = require_chunk_retention_optional(context)
+        actual_finding = finding(requirement_id, check_id, receipt, result["id"])
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": "completed",
+        "completeness": {},
+    }
