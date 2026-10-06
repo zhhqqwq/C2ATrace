@@ -371,3 +371,291 @@ def execute_verifier_report_case(row, case, materialized):
         "process_outcome": report["process_outcome"],
         "completeness": dict(report.get("completeness") or {}),
     }
+
+# Runner A Wave 03 Batch 25: verifier conflict/completeness core.
+_BATCH25_VERIFIER_REQUIREMENTS = {
+    "verifier-history-completeness-default-001": "VFY-090",
+    "verifier-conflict-independent-checks-001": "VFY-096",
+    "verifier-unsupported-no-downgrade-001": "VFY-097",
+    "verifier-profile-no-code-execution-001": "VFY-099",
+    "verifier-consistent-bounded-001": "VFY-151",
+    "verifier-conflict-and-invalid-001": "VFY-153",
+    "verifier-conflict-not-universal-invalidity-001": "VFY-154",
+}
+VERIFIER_REPORT_REQUIREMENTS.update(_BATCH25_VERIFIER_REQUIREMENTS)
+VERIFIER_REPORT_PLANNED_TESTS.update(_BATCH25_VERIFIER_REQUIREMENTS)
+
+
+def require_conflict_completeness_report(report):
+    if report.get("process_outcome") != "completed":
+        raise ValueError("conflict/completeness VerificationReport is not completed")
+
+    invocation = report.get("invocation") or {}
+    receipt_ids = invocation.get("receipt_ids")
+    if (
+        not isinstance(receipt_ids, list)
+        or not receipt_ids
+        or any(not isinstance(receipt_id, str) or not receipt_id for receipt_id in receipt_ids)
+        or len(set(receipt_ids)) != len(receipt_ids)
+    ):
+        raise ValueError("VerificationReport invocation receipt scope is missing or ambiguous")
+    receipt_scope = set(receipt_ids)
+
+    completeness = report.get("completeness")
+    if not isinstance(completeness, dict):
+        raise ValueError("VerificationReport completeness block is missing")
+    expected_completeness = {
+        "package_inventory": "established",
+        "reference_closure": "established",
+        "runtime_history": "unknown",
+    }
+    if any(completeness.get(key) != value for key, value in expected_completeness.items()):
+        raise ValueError("VerificationReport completeness block does not preserve bounded history scope")
+
+    index = finding_index(report)
+    for finding in index.values():
+        subject = finding.get("subject") or {}
+        receipt_id = subject.get("receipt_id")
+        if receipt_id is not None and receipt_id not in receipt_scope:
+            raise ValueError(
+                f"finding {finding.get('finding_id')} is outside the verification invocation receipt scope"
+            )
+    return index, receipt_scope
+
+
+def finding_receipt_scope(finding):
+    subject = finding.get("subject") or {}
+    if subject.get("subject_kind") not in {"receipt", "object"}:
+        raise ValueError("finding is not scoped to a supplied receipt/object")
+    receipt_id = subject.get("receipt_id")
+    if not isinstance(receipt_id, str) or not receipt_id:
+        raise ValueError("finding supplied scope has no receipt_id")
+    return receipt_id
+
+
+def require_unsupported_profile_source(report):
+    source = one_finding(
+        report,
+        domain="support",
+        status="unsupported",
+        reason_code="profile_not_implemented",
+    )
+    subject = source.get("subject") or {}
+    if subject.get("subject_kind") != "profile":
+        raise ValueError("unsupported finding is not scoped to a profile identifier")
+    profile_id = subject.get("profile_id")
+    if not isinstance(profile_id, str) or not profile_id:
+        raise ValueError("unsupported profile identifier is missing")
+
+    supported = set((report.get("verifier") or {}).get("profiles", []))
+    supported.update(
+        ((report.get("invocation") or {}).get("capability_summary") or {}).get(
+            "supported_profiles", []
+        )
+    )
+    if profile_id in supported:
+        raise ValueError("unsupported profile is declared supported by the verifier invocation")
+    return source
+
+
+def execute_history_completeness_default(requirement_id, planned, report):
+    source = one_finding(
+        report,
+        domain="completeness",
+        status="unknown",
+        reason_code="runtime_history_not_established",
+    )
+    require_receipt_subject_in_invocation(report, source)
+    if (report.get("completeness") or {}).get("runtime_history") != "unknown":
+        raise ValueError("runtime history completeness was silently upgraded")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "completeness",
+        "unknown",
+        reason_code="runtime_history_not_established",
+    )]
+
+
+def execute_conflict_independent_checks(requirement_id, report):
+    conflict = one_finding(report, domain="conflict", status="conflict")
+    valid = one_finding(report, domain="conformance", status="valid")
+    conflict_receipt = finding_receipt_scope(conflict)
+    valid_receipt = finding_receipt_scope(valid)
+    if conflict_receipt == valid_receipt:
+        raise ValueError("independent valid check is not separate from the conflicting scope")
+    require_receipt_subject_in_invocation(report, valid)
+    if conflict_receipt not in set((report.get("invocation") or {}).get("receipt_ids", [])):
+        raise ValueError("conflict finding is outside the verification invocation")
+    return [
+        normalized_finding(
+            requirement_id,
+            "conflicting-scope",
+            report,
+            "conflict",
+            "conflict",
+        ),
+        normalized_finding(
+            requirement_id,
+            "independent-scope",
+            report,
+            "conformance",
+            "valid",
+        ),
+    ]
+
+
+def execute_unsupported_no_downgrade(requirement_id, planned, report):
+    require_unsupported_profile_source(report)
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "support",
+        "unsupported",
+        reason_code="profile_not_implemented",
+        prohibited=["P1:unsupported_profile_silently_downgraded_to_baseline"],
+    )]
+
+
+def execute_profile_identifier_no_code(requirement_id, planned, report):
+    source = require_unsupported_profile_source(report)
+    subject = source.get("subject") or {}
+    if set(subject) != {"subject_kind", "profile_id"}:
+        raise ValueError("profile finding subject contains non-declarative execution material")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "support",
+        "unsupported",
+        prohibited=["P1:profile_identifier_authorizes_or_executes_code"],
+    )]
+
+
+def execute_consistent_bounded(requirement_id, planned, report):
+    source = one_finding(report, domain="conflict", status="consistent")
+    require_receipt_subject_in_invocation(report, source)
+    message = source.get("message")
+    if not isinstance(message, str) or "supplied scope" not in message.lower():
+        raise ValueError("consistent finding does not preserve supplied-scope boundedness")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "conflict",
+        "consistent",
+        prohibited=["P1:consistent_supplied_scope_means_global_truth_or_completeness"],
+    )]
+
+
+def execute_conflict_and_invalid(requirement_id, report):
+    conflict = one_finding(report, domain="conflict", status="conflict")
+    invalid = one_finding(
+        report,
+        domain="conformance",
+        status="invalid",
+        reason_code="local_structural_invalidity",
+    )
+    conflict_receipt = finding_receipt_scope(conflict)
+    invalid_receipt = finding_receipt_scope(invalid)
+    if conflict_receipt != invalid_receipt:
+        raise ValueError("conflict and structural invalidity do not coexist on the same supplied scope")
+    if conflict_receipt not in set((report.get("invocation") or {}).get("receipt_ids", [])):
+        raise ValueError("coexisting conflict/invalidity scope is outside the verification invocation")
+    return [
+        normalized_finding(
+            requirement_id,
+            "coexisting-conflict",
+            report,
+            "conflict",
+            "conflict",
+        ),
+        normalized_finding(
+            requirement_id,
+            "coexisting-invalidity",
+            report,
+            "conformance",
+            "invalid",
+        ),
+    ]
+
+
+def execute_conflict_not_universal_invalidity(requirement_id, report):
+    conflict = one_finding(report, domain="conflict", status="conflict")
+    valid = one_finding(report, domain="conformance", status="valid")
+    conflict_receipt = finding_receipt_scope(conflict)
+    valid_receipt = finding_receipt_scope(valid)
+    if conflict_receipt == valid_receipt:
+        raise ValueError("conflict scenario lacks an independent valid supplied scope")
+    require_receipt_subject_in_invocation(report, valid)
+    if conflict_receipt not in set((report.get("invocation") or {}).get("receipt_ids", [])):
+        raise ValueError("conflict scope is outside the verification invocation")
+    return [
+        normalized_finding(
+            requirement_id,
+            "conflicting-scope",
+            report,
+            "conflict",
+            "conflict",
+            prohibited=["P1:conflict_alone_makes_all_material_invalid"],
+        ),
+        normalized_finding(
+            requirement_id,
+            "independent-valid-scope",
+            report,
+            "conformance",
+            "valid",
+        ),
+    ]
+
+
+_execute_verifier_report_case_before_batch25 = execute_verifier_report_case
+
+
+def execute_verifier_report_case(row, case, materialized):
+    planned = row["planned_test_id"]
+    expected_requirement = _BATCH25_VERIFIER_REQUIREMENTS.get(planned)
+    if expected_requirement is None:
+        return _execute_verifier_report_case_before_batch25(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{planned}")
+
+    report = primary_report(case, materialized)
+    require_conflict_completeness_report(report)
+
+    if planned == "verifier-history-completeness-default-001":
+        findings = execute_history_completeness_default(
+            requirement_id, planned, report
+        )
+    elif planned == "verifier-conflict-independent-checks-001":
+        findings = execute_conflict_independent_checks(requirement_id, report)
+    elif planned == "verifier-unsupported-no-downgrade-001":
+        findings = execute_unsupported_no_downgrade(
+            requirement_id, planned, report
+        )
+    elif planned == "verifier-profile-no-code-execution-001":
+        findings = execute_profile_identifier_no_code(
+            requirement_id, planned, report
+        )
+    elif planned == "verifier-consistent-bounded-001":
+        findings = execute_consistent_bounded(
+            requirement_id, planned, report
+        )
+    elif planned == "verifier-conflict-and-invalid-001":
+        findings = execute_conflict_and_invalid(requirement_id, report)
+    elif planned == "verifier-conflict-not-universal-invalidity-001":
+        findings = execute_conflict_not_universal_invalidity(
+            requirement_id, report
+        )
+    else:
+        raise NotImplementedError(planned)
+
+    return {
+        "findings": findings,
+        "process_outcome": report["process_outcome"],
+        "completeness": dict(report.get("completeness") or {}),
+    }
