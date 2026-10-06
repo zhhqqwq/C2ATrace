@@ -1,0 +1,60 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "22-tool-orchestration-relations-core",
+  "status": "complete",
+  "selection_commit": "3b8f44e0ab7ff954db3f8070e5729591ebc265e3",
+  "implementation_commit": "fcb98c3c575fcc4f11370bbc65761de316db69cb",
+  "requirements": ["TAD-047","TAD-048","TAD-049","TAD-051","TAD-052","TAD-055","TAD-056"],
+  "shared_evidence": "conformance/v0.1/primitives/receipts/tool-orchestration-relations.json",
+  "execution": {
+    "cases": 7,
+    "pass": 7,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 7,
+    "process_outcomes": {"completed": 7},
+    "domains": {"conformance": 4, "claim": 3},
+    "statuses": {"valid": 4, "asserted": 3}
+  },
+  "ci": {
+    "runner_a_run_id": 37411716701,
+    "runner_a_jobs": "24/24 success",
+    "p5_run_id": 37411716711,
+    "p5": "907/907 pass; 0 fail; 0 meta failures",
+    "artifact_id": 11389307417,
+    "artifact_sha256": "cf18ba3c8113e39767e3e134fe89e4dc34bea2082c5dccabdf848d498b077543",
+    "p5_artifact_id": 11389795967,
+    "p5_artifact_sha256": "6d84573a70f61f3e1fbe7c4a297235cc666207412d394132c189516467a02cd6"
+  },
+  "accounting": {
+    "independent_cases": 223,
+    "semantic_evidence": 155,
+    "semantic_total": 771,
+    "remaining": 616,
+    "registered_planned_test_ids": 174,
+    "id_matched_rows": 158,
+    "shared_id_exclusions": [
+      {"planned_test_id":"tool-deny-later-execution-001","implemented":"TOOL-026","excluded":"TAD-021"},
+      {"planned_test_id":"tool-effect-not-outcome-001","implemented":"TOOL-048","excluded":"TAD-084"},
+      {"planned_test_id":"tool-idempotency-no-exactly-once-001","implemented":"TAD-055","excluded":"TOOL-054"}
+    ]
+  },
+  "guards": {
+    "tool-retry-new-execution-001": "TAD-047",
+    "tool-retry-changed-invocation-001": "TAD-048",
+    "tool-retry-relation-positive-001": "TAD-049",
+    "tool-replay-relation-positive-001": "TAD-051",
+    "tool-duplicate-relation-bounded-001": "TAD-052",
+    "tool-idempotency-no-exactly-once-001": "TAD-055",
+    "tool-idempotency-reported-dedup-001": "TAD-056"
+  },
+  "fail_closed": ["TAD-050","TAD-053","TAD-054","TOOL-054","TAD-021","TAD-084"],
+  "mutation_checks": "pass",
+  "schema_changed": false,
+  "spec_changed": false,
+  "cases_changed": false,
+  "expected_changed": false,
+  "runner_b_started": false,
+  "product_verifier_sdk_started": false
+}
