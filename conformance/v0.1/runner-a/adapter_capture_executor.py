@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 
 ADAPTER_CAPTURE_PLANNED_TESTS = {
     "tool-adapter-visibility-boundary-001",
@@ -1784,5 +1785,324 @@ def execute_adapter_capture_case(row, case, materialized):
     return {
         "findings": [actual_finding],
         "process_outcome": "completed",
+        "completeness": {},
+    }
+
+# Runner A Wave 03 Batch 24: provider streaming boundary core.
+_BATCH24_PROVIDER_STREAMING_REQUIREMENTS = {
+    "provider-stream-consumption-boundary-001": "PAD-046",
+    "provider-stream-event-semantics-001": "PAD-047",
+    "provider-stream-unsupported-degrade-001": "PAD-048",
+    "provider-stream-partial-preserve-001": "PAD-049",
+    "provider-stream-app-stop-bounded-001": "PAD-050",
+    "provider-stream-drop-no-complete-001": "PAD-051",
+    "provider-stream-tool-fragment-001": "PAD-052",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH24_PROVIDER_STREAMING_REQUIREMENTS)
+
+
+def provider_streaming_capability(materialized):
+    capabilities = [
+        value
+        for value in materialized.values()
+        if isinstance(value, dict)
+        and value.get("kind") == "ProviderAdapterCapability"
+    ]
+    if len(capabilities) != 1:
+        raise ValueError(
+            f"provider streaming scenario requires one inline ProviderAdapterCapability, found {len(capabilities)}"
+        )
+    capability = capabilities[0]
+    if capability.get("output_capture") is not True:
+        raise ValueError("ProviderAdapterCapability does not declare output capture")
+    if capability.get("streaming_output") is not True:
+        raise ValueError("ProviderAdapterCapability does not declare streaming output support")
+    if capability.get("invocation_boundary") != "logical application model call":
+        raise ValueError("ProviderAdapterCapability invocation boundary is not the application logical call")
+    if capability.get("attempt_boundary") != "provider attempt start":
+        raise ValueError("ProviderAdapterCapability attempt boundary is not provider attempt start")
+    return capability
+
+
+def provider_streaming_context(receipt):
+    index = record_index(receipt)
+    invocations = by_kind(receipt, "ModelInvocation")
+    attempts = by_kind(receipt, "ProviderAttempt")
+    outputs = by_kind(receipt, "ModelOutput")
+    diagnostics = by_kind(receipt, "CaptureDiagnostic")
+    proposals = by_kind(receipt, "ToolProposal")
+
+    if len(invocations) != 1:
+        raise ValueError(
+            f"provider streaming scenario requires one ModelInvocation, found {len(invocations)}"
+        )
+    if len(attempts) != 1:
+        raise ValueError(
+            f"provider streaming scenario requires one ProviderAttempt, found {len(attempts)}"
+        )
+    if len(outputs) != 1:
+        raise ValueError(
+            f"provider streaming scenario requires one ModelOutput, found {len(outputs)}"
+        )
+
+    invocation = invocations[0]
+    attempt = attempts[0]
+    output = outputs[0]
+
+    resolved_invocation = resolve_local(index, attempt.get("invocation"), "ModelInvocation")
+    if resolved_invocation.get("id") != invocation.get("id"):
+        raise ValueError("ProviderAttempt does not belong to the materialized ModelInvocation")
+
+    resolved_attempt = resolve_local(index, output.get("attempt"), "ProviderAttempt")
+    if resolved_attempt.get("id") != attempt.get("id"):
+        raise ValueError("ModelOutput does not belong to the materialized ProviderAttempt")
+
+    accepted_output = resolve_local(index, invocation.get("accepted_output"), "ModelOutput")
+    if accepted_output.get("id") != output.get("id"):
+        raise ValueError("ModelInvocation accepted_output is not the materialized ModelOutput")
+
+    run_ids = {invocation.get("run_id"), attempt.get("run_id"), output.get("run_id")}
+    if None in run_ids or len(run_ids) != 1:
+        raise ValueError("provider streaming occurrence crosses run ownership")
+
+    output_items = []
+    for reference in output.get("item_refs", []):
+        item = resolve_local(index, reference)
+        if item.get("run_id") != output.get("run_id"):
+            raise ValueError("ModelOutput item crosses run ownership")
+        if item.get("kind") == "TextOutput" and item.get("output") is not None:
+            backref = resolve_local(index, item.get("output"), "ModelOutput")
+            if backref.get("id") != output.get("id"):
+                raise ValueError("TextOutput back-reference points to a different ModelOutput")
+        output_items.append(item)
+
+    for diagnostic in diagnostics:
+        subject_ref = (diagnostic.get("subject") or {}).get("ref")
+        subject = resolve_local(index, subject_ref)
+        if subject.get("run_id") != diagnostic.get("run_id"):
+            raise ValueError("provider stream CaptureDiagnostic crosses run ownership")
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "invocation": invocation,
+        "attempt": attempt,
+        "output": output,
+        "output_items": output_items,
+        "diagnostics": diagnostics,
+        "proposals": proposals,
+    }
+
+
+def provider_stream_diagnostic(context, slot, status, subject_kind):
+    matches = [
+        diagnostic
+        for diagnostic in context["diagnostics"]
+        if diagnostic.get("slot") == slot
+        and diagnostic.get("status") == status
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"provider streaming scenario requires one {slot}/{status} diagnostic, found {len(matches)}"
+        )
+    diagnostic = matches[0]
+    subject = resolve_local(
+        context["index"],
+        (diagnostic.get("subject") or {}).get("ref"),
+        subject_kind,
+    )
+    return diagnostic, subject
+
+
+def require_provider_stream_consumption(materialized, context):
+    provider_streaming_capability(materialized)
+    diagnostic, attempt = provider_stream_diagnostic(
+        context, "provider_stream.events", "observed", "ProviderAttempt"
+    )
+    if attempt.get("id") != context["attempt"].get("id"):
+        raise ValueError("stream-consumption diagnostic is not scoped to the materialized attempt")
+    if ref_id(context["output"].get("attempt")) != attempt.get("id"):
+        raise ValueError("stream-consumption diagnostic attempt is not the ModelOutput attempt")
+    return diagnostic
+
+
+def require_provider_stream_semantics(context):
+    semantics = [
+        item
+        for item in context["invocation"].get("metadata", [])
+        if isinstance(item, dict)
+        and item.get("name") == "stream_assembly_semantics"
+        and item.get("origin") == "adapter_observed"
+    ]
+    if len(semantics) != 1:
+        raise ValueError(
+            f"provider stream scenario requires one adapter-observed assembly semantic, found {len(semantics)}"
+        )
+    if semantics[0].get("value") != "indexed-delta":
+        raise ValueError("provider stream assembly semantic is unsupported or blind-delta")
+    return context["output"]
+
+
+def require_provider_stream_unsupported_degrade(materialized, context):
+    provider_streaming_capability(materialized)
+    _diagnostic, attempt = provider_stream_diagnostic(
+        context, "provider_stream.assembly", "unsupported", "ProviderAttempt"
+    )
+    if attempt.get("id") != context["attempt"].get("id"):
+        raise ValueError("unsupported stream diagnostic is not scoped to the materialized attempt")
+    output = context["output"]
+    if output.get("capture_extent") not in {"partial", "unknown"}:
+        raise ValueError("unsupported stream semantics fabricated complete ModelOutput capture")
+    if output.get("response_termination") != "incomplete":
+        raise ValueError("unsupported stream semantics fabricated terminal ModelOutput completion")
+    return output
+
+
+def require_provider_partial_output_preserved(context):
+    attempt = context["attempt"]
+    output = context["output"]
+    if attempt.get("terminal_disposition") != "timeout":
+        raise ValueError("partial stream preservation scenario lacks timeout termination")
+    if output.get("capture_extent") != "partial":
+        raise ValueError("observed partial ModelOutput was not preserved as partial")
+    if output.get("response_termination") != "incomplete":
+        raise ValueError("partial ModelOutput was upgraded to complete response termination")
+    preserved_text = [
+        item
+        for item in context["output_items"]
+        if item.get("kind") == "TextOutput"
+        and isinstance(item.get("text"), str)
+        and item.get("text") != ""
+    ]
+    if not preserved_text:
+        raise ValueError("partial ModelOutput has no preserved observed text evidence")
+    return output
+
+
+def require_provider_app_stop_bounded(context):
+    attempt = context["attempt"]
+    output = context["output"]
+    if attempt.get("terminal_disposition") not in {"timeout", "cancelled", "interrupted"}:
+        raise ValueError("application stop scenario was upgraded to provider-normal completion")
+    if output.get("response_termination") != "incomplete":
+        raise ValueError("application stop scenario reports normal output completion")
+    if output.get("capture_extent") != "partial":
+        raise ValueError("application stop scenario reports complete output capture")
+    return attempt
+
+
+def require_provider_dropped_event_invalidity(context):
+    diagnostic, output = provider_stream_diagnostic(
+        context, "provider_stream.events", "partial", "ModelOutput"
+    )
+    if output.get("id") != context["output"].get("id"):
+        raise ValueError("dropped-event diagnostic is not scoped to the materialized ModelOutput")
+    if diagnostic.get("reason") != "known dropped events":
+        raise ValueError("partial stream diagnostic does not establish known dropped events")
+    if output.get("capture_extent") != "complete":
+        raise ValueError("known dropped events do not conflict with complete capture in this case")
+    return output
+
+
+def require_incomplete_tool_fragment_bounded(context):
+    fragments = [
+        item
+        for item in context["invocation"].get("metadata", [])
+        if isinstance(item, dict)
+        and item.get("name") == "tool_call_fragment"
+        and item.get("origin") == "provider_reported"
+        and isinstance(item.get("value"), str)
+    ]
+    if len(fragments) != 1:
+        raise ValueError(
+            f"provider stream scenario requires one provider-reported tool fragment, found {len(fragments)}"
+        )
+    try:
+        json.loads(fragments[0]["value"])
+    except json.JSONDecodeError:
+        pass
+    else:
+        raise ValueError("tool_call_fragment is a complete JSON value rather than an incomplete fragment")
+    if context["proposals"]:
+        raise ValueError("incomplete provider tool fragment synthesized a ToolProposal occurrence")
+    if context["output"].get("response_termination") != "incomplete":
+        raise ValueError("tool-fragment scenario is not an incomplete ModelOutput")
+    return context["output"]
+
+
+_execute_adapter_capture_case_before_batch24 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH24_PROVIDER_STREAMING_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch24(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    context = provider_streaming_context(receipt)
+    process_outcome = "completed"
+
+    if check_id == "provider-stream-consumption-boundary-001":
+        diagnostic = require_provider_stream_consumption(materialized, context)
+        actual_finding = provider_finding(
+            requirement_id, check_id, receipt, diagnostic["id"]
+        )
+    elif check_id == "provider-stream-event-semantics-001":
+        output = require_provider_stream_semantics(context)
+        actual_finding = provider_finding(
+            requirement_id, check_id, receipt, output["id"]
+        )
+    elif check_id == "provider-stream-unsupported-degrade-001":
+        output = require_provider_stream_unsupported_degrade(materialized, context)
+        actual_finding = provider_finding(
+            requirement_id, check_id, receipt, output["id"]
+        )
+    elif check_id == "provider-stream-partial-preserve-001":
+        output = require_provider_partial_output_preserved(context)
+        actual_finding = provider_finding(
+            requirement_id, check_id, receipt, output["id"]
+        )
+    elif check_id == "provider-stream-app-stop-bounded-001":
+        attempt = require_provider_app_stop_bounded(context)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            attempt["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:application_stream_stop_is_provider_completion"],
+        )
+    elif check_id == "provider-stream-drop-no-complete-001":
+        output = require_provider_dropped_event_invalidity(context)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            output["id"],
+            status="invalid",
+            reason_code="complete_capture_with_known_dropped_events",
+        )
+        process_outcome = "invalidity_detected"
+    elif check_id == "provider-stream-tool-fragment-001":
+        output = require_incomplete_tool_fragment_bounded(context)
+        actual_finding = provider_finding(
+            requirement_id,
+            check_id,
+            receipt,
+            output["id"],
+            prohibited=["P1:incomplete_tool_fragment_synthesizes_tool_proposal"],
+        )
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": process_outcome,
         "completeness": {},
     }
