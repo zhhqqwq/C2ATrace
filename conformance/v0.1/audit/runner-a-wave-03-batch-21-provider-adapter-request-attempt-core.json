@@ -1,0 +1,185 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "21-provider-adapter-request-attempt-core",
+  "status": "complete",
+  "selection_commit": "af7f91fc733348b38fbdc3a68c789281bfe7964b",
+  "implementation_commits": [
+    "7249e0fdf260c22cead028b6082733801c615873"
+  ],
+  "selection": {
+    "selection_mode": "explicit_requirements",
+    "selected_partial_primitive": "prim.adapter.capture",
+    "requirement_ids": [
+      "PAD-001",
+      "PAD-011",
+      "PAD-013",
+      "PAD-018",
+      "PAD-021",
+      "PAD-025",
+      "PAD-031",
+      "PAD-032",
+      "PAD-035"
+    ],
+    "expected_cases": 9,
+    "selected_cases": 9,
+    "shared_base_evidence": "fixtures/v0.1/valid/source-to-request.json"
+  },
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/adapter_capture_executor.py",
+    "workflow": ".github/workflows/runner-a.yml",
+    "planned_tests_added": [
+      "provider-adapter-visibility-boundary-001",
+      "provider-capture-observed-bounded-001",
+      "provider-capture-diagnostic-asserted-001",
+      "provider-attempt-boundary-001",
+      "provider-attempt-disposition-boundary-001",
+      "provider-no-synthetic-level-001",
+      "provider-effective-snapshot-positive-001",
+      "provider-missing-level-valid-001",
+      "provider-request-reuse-not-equality-001"
+    ],
+    "requirement_level_guards": {
+      "provider-adapter-visibility-boundary-001": "PAD-001",
+      "provider-capture-observed-bounded-001": "PAD-011",
+      "provider-capture-diagnostic-asserted-001": "PAD-013",
+      "provider-attempt-boundary-001": "PAD-018",
+      "provider-attempt-disposition-boundary-001": "PAD-021",
+      "provider-no-synthetic-level-001": "PAD-025",
+      "provider-effective-snapshot-positive-001": "PAD-031",
+      "provider-missing-level-valid-001": "PAD-032",
+      "provider-request-reuse-not-equality-001": "PAD-035"
+    },
+    "rules": [
+      "Locate ProviderAdapterCapability independently from materialized documents or receipt adapter declarations.",
+      "Keep Provider Adapter visibility bounded to declared application-visible invocation and attempt boundaries.",
+      "Resolve provider CaptureDiagnostic subjects through local references and keep observed slot evidence bounded.",
+      "Keep CaptureDiagnostic evidence as assertion/completeness evidence rather than global completeness proof.",
+      "Resolve ProviderAttempt to ModelInvocation and keep lifecycle state separate from provider-reported status metadata.",
+      "Resolve effective RequestSnapshot and RequestBinding references before request-level conclusions.",
+      "Do not synthesize missing sdk_arguments or prepared_http_body levels around a provider_payload-only observation.",
+      "With multiple same-level candidates and no positive selection basis, return unverified rather than selecting by timestamp.",
+      "Treat reuse as reuse of the same invocation-owned RequestSnapshot identity across attempts, not equal content.",
+      "PAD-066 remains outside the Batch 21 planned-test registry."
+    ]
+  },
+  "mutation_checks": {
+    "status": "pass",
+    "rejected": [
+      "provider-internal invocation boundary substituted for PAD-001",
+      "CaptureDiagnostic status changed from observed for PAD-011",
+      "CaptureDiagnostic subject changed to wrong kind for PAD-013",
+      "provider-internal attempt boundary substituted for PAD-018",
+      "provider-reported success used to synthesize terminal disposition for PAD-021",
+      "synthetic sdk_arguments RequestSnapshot added for PAD-025",
+      "positive selection basis added to PAD-031 timestamp-only scenario",
+      "synthetic intermediate level added for PAD-032",
+      "same-content distinct snapshot substituted for actual reuse in PAD-035",
+      "PAD-066 requirement_id paired with a Batch 21 planned_test_id",
+      "PAD-066 planned_test_id executed through adapter executor"
+    ]
+  },
+  "execution": {
+    "head": "7249e0fdf260c22cead028b6082733801c615873",
+    "semantic_verifier": {
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    "total": {
+      "cases": 9,
+      "pass": 9,
+      "fail": 0,
+      "selection_failures": 0
+    },
+    "actual_findings": 9,
+    "process_outcomes": {
+      "completed": 8,
+      "incomplete_evaluation": 1
+    },
+    "finding_domains": {
+      "conformance": 5,
+      "claim": 3,
+      "completeness": 1
+    },
+    "finding_statuses": {
+      "valid": 5,
+      "asserted": 2,
+      "unverified": 2
+    },
+    "pad_031": {
+      "domain": "claim",
+      "status": "unverified",
+      "reason_code": "effective_snapshot_selection_basis_missing",
+      "process_outcome": "incomplete_evaluation"
+    },
+    "first_matcher_pass": true
+  },
+  "ci": {
+    "runner_a_workflow_run_id": 37408490544,
+    "runner_a_jobs": "23/23 success",
+    "p5_workflow_run_id": 37408490539,
+    "artifact_id": 11387204748,
+    "artifact_name": "runner-a-semantic-provider-adapter-request-attempt-core",
+    "artifact_sha256": "66c44112a6b0e82bc112fa6b6e30ca9a2a17cdc8f42667f293b6c56e431bde5a",
+    "p5_artifact_id": 11388580407,
+    "p5_artifact_sha256": "7a0aee270785df60ddac7ab43d4d273c0830fc13894f6bb03e0c3ae69d9d5185"
+  },
+  "cumulative_runner_a": {
+    "independent_cases_after_batch": 216,
+    "direct_schema": 6,
+    "deterministic_vector": 43,
+    "mixed_schema_semantic": 19,
+    "semantic_verifier": 148
+  },
+  "accounting": {
+    "registered_semantic_planned_test_ids": 167,
+    "registered_id_matched_coverage_rows": 150,
+    "independently_evidenced_semantic_requirements": 148,
+    "remaining_semantic_requirements": 623,
+    "batch21_planned_ids_are_one_to_one": true,
+    "shared_planned_test_id_exclusions": [
+      {
+        "planned_test_id": "tool-deny-later-execution-001",
+        "implemented_requirement": "TOOL-026",
+        "excluded_requirement": "TAD-021"
+      },
+      {
+        "planned_test_id": "tool-effect-not-outcome-001",
+        "implemented_requirement": "TOOL-048",
+        "excluded_requirement": "TAD-084"
+      }
+    ]
+  },
+  "regression": {
+    "runner_a_jobs": "23/23 success",
+    "p5_matcher_coverage": "907/907 pass; 0 fail; 0 meta failures",
+    "batch21_provider_adapter_request_attempt": "9/9 pass; 9 normalized findings"
+  },
+  "fail_closed": {
+    "explicitly_unimplemented": [
+      {
+        "requirement_id": "PAD-066",
+        "planned_test_id": "provider-transport-secret-not-model-input-001",
+        "reason": "transport-metadata proximity semantics remain outside Batch 21"
+      }
+    ],
+    "shared_planned_test_id_exclusions": [
+      "TAD-021",
+      "TAD-084"
+    ]
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "specification_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "golden_results_not_used_to_derive_provider_runtime_facts": true,
+    "human_free_text_not_used_to_strengthen_provider_evidence": true,
+    "pad_066_not_implemented": true,
+    "tad_021_not_implemented": true,
+    "tad_084_not_implemented": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
