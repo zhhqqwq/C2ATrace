@@ -1198,3 +1198,229 @@ def execute_adapter_capture_case(row, case, materialized):
         "process_outcome": process_outcome,
         "completeness": {},
     }
+
+# Runner A Wave 03 Batch 22: tool orchestration relation core.
+_BATCH22_ORCHESTRATION_REQUIREMENTS = {
+    "tool-retry-new-execution-001": "TAD-047",
+    "tool-retry-changed-invocation-001": "TAD-048",
+    "tool-retry-relation-positive-001": "TAD-049",
+    "tool-replay-relation-positive-001": "TAD-051",
+    "tool-duplicate-relation-bounded-001": "TAD-052",
+    "tool-idempotency-no-exactly-once-001": "TAD-055",
+    "tool-idempotency-reported-dedup-001": "TAD-056",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH22_ORCHESTRATION_REQUIREMENTS)
+
+
+def orchestration_context(receipt):
+    index = record_index(receipt)
+    invocations = by_kind(receipt, "ToolInvocation")
+    executions = by_kind(receipt, "ToolExecution")
+    results = by_kind(receipt, "ToolResult")
+    if len(invocations) < 2:
+        raise ValueError("tool orchestration scenario requires at least two ToolInvocations")
+    if len(executions) < 4:
+        raise ValueError("tool orchestration scenario requires retry/replay/duplicate ToolExecutions")
+    run_ids = {
+        record.get("run_id")
+        for record in [*invocations, *executions, *results]
+        if isinstance(record, dict)
+    }
+    if len(run_ids) != 1 or None in run_ids:
+        raise ValueError("tool orchestration objects are not owned by one explicit run")
+    for execution in executions:
+        invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+        if invocation.get("run_id") != execution.get("run_id"):
+            raise ValueError("ToolExecution invocation crosses run ownership")
+        for relation in ("retry_of", "replay_of", "duplicate_of"):
+            if execution.get(relation) is None:
+                continue
+            prior = resolve_local(index, execution.get(relation), "ToolExecution")
+            if prior.get("run_id") != execution.get("run_id"):
+                raise ValueError(f"{relation} crosses run ownership")
+            if prior.get("id") == execution.get("id"):
+                raise ValueError(f"{relation} self-reference is invalid")
+    for result in results:
+        execution = resolve_local(index, result.get("execution"), "ToolExecution")
+        if execution.get("run_id") != result.get("run_id"):
+            raise ValueError("ToolResult execution crosses run ownership")
+    return {
+        "receipt": receipt,
+        "index": index,
+        "invocations": invocations,
+        "executions": executions,
+        "results": results,
+    }
+
+
+def relation_execution(context, relation):
+    matches = [execution for execution in context["executions"] if execution.get(relation) is not None]
+    if len(matches) != 1:
+        raise ValueError(f"tool orchestration scenario requires one {relation} relation, found {len(matches)}")
+    current = matches[0]
+    prior = resolve_local(context["index"], current.get(relation), "ToolExecution")
+    if prior.get("run_id") != current.get("run_id"):
+        raise ValueError(f"{relation} relation changed run occurrence")
+    return current, prior
+
+
+def application_orchestration_metadata(execution, name, expected_value):
+    matches = [
+        item
+        for item in execution.get("metadata", [])
+        if isinstance(item, dict)
+        and item.get("name") == name
+        and item.get("value") == expected_value
+        and item.get("origin") == "application_observed"
+    ]
+    if len(matches) != 1:
+        raise ValueError(f"{name} lacks one application-observed orchestration basis")
+    return matches[0]
+
+
+def require_visible_retry_new_execution(context):
+    current, prior = relation_execution(context, "retry_of")
+    application_orchestration_metadata(current, "retry_orchestration", "application_retry")
+    if current.get("id") == prior.get("id"):
+        raise ValueError("visible retry reused prior ToolExecution identity")
+    return current, prior
+
+
+def require_changed_retry_invocation(context):
+    current, prior = require_visible_retry_new_execution(context)
+    current_invocation = resolve_local(context["index"], current.get("invocation"), "ToolInvocation")
+    prior_invocation = resolve_local(context["index"], prior.get("invocation"), "ToolInvocation")
+    if current_invocation.get("id") == prior_invocation.get("id"):
+        raise ValueError("changed retry reused prior ToolInvocation identity")
+    execution_relevant_fields = ("tool_name", "arguments", "idempotency_key", "metadata")
+    if all(current_invocation.get(field) == prior_invocation.get(field) for field in execution_relevant_fields):
+        raise ValueError("retry ToolInvocation representation did not change")
+    return current_invocation, prior_invocation
+
+
+def require_retry_orchestration(context):
+    current, prior = relation_execution(context, "retry_of")
+    application_orchestration_metadata(current, "retry_orchestration", "application_retry")
+    return current, prior
+
+
+def require_replay_orchestration(context):
+    current, prior = relation_execution(context, "replay_of")
+    application_orchestration_metadata(current, "replay_orchestration", "operator_replay")
+    return current, prior
+
+
+def require_duplicate_relation(context):
+    current, prior = relation_execution(context, "duplicate_of")
+    evidence = [
+        item
+        for item in current.get("metadata", [])
+        if isinstance(item, dict)
+        and item.get("name") == "duplicate_classification"
+        and item.get("origin") == "application_observed"
+    ]
+    if len(evidence) != 1:
+        raise ValueError("duplicate_of lacks bounded application-observed classification evidence")
+    return current, prior
+
+
+def require_reused_idempotency_key(context):
+    keyed = [
+        invocation
+        for invocation in context["invocations"]
+        if isinstance(invocation.get("idempotency_key"), str) and invocation.get("idempotency_key")
+    ]
+    groups = {}
+    for invocation in keyed:
+        groups.setdefault(invocation["idempotency_key"], []).append(invocation)
+    reused = [items for items in groups.values() if len(items) >= 2]
+    if len(reused) != 1:
+        raise ValueError("tool orchestration scenario requires one reused idempotency key")
+    invocations = reused[0]
+    if len({item.get("id") for item in invocations}) != len(invocations):
+        raise ValueError("idempotency-key reuse does not span distinct ToolInvocation identities")
+    retry, prior = require_visible_retry_new_execution(context)
+    retry_invocation = resolve_local(context["index"], retry.get("invocation"), "ToolInvocation")
+    prior_invocation = resolve_local(context["index"], prior.get("invocation"), "ToolInvocation")
+    if retry_invocation.get("idempotency_key") != prior_invocation.get("idempotency_key"):
+        raise ValueError("visible retry does not reuse the idempotency key")
+    return retry_invocation
+
+
+def require_tool_reported_dedup(context):
+    candidates = []
+    for result in context["results"]:
+        reported = [
+            item
+            for item in result.get("metadata", [])
+            if isinstance(item, dict)
+            and item.get("name") == "deduplicated"
+            and item.get("value") is True
+            and item.get("origin") == "tool_reported"
+        ]
+        if result.get("reported_status") == "deduplicated" and len(reported) == 1:
+            candidates.append(result)
+    if len(candidates) != 1:
+        raise ValueError("tool orchestration scenario requires one tool-reported deduplication result")
+    result = candidates[0]
+    resolve_local(context["index"], result.get("execution"), "ToolExecution")
+    return result
+
+
+_execute_adapter_capture_case_before_batch22 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH22_ORCHESTRATION_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch22(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    context = orchestration_context(receipt)
+
+    if check_id == "tool-retry-new-execution-001":
+        current, _prior = require_visible_retry_new_execution(context)
+        actual_finding = finding(requirement_id, check_id, receipt, current["id"])
+    elif check_id == "tool-retry-changed-invocation-001":
+        current_invocation, _prior_invocation = require_changed_retry_invocation(context)
+        actual_finding = finding(requirement_id, check_id, receipt, current_invocation["id"])
+    elif check_id == "tool-retry-relation-positive-001":
+        current, _prior = require_retry_orchestration(context)
+        actual_finding = finding(requirement_id, check_id, receipt, current["id"])
+    elif check_id == "tool-replay-relation-positive-001":
+        current, _prior = require_replay_orchestration(context)
+        actual_finding = finding(requirement_id, check_id, receipt, current["id"])
+    elif check_id == "tool-duplicate-relation-bounded-001":
+        current, _prior = require_duplicate_relation(context)
+        actual_finding = finding(
+            requirement_id, check_id, receipt, current["id"],
+            domain="claim", status="asserted",
+            prohibited=["P1:duplicate_relation_proves_duplicate_effect_state"],
+        )
+    elif check_id == "tool-idempotency-no-exactly-once-001":
+        invocation = require_reused_idempotency_key(context)
+        actual_finding = finding(
+            requirement_id, check_id, receipt, invocation["id"],
+            domain="claim", status="asserted",
+            prohibited=["P1:idempotency_key_proves_exactly_once"],
+        )
+    elif check_id == "tool-idempotency-reported-dedup-001":
+        result = require_tool_reported_dedup(context)
+        actual_finding = finding(
+            requirement_id, check_id, receipt, result["id"],
+            domain="claim", status="asserted",
+            prohibited=["P1:tool_reported_deduplication_is_independently_verified"],
+        )
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": "completed",
+        "completeness": {},
+    }
