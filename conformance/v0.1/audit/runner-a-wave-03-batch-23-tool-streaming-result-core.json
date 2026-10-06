@@ -1,0 +1,157 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "23-tool-streaming-result-core",
+  "status": "complete",
+  "selection_commit": "a32643ef70d6f52ea9e90ece37501519842bfeff",
+  "implementation_commits": [
+    "4c5ffaa71b0e55ef519d868078b32544079da03c",
+    "797a7d90f2be6583b67cccd1f6f43e65babe6971",
+    "728cfbc808a87dad9431b601cda2d90d4ca32702"
+  ],
+  "selection": {
+    "primitive": "prim.adapter.capture",
+    "requirements": [
+      "TAD-062",
+      "TAD-063",
+      "TAD-064",
+      "TAD-065",
+      "TAD-066",
+      "TAD-067",
+      "TAD-068"
+    ],
+    "cases": 7,
+    "shared_evidence": "conformance/v0.1/primitives/receipts/tool-streaming-result.json"
+  },
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/adapter_capture_executor.py",
+    "workflow": ".github/workflows/runner-a.yml",
+    "planned_tests": {
+      "tool-stream-result-consumption-001": "TAD-062",
+      "tool-stream-result-semantics-001": "TAD-063",
+      "tool-stream-result-unsupported-001": "TAD-064",
+      "tool-stream-result-partial-preserve-001": "TAD-065",
+      "tool-stream-result-loss-001": "TAD-066",
+      "tool-stream-consumer-stop-bounded-001": "TAD-067",
+      "tool-stream-chunks-optional-001": "TAD-068"
+    },
+    "rules": [
+      "ToolAdapterCapability is resolved from arp.adapter_declarations.",
+      "result_boundary must equal application-visible stream consumption and streaming_result must be true.",
+      "ToolInvocation, ToolExecution, ToolResult, CaptureDiagnostic, and adapter-declaration references resolve locally within one run.",
+      "TAD-062 requires positive adapter-observed stream-consumption evidence.",
+      "TAD-063 requires tool-reported event semantics to agree with adapter-observed assembly semantics.",
+      "TAD-064 keeps unsupported assembly semantics partial or unknown instead of complete.",
+      "TAD-065 preserves observed partial ToolResult representation.",
+      "TAD-066 keeps known lost-event scope at partial capture.",
+      "TAD-067 does not upgrade consumer stop to remote completion or effect cardinality.",
+      "TAD-068 permits no persistent chunk records when terminal ToolResult and bounded capture metadata are preserved."
+    ]
+  },
+  "fixture_repair": {
+    "path": "conformance/v0.1/primitives/receipts/tool-streaming-result.json",
+    "changes": [
+      "Moved ToolAdapterCapability from arp.records to arp.adapter_declarations.",
+      "Recomputed payload_digest after ARP wire-shape repair."
+    ],
+    "payload_digest": "ThxS6YYTbe0sFbsCeL0oh-PDJv2VYQcqZzHe-mLh8Ow",
+    "local_schema_validation_errors": 0
+  },
+  "repair_history": [
+    {
+      "commit": "4c5ffaa71b0e55ef519d868078b32544079da03c",
+      "runner_a_run_id": 37415690917,
+      "result": "batch23_failed",
+      "cause": "shared primitive receipt schema-invalid; semantic findings matched all seven goldens"
+    },
+    {
+      "commit": "797a7d90f2be6583b67cccd1f6f43e65babe6971",
+      "runner_a_run_id": 37415981282,
+      "result": "batch23_failed",
+      "cause": "streaming evaluator searched arp.records instead of arp.adapter_declarations; schema validation was valid"
+    },
+    {
+      "commit": "728cfbc808a87dad9431b601cda2d90d4ca32702",
+      "runner_a_run_id": 37416072590,
+      "result": "pass"
+    }
+  ],
+  "mutation_checks": {
+    "status": "pass",
+    "rejected": [
+      "result boundary changed away from application-visible stream consumption",
+      "streaming_result capability disabled",
+      "partial stream-consumption observation removed",
+      "tool event semantics and adapter assembly semantics mismatched",
+      "unsupported stream semantics upgraded to complete capture",
+      "partial ToolResult representation removed",
+      "known lost-event ToolResult upgraded to complete",
+      "consumer stop upgraded to terminal completion",
+      "complete ToolResult detached from terminal completed execution"
+    ]
+  },
+  "execution": {
+    "cases": 7,
+    "pass": 7,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 7,
+    "process_outcomes": {
+      "completed": 7
+    },
+    "finding_domains": {
+      "conformance": 5,
+      "support": 1,
+      "claim": 1
+    },
+    "finding_statuses": {
+      "valid": 5,
+      "unsupported": 1,
+      "asserted": 1
+    }
+  },
+  "ci": {
+    "runner_a_run_id": 37416072590,
+    "runner_a_jobs": "25/25 success",
+    "p5_run_id": 37416072561,
+    "batch_artifact_id": 11390754866,
+    "batch_artifact_sha256": "00f02620d37db72274ee5e4b82586e8bda24511d30fb4decad2ee3aa5f5be8a5",
+    "p5_artifact_id": 11391340127,
+    "p5_artifact_sha256": "f54e2980e3152b613596cb657e37c70eab4713cdd24ec08af3dc50478b1c3a15",
+    "p5": "907/907 pass; 0 case fail; 0 meta failures"
+  },
+  "accounting": {
+    "independent_cases": 230,
+    "semantic_evidence": 162,
+    "semantic_total": 771,
+    "remaining": 609,
+    "registered_planned_test_ids": 181,
+    "id_matched_rows": 165,
+    "new_batch_planned_ids_are_one_to_one": true,
+    "shared_id_exclusions": [
+      {
+        "planned_test_id": "tool-deny-later-execution-001",
+        "implemented": "TOOL-026",
+        "excluded": "TAD-021"
+      },
+      {
+        "planned_test_id": "tool-effect-not-outcome-001",
+        "implemented": "TOOL-048",
+        "excluded": "TAD-084"
+      },
+      {
+        "planned_test_id": "tool-idempotency-no-exactly-once-001",
+        "implemented": "TAD-055",
+        "excluded": "TOOL-054"
+      }
+    ]
+  },
+  "assertions": {
+    "schema_package_unchanged": true,
+    "specification_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
