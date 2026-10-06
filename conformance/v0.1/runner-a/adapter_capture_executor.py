@@ -1453,7 +1453,12 @@ def stream_metadata_items(record, name, origin=None, value_marker=None):
 
 def tool_streaming_context(receipt):
     index = record_index(receipt)
-    capabilities = by_kind(receipt, "ToolAdapterCapability")
+    capabilities = [
+        declaration
+        for declaration in adapter_declarations(receipt)
+        if isinstance(declaration, dict)
+        and declaration.get("kind") == "ToolAdapterCapability"
+    ]
     invocations = by_kind(receipt, "ToolInvocation")
     executions = by_kind(receipt, "ToolExecution")
     results = by_kind(receipt, "ToolResult")
