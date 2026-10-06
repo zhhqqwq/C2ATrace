@@ -30,28 +30,6 @@
         "label": "tool-streaming-result"
       },
       {
-        "id": "tool-adapter-tad-stream-001",
-        "kind": "ToolAdapterCapability",
-        "run_id": "run-tad-stream-001",
-        "adapter_name": "wave06-tool-stream-adapter",
-        "adapter_version": "0.1-test",
-        "invocation_boundary": "effective ToolInvocation",
-        "execution_boundary": "runtime execute",
-        "result_boundary": "application-visible stream consumption",
-        "proposal_association": false,
-        "decision_capture": false,
-        "streaming_result": true,
-        "retry_visibility": "unknown",
-        "replay_visibility": "unknown",
-        "duplicate_visibility": "unknown",
-        "effect_observation": [
-          "execution_result"
-        ],
-        "privacy_profiles": [
-          "full"
-        ]
-      },
-      {
         "id": "invoke-tad-stream-partial",
         "kind": "ToolInvocation",
         "run_id": "run-tad-stream-001",
@@ -283,13 +261,37 @@
     "scope": {
       "scope_kind": "run",
       "run_id": "run-tad-stream-001"
-    }
+    },
+    "adapter_declarations": [
+      {
+        "id": "tool-adapter-tad-stream-001",
+        "kind": "ToolAdapterCapability",
+        "run_id": "run-tad-stream-001",
+        "adapter_name": "wave06-tool-stream-adapter",
+        "adapter_version": "0.1-test",
+        "invocation_boundary": "effective ToolInvocation",
+        "execution_boundary": "runtime execute",
+        "result_boundary": "application-visible stream consumption",
+        "proposal_association": false,
+        "decision_capture": false,
+        "streaming_result": true,
+        "retry_visibility": "unknown",
+        "replay_visibility": "unknown",
+        "duplicate_visibility": "unknown",
+        "effect_observation": [
+          "execution_result"
+        ],
+        "privacy_profiles": [
+          "full"
+        ]
+      }
+    ]
   },
   "payload_digest": {
     "algorithm": "sha256",
     "value": {
       "encoding": "base64url",
-      "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      "value": "ThxS6YYTbe0sFbsCeL0oh-PDJv2VYQcqZzHe-mLh8Ow"
     },
     "representation_basis": "arp_jcs_utf8",
     "canonicalization_profile": "rfc8785-jcs"
