@@ -1,0 +1,138 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "24-provider-streaming-boundary-core",
+  "status": "complete",
+  "selection_commit": "e5de33131b68637e2365a79a56ed5d416583a1b1",
+  "implementation_commits": [
+    "59b93e8e777cfd9f5beb93b86607d2b789143a9d"
+  ],
+  "selection": {
+    "primitive": "prim.adapter.capture",
+    "requirements": [
+      "PAD-046",
+      "PAD-047",
+      "PAD-048",
+      "PAD-049",
+      "PAD-050",
+      "PAD-051",
+      "PAD-052"
+    ],
+    "cases": 7,
+    "shared_base_evidence": "conformance/v0.1/primitives/receipts/model-timeout-partial.json",
+    "primary_patch_operations": 9,
+    "inline_capability_documents": 2
+  },
+  "implementation": {
+    "executor": "conformance/v0.1/runner-a/adapter_capture_executor.py",
+    "workflow": ".github/workflows/runner-a.yml",
+    "planned_tests": {
+      "provider-stream-consumption-boundary-001": "PAD-046",
+      "provider-stream-event-semantics-001": "PAD-047",
+      "provider-stream-unsupported-degrade-001": "PAD-048",
+      "provider-stream-partial-preserve-001": "PAD-049",
+      "provider-stream-app-stop-bounded-001": "PAD-050",
+      "provider-stream-drop-no-complete-001": "PAD-051",
+      "provider-stream-tool-fragment-001": "PAD-052"
+    },
+    "rules": [
+      "Resolve the single ModelInvocation, ProviderAttempt, and ModelOutput and validate their local references and same-run ownership.",
+      "Resolve inline ProviderAdapterCapability only for cases that materialize one and require output_capture plus streaming_output support.",
+      "PAD-046 requires an observed provider_stream.events CaptureDiagnostic scoped to the actual ProviderAttempt and its ModelOutput occurrence.",
+      "PAD-047 requires explicit adapter_observed indexed-delta stream assembly semantics rather than blind delta concatenation.",
+      "PAD-048 requires unsupported assembly semantics to remain partial or unknown and response_termination incomplete.",
+      "PAD-049 requires timeout termination, partial/incomplete ModelOutput, and preserved non-empty TextOutput evidence.",
+      "PAD-050 keeps timeout/cancel/interruption evidence separate from provider-normal completion.",
+      "PAD-051 recognizes the known-dropped-events partial diagnostic as incompatible with capture_extent complete and emits exact invalidity.",
+      "PAD-052 requires a provider_reported incomplete JSON tool fragment and absence of any ToolProposal occurrence."
+    ]
+  },
+  "mutation_checks": {
+    "status": "pass",
+    "rejected": [
+      "streaming_output capability disabled for PAD-046",
+      "PAD-046 stream-consumption diagnostic changed away from observed",
+      "PAD-047 assembly semantics changed to blind-delta",
+      "PAD-048 unsupported stream semantics upgraded to complete capture",
+      "PAD-049 preserved output items removed",
+      "PAD-050 timeout changed to provider completed",
+      "PAD-051 dropped-event reason removed",
+      "PAD-052 tool fragment changed to complete JSON",
+      "PAD-052 synthetic ToolProposal inserted"
+    ]
+  },
+  "execution": {
+    "cases": 7,
+    "pass": 7,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 7,
+    "process_outcomes": {
+      "completed": 6,
+      "invalidity_detected": 1
+    },
+    "finding_domains": {
+      "conformance": 6,
+      "claim": 1
+    },
+    "finding_statuses": {
+      "valid": 5,
+      "asserted": 1,
+      "invalid": 1
+    },
+    "pad_051": {
+      "domain": "conformance",
+      "status": "invalid",
+      "reason_code": "complete_capture_with_known_dropped_events",
+      "process_outcome": "invalidity_detected"
+    }
+  },
+  "ci": {
+    "runner_a_run_id": 37421486701,
+    "runner_a_jobs": "26/26 success",
+    "p5_run_id": 37421486703,
+    "batch_artifact_id": 11392584772,
+    "batch_artifact_name": "runner-a-semantic-provider-streaming-boundary-core",
+    "batch_artifact_sha256": "02de8018c0819bf40e0e893c8021ed65acc12b4eaa0cf12b8f0452c37bee2700",
+    "p5_artifact_id": 11392993474,
+    "p5_artifact_sha256": "59e8e09bed77ea8c68a79b3c2c620df474d18fc8883777e442a6f7c798de04ef",
+    "p5": "907/907 pass; 0 case fail; 0 meta failures"
+  },
+  "accounting": {
+    "independent_cases": 237,
+    "semantic_evidence": 169,
+    "semantic_total": 771,
+    "remaining": 602,
+    "registered_planned_test_ids": 188,
+    "registered_semantic_planned_test_ids": 169,
+    "id_matched_rows": 172,
+    "new_batch_planned_ids_are_one_to_one": true,
+    "shared_id_exclusions": [
+      {
+        "planned_test_id": "tool-deny-later-execution-001",
+        "implemented": "TOOL-026",
+        "excluded": "TAD-021"
+      },
+      {
+        "planned_test_id": "tool-effect-not-outcome-001",
+        "implemented": "TOOL-048",
+        "excluded": "TAD-084"
+      },
+      {
+        "planned_test_id": "tool-idempotency-no-exactly-once-001",
+        "implemented": "TAD-055",
+        "excluded": "TOOL-054"
+      }
+    ]
+  },
+  "assertions": {
+    "frozen_schema_unchanged": true,
+    "specification_unchanged": true,
+    "cases_unchanged": true,
+    "expected_results_unchanged": true,
+    "runtime_facts_derived_from_materialized_inputs": true,
+    "exact_requirement_guards_enabled": true,
+    "runner_b_not_started": true,
+    "product_verifier_sdk_not_started": true
+  }
+}
