@@ -1,0 +1,56 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "26-tool-metadata-origin-core",
+  "status": "complete",
+  "selection_commit": "0d4f32806898e0dd9c67632fd9416dd85e1be65d",
+  "implementation_commit": "48435cf186d416c7400b266fd74d767e4c8e9631",
+  "requirement_ids": [
+    "TAD-069",
+    "TAD-070",
+    "TAD-072",
+    "TAD-074",
+    "TAD-116",
+    "TAD-117"
+  ],
+  "execution": {
+    "cases": 6,
+    "pass": 6,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 6
+  },
+  "ci": {
+    "runner_a_run_id": 37667577845,
+    "runner_a_jobs": "28/28 success",
+    "p5_run_id": 37667577896,
+    "p5": "907/907 pass",
+    "batch_artifact_id": 11502968070,
+    "batch_artifact_sha256": "b0e07c8ef382aa9cf700386f1e3ecb87bb58fec7109d5e356628dcbf67129224",
+    "p5_artifact_id": 11502678557,
+    "p5_artifact_sha256": "39557e150648659a916d75e4d226872f1209caafd670d698f25a359228fc6655"
+  },
+  "accounting": {
+    "independent_cases": 250,
+    "semantic_evidence": 182,
+    "remaining": 589,
+    "registered_planned_test_ids": 201,
+    "registered_semantic_planned_test_ids": 182,
+    "id_matched_rows": 185,
+    "shared_id_exclusions": [
+      "TAD-021",
+      "TAD-084",
+      "TOOL-054"
+    ]
+  },
+  "mutation_checks": {
+    "status": "pass",
+    "count": 11
+  },
+  "unchanged": {
+    "schema": true,
+    "spec": true,
+    "cases": true,
+    "expected": true
+  }
+}
