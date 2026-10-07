@@ -1,0 +1,112 @@
+{
+  "batch_id": "runner-a-wave-03-batch-26-tool-metadata-origin-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "26",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.adapter.capture",
+  "requirement_ids": [
+    "TAD-069",
+    "TAD-070",
+    "TAD-072",
+    "TAD-074",
+    "TAD-116",
+    "TAD-117"
+  ],
+  "expected_case_count": 6,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 244,
+      "registered_planned_test_ids": 195,
+      "registered_semantic_planned_test_ids": 176,
+      "registered_id_matched_coverage_rows": 179,
+      "independently_evidenced_semantic_requirements": 176,
+      "remaining_semantic_executable_rows": 595,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        },
+        {
+          "planned_test_id": "tool-idempotency-no-exactly-once-001",
+          "implemented_requirement": "TAD-055",
+          "excluded_requirement": "TOOL-054"
+        }
+      ]
+    },
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 82,
+        "dependency_closed_primary_core": 12,
+        "dependency_unlock": 70
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 78,
+        "dependency_closed_primary_core": 71,
+        "dependency_unlock": 7
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 70,
+        "dependency_closed_primary_core": 56,
+        "dependency_unlock": 14
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 68,
+        "dependency_closed_primary_core": 13,
+        "dependency_unlock": 55
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 56,
+        "dependency_closed_primary_core": 35,
+        "dependency_unlock": 21
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 55,
+        "dependency_closed_primary_core": 41,
+        "dependency_unlock": 14
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 41,
+        "dependency_closed_primary_core": 23,
+        "dependency_unlock": 18
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 32,
+        "dependency_closed_primary_core": 28,
+        "dependency_unlock": 4
+      }
+    ],
+    "selected_cluster": {
+      "primitive": "prim.adapter.capture",
+      "semantic_family": "ToolResult metadata origin, reported-status boundedness, normalized provenance, and async/effect separation",
+      "shared_evidence": "conformance/v0.1/primitives/receipts/tool-metadata-origin.json",
+      "requirement_ids": [
+        "TAD-069",
+        "TAD-070",
+        "TAD-072",
+        "TAD-074",
+        "TAD-116",
+        "TAD-117"
+      ],
+      "cases": 6,
+      "shared_evidence_documents": 1,
+      "total_case_patches": 7,
+      "selection_reason": "The cluster is dependency-closed, reuses the existing adapter/tool/verifier/derivation surfaces, and yields six tightly related requirement-level cases from one shared receipt."
+    }
+  },
+  "intent": "Select only TAD-069, TAD-070, TAD-072, TAD-074, TAD-116, and TAD-117 for Batch 26. Selection does not increase the 244-case / 176-requirement evidence baseline."
+}
