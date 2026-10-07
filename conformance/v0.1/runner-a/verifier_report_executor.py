@@ -659,3 +659,280 @@ def execute_verifier_report_case(row, case, materialized):
         "process_outcome": report["process_outcome"],
         "completeness": dict(report.get("completeness") or {}),
     }
+
+
+# Runner A Wave 03 Batch 27: verifier process-invalidity core.
+_BATCH27_PROCESS_INVALIDITY_REQUIREMENTS = {
+    "verifier-exit-operational-only-001": "VFY-115",
+    "verifier-exit-invalidity-001": "VFY-116",
+    "verifier-report-mandatory-accounting-001": "VFY-142",
+    "verifier-report-failure-visibility-001": "VFY-143",
+    "verifier-invalid-and-incomplete-coexist-001": "VFY-146",
+    "verifier-exit-does-not-hide-findings-001": "VFY-148",
+}
+VERIFIER_REPORT_REQUIREMENTS.update(_BATCH27_PROCESS_INVALIDITY_REQUIREMENTS)
+VERIFIER_REPORT_PLANNED_TESTS.update(_BATCH27_PROCESS_INVALIDITY_REQUIREMENTS)
+
+
+def process_invalidity_context(report):
+    if report.get("process_outcome") != "invalidity_detected":
+        raise ValueError("process-invalidity VerificationReport is not invalidity_detected")
+
+    invocation = report.get("invocation")
+    if not isinstance(invocation, dict):
+        raise ValueError("VerificationReport invocation is missing")
+    goals = invocation.get("goals")
+    if not isinstance(goals, list) or not goals:
+        raise ValueError("VerificationReport invocation goals are missing")
+
+    goals_by_check = {}
+    for goal in goals:
+        if not isinstance(goal, dict):
+            raise ValueError("VerificationReport invocation contains non-object goal")
+        check_id = goal.get("check_id")
+        mandatory = goal.get("mandatory")
+        if not isinstance(check_id, str) or not check_id:
+            raise ValueError("VerificationReport invocation goal has no check_id")
+        if check_id in goals_by_check:
+            raise ValueError(f"VerificationReport invocation duplicates goal {check_id}")
+        if not isinstance(mandatory, bool):
+            raise ValueError(f"VerificationReport invocation goal {check_id} has no boolean mandatory flag")
+        goals_by_check[check_id] = goal
+
+    index = finding_index(report)
+    findings_by_check = {}
+    for finding in index.values():
+        check_id = finding.get("check_id")
+        if not isinstance(check_id, str) or not check_id:
+            raise ValueError("VerificationReport finding has no check_id")
+        findings_by_check.setdefault(check_id, []).append(finding)
+
+        goal = goals_by_check.get(check_id)
+        if goal is not None:
+            if not isinstance(finding.get("mandatory"), bool):
+                raise ValueError(f"requested finding {finding.get('finding_id')} has no boolean mandatory flag")
+            if finding["mandatory"] != goal["mandatory"]:
+                raise ValueError(
+                    f"finding {finding.get('finding_id')} mandatory flag disagrees with requested goal {check_id}"
+                )
+
+    mandatory_checks = {
+        check_id
+        for check_id, goal in goals_by_check.items()
+        if goal["mandatory"]
+    }
+    if not mandatory_checks:
+        raise ValueError("process-invalidity scenario has no requested mandatory checks")
+
+    for check_id in mandatory_checks:
+        matches = findings_by_check.get(check_id, [])
+        if not matches:
+            raise ValueError(f"requested mandatory check {check_id} disappeared from machine findings")
+        if not any(finding.get("mandatory") is True for finding in matches):
+            raise ValueError(f"requested mandatory check {check_id} is not marked mandatory in findings")
+
+    mandatory_failures = [
+        finding
+        for check_id in mandatory_checks
+        for finding in findings_by_check.get(check_id, [])
+        if finding.get("mandatory") is True
+        and finding.get("status") in {"invalid", "mismatched"}
+    ]
+    if len(mandatory_failures) != 1:
+        raise ValueError(
+            f"process-invalidity scenario requires one requested mandatory invalid/mismatch finding, found {len(mandatory_failures)}"
+        )
+
+    blocked_capability = [
+        finding
+        for check_id in mandatory_checks
+        for finding in findings_by_check.get(check_id, [])
+        if finding.get("mandatory") is True
+        and finding.get("domain") == "comparison"
+        and finding.get("status") == "unverified"
+        and finding.get("reason_code") == "required_capability_unavailable"
+    ]
+    if len(blocked_capability) != 1:
+        raise ValueError(
+            f"process-invalidity scenario requires one mandatory capability-blocked comparison, found {len(blocked_capability)}"
+        )
+    capability = blocked_capability[0].get("capability")
+    if not isinstance(capability, str) or not capability:
+        raise ValueError("mandatory capability-blocked finding does not identify unavailable capability")
+
+    completeness = report.get("completeness")
+    if not isinstance(completeness, dict):
+        raise ValueError("VerificationReport completeness block is missing")
+    if completeness.get("runtime_history") != "unknown":
+        raise ValueError("process-invalidity scenario silently upgrades runtime-history completeness")
+
+    return {
+        "index": index,
+        "goals_by_check": goals_by_check,
+        "findings_by_check": findings_by_check,
+        "mandatory_checks": mandatory_checks,
+        "mandatory_failure": mandatory_failures[0],
+        "blocked_capability": blocked_capability[0],
+    }
+
+
+def execute_process_outcome_operational_only(requirement_id, planned, report, context):
+    if not any(
+        finding.get("status") in {"asserted", "unknown", "unverified", "unsupported", "matched"}
+        for finding in context["index"].values()
+    ):
+        raise ValueError("process outcome scenario has no detailed non-invalid findings to preserve")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "claim",
+        "asserted",
+        prohibited=["P1:process_outcome_is_truth_provenance_or_completeness_verdict"],
+    )]
+
+
+def execute_process_invalidity(requirement_id, planned, report, context):
+    source = context["mandatory_failure"]
+    check_id = source.get("check_id")
+    if check_id not in context["mandatory_checks"]:
+        raise ValueError("mandatory invalid/mismatch finding is not an applicable requested mandatory check")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "conformance",
+        "invalid",
+        reason_code="mandatory_invalid_finding_present",
+    )]
+
+
+def execute_mandatory_accounting(requirement_id, planned, report, context):
+    for check_id in context["mandatory_checks"]:
+        if check_id not in context["findings_by_check"]:
+            raise ValueError(f"requested mandatory check {check_id} is absent from machine report")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "conformance",
+        "valid",
+        reason_code="all_requested_mandatory_checks_accounted",
+    )]
+
+
+def execute_mandatory_failure_visibility(requirement_id, planned, report, context):
+    source = context["mandatory_failure"]
+    if source.get("finding_id") not in context["index"]:
+        raise ValueError("detected mandatory invalid/mismatch finding is not machine-visible")
+    return [normalized_finding(
+        requirement_id,
+        planned,
+        report,
+        "conformance",
+        "invalid",
+        reason_code="mandatory_invalid_finding_visible",
+        prohibited=["P1:mandatory_failure_hidden_by_summary"],
+    )]
+
+
+def execute_invalid_and_incomplete_coexist(requirement_id, report, context):
+    failure = context["mandatory_failure"]
+    blocked = context["blocked_capability"]
+    if failure.get("finding_id") == blocked.get("finding_id"):
+        raise ValueError("mandatory invalidity and blocked evaluation are not distinct findings")
+    return [
+        normalized_finding(
+            requirement_id,
+            "verifier-invalid-and-incomplete-coexist-001",
+            report,
+            "conformance",
+            "invalid",
+            reason_code="invalid_and_blocked_findings_coexist",
+        ),
+        normalized_finding(
+            requirement_id,
+            "blocked-mandatory-check-still-visible",
+            report,
+            "comparison",
+            "unverified",
+            reason_code="required_capability_unavailable",
+        ),
+    ]
+
+
+def execute_process_outcome_preserves_details(requirement_id, report, context):
+    failure = context["mandatory_failure"]
+    blocked = context["blocked_capability"]
+    if failure.get("finding_id") not in context["index"]:
+        raise ValueError("coarse process outcome erased mandatory invalid detail")
+    if blocked.get("finding_id") not in context["index"]:
+        raise ValueError("coarse process outcome erased blocked mandatory detail")
+    return [
+        normalized_finding(
+            requirement_id,
+            "verifier-exit-does-not-hide-findings-001",
+            report,
+            "conformance",
+            "invalid",
+            reason_code="detailed_findings_preserved",
+            prohibited=["P1:process_outcome_erases_detailed_findings"],
+        ),
+        normalized_finding(
+            requirement_id,
+            "blocked-detail-preserved",
+            report,
+            "comparison",
+            "unverified",
+        ),
+    ]
+
+
+_execute_verifier_report_case_before_batch27 = execute_verifier_report_case
+
+
+def execute_verifier_report_case(row, case, materialized):
+    planned = row["planned_test_id"]
+    expected_requirement = _BATCH27_PROCESS_INVALIDITY_REQUIREMENTS.get(planned)
+    if expected_requirement is None:
+        return _execute_verifier_report_case_before_batch27(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{planned}")
+
+    report = primary_report(case, materialized)
+    context = process_invalidity_context(report)
+
+    if planned == "verifier-exit-operational-only-001":
+        findings = execute_process_outcome_operational_only(
+            requirement_id, planned, report, context
+        )
+    elif planned == "verifier-exit-invalidity-001":
+        findings = execute_process_invalidity(
+            requirement_id, planned, report, context
+        )
+    elif planned == "verifier-report-mandatory-accounting-001":
+        findings = execute_mandatory_accounting(
+            requirement_id, planned, report, context
+        )
+    elif planned == "verifier-report-failure-visibility-001":
+        findings = execute_mandatory_failure_visibility(
+            requirement_id, planned, report, context
+        )
+    elif planned == "verifier-invalid-and-incomplete-coexist-001":
+        findings = execute_invalid_and_incomplete_coexist(
+            requirement_id, report, context
+        )
+    elif planned == "verifier-exit-does-not-hide-findings-001":
+        findings = execute_process_outcome_preserves_details(
+            requirement_id, report, context
+        )
+    else:
+        raise NotImplementedError(planned)
+
+    return {
+        "findings": findings,
+        "process_outcome": report["process_outcome"],
+        "completeness": dict(report.get("completeness") or {}),
+    }
