@@ -1,0 +1,247 @@
+{
+  "batch_id": "runner-a-wave-03-batch-27-verifier-process-invalidity-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "27",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.verifier.report",
+  "requirement_ids": [
+    "VFY-115",
+    "VFY-116",
+    "VFY-142",
+    "VFY-143",
+    "VFY-146",
+    "VFY-148"
+  ],
+  "expected_case_count": 6,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 250,
+      "registered_planned_test_ids": 201,
+      "registered_semantic_planned_test_ids": 182,
+      "registered_id_matched_coverage_rows": 185,
+      "independently_evidenced_semantic_requirements": 182,
+      "remaining_semantic_executable_rows": 589,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        },
+        {
+          "planned_test_id": "tool-idempotency-no-exactly-once-001",
+          "implemented_requirement": "TAD-055",
+          "excluded_requirement": "TOOL-054"
+        }
+      ]
+    },
+    "support_rebuild": {
+      "method": "Extract live Runner-A registrations, join planned_test_id to the 771-row coverage matrix, then subtract the three exact shared-ID exclusions by requirement identity.",
+      "registered_planned_test_ids": 201,
+      "semantic_registered_ids": 182,
+      "id_matched_rows": 185,
+      "excluded_rows": 3,
+      "exact_support": 182,
+      "remaining": 589
+    },
+    "existing_dependency_surfaces": [
+      "prim.adapter.capture",
+      "prim.derivation.mapping",
+      "prim.graph.invariants",
+      "prim.identity.occurrence",
+      "prim.model.output",
+      "prim.provider.attempts",
+      "prim.ref.external",
+      "prim.ref.failure",
+      "prim.ref.local",
+      "prim.request.binding",
+      "prim.tool.lifecycle",
+      "prim.verifier.report"
+    ],
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 76,
+        "dependency_closed_primary_core": 12,
+        "dependency_unlock": 64
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 72,
+        "dependency_closed_primary_core": 65,
+        "dependency_unlock": 7
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 68,
+        "dependency_closed_primary_core": 13,
+        "dependency_unlock": 55
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 68,
+        "dependency_closed_primary_core": 56,
+        "dependency_unlock": 12
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 56,
+        "dependency_closed_primary_core": 35,
+        "dependency_unlock": 21
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 55,
+        "dependency_closed_primary_core": 41,
+        "dependency_unlock": 14
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 41,
+        "dependency_closed_primary_core": 23,
+        "dependency_unlock": 18
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 32,
+        "dependency_closed_primary_core": 28,
+        "dependency_unlock": 4
+      }
+    ],
+    "tight_cluster_comparison": [
+      {
+        "name": "tool_execution_relation_graph",
+        "primitive": "prim.tool.lifecycle",
+        "corrected_leverage": 76,
+        "requirement_ids": ["TOOL-050", "TOOL-051", "TOOL-052"],
+        "cases": 3,
+        "shared_evidence_documents": 3,
+        "actual_capability_density": "very_high",
+        "incremental_surface": "execution predecessor identity, self-loop rejection, and acyclicity",
+        "status": "unselected"
+      },
+      {
+        "name": "provider_retry_adapter_residual",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 72,
+        "requirement_ids": ["PAD-014", "PAD-040", "PAD-053", "PAD-062", "PAD-064"],
+        "cases": 5,
+        "shared_evidence": "fixtures/v0.1/valid/provider-retry.json",
+        "actual_capability_density": "high",
+        "status": "unselected"
+      },
+      {
+        "name": "tool_lifecycle_adapter_residual",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 72,
+        "requirement_ids": ["TAD-043", "TAD-044", "TAD-045", "TAD-046", "TAD-113"],
+        "cases": 5,
+        "shared_evidence": "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+        "actual_capability_density": "high",
+        "status": "unselected"
+      },
+      {
+        "name": "claim_strength_shared_receipt_max",
+        "primitive": "prim.claim.strength",
+        "corrected_leverage": 68,
+        "cases": 2,
+        "shared_evidence_documents": 1,
+        "actual_capability_density": "medium",
+        "status": "unselected"
+      },
+      {
+        "name": "verifier_minimal_signed_receipt",
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 68,
+        "requirement_ids": ["VFY-001", "VFY-002", "VFY-003", "VFY-008", "VFY-011", "VFY-013", "VFY-098"],
+        "cases": 7,
+        "shared_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "actual_capability_density": "medium",
+        "incremental_surface": "receipt-driven verifier invocation, parsing, profile and malformed-input behavior",
+        "status": "unselected",
+        "reason_not_selected": "One more case, but it opens a broader receipt-driven verifier execution surface rather than directly reusing the existing VerificationReport evaluator."
+      },
+      {
+        "name": "verifier_process_invalidity",
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 68,
+        "requirement_ids": ["VFY-115", "VFY-116", "VFY-142", "VFY-143", "VFY-146", "VFY-148"],
+        "cases": 6,
+        "shared_evidence": "conformance/v0.1/primitives/verifier/process-invalidity-report.json",
+        "shared_evidence_documents": 1,
+        "total_case_patches": 0,
+        "actual_capability_density": "very_high",
+        "reusable_predicates": [
+          "primary_report",
+          "finding_index",
+          "findings_matching",
+          "one_finding",
+          "normalized_finding",
+          "required_capability_unavailable typed lookup"
+        ],
+        "incremental_surface": [
+          "process_outcome is operational aggregation rather than truth/provenance/completeness",
+          "invalidity_detected requires an applicable requested mandatory invalid finding",
+          "requested mandatory checks remain explicitly accounted",
+          "mandatory failures remain machine-visible",
+          "invalid and blocked/unverified findings may coexist",
+          "coarse process outcome does not erase detailed findings"
+        ],
+        "status": "selected"
+      }
+    ],
+    "same_file_mixed_primary_rejections": [
+      {
+        "shared_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "primary_mix": {
+          "prim.integrity.composition": 18,
+          "prim.verifier.report": 7
+        },
+        "reason": "Same-file co-location remains two independent evaluator surfaces; only the verifier subgroup is a valid primary cluster."
+      },
+      {
+        "shared_evidence": [
+          "fixtures/v0.1/valid/multi-receipt-a.json",
+          "fixtures/v0.1/valid/multi-receipt-b.json"
+        ],
+        "primary_mix": {
+          "prim.receipt.multi": 10,
+          "prim.verifier.report": 2
+        },
+        "reason": "Receipt-multi and verifier-report remain separate primary evaluator surfaces."
+      },
+      {
+        "shared_evidence": "fixtures/v0.1/valid/source-to-request.json",
+        "primary_mix": {
+          "prim.receipt.multi": 7,
+          "prim.integrity.composition": 1,
+          "prim.adapter.capture": 1
+        },
+        "reason": "The same file still spans three independent primary surfaces."
+      }
+    ],
+    "selected_cluster": {
+      "primitive": "prim.verifier.report",
+      "semantic_family": "VerificationReport process invalidity, mandatory accounting, failure visibility, and detailed-finding preservation",
+      "shared_evidence": "conformance/v0.1/primitives/verifier/process-invalidity-report.json",
+      "requirement_ids": [
+        "VFY-115",
+        "VFY-116",
+        "VFY-142",
+        "VFY-143",
+        "VFY-146",
+        "VFY-148"
+      ],
+      "cases": 6,
+      "shared_evidence_documents": 1,
+      "total_case_patches": 0,
+      "selection_reason": "This is the densest residual cluster that directly reuses an existing evaluator surface without opening a broader execution path: six dependency-free verifier-report requirements from one unpatched VerificationReport, with existing typed finding/index helpers and only bounded process-outcome/mandatory-accounting predicates added."
+    }
+  },
+  "intent": "Select only VFY-115, VFY-116, VFY-142, VFY-143, VFY-146, and VFY-148 for Batch 27. This selection commit does not register new planned tests, modify Runner A executors, or increase the 250-case / 182-requirement evidence baseline. The shared-ID exclusions TAD-021, TAD-084, and TOOL-054 remain excluded."
+}
