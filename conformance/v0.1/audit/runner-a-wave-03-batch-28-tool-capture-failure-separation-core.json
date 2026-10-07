@@ -1,0 +1,84 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "28-tool-capture-failure-separation-core",
+  "status": "complete",
+  "selection_commit": "5d0a4e0a53a8ee9d1f32042421d245466265407a",
+  "implementation_code_commit": "ea6e7eaa1f4881b5520060a5354ac7443b32f5cf",
+  "implementation_commit": "c71e1343eec23babbf282bede695e0ca528aace2",
+  "fixture_repair_commit": "c71e1343eec23babbf282bede695e0ca528aace2",
+  "requirement_ids": [
+    "TAD-094",
+    "TAD-095",
+    "TAD-097",
+    "TAD-115"
+  ],
+  "execution": {
+    "cases": 4,
+    "pass": 4,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 4
+  },
+  "repair_history": {
+    "initial_runner_a_run_id": 37678116224,
+    "initial_runner_a_jobs": "29/30 success",
+    "initial_batch_status": "failed",
+    "failure": "shared tool-capture-failures.json was schema-invalid because ToolAdapterCapability was stored in arp.records",
+    "correction": "moved tool-adapter-tad-fail-001 to arp.adapter_declarations without changing id, run ownership, inventory, or diagnostic references",
+    "repaired_runner_a_run_id": 37678302034,
+    "repaired_runner_a_jobs": "30/30 success"
+  },
+  "ci": {
+    "runner_a_run_id": 37678302034,
+    "runner_a_jobs": "30/30 success",
+    "p5_run_id": 37678301997,
+    "p5": "907/907 pass",
+    "batch_artifact_id": 11507493851,
+    "batch_artifact_sha256": "6ba9ba7978ed1a478623749911d4a0cddbe050e9d23a30cbcd1bad4129204da4",
+    "p5_artifact_id": 11508775883,
+    "p5_artifact_sha256": "266f28f5037d1b248f8dd6b4d2f25ddbbbb87ec17036bfd540bb3e68c27f08ae"
+  },
+  "accounting": {
+    "independent_cases": 260,
+    "semantic_evidence": 192,
+    "remaining": 579,
+    "registered_planned_test_ids": 211,
+    "registered_semantic_planned_test_ids": 192,
+    "id_matched_rows": 195,
+    "shared_id_exclusions": [
+      "TAD-021",
+      "TAD-084",
+      "TOOL-054"
+    ]
+  },
+  "mutation_checks": {
+    "status": "pass",
+    "count": 12,
+    "checks": [
+      "diagnostic_removed",
+      "duplicate_slot",
+      "status_observed",
+      "bad_adapter_ref",
+      "diagnostic_cross_run",
+      "subject_cross_run",
+      "terminal_disposition_fabricated",
+      "result_present_in_no_result_case",
+      "adapter_reason_upgraded",
+      "adapter_error_becomes_tool_status",
+      "result_capture_reason_erased",
+      "exact_requirement_guard"
+    ]
+  },
+  "unchanged": {
+    "schema": true,
+    "spec": true,
+    "cases": true,
+    "expected": true
+  },
+  "changed_shared_input": {
+    "path": "conformance/v0.1/primitives/receipts/tool-capture-failures.json",
+    "semantic_change": false,
+    "structural_schema_repair": "ToolAdapterCapability moved from arp.records to arp.adapter_declarations"
+  }
+}
