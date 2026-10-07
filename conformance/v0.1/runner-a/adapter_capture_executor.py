@@ -2106,3 +2106,310 @@ def execute_adapter_capture_case(row, case, materialized):
         "process_outcome": process_outcome,
         "completeness": {},
     }
+
+
+# Runner A Wave 03 Batch 26: tool metadata-origin core.
+_BATCH26_METADATA_REQUIREMENTS = {
+    "tool-metadata-origin-001": "TAD-069",
+    "tool-metadata-reported-bounded-001": "TAD-070",
+    "tool-transaction-id-no-commit-proof-001": "TAD-072",
+    "tool-metadata-normalized-origin-001": "TAD-074",
+    "tool-external-metadata-not-effect-observation-001": "TAD-116",
+    "tool-async-acceptance-bounded-001": "TAD-117",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH26_METADATA_REQUIREMENTS)
+
+_TOOL_METADATA_ORIGINS = {
+    "application_supplied",
+    "adapter_observed",
+    "tool_reported",
+    "adapter_derived",
+    "external_observed",
+    "unknown",
+}
+
+
+def tool_metadata_origin_context(receipt):
+    index = record_index(receipt)
+    invocations = by_kind(receipt, "ToolInvocation")
+    executions = by_kind(receipt, "ToolExecution")
+    results = by_kind(receipt, "ToolResult")
+
+    if len(invocations) != 1:
+        raise ValueError(
+            f"tool metadata-origin scenario requires one ToolInvocation, found {len(invocations)}"
+        )
+    if len(executions) != 1:
+        raise ValueError(
+            f"tool metadata-origin scenario requires one ToolExecution, found {len(executions)}"
+        )
+    if len(results) != 1:
+        raise ValueError(
+            f"tool metadata-origin scenario requires one ToolResult, found {len(results)}"
+        )
+
+    invocation = invocations[0]
+    execution = executions[0]
+    result = results[0]
+
+    resolved_invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+    if resolved_invocation.get("id") != invocation.get("id"):
+        raise ValueError("ToolExecution does not belong to the materialized ToolInvocation")
+
+    resolved_execution = resolve_local(index, result.get("execution"), "ToolExecution")
+    if resolved_execution.get("id") != execution.get("id"):
+        raise ValueError("ToolResult does not belong to the materialized ToolExecution")
+
+    run_ids = {
+        invocation.get("run_id"),
+        execution.get("run_id"),
+        result.get("run_id"),
+    }
+    if None in run_ids or len(run_ids) != 1:
+        raise ValueError("tool metadata-origin occurrence crosses run ownership")
+
+    metadata = result.get("metadata")
+    if not isinstance(metadata, list) or not metadata:
+        raise ValueError("ToolResult metadata is missing")
+
+    metadata_by_name = {}
+    for item in metadata:
+        if not isinstance(item, dict):
+            raise ValueError("ToolResult metadata contains a non-object item")
+        name = item.get("name")
+        if not isinstance(name, str) or not name:
+            raise ValueError("ToolResult metadata item has no name")
+        if name in metadata_by_name:
+            raise ValueError(f"ToolResult metadata contains duplicate name {name}")
+        origin = item.get("origin")
+        if origin not in _TOOL_METADATA_ORIGINS:
+            raise ValueError(f"ToolResult metadata {name} has unsupported origin {origin!r}")
+        metadata_by_name[name] = item
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "invocation": invocation,
+        "execution": execution,
+        "result": result,
+        "metadata_by_name": metadata_by_name,
+    }
+
+
+def require_tool_metadata_item(context, name, origin):
+    item = context["metadata_by_name"].get(name)
+    if not isinstance(item, dict):
+        raise ValueError(f"ToolResult metadata {name} is missing")
+    if item.get("origin") != origin:
+        raise ValueError(
+            f"ToolResult metadata {name} origin is {item.get('origin')!r}, expected {origin!r}"
+        )
+    return item
+
+
+def require_explicit_tool_metadata_origins(context):
+    origins = {
+        item.get("origin")
+        for item in context["metadata_by_name"].values()
+    }
+    required = {"tool_reported", "adapter_derived", "adapter_observed"}
+    if not required.issubset(origins):
+        raise ValueError(
+            "tool metadata-origin scenario does not distinguish reported, derived, and observed metadata"
+        )
+    return context["result"]
+
+
+def require_tool_reported_metadata_bounded(context):
+    status = require_tool_metadata_item(context, "server_status", "tool_reported")
+    if not isinstance(status.get("value"), str) or not status["value"]:
+        raise ValueError("tool-reported server_status has no bounded value")
+    return context["result"], status
+
+
+def require_transaction_id_not_commit_proof(context):
+    transaction = require_tool_metadata_item(
+        context, "transaction_id", "tool_reported"
+    )
+    if not isinstance(transaction.get("value"), str) or not transaction["value"]:
+        raise ValueError("tool-reported transaction_id has no value")
+    reported_status = context["result"].get("reported_status")
+    if not isinstance(reported_status, str) or not reported_status:
+        raise ValueError("ToolResult reported_status is missing")
+    if by_kind(context["receipt"], "EffectObservation"):
+        raise ValueError(
+            "transaction-id boundedness scenario unexpectedly contains EffectObservation evidence"
+        )
+    return context["result"], transaction
+
+
+def require_normalized_metadata_origin(context):
+    normalized = require_tool_metadata_item(
+        context, "normalized_status", "adapter_derived"
+    )
+    basis = normalized.get("mapping_basis")
+    if not isinstance(basis, str) or not basis:
+        raise ValueError("adapter-derived normalized_status has no mapping basis")
+    source = require_tool_metadata_item(context, "server_status", "tool_reported")
+    source_value = source.get("value")
+    if not isinstance(source_value, str) or not source_value:
+        raise ValueError("tool-reported server_status has no source value")
+    if "server_status" not in basis or source_value not in basis:
+        raise ValueError(
+            "normalized_status mapping basis does not preserve the tool-reported source basis"
+        )
+    return context["result"], normalized
+
+
+def require_external_metadata_not_separate_observation(context):
+    external = require_tool_metadata_item(
+        context, "external_state_echo", "external_observed"
+    )
+    if "value" not in external:
+        raise ValueError("external_observed metadata has no observed value")
+    if any(
+        observation.get("basis") == "separate_observation"
+        for observation in by_kind(context["receipt"], "EffectObservation")
+    ):
+        raise ValueError(
+            "external_observed metadata scenario unexpectedly contains separate_observation evidence"
+        )
+    return context["result"]
+
+
+def require_async_acceptance_bounded(context):
+    async_states = {
+        "accepted",
+        "queued",
+        "scheduled",
+        "pending",
+        "job_created",
+        "job-created",
+    }
+    result = context["result"]
+    if result.get("reported_status") not in async_states:
+        raise ValueError("ToolResult is not in an asynchronous acceptance state")
+
+    server_status = require_tool_metadata_item(
+        context, "server_status", "tool_reported"
+    )
+    if server_status.get("value") not in async_states:
+        raise ValueError("tool-reported server_status is not asynchronous")
+
+    normalized = require_tool_metadata_item(
+        context, "normalized_status", "adapter_derived"
+    )
+    if normalized.get("value") not in async_states:
+        raise ValueError("adapter-derived normalized_status is not asynchronous")
+    if not isinstance(normalized.get("mapping_basis"), str) or not normalized["mapping_basis"]:
+        raise ValueError("async normalized_status has no mapping basis")
+
+    representation = result.get("representation") or {}
+    if representation.get("representation_kind") != "json":
+        raise ValueError("async ToolResult representation is not JSON")
+    value = representation.get("value")
+    if not isinstance(value, dict):
+        raise ValueError("async ToolResult representation is not a JSON object")
+    if value.get("status") not in async_states:
+        raise ValueError("async ToolResult representation status is not asynchronous")
+    if not isinstance(value.get("job_id"), str) or not value["job_id"]:
+        raise ValueError("async ToolResult representation has no job_id")
+
+    if by_kind(context["receipt"], "EffectObservation"):
+        raise ValueError(
+            "async-acceptance boundedness scenario unexpectedly contains EffectObservation evidence"
+        )
+    return result
+
+
+_execute_adapter_capture_case_before_batch26 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH26_METADATA_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch26(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    context = tool_metadata_origin_context(receipt)
+
+    if check_id == "tool-metadata-origin-001":
+        result = require_explicit_tool_metadata_origins(context)
+        actual_finding = finding(
+            requirement_id, check_id, receipt, result["id"]
+        )
+    elif check_id == "tool-metadata-reported-bounded-001":
+        result, _status = require_tool_reported_metadata_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            selector={"metadata_name": "server_status"},
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:tool_reported_metadata_is_independently_verified"],
+        )
+    elif check_id == "tool-transaction-id-no-commit-proof-001":
+        result, _transaction = require_transaction_id_not_commit_proof(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            selector={"metadata_name": "transaction_id"},
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:tool_reported_transaction_id_proves_commit"],
+        )
+    elif check_id == "tool-metadata-normalized-origin-001":
+        result, _normalized = require_normalized_metadata_origin(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            selector={
+                "metadata_name": "normalized_status",
+                "origin": "adapter_derived",
+            },
+        )
+    elif check_id == "tool-external-metadata-not-effect-observation-001":
+        result = require_external_metadata_not_separate_observation(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=[
+                "P1:external_observed_metadata_is_separate_effect_observation"
+            ],
+        )
+    elif check_id == "tool-async-acceptance-bounded-001":
+        result = require_async_acceptance_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            result["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=[
+                "P1:async_acceptance_proves_remote_completion_effect_or_outcome"
+            ],
+        )
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": "completed",
+        "completeness": {},
+    }
