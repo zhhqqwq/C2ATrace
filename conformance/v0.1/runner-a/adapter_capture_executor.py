@@ -2413,3 +2413,240 @@ def execute_adapter_capture_case(row, case, materialized):
         "process_outcome": "completed",
         "completeness": {},
     }
+
+
+# Runner A Wave 03 Batch 28: tool capture-failure separation core.
+_BATCH28_CAPTURE_FAILURE_REQUIREMENTS = {
+    "tool-capture-execution-failure-separation-001": "TAD-094",
+    "tool-capture-result-failure-no-fabrication-001": "TAD-095",
+    "tool-adapter-error-origin-001": "TAD-097",
+    "tool-missing-result-not-negation-001": "TAD-115",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH28_CAPTURE_FAILURE_REQUIREMENTS)
+
+_BATCH28_CAPTURE_FAILURE_SLOTS = {
+    "tool_execution.terminal_lifecycle",
+    "tool_result.application_visible",
+    "effect_observation.follow_up",
+    "adapter.instrumentation",
+}
+
+
+def tool_capture_failure_context(receipt):
+    index = record_index(receipt)
+    invocations = by_kind(receipt, "ToolInvocation")
+    executions = by_kind(receipt, "ToolExecution")
+    results = by_kind(receipt, "ToolResult")
+    diagnostics = by_kind(receipt, "CaptureDiagnostic")
+
+    if len(invocations) != 1:
+        raise ValueError(
+            f"tool capture-failure scenario requires one ToolInvocation, found {len(invocations)}"
+        )
+    if len(executions) != 1:
+        raise ValueError(
+            f"tool capture-failure scenario requires one ToolExecution, found {len(executions)}"
+        )
+    if len(results) > 1:
+        raise ValueError(
+            f"tool capture-failure scenario permits at most one ToolResult, found {len(results)}"
+        )
+    if len(diagnostics) != 4:
+        raise ValueError(
+            f"tool capture-failure scenario requires four CaptureDiagnostics, found {len(diagnostics)}"
+        )
+
+    invocation = invocations[0]
+    execution = executions[0]
+    resolved_invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+    if resolved_invocation.get("id") != invocation.get("id"):
+        raise ValueError("ToolExecution does not belong to the materialized ToolInvocation")
+
+    run_id = execution.get("run_id")
+    if not isinstance(run_id, str) or not run_id:
+        raise ValueError("ToolExecution run ownership is missing")
+    if invocation.get("run_id") != run_id:
+        raise ValueError("ToolInvocation and ToolExecution cross run ownership")
+
+    results_by_execution = []
+    for result in results:
+        resolved_execution = resolve_local(index, result.get("execution"), "ToolExecution")
+        if resolved_execution.get("id") != execution.get("id"):
+            raise ValueError("ToolResult belongs to a different ToolExecution")
+        if result.get("run_id") != run_id:
+            raise ValueError("ToolResult crosses run ownership")
+        results_by_execution.append(result)
+
+    diagnostics_by_slot = {}
+    declaration_ids = set()
+    for diagnostic in diagnostics:
+        slot = diagnostic.get("slot")
+        if slot not in _BATCH28_CAPTURE_FAILURE_SLOTS:
+            raise ValueError(f"unexpected tool capture-failure diagnostic slot: {slot!r}")
+        if slot in diagnostics_by_slot:
+            raise ValueError(f"duplicate tool capture-failure diagnostic slot: {slot}")
+        if diagnostic.get("status") != "unavailable":
+            raise ValueError(f"CaptureDiagnostic {slot} is not unavailable")
+        reason = diagnostic.get("reason")
+        if not isinstance(reason, str) or not reason:
+            raise ValueError(f"CaptureDiagnostic {slot} has no bounded reason")
+
+        declaration = resolve_local(
+            index, diagnostic.get("adapter_declaration"), "ToolAdapterCapability"
+        )
+        declaration_id = declaration.get("id")
+        if not isinstance(declaration_id, str) or not declaration_id:
+            raise ValueError(f"CaptureDiagnostic {slot} adapter declaration has no id")
+        declaration_ids.add(declaration_id)
+        if declaration.get("run_id") != run_id:
+            raise ValueError(f"CaptureDiagnostic {slot} adapter declaration crosses run ownership")
+
+        subject = diagnostic.get("subject") or {}
+        if subject.get("representation_basis") != "tool_execution":
+            raise ValueError(f"CaptureDiagnostic {slot} has wrong representation basis")
+        subject_record = resolve_local(index, subject.get("ref"), "ToolExecution")
+        if subject_record.get("id") != execution.get("id"):
+            raise ValueError(f"CaptureDiagnostic {slot} references wrong ToolExecution")
+        if subject_record.get("run_id") != run_id:
+            raise ValueError(f"CaptureDiagnostic {slot} subject crosses run ownership")
+        if diagnostic.get("run_id") != run_id:
+            raise ValueError(f"CaptureDiagnostic {slot} crosses run ownership")
+
+        diagnostics_by_slot[slot] = diagnostic
+
+    if set(diagnostics_by_slot) != _BATCH28_CAPTURE_FAILURE_SLOTS:
+        raise ValueError("tool capture-failure diagnostic slots are incomplete")
+    if len(declaration_ids) != 1:
+        raise ValueError("tool capture-failure diagnostics reference multiple adapter declarations")
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "invocation": invocation,
+        "execution": execution,
+        "results": results_by_execution,
+        "diagnostics": diagnostics_by_slot,
+        "adapter_declaration_id": next(iter(declaration_ids)),
+    }
+
+
+def require_execution_capture_failure_separated(context):
+    diagnostic = context["diagnostics"]["tool_execution.terminal_lifecycle"]
+    execution = context["execution"]
+    if execution.get("lifecycle_state") != "in_progress":
+        raise ValueError("execution capture failure was upgraded to terminal ToolExecution lifecycle")
+    if execution.get("terminal_disposition") is not None:
+        raise ValueError("execution capture failure fabricated terminal disposition")
+    reason = diagnostic.get("reason", "").lower()
+    if "instrumentation failed" not in reason or "no terminal disposition observed" not in reason:
+        raise ValueError("execution capture-failure diagnostic reason is not bounded to missing lifecycle observation")
+    return diagnostic
+
+
+def require_result_capture_failure_no_fabrication(context):
+    diagnostic = context["diagnostics"]["tool_result.application_visible"]
+    if context["results"]:
+        raise ValueError("result capture-failure no-fabrication case contains a ToolResult")
+    reason = diagnostic.get("reason", "").lower()
+    if "result capture instrumentation failed" not in reason:
+        raise ValueError("result capture-failure diagnostic does not identify instrumentation failure")
+    if "no complete toolresult representation observed" not in reason:
+        raise ValueError("result capture-failure diagnostic does not preserve bounded observation scope")
+    return diagnostic
+
+
+def require_adapter_error_origin_bounded(context):
+    diagnostic = context["diagnostics"]["adapter.instrumentation"]
+    execution = context["execution"]
+    if diagnostic.get("reason") != "adapter instrumentation exception":
+        raise ValueError("adapter instrumentation diagnostic does not preserve adapter-origin exception")
+    if execution.get("lifecycle_state") != "in_progress":
+        raise ValueError("adapter instrumentation exception was upgraded to terminal tool lifecycle")
+    if execution.get("terminal_disposition") is not None:
+        raise ValueError("adapter instrumentation exception fabricated tool/runtime/server disposition")
+    for result in context["results"]:
+        if result.get("reported_status") not in {None, "unknown"}:
+            raise ValueError("adapter instrumentation exception was upgraded to tool/server result status")
+    return diagnostic
+
+
+def require_missing_result_not_negation(context):
+    diagnostic = context["diagnostics"]["tool_result.application_visible"]
+    if context["results"]:
+        raise ValueError("missing-result boundedness case contains a ToolResult")
+    if diagnostic.get("status") != "unavailable":
+        raise ValueError("missing ToolResult is not bounded by unavailable result capture")
+    reason = diagnostic.get("reason", "").lower()
+    if "result capture instrumentation failed" not in reason:
+        raise ValueError("missing ToolResult is not tied to known result-capture degradation")
+    return diagnostic
+
+
+_execute_adapter_capture_case_before_batch28 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH28_CAPTURE_FAILURE_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch28(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    context = tool_capture_failure_context(receipt)
+
+    if check_id == "tool-capture-execution-failure-separation-001":
+        diagnostic = require_execution_capture_failure_separated(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            diagnostic["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:execution_capture_failure_means_tool_execution_failed"],
+        )
+    elif check_id == "tool-capture-result-failure-no-fabrication-001":
+        diagnostic = require_result_capture_failure_no_fabrication(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            diagnostic["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:result_capture_failure_fabricates_tool_result"],
+        )
+    elif check_id == "tool-adapter-error-origin-001":
+        diagnostic = require_adapter_error_origin_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            diagnostic["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:adapter_exception_is_tool_or_server_exception"],
+        )
+    elif check_id == "tool-missing-result-not-negation-001":
+        diagnostic = require_missing_result_not_negation(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            diagnostic["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:missing_tool_result_proves_no_runtime_result"],
+        )
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": "completed",
+        "completeness": {},
+    }
