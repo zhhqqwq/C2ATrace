@@ -1,0 +1,70 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "27-verifier-process-invalidity-core",
+  "status": "complete",
+  "selection_commit": "7b166bdcbbc807da7717a47b8b70461a747b9989",
+  "implementation_commit": "38ea4ce02813792cf3fc32552f7f3d55bf001fc9",
+  "requirement_ids": [
+    "VFY-115",
+    "VFY-116",
+    "VFY-142",
+    "VFY-143",
+    "VFY-146",
+    "VFY-148"
+  ],
+  "execution": {
+    "cases": 6,
+    "pass": 6,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 8
+  },
+  "ci": {
+    "runner_a_run_id": 37673991796,
+    "runner_a_jobs": "29/29 success",
+    "p5_run_id": 37673991909,
+    "p5": "907/907 pass",
+    "batch_artifact_id": 11507020279,
+    "batch_artifact_sha256": "12000d35a166e396abc3e8fb0aef7b8ad267e4d260445deaf860f3d31a1f5033",
+    "p5_artifact_id": 11505837035,
+    "p5_artifact_sha256": "2acdd2e1f958ebd8c02e3d50f0a7c83d9458ed7b9aa10cdc29e7e4cc6bb42246"
+  },
+  "accounting": {
+    "independent_cases": 256,
+    "semantic_evidence": 188,
+    "remaining": 583,
+    "registered_planned_test_ids": 207,
+    "registered_semantic_planned_test_ids": 188,
+    "id_matched_rows": 191,
+    "shared_id_exclusions": [
+      "TAD-021",
+      "TAD-084",
+      "TOOL-054"
+    ]
+  },
+  "mutation_checks": {
+    "status": "pass",
+    "count": 11,
+    "checks": [
+      "wrong_process_outcome",
+      "duplicate_goal",
+      "mandatory_check_missing",
+      "mandatory_flag_mismatch",
+      "mandatory_invalid_removed",
+      "mandatory_invalid_downgraded",
+      "blocked_reason_mutated",
+      "blocked_capability_removed",
+      "runtime_history_upgraded",
+      "duplicate_finding_id",
+      "exact_requirement_guard"
+    ]
+  },
+  "unchanged": {
+    "schema": true,
+    "spec": true,
+    "cases": true,
+    "expected": true,
+    "shared_input": true
+  }
+}
