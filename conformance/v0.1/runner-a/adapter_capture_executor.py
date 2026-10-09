@@ -2650,3 +2650,255 @@ def execute_adapter_capture_case(row, case, materialized):
         "process_outcome": "completed",
         "completeness": {},
     }
+
+
+# Runner A Wave 03 Batch 29: tool lifecycle/effect bounds core.
+_BATCH29_LIFECYCLE_EFFECT_REQUIREMENTS = {
+    "tool-execution-disposition-boundary-001": "TAD-043",
+    "tool-completed-not-effect-001": "TAD-044",
+    "tool-timeout-not-no-effect-001": "TAD-045",
+    "tool-noncompleted-not-no-effect-001": "TAD-113",
+}
+ADAPTER_CAPTURE_PLANNED_TESTS.update(_BATCH29_LIFECYCLE_EFFECT_REQUIREMENTS)
+
+
+def tool_lifecycle_effect_context(receipt):
+    index = record_index(receipt)
+    invocations = by_kind(receipt, "ToolInvocation")
+    executions = by_kind(receipt, "ToolExecution")
+    results = by_kind(receipt, "ToolResult")
+    diagnostics = by_kind(receipt, "CaptureDiagnostic")
+    effects = by_kind(receipt, "EffectObservation")
+
+    if len(invocations) != 3:
+        raise ValueError(
+            f"tool lifecycle/effect scenario requires three ToolInvocations, found {len(invocations)}"
+        )
+    if len(executions) != 3:
+        raise ValueError(
+            f"tool lifecycle/effect scenario requires three ToolExecutions, found {len(executions)}"
+        )
+    if len(results) != 1:
+        raise ValueError(
+            f"tool lifecycle/effect scenario requires one ToolResult, found {len(results)}"
+        )
+    if len(diagnostics) != 1:
+        raise ValueError(
+            f"tool lifecycle/effect scenario requires one CaptureDiagnostic, found {len(diagnostics)}"
+        )
+
+    run_ids = {
+        record.get("run_id")
+        for record in [*invocations, *executions, *results, *diagnostics]
+    }
+    if None in run_ids or len(run_ids) != 1:
+        raise ValueError("tool lifecycle/effect evidence crosses run ownership")
+    run_id = next(iter(run_ids))
+
+    invocation_by_id = {record.get("id"): record for record in invocations}
+    if len(invocation_by_id) != 3 or None in invocation_by_id:
+        raise ValueError("ToolInvocation identities are missing or duplicated")
+
+    execution_by_disposition = {}
+    for execution in executions:
+        if execution.get("lifecycle_state") != "terminal":
+            raise ValueError("tool lifecycle/effect scenario contains non-terminal ToolExecution")
+        invocation = resolve_local(index, execution.get("invocation"), "ToolInvocation")
+        if invocation.get("id") not in invocation_by_id:
+            raise ValueError("ToolExecution resolves to an unexpected ToolInvocation")
+        if invocation.get("run_id") != run_id:
+            raise ValueError("ToolExecution invocation crosses run ownership")
+
+        disposition = execution.get("terminal_disposition")
+        if disposition not in {"completed", "timeout", "cancelled"}:
+            raise ValueError(f"unexpected ToolExecution disposition {disposition!r}")
+        if disposition in execution_by_disposition:
+            raise ValueError(f"duplicate ToolExecution disposition {disposition}")
+        execution_by_disposition[disposition] = execution
+
+    if set(execution_by_disposition) != {"completed", "timeout", "cancelled"}:
+        raise ValueError("completed/timeout/cancelled ToolExecution occurrences are incomplete")
+
+    expected_basis = {
+        "completed": "runtime_returned",
+        "timeout": "client_timeout",
+        "cancelled": "local_cancellation",
+    }
+    lifecycle_basis = {}
+    for disposition, execution in execution_by_disposition.items():
+        items = [
+            item
+            for item in execution.get("metadata", [])
+            if isinstance(item, dict)
+            and item.get("name") == "lifecycle_basis"
+        ]
+        if len(items) != 1:
+            raise ValueError(
+                f"ToolExecution {execution.get('id')} requires one lifecycle_basis metadata item"
+            )
+        item = items[0]
+        if item.get("origin") != "adapter_observed":
+            raise ValueError(
+                f"ToolExecution {execution.get('id')} lifecycle_basis is not adapter_observed"
+            )
+        if item.get("value") != expected_basis[disposition]:
+            raise ValueError(
+                f"ToolExecution {execution.get('id')} lifecycle_basis does not match {disposition}"
+            )
+        lifecycle_basis[disposition] = item
+
+    result = results[0]
+    resolved_execution = resolve_local(index, result.get("execution"), "ToolExecution")
+    completed = execution_by_disposition["completed"]
+    if resolved_execution.get("id") != completed.get("id"):
+        raise ValueError("ToolResult is not attached to the completed ToolExecution")
+    if result.get("run_id") != run_id:
+        raise ValueError("ToolResult crosses run ownership")
+
+    diagnostic = diagnostics[0]
+    if diagnostic.get("slot") != "tool_execution.lifecycle":
+        raise ValueError("lifecycle CaptureDiagnostic has unexpected slot")
+    if diagnostic.get("status") != "observed":
+        raise ValueError("lifecycle CaptureDiagnostic is not observed")
+    subject = resolve_local(
+        index, (diagnostic.get("subject") or {}).get("ref"), "ToolExecution"
+    )
+    if subject.get("id") != completed.get("id"):
+        raise ValueError("lifecycle CaptureDiagnostic is not scoped to completed execution")
+    if subject.get("run_id") != run_id or diagnostic.get("run_id") != run_id:
+        raise ValueError("lifecycle CaptureDiagnostic crosses run ownership")
+    if (diagnostic.get("subject") or {}).get("representation_basis") != "tool_execution":
+        raise ValueError("lifecycle CaptureDiagnostic has wrong representation basis")
+    if diagnostic.get("reason") != "runtime completion observed":
+        raise ValueError("lifecycle CaptureDiagnostic does not preserve runtime completion basis")
+
+    return {
+        "receipt": receipt,
+        "index": index,
+        "run_id": run_id,
+        "invocations": invocations,
+        "executions": execution_by_disposition,
+        "result": result,
+        "diagnostic": diagnostic,
+        "lifecycle_basis": lifecycle_basis,
+        "effects": effects,
+    }
+
+
+def require_runtime_observed_disposition(context):
+    completed = context["executions"]["completed"]
+    result = context["result"]
+    basis = context["lifecycle_basis"]["completed"]
+    if basis.get("origin") != "adapter_observed" or basis.get("value") != "runtime_returned":
+        raise ValueError("completed disposition lacks runtime-observed lifecycle basis")
+    if context["diagnostic"].get("status") != "observed":
+        raise ValueError("completed disposition lacks observed lifecycle diagnostic")
+    if result.get("reported_status") != "success":
+        raise ValueError("disposition-boundary scenario lacks contrasting tool-reported status")
+    if completed.get("terminal_disposition") != "completed":
+        raise ValueError("runtime-returned lifecycle did not produce completed disposition")
+    return completed
+
+
+def require_completed_effect_bounded(context):
+    completed = context["executions"]["completed"]
+    if completed.get("terminal_disposition") != "completed":
+        raise ValueError("completed-effect boundedness scenario lacks completed execution")
+    if context["lifecycle_basis"]["completed"].get("value") != "runtime_returned":
+        raise ValueError("completed execution lacks runtime lifecycle basis")
+    if context["effects"]:
+        raise ValueError("completed-effect boundedness scenario contains independent EffectObservation")
+    return completed
+
+
+def require_timeout_effect_bounded(context):
+    timeout = context["executions"]["timeout"]
+    if timeout.get("terminal_disposition") != "timeout":
+        raise ValueError("timeout-effect boundedness scenario lacks timeout execution")
+    if context["lifecycle_basis"]["timeout"].get("value") != "client_timeout":
+        raise ValueError("timeout execution lacks observed client-timeout basis")
+    if context["effects"]:
+        raise ValueError("timeout-effect boundedness scenario contains independent EffectObservation")
+    return timeout
+
+
+def require_noncompleted_effect_bounded(context):
+    timeout = require_timeout_effect_bounded(context)
+    if timeout.get("terminal_disposition") not in {
+        "failed",
+        "timeout",
+        "cancelled",
+        "interrupted",
+        "unknown",
+    }:
+        raise ValueError("non-completed boundedness scenario lacks non-completed disposition")
+    return timeout
+
+
+_execute_adapter_capture_case_before_batch29 = execute_adapter_capture_case
+
+
+def execute_adapter_capture_case(row, case, materialized):
+    check_id = row["planned_test_id"]
+    expected_requirement = _BATCH29_LIFECYCLE_EFFECT_REQUIREMENTS.get(check_id)
+    if expected_requirement is None:
+        return _execute_adapter_capture_case_before_batch29(row, case, materialized)
+
+    requirement_id = row["requirement_id"]
+    if requirement_id != expected_requirement:
+        raise NotImplementedError(f"{requirement_id}:{check_id}")
+
+    receipt = primary_receipt(case, materialized)
+    context = tool_lifecycle_effect_context(receipt)
+
+    if check_id == "tool-execution-disposition-boundary-001":
+        execution = require_runtime_observed_disposition(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            execution["id"],
+        )
+    elif check_id == "tool-completed-not-effect-001":
+        execution = require_completed_effect_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            execution["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=[
+                "P1:completed_tool_execution_proves_effect_or_outcome_success"
+            ],
+        )
+    elif check_id == "tool-timeout-not-no-effect-001":
+        execution = require_timeout_effect_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            execution["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:tool_timeout_proves_no_effect"],
+        )
+    elif check_id == "tool-noncompleted-not-no-effect-001":
+        execution = require_noncompleted_effect_bounded(context)
+        actual_finding = finding(
+            requirement_id,
+            check_id,
+            receipt,
+            execution["id"],
+            domain="claim",
+            status="asserted",
+            prohibited=["P1:noncompleted_tool_execution_proves_no_effect"],
+        )
+    else:
+        raise NotImplementedError(check_id)
+
+    return {
+        "findings": [actual_finding],
+        "process_outcome": "completed",
+        "completeness": {},
+    }
