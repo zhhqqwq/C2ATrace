@@ -1,0 +1,294 @@
+{
+  "batch_id": "runner-a-wave-03-batch-29-tool-lifecycle-effect-bounds-core",
+  "stage": "P6-runner-a",
+  "wave": "03",
+  "batch": "29",
+  "selection_mode": "explicit_requirements",
+  "selected_partial_primitive": "prim.adapter.capture",
+  "requirement_ids": [
+    "TAD-043",
+    "TAD-044",
+    "TAD-045",
+    "TAD-113"
+  ],
+  "expected_case_count": 4,
+  "selection_analysis": {
+    "runner_a_support_before_batch": {
+      "total_independent_cases": 260,
+      "registered_planned_test_ids": 211,
+      "registered_semantic_planned_test_ids": 192,
+      "registered_id_matched_coverage_rows": 195,
+      "independently_evidenced_semantic_requirements": 192,
+      "remaining_semantic_executable_rows": 579,
+      "shared_id_exclusions": [
+        {
+          "planned_test_id": "tool-deny-later-execution-001",
+          "implemented_requirement": "TOOL-026",
+          "excluded_requirement": "TAD-021"
+        },
+        {
+          "planned_test_id": "tool-effect-not-outcome-001",
+          "implemented_requirement": "TOOL-048",
+          "excluded_requirement": "TAD-084"
+        },
+        {
+          "planned_test_id": "tool-idempotency-no-exactly-once-001",
+          "implemented_requirement": "TAD-055",
+          "excluded_requirement": "TOOL-054"
+        }
+      ]
+    },
+    "support_rebuild": {
+      "method": "Extract live Runner-A registrations, join planned_test_id to the 771-row coverage matrix, subtract the three exact shared-ID exclusions by requirement identity, and recompute residual primitive closure.",
+      "registered_planned_test_ids": 211,
+      "semantic_registered_ids": 192,
+      "id_matched_rows": 195,
+      "excluded_rows": 3,
+      "exact_support": 192,
+      "remaining": 579
+    },
+    "existing_dependency_surfaces": [
+      "prim.adapter.capture",
+      "prim.derivation.mapping",
+      "prim.graph.invariants",
+      "prim.identity.occurrence",
+      "prim.model.output",
+      "prim.provider.attempts",
+      "prim.ref.external",
+      "prim.ref.failure",
+      "prim.ref.local",
+      "prim.request.binding",
+      "prim.tool.lifecycle",
+      "prim.verifier.report"
+    ],
+    "corrected_single_step_unlock_leverage": [
+      {
+        "primitive": "prim.tool.lifecycle",
+        "count": 72,
+        "dependency_closed_primary_core": 12,
+        "dependency_unlock": 60
+      },
+      {
+        "primitive": "prim.adapter.capture",
+        "count": 68,
+        "dependency_closed_primary_core": 61,
+        "dependency_unlock": 7
+      },
+      {
+        "primitive": "prim.claim.strength",
+        "count": 68,
+        "dependency_closed_primary_core": 13,
+        "dependency_unlock": 55
+      },
+      {
+        "primitive": "prim.verifier.report",
+        "count": 62,
+        "dependency_closed_primary_core": 50,
+        "dependency_unlock": 12
+      },
+      {
+        "primitive": "prim.privacy.commitment",
+        "count": 56,
+        "dependency_closed_primary_core": 35,
+        "dependency_unlock": 21
+      },
+      {
+        "primitive": "prim.receipt.multi",
+        "count": 55,
+        "dependency_closed_primary_core": 41,
+        "dependency_unlock": 14
+      },
+      {
+        "primitive": "prim.integrity.composition",
+        "count": 41,
+        "dependency_closed_primary_core": 23,
+        "dependency_unlock": 18
+      },
+      {
+        "primitive": "prim.taint.flow",
+        "count": 32,
+        "dependency_closed_primary_core": 28,
+        "dependency_unlock": 4
+      }
+    ],
+    "tight_cluster_comparison": [
+      {
+        "name": "tool_lifecycle_effect_bounds_collision_free",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 68,
+        "requirement_ids": ["TAD-043", "TAD-044", "TAD-045", "TAD-113"],
+        "cases": 4,
+        "shared_evidence": "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+        "shared_evidence_documents": 1,
+        "total_case_patches": 0,
+        "planned_test_id_collisions": 0,
+        "actual_capability_density": "very_high",
+        "reusable_predicates": [
+          "primary_receipt",
+          "record_index",
+          "resolve_local",
+          "ToolExecution lifecycle_state",
+          "ToolExecution terminal_disposition",
+          "adapter-observed lifecycle basis",
+          "EffectObservation non-inference",
+          "finding"
+        ],
+        "incremental_surface": [
+          "runtime lifecycle evidence determines ToolExecution disposition rather than ToolResult status text",
+          "completed ToolExecution does not prove semantic success, Effect, Outcome, or exactly-once behavior",
+          "timeout does not prove absence of remote/external Effect",
+          "non-completed ToolExecution does not prove no Effect"
+        ],
+        "status": "selected"
+      },
+      {
+        "name": "tool_lifecycle_boundaries_full",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 68,
+        "requirement_ids": ["TAD-043", "TAD-044", "TAD-045", "TAD-046", "TAD-113"],
+        "cases": 5,
+        "shared_evidence": "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+        "shared_evidence_documents": 1,
+        "total_case_patches": 0,
+        "actual_capability_density": "very_high",
+        "status": "unselected",
+        "collision_cost": 1,
+        "reason_not_selected": "TAD-046 shares planned_test_id tool-cancel-no-remote-stop-001 with residual TOOL-035. Selecting the full five-case group would introduce a fourth shared-ID exclusion; the four-case subset preserves the tight lifecycle/effect semantics without widening requirement-identity accounting."
+      },
+      {
+        "name": "provider_retry_adapter_residual",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 68,
+        "requirement_ids": ["PAD-014", "PAD-040", "PAD-053", "PAD-062", "PAD-064"],
+        "cases": 5,
+        "shared_evidence": "fixtures/v0.1/valid/provider-retry.json",
+        "shared_evidence_documents": 1,
+        "total_case_patches": 2,
+        "planned_test_id_collisions": 0,
+        "actual_capability_density": "high",
+        "status": "unselected",
+        "reason_not_selected": "The group yields one additional case but spans ModelInvocation grouping, ModelOutput boundary, optional stream-chunk retention, provider metadata origin, and normalized metadata provenance; its reusable-predicate density is lower and semantic increment is wider than the selected lifecycle/effect subset."
+      },
+      {
+        "name": "provider_diagnostic_states",
+        "primitive": "prim.adapter.capture",
+        "corrected_leverage": 68,
+        "requirement_ids": ["PAD-084", "PAD-087", "PAD-091", "PAD-093"],
+        "cases": 4,
+        "shared_evidence": "conformance/v0.1/primitives/receipts/provider-diagnostic-states.json",
+        "shared_evidence_documents": 1,
+        "total_case_patches": 0,
+        "planned_test_id_collisions": 0,
+        "actual_capability_density": "high",
+        "status": "unselected",
+        "reason_not_selected": "The group adds verifier conflict/support/completeness semantics on top of provider capture diagnostics, increasing the incremental semantic surface."
+      },
+      {
+        "name": "tool_execution_relation_graph",
+        "primitive": "prim.tool.lifecycle",
+        "corrected_leverage": 72,
+        "requirement_ids": ["TOOL-050", "TOOL-051", "TOOL-052"],
+        "cases": 3,
+        "shared_evidence_documents": 3,
+        "planned_test_id_collisions": 0,
+        "actual_capability_density": "very_high",
+        "status": "unselected",
+        "reason_not_selected": "Higher primitive leverage but lower shared-evidence density: three cases require three separate receipts."
+      },
+      {
+        "name": "claim_strength_shared_receipt_max",
+        "primitive": "prim.claim.strength",
+        "corrected_leverage": 68,
+        "cases": 2,
+        "shared_evidence_documents": 1,
+        "actual_capability_density": "medium",
+        "status": "unselected"
+      },
+      {
+        "name": "verifier_process_completed",
+        "primitive": "prim.verifier.report",
+        "corrected_leverage": 62,
+        "requirement_ids": ["VFY-107", "VFY-110", "VFY-113", "VFY-119", "VFY-150"],
+        "cases": 5,
+        "shared_evidence": "conformance/v0.1/primitives/verifier/process-completed-report.json",
+        "shared_evidence_documents": 1,
+        "total_case_patches": 0,
+        "planned_test_id_collisions": 0,
+        "actual_capability_density": "medium",
+        "status": "unselected",
+        "reason_not_selected": "VFY-110 and VFY-113 concern human rendering/summary behavior, but the materialized shared input is only a machine VerificationReport."
+      }
+    ],
+    "new_primitive_dense_clusters_not_selected": [
+      {
+        "shared_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "primitive": "prim.integrity.composition",
+        "cases": 18,
+        "corrected_leverage": 41,
+        "reason": "High same-file density but requires opening a new integrity-composition evaluator family."
+      },
+      {
+        "shared_evidence": [
+          "fixtures/v0.1/valid/multi-receipt-a.json",
+          "fixtures/v0.1/valid/multi-receipt-b.json"
+        ],
+        "primitive": "prim.receipt.multi",
+        "cases": 10,
+        "corrected_leverage": 55,
+        "reason": "High same-evidence density but requires opening a new multi-receipt evaluator family."
+      }
+    ],
+    "same_file_mixed_primary_rejections": [
+      {
+        "shared_evidence": "fixtures/v0.1/valid/minimal-signed-receipt.json",
+        "primary_mix": {
+          "prim.integrity.composition": 18,
+          "prim.verifier.report": 7
+        },
+        "reason": "Same-file co-location remains separate evaluator surfaces."
+      },
+      {
+        "shared_evidence": [
+          "fixtures/v0.1/valid/multi-receipt-a.json",
+          "fixtures/v0.1/valid/multi-receipt-b.json"
+        ],
+        "primary_mix": {
+          "prim.receipt.multi": 10,
+          "prim.verifier.report": 2
+        },
+        "reason": "Receipt-multi and verifier-report remain separate primary evaluator surfaces."
+      },
+      {
+        "shared_evidence": "fixtures/v0.1/valid/source-to-request.json",
+        "primary_mix": {
+          "prim.receipt.multi": 7,
+          "prim.integrity.composition": 1,
+          "prim.adapter.capture": 1
+        },
+        "reason": "Same-file co-location spans three independent primary surfaces."
+      }
+    ],
+    "selected_cluster": {
+      "primitive": "prim.adapter.capture",
+      "semantic_family": "ToolExecution lifecycle disposition and bounded Effect non-inference",
+      "shared_evidence": "conformance/v0.1/primitives/receipts/tool-lifecycle-boundaries.json",
+      "requirement_ids": [
+        "TAD-043",
+        "TAD-044",
+        "TAD-045",
+        "TAD-113"
+      ],
+      "cases": 4,
+      "shared_evidence_documents": 1,
+      "total_case_patches": 0,
+      "planned_test_id_collisions": 0,
+      "dependency_closure": {
+        "primary": "prim.adapter.capture",
+        "dependencies": ["prim.tool.lifecycle"],
+        "all_dependencies_already_implemented": true
+      },
+      "selection_reason": "After applying planned-ID collision cost, this is the tightest residual existing-surface cluster: four one-to-one requirements over one unpatched receipt, sharing the same ToolExecution lifecycle/effect boundary predicates. It avoids the TAD-046/TOOL-035 collision while adding a narrower semantic surface than the five-case provider-retry cluster."
+    }
+  },
+  "intent": "Select only TAD-043, TAD-044, TAD-045, and TAD-113 for Batch 29. This selection commit does not register new planned tests, modify Runner A executors, or increase the 260-case / 192-requirement evidence baseline. The current three shared-ID exclusions TAD-021, TAD-084, and TOOL-054 remain unchanged."
+}
