@@ -1,0 +1,71 @@
+{
+  "layer": "runner_a",
+  "wave": "03",
+  "batch": "29-tool-lifecycle-effect-bounds-core",
+  "status": "complete",
+  "selection_commit": "ba7b5e7496645ffede8613a3ffe61d198a3b50c6",
+  "implementation_commit": "65291182245e920edd606b2038be2e5d1e9dfd13",
+  "requirement_ids": [
+    "TAD-043",
+    "TAD-044",
+    "TAD-045",
+    "TAD-113"
+  ],
+  "execution": {
+    "cases": 4,
+    "pass": 4,
+    "fail": 0,
+    "selection_failures": 0,
+    "findings": 4
+  },
+  "ci": {
+    "runner_a_run_id": 37976326518,
+    "runner_a_jobs": "31/31 success",
+    "p5_run_id": 37976326547,
+    "p5": "907/907 pass",
+    "batch_artifact_id": 11638612341,
+    "batch_artifact_sha256": "4dbd89bea34fbe60852a51afb69a6dd2496737b5846f0611190482c085f12aee",
+    "p5_artifact_id": 11638777103,
+    "p5_artifact_sha256": "201aa435c66d29f2adb9e2abf9cf10eeb668b8cfde0959a07487949d466b6188"
+  },
+  "accounting": {
+    "independent_cases": 264,
+    "semantic_evidence": 196,
+    "remaining": 575,
+    "registered_planned_test_ids": 215,
+    "registered_semantic_planned_test_ids": 196,
+    "id_matched_rows": 199,
+    "shared_id_exclusions": [
+      "TAD-021",
+      "TAD-084",
+      "TOOL-054"
+    ]
+  },
+  "mutation_checks": {
+    "status": "pass",
+    "count": 14,
+    "checks": [
+      "execution_invocation_ref_dangling",
+      "result_execution_ref_broken",
+      "execution_cross_run",
+      "completed_not_terminal",
+      "duplicate_disposition",
+      "completed_basis_tool_reported",
+      "completed_basis_wrong_value",
+      "timeout_basis_wrong",
+      "diagnostic_not_observed",
+      "diagnostic_wrong_subject",
+      "effect_observation_added",
+      "reported_status_missing_contrast",
+      "exact_requirement_guard",
+      "tad046_not_registered"
+    ]
+  },
+  "unchanged": {
+    "schema": true,
+    "spec": true,
+    "cases": true,
+    "expected": true,
+    "shared_input": true
+  }
+}
